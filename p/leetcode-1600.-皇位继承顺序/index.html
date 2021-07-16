@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/throne-inheritance/
+难度： 中等
+题目描述 一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。
+这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 Successor(x, curOrder) ，给定一个人 x 和当前的继承顺序，该函数返回 x 的下一继承人。
+ Successor(x, curOrder):
+如果 x 没有孩子或者所有 x 的孩子都在 curOrder 中：
+如果 x 是国王，那么返回 null
+否则，返回 Successor(x 的父亲, curOrder)
+否则，返回 x 不在 curOrder 中最年长的孩子
+ 比方说，假设王国由国王，他的孩子 Alice 和 Bob （Alice 比 Bob 年长）和 Alice 的孩子 Jack 组成。
+ 一开始， curOrder 为 [&amp;ldquo;king&amp;rdquo;]. 调用 Successor(king, curOrder) ，返回 Alice ，所以我们将 Alice 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;] 。 调用 Successor(Alice, curOrder) ，返回 Jack ，所以我们将 Jack 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;] 。 调用 Successor(Jack, curOrder) ，返回 Bob ，所以我们将 Bob 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;, &amp;quot;Bob&amp;quot;] 。 调用 Successor(Bob, curOrder) ，返回 null 。最终得到继承顺序为 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;, &amp;quot;Bob&amp;quot;] 。  通过以上的函数，我们总是能得到一个唯一的继承顺序。'><title>Leetcode 1600. 皇位继承顺序</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1600.-%E7%9A%87%E4%BD%8D%E7%BB%A7%E6%89%BF%E9%A1%BA%E5%BA%8F/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1600. 皇位继承顺序'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/throne-inheritance/
+难度： 中等
+题目描述 一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。
+这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 Successor(x, curOrder) ，给定一个人 x 和当前的继承顺序，该函数返回 x 的下一继承人。
+ Successor(x, curOrder):
+如果 x 没有孩子或者所有 x 的孩子都在 curOrder 中：
+如果 x 是国王，那么返回 null
+否则，返回 Successor(x 的父亲, curOrder)
+否则，返回 x 不在 curOrder 中最年长的孩子
+ 比方说，假设王国由国王，他的孩子 Alice 和 Bob （Alice 比 Bob 年长）和 Alice 的孩子 Jack 组成。
+ 一开始， curOrder 为 [&amp;ldquo;king&amp;rdquo;]. 调用 Successor(king, curOrder) ，返回 Alice ，所以我们将 Alice 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;] 。 调用 Successor(Alice, curOrder) ，返回 Jack ，所以我们将 Jack 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;] 。 调用 Successor(Jack, curOrder) ，返回 Bob ，所以我们将 Bob 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;, &amp;quot;Bob&amp;quot;] 。 调用 Successor(Bob, curOrder) ，返回 null 。最终得到继承顺序为 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;, &amp;quot;Bob&amp;quot;] 。  通过以上的函数，我们总是能得到一个唯一的继承顺序。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1600.-%E7%9A%87%E4%BD%8D%E7%BB%A7%E6%89%BF%E9%A1%BA%E5%BA%8F/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-06-20T09:58:32&#43;08:00'/><meta property='article:modified_time' content='2021-06-20T09:58:32&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1600. 皇位继承顺序">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/throne-inheritance/
+难度： 中等
+题目描述 一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。
+这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 Successor(x, curOrder) ，给定一个人 x 和当前的继承顺序，该函数返回 x 的下一继承人。
+ Successor(x, curOrder):
+如果 x 没有孩子或者所有 x 的孩子都在 curOrder 中：
+如果 x 是国王，那么返回 null
+否则，返回 Successor(x 的父亲, curOrder)
+否则，返回 x 不在 curOrder 中最年长的孩子
+ 比方说，假设王国由国王，他的孩子 Alice 和 Bob （Alice 比 Bob 年长）和 Alice 的孩子 Jack 组成。
+ 一开始， curOrder 为 [&amp;ldquo;king&amp;rdquo;]. 调用 Successor(king, curOrder) ，返回 Alice ，所以我们将 Alice 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;] 。 调用 Successor(Alice, curOrder) ，返回 Jack ，所以我们将 Jack 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;] 。 调用 Successor(Jack, curOrder) ，返回 Bob ，所以我们将 Bob 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;, &amp;quot;Bob&amp;quot;] 。 调用 Successor(Bob, curOrder) ，返回 null 。最终得到继承顺序为 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;, &amp;quot;Bob&amp;quot;] 。  通过以上的函数，我们总是能得到一个唯一的继承顺序。">
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu56607a142d0531102191ba7dd1f3a72d_38959_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://xianlianghe0123.github.io" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-1600.-%E7%9A%87%E4%BD%8D%E7%BB%A7%E6%89%BF%E9%A1%BA%E5%BA%8F/">Leetcode 1600. 皇位继承顺序</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jun 20, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    
+
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/throne-inheritance/" target="_blank">https://leetcode-cn.com/problems/throne-inheritance/</a><br />
+<strong>难度：</strong> <font color="orange">中等</font></p>
+
+<h4 id="题目描述">题目描述</h4>
+
+<p>一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。</p>
+
+<p>这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 <code>Successor(x, curOrder)</code> ，给定一个人 <code>x</code> 和当前的继承顺序，该函数返回 <code>x</code> 的下一继承人。</p>
+
+<blockquote>
+<p>Successor(x, curOrder):<br />
+  如果 x 没有孩子或者所有 x 的孩子都在 curOrder 中：<br />
+        如果 x 是国王，那么返回 null<br />
+        否则，返回 Successor(x 的父亲, curOrder)<br />
+    否则，返回 x 不在 curOrder 中最年长的孩子</p>
+</blockquote>
+
+<p>比方说，假设王国由国王，他的孩子 Alice 和 Bob （Alice 比 Bob 年长）和 Alice 的孩子 Jack 组成。</p>
+
+<ol>
+<li>一开始， curOrder 为 [&ldquo;king&rdquo;].</li>
+<li>调用 <code>Successor(king, curOrder)</code> ，返回 Alice ，所以我们将 Alice 放入 <code>curOrder</code> 中，得到 <code>[&quot;king&quot;, &quot;Alice&quot;]</code> 。</li>
+<li>调用 <code>Successor(Alice, curOrder)</code> ，返回 Jack ，所以我们将 Jack 放入 <code>curOrder</code> 中，得到 <code>[&quot;king&quot;, &quot;Alice&quot;, &quot;Jack&quot;]</code> 。</li>
+<li>调用 <code>Successor(Jack, curOrder)</code> ，返回 Bob ，所以我们将 Bob 放入 <code>curOrder</code> 中，得到 <code>[&quot;king&quot;, &quot;Alice&quot;, &quot;Jack&quot;, &quot;Bob&quot;]</code> 。</li>
+<li>调用 <code>Successor(Bob, curOrder)</code> ，返回 <code>null</code> 。最终得到继承顺序为 <code>[&quot;king&quot;, &quot;Alice&quot;, &quot;Jack&quot;, &quot;Bob&quot;]</code> 。</li>
+</ol>
+
+<p>通过以上的函数，我们总是能得到一个唯一的继承顺序。</p>
+
+<p>请你实现 <code>ThroneInheritance</code> 类：</p>
+
+<ul>
+<li><code>ThroneInheritance(string kingName)</code> 初始化一个 <code>ThroneInheritance</code> 类的对象。国王的名字作为构造函数的参数传入。</li>
+<li><code>void birth(string parentName, string childName)</code> 表示 <code>parentName</code> 新拥有了一个名为 <code>childName</code> 的孩子。</li>
+<li><code>void death(string name)</code> 表示名为 <code>name</code> 的人死亡。一个人的死亡不会影响 <code>Successor</code> 函数，也不会影响当前的继承顺序。你可以只将这个人标记为死亡状态。</li>
+<li><code>string[] getInheritanceOrder()</code> 返回 <strong>除去</strong> 死亡人员的当前继承顺序列表。</li>
+</ul>
+
+<h5 id="示例">示例：</h5>
+
+<blockquote>
+<p><strong>输入：</strong>
+[&ldquo;ThroneInheritance&rdquo;, &ldquo;birth&rdquo;, &ldquo;birth&rdquo;, &ldquo;birth&rdquo;, &ldquo;birth&rdquo;, &ldquo;birth&rdquo;, &ldquo;birth&rdquo;, &ldquo;getInheritanceOrder&rdquo;, &ldquo;death&rdquo;, &ldquo;getInheritanceOrder&rdquo;]<br />
+[[&ldquo;king&rdquo;], [&ldquo;king&rdquo;, &ldquo;andy&rdquo;], [&ldquo;king&rdquo;, &ldquo;bob&rdquo;], [&ldquo;king&rdquo;, &ldquo;catherine&rdquo;], [&ldquo;andy&rdquo;, &ldquo;matthew&rdquo;], [&ldquo;bob&rdquo;, &ldquo;alex&rdquo;], [&ldquo;bob&rdquo;, &ldquo;asha&rdquo;], [null], [&ldquo;bob&rdquo;], [null]]<br />
+<strong>输出：</strong>
+[null, null, null, null, null, null, null, [&ldquo;king&rdquo;, &ldquo;andy&rdquo;, &ldquo;matthew&rdquo;, &ldquo;bob&rdquo;, &ldquo;alex&rdquo;, &ldquo;asha&rdquo;, &ldquo;catherine&rdquo;], null, [&ldquo;king&rdquo;, &ldquo;andy&rdquo;, &ldquo;matthew&rdquo;, &ldquo;alex&rdquo;, &ldquo;asha&rdquo;, &ldquo;catherine&rdquo;]]</p>
+
+<p><strong>解释：</strong>
+ThroneInheritance t= new ThroneInheritance(&ldquo;king&rdquo;); // 继承顺序：king<br />
+t.birth(&ldquo;king&rdquo;, &ldquo;andy&rdquo;); // 继承顺序：king &gt; andy<br />
+t.birth(&ldquo;king&rdquo;, &ldquo;bob&rdquo;); // 继承顺序：king &gt; andy &gt; bob<br />
+t.birth(&ldquo;king&rdquo;, &ldquo;catherine&rdquo;); // 继承顺序：king &gt; andy &gt; bob &gt; catherine<br />
+t.birth(&ldquo;andy&rdquo;, &ldquo;matthew&rdquo;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob &gt; catherine<br />
+t.birth(&ldquo;bob&rdquo;, &ldquo;alex&rdquo;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob &gt; alex &gt; catherine<br />
+t.birth(&ldquo;bob&rdquo;, &ldquo;asha&rdquo;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob &gt; alex &gt; asha &gt; catherine<br />
+t.getInheritanceOrder(); // 返回 [&ldquo;king&rdquo;, &ldquo;andy&rdquo;, &ldquo;matthew&rdquo;, &ldquo;bob&rdquo;, &ldquo;alex&rdquo;, &ldquo;asha&rdquo;, &ldquo;catherine&rdquo;]<br />
+t.death(&ldquo;bob&rdquo;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob（已经去世）&gt; alex &gt; asha &gt; catherine<br />
+t.getInheritanceOrder(); // 返回 [&ldquo;king&rdquo;, &ldquo;andy&rdquo;, &ldquo;matthew&rdquo;, &ldquo;alex&rdquo;, &ldquo;asha&rdquo;, &ldquo;catherine&rdquo;]</p>
+</blockquote>
+
+<h5 id="提示">提示：</h5>
+
+<ul>
+<li><code>1 &lt;= kingName.length, parentName.length, childName.length, name.length &lt;= 15</code></li>
+<li><code>kingName</code>，<code>parentName</code>， <code>childName</code> 和 <code>name</code> 仅包含小写英文字母。</li>
+<li>所有的参数 <code>childName</code> 和 <code>kingName</code> <strong>互不相同</strong>。</li>
+<li>所有 <code>death</code> 函数中的死亡名字 <code>name</code> 要么是国王，要么是已经出生了的人员名字。</li>
+<li>每次调用 <code>birth(parentName, childName)</code> 时，测试用例都保证 <code>parentName</code> 对应的人员是活着的。</li>
+<li>最多调用 <code>10<sup>5</sup></code> 次<code>birth</code> 和 <code>death</code> 。</li>
+<li>最多调用 <code>10</code> 次 <code>getInheritanceOrder</code> 。</li>
+</ul>
+
+<h3 id="解题思路">解题思路</h3>
+
+<h4 id="树">树</h4>
+
+<p>整个家庭成员的关系显然是一个树状结构，用树来保存家庭成员关系信息，而继承的顺序则是数的前序遍历。</p>
+
+<p>另外，为快速定位到某个成员，使用一个 <code>map</code> 记录代表每个成员的结点。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">name</span>     <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">isLive</span>   <span style="color:#66d9ef">bool</span>
+	<span style="color:#a6e22e">children</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ThroneInheritance</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>
+	<span style="color:#a6e22e">pos</span>  <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">kingName</span> <span style="color:#66d9ef">string</span>) <span style="color:#a6e22e">ThroneInheritance</span> {
+	<span style="color:#a6e22e">king</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>{
+		<span style="color:#a6e22e">name</span>:   <span style="color:#a6e22e">kingName</span>,
+		<span style="color:#a6e22e">isLive</span>: <span style="color:#66d9ef">true</span>,
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ThroneInheritance</span>{
+		<span style="color:#a6e22e">root</span>: <span style="color:#a6e22e">king</span>,
+		<span style="color:#a6e22e">pos</span>: <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>{
+			<span style="color:#a6e22e">kingName</span>: <span style="color:#a6e22e">king</span>,
+		},
+	}
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ThroneInheritance</span>) <span style="color:#a6e22e">Birth</span>(<span style="color:#a6e22e">parentName</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">childName</span> <span style="color:#66d9ef">string</span>) {
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">childName</span>] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>{
+		<span style="color:#a6e22e">name</span>:   <span style="color:#a6e22e">childName</span>,
+		<span style="color:#a6e22e">isLive</span>: <span style="color:#66d9ef">true</span>,
+	}
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">parentName</span>].<span style="color:#a6e22e">children</span> = append(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">parentName</span>].<span style="color:#a6e22e">children</span>, <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">childName</span>])
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ThroneInheritance</span>) <span style="color:#a6e22e">Death</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) {
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">name</span>].<span style="color:#a6e22e">isLive</span> = <span style="color:#66d9ef">false</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ThroneInheritance</span>) <span style="color:#a6e22e">GetInheritanceOrder</span>() []<span style="color:#66d9ef">string</span> {
+	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">pos</span>))
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>)
+	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>) {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">isLive</span> {
+			<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">name</span>)
+		}
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">child</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">children</span> {
+			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">child</span>)
+		}
+	}
+	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">root</span>)
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+}
+</code></pre></div>
+<h5 id="复杂度">复杂度</h5>
+
+<ul>
+<li>时间复杂度：
+
+<ul>
+<li><code>Constructor</code>: O(1)</li>
+<li><code>Birth</code>: O(1)</li>
+<li><code>Death</code>: O(1)</li>
+<li><code>GetInheritanceOrder</code>: O(N)</li>
+</ul></li>
+<li>空间复杂度：O(N)</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-53-i.-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97-i/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 53 - I. 在排序数组中查找数字 I</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1846. 减小和重新排列数组后的最大元素</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1818. 绝对差值和</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-275.-h-%E6%8C%87%E6%95%B0-ii/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 275. H 指数 II</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 274. H 指数</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

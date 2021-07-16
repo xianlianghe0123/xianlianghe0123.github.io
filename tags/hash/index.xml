@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hash on 贺贤良</title>
+    <link>https://xianlianghe0123.github.io/tags/hash/</link>
+    <description>Recent content in hash on 贺贤良</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Sat, 10 Jul 2021 11:47:18 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 981. 基于时间的键值存储</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-981.-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E9%94%AE%E5%80%BC%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sat, 10 Jul 2021 11:47:18 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-981.-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E9%94%AE%E5%80%BC%E5%AD%98%E5%82%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/time-based-key-value-store/
+难度： 中等
+题目描述 创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
+ set(string key, string value, int timestamp)  存储键 key、值 value，以及给定的时间戳 timestamp。
+ get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。   示例1：  输入：inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
+输出：[null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
+解释：
+TimeMap kv;
+kv.set(&amp;ldquo;foo&amp;rdquo;, &amp;ldquo;bar&amp;rdquo;, 1); // 存储键 &amp;ldquo;foo&amp;rdquo; 和值 &amp;ldquo;bar&amp;rdquo; 以及时间戳 timestamp = 1
+kv.get(&amp;ldquo;foo&amp;rdquo;, 1); // 输出 &amp;ldquo;bar&amp;rdquo;
+kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为在时间戳 3 和时间戳 2 处没有对应 &amp;ldquo;foo&amp;rdquo; 的值，所以唯一的值位于时间戳 1 处（即 &amp;gt; &amp;ldquo;bar&amp;rdquo;）</description>
+    </item>
+    
+    <item>
+      <title>面试题17 10. 主要元素</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Fri, 09 Jul 2021 10:46:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-majority-element-lcci/
+难度： 简单
+题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
+示例 1：  输入：[1,2,5,9,5,9,5,5,5]
+输出：5
+ 示例 2：  输入：[3,2]
+输出：-1
+ 示例 3：  输入：[2,2,1,1,1,2,2]
+输出：2
+ 解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
+func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 }  复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 930. 和相同的二元子数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-930.-%E5%92%8C%E7%9B%B8%E5%90%8C%E7%9A%84%E4%BA%8C%E5%85%83%E5%AD%90%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 08 Jul 2021 15:11:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-930.-%E5%92%8C%E7%9B%B8%E5%90%8C%E7%9A%84%E4%BA%8C%E5%85%83%E5%AD%90%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/binary-subarrays-with-sum/
+难度： 中等
+题目描述 给你一个二元数组 nums ，和一个整数 goal ，请你统计并返回有多少个和为 goal 的 非空 子数组。
+子数组 是数组的一段连续部分。
+示例 1：  输入：nums = [1,0,1,0,1], goal = 2
+输出：4
+解释：
+有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]
+ 示例 2：  输入：nums = [0,0,0,0,0], goal = 0
+输出：15
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 nums[i] 不是 0 就是 1 0 &amp;lt;= goal &amp;lt;= nums.length  解题思路 哈希 假设满足条件的子数组下标为 [i, j) ，则以 i 和 j 为结尾的两个前缀数组的前缀和记作 sum[i]、sum[j] ，有 goal = sum[j] - sum[i]。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sort on 贺贤良</title>
+    <link>https://xianlianghe0123.github.io/tags/sort/</link>
+    <description>Recent content in sort on 贺贤良</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Thu, 15 Jul 2021 10:33:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1846. 减小和重新排列数组后的最大元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Thu, 15 Jul 2021 10:33:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/
+难度： 中等
+题目描述 给你一个正整数数组 arr 。请你对 arr 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：
+ arr 中 第一个 元素必须为 1 。 任意相邻两个元素的差的绝对值 小于等于 1 ，也就是说，对于任意的 1 &amp;lt;= i &amp;lt; arr.length （数组下标从 0 开始），都满足 abs(arr[i] - arr[i - 1]) &amp;lt;= 1 。abs(x) 为 x 的绝对值。  你可以执行以下 2 种操作任意次：
+ 减小 arr 中任意元素的值，使其变为一个 更小的正整数 。 重新排列 arr 中的元素，你可以以任意顺序重新排列。  请你返回执行以上操作后，在满足前文所述的条件下，arr 中可能的 最大值 。
+示例 1：  输入：arr = [2,2,1,2,1]
+输出：2
+解释：
+我们可以重新排列 arr 得到 [1,2,2,2,1] ，该数组满足所有条件。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1818. 绝对差值和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/</link>
+      <pubDate>Wed, 14 Jul 2021 10:34:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/minimum-absolute-sum-difference/
+难度： 中等
+题目描述 给你两个正整数数组 nums1 和 nums2 ，数组的长度都是 n 。
+数组 nums1 和 nums2 的 绝对差值和 定义为所有 |nums1[i] - nums2[i]|（0 &amp;lt;= i &amp;lt; n）的 总和（下标从 0 开始）。
+你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
+在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。因为答案可能很大，所以需要对 109 + 7 取余 后返回。
+|x| 定义为：
+ 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  输入：nums1 = [1,7,5], nums2 = [2,3,5]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 274. H 指数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/</link>
+      <pubDate>Sun, 11 Jul 2021 12:04:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/h-index/
+难度： 中等
+题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）。编写一个方法，计算出研究者的 h 指数。
+h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
+例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
+示例：  输入：citations = [3,0,6,1,5]
+输出：3
+解释：给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
+由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
+ 提示：如果 h 有多种可能的值，h 指数是其中最大的那个。</description>
+    </item>
+    
+    <item>
+      <title>面试题17 10. 主要元素</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Fri, 09 Jul 2021 10:46:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-majority-element-lcci/
+难度： 简单
+题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
+示例 1：  输入：[1,2,5,9,5,9,5,5,5]
+输出：5
+ 示例 2：  输入：[3,2]
+输出：-1
+ 示例 3：  输入：[2,2,1,1,1,2,2]
+输出：2
+ 解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
+func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 }  复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
+    </item>
+    
+  </channel>
+</rss>

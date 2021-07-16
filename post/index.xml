@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 贺贤良</title>
+    <link>https://xianlianghe0123.github.io/post/</link>
+    <description>Recent content in Posts on 贺贤良</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Fri, 16 Jul 2021 14:55:24 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 53 - I. 在排序数组中查找数字 I</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-53-i.-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97-i/</link>
+      <pubDate>Fri, 16 Jul 2021 14:55:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-53-i.-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97-i/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/
+难度： 简单
+题目描述 统计一个数字在排序数组中出现的次数。
+示例 1：  输入: nums = [5,7,7,8,8,10], target = 8
+输出: 2
+ 示例 2：  输入: nums = [5,7,7,8,8,10], target = 6
+输出: 0
+ 提示：  0 &amp;lt;= 数组长度 &amp;lt;= 50000  解题思路 顺序查找 顺序遍历，统计数量 target。由于数组有序，当当前元素大于 target时，
+func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if num == target { cnt++ } else if num &amp;gt; target { break } } return cnt }  复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  二分查找 二分查找，找到首个等于 target 的元素位置，依次向后遍历到元素不等于 target 为止，记录出现的次数。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1846. 减小和重新排列数组后的最大元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Thu, 15 Jul 2021 10:33:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/
+难度： 中等
+题目描述 给你一个正整数数组 arr 。请你对 arr 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：
+ arr 中 第一个 元素必须为 1 。 任意相邻两个元素的差的绝对值 小于等于 1 ，也就是说，对于任意的 1 &amp;lt;= i &amp;lt; arr.length （数组下标从 0 开始），都满足 abs(arr[i] - arr[i - 1]) &amp;lt;= 1 。abs(x) 为 x 的绝对值。  你可以执行以下 2 种操作任意次：
+ 减小 arr 中任意元素的值，使其变为一个 更小的正整数 。 重新排列 arr 中的元素，你可以以任意顺序重新排列。  请你返回执行以上操作后，在满足前文所述的条件下，arr 中可能的 最大值 。
+示例 1：  输入：arr = [2,2,1,2,1]
+输出：2
+解释：
+我们可以重新排列 arr 得到 [1,2,2,2,1] ，该数组满足所有条件。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1818. 绝对差值和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/</link>
+      <pubDate>Wed, 14 Jul 2021 10:34:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/minimum-absolute-sum-difference/
+难度： 中等
+题目描述 给你两个正整数数组 nums1 和 nums2 ，数组的长度都是 n 。
+数组 nums1 和 nums2 的 绝对差值和 定义为所有 |nums1[i] - nums2[i]|（0 &amp;lt;= i &amp;lt; n）的 总和（下标从 0 开始）。
+你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
+在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。因为答案可能很大，所以需要对 109 + 7 取余 后返回。
+|x| 定义为：
+ 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  输入：nums1 = [1,7,5], nums2 = [2,3,5]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 275. H 指数 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-275.-h-%E6%8C%87%E6%95%B0-ii/</link>
+      <pubDate>Mon, 12 Jul 2021 10:50:26 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-275.-h-%E6%8C%87%E6%95%B0-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/h-index-ii/
+难度： 中等
+题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）,数组已经按照 升序排列。编写一个方法，计算出研究者的 h 指数。
+h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
+例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
+示例：  输入：citations = [0,1,3,5,6]
+输出：3
+解释：给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 0, 1, 3, 5, 6 次。
+由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
+ 说明：如果 h 有多种可能的值，h 指数是其中最大的那个。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 274. H 指数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/</link>
+      <pubDate>Sun, 11 Jul 2021 12:04:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/h-index/
+难度： 中等
+题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）。编写一个方法，计算出研究者的 h 指数。
+h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
+例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
+示例：  输入：citations = [3,0,6,1,5]
+输出：3
+解释：给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
+由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
+ 提示：如果 h 有多种可能的值，h 指数是其中最大的那个。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 981. 基于时间的键值存储</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-981.-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E9%94%AE%E5%80%BC%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sat, 10 Jul 2021 11:47:18 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-981.-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E9%94%AE%E5%80%BC%E5%AD%98%E5%82%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/time-based-key-value-store/
+难度： 中等
+题目描述 创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
+ set(string key, string value, int timestamp)  存储键 key、值 value，以及给定的时间戳 timestamp。
+ get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。   示例1：  输入：inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
+输出：[null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
+解释：
+TimeMap kv;
+kv.set(&amp;ldquo;foo&amp;rdquo;, &amp;ldquo;bar&amp;rdquo;, 1); // 存储键 &amp;ldquo;foo&amp;rdquo; 和值 &amp;ldquo;bar&amp;rdquo; 以及时间戳 timestamp = 1
+kv.get(&amp;ldquo;foo&amp;rdquo;, 1); // 输出 &amp;ldquo;bar&amp;rdquo;
+kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为在时间戳 3 和时间戳 2 处没有对应 &amp;ldquo;foo&amp;rdquo; 的值，所以唯一的值位于时间戳 1 处（即 &amp;gt; &amp;ldquo;bar&amp;rdquo;）</description>
+    </item>
+    
+    <item>
+      <title>面试题17 10. 主要元素</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Fri, 09 Jul 2021 10:46:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-majority-element-lcci/
+难度： 简单
+题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
+示例 1：  输入：[1,2,5,9,5,9,5,5,5]
+输出：5
+ 示例 2：  输入：[3,2]
+输出：-1
+ 示例 3：  输入：[2,2,1,1,1,2,2]
+输出：2
+ 解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
+func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 }  复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 930. 和相同的二元子数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-930.-%E5%92%8C%E7%9B%B8%E5%90%8C%E7%9A%84%E4%BA%8C%E5%85%83%E5%AD%90%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 08 Jul 2021 15:11:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-930.-%E5%92%8C%E7%9B%B8%E5%90%8C%E7%9A%84%E4%BA%8C%E5%85%83%E5%AD%90%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/binary-subarrays-with-sum/
+难度： 中等
+题目描述 给你一个二元数组 nums ，和一个整数 goal ，请你统计并返回有多少个和为 goal 的 非空 子数组。
+子数组 是数组的一段连续部分。
+示例 1：  输入：nums = [1,0,1,0,1], goal = 2
+输出：4
+解释：
+有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]
+ 示例 2：  输入：nums = [0,0,0,0,0], goal = 0
+输出：15
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 nums[i] 不是 0 就是 1 0 &amp;lt;= goal &amp;lt;= nums.length  解题思路 哈希 假设满足条件的子数组下标为 [i, j) ，则以 i 和 j 为结尾的两个前缀数组的前缀和记作 sum[i]、sum[j] ，有 goal = sum[j] - sum[i]。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1711. 大餐计数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1711.-%E5%A4%A7%E9%A4%90%E8%AE%A1%E6%95%B0/</link>
+      <pubDate>Wed, 07 Jul 2021 10:28:11 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1711.-%E5%A4%A7%E9%A4%90%E8%AE%A1%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-good-meals/
+难度： 中等
+题目描述 大餐 是指 恰好包含两道不同餐品 的一餐，其美味程度之和等于 2 的幂。
+你可以搭配 任意 两道餐品做一顿大餐。
+给你一个整数数组 deliciousness ，其中 deliciousness[i] 是第 i​​​​​​​​​​​​​​ 道餐品的美味程度，返回你可以用数组中的餐品做出的不同 大餐 的数量。结果需要对 109 + 7 取余。
+注意，只要餐品下标不同，就可以认为是不同的餐品，即便它们的美味程度相同。
+示例 1：  输入：deliciousness = [1,3,5,7,9]
+输出：4
+解释：大餐的美味程度组合为 (1,3) 、(1,7) 、(3,5) 和 (7,9) 。
+它们各自的美味程度之和分别为 4 、8 、8 和 16 ，都是 2 的幂。
+ 示例 2:  输入：deliciousness = [1,1,1,3,3,3,7]
+输出：15
+解释：大餐的美味程度组合为 3 种 (1,1) ，9 种 (1,3) ，和 3 种 (1,7) 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1418. 点菜展示表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1418.-%E7%82%B9%E8%8F%9C%E5%B1%95%E7%A4%BA%E8%A1%A8/</link>
+      <pubDate>Tue, 06 Jul 2021 09:20:22 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1418.-%E7%82%B9%E8%8F%9C%E5%B1%95%E7%A4%BA%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/
+难度： 中等
+题目描述 给你一个数组 orders ，表示客户在餐厅中完成的订单，确切地说， orders[i]=[customerNamei,tableNumberi,foodItemi] ，其中 customerNamei 是客户的姓名，tableNumberi 是客户所在餐桌的桌号，而 foodItemi 是客户点的餐品名称。
+请你返回该餐厅的 点菜展示表 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。
+注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
+示例 1：  输入：orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
+输出：[[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
+解释：
+点菜展示表如下所示：
+Table,Beef Burrito,Ceviche,Fried Chicken,Water
+3 ,0 ,2 ,1 ,0
+5 ,0 ,1 ,0 ,1
+10 ,1 ,0 ,0 ,0
+对于餐桌 3：David 点了 &amp;ldquo;Ceviche&amp;rdquo; 和 &amp;ldquo;Fried Chicken&amp;rdquo;，而 Rous 点了 &amp;ldquo;Ceviche&amp;rdquo;
+而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;
+餐桌 10：Corina 点了 &amp;ldquo;Beef Burrito&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 726. 原子的数量</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-726.-%E5%8E%9F%E5%AD%90%E7%9A%84%E6%95%B0%E9%87%8F/</link>
+      <pubDate>Mon, 05 Jul 2021 20:30:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-726.-%E5%8E%9F%E5%AD%90%E7%9A%84%E6%95%B0%E9%87%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-of-atoms/
+难度： 困难
+题目描述 给定一个化学式 formula （作为字符串），返回每种原子的数量。
+原子总是以一个大写字母开始，接着跟随0个或任意个小写字母，表示原子的名字。
+如果数量大于 1，原子后会跟着数字表示原子的数量。如果数量等于 1 则不会跟数字。例如，H2O 和 H2O2 是可行的，但 H1O2 这个表达是不可行的。
+两个化学式连在一起是新的化学式。例如 H2O2He3Mg4 也是化学式。
+一个括号中的化学式和数字（可选择性添加）也是化学式。例如 (H2O2) 和 (H2O2)3 是化学式。
+给定一个化学式 formula ，返回所有原子的数量。格式为：第一个（按字典序）原子的名字，跟着它的数量（如果数量大于 1），然后是第二个原子的名字（按字典序），跟着它的数量（如果数量大于 1），以此类推。
+示例1：  输入：formula = &amp;ldquo;H2O&amp;rdquo;
+输出：&amp;ldquo;H2O&amp;rdquo;
+解释：
+原子的数量是 {&amp;lsquo;H&amp;rsquo;: 2, &amp;lsquo;O&amp;rsquo;: 1}。
+ 示例2：  输入：formula = &amp;ldquo;Mg(OH)2&amp;rdquo;
+输出：&amp;ldquo;H2MgO2&amp;rdquo;
+解释：
+原子的数量是 {&amp;lsquo;H&amp;rsquo;: 2, &amp;lsquo;Mg&amp;rsquo;: 1, &amp;lsquo;O&amp;rsquo;: 2}。
+ 示例3：  输入：formula = &amp;ldquo;K4(ON(SO3)2)2&amp;rdquo;
+输出：&amp;ldquo;K4N2O14S4&amp;rdquo;
+解释：
+原子的数量是 {&amp;lsquo;K&amp;rsquo;: 4, &amp;lsquo;N&amp;rsquo;: 2, &amp;lsquo;O&amp;rsquo;: 14, &amp;rsquo;S&amp;rsquo;: 4}。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 645. 错误的集合</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-645.-%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88/</link>
+      <pubDate>Sun, 04 Jul 2021 10:12:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-645.-%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88/</guid>
+      <description>链接： https://leetcode-cn.com/problems/set-mismatch/
+难度： 简单
+题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
+给定一个数组 nums 代表了集合 S 发生错误后的结果。
+请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
+示例 1：  输入：nums = [1,2,2,4]
+输出：[2,3]
+ 示例 2：  输入：nums = [1,1]
+输出：[1,2]
+ 提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
+func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 451. 根据字符出现频率排序</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-451.-%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 03 Jul 2021 09:35:21 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-451.-%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%8E%92%E5%BA%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/sort-characters-by-frequency/
+难度： 中等
+题目描述 给定一个字符串，请将字符串里的字符按照出现的频率降序排列。
+示例1：  输入:
+&amp;ldquo;tree&amp;rdquo;
+输出:
+&amp;ldquo;eert&amp;rdquo;
+解释:
+&amp;lsquo;e&amp;rsquo;出现两次，&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;都只出现一次。
+因此&amp;rsquo;e&amp;rsquo;必须出现在&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;之前。此外，&amp;rdquo;eetr&amp;rdquo;也是一个有效的答案。
+ 示例2：  输入:
+&amp;ldquo;cccaaa&amp;rdquo;
+输出:
+&amp;ldquo;cccaaa&amp;rdquo;
+解释:
+&amp;lsquo;c&amp;rsquo;和&amp;rsquo;a&amp;rsquo;都出现三次。此外，&amp;rdquo;aaaccc&amp;rdquo;也是有效的答案。
+注意&amp;rdquo;cacaca&amp;rdquo;是不正确的，因为相同的字母必须放在一起。
+ 示例3：  输入:
+&amp;ldquo;Aabb&amp;rdquo;
+输出:
+&amp;ldquo;bbAa&amp;rdquo;
+解释:
+此外，&amp;rdquo;bbaA&amp;rdquo;也是一个有效的答案，但&amp;rdquo;Aabb&amp;rdquo;是不正确的。
+注意&amp;rsquo;A&amp;rsquo;和&amp;rsquo;a&amp;rsquo;被认为是两种不同的字符。
+ 解题思路 计数+排序 统计每个字符出现的次数，按照统计的次数对字符进行排序，然后按照字符顺序和数量展开。
+func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &amp;lt; len(s); i++ { cnt[s[i]]++ } chars := make([]byte, 0, len(s)) for char := range cnt { chars = append(chars, char) } sort.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1833. 雪糕的最大数量</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1833.-%E9%9B%AA%E7%B3%95%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F/</link>
+      <pubDate>Fri, 02 Jul 2021 10:28:04 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1833.-%E9%9B%AA%E7%B3%95%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-ice-cream-bars/
+难度： 中等
+题目描述 夏日炎炎，小男孩 Tony 想买一些雪糕消消暑。
+商店中新到 n 支雪糕，用长度为 n 的数组 costs 表示雪糕的定价，其中 costs[i] 表示第 i 支雪糕的现金价格。Tony 一共有 coins 现金可以用于消费，他想要买尽可能多的雪糕。
+给你价格数组 costs 和现金量 coins ，请你计算并返回 Tony 用 coins 现金能够买到的雪糕的 最大数量 。
+注意：Tony 可以按任意顺序购买雪糕。
+示例 1：  输入：costs = [1,3,2,4,1], coins = 7
+输出：4
+解释：Tony 可以买下标为 0、1、2、4 的雪糕，总价为 1 + 3 + 2 + 1 = 7
+ 示例 2：  输入：costs = [10,6,8,7,7,8], coins = 5
+输出：0</description>
+    </item>
+    
+    <item>
+      <title>LCP 07. 传递信息</title>
+      <link>https://xianlianghe0123.github.io/p/lcp-07.-%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Thu, 01 Jul 2021 11:14:31 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/lcp-07.-%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/</guid>
+      <description>链接： https://leetcode-cn.com/problems/chuan-di-xin-xi/
+难度： 简单
+题目描述 小朋友 A 在和 ta 的小伙伴们玩传信息游戏，游戏规则如下：
+ 有 n 名玩家，所有玩家编号分别为 0 ～ n-1，其中小朋友 A 的编号为 0 每个玩家都有固定的若干个可传信息的其他玩家（也可能没有）。传信息的关系是单向的（比如 A 可以向 B 传信息，但 B 不能向 A 传信息）。 每轮信息必须需要传递给另一个人，且信息可重复经过同一个人  给定总玩家数 n，以及按 [玩家编号,对应可传递玩家编号] 关系组成的二维数组 relation。返回信息从小 A (编号 0 ) 经过 k 轮传递到编号为 n-1 的小伙伴处的方案数；若不能到达，返回 0。
+示例1：  输入：n = 5, relation = [[0,2],[2,1],[3,4],[2,3],[1,4],[2,0],[0,4]], k = 3
+输出：3
+解释：信息从小 A 编号 0 处开始，经 3 轮传递，到达编号 4。共有 3 种方案，分别是 0-&amp;gt;2-&amp;gt;0-&amp;gt;4， 0-&amp;gt;2-&amp;gt;1-&amp;gt;4， 0-&amp;gt;2-&amp;gt;3-&amp;gt;4。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 37. 序列化二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-37.-%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Wed, 30 Jun 2021 15:51:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-37.-%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/
+难度： 困难
+题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
+你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
+提示：输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+示例1：  输入：root = [1,2,3,null,null,4,5]
+输出：[1,2,3,null,null,4,5]
+ 解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。
+反序列化时，按照列表顺序构建二叉树，遇到空结点表示该分支已结束，回到另一个分支处，继续构造结点。
+class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree. :type data: str :rtype: TreeNode &amp;#34;&amp;#34;&amp;#34; list = data.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 168. Excel表列名称</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-168.-excel%E8%A1%A8%E5%88%97%E5%90%8D%E7%A7%B0/</link>
+      <pubDate>Tue, 29 Jun 2021 10:26:51 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-168.-excel%E8%A1%A8%E5%88%97%E5%90%8D%E7%A7%B0/</guid>
+      <description> 链接： https://leetcode-cn.com/problems/excel-sheet-column-title/
+难度： 简单
+题目描述 给定一个正整数，返回它在 Excel 表中相对应的列名称。
+例如，
+ 1 -&amp;gt; A
+2 -&amp;gt; B
+3 -&amp;gt; C
+&amp;hellip;
+26 -&amp;gt; Z
+27 -&amp;gt; AA
+28 -&amp;gt; AB
+&amp;hellip;
+ 示例1：  输入: 1
+输出: &amp;ldquo;A&amp;rdquo;
+ 示例2：  输入: 28
+输出: &amp;ldquo;AB&amp;rdquo;
+ 示例3：  输入: 701
+输出: &amp;ldquo;ZY&amp;rdquo;
+ 解题思路 数学 通过分析题意可以得知，该题是一个进制转换，将一个10进制的数转换为26进制。
+通过数学方法，逐次模26取余数，即可求得倒序的26进制每一位，反转该序列即可求得转换后的数。
+注意：该26进制从1开始计数，每次取模前应减1。
+func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; columnNumber &amp;gt; 0; columnNumber /= 26 { columnNumber = columnNumber - 1 res = append(res, &amp;#39;A&amp;#39;+byte((columnNumber)%26)) } for i := 0; i &amp;lt; len(res)/2; i++ { res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i] } return string(res) }  复杂度  时间复杂度：O(log26columnNumber) 空间复杂度：O(log26columnNumber)  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 815. 公交路线</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-815.-%E5%85%AC%E4%BA%A4%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Mon, 28 Jun 2021 10:54:56 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-815.-%E5%85%AC%E4%BA%A4%E8%B7%AF%E7%BA%BF/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bus-routes/
+难度： 困难
+题目描述 给你一个数组 routes ，表示一系列公交线路，其中每个 routes[i] 表示一条公交线路，第 i 辆公交车将会在上面循环行驶。
+ 例如，路线 routes[0] = [1, 5, 7] 表示第 0 辆公交车会一直按序列 1 -&amp;gt; 5 -&amp;gt; 7 -&amp;gt; 1 -&amp;gt; 5 -&amp;gt; 7 -&amp;gt; 1 -&amp;gt; ... 这样的车站路线行驶。  现在从 source 车站出发（初始时不在公交车上），要前往 target 车站。 期间仅可乘坐公交车。
+求出 最少乘坐的公交车数量 。如果不可能到达终点车站，返回 -1 。
+示例 1：  输入：routes = [[1,2,7],[3,6,7]], source = 1, target = 6
+输出：2
+解释：最优策略是先乘坐第一辆公交车到达车站 7 , 然后换乘第二辆公交车到车站 6 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 909. 蛇梯棋</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-909.-%E8%9B%87%E6%A2%AF%E6%A3%8B/</link>
+      <pubDate>Sun, 27 Jun 2021 19:07:10 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-909.-%E8%9B%87%E6%A2%AF%E6%A3%8B/</guid>
+      <description>链接： https://leetcode-cn.com/problems/snakes-and-ladders/
+难度： 中等
+题目描述 N x N 的棋盘 board 上，按从 1 到 N*N 的数字给方格编号，编号 从左下角开始，每一行交替方向。
+例如，一块 6 x 6 大小的棋盘，编号如下：
+r 行 c 列的棋盘，按前述方法编号，棋盘格中可能存在 “蛇” 或 “梯子”；如果 board[r][c] != -1，那个蛇或梯子的目的地将会是 board[r][c]。
+玩家从棋盘上的方格 1 （总是在最后一行、第一列）开始出发。
+每一回合，玩家需要从当前方格 x 开始出发，按下述要求前进：
+ 选定目标方格：选择从编号 x+1，x+2，x+3，x+4，x+5，或者 x+6 的方格中选出一个目标方格 s ，目标方格的编号 &amp;lt;= N*N。  该选择模拟了掷骰子的情景，无论棋盘大小如何，你的目的地范围也只能处于区间 [x+1, x+6] 之间。  传送玩家：如果目标方格 S 处存在蛇或梯子，那么玩家会传送到蛇或梯子的目的地。否则，玩家传送到目标方格 S。 注意，玩家在每回合的前进过程中最多只能爬过蛇或梯子一次：就算目的地是另一条蛇或梯子的起点，你也不会继续移动。  返回达到方格 N*N 所需的最少移动次数，如果不可能，则返回 -1。
+示例：  输入：[
+[-1,-1,-1,-1,-1,-1],
+[-1,-1,-1,-1,-1,-1],
+[-1,-1,-1,-1,-1,-1],</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 752. 打开转盘锁</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-752.-%E6%89%93%E5%BC%80%E8%BD%AC%E7%9B%98%E9%94%81/</link>
+      <pubDate>Fri, 25 Jun 2021 17:34:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-752.-%E6%89%93%E5%BC%80%E8%BD%AC%E7%9B%98%E9%94%81/</guid>
+      <description>链接： https://leetcode-cn.com/problems/open-the-lock/
+难度： 中等
+题目描述 你有一个带有四个圆形拨轮的转盘锁。每个拨轮都有10个数字： &#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39; 。每个拨轮可以自由旋转：例如把 &#39;9&#39; 变为 &#39;0&#39;，&#39;0&#39; 变为 &#39;9&#39; 。每次旋转都只能旋转一个拨轮的一位数字。
+锁的初始数字为 &#39;0000&#39; ，一个代表四个拨轮的数字的字符串。
+列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
+字符串 target 代表可以解锁的数字，你需要给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
+示例1：  输入：deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
+输出：6
+解释：
+可能的移动序列为 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;1000&amp;rdquo; -&amp;gt; &amp;ldquo;1100&amp;rdquo; -&amp;gt; &amp;ldquo;1200&amp;rdquo; -&amp;gt; &amp;ldquo;1201&amp;rdquo; -&amp;gt; &amp;ldquo;1202&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo;。
+注意 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;0001&amp;rdquo; -&amp;gt; &amp;ldquo;0002&amp;rdquo; -&amp;gt; &amp;ldquo;0102&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo; 这样的序列是不能解锁的，</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 15. 二进制中1的个数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-15.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Wed, 23 Jun 2021 21:39:35 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-15.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/
+难度： 简单
+题目描述 请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。
+示例1：  输入：00000000000000000000000000001011
+输出：3
+解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 2：  输入：00000000000000000000000010000000
+输出：1
+解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 3：  输入：11111111111111111111111111111101
+输出：31
+解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
+ 提示：  输入必须是长度为 32 的 二进制串 。  解题思路 计数 每次统计最右边的一位，并向右移动一位。
+func hammingWeight(num uint32) int { cnt := 0 for ; num !</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 38. 字符串的排列</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-38.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</link>
+      <pubDate>Tue, 22 Jun 2021 21:43:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-38.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
+难度： 中等
+题目描述 输入一个字符串，打印出该字符串中字符的所有排列。
+你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
+示例1：  输入：s = &amp;ldquo;abc&amp;rdquo;
+输出：[&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
+ 提示：  1 &amp;lt;= s 的长度 &amp;lt;= 8  解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
+func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res }  复杂度  时间复杂度：O(N*N!</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 401. 二进制手表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-401.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%8B%E8%A1%A8/</link>
+      <pubDate>Mon, 21 Jun 2021 21:27:36 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-401.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%89%8B%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/binary-watch/
+难度： 简单
+题目描述 二进制手表顶部有 4 个 LED 代表 小时（0-11），底部的 6 个 LED 代表 分钟（0-59）。每个 LED 代表一个 0 或 1，最低位在右侧。
+ 例如，下面的二进制手表读取 &amp;quot;3:25&amp;quot; 。  给你一个整数 turnedOn ，表示当前亮着的 LED 的数量，返回二进制手表可以表示的所有可能时间。你可以 按任意顺序 返回答案。
+小时不会以零开头：
+ 例如，&amp;quot;01:00&amp;quot; 是无效的时间，正确的写法应该是 &amp;quot;1:00&amp;quot; 。  分钟必须由两位数组成，可能会以零开头：
+ 例如，&amp;quot;10:2&amp;quot; 是无效的时间，正确的写法应该是 &amp;quot;10:02&amp;quot; 。  示例 1：  输入：turnedOn = 1
+输出：[&amp;ldquo;0:01&amp;rdquo;,&amp;ldquo;0:02&amp;rdquo;,&amp;ldquo;0:04&amp;rdquo;,&amp;ldquo;0:08&amp;rdquo;,&amp;ldquo;0:16&amp;rdquo;,&amp;ldquo;0:32&amp;rdquo;,&amp;ldquo;1:00&amp;rdquo;,&amp;ldquo;2:00&amp;rdquo;,&amp;ldquo;4:00&amp;rdquo;,&amp;ldquo;8:00&amp;rdquo;]
+ 示例 2：  输入：turnedOn = 9
+输出：[]
+ 提示：  0 &amp;lt;= turnedOn &amp;lt;= 10  解题思路 穷举 枚举出所有小时和分钟的合法数，将符合条件的加入到结果列表中</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1600. 皇位继承顺序</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1600.-%E7%9A%87%E4%BD%8D%E7%BB%A7%E6%89%BF%E9%A1%BA%E5%BA%8F/</link>
+      <pubDate>Sun, 20 Jun 2021 09:58:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1600.-%E7%9A%87%E4%BD%8D%E7%BB%A7%E6%89%BF%E9%A1%BA%E5%BA%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/throne-inheritance/
+难度： 中等
+题目描述 一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。
+这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 Successor(x, curOrder) ，给定一个人 x 和当前的继承顺序，该函数返回 x 的下一继承人。
+ Successor(x, curOrder):
+如果 x 没有孩子或者所有 x 的孩子都在 curOrder 中：
+如果 x 是国王，那么返回 null
+否则，返回 Successor(x 的父亲, curOrder)
+否则，返回 x 不在 curOrder 中最年长的孩子
+ 比方说，假设王国由国王，他的孩子 Alice 和 Bob （Alice 比 Bob 年长）和 Alice 的孩子 Jack 组成。
+ 一开始， curOrder 为 [&amp;ldquo;king&amp;rdquo;]. 调用 Successor(king, curOrder) ，返回 Alice ，所以我们将 Alice 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;] 。 调用 Successor(Alice, curOrder) ，返回 Jack ，所以我们将 Jack 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;] 。 调用 Successor(Jack, curOrder) ，返回 Bob ，所以我们将 Bob 放入 curOrder 中，得到 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;, &amp;quot;Bob&amp;quot;] 。 调用 Successor(Bob, curOrder) ，返回 null 。最终得到继承顺序为 [&amp;quot;king&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Jack&amp;quot;, &amp;quot;Bob&amp;quot;] 。  通过以上的函数，我们总是能得到一个唯一的继承顺序。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 852. 山脉数组的峰顶索引</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-852.-%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E7%9A%84%E5%B3%B0%E9%A1%B6%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Tue, 15 Jun 2021 20:49:55 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-852.-%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E7%9A%84%E5%B3%B0%E9%A1%B6%E7%B4%A2%E5%BC%95/</guid>
+      <description>链接： https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/
+难度： 简单
+题目描述 符合下列属性的数组 arr 称为 山脉数组 ：
+ arr.length &amp;gt;= 3 存在 i（0 &amp;lt; i &amp;lt; arr.length - 1）使得：  arr[0] &amp;lt; arr[1] &amp;lt; &amp;hellip; arr[i-1] &amp;lt; arr[i] arr[i] &amp;gt; arr[i+1] &amp;gt; &amp;hellip; &amp;gt; arr[arr.length - 1]   给你由整数组成的山脉数组 arr ，返回任何满足 arr[0] &amp;lt; arr[1] &amp;lt; ... arr[i - 1] &amp;lt; arr[i] &amp;gt; arr[i + 1] &amp;gt; ... &amp;gt; arr[arr.length - 1] 的下标 i 。
+示例 1：  输入：arr = [0,1,0]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 374. 猜数字大小</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-374.-%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</link>
+      <pubDate>Mon, 14 Jun 2021 10:50:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-374.-%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/guess-number-higher-or-lower/
+难度： 简单
+题目描述 猜数字游戏的规则如下：
+ 每轮游戏，我都会从 1 到 n 随机选择一个数字。 请你猜选出的是哪个数字。 如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。  你可以通过调用一个预先定义好的接口 int guess(int num) 来获取猜测结果，返回值一共有 3 种可能的情况（-1，1 或 0）：
+ -1：我选出的数字比你猜的数字小 pick &amp;lt; num 1：我选出的数字比你猜的数字大 pick &amp;gt; num 0：我选出的数字和你猜的数字一样。恭喜！你猜对了！pick == num  返回我选出的数字。
+示例 1：  输入：n = 10, pick = 6
+输出：6
+ 示例 2：  输入：n = 1, pick = 1
+输出：1
+ 示例 3：  输入：n = 2, pick = 1</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 278. 第一个错误的版本</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-278.-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Sun, 13 Jun 2021 10:25:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-278.-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E7%89%88%E6%9C%AC/</guid>
+      <description> 链接： https://leetcode-cn.com/problems/first-bad-version/
+难度： 简单
+题目描述 你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
+假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
+你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
+示例 1：  给定 n = 5，并且 version = 4 是第一个错误的版本。
+调用 isBadVersion(3) -&amp;gt; false
+调用 isBadVersion(5) -&amp;gt; true
+调用 isBadVersion(4) -&amp;gt; true
+所以，4 是第一个错误的版本。  解题思路 二分查找 对于连续的版本号 [i, j] 每次判断版本号 (i+j)/2 是否出错，未出错查找范围缩小到 [(i+j)/2+1, j]，出错缩小到 [i, (i+j)/2]，直到 i = j 即得到首个出错的版本号 i
+func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i + j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid+1, j) } } return binSearch(1, n) }  复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 279. 完全平方数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-279.-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/</link>
+      <pubDate>Fri, 11 Jun 2021 19:33:36 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-279.-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/perfect-squares/
+难度： 中等
+题目描述 给定正整数 *n*，找到若干个完全平方数（比如 1, 4, 9, 16, ...）使得它们的和等于 *n*。你需要让组成和的完全平方数的个数最少。
+给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。
+完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。
+示例 1：  输入：n = 12
+输出：3
+解释：12 = 4 + 4 + 4
+ 示例 2：  输入：n = 13
+输出：2
+解释：13 = 4 + 9
+ 注意： 你可以假设： - 1 &amp;lt;= n &amp;lt;= 104
+解题思路 动态规划 dp[i] 表示组成数字 i 的最少完全平方数，易得到状态转移方程：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 518. 零钱兑换 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-518.-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2-ii/</link>
+      <pubDate>Thu, 10 Jun 2021 10:35:20 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-518.-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/coin-change-2/
+难度： 中等
+题目描述 给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。
+示例 1：  输入: amount = 5, coins = [1, 2, 5]
+输出: 4
+解释: 有四种方式可以凑成总金额:
+5=5
+5=2+2+1
+5=2+1+1+1
+5=1+1+1+1+1
+ 示例 2：  输入: amount = 3, coins = [2]
+输出: 0
+解释: 只用面额2的硬币不能凑成总金额3。
+ 示例 3：  输入: amount = 10, coins = [10]
+输出: 1
+ 注意： 你可以假设： - 0 &amp;lt;= amount (总金额) &amp;lt;= 5000 - 1 &amp;lt;= coin (硬币面额) &amp;lt;= 5000 - 硬币种类不超过 500 种 - 结果符合 32 位符号整数</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1049. 最后一块石头的重量 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1049.-%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F-ii/</link>
+      <pubDate>Tue, 08 Jun 2021 11:35:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1049.-%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/last-stone-weight-ii/
+难度： 中等
+题目描述 有一堆石头，用整数数组 stones 表示。其中 stones[i] 表示第 i 块石头的重量。
+每一回合，从中选出 任意两块石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x &amp;lt;= y。那么粉碎的可能结果如下：
+ 如果 x == y，那么两块石头都会被完全粉碎； 如果 x != y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x。  最后，最多只会剩下一块 石头。返回此石头 最小的可能重量 。如果没有石头剩下，就返回 0。
+示例 1：  输入：stones = [2,7,4,1,8,1]
+输出：1
+解释：
+组合 2 和 4，得到 2，所以数组转化为 [2,7,1,8,1]，
+组合 7 和 8，得到 1，所以数组转化为 [2,1,1,1]，
+组合 2 和 1，得到 1，所以数组转化为 [1,1,1]，
+组合 1 和 1，得到 0，所以数组转化为 [1]，这就是最优值。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 494. 目标和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-494.-%E7%9B%AE%E6%A0%87%E5%92%8C/</link>
+      <pubDate>Mon, 07 Jun 2021 20:34:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-494.-%E7%9B%AE%E6%A0%87%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/target-sum/
+难度： 中等
+题目描述 给你一个整数数组 nums 和一个整数 target 。
+向数组中的每个整数前添加 &#39;+&#39; 或 &#39;-&#39; ，然后串联起所有整数，可以构造一个 表达式 ：
+ 例如，nums = [2, 1] ，可以在 2 之前添加 &#39;+&#39; ，在 1 之前添加 &#39;-&#39; ，然后串联起来得到表达式 &amp;quot;+2-1&amp;quot; 。  返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
+示例 1：  输入：nums = [1,1,1,1,1], target = 3
+输出：5
+解释：一共有 5 种方法让最终目标和为 3 。
+-1 + 1 + 1 + 1 + 1 = 3
++1 - 1 + 1 + 1 + 1 = 3</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 474. 一和零</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-474.-%E4%B8%80%E5%92%8C%E9%9B%B6/</link>
+      <pubDate>Sun, 06 Jun 2021 10:08:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-474.-%E4%B8%80%E5%92%8C%E9%9B%B6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ones-and-zeroes/
+难度： 中等
+题目描述 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
+请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。
+如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 。
+示例 1：  输入：strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
+输出：4
+解释：最多有 5 个 0 和 3 个 1 的最大子集是 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} ，因此答案是 4 。
+其他满足题意但较小的子集包括 {&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;} 和 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} 。{&amp;ldquo;111001&amp;rdquo;} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 203. 移除链表元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-203.-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Sat, 05 Jun 2021 22:26:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-203.-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/remove-linked-list-elements/
+难度： 简单
+题目描述 给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
+示例 1：  输入：head = [1,2,6,3,4,5,6], val = 6
+输出：[1,2,3,4,5]
+ 示例 2：  输入：head = [], val = 1
+输出：[]
+ 示例 3：  输入：head = [7,7,7,7], val = 7
+输出：[]
+ 提示：  列表中的节点在范围 [0, 10] 内 1 &amp;lt;= Node.val &amp;lt;= 50 0 &amp;lt;= k &amp;lt;= 50  解题思路 模拟 遍历整个链表，遇到值为 val 的结点，将其从链表中删除。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 160. 相交链表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-160.-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Fri, 04 Jun 2021 17:53:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-160.-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
+难度： 简单
+题目描述 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
+图示两个链表在节点 c1 开始相交：
+题目数据 保证 整个链式结构中不存在环。
+注意，函数返回结果后，链表必须 保持其原始结构。
+示例1：  输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+输出：Intersected at &amp;lsquo;8&amp;rsquo;
+解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。
+从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
+在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
+ 示例2：  输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 525. 连续数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-525.-%E8%BF%9E%E7%BB%AD%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 03 Jun 2021 22:32:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-525.-%E8%BF%9E%E7%BB%AD%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/contiguous-array/
+难度： 中等
+题目描述 给定一个二进制数组 nums , 找到含有相同数量的 0 和 1 的最长连续子数组，并返回该子数组的长度。
+示例1：  输入: nums = [0,1]
+输出: 2
+说明: [0, 1] 是具有相同数量0和1的最长连续子数组。
+ 示例2：  输入: nums = [0,1,0]
+输出: 2
+说明: 0, 1 是具有相同数量0和1的最长连续子数组。
+ 示例3：  输入：nums = [23,2,6,4,7], k = 13
+输出：false
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 nums[i] 不是 0 就是 1  解题思路 前缀和+哈希 在一段区间内，对该段区间求和即可得出 1 的数量，用区间长度减去 1 的数量，就可以得到 0 的数量，可以用前缀和降低时间复杂度。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 523. 连续的子数组和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-523.-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/</link>
+      <pubDate>Wed, 02 Jun 2021 22:51:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-523.-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/continuous-subarray-sum/
+难度： 中等
+题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
+子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
+如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
+示例1：  输入：nums = [23,2,4,6,7], k = 6
+输出：true
+解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。
+ 示例2：  输入：nums = [23,2,6,4,7], k = 6
+输出：true
+解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1744. 你能在你最喜欢的那天吃到你最喜欢的糖果吗？</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1744.-%E4%BD%A0%E8%83%BD%E5%9C%A8%E4%BD%A0%E6%9C%80%E5%96%9C%E6%AC%A2%E7%9A%84%E9%82%A3%E5%A4%A9%E5%90%83%E5%88%B0%E4%BD%A0%E6%9C%80%E5%96%9C%E6%AC%A2%E7%9A%84%E7%B3%96%E6%9E%9C%E5%90%97/</link>
+      <pubDate>Tue, 01 Jun 2021 22:35:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1744.-%E4%BD%A0%E8%83%BD%E5%9C%A8%E4%BD%A0%E6%9C%80%E5%96%9C%E6%AC%A2%E7%9A%84%E9%82%A3%E5%A4%A9%E5%90%83%E5%88%B0%E4%BD%A0%E6%9C%80%E5%96%9C%E6%AC%A2%E7%9A%84%E7%B3%96%E6%9E%9C%E5%90%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/
+难度： 中等
+题目描述 给你一个下标从 0 开始的正整数数组 candiesCount ，其中 candiesCount[i] 表示你拥有的第 i 类糖果的数目。同时给你一个二维数组 queries ，其中 queries[i] = [favoriteTypei, favoriteDayi, dailyCapi] 。
+你按照如下规则进行一场游戏：
+ 你从第 0 天开始吃糖果。 你在吃完 所有 第 i - 1 类糖果之前，不能 吃任何一颗第 i 类糖果。 在吃完所有糖果之前，你必须每天 至少 吃 一颗 糖果。  请你构建一个布尔型数组 answer ，满足 answer.length == queries.length 。answer[i] 为 true 的条件是：在每天吃 不超过 dailyCapi 颗糖果的前提下，你可以在第 favoriteDayi 天吃到第 favoriteTypei 类糖果；否则 answer[i] 为 false 。注意，只要满足上面 3 条规则中的第二条规则，你就可以在同一天吃不同类型的糖果。
+请你返回得到的数组 answer 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 342. 4的幂</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-342.-4%E7%9A%84%E5%B9%82/</link>
+      <pubDate>Mon, 31 May 2021 22:42:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-342.-4%E7%9A%84%E5%B9%82/</guid>
+      <description>链接： https://leetcode-cn.com/problems/power-of-four/
+难度： 简单
+题目描述 给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。
+整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == 4x
+示例 1：  输入：n = 16
+输出：true
+ 示例 2：  输入：n = 5
+输出：false
+ 示例 3：  输入：n = 1
+输出：true
+ 提示：  -231 &amp;lt;= n &amp;lt;= 231 - 1&amp;gt;  解题思路 二进制 2 的幂其二进制表示为最高位为 1，后跟偶数个 0 的数，每次向右移位两位，最终结果为 1，即说明是 4 的幂。
+另，4 的幂为非负数。
+func isPowerOfFour(n int) bool { for ; n &amp;gt; 0; n &amp;gt;&amp;gt;= 2 { if n == 1 { return true } else if n&amp;amp;3 !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 231. 2 的幂</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-231.-2-%E7%9A%84%E5%B9%82/</link>
+      <pubDate>Sun, 30 May 2021 11:06:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-231.-2-%E7%9A%84%E5%B9%82/</guid>
+      <description>链接： https://leetcode-cn.com/problems/power-of-two/
+难度： 简单
+题目描述 给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。
+如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。
+示例 1：  输入：n = 1
+输出：true
+解释：20 = 1
+ 示例 2：  输入：n = 16
+输出：true
+解释：24 = 16
+ 示例 3：  输入：n = 3
+输出：false
+ 示例 4：  输入：n = 4
+输出：true
+ 示例 5：  输入：n = 5
+输出：false</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 477. 汉明距离总和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-477.-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C/</link>
+      <pubDate>Fri, 28 May 2021 17:37:15 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-477.-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C/</guid>
+      <description> 链接： https://leetcode-cn.com/problems/total-hamming-distance/
+难度： 中等
+题目描述 两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
+计算一个数组中，任意两个数之间汉明距离的总和。
+示例：  输入: x = 1, y = 4
+输出: 2
+解释: 在二进制表示中，4表示为0100，14表示为1110，2表示为0010。（这样表示是为了体现后四位之间关系）
+所以答案为：
+HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 + 2 = 6.
+ 注意：  数组中元素的范围为从 0 到 109。 数组的长度不超过 104。  解题思路 按位计数 当一对数字某一位上的两个数字不同时，汉明距离的总和才会加一。故可以统计数组中相同位的 0 和 1 的数量，相乘可统计当前位的汉明距离和。
+func totalHammingDistance(nums []int) int { totalDistance := 0 for i := 1 &amp;lt;&amp;lt; 30; i &amp;gt; 0; i &amp;gt;&amp;gt;= 1 { ones := 0 zeros := 0 for _, num := range nums { if num&amp;amp;i == 0 { zeros++ } else { ones++ } } totalDistance += ones * zeros } return totalDistance }  复杂度  时间复杂度：O(N*B) 空间复杂度：O(1)  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 461. 汉明距离</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-461.-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB/</link>
+      <pubDate>Thu, 27 May 2021 23:17:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-461.-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB/</guid>
+      <description> 链接： https://leetcode-cn.com/problems/hamming-distance/
+难度： 简单
+题目描述 两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
+给出两个整数 x 和 y，计算它们之间的汉明距离。
+注意：  0 ≤ x, y &amp;lt; 231  示例：  输入: x = 1, y = 4
+输出: 2
+解释:
+1 (0 0 0 1)
+4 (0 1 0 0)
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↑&amp;nbsp;&amp;nbsp;&amp;nbsp;↑
+上面的箭头指出了对应二进制位不同的位置。
+ 解题思路 异或 异或操作可以得出标记出两个数二进制位不同的位置，然后统计数量即可。
+func hammingDistance(x int, y int) int { distance := 0 for xor := x ^ y; xor != 0; xor &amp;gt;&amp;gt;= 1 { distance += xor &amp;amp; 1 } return distance }  复杂度  时间复杂度：O(logB) 空间复杂度：O(1)  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1190. 反转每对括号间的子串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1190.-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2/</link>
+      <pubDate>Wed, 26 May 2021 23:59:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1190.-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/
+难度： 中等
+题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
+请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
+注意，您的结果中 不应 包含任何括号。
+示例1：  输入：s = &amp;ldquo;(abcd)&amp;rdquo;
+输出：&amp;ldquo;dcba&amp;rdquo;
+ 示例 2：  输入：s = &amp;ldquo;(u(love)i)&amp;rdquo;
+输出：&amp;ldquo;iloveu&amp;rdquo;
+ 示例 3：  输入：s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
+输出：&amp;ldquo;leetcode&amp;rdquo;
+ 示例 4：  输入：s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
+输出：&amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
+ 提示：  0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的  解题思路 栈 利用栈来进行每一次的反转：
+ 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。
+func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queue := make([]byte, 0, len(s)) for i := range s { if s[i] !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1707. 与数组中元素的最大异或值</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1707.-%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B8%AD%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%80%BC/</link>
+      <pubDate>Sun, 23 May 2021 09:17:20 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1707.-%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B8%AD%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%80%BC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-xor-with-an-element-from-array/
+难度： 困难
+题目描述 给你一个由非负整数组成的数组 nums 。另有一个查询数组 queries ，其中 queries[i] = [xi, mi] 。
+第 i 个查询的答案是 xi 和任何 nums 数组中不超过 mi 的元素按位异或（XOR）得到的最大值。换句话说，答案是 max(nums[j] XOR xi) ，其中所有 j 均满足 nums[j] &amp;lt;= mi 。如果 nums 中的所有元素都大于 mi，最终答案就是 -1 。
+返回一个整数数组 answer 作为查询的答案，其中 answer.length == queries.length 且 answer[i] 是第 i 个查询的答案。
+示例1：  输入：nums = [0,1,2,3,4], queries = [[3,1],[1,3],[5,6]]
+输出：[3,3,7]
+解释：
+1) 0 和 1 是仅有的两个不超过 1 的整数。0 XOR 3 = 3 而 1 XOR 3 = 2 。二者中的更大值是 3 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1035. 不相交的线</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1035.-%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E7%BA%BF/</link>
+      <pubDate>Fri, 21 May 2021 23:42:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1035.-%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E7%BA%BF/</guid>
+      <description>链接： https://leetcode-cn.com/problems/uncrossed-lines/
+难度： 中等
+题目描述 在两条独立的水平线上按给定的顺序写下 nums1 和 nums2 中的整数。
+现在，可以绘制一些连接两个数字 nums1[i] 和 nums2[j] 的直线，这些直线需要同时满足满足：
+ nums1[i] == nums2[j] 且绘制的直线不与任何其他连线（非水平线）相交。 请注意，连线即使在端点也不能相交：每个数字只能属于一条连线。
+以这种方法绘制线条，并返回可以绘制的最大连线数。
+示例1：  输入：nums1 = [1,4,2], nums2 = [1,2,4]
+输出：2
+解释：可以画出两条不交叉的线，如上图所示。
+但无法画出第三条不相交的直线，因为从 nums1[1]=4 到 nums2[2]=4 的直线将与从 nums1[2]=2 到 nums2[1]=2 的直线相交。
+ 示例2：  输入：nums1 = [2,5,1,2,5], nums2 = [10,5,2,1,5,2]
+输出：3
+ 示例3:  输入：nums1 = [1,3,7,1,7,5], nums2 = [1,9,2,5,1]
+输出：2
+ 提示：  1 &amp;lt;= nums1.length &amp;lt;= 500 1 &amp;lt;= nums2.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 692. 前K个高频单词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-692.-%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%8D%95%E8%AF%8D/</link>
+      <pubDate>Thu, 20 May 2021 21:45:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-692.-%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%8D%95%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/top-k-frequent-words/
+难度： 中等
+题目描述 给一非空的单词列表，返回前 k 个出现次数最多的单词。
+返回的答案应该按单词出现频率由高到低排序。如果不同的单词有相同出现频率，按字母顺序排序。
+示例1：  输入: [&amp;ldquo;i&amp;rdquo;, &amp;ldquo;love&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;, &amp;ldquo;i&amp;rdquo;, &amp;ldquo;love&amp;rdquo;, &amp;ldquo;coding&amp;rdquo;], k = 2
+输出: [&amp;ldquo;i&amp;rdquo;, &amp;ldquo;love&amp;rdquo;]
+解析: &amp;ldquo;i&amp;rdquo; 和 &amp;ldquo;love&amp;rdquo; 为出现次数最多的两个单词，均为2次。
+注意，按字母顺序 &amp;ldquo;i&amp;rdquo; 在 &amp;ldquo;love&amp;rdquo; 之前。
+ 示例2：  输入: [&amp;ldquo;the&amp;rdquo;, &amp;ldquo;day&amp;rdquo;, &amp;ldquo;is&amp;rdquo;, &amp;ldquo;sunny&amp;rdquo;, &amp;ldquo;the&amp;rdquo;, &amp;ldquo;the&amp;rdquo;, &amp;ldquo;the&amp;rdquo;, &amp;ldquo;sunny&amp;rdquo;, &amp;ldquo;is&amp;rdquo;, &amp;ldquo;is&amp;rdquo;], k = 4
+输出: [&amp;ldquo;the&amp;rdquo;, &amp;ldquo;is&amp;rdquo;, &amp;ldquo;sunny&amp;rdquo;, &amp;ldquo;day&amp;rdquo;]
+解析: &amp;ldquo;the&amp;rdquo;, &amp;ldquo;is&amp;rdquo;, &amp;ldquo;sunny&amp;rdquo; 和 &amp;ldquo;day&amp;rdquo; 是出现次数最多的四个单词，
+出现次数依次为 4, 3, 2 和 1 次。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1442. 形成两个异或相等数组的三元组数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1442.-%E5%BD%A2%E6%88%90%E4%B8%A4%E4%B8%AA%E5%BC%82%E6%88%96%E7%9B%B8%E7%AD%89%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Tue, 18 May 2021 22:40:57 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1442.-%E5%BD%A2%E6%88%90%E4%B8%A4%E4%B8%AA%E5%BC%82%E6%88%96%E7%9B%B8%E7%AD%89%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/
+难度： 中等
+题目描述 给你一个整数数组 arr 。
+现需要从数组中取三个下标 i、j 和 k ，其中 (0 &amp;lt;= i &amp;lt; j &amp;lt;= k &amp;lt; arr.length) 。
+a 和 b 定义如下：
+ a = arr[i] ^ arr[i + 1] ^ ... ^ arr[j - 1] b = arr[j] ^ arr[j + 1] ^ ... ^ arr[k] 注意：^ 表示 按位异或 操作。  请返回能够令 a == b 成立的三元组 (i, j , k) 的数目。
+示例1：  输入：arr = [2,3,1,6,7]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 993. 二叉树的堂兄弟节点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-993.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Mon, 17 May 2021 09:29:10 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-993.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/cousins-in-binary-tree/
+难度： 简单
+题目描述 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k+1 处。
+如果二叉树的两个节点深度相同，但 父节点不同 ，则它们是一对堂兄弟节点。
+我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
+只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
+示例1：  输入：root = [1,2,3,4], x = 4, y = 3
+输出：false
+ 示例2：  输入：root = [1,2,3,null,4,null,5], x = 5, y = 4
+输出：true
+ 示例3：  输入：root = [1,2,3,null,4], x = 2, y = 3
+输出：false
+ 提示：  二叉树的节点数介于 2 到 100 之间。 每个节点的值都是唯一的、范围为 1 到 100 的整数。  解题思路 搜索 记录两个结点的父节点和高度，然后比较即可。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 421. 数组中两个数的最大异或值</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-421.-%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%80%BC/</link>
+      <pubDate>Sun, 16 May 2021 22:31:57 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-421.-%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%80%BC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/
+难度： 中等
+题目描述 给你一个整数数组 nums ，返回 nums[i] XOR nums[j] 的最大运算结果，其中 0 ≤ i ≤ j &amp;lt; n 。
+进阶：你可以在 O(n) 的时间解决这个问题吗？
+示例1：  输入：nums = [3,10,5,25,2,8]
+输出：28
+解释：最大运算结果是 5 XOR 25 = 28.
+ 示例2：  输入：nums = [0]
+输出：0
+ 示例3：  输入：nums = [2,4]
+输出：6
+ 示例4：  输入：nums = [8,10,2]
+输出：10
+ 示例5：  输入：nums = [14,70,53,83,49,91,36,80,92,51,66,70]
+输出：127
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 2 * 104 0 &amp;lt;= nums[i] &amp;lt;= 232 - 1  解题思路 暴力求解 枚举所有的 i 和 j，求解比较得出最大值。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1269. 停在原地的方案数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1269.-%E5%81%9C%E5%9C%A8%E5%8E%9F%E5%9C%B0%E7%9A%84%E6%96%B9%E6%A1%88%E6%95%B0/</link>
+      <pubDate>Thu, 13 May 2021 23:12:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1269.-%E5%81%9C%E5%9C%A8%E5%8E%9F%E5%9C%B0%E7%9A%84%E6%96%B9%E6%A1%88%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/
+难度： 困难
+题目描述 有一个长度为 arrLen 的数组，开始有一个指针在索引 0 处。
+每一步操作中，你可以将指针向左或向右移动 1 步，或者停在原地（指针不能被移动到数组范围外）。
+给你两个整数 steps 和 arrLen ，请你计算并返回：在恰好执行 steps 次操作以后，指针仍然指向索引 0 处的方案数。
+由于答案可能会很大，请返回方案数 模 10^9 + 7 后的结果。
+示例1：  输入：steps = 3, arrLen = 2
+输出：4
+解释：3 步后，总共有 4 种不同的方法可以停在索引 0 处。
+向右，向左，不动
+不动，向右，向左
+向右，不动，向左
+不动，不动，不动
+ 示例2：  输入：steps = 2, arrLen = 4
+输出：2
+解释：2 步后，总共有 2 种不同的方法可以停在索引 0 处。
+向右，向左
+不动，不动
+ 示例2：  输入：steps = 4, arrLen = 2</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1310. 子数组异或查询</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1310.-%E5%AD%90%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 12 May 2021 23:14:18 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1310.-%E5%AD%90%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%9F%A5%E8%AF%A2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/xor-queries-of-a-subarray/
+难度： 中等
+题目描述 有一个正整数数组 arr，现给你一个对应的查询数组 queries，其中 queries[i] = [Li, Ri]。
+对于每个查询 i，请你计算从 Li 到 Ri 的 XOR 值（即 arr[Li] xor arr[Li+1] xor ... xor arr[Ri]）作为本次查询的结果。
+并返回一个包含给定查询 queries 所有结果的数组。
+示例1：  输入：arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
+输出：[2,7,14,8]
+解释：
+数组中元素的二进制表示形式是：
+1 = 0001
+3 = 0011
+4 = 0100
+8 = 1000
+查询的 XOR 值为：
+[0,1] = 1 xor 3 = 2
+[1,2] = 3 xor 4 = 7</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1734. 解码异或后的排列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1734.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%8E%92%E5%88%97/</link>
+      <pubDate>Tue, 11 May 2021 19:55:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1734.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%8E%92%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/decode-xored-permutation/
+难度： 中等
+题目描述 给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。
+它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i + 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。
+给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。
+示例1：  输入：encoded = [3,1]
+输出：[1,2,3]
+解释：如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]
+ 示例2：  输入：encoded = [6,5,4,6]
+输出：[2,4,1,5,3]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 872. 叶子相似的树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-872.-%E5%8F%B6%E5%AD%90%E7%9B%B8%E4%BC%BC%E7%9A%84%E6%A0%91/</link>
+      <pubDate>Mon, 10 May 2021 23:30:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-872.-%E5%8F%B6%E5%AD%90%E7%9B%B8%E4%BC%BC%E7%9A%84%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/leaf-similar-trees/
+难度： 简单
+题目描述 请考虑一棵二叉树上所有的叶子，这些叶子的值按从左到右的顺序排列形成一个 叶值序列 。
+举个例子，如上图所示，给定一棵叶值序列为 (6, 7, 4, 9, 8) 的树。
+如果有两棵二叉树的叶值序列是相同，那么我们就认为它们是 *叶相似* 的。
+如果给定的两个根结点分别为 root1 和 root2 的树是叶相似的，则返回 true；否则返回 false 。
+示例1：  输入：root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]
+输出：true
+ 示例2：  输入：root1 = [1], root2 = [1]
+输出：true
+ 示例3：  输入：root1 = [1], root2 = [2]
+输出：false
+ 示例4：  输入：root1 = [1,2], root2 = [2,2]
+输出：true
+ 示例5：  输入：root1 = [1,2,3], root2 = [1,3,2]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1486. 数组异或操作</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1486.-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 07 May 2021 17:05:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1486.-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/xor-operation-in-an-array/
+难度： 简单
+题目描述 给你两个整数，n 和 start 。
+数组 nums 定义为：nums[i] = start + 2*i（下标从 0 开始）且 n == nums.length 。
+请返回 nums 中所有元素按位异或（XOR）后得到的结果。
+示例1：  输入：n = 5, start = 0
+输出：8
+解释：数组 nums 为 [0, 2, 4, 6, 8]，其中 (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8 。
+&amp;ldquo;^&amp;rdquo; 为按位异或 XOR 运算符。
+ 示例2：  输入：n = 4, start = 3
+输出：8
+解释：数组 nums 为 [3, 5, 7, 9]，其中 (3 ^ 5 ^ 7 ^ 9) = 8.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1720. 解码异或后的数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1720.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 06 May 2021 23:09:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1720.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/decode-xored-array/
+难度： 中等
+题目描述 未知 整数数组 arr 由 n 个非负整数组成。
+经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i + 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
+给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
+请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
+示例1：  输入：encoded = [1,2,3], first = 1
+输出：[1,0,2,1]
+解释：若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 740. 删除并获得点数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-740.-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/</link>
+      <pubDate>Wed, 05 May 2021 23:47:15 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-740.-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/delete-and-earn/
+难度： 中等
+题目描述 给你一个整数数组 nums ，你可以对它进行一些操作。
+每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。
+开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。
+示例1：  输入：nums = [3,4,2]
+输出：6
+解释：删除 4 获得 4 个点数，因此 3 也被删除。
+之后，删除 2 获得 2 个点数。总共获得 6 个点数。
+ 示例2：  输入：nums = [2,2,3,3,3,4]
+输出：9
+解释：删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
+之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 7. 整数反转</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-7.-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</link>
+      <pubDate>Mon, 03 May 2021 11:57:39 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-7.-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reverse-integer/
+难度： 简单
+题目描述 给你一个 32 位的有符号整数 x ，返回将 x 中的数字部分反转后的结果。
+如果反转后整数超过 32 位的有符号整数的范围 [−231, 231 − 1] ，就返回 0。
+假设环境不允许存储 64 位整数（有符号或无符号）。
+示例1：  输入：x = 123
+输出：321
+ 示例2：  输入：x = -123
+输出：-321
+ 示例3：  输入：x = 120
+输出：21
+ 示例4：  输入：x = 0
+输出：0
+ 提示：  -231 &amp;lt;= x &amp;lt;= 231 - 14  解题思路 双指针 直接数字逐位反转，当数字为十位数时，32位整数无法存储，需要做一次溢位判断：
+可以将数字分为前9位数与第10位数进行比较，不再临界值的范围内，说明溢出。
+func reverse(x int) int { res := 0 for i := 0; x !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 554. 砖墙</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-554.-%E7%A0%96%E5%A2%99/</link>
+      <pubDate>Sun, 02 May 2021 10:03:17 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-554.-%E7%A0%96%E5%A2%99/</guid>
+      <description>链接： https://leetcode-cn.com/problems/brick-wall/
+难度： 中等
+题目描述 你的面前有一堵矩形的、由 n 行砖块组成的砖墙。这些砖块高度相同（也就是一个单位高）但是宽度不同。每一行砖块的宽度之和应该相等。
+你现在要画一条 自顶向下 的、穿过 最少 砖块的垂线。如果你画的线只是从砖块的边缘经过，就不算穿过这块砖。你不能沿着墙的两个垂直边缘之一画线，这样显然是没有穿过一块砖的。
+给你一个二维数组 wall ，该数组包含这堵墙的相关信息。其中，wall[i] 是一个代表从左至右每块砖的宽度的数组。你需要找出怎样画才能使这条线 穿过的砖块数量最少 ，并且返回 穿过的砖块数量 。
+示例1：  输入：wall = [[1,2,2,1],[3,1,2],[1,3,2],[2,4],[3,1,2],[1,3,1,1]]
+输出：2
+ 示例2：  输入：wall = [[1],[1],[1]]
+输出：3
+ 提示：  n == wall.length 1 &amp;lt;= n &amp;lt;= 104 1 &amp;lt;= wall[i].length &amp;lt;= 104 1 &amp;lt;= sum(wall[i].length) &amp;lt;= 2 * 104 对于每一行 i ，sum(wall[i]) 应当是相同的 1 &amp;lt;= wall[i][j] &amp;lt;= 231 - 1  解题思路 计数 以每一行起点为 0 坐标，可以使得同一列的缝隙唯一标识，从而标记出所有缝隙的列坐标。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 690. 员工的重要性</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-690.-%E5%91%98%E5%B7%A5%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</link>
+      <pubDate>Sat, 01 May 2021 21:20:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-690.-%E5%91%98%E5%B7%A5%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</guid>
+      <description>链接： https://leetcode-cn.com/problems/employee-importance/
+难度： 简单
+题目描述 给定一个保存员工信息的数据结构，它包含了员工 唯一的 id ，重要度 和 直系下属的 id 。
+比如，员工 1 是员工 2 的领导，员工 2 是员工 3 的领导。他们相应的重要度为 15 , 10 , 5 。那么员工 1 的数据结构是 [1, 15, [2]] ，员工 2的 数据结构是 [2, 10, [3]] ，员工 3 的数据结构是 [3, 5, []] 。注意虽然员工 3 也是员工 1 的一个下属，但是由于 并不是直系 下属，因此没有体现在员工 1 的数据结构中。
+现在输入一个公司的所有员工信息，以及单个员工 id ，返回这个员工和他所有下属的重要度之和。
+示例：  输入：[[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 137. 只出现一次的数字 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-137.-%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97-ii/</link>
+      <pubDate>Fri, 30 Apr 2021 18:18:49 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-137.-%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/single-number-ii/
+难度： 中等
+题目描述 给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
+示例1：  输入：nums = [2,2,3,2] 输出：3
+ 示例2：  输入：nums = [0,1,0,1,0,1,99] 输出：99
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+解题思路 哈希 统计每个数出现的次数，然后找出其中只出现一次的数
+func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ } for k, v := range cnt { if v == 1 { return k } } return 0 }  复杂度  时间复杂度：O(N) 空间复杂度：O(N)  排序 将整个数组排序，没三个一组进行首尾比较，相同继续，不同返回。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 403. 青蛙过河</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-403.-%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3/</link>
+      <pubDate>Thu, 29 Apr 2021 14:21:06 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-403.-%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3/</guid>
+      <description>链接： https://leetcode-cn.com/problems/frog-jump/
+难度： 困难
+题目描述 一只青蛙想要过河。 假定河流被等分为若干个单元格，并且在每一个单元格内都有可能放有一块石子（也有可能没有）。 青蛙可以跳上石子，但是不可以跳入水中。
+给你石子的位置列表 stones（用单元格序号 升序 表示）， 请判定青蛙能否成功过河（即能否在最后一步跳至最后一块石子上）。
+开始时， 青蛙默认已站在第一块石子上，并可以假定它第一步只能跳跃一个单位（即只能从单元格 1 跳至单元格 2 ）。
+如果青蛙上一步跳跃了 k 个单位，那么它接下来的跳跃距离只能选择为 k - 1、k 或 k + 1 个单位。 另请注意，青蛙只能向前方（终点的方向）跳跃。
+示例1：  输入：stones = [0,1,3,5,6,8,12,17]
+输出：true
+解释：青蛙可以成功过河，按照如下方案跳跃：跳 1 个单位到第 2 块石子, 然后跳 2 个单位到第 3 块石子, 接着 跳 2 个单位到第 4 块石子, 然后跳 3 个单位到第 6 块石子, 跳 4 个单位到第 7 块石子, 最后，跳 5 个单位到第 8 个石子（即最后一块石子）。
+ 示例2：  输入：stones = [0,1,2,3,4,8,9,11]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 633. 平方数之和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-633.-%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Wed, 28 Apr 2021 22:46:56 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-633.-%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/sum-of-square-numbers/
+难度： 中等
+题目描述 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
+示例1：  输入：c = 5
+输出：true
+解释：1 * 1 + 2 * 2 = 5
+ 示例2：  输入：c = 3
+输出：false
+ 示例3：  输入：c = 4
+输出：true
+ 示例4：  输入：c = 2
+输出：true
+ 示例5：  输入：c = 1 输出：true
+ 提示：  0 &amp;lt;= c &amp;lt;= 231 - 1  解题思路 打表 维护一个保存所有平方数的 map，然后从0开始枚举所有可能是 a 的情况，寻找 b = c-a2 是否存在于 map 中</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 938. 二叉搜索树的范围和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-938.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E8%8C%83%E5%9B%B4%E5%92%8C/</link>
+      <pubDate>Tue, 27 Apr 2021 10:31:11 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-938.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E8%8C%83%E5%9B%B4%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/range-sum-of-bst/
+难度： 简单
+题目描述 给定二叉搜索树的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
+示例1：  输入：root = [10,5,15,3,7,null,18], low = 7, high = 15
+输出：32
+ 示例2：  输入：root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+输出：23
+ 提示：  树中节点数目在范围 [1, 2 * 104] 内 1 &amp;lt;= Node.val &amp;lt;= 105 1 &amp;lt;= low &amp;lt;= high &amp;lt;= 105 所有 Node.val 互不相同  解题思路 深度优先搜索 不同于一般搜索树的搜索，该搜索需要遍历整颗树，以累计求和，必要部分需要剪枝加快遍历速度。
+搜索时需要区分三种情况：
+ 当前结点值 val &amp;lt; low 时，左子树均不满足条件，继续搜索右子树； 当前结点值 val &amp;gt; high 时，右子树均不满足条件，继续搜索左子树； 其余情况，累加当前结点值，无法剪枝，左右子树都需要继续搜索。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1011. 在 D 天内送达包裹的能力</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1011.-%E5%9C%A8-d-%E5%A4%A9%E5%86%85%E9%80%81%E8%BE%BE%E5%8C%85%E8%A3%B9%E7%9A%84%E8%83%BD%E5%8A%9B/</link>
+      <pubDate>Mon, 26 Apr 2021 11:10:26 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1011.-%E5%9C%A8-d-%E5%A4%A9%E5%86%85%E9%80%81%E8%BE%BE%E5%8C%85%E8%A3%B9%E7%9A%84%E8%83%BD%E5%8A%9B/</guid>
+      <description>链接： https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/
+难度： 中等
+题目描述 传送带上的包裹必须在 D 天内从一个港口运送到另一个港口。
+传送带上的第 i 个包裹的重量为 weights[i]。每一天，我们都会按给出重量的顺序往传送带上装载包裹。我们装载的重量不会超过船的最大运载重量。
+返回能在 D 天内将传送带上的所有包裹送达的船的最低运载能力。
+示例1：  输入：weights = [1,2,3,4,5,6,7,8,9,10], D = 5
+输出：15
+解释：
+船舶最低载重 15 就能够在 5 天内送达所有包裹，如下所示：
+第 1 天：1, 2, 3, 4, 5
+第 2 天：6, 7
+第 3 天：8
+第 4 天：9
+第 5 天：10
+请注意，货物必须按照给定的顺序装运，因此使用载重能力为 14 的船舶并将包装分成 (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) 是不允许的。
+ 示例2：  输入：weights = [3,2,2,4,1,4], D = 3</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 897. 递增顺序搜索树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-897.-%E9%80%92%E5%A2%9E%E9%A1%BA%E5%BA%8F%E6%90%9C%E7%B4%A2%E6%A0%91/</link>
+      <pubDate>Sun, 25 Apr 2021 11:41:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-897.-%E9%80%92%E5%A2%9E%E9%A1%BA%E5%BA%8F%E6%90%9C%E7%B4%A2%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/increasing-order-search-tree/
+难度： 简单
+题目描述 给你一棵二叉搜索树，请你 按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。
+示例1：  输入：root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
+输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
+ 示例2：  输入：root = [5,1,7]
+输出：[1,null,5,null,7]
+ 提示：  树中节点数的取值范围是 [1, 100] 0 &amp;lt;= Node.val &amp;lt;= 1000  解题思路 新建树 重新构造一棵树，中序遍历原树的每个结点，将其加入到新树的右结点中。
+func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode := newRoot var InorderTraversal func(node *TreeNode) InorderTraversal = func(node *TreeNode) { if node == nil { return } InorderTraversal(node.Left) newNode.Right = &amp;amp;TreeNode{ Val: node.Val, Left: nil, Right: nil, } newNode = newNode.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 377. 组合总和 Ⅳ</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-377.-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</link>
+      <pubDate>Sat, 24 Apr 2021 21:50:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-377.-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/combination-sum-iv/
+难度： 中等
+题目描述 给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素组合的个数。
+题目数据保证答案符合 32 位整数范围。
+示例1：  输入：nums = [1,2,3], target = 4
+输出：7
+解释：
+所有可能的组合为：
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
+请注意，顺序不同的序列被视作不同的组合。
+ 示例2：  输入：nums = [9], target = 3
+输出：0
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 1000 nums 中的所有元素 互不相同 1 &amp;lt;= target &amp;lt;= 1000  解题思路 动态规划 用 dp[i] 表示当 i 作为 target 时，排列方案的数量。当 dp[i] 不为 0 时，不妨假设排列的做后一位数字为 num，则 i-num 的排列数为 dp[i-num] ，容易得知状态转移方程：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 91. 解码方式</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Wed, 21 Apr 2021 10:35:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/decode-ways/
+难度： 中等
+题目描述 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
+&amp;#39;A&amp;#39; -&amp;gt; 1 &amp;#39;B&amp;#39; -&amp;gt; 2 ... &amp;#39;Z&amp;#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
+ &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
+给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
+题目数据保证答案肯定是一个 32 位 的整数。
+示例1：  输入：s = &amp;ldquo;12&amp;rdquo;
+输出：2</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 165. 比较版本号</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-165.-%E6%AF%94%E8%BE%83%E7%89%88%E6%9C%AC%E5%8F%B7/</link>
+      <pubDate>Tue, 20 Apr 2021 20:33:19 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-165.-%E6%AF%94%E8%BE%83%E7%89%88%E6%9C%AC%E5%8F%B7/</guid>
+      <description>链接： https://leetcode-cn.com/problems/compare-version-numbers/
+难度： 中等
+题目描述 给你两个版本号 version1 和 version2 ，请你比较它们。
+版本号由一个或多个修订号组成，各修订号由一个 &#39;.&#39; 连接。每个修订号由 多位数字 组成，可能包含 前导零 。每个版本号至少包含一个字符。修订号从左到右编号，下标从 0 开始，最左边的修订号下标为 0 ，下一个修订号下标为 1 ，以此类推。例如，2.5.33 和 0.1 都是有效的版本号。
+比较版本号时，请按从左到右的顺序依次比较它们的修订号。比较修订号时，只需比较 忽略任何前导零后的整数值 。也就是说，修订号 1 和修订号 001 相等 。如果版本号没有指定某个下标处的修订号，则该修订号视为 0 。例如，版本 1.0 小于版本 1.1 ，因为它们下标为 0 的修订号相同，而下标为 1 的修订号分别为 0 和 1 ，0 &amp;lt; 1 。
+返回规则如下：
+ 如果 version1 &amp;gt; version2 返回 1， 如果 version1 &amp;lt; version2 返回 -1， 除此之外返回 0。  示例1：  输入：version1 = &amp;ldquo;1.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 28. 实现 strStr()</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-28.-%E5%AE%9E%E7%8E%B0-strstr/</link>
+      <pubDate>Tue, 20 Apr 2021 17:21:05 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-28.-%E5%AE%9E%E7%8E%B0-strstr/</guid>
+      <description>链接： https://leetcode-cn.com/problems/implement-strstr/
+难度： 简单
+题目描述 实现 strStr() 函数。
+给你两个字符串 haystack 和 needle ，请你在 haystack 字符串中找出 needle 字符串出现的第一个位置（下标从 0 开始）。如果不存在，则返回 -1 。
+说明： 当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
+对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与 C 语言的 strstr() 以及 Java 的 indexOf() 定义相符。
+示例1：  输入：haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
+输出：2
+ 示例2：  输入：haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
+输出：-1
+ 示例3：  输入：haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;ldquo;&amp;rdquo;
+输出：0
+ 提示：  0 &amp;lt;= haystack.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 27. 移除元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-27.-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Mon, 19 Apr 2021 10:34:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-27.-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/remove-element/
+难度： 简单
+题目描述 给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
+元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+说明： 为什么返回数值是整数，但输出的答案是数组呢?
+请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+你可以想象内部操作如下:
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i++) { print(nums[i]); } 示例1：  输入：nums = [3,2,2,3], val = 3
+输出：2, nums = [2,2]
+解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 26. 删除有序数组中的重复项</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-26.-%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</link>
+      <pubDate>Sun, 18 Apr 2021 10:52:18 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-26.-%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+难度： 简单
+题目描述 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
+不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
+说明： 为什么返回数值是整数，但输出的答案是数组呢?
+请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+你可以想象内部操作如下:
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i++) { print(nums[i]); } 示例1：  输入：nums = [1,1,2]
+输出：2, nums = [1,2]
+解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
+ 示例2：  输入：nums = [0,0,1,1,1,2,2,3,3,4]</description>
+    </item>
+    
+  </channel>
+</rss>

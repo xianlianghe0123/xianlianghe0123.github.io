@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/
+难度： 中等
+题目描述 传送带上的包裹必须在 D 天内从一个港口运送到另一个港口。
+传送带上的第 i 个包裹的重量为 weights[i]。每一天，我们都会按给出重量的顺序往传送带上装载包裹。我们装载的重量不会超过船的最大运载重量。
+返回能在 D 天内将传送带上的所有包裹送达的船的最低运载能力。
+示例1：  输入：weights = [1,2,3,4,5,6,7,8,9,10], D = 5
+输出：15
+解释：
+船舶最低载重 15 就能够在 5 天内送达所有包裹，如下所示：
+第 1 天：1, 2, 3, 4, 5
+第 2 天：6, 7
+第 3 天：8
+第 4 天：9
+第 5 天：10
+请注意，货物必须按照给定的顺序装运，因此使用载重能力为 14 的船舶并将包装分成 (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) 是不允许的。
+ 示例2：  输入：weights = [3,2,2,4,1,4], D = 3'><title>Leetcode 1011. 在 D 天内送达包裹的能力</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1011.-%E5%9C%A8-d-%E5%A4%A9%E5%86%85%E9%80%81%E8%BE%BE%E5%8C%85%E8%A3%B9%E7%9A%84%E8%83%BD%E5%8A%9B/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1011. 在 D 天内送达包裹的能力'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/
+难度： 中等
+题目描述 传送带上的包裹必须在 D 天内从一个港口运送到另一个港口。
+传送带上的第 i 个包裹的重量为 weights[i]。每一天，我们都会按给出重量的顺序往传送带上装载包裹。我们装载的重量不会超过船的最大运载重量。
+返回能在 D 天内将传送带上的所有包裹送达的船的最低运载能力。
+示例1：  输入：weights = [1,2,3,4,5,6,7,8,9,10], D = 5
+输出：15
+解释：
+船舶最低载重 15 就能够在 5 天内送达所有包裹，如下所示：
+第 1 天：1, 2, 3, 4, 5
+第 2 天：6, 7
+第 3 天：8
+第 4 天：9
+第 5 天：10
+请注意，货物必须按照给定的顺序装运，因此使用载重能力为 14 的船舶并将包装分成 (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) 是不允许的。
+ 示例2：  输入：weights = [3,2,2,4,1,4], D = 3'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1011.-%E5%9C%A8-d-%E5%A4%A9%E5%86%85%E9%80%81%E8%BE%BE%E5%8C%85%E8%A3%B9%E7%9A%84%E8%83%BD%E5%8A%9B/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-04-26T11:10:26&#43;08:00'/><meta property='article:modified_time' content='2021-04-26T11:10:26&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1011. 在 D 天内送达包裹的能力">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/
+难度： 中等
+题目描述 传送带上的包裹必须在 D 天内从一个港口运送到另一个港口。
+传送带上的第 i 个包裹的重量为 weights[i]。每一天，我们都会按给出重量的顺序往传送带上装载包裹。我们装载的重量不会超过船的最大运载重量。
+返回能在 D 天内将传送带上的所有包裹送达的船的最低运载能力。
+示例1：  输入：weights = [1,2,3,4,5,6,7,8,9,10], D = 5
+输出：15
+解释：
+船舶最低载重 15 就能够在 5 天内送达所有包裹，如下所示：
+第 1 天：1, 2, 3, 4, 5
+第 2 天：6, 7
+第 3 天：8
+第 4 天：9
+第 5 天：10
+请注意，货物必须按照给定的顺序装运，因此使用载重能力为 14 的船舶并将包装分成 (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) 是不允许的。
+ 示例2：  输入：weights = [3,2,2,4,1,4], D = 3">
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu56607a142d0531102191ba7dd1f3a72d_38959_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://xianlianghe0123.github.io" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-1011.-%E5%9C%A8-d-%E5%A4%A9%E5%86%85%E9%80%81%E8%BE%BE%E5%8C%85%E8%A3%B9%E7%9A%84%E8%83%BD%E5%8A%9B/">Leetcode 1011. 在 D 天内送达包裹的能力</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Apr 26, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    
+
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/" target="_blank">https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/</a><br />
+<strong>难度：</strong> <font color="orange">中等</font></p>
+
+<h4 id="题目描述">题目描述</h4>
+
+<p>传送带上的包裹必须在 <code>D</code> 天内从一个港口运送到另一个港口。<br />
+传送带上的第 <code>i</code> 个包裹的重量为 <code>weights[i]</code>。每一天，我们都会按给出重量的顺序往传送带上装载包裹。我们装载的重量不会超过船的最大运载重量。<br />
+返回能在 <code>D</code> 天内将传送带上的所有包裹送达的船的最低运载能力。</p>
+
+<h5 id="示例1">示例1：</h5>
+
+<blockquote>
+<p><strong>输入：</strong>weights = [1,2,3,4,5,6,7,8,9,10], D = 5<br />
+<strong>输出：</strong>15<br />
+<strong>解释：</strong><br />
+船舶最低载重 15 就能够在 5 天内送达所有包裹，如下所示：<br />
+第 1 天：1, 2, 3, 4, 5<br />
+第 2 天：6, 7<br />
+第 3 天：8<br />
+第 4 天：9<br />
+第 5 天：10</p>
+
+<p>请注意，货物必须按照给定的顺序装运，因此使用载重能力为 14 的船舶并将包装分成 (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) 是不允许的。</p>
+</blockquote>
+
+<h5 id="示例2">示例2：</h5>
+
+<blockquote>
+<p><strong>输入：</strong>weights = [3,2,2,4,1,4], D = 3<br />
+<strong>输出：</strong>6<br />
+<strong>解释：</strong><br />
+船舶最低载重 6 就能够在 3 天内送达所有包裹，如下所示：<br />
+第 1 天：3, 2<br />
+第 2 天：2, 4<br />
+第 3 天：1, 4</p>
+</blockquote>
+
+<h5 id="示例3">示例3：</h5>
+
+<blockquote>
+<p><strong>输入：</strong>weights = [1,2,3,1,1], D = 4<br />
+<strong>输出：</strong>3<br />
+<strong>解释：</strong><br />
+第 1 天：1<br />
+第 2 天：2<br />
+第 3 天：3<br />
+第 4 天：1, 1</p>
+</blockquote>
+
+<h5 id="提示">提示：</h5>
+
+<ul>
+<li><code>1 &lt;= D &lt;= weights.length &lt;= 50000</code></li>
+<li><code>1 &lt;= weights[i] &lt;= 500</code></li>
+</ul>
+
+<h3 id="解题思路">解题思路</h3>
+
+<h4 id="暴力求解">暴力求解</h4>
+
+<p>将货物总重量的 <strong>平均数</strong> 和 <strong>最重货物</strong> 较大的一个重量作为初始的载重量，逐一向上累加，求得首次符合条件的结果。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">shipWithinDays</span>(<span style="color:#a6e22e">weights</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">D</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">weight</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">weights</span> {
+		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">weight</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">weight</span> {
+			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">weight</span>
+		}
+	}
+	<span style="color:#a6e22e">minCap</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">/</span> len(<span style="color:#a6e22e">weights</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span><span style="color:#f92672">%</span>len(<span style="color:#a6e22e">weights</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+		<span style="color:#a6e22e">minCap</span><span style="color:#f92672">++</span>
+	}
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">minCap</span> &lt; <span style="color:#a6e22e">max</span> {
+		<span style="color:#a6e22e">minCap</span> = <span style="color:#a6e22e">max</span>
+	}
+	<span style="color:#66d9ef">for</span> {
+		<span style="color:#a6e22e">curCap</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">minCap</span> <span style="color:#75715e">// 当前容量
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>         <span style="color:#75715e">// 第几天
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>           <span style="color:#75715e">// 装到第几箱货物
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">weights</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">D</span> {
+			<span style="color:#75715e">// 能装入，继续
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">curCap</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">weights</span>[<span style="color:#a6e22e">i</span>] {
+				<span style="color:#a6e22e">curCap</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">weights</span>[<span style="color:#a6e22e">i</span>]
+				<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+				<span style="color:#66d9ef">continue</span>
+			}
+			<span style="color:#75715e">// 不能装入，等第二天
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+			<span style="color:#a6e22e">curCap</span> = <span style="color:#a6e22e">minCap</span>
+		}
+		<span style="color:#75715e">// 装完
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">weights</span>) {
+			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">minCap</span>
+		}
+		<span style="color:#a6e22e">minCap</span><span style="color:#f92672">++</span>
+	}
+}
+</code></pre></div>
+<h5 id="复杂度">复杂度</h5>
+
+<ul>
+<li>时间复杂度：O(N*∑weight)</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+
+<h4 id="二分查找">二分查找</h4>
+
+<p>将 <strong>最重货物重量</strong> <code>l</code> 和 <strong>货物的总重量</strong> <code>r</code> 作为二分查找的两端起始点，进行二分查找，每次求得完成送达的天数 <code>d</code>。</p>
+
+<ul>
+<li>当 <code>d &lt;= D</code> 时，载重量偏大，需要从左半部分 <code>[l,mid]</code> 查找</li>
+
+<li><p>当 <code>d &gt; D</code> 时，载重量偏小，需要从右半部分 <code>(mid, r]</code> 查找</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">shipWithinDays</span>(<span style="color:#a6e22e">weights</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">D</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#a6e22e">l</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">weight</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">weights</span> {
+		<span style="color:#a6e22e">r</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">weight</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">weight</span> {
+			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">weight</span>
+		}
+	}
+
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">binarySearch</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">binarySearch</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">r</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">l</span>
+		}
+		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+		<span style="color:#a6e22e">curCap</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">mid</span>
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">weights</span>); {
+			<span style="color:#75715e">// 能装入，继续
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">curCap</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">weights</span>[<span style="color:#a6e22e">i</span>] {
+				<span style="color:#a6e22e">curCap</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">weights</span>[<span style="color:#a6e22e">i</span>]
+				<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+				<span style="color:#66d9ef">continue</span>
+			}
+			<span style="color:#75715e">// 不能装入，等第二天
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+			<span style="color:#a6e22e">curCap</span> = <span style="color:#a6e22e">mid</span>
+		}
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">D</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binarySearch</span>(<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">mid</span>)
+		} <span style="color:#66d9ef">else</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binarySearch</span>(<span style="color:#a6e22e">mid</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">r</span>)
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binarySearch</span>(<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span>)
+}
+</code></pre></div></li>
+</ul>
+
+<h5 id="复杂度-1">复杂度</h5>
+
+<ul>
+<li>时间复杂度：O(N*log(∑weight))</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-53-i.-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97-i/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 53 - I. 在排序数组中查找数字 I</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1846. 减小和重新排列数组后的最大元素</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1818. 绝对差值和</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-275.-h-%E6%8C%87%E6%95%B0-ii/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 275. H 指数 II</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 274. H 指数</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
