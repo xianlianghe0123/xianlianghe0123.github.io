@@ -6,7 +6,79 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Fri, 16 Jul 2021 14:55:24 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 Jul 2021 13:21:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>剑指 Offer 42. 连续子数组的最大和</title>
+        <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-42.-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/</link>
+        <pubDate>Sat, 17 Jul 2021 13:21:52 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-42.-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/</guid>
+        <description>
+
+&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
+
+&lt;p&gt;输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。&lt;/p&gt;
+
+&lt;p&gt;要求时间复杂度为$O(n)$。&lt;/p&gt;
+
+&lt;h5 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h5&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; nums = [-2,1,-3,4,-1,2,1,-5,4]&lt;br /&gt;
+&lt;strong&gt;输出:&lt;/strong&gt; 6&lt;br /&gt;
+&lt;strong&gt;解释:&lt;/strong&gt; 连续子数组 [4,-1,2,1] 的和最大，为 6。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= arr.length &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-100 &amp;lt;= arr[i] &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+
+&lt;h4 id=&#34;动态规划&#34;&gt;动态规划&lt;/h4&gt;
+
+&lt;p&gt;用 &lt;code&gt;dp[i]&lt;/code&gt; 记录以 &lt;code&gt;i&lt;/code&gt; 为结尾的连续子数组和的最大值，容易得到状态转移方程：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dp[0] = nums[0]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dp[i] = max(dp[i-1]+nums[i], nums[i])&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;由于每次转移仅涉及到前一个结果，使用变量代替数组降低空间复杂度&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxSubArray&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pre&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;pre&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pre&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;pre&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+		}
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;
+        }
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(nums) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>剑指 Offer 53 - I. 在排序数组中查找数字 I</title>
         <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-53-i.-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97-i/</link>
         <pubDate>Fri, 16 Jul 2021 14:55:24 +0800</pubDate>

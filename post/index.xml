@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 16 Jul 2021 14:55:24 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Jul 2021 13:21:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 42. 连续子数组的最大和</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-42.-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/</link>
+      <pubDate>Sat, 17 Jul 2021 13:21:52 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-42.-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/</guid>
+      <description> 链接： https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/
+难度： 简单
+题目描述 输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。
+要求时间复杂度为$O(n)$。
+示例 1：  输入: nums = [-2,1,-3,4,-1,2,1,-5,4]
+输出: 6
+解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+ 提示：  1 &amp;lt;= arr.length &amp;lt;= 105 -100 &amp;lt;= arr[i] &amp;lt;= 100  解题思路 动态规划 用 dp[i] 记录以 i 为结尾的连续子数组和的最大值，容易得到状态转移方程：
+ dp[0] = nums[0] dp[i] = max(dp[i-1]+nums[i], nums[i])  由于每次转移仅涉及到前一个结果，使用变量代替数组降低空间复杂度
+func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] max := dp for pre, i := 0, 1; i &amp;lt; len(nums); i++ { pre = dp if pre+nums[i] &amp;gt; nums[i] { dp = pre + nums[i] } else { dp = nums[i] } if max &amp;lt; dp { max = dp } } return max }  复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
     <item>
       <title>剑指 Offer 53 - I. 在排序数组中查找数字 I</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-53-i.-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97-i/</link>
