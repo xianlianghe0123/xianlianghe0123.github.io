@@ -6,7 +6,94 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Sat, 17 Jul 2021 13:21:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 18 Jul 2021 11:32:11 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>面试题 10.02. 变位词组</title>
+        <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-10.02.-%E5%8F%98%E4%BD%8D%E8%AF%8D%E7%BB%84/</link>
+        <pubDate>Sun, 18 Jul 2021 11:32:11 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-10.02.-%E5%8F%98%E4%BD%8D%E8%AF%8D%E7%BB%84/</guid>
+        <description>
+
+&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/group-anagrams-lcci/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/group-anagrams-lcci/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
+
+&lt;p&gt;编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;本题相对原题稍作修改&lt;/p&gt;
+
+&lt;h5 id=&#34;示例&#34;&gt;示例：&lt;/h5&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; [&amp;ldquo;eat&amp;rdquo;, &amp;ldquo;tea&amp;rdquo;, &amp;ldquo;tan&amp;rdquo;, &amp;ldquo;ate&amp;rdquo;, &amp;ldquo;nat&amp;rdquo;, &amp;ldquo;bat&amp;rdquo;],&lt;br /&gt;
+&lt;strong&gt;输出:&lt;/strong&gt;&lt;br /&gt;
+[&lt;br /&gt;
+  [&amp;ldquo;ate&amp;rdquo;,&amp;ldquo;eat&amp;rdquo;,&amp;ldquo;tea&amp;rdquo;],&lt;br /&gt;
+  [&amp;ldquo;nat&amp;rdquo;,&amp;ldquo;tan&amp;rdquo;],&lt;br /&gt;
+  [&amp;ldquo;bat&amp;rdquo;]&lt;br /&gt;
+]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+
+&lt;h4 id=&#34;哈希-计数&#34;&gt;哈希 &amp;amp; 计数&lt;/h4&gt;
+
+&lt;p&gt;对于每个字符串，使用数组统计每个字母出现的数字，两个同位词得出的统计数组必然相同，故用该数组作为 &lt;code&gt;key&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;groupAnagrams&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strs&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) (&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[[&lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;][]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;strs&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt;)
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt;] = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([][]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt;))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(NL), N = len(strs), L = max(len(str)) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(NL) $&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;哈希-排序&#34;&gt;哈希 &amp;amp; 排序&lt;/h4&gt;
+
+&lt;p&gt;不同变位词中字母相同，所以将字符串按照字母排序后，其值也一定相同。故可以将其排序后的值作为哈希表的 &lt;code&gt;key&lt;/code&gt;，并将其添加进 &lt;code&gt;value&lt;/code&gt; 数组中。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;groupAnagrams&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strs&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;][]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;strs&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; []byte(&lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt;)
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Slice&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]
+		})
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt;[string(&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;)] = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt;[string(&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;)], &lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([][]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt;))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(NLlogL), N = len(strs), L = max(len(str)) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(NL) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>剑指 Offer 42. 连续子数组的最大和</title>
         <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-42.-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/</link>
         <pubDate>Sat, 17 Jul 2021 13:21:52 +0800</pubDate>
@@ -684,11 +771,11 @@ kv.get(&amp;ldquo;foo&amp;rdquo;, 5); // 输出 &amp;ldquo;bar2&amp;rdquo;&lt;/p
 </description>
         </item>
         <item>
-        <title>面试题17 10. 主要元素</title>
-        <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</link>
+        <title>面试题 17.10. 主要元素</title>
+        <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</link>
         <pubDate>Fri, 09 Jul 2021 10:46:07 +0800</pubDate>
         
-        <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</guid>
+        <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</guid>
         <description>
 
 &lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/find-majority-element-lcci/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/find-majority-element-lcci/&lt;/a&gt;&lt;br /&gt;

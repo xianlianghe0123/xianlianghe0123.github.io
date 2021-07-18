@@ -6,7 +6,28 @@
     <description>Recent content in sort on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 15 Jul 2021 10:33:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Jul 2021 11:32:11 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面试题 10.02. 变位词组</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-10.02.-%E5%8F%98%E4%BD%8D%E8%AF%8D%E7%BB%84/</link>
+      <pubDate>Sun, 18 Jul 2021 11:32:11 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-10.02.-%E5%8F%98%E4%BD%8D%E8%AF%8D%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/group-anagrams-lcci/
+难度： 中等
+题目描述 编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。
+注意：本题相对原题稍作修改
+示例：  输入: [&amp;ldquo;eat&amp;rdquo;, &amp;ldquo;tea&amp;rdquo;, &amp;ldquo;tan&amp;rdquo;, &amp;ldquo;ate&amp;rdquo;, &amp;ldquo;nat&amp;rdquo;, &amp;ldquo;bat&amp;rdquo;],
+输出:
+[
+[&amp;ldquo;ate&amp;rdquo;,&amp;ldquo;eat&amp;rdquo;,&amp;ldquo;tea&amp;rdquo;],
+[&amp;ldquo;nat&amp;rdquo;,&amp;ldquo;tan&amp;rdquo;],
+[&amp;ldquo;bat&amp;rdquo;]
+]
+ 解题思路 哈希 &amp;amp; 计数 对于每个字符串，使用数组统计每个字母出现的数字，两个同位词得出的统计数组必然相同，故用该数组作为 key
+func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]int) { for i := range s { cnt[s[i]-&amp;#39;a&amp;#39;]++ } return } hash := make(map[[26]int][]string) for _, str := range strs { key := cnt(str) hash[key] = append(hash[key], str) } res := make([][]string, 0, len(hash)) for _, v := range hash { res = append(res, v) } return res }  复杂度  时间复杂度：$ O(NL), N = len(strs), L = max(len(str)) $ 空间复杂度：$ O(NL) $  哈希 &amp;amp; 排序 不同变位词中字母相同，所以将字符串按照字母排序后，其值也一定相同。故可以将其排序后的值作为哈希表的 key，并将其添加进 value 数组中。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1846. 减小和重新排列数组后的最大元素</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/</link>
@@ -59,11 +80,11 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
     </item>
     
     <item>
-      <title>面试题17 10. 主要元素</title>
-      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</link>
+      <title>面试题 17.10. 主要元素</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</link>
       <pubDate>Fri, 09 Jul 2021 10:46:07 +0800</pubDate>
       
-      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%9817-10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</guid>
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</guid>
       <description>链接： https://leetcode-cn.com/problems/find-majority-element-lcci/
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
