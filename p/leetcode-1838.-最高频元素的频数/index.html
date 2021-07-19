@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/set-mismatch/
-难度： 简单
-题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
-给定一个数组 nums 代表了集合 S 发生错误后的结果。
-请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入：nums = [1,2,2,4]
-输出：[2,3]
- 示例 2：  输入：nums = [1,1]
-输出：[1,2]
- 提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
-func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !'><title>Leetcode 645. 错误的集合</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/
+难度： 中等
+题目描述 元素的 频数 是该元素在一个数组中出现的次数。
+给你一个整数数组 nums 和一个整数 k 。在一步操作中，你可以选择 nums 的一个下标，并将该下标对应元素的值增加 1 。
+执行最多 k 次操作后，返回数组中最高频元素的 最大可能频数 。
+示例 1：  输入：nums = [1,2,4], k = 5
+输出：3
+解释：对第一个元素执行 3 次递增操作，对第二个元素执 2 次递增操作，此时 nums = [4,4,4] 。
+4 是数组中最高频元素，频数是 3 。
+ 示例 2：  输入：nums = [1,4,8,13], k = 5
+输出：2
+解释：存在多种最优解决方案：
+- 对第一个元素执行 3 次递增操作，此时 nums = [4,4,8,13] 。4 是数组中最高频元素，频数是 2 。
+- 对第二个元素执行 4 次递增操作，此时 nums = [1,8,8,13] 。8 是数组中最高频元素，频数是 2 。'><title>Leetcode 1838. 最高频元素的频数</title>
 
-<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-645.-%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88/'>
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1838.-%E6%9C%80%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%E7%9A%84%E9%A2%91%E6%95%B0/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 645. 错误的集合'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/set-mismatch/
-难度： 简单
-题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
-给定一个数组 nums 代表了集合 S 发生错误后的结果。
-请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入：nums = [1,2,2,4]
-输出：[2,3]
- 示例 2：  输入：nums = [1,1]
-输出：[1,2]
- 提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
-func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !'>
-<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-645.-%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1838. 最高频元素的频数'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/
+难度： 中等
+题目描述 元素的 频数 是该元素在一个数组中出现的次数。
+给你一个整数数组 nums 和一个整数 k 。在一步操作中，你可以选择 nums 的一个下标，并将该下标对应元素的值增加 1 。
+执行最多 k 次操作后，返回数组中最高频元素的 最大可能频数 。
+示例 1：  输入：nums = [1,2,4], k = 5
+输出：3
+解释：对第一个元素执行 3 次递增操作，对第二个元素执 2 次递增操作，此时 nums = [4,4,4] 。
+4 是数组中最高频元素，频数是 3 。
+ 示例 2：  输入：nums = [1,4,8,13], k = 5
+输出：2
+解释：存在多种最优解决方案：
+- 对第一个元素执行 3 次递增操作，此时 nums = [4,4,8,13] 。4 是数组中最高频元素，频数是 2 。
+- 对第二个元素执行 4 次递增操作，此时 nums = [1,8,8,13] 。8 是数组中最高频元素，频数是 2 。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1838.-%E6%9C%80%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%E7%9A%84%E9%A2%91%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-07-04T10:12:40&#43;08:00'/><meta property='article:modified_time' content='2021-07-04T10:12:40&#43;08:00'/>
-<meta name="twitter:title" content="Leetcode 645. 错误的集合">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/set-mismatch/
-难度： 简单
-题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
-给定一个数组 nums 代表了集合 S 发生错误后的结果。
-请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入：nums = [1,2,2,4]
-输出：[2,3]
- 示例 2：  输入：nums = [1,1]
-输出：[1,2]
- 提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
-func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='sort' /><meta property='article:tag' content='slide window' /><meta property='article:published_time' content='2021-07-19T10:31:28&#43;08:00'/><meta property='article:modified_time' content='2021-07-19T10:31:28&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1838. 最高频元素的频数">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/
+难度： 中等
+题目描述 元素的 频数 是该元素在一个数组中出现的次数。
+给你一个整数数组 nums 和一个整数 k 。在一步操作中，你可以选择 nums 的一个下标，并将该下标对应元素的值增加 1 。
+执行最多 k 次操作后，返回数组中最高频元素的 最大可能频数 。
+示例 1：  输入：nums = [1,2,4], k = 5
+输出：3
+解释：对第一个元素执行 3 次递增操作，对第二个元素执 2 次递增操作，此时 nums = [4,4,4] 。
+4 是数组中最高频元素，频数是 3 。
+ 示例 2：  输入：nums = [1,4,8,13], k = 5
+输出：2
+解释：存在多种最优解决方案：
+- 对第一个元素执行 3 次递增操作，此时 nums = [4,4,8,13] 。4 是数组中最高频元素，频数是 2 。
+- 对第二个元素执行 4 次递增操作，此时 nums = [1,8,8,13] 。8 是数组中最高频元素，频数是 2 。">
     </head>
     <body class="">
     <script>
@@ -208,7 +217,7 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
     
 
     <h2 class="article-title">
-        <a href="/p/leetcode-645.-%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88/">Leetcode 645. 错误的集合</a>
+        <a href="/p/leetcode-1838.-%E6%9C%80%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%E7%9A%84%E9%A2%91%E6%95%B0/">Leetcode 1838. 最高频元素的频数</a>
     </h2>
 
     <footer class="article-time">
@@ -220,72 +229,105 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 
 
 
-        <time class="article-time--published">Jul 04, 2021</time>
+        <time class="article-time--published">Jul 19, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
     
 
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/set-mismatch/" target="_blank">https://leetcode-cn.com/problems/set-mismatch/</a><br />
-<strong>难度：</strong> <font color="green">简单</font></p>
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/" target="_blank">https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/</a><br />
+<strong>难度：</strong> <font color="orange">中等</font></p>
 
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 
-<p>集合 <code>s</code> 包含从 <code>1</code> 到 <code>n</code> 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 <strong>丢失了一个数字</strong> 并且 <strong>有一个数字重复</strong> 。</p>
+<p>元素的 <strong>频数</strong> 是该元素在一个数组中出现的次数。</p>
 
-<p>给定一个数组 <code>nums</code> 代表了集合 <code>S</code> 发生错误后的结果。</p>
+<p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> 。在一步操作中，你可以选择 <code>nums</code> 的一个下标，并将该下标对应元素的值增加 <code>1</code> 。</p>
 
-<p>请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。</p>
+<p>执行最多 <code>k</code> 次操作后，返回数组中最高频元素的 <strong>最大可能频数</strong> 。</p>
 
-<h5 id="示例-1">示例 1：</h5>
-
-<blockquote>
-<p><strong>输入：</strong>nums = [1,2,2,4]<br />
-<strong>输出：</strong>[2,3]</p>
-</blockquote>
-
-<h5 id="示例-2">示例 2：</h5>
+<h4 id="示例-1">示例 1：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>nums = [1,1]<br />
-<strong>输出：</strong>[1,2]</p>
+<p><strong>输入：</strong>nums = [1,2,4], k = 5<br />
+<strong>输出：</strong>3<br />
+<strong>解释：</strong>对第一个元素执行 3 次递增操作，对第二个元素执 2 次递增操作，此时 nums = [4,4,4] 。<br />
+4 是数组中最高频元素，频数是 3 。</p>
 </blockquote>
 
-<h5 id="提示">提示：</h5>
+<h4 id="示例-2">示例 2：</h4>
+
+<blockquote>
+<p><strong>输入：</strong>nums = [1,4,8,13], k = 5<br />
+<strong>输出：</strong>2<br />
+<strong>解释：</strong>存在多种最优解决方案：<br />
+- 对第一个元素执行 3 次递增操作，此时 nums = [4,4,8,13] 。4 是数组中最高频元素，频数是 2 。<br />
+- 对第二个元素执行 4 次递增操作，此时 nums = [1,8,8,13] 。8 是数组中最高频元素，频数是 2 。<br />
+- 对第三个元素执行 5 次递增操作，此时 nums = [1,4,13,13] 。13 是数组中最高频元素，频数是 2 。</p>
+</blockquote>
+
+<h4 id="示例-3">示例 3：</h4>
+
+<blockquote>
+<p><strong>输入：</strong>nums = [3,9,6], k = 2<br />
+<strong>输出：</strong>1</p>
+</blockquote>
+
+<h4 id="提示">提示：</h4>
 
 <ul>
-<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
-<li><code>1 &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= k &lt;= 10<sup>5</sup></code></li>
 </ul>
 
 <h3 id="解题思路">解题思路</h3>
 
-<h4 id="哈希">哈希</h4>
+<h4 id="排序-滑动窗口">排序 &amp; 滑动窗口</h4>
 
-<p>利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findErrorNums</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}
-	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, len(<span style="color:#a6e22e">nums</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">num</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
-			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#a6e22e">num</span>
+<p>假设经过变换后 <code>x</code> 的频数最多，则对于原数组来说，每次优先让小于 <code>x</code> 且最接近 <code>x</code> 的数字变换为 <code>x</code>，消耗的 <code>k</code> 最小， 可以使得 <code>x</code> 的频数最大。</p>
+
+<p>为快速确定数字与 <code>x</code> 的接近程度，可以对数组进行一次排序。</p>
+
+<p>后续需要的是确定这个 <code>x</code>：对于每个元素 <code>num</code>，将能变换的全变换为 <code>num</code> 后，统计频数。按照上述思路，完成变换后的数字在数组中是连续的，故可以使用滑动窗口降低时间复杂度。</p>
+
+<p>使用 <code>[l, r)</code> 记录滑动窗口的左右边界，每次判断右边界直到到达数组尾：</p>
+
+<ul>
+<li>每次变换为 <code>nums[r]</code> 时，需要将滑动数组内的数字全部变换为 <code>nums[r]</code>，需要的变换次数为 <code>need = (nums[r] - nums[r-1]) * (r - l)</code>;</li>
+<li>当 <code>need</code> 大于等于剩余次数时，右边界 <code>r</code> 向右扩展，剩余次数减去 <code>need</code>;</li>
+<li>当 <code>need</code> 小于剩余次数时，左边界 <code>l</code> 向右收缩，剩余次数加上 <code>nums[r-1] - nums[l]</code>。</li>
+</ul>
+
+<p>右边界 <code>r</code> 到达数组结尾时，滑动窗口完成滑动，其中滑动窗口的最大长度 <code>r - l</code> 即为数组中最高频元素的 <strong>最大可能频数</strong>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxFrequency</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">nums</span>)
+	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">r</span> &lt; len(<span style="color:#a6e22e">nums</span>); {
+		<span style="color:#a6e22e">need</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">*</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">l</span>)
+		<span style="color:#75715e">// 扩展
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">need</span> {
+			<span style="color:#a6e22e">k</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">need</span>
+			<span style="color:#a6e22e">r</span><span style="color:#f92672">++</span>
+		} <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 收缩
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> &gt; <span style="color:#a6e22e">l</span> {
+				<span style="color:#a6e22e">k</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">l</span>]
+			}
+			<span style="color:#a6e22e">l</span><span style="color:#f92672">++</span>
 		}
-		<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">num</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">true</span>
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">exist</span> {
-		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
-			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">num</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#a6e22e">l</span> {
+			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">r</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">l</span>
 		}
 	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
 }
 </code></pre></div>
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N), N = len(nums)</li>
-<li>空间复杂度：O(N)</li>
+<li>时间复杂度：$ O(NlogN), N = len(nums) $</li>
+<li>空间复杂度：$ O(logN) $</li>
 </ul>
 
 </section>
@@ -293,6 +335,14 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/sort/">sort</a>
+        
+            <a href="/tags/slide-window/">slide window</a>
+        
+    </section>
+
 
     </footer>
 
@@ -331,18 +381,6 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
                 
                     
 <article class="">
-    <a href="/p/leetcode-1838.-%E6%9C%80%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%E7%9A%84%E9%A2%91%E6%95%B0/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1838. 最高频元素的频数</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/%E9%9D%A2%E8%AF%95%E9%A2%98-10.02.-%E5%8F%98%E4%BD%8D%E8%AF%8D%E7%BB%84/">
         
         
@@ -355,36 +393,48 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
                 
                     
 <article class="">
-    <a href="/p/%E5%89%91%E6%8C%87-offer-42.-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">剑指 Offer 42. 连续子数组的最大和</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/%E5%89%91%E6%8C%87-offer-53-i.-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97-i/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">剑指 Offer 53 - I. 在排序数组中查找数字 I</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1846. 减小和重新排列数组后的最大元素</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1818. 绝对差值和</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 274. H 指数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">面试题 17.10. 主要元素</h2>
         </div>
     </a>
 </article>
