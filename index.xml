@@ -6,7 +6,133 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Tue, 20 Jul 2021 09:55:22 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 Jul 2021 10:43:36 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>剑指 Offer 52. 两个链表的第一个公共节点</title>
+        <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-52.-%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</link>
+        <pubDate>Wed, 21 Jul 2021 10:43:36 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-52.-%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</guid>
+        <description>
+
+&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;输入两个链表，找出它们的第一个公共节点。&lt;/p&gt;
+
+&lt;p&gt;如下面的两个链表：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xianlianghe0123.github.io/img/160_statement.png&#34; width=&#34;400px&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;在节点 c1 开始相交。&lt;/p&gt;
+
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xianlianghe0123.github.io/img/160_example_1.png&#34; width=&#34;400px&#34;&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;Reference of the node with value = 8&lt;br /&gt;
+&lt;strong&gt;输入解释：&lt;/strong&gt;相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xianlianghe0123.github.io/img/160_example_2.png&#34; width=&#34;350px&#34;&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;Reference of the node with value = 2&lt;br /&gt;
+&lt;strong&gt;输入解释：&lt;/strong&gt;相交节点的值为 2 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xianlianghe0123.github.io/img/160_example_3.png&#34; width=&#34;200px&#34;&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;null&lt;br /&gt;
+&lt;strong&gt;输入解释：&lt;/strong&gt;从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;这两个链表不相交，因此返回 null。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;注意&#34;&gt;注意：&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如果两个链表没有交点，返回 &lt;code&gt;null&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;在返回结果后，两个链表仍须保持原有的结构。&lt;/li&gt;
+&lt;li&gt;可假定整个链表结构中没有循环。&lt;/li&gt;
+&lt;li&gt;程序尽量满足 $O(n)$ 时间复杂度，且仅用 $O(1)$ 内存。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+
+&lt;h4 id=&#34;哈希&#34;&gt;哈希&lt;/h4&gt;
+
+&lt;p&gt;遍历链表 &lt;code&gt;List1&lt;/code&gt;，记录其所有的结点，然后遍历链表 &lt;code&gt;List2&lt;/code&gt; ，查找在第一个链表中首次出现的结点并返回，查找不到返回空。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getIntersectionNode&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;headA&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ListNode&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ListNode&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ListNode&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; ;&lt;span style=&#34;color:#a6e22e&#34;&gt;headA&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;;&lt;span style=&#34;color:#a6e22e&#34;&gt;headA&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;headA&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;headA&lt;/span&gt;] = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; ;&lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;;&lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt;] {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N+M), N = len(List1), M = len(List2) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;双指针&#34;&gt;双指针&lt;/h4&gt;
+
+&lt;p&gt;两个链表从第一个公共结点开始，后续的结点都是相同的，可以将两个链表的尾部对齐，将长的链表截断，然后依次两两结点比较即可。&lt;/p&gt;
+
+&lt;p&gt;为确认截断位置，需要遍历一遍两个链表。不妨假设长的链表为 &lt;code&gt;List1&lt;/code&gt;， 短的为 &lt;code&gt;List2&lt;/code&gt;。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用两个指针 &lt;code&gt;node1&lt;/code&gt;、&lt;code&gt;node2&lt;/code&gt; 分别同时对 &lt;code&gt;List1&lt;/code&gt; 和 &lt;code&gt;List2&lt;/code&gt; 进行遍历。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List2&lt;/code&gt; 首先被遍历完，此时 &lt;code&gt;List1&lt;/code&gt; 剩余未遍历完的结点数量即为 &lt;code&gt;List1&lt;/code&gt; 需要截断的数量。此时，直接将 &lt;code&gt;node2&lt;/code&gt; 指向 &lt;code&gt;List1&lt;/code&gt; 头结点。&lt;/li&gt;
+&lt;li&gt;当 &lt;code&gt;node1&lt;/code&gt; 遍历到尾部时候，&lt;code&gt;node2&lt;/code&gt;恰到达截断位置，故将 &lt;code&gt;node1&lt;/code&gt; 指向 &lt;code&gt;List2&lt;/code&gt; 头结点`，即完成对齐，继续向后遍历查找相同结点。&lt;/li&gt;
+&lt;li&gt;当 &lt;code&gt;node1 == node2&lt;/code&gt; 时，查找结束，或者找到了公共结点，或者没找到&lt;code&gt;node1&lt;/code&gt;、&lt;code&gt;node2&lt;/code&gt;均为空，返回 &lt;code&gt;node1&lt;/code&gt; 即可&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当两个链表等长时候，相当于已经完成了对齐，跳过了第一阶段，直接遍历即可。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getIntersectionNode&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;headA&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ListNode&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ListNode&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;node2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;headA&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt;;; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node2&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node1&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node1&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;headB&lt;/span&gt;
+		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node1&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node1&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node2&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;headA&lt;/span&gt;
+		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node2&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node2&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N+M), N = len(List1), M = len(List2) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 1877. 数组中最大数对和的最小值</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-1877.-%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AF%B9%E5%92%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</link>
         <pubDate>Tue, 20 Jul 2021 09:55:22 +0800</pubDate>
