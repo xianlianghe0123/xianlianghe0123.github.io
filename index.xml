@@ -6,7 +6,175 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Wed, 21 Jul 2021 10:43:36 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 22 Jul 2021 11:22:49 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 138. 复制带随机指针的链表</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-138.-%E5%A4%8D%E5%88%B6%E5%B8%A6%E9%9A%8F%E6%9C%BA%E6%8C%87%E9%92%88%E7%9A%84%E9%93%BE%E8%A1%A8/</link>
+        <pubDate>Thu, 22 Jul 2021 11:22:49 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-138.-%E5%A4%8D%E5%88%B6%E5%B8%A6%E9%9A%8F%E6%9C%BA%E6%8C%87%E9%92%88%E7%9A%84%E9%93%BE%E8%A1%A8/</guid>
+        <description>
+
+&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/copy-list-with-random-pointer/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/copy-list-with-random-pointer/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;给你一个长度为 &lt;code&gt;n&lt;/code&gt; 的链表，每个节点包含一个额外增加的随机指针 &lt;code&gt;random&lt;/code&gt; ，该指针可以指向链表中的任何节点或空节点。&lt;/p&gt;
+
+&lt;p&gt;构造这个链表的 &lt;strong&gt;深拷贝&lt;/strong&gt;。 深拷贝应该正好由 &lt;code&gt;n&lt;/code&gt; 个 &lt;strong&gt;全新&lt;/strong&gt; 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 &lt;code&gt;next&lt;/code&gt; 指针和 &lt;code&gt;random&lt;/code&gt; 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。&lt;strong&gt;复制链表中的指针都不应指向原链表中的节点&lt;/strong&gt; 。&lt;/p&gt;
+
+&lt;p&gt;例如，如果原链表中有 &lt;code&gt;X&lt;/code&gt; 和 &lt;code&gt;Y&lt;/code&gt; 两个节点，其中 &lt;code&gt;X.random --&amp;gt; Y&lt;/code&gt; 。那么在复制链表中对应的两个节点 &lt;code&gt;x&lt;/code&gt; 和 &lt;code&gt;y&lt;/code&gt; ，同样有 &lt;code&gt;x.random --&amp;gt; y&lt;/code&gt; 。&lt;/p&gt;
+
+&lt;p&gt;返回复制链表的头节点。&lt;/p&gt;
+
+&lt;p&gt;用一个由 &lt;code&gt;n&lt;/code&gt; 个节点组成的链表来表示输入/输出中的链表。每个节点用一个 &lt;code&gt;[val, random_index]&lt;/code&gt; 表示：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;val&lt;/code&gt;：一个表示 &lt;code&gt;Node.val&lt;/code&gt; 的整数。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;random_index&lt;/code&gt;：随机指针指向的节点索引（范围从 &lt;code&gt;0&lt;/code&gt; 到 &lt;code&gt;n-1&lt;/code&gt;）；如果不指向任何节点，则为 &lt;code&gt;null&lt;/code&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;你的代码 &lt;strong&gt;只&lt;/strong&gt; 接受原链表的头节点 &lt;code&gt;head&lt;/code&gt; 作为传入参数。&lt;/p&gt;
+
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xianlianghe0123.github.io/img/e1.png&#34; width=&#34;680px&#34;&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;head = [[7,null],[13,0],[11,4],[10,2],[1,0]]&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;[[7,null],[13,0],[11,4],[10,2],[1,0]]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xianlianghe0123.github.io/img/e2.png&#34; width=&#34;680px&#34;&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;head = [[1,1],[2,1]]&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;[[1,1],[2,1]]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xianlianghe0123.github.io/img/e3.png&#34; width=&#34;680px&#34;&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;head = [[3,null],[3,0],[3,null]]&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;[[3,null],[3,0],[3,null]]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-4&#34;&gt;示例 4:&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;head = []&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;[]&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;给定的链表为空（空指针），因此返回 null&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;提示&#34;&gt;提示：&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= n &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-10000 &amp;lt;= Node.val &amp;lt;= 10000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Node.random&lt;/code&gt; 为空（&lt;code&gt;null&lt;/code&gt;）或指向链表中的节点。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+
+&lt;h4 id=&#34;哈希&#34;&gt;哈希&lt;/h4&gt;
+
+&lt;p&gt;使用哈希表维护一个旧结点到新结点的映射，依次从前向后遍历链表，并逐一的构造新结点。&lt;/p&gt;
+
+&lt;p&gt;构造每个新结点时，需要额外维护 &lt;code&gt;random&lt;/code&gt; 指针，可以在构造后即进行维护。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;每遍历到一个新结点时，可能已经在维护之前的 &lt;code&gt;random&lt;/code&gt; 指针时已构造，故需要先从哈希表中查找，查找到即使用新结点，没查找到构造新结点。&lt;/li&gt;
+&lt;li&gt;维护 &lt;code&gt;random&lt;/code&gt; 指针时，结点可能已经在遍历时构造，也需要优先查找。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;经过一次遍历，即可完成原链表的深拷贝。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;copyRandomList&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;mapping&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;newHead&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; new(&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;newHead&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; ; &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 优先查找，可能已被random构造
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;mapping&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;]
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt; = &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;{
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;:    &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;,
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;:   &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;,
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;,
+			}
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;mapping&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt;
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;
+		&lt;span style=&#34;color:#75715e&#34;&gt;// random 指针更新
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;randomNode&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;mapping&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt;]
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;randomNode&lt;/span&gt; = &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;{
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;:    &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;,
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;:   &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;,
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;,
+				}
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;mapping&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;randomNode&lt;/span&gt;
+			}
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;randomNode&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;newHead&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(list) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;分裂&#34;&gt;分裂&lt;/h4&gt;
+
+&lt;p&gt;在原来链表的基础上，将每个结点裂变出一个新结点，形成如 &lt;code&gt;A-&amp;gt;A&#39;-&amp;gt;B-&amp;gt;B&#39;-&amp;gt;……&lt;/code&gt; 的结构，修正每个新结点的 &lt;code&gt;random&lt;/code&gt; 指针为原结点的下一个结点，然后将原链表拆分，即得到结果。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;copyRandomList&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 裂变 结点
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; = &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;{
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;:    &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;,
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;:   &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;,
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt;: &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt;,
+		}
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 修正 random
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Random&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 拆分链表
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;newHead&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;newHead&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;newNode&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Next&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;newHead&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(list) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>剑指 Offer 52. 两个链表的第一个公共节点</title>
         <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-52.-%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</link>
         <pubDate>Wed, 21 Jul 2021 10:43:36 +0800</pubDate>
