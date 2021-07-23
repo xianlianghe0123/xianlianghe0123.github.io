@@ -1,62 +1,41 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/coin-change-2/
-难度： 中等
-题目描述 给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。
-示例 1：  输入: amount = 5, coins = [1, 2, 5]
-输出: 4
-解释: 有四种方式可以凑成总金额:
-5=5
-5=2&#43;2&#43;1
-5=2&#43;1&#43;1&#43;1
-5=1&#43;1&#43;1&#43;1&#43;1
- 示例 2：  输入: amount = 3, coins = [2]
-输出: 0
-解释: 只用面额2的硬币不能凑成总金额3。
- 示例 3：  输入: amount = 10, coins = [10]
-输出: 1
- 注意： 你可以假设： - 0 &amp;lt;= amount (总金额) &amp;lt;= 5000 - 1 &amp;lt;= coin (硬币面额) &amp;lt;= 5000 - 硬币种类不超过 500 种 - 结果符合 32 位符号整数'><title>Leetcode 518. 零钱兑换 II</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/check-if-all-the-integers-in-a-range-are-covered/
+难度： 简单
+题目描述 给你一个二维整数数组 ranges 和两个整数 left 和 right 。每个 ranges[i] = [starti, endi] 表示一个从 starti 到 endi 的 闭区间 。
+如果闭区间 [left, right] 内每个整数都被 ranges 中 至少一个 区间覆盖，那么请你返回 true ，否则返回 false 。
+已知区间 ranges[i] = [starti, endi] ，如果整数 x 满足 starti &amp;lt;= x &amp;lt;= endi ，那么我们称整数 x 被覆盖了。
+示例 1：  输入：ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
+输出：true
+解释：2 到 5 的每个整数都被覆盖了：
+- 2 被第一个区间覆盖。'><title>Leetcode 1893. 检查是否区域内所有整数都被覆盖</title>
 
-<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-518.-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2-ii/'>
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1893.-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%8C%BA%E5%9F%9F%E5%86%85%E6%89%80%E6%9C%89%E6%95%B4%E6%95%B0%E9%83%BD%E8%A2%AB%E8%A6%86%E7%9B%96/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 518. 零钱兑换 II'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/coin-change-2/
-难度： 中等
-题目描述 给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。
-示例 1：  输入: amount = 5, coins = [1, 2, 5]
-输出: 4
-解释: 有四种方式可以凑成总金额:
-5=5
-5=2&#43;2&#43;1
-5=2&#43;1&#43;1&#43;1
-5=1&#43;1&#43;1&#43;1&#43;1
- 示例 2：  输入: amount = 3, coins = [2]
-输出: 0
-解释: 只用面额2的硬币不能凑成总金额3。
- 示例 3：  输入: amount = 10, coins = [10]
-输出: 1
- 注意： 你可以假设： - 0 &amp;lt;= amount (总金额) &amp;lt;= 5000 - 1 &amp;lt;= coin (硬币面额) &amp;lt;= 5000 - 硬币种类不超过 500 种 - 结果符合 32 位符号整数'>
-<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-518.-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2-ii/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1893. 检查是否区域内所有整数都被覆盖'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/check-if-all-the-integers-in-a-range-are-covered/
+难度： 简单
+题目描述 给你一个二维整数数组 ranges 和两个整数 left 和 right 。每个 ranges[i] = [starti, endi] 表示一个从 starti 到 endi 的 闭区间 。
+如果闭区间 [left, right] 内每个整数都被 ranges 中 至少一个 区间覆盖，那么请你返回 true ，否则返回 false 。
+已知区间 ranges[i] = [starti, endi] ，如果整数 x 满足 starti &amp;lt;= x &amp;lt;= endi ，那么我们称整数 x 被覆盖了。
+示例 1：  输入：ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
+输出：true
+解释：2 到 5 的每个整数都被覆盖了：
+- 2 被第一个区间覆盖。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1893.-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%8C%BA%E5%9F%9F%E5%86%85%E6%89%80%E6%9C%89%E6%95%B4%E6%95%B0%E9%83%BD%E8%A2%AB%E8%A6%86%E7%9B%96/'>
 <meta property='og:site_name' content='贺贤良'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-06-10T10:35:20&#43;08:00'/><meta property='article:modified_time' content='2021-06-10T10:35:20&#43;08:00'/>
-<meta name="twitter:title" content="Leetcode 518. 零钱兑换 II">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/coin-change-2/
-难度： 中等
-题目描述 给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。
-示例 1：  输入: amount = 5, coins = [1, 2, 5]
-输出: 4
-解释: 有四种方式可以凑成总金额:
-5=5
-5=2&#43;2&#43;1
-5=2&#43;1&#43;1&#43;1
-5=1&#43;1&#43;1&#43;1&#43;1
- 示例 2：  输入: amount = 3, coins = [2]
-输出: 0
-解释: 只用面额2的硬币不能凑成总金额3。
- 示例 3：  输入: amount = 10, coins = [10]
-输出: 1
- 注意： 你可以假设： - 0 &amp;lt;= amount (总金额) &amp;lt;= 5000 - 1 &amp;lt;= coin (硬币面额) &amp;lt;= 5000 - 硬币种类不超过 500 种 - 结果符合 32 位符号整数">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:published_time' content='2021-07-23T10:32:17&#43;08:00'/><meta property='article:modified_time' content='2021-07-23T10:32:17&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1893. 检查是否区域内所有整数都被覆盖">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/check-if-all-the-integers-in-a-range-are-covered/
+难度： 简单
+题目描述 给你一个二维整数数组 ranges 和两个整数 left 和 right 。每个 ranges[i] = [starti, endi] 表示一个从 starti 到 endi 的 闭区间 。
+如果闭区间 [left, right] 内每个整数都被 ranges 中 至少一个 区间覆盖，那么请你返回 true ，否则返回 false 。
+已知区间 ranges[i] = [starti, endi] ，如果整数 x 满足 starti &amp;lt;= x &amp;lt;= endi ，那么我们称整数 x 被覆盖了。
+示例 1：  输入：ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
+输出：true
+解释：2 到 5 的每个整数都被覆盖了：
+- 2 被第一个区间覆盖。">
     </head>
     <body class="">
     <script>
@@ -223,7 +202,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/leetcode-518.-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2-ii/">Leetcode 518. 零钱兑换 II</a>
+        <a href="/p/leetcode-1893.-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%8C%BA%E5%9F%9F%E5%86%85%E6%89%80%E6%9C%89%E6%95%B4%E6%95%B0%E9%83%BD%E8%A2%AB%E8%A6%86%E7%9B%96/">Leetcode 1893. 检查是否区域内所有整数都被覆盖</a>
     </h2>
 
     <footer class="article-time">
@@ -235,115 +214,99 @@
 
 
 
-        <time class="article-time--published">Jun 10, 2021</time>
+        <time class="article-time--published">Jul 23, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
     
 
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/coin-change-2/" target="_blank">https://leetcode-cn.com/problems/coin-change-2/</a><br />
-<strong>难度：</strong> <font color="orange">中等</font></p>
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/check-if-all-the-integers-in-a-range-are-covered/" target="_blank">https://leetcode-cn.com/problems/check-if-all-the-integers-in-a-range-are-covered/</a><br />
+<strong>难度：</strong> <font color="green">简单</font></p>
 
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 
-<p>给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。</p>
+<p>给你一个二维整数数组 <code>ranges</code> 和两个整数 <code>left</code> 和 <code>right</code> 。每个 <code>ranges[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> 表示一个从 <code>start<sub>i</sub></code> 到 <code>end<sub>i</sub></code> 的 <strong>闭区间</strong> 。</p>
 
-<h5 id="示例-1">示例 1：</h5>
+<p>如果闭区间 <code>[left, right]</code> 内每个整数都被 <code>ranges</code> 中 <strong>至少一个</strong> 区间覆盖，那么请你返回 <code>true</code> ，否则返回 <code>false</code> 。</p>
 
-<blockquote>
-<p><strong>输入:</strong> amount = 5, coins = [1, 2, 5]<br />
-<strong>输出:</strong> 4<br />
-<strong>解释:</strong> 有四种方式可以凑成总金额:<br />
-5=5<br />
-5=2+2+1<br />
-5=2+1+1+1<br />
-5=1+1+1+1+1</p>
-</blockquote>
+<p>已知区间 <code>ranges[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> ，如果整数 <code>x</code> 满足 <code>start<sub>i</sub> &lt;= x &lt;= end<sub>i</sub></code> ，那么我们称整数 <code>x</code> 被覆盖了。</p>
 
-<h5 id="示例-2">示例 2：</h5>
+<h4 id="示例-1">示例 1：</h4>
 
 <blockquote>
-<p><strong>输入:</strong> amount = 3, coins = [2]<br />
-<strong>输出:</strong> 0<br />
-<strong>解释:</strong> 只用面额2的硬币不能凑成总金额3。</p>
+<p><strong>输入：</strong>ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5<br />
+<strong>输出：</strong>true<br />
+<strong>解释：</strong>2 到 5 的每个整数都被覆盖了：<br />
+- 2 被第一个区间覆盖。<br />
+- 3 和 4 被第二个区间覆盖。<br />
+- 5 被第三个区间覆盖</p>
 </blockquote>
 
-<h5 id="示例-3">示例 3：</h5>
+<h4 id="示例-2">示例 2：</h4>
 
 <blockquote>
-<p><strong>输入:</strong> amount = 10, coins = [10]<br />
-<strong>输出:</strong> 1</p>
+<p><strong>输入：</strong>ranges = [[1,10],[10,20]], left = 21, right = 21<br />
+<strong>输出：</strong>false<br />
+<strong>解释：</strong>21 没有被任何一个区间覆盖。</p>
 </blockquote>
 
-<h5 id="注意">注意：</h5>
+<h4 id="提示">提示：</h4>
 
-<p>你可以假设：
-- <code>0 &lt;= amount (总金额) &lt;= 5000</code>
-- <code>1 &lt;= coin (硬币面额) &lt;= 5000</code>
-- 硬币种类不超过 500 种
-- 结果符合 32 位符号整数</p>
+<ul>
+<li><code>1 &lt;= ranges.length &lt;= 50</code></li>
+<li><code>1 &lt;= start<sub>i</sub> &lt;= end<sub>i</sub> &lt;= 50</code></li>
+<li><code>1 &lt;= left &lt;= right &lt;= 50</code></li>
+</ul>
 
 <h3 id="解题思路">解题思路</h3>
 
-<h4 id="动态规划">动态规划</h4>
+<h4 id="暴力求解">暴力求解</h4>
 
-<p><code>dp[i][j]</code> 表示前 <code>i</code> 种面额的硬币，组成总金额 <code>j</code> 的方案数，则可以得到状态转移方程：</p>
-
-<ul>
-<li><code>dp[0][0] = 1</code></li>
-
-<li><p><code>dp[i][j] = ∑dp[i-1][j-k*coins[i]], k∈N 且 k*coins[i] &lt;= j</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">change</span>(<span style="color:#a6e22e">amount</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">coins</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">dp</span> = make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">amount</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">coins</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">amount</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">*</span><span style="color:#a6e22e">coins</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">j</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span> {
-				<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">k</span><span style="color:#f92672">*</span><span style="color:#a6e22e">coins</span>[<span style="color:#a6e22e">i</span>]]
+<p>对于区间内的每个数字，遍历 <code>range</code>，判断其是否被覆盖，不被覆盖返回 <code>false</code>，被覆盖继续执行下一轮循环。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isCovered</span>(<span style="color:#a6e22e">ranges</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">right</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+<span style="color:#a6e22e">Outer</span>:
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ranges</span> {
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">1</span>] {
+				<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Outer</span>
 			}
 		}
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
 	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">amount</span>]
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
 }
-</code></pre></div></li>
-</ul>
-
+</code></pre></div>
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N*amount)</li>
-<li>空间复杂度：O(N*amount)</li>
+<li>时间复杂度：$ O(NM), N = len(ranges), M = right-left+1 $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
-<h4 id="优化">优化</h4>
+<h4 id="哈希">哈希</h4>
 
-<p>用 <code>dp[i]</code> 记录组成总金额 <code>i</code> 的方案数，则对于每个面额 <code>coin</code> 的金币，都可以将其加进去，使得 <code>dp[i+coin]</code> 的方案数增加 <code>dp[i]</code> 。由此得到状态转移方程：</p>
-
-<ul>
-<li><code>dp[0] = 1</code></li>
-
-<li><p><code>dp[i] = ∑dp[i-coin], coin∈coins</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">change</span>(<span style="color:#a6e22e">amount</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">coins</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">amount</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
-
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">coin</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">coins</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">coin</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">amount</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#a6e22e">coin</span>]
+<p>直接记录被覆盖的数，然后遍历 <code>[left, right]</code> ，判断该区间内的数是否全部被覆盖。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isCovered</span>(<span style="color:#a6e22e">ranges</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">right</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#a6e22e">isCover</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">51</span>]<span style="color:#66d9ef">bool</span>{}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ranges</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">0</span>]; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">1</span>]; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+			<span style="color:#a6e22e">isCover</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#66d9ef">true</span>
 		}
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">dp</span>)
 	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">amount</span>]
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isCover</span>[<span style="color:#a6e22e">i</span>] {
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
 }
-</code></pre></div></li>
-</ul>
-
+</code></pre></div>
 <h5 id="复杂度-1">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N*amount)</li>
-<li>空间复杂度：O(amount)</li>
+<li>时间复杂度：$ O(NS+M), N = len(ranges), S = scope, M = right-left+1 $</li>
+<li>空间复杂度：$ O(S) $</li>
 </ul>
 
 </section>
@@ -351,6 +314,12 @@
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/hash/">hash</a>
+        
+    </section>
+
 
     </footer>
 
@@ -389,18 +358,6 @@
                 
                     
 <article class="">
-    <a href="/p/leetcode-1893.-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%8C%BA%E5%9F%9F%E5%86%85%E6%89%80%E6%9C%89%E6%95%B4%E6%95%B0%E9%83%BD%E8%A2%AB%E8%A6%86%E7%9B%96/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1893. 检查是否区域内所有整数都被覆盖</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/leetcode-138.-%E5%A4%8D%E5%88%B6%E5%B8%A6%E9%9A%8F%E6%9C%BA%E6%8C%87%E9%92%88%E7%9A%84%E9%93%BE%E8%A1%A8/">
         
         
@@ -425,24 +382,36 @@
                 
                     
 <article class="">
-    <a href="/p/leetcode-1877.-%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AF%B9%E5%92%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/">
+    <a href="/p/%E9%9D%A2%E8%AF%95%E9%A2%98-10.02.-%E5%8F%98%E4%BD%8D%E8%AF%8D%E7%BB%84/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Leetcode 1877. 数组中最大数对和的最小值</h2>
+            <h2 class="article-title">面试题 10.02. 变位词组</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/p/leetcode-1838.-%E6%9C%80%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%E7%9A%84%E9%A2%91%E6%95%B0/">
+    <a href="/p/leetcode-981.-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E9%94%AE%E5%80%BC%E5%AD%98%E5%82%A8/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Leetcode 1838. 最高频元素的频数</h2>
+            <h2 class="article-title">Leetcode 981. 基于时间的键值存储</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">面试题 17.10. 主要元素</h2>
         </div>
     </a>
 </article>
