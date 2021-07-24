@@ -6,7 +6,29 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 23 Jul 2021 10:32:17 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Jul 2021 12:24:31 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1736. 替换隐藏数字得到的最晚时间</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1736.-%E6%9B%BF%E6%8D%A2%E9%9A%90%E8%97%8F%E6%95%B0%E5%AD%97%E5%BE%97%E5%88%B0%E7%9A%84%E6%9C%80%E6%99%9A%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Sat, 24 Jul 2021 12:24:31 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1736.-%E6%9B%BF%E6%8D%A2%E9%9A%90%E8%97%8F%E6%95%B0%E5%AD%97%E5%BE%97%E5%88%B0%E7%9A%84%E6%9C%80%E6%99%9A%E6%97%B6%E9%97%B4/</guid>
+      <description>链接： https://leetcode-cn.com/problems/latest-time-by-replacing-hidden-digits/
+难度： 简单
+题目描述 给你一个字符串 time ，格式为 hh:mm（小时：分钟），其中某几位数字被隐藏（用 ? 表示）。
+有效的时间为 00:00 到 23:59 之间的所有时间，包括 00:00 和 23:59 。
+替换 time 中隐藏的数字，返回你可以得到的最晚有效时间。
+示例 1：  输入：time = &amp;ldquo;2?:?0&amp;rdquo;
+输出：&amp;ldquo;23:50&amp;rdquo;
+解释：以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
+ 示例 2：  输入：time = &amp;ldquo;0?:3?&amp;rdquo;
+输出：&amp;ldquo;09:39&amp;rdquo;
+ 示例 3：  输入：time = &amp;ldquo;1?:22&amp;rdquo;
+输出：&amp;ldquo;19:22&amp;rdquo;
+ 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。
+小时的有效范围为 00 ~ 23，十位和个位相互影响：</description>
+    </item>
+    
     <item>
       <title>Leetcode 1893. 检查是否区域内所有整数都被覆盖</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1893.-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%8C%BA%E5%9F%9F%E5%86%85%E6%89%80%E6%9C%89%E6%95%B4%E6%95%B0%E9%83%BD%E8%A2%AB%E8%A6%86%E7%9B%96/</link>

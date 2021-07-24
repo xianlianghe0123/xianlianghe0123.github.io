@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/continuous-subarray-sum/
-难度： 中等
-题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
-子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
-如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入：nums = [23,2,4,6,7], k = 6
-输出：true
-解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入：nums = [23,2,6,4,7], k = 6
-输出：true
-解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。'><title>Leetcode 523. 连续的子数组和</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/latest-time-by-replacing-hidden-digits/
+难度： 简单
+题目描述 给你一个字符串 time ，格式为 hh:mm（小时：分钟），其中某几位数字被隐藏（用 ? 表示）。
+有效的时间为 00:00 到 23:59 之间的所有时间，包括 00:00 和 23:59 。
+替换 time 中隐藏的数字，返回你可以得到的最晚有效时间。
+示例 1：  输入：time = &amp;ldquo;2?:?0&amp;rdquo;
+输出：&amp;ldquo;23:50&amp;rdquo;
+解释：以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
+ 示例 2：  输入：time = &amp;ldquo;0?:3?&amp;rdquo;
+输出：&amp;ldquo;09:39&amp;rdquo;
+ 示例 3：  输入：time = &amp;ldquo;1?:22&amp;rdquo;
+输出：&amp;ldquo;19:22&amp;rdquo;
+ 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。
+小时的有效范围为 00 ~ 23，十位和个位相互影响：'><title>Leetcode 1736. 替换隐藏数字得到的最晚时间</title>
 
-<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-523.-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/'>
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1736.-%E6%9B%BF%E6%8D%A2%E9%9A%90%E8%97%8F%E6%95%B0%E5%AD%97%E5%BE%97%E5%88%B0%E7%9A%84%E6%9C%80%E6%99%9A%E6%97%B6%E9%97%B4/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 523. 连续的子数组和'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/continuous-subarray-sum/
-难度： 中等
-题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
-子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
-如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入：nums = [23,2,4,6,7], k = 6
-输出：true
-解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入：nums = [23,2,6,4,7], k = 6
-输出：true
-解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。'>
-<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-523.-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1736. 替换隐藏数字得到的最晚时间'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/latest-time-by-replacing-hidden-digits/
+难度： 简单
+题目描述 给你一个字符串 time ，格式为 hh:mm（小时：分钟），其中某几位数字被隐藏（用 ? 表示）。
+有效的时间为 00:00 到 23:59 之间的所有时间，包括 00:00 和 23:59 。
+替换 time 中隐藏的数字，返回你可以得到的最晚有效时间。
+示例 1：  输入：time = &amp;ldquo;2?:?0&amp;rdquo;
+输出：&amp;ldquo;23:50&amp;rdquo;
+解释：以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
+ 示例 2：  输入：time = &amp;ldquo;0?:3?&amp;rdquo;
+输出：&amp;ldquo;09:39&amp;rdquo;
+ 示例 3：  输入：time = &amp;ldquo;1?:22&amp;rdquo;
+输出：&amp;ldquo;19:22&amp;rdquo;
+ 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。
+小时的有效范围为 00 ~ 23，十位和个位相互影响：'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1736.-%E6%9B%BF%E6%8D%A2%E9%9A%90%E8%97%8F%E6%95%B0%E5%AD%97%E5%BE%97%E5%88%B0%E7%9A%84%E6%9C%80%E6%99%9A%E6%97%B6%E9%97%B4/'>
 <meta property='og:site_name' content='贺贤良'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-06-02T22:51:40&#43;08:00'/><meta property='article:modified_time' content='2021-06-02T22:51:40&#43;08:00'/>
-<meta name="twitter:title" content="Leetcode 523. 连续的子数组和">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/continuous-subarray-sum/
-难度： 中等
-题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
-子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
-如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入：nums = [23,2,4,6,7], k = 6
-输出：true
-解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入：nums = [23,2,6,4,7], k = 6
-输出：true
-解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-07-24T12:24:31&#43;08:00'/><meta property='article:modified_time' content='2021-07-24T12:24:31&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1736. 替换隐藏数字得到的最晚时间">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/latest-time-by-replacing-hidden-digits/
+难度： 简单
+题目描述 给你一个字符串 time ，格式为 hh:mm（小时：分钟），其中某几位数字被隐藏（用 ? 表示）。
+有效的时间为 00:00 到 23:59 之间的所有时间，包括 00:00 和 23:59 。
+替换 time 中隐藏的数字，返回你可以得到的最晚有效时间。
+示例 1：  输入：time = &amp;ldquo;2?:?0&amp;rdquo;
+输出：&amp;ldquo;23:50&amp;rdquo;
+解释：以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
+ 示例 2：  输入：time = &amp;ldquo;0?:3?&amp;rdquo;
+输出：&amp;ldquo;09:39&amp;rdquo;
+ 示例 3：  输入：time = &amp;ldquo;1?:22&amp;rdquo;
+输出：&amp;ldquo;19:22&amp;rdquo;
+ 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。
+小时的有效范围为 00 ~ 23，十位和个位相互影响：">
     </head>
     <body class="">
     <script>
@@ -208,7 +217,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/leetcode-523.-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/">Leetcode 523. 连续的子数组和</a>
+        <a href="/p/leetcode-1736.-%E6%9B%BF%E6%8D%A2%E9%9A%90%E8%97%8F%E6%95%B0%E5%AD%97%E5%BE%97%E5%88%B0%E7%9A%84%E6%9C%80%E6%99%9A%E6%97%B6%E9%97%B4/">Leetcode 1736. 替换隐藏数字得到的最晚时间</a>
     </h2>
 
     <footer class="article-time">
@@ -220,93 +229,106 @@
 
 
 
-        <time class="article-time--published">Jun 02, 2021</time>
+        <time class="article-time--published">Jul 24, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
     
 
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/continuous-subarray-sum/" target="_blank">https://leetcode-cn.com/problems/continuous-subarray-sum/</a><br />
-<strong>难度：</strong> <font color="orange">中等</font></p>
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/latest-time-by-replacing-hidden-digits/" target="_blank">https://leetcode-cn.com/problems/latest-time-by-replacing-hidden-digits/</a><br />
+<strong>难度：</strong> <font color="green">简单</font></p>
 
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 
-<p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：</p>
+<p>给你一个字符串 <code>time</code> ，格式为 <code>hh:mm</code>（小时：分钟），其中某几位数字被隐藏（用 <code>?</code> 表示）。</p>
 
-<p>子数组大小 <strong>至少为 2</strong> ，且
-子数组元素总和为 <code>k</code> 的倍数。
-如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<p>有效的时间为 <code>00:00</code> 到 <code>23:59</code> 之间的所有时间，包括 <code>00:00</code> 和 <code>23:59</code> 。</p>
 
-<p>如果存在一个整数 <code>n</code> ，令整数 <code>x</code> 符合 <code>x = n * k</code> ，则称 <code>x</code> 是 <code>k</code> 的一个倍数。</p>
+<p>替换 <code>time</code> 中隐藏的数字，返回你可以得到的最晚有效时间。</p>
 
-<h5 id="示例1">示例1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>nums = [23,<u>2,4</u>,6,7], k = 6<br />
-<strong>输出：</strong>true<br />
-<strong>解释：</strong>[2,4] 是一个大小为 2 的子数组，并且和为 6 。</p>
+<p><strong>输入：</strong>time = &ldquo;2?:?0&rdquo;<br />
+<strong>输出：</strong>&ldquo;23:50&rdquo;<br />
+<strong>解释：</strong>以数字 &lsquo;2&rsquo; 开头的最晚一小时是 23 ，以 &lsquo;0&rsquo; 结尾的最晚一分钟是 50</p>
 </blockquote>
 
-<h5 id="示例2">示例2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>nums = [<u>23,2,6,4,7</u>], k = 6<br />
-<strong>输出：</strong>true<br />
-<strong>解释：</strong>[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。<br />
-42 是 6 的倍数，因为 42 = 7 * 6 且 7 是一个整数。</p>
+<p><strong>输入：</strong>time = &ldquo;0?:3?&rdquo;<br />
+<strong>输出：</strong>&ldquo;09:39&rdquo;</p>
 </blockquote>
 
-<h5 id="示例3">示例3：</h5>
+<h4 id="示例-3">示例 3：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>nums = [23,2,6,4,7], k = 13<br />
-<strong>输出：</strong>false</p>
+<p><strong>输入：</strong>time = &ldquo;1?:22&rdquo;<br />
+<strong>输出：</strong>&ldquo;19:22&rdquo;</p>
 </blockquote>
 
-<h5 id="提示">提示：</h5>
+<h4 id="提示">提示：</h4>
 
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
-<li><code>0 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
-<li><code>0 &lt;= sum(nums[i]) &lt;= 2<sup>31</sup> - 1</code></li>
-<li><code>1 &lt;= k &lt;= 2<sup>31</sup> - 1</code></li>
+<li><code>time</code> 的格式为 <code>hh:mm</code></li>
+<li>题目数据保证你可以由输入的字符串生成有效的时间</li>
 </ul>
 
 <h3 id="解题思路">解题思路</h3>
 
-<h4 id="前缀和-哈希">前缀和+哈希</h4>
+<h4 id="分类讨论">分类讨论</h4>
 
-<p>要求解连续子区间的和，首先考虑利用前缀和来降低区间运算的复杂度，两个前缀数组和的差值是 <code>k</code> 的倍数即可。</p>
+<p>小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。</p>
 
-<p>又结果要求对 <code>k</code> 取模为 <code>0</code>，所以前缀和可以只需保留对 <code>k</code> 取模的值，此时两个前缀数组的差值就变为了 <code>0</code> ，原问题转化为在一个数组中找到两个相同的数，要求其距离大于 <code>1</code>。</p>
+<p>小时的有效范围为 <code>00 ~ 23</code>，十位和个位相互影响：</p>
 
-<p>可以利用哈希表保存每个数最早出现的位置，直到找到相同的数，其距离必然为最大，判断是否满足条件即可。</p>
+<ul>
+<li>当十位为 <code>?</code> 时，若个位小于 <code>4</code> 或者个位也为 <code>?</code>，则可以取到 <code>2</code>；否则取 <code>1</code></li>
+<li>当个位为 <code>?</code> 时，若十位为 <code>2</code>，则只能取到<code>3</code>；否则取 <code>9</code></li>
+</ul>
 
-<p>注意，对 <code>0</code> 需要特殊判断，可以预先在哈希表中存入其位置为 <code>-1</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkSubarraySum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">pos</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{
-		<span style="color:#ae81ff">0</span>: <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
-	}
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">sum</span> = (<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">k</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">sum</span>]; <span style="color:#a6e22e">ok</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> &gt; <span style="color:#ae81ff">1</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-			}
+<p>分钟的有效范围为 <code>00 ~ 59</code>，十位和个位互不影响：</p>
+
+<ul>
+<li>当十位为 <code>?</code> 时，取 <code>5</code></li>
+
+<li><p>当个位为 <code>?</code> 时，取 <code>9</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximumTime</span>(<span style="color:#a6e22e">time</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">time</span>)
+	<span style="color:#75715e">// 小时
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#e6db74">&#39;4&#39;</span> {
+			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#39;2&#39;</span>
 		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">sum</span>] = <span style="color:#a6e22e">i</span>
+			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#39;1&#39;</span>
 		}
 	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;2&#39;</span> {
+			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#39;3&#39;</span>
+		} <span style="color:#66d9ef">else</span> {
+			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#39;9&#39;</span>
+		}
+	}
+	<span style="color:#75715e">//分钟
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
+		<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">3</span>] = <span style="color:#e6db74">&#39;5&#39;</span>
+	}
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
+		<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">4</span>] = <span style="color:#e6db74">&#39;9&#39;</span>
+	}
+	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">res</span>)
 }
-</code></pre></div>
+</code></pre></div></li>
+</ul>
+
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(min(N,k))</li>
+<li>时间复杂度：$ O(1) $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
 </section>
@@ -352,18 +374,6 @@
                 
                     
 <article class="">
-    <a href="/p/leetcode-1736.-%E6%9B%BF%E6%8D%A2%E9%9A%90%E8%97%8F%E6%95%B0%E5%AD%97%E5%BE%97%E5%88%B0%E7%9A%84%E6%9C%80%E6%99%9A%E6%97%B6%E9%97%B4/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1736. 替换隐藏数字得到的最晚时间</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/leetcode-1893.-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%8C%BA%E5%9F%9F%E5%86%85%E6%89%80%E6%9C%89%E6%95%B4%E6%95%B0%E9%83%BD%E8%A2%AB%E8%A6%86%E7%9B%96/">
         
         
@@ -406,6 +416,18 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1877. 数组中最大数对和的最小值</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1838.-%E6%9C%80%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%E7%9A%84%E9%A2%91%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1838. 最高频元素的频数</h2>
         </div>
     </a>
 </article>
