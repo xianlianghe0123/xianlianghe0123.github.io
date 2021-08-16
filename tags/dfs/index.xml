@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dfs on 贺贤良</title>
+    <link>https://xianlianghe0123.github.io/tags/dfs/</link>
+    <description>Recent content in dfs on 贺贤良</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Thu, 05 Aug 2021 14:10:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 802. 找到最终的安全状态</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-802.-%E6%89%BE%E5%88%B0%E6%9C%80%E7%BB%88%E7%9A%84%E5%AE%89%E5%85%A8%E7%8A%B6%E6%80%81/</link>
+      <pubDate>Thu, 05 Aug 2021 14:10:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-802.-%E6%89%BE%E5%88%B0%E6%9C%80%E7%BB%88%E7%9A%84%E5%AE%89%E5%85%A8%E7%8A%B6%E6%80%81/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-eventual-safe-states/
+难度： 中等
+题目描述 在有向图中，以某个节点为起始节点，从该点出发，每一步沿着图中的一条有向边行走。如果到达的节点是终点（即它没有连出的有向边），则停止。
+对于一个起始节点，如果从该节点出发，无论每一步选择沿哪条有向边行走，最后必然在有限步内到达终点，则将该起始节点称作是 安全 的。
+返回一个由图中所有安全的起始节点组成的数组作为答案。答案数组中的元素应当按 升序 排列。
+该有向图有 n 个节点，按 0 到 n - 1 编号，其中 n 是 graph 的节点数。图以下述形式给出：graph[i] 是编号 j 节点的一个列表，满足 (i, j) 是图的一条有向边。
+示例 1：  输入：graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+输出：[2,4,5,6]
+解释：示意图如上。
+ 示例 2：  输入：graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+输出：[4]
+ 提示：  n == graph.length 1 &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= graph[i].length &amp;lt;= n graph[i] 按严格递增顺序排列。 图中可能包含自环。 图中边的数目在范围 [1, 4 * 104] 内。  解题思路 深度优先搜索 通过分析题目得知，当图无环时，所有结点均为 安全 结点；当图有环时，无法到达环的结点属于 安全 结点。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 987. 二叉树的垂序遍历</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-987.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9E%82%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Sat, 31 Jul 2021 12:57:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-987.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9E%82%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <description>链接： https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/
+难度： 困难
+题目描述 给你二叉树的根结点 root ，请你设计算法计算二叉树的 垂序遍历 序列。
+对位于 (row, col) 的每个结点而言，其左右子结点分别位于 (row + 1, col - 1) 和 (row + 1, col + 1) 。树的根结点位于 (0, 0) 。
+二叉树的 垂序遍历 从最左边的列开始直到最右边的列结束，按列索引每一列上的所有结点，形成一个按出现位置从上到下排序的有序列表。如果同行同列上有多个结点，则按结点的值从小到大进行排序。
+返回二叉树的 垂序遍历 序列。
+示例 1：  输入：root = [3,9,20,null,null,15,7]
+输出：[[9],[3,15],[20],[7]]
+解释：
+列 -1 ：只有结点 9 在此列中。
+列 0 ：只有结点 3 和 15 在此列中，按从上到下顺序。
+列 1 ：只有结点 20 在此列中。
+列 2 ：只有结点 7 在此列中。
+ 示例 2：  输入：root = [1,2,3,4,5,6,7]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 671. 二叉树中第二小的节点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-671.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Tue, 27 Jul 2021 10:31:04 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-671.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/
+难度： 简单
+题目描述 给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节点中较小的一个。
+更正式地说，root.val = min(root.left.val, root.right.val) 总成立。
+给出这样的一个二叉树，你需要输出所有节点中的 第二小的值。如果第二小的值不存在的话，输出 -1 。
+示例 1：  输入：root = [2,2,5,null,null,5,7]
+输出：5
+解释：最小的值是 2 ，第二小的值是 5 。
+ 示例 2：  输入：root = [2,2,2]
+输出：-1
+解释：最小的值是 2, 但是不存在第二小的值。
+ 提示：  树中节点数目在范围 [1, 25] 内 1 &amp;lt;= Node.val &amp;lt;= 231 - 1 对于树中每个节点 root.val == min(root.left.val, root.right.val)  解题思路 深度优先搜索 据题意，树的根结点是最小值，故可以遍历整棵树，使用 min 记录最 第二小的值。
+对于每个结点，当该结点的数值小于 min，并且不与根结点相同时，更新 min，一次遍历完成得到 第二小的值。</description>
+    </item>
+    
+  </channel>
+</rss>

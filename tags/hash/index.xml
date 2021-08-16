@@ -6,7 +6,49 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 25 Jul 2021 21:48:26 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Aug 2021 11:00:42 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 313. 超级丑数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-313.-%E8%B6%85%E7%BA%A7%E4%B8%91%E6%95%B0/</link>
+      <pubDate>Mon, 09 Aug 2021 11:00:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-313.-%E8%B6%85%E7%BA%A7%E4%B8%91%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/super-ugly-number/
+难度： 中等
+题目描述 超级丑数 是一个正整数，并满足其所有质因数都出现在质数数组 primes 中。
+给你一个整数 n 和一个整数数组 primes ，返回第 n 个 超级丑数 。
+题目数据保证第 n 个 超级丑数 在 32-bit 带符号整数范围内。
+示例 1：  输入：n = 12, primes = [2,7,13,19]
+输出：32
+解释：给定长度为 4 的质数数组 primes = [2,7,13,19]，前 12 个超级丑数序列为：[1,2,4,7,8,13,14,16,19,26,28,32] 。
+ 示例 2：  输入：n = 1, primes = [2,3,5]
+输出：1
+解释：1 不含质因数，因此它的所有质因数都在质数数组 primes = [2,3,5] 中。
+ 注意：  1 &amp;lt;= n &amp;lt;= 106 1 &amp;lt;= primes.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 987. 二叉树的垂序遍历</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-987.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9E%82%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Sat, 31 Jul 2021 12:57:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-987.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9E%82%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <description>链接： https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/
+难度： 困难
+题目描述 给你二叉树的根结点 root ，请你设计算法计算二叉树的 垂序遍历 序列。
+对位于 (row, col) 的每个结点而言，其左右子结点分别位于 (row + 1, col - 1) 和 (row + 1, col + 1) 。树的根结点位于 (0, 0) 。
+二叉树的 垂序遍历 从最左边的列开始直到最右边的列结束，按列索引每一列上的所有结点，形成一个按出现位置从上到下排序的有序列表。如果同行同列上有多个结点，则按结点的值从小到大进行排序。
+返回二叉树的 垂序遍历 序列。
+示例 1：  输入：root = [3,9,20,null,null,15,7]
+输出：[[9],[3,15],[20],[7]]
+解释：
+列 -1 ：只有结点 9 在此列中。
+列 0 ：只有结点 3 和 15 在此列中，按从上到下顺序。
+列 1 ：只有结点 20 在此列中。
+列 2 ：只有结点 7 在此列中。
+ 示例 2：  输入：root = [1,2,3,4,5,6,7]</description>
+    </item>
+    
     <item>
       <title>Leetcode 1743. 从相邻元素对还原数组</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1743.-%E4%BB%8E%E7%9B%B8%E9%82%BB%E5%85%83%E7%B4%A0%E5%AF%B9%E8%BF%98%E5%8E%9F%E6%95%B0%E7%BB%84/</link>
@@ -96,7 +138,7 @@
 [&amp;ldquo;bat&amp;rdquo;]
 ]
  解题思路 哈希 &amp;amp; 计数 对于每个字符串，使用数组统计每个字母出现的数字，两个同位词得出的统计数组必然相同，故用该数组作为 key
-func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]int) { for i := range s { cnt[s[i]-&amp;#39;a&amp;#39;]++ } return } hash := make(map[[26]int][]string) for _, str := range strs { key := cnt(str) hash[key] = append(hash[key], str) } res := make([][]string, 0, len(hash)) for _, v := range hash { res = append(res, v) } return res }  复杂度  时间复杂度：$ O(NL), N = len(strs), L = max(len(str)) $ 空间复杂度：$ O(NL) $  哈希 &amp;amp; 排序 不同变位词中字母相同，所以将字符串按照字母排序后，其值也一定相同。故可以将其排序后的值作为哈希表的 key，并将其添加进 value 数组中。</description>
+func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]int) { for i := range s { cnt[s[i]-&amp;#39;a&amp;#39;]++ } return } hash := make(map[[26]int][]string) for _, str := range strs { key := cnt(str) hash[key] = append(hash[key], str) } res := make([][]string, 0, len(hash)) for _, v := range hash { res = append(res, v) } return res } 复杂度  时间复杂度：$ O(NL), N = len(strs), L = max(len(str)) $ 空间复杂度：$ O(NL) $  哈希 &amp;amp; 排序 不同变位词中字母相同，所以将字符串按照字母排序后，其值也一定相同。故可以将其排序后的值作为哈希表的 key，并将其添加进 value 数组中。</description>
     </item>
     
     <item>
@@ -134,7 +176,7 @@ kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为
  示例 3：  输入：[2,2,1,1,1,2,2]
 输出：2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
-func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 }  复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
+func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
     </item>
     
     <item>

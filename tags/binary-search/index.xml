@@ -6,7 +6,54 @@
     <description>Recent content in binary search on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 16 Jul 2021 14:55:24 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Aug 2021 10:42:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 611. 有效三角形的个数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-611.-%E6%9C%89%E6%95%88%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Wed, 04 Aug 2021 10:42:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-611.-%E6%9C%89%E6%95%88%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/valid-triangle-number/
+难度： 中等
+题目描述 给定一个包含非负整数的数组，你的任务是统计其中可以组成三角形三条边的三元组个数。
+示例：  输入: [2,2,3,4]
+输出: 3
+解释:
+有效的组合是:
+2,3,4 (使用第一个 2)
+2,3,4 (使用第二个 2)
+2,2,3
+ 注意：  数组长度不超过1000。 数组里整数的范围为 [0, 1000]。  解题思路 排序 + 二分查找 构成三角形的前提条件是两边之和小于第三边，也就是说，两个小边之和大于最长的那条边。
+故，首先对数组进行排序，然后依次枚举两条小边 x 和 y ，其下标为 i 和 j (不妨假设 i ≤ i，则 x ≤ y)，即得到最大边的取值范围 x+y-1， 通过二分查找，找到其最大值的位置，与 j 相减即得到可取值的数量，求和。
+func triangleNumber(nums []int) int { sort.Ints(nums) res := 0 for i := 0; i &amp;lt; len(nums)-2; i++ { if nums[i] == 0 { continue } for j := i + 1; j &amp;lt; len(nums)-1; j++ { pos := sort.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1337. 矩阵中战斗力最弱的 K 行</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1337.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E6%88%98%E6%96%97%E5%8A%9B%E6%9C%80%E5%BC%B1%E7%9A%84-k-%E8%A1%8C/</link>
+      <pubDate>Sun, 01 Aug 2021 09:54:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1337.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E6%88%98%E6%96%97%E5%8A%9B%E6%9C%80%E5%BC%B1%E7%9A%84-k-%E8%A1%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/the-k-weakest-rows-in-a-matrix/
+难度： 简单
+题目描述 给你一个大小为 m * n 的矩阵 mat，矩阵由若干军人和平民组成，分别用 1 和 0 表示。
+请你返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序。
+如果第 i 行的军人数量少于第 j 行，或者两行军人数量相同但 i 小于 j，那么我们认为第 i 行的战斗力比第 j 行弱。
+军人 总是 排在一行中的靠前位置，也就是说 1 总是出现在 0 之前。
+示例 1：  输入：mat =
+[[1,1,0,0,0],
+[1,1,1,1,0],
+[1,0,0,0,0],
+[1,1,0,0,0],
+[1,1,1,1,1]],
+k = 3
+输出：[2,0,3]
+解释： 每行中的军人数目： 行 0 -&amp;gt; 2
+行 1 -&amp;gt; 4
+行 2 -&amp;gt; 1
+行 3 -&amp;gt; 2</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 53 - I. 在排序数组中查找数字 I</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-53-i.-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97-i/</link>
@@ -21,7 +68,7 @@
  示例 2：  输入: nums = [5,7,7,8,8,10], target = 6
 输出: 0
  提示：  0 &amp;lt;= 数组长度 &amp;lt;= 50000  解题思路 顺序查找 顺序遍历，统计数量 target。由于数组有序，当当前元素大于 target时，
-func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if num == target { cnt++ } else if num &amp;gt; target { break } } return cnt }  复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  二分查找 二分查找，找到首个等于 target 的元素位置，依次向后遍历到元素不等于 target 为止，记录出现的次数。</description>
+func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if num == target { cnt++ } else if num &amp;gt; target { break } } return cnt } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  二分查找 二分查找，找到首个等于 target 的元素位置，依次向后遍历到元素不等于 target 为止，记录出现的次数。</description>
     </item>
     
     <item>

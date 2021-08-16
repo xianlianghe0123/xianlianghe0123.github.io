@@ -6,7 +6,371 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 25 Jul 2021 21:48:26 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 22:54:27 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 526. 优美的排列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-526.-%E4%BC%98%E7%BE%8E%E7%9A%84%E6%8E%92%E5%88%97/</link>
+      <pubDate>Mon, 16 Aug 2021 22:54:27 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-526.-%E4%BC%98%E7%BE%8E%E7%9A%84%E6%8E%92%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/beautiful-arrangement/
+难度： 中等
+题目描述 假设有从 1 到 N 的 N 个整数，如果从这 N 个数字中成功构造出一个数组，使得数组的第 i 位 (1 &amp;lt;= i &amp;lt;= N) 满足如下两个条件中的一个，我们就称这个数组为一个优美的排列。条件：
+ 第 i 位的数字能被 i 整除 i 能被第 i 位上的数字整除  现在给定一个整数 N，请问可以构造多少个优美的排列？
+示例：  输入: 2
+输出: 2
+解释:
+第 1 个优美的排列是 [1, 2]:
+第 1 个位置（i=1）上的数字是1，1能被 i（i=1）整除
+第 2 个位置（i=2）上的数字是2，2能被 i（i=2）整除
+第 2 个优美的排列是 [2, 1]:
+第 1 个位置（i=1）上的数字是2，2能被 i（i=1）整除
+第 2 个位置（i=2）上的数字是1，i（i=2）能被 1 整除</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 576. 出界的路径数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-576.-%E5%87%BA%E7%95%8C%E7%9A%84%E8%B7%AF%E5%BE%84%E6%95%B0/</link>
+      <pubDate>Sun, 15 Aug 2021 11:04:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-576.-%E5%87%BA%E7%95%8C%E7%9A%84%E8%B7%AF%E5%BE%84%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/out-of-boundary-paths/
+难度： 中等
+题目描述 给你一个大小为 m x n 的网格和一个球。球的起始坐标为 [startRow, startColumn] 。你可以将球移到在四个方向上相邻的单元格内（可以穿过网格边界到达网格之外）。你 最多 可以移动 maxMove 次球。
+给你五个整数 m、n、maxMove、startRow 以及 startColumn ，找出并返回可以将球移出边界的路径数量。因为答案可能非常大，返回对 109 + 7 取余 后的结果。
+示例 1：  输入：m = 2, n = 2, maxMove = 2, startRow = 0, startColumn = 0
+输出：6
+ 示例 2：  输入：m = 1, n = 3, maxMove = 3, startRow = 0, startColumn = 1
+输出：12
+ 提示：  1 &amp;lt;= m, n &amp;lt;= 50 0 &amp;lt;= maxMove &amp;lt;= 50 0 &amp;lt;= startRow &amp;lt; m 0 &amp;lt;= startColumn &amp;lt; n  解题思路 动态规划 使用 dp[move][row][col] 记录移动 move 次后，球位于第 row 行 col 列的方案数量。由于球只能来自周围的单元格，易得状态转移方程：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1583. 统计不开心的朋友</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1583.-%E7%BB%9F%E8%AE%A1%E4%B8%8D%E5%BC%80%E5%BF%83%E7%9A%84%E6%9C%8B%E5%8F%8B/</link>
+      <pubDate>Sat, 14 Aug 2021 10:51:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1583.-%E7%BB%9F%E8%AE%A1%E4%B8%8D%E5%BC%80%E5%BF%83%E7%9A%84%E6%9C%8B%E5%8F%8B/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-unhappy-friends/
+难度： 中等
+题目描述 给你一份 n 位朋友的亲近程度列表，其中 n 总是 偶数 。
+对每位朋友 i，preferences[i] 包含一份 按亲近程度从高到低排列 的朋友列表。换句话说，排在列表前面的朋友与 i 的亲近程度比排在列表后面的朋友更高。每个列表中的朋友均以 0 到 n-1 之间的整数表示。
+所有的朋友被分成几对，配对情况以列表 pairs 给出，其中 pairs[i] = [xi, yi] 表示 xi 与 yi 配对，且 yi 与 xi 配对。
+但是，这样的配对情况可能会是其中部分朋友感到不开心。在 x 与 y 配对且 u 与 v 配对的情况下，如果同时满足下述两个条件，x 就会不开心：
+ x 与 u 的亲近程度胜过 x 与 y，且 u 与 x 的亲近程度胜过 u 与 v  返回 不开心的朋友的数目 。
+示例 1：  输入：n = 4, preferences = [[1, 2, 3], [3, 2, 0], [3, 1, 0], [1, 2, 0]], pairs = [[0, 1], [2, 3]]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 516. 最长回文子序列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-516.-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Thu, 12 Aug 2021 11:16:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-516.-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/longest-palindromic-subsequence/
+难度： 中等
+题目描述 给你一个字符串 s ，找出其中最长的回文子序列，并返回该序列的长度。
+子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。
+示例 1：  输入：s = &amp;ldquo;bbbab&amp;rdquo;
+输出：4
+解释：一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
+ 示例 2：  输入：s = &amp;ldquo;cbbd&amp;rdquo;
+输出：2
+解释：一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
+ 注意：  1 &amp;lt;= s.length &amp;lt;= 1000 s 仅由小写英文字母组成  解题思路 动态规划 该题可以转化为寻找原字符串 s 和倒序字符串 s&#39; 的最长公共子序列问题。使用动态规划求解，dp[i][j] 表示以下标 i, j 结尾的前缀字串最长公共子序列的长度，状态转移方程如下：
+ 当 s[i] == s&#39;[j]，dp[i][j] = dp[i-1][j-1] + 1 当 s[i] == s&#39;[j]，dp[i][j] = max(dp[i-1][j], dp[i][j-1]  每次状态转移时仅依赖当前行和上一行，故可以使用滚动数组降低空间复杂度。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 413. 等差数列划分</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-413.-%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/</link>
+      <pubDate>Tue, 10 Aug 2021 10:42:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-413.-%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/</guid>
+      <description>链接： https://leetcode-cn.com/problems/arithmetic-slices/
+难度： 中等
+题目描述 如果一个数列 至少有三个元素 ，并且任意两个相邻元素之差相同，则称该数列为等差数列。
+例如，[1,3,5,7,9]、[7,7,7,7] 和 [3,-1,-5,-9] 都是等差数列。 给你一个整数数组 nums ，返回数组 nums 中所有为等差数组的 子数组 个数。
+子数组 是数组中的一个连续序列。
+示例 1：  输入：nums = [1,2,3,4]
+输出：3
+解释：nums 中有三个子等差数组：[1, 2, 3]、[2, 3, 4] 和 [1,2,3,4] 自身。
+ 示例 2：  输入：nums = [1]
+输出：0
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 5000 -1000 &amp;lt;= nums[i] &amp;lt;= 1000  解题思路 数学 对于一个等差数列数组，其长度为 n (n ≥ 3)，其等差数列 子数组 的数量由长度为 3, .</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 313. 超级丑数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-313.-%E8%B6%85%E7%BA%A7%E4%B8%91%E6%95%B0/</link>
+      <pubDate>Mon, 09 Aug 2021 11:00:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-313.-%E8%B6%85%E7%BA%A7%E4%B8%91%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/super-ugly-number/
+难度： 中等
+题目描述 超级丑数 是一个正整数，并满足其所有质因数都出现在质数数组 primes 中。
+给你一个整数 n 和一个整数数组 primes ，返回第 n 个 超级丑数 。
+题目数据保证第 n 个 超级丑数 在 32-bit 带符号整数范围内。
+示例 1：  输入：n = 12, primes = [2,7,13,19]
+输出：32
+解释：给定长度为 4 的质数数组 primes = [2,7,13,19]，前 12 个超级丑数序列为：[1,2,4,7,8,13,14,16,19,26,28,32] 。
+ 示例 2：  输入：n = 1, primes = [2,3,5]
+输出：1
+解释：1 不含质因数，因此它的所有质因数都在质数数组 primes = [2,3,5] 中。
+ 注意：  1 &amp;lt;= n &amp;lt;= 106 1 &amp;lt;= primes.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1137. 第 N 个泰波那契数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1137.-%E7%AC%AC-n-%E4%B8%AA%E6%B3%B0%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/</link>
+      <pubDate>Sun, 08 Aug 2021 09:18:26 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1137.-%E7%AC%AC-n-%E4%B8%AA%E6%B3%B0%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/n-th-tribonacci-number/
+难度： 简单
+题目描述 泰波那契序列 Tn 定义如下： T0 = 0, T1 = 1, T2 = 1, 且在 n &amp;gt;= 0 的条件下 Tn+3 = Tn + Tn+1 + Tn+2
+给你整数 n，请返回第 n 个泰波那契数 Tn 的值。
+示例 1：  输入：n = 4
+输出：4
+解释：
+T_3 = 0 + 1 + 1 = 2
+T_4 = 1 + 1 + 2 = 4
+ 示例 2：  输入：n = 25 输出：1389537</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 457. 环形数组是否存在循环</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-457.-%E7%8E%AF%E5%BD%A2%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E5%BE%AA%E7%8E%AF/</link>
+      <pubDate>Sat, 07 Aug 2021 19:33:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-457.-%E7%8E%AF%E5%BD%A2%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E5%BE%AA%E7%8E%AF/</guid>
+      <description>链接： https://leetcode-cn.com/problems/circular-array-loop/
+难度： 中等
+题目描述 存在一个不含 0 的 环形 数组 nums ，每个 nums[i] 都表示位于下标 i 的角色应该向前或向后移动的下标个数：
+ 如果 nums[i] 是正数，向前 移动 nums[i] 步 如果 nums[i] 是负数，向后 移动 nums[i] 步  因为数组是 环形 的，所以可以假设从最后一个元素向前移动一步会到达第一个元素，而第一个元素向后移动一步会到达最后一个元素。
+数组中的 循环 由长度为 k 的下标序列 seq ：
+ 遵循上述移动规则将导致重复下标序列 seq[0] -&amp;gt; seq[1] -&amp;gt; ... -&amp;gt; seq[k - 1] -&amp;gt; seq[0] -&amp;gt; ... 所有 nums[seq[j]] 应当不是 全正 就是 全负 k &amp;gt; 1  如果 nums 中存在循环，返回 true ；否则，返回 false 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 802. 找到最终的安全状态</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-802.-%E6%89%BE%E5%88%B0%E6%9C%80%E7%BB%88%E7%9A%84%E5%AE%89%E5%85%A8%E7%8A%B6%E6%80%81/</link>
+      <pubDate>Thu, 05 Aug 2021 14:10:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-802.-%E6%89%BE%E5%88%B0%E6%9C%80%E7%BB%88%E7%9A%84%E5%AE%89%E5%85%A8%E7%8A%B6%E6%80%81/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-eventual-safe-states/
+难度： 中等
+题目描述 在有向图中，以某个节点为起始节点，从该点出发，每一步沿着图中的一条有向边行走。如果到达的节点是终点（即它没有连出的有向边），则停止。
+对于一个起始节点，如果从该节点出发，无论每一步选择沿哪条有向边行走，最后必然在有限步内到达终点，则将该起始节点称作是 安全 的。
+返回一个由图中所有安全的起始节点组成的数组作为答案。答案数组中的元素应当按 升序 排列。
+该有向图有 n 个节点，按 0 到 n - 1 编号，其中 n 是 graph 的节点数。图以下述形式给出：graph[i] 是编号 j 节点的一个列表，满足 (i, j) 是图的一条有向边。
+示例 1：  输入：graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+输出：[2,4,5,6]
+解释：示意图如上。
+ 示例 2：  输入：graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+输出：[4]
+ 提示：  n == graph.length 1 &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= graph[i].length &amp;lt;= n graph[i] 按严格递增顺序排列。 图中可能包含自环。 图中边的数目在范围 [1, 4 * 104] 内。  解题思路 深度优先搜索 通过分析题目得知，当图无环时，所有结点均为 安全 结点；当图有环时，无法到达环的结点属于 安全 结点。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 611. 有效三角形的个数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-611.-%E6%9C%89%E6%95%88%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Wed, 04 Aug 2021 10:42:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-611.-%E6%9C%89%E6%95%88%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/valid-triangle-number/
+难度： 中等
+题目描述 给定一个包含非负整数的数组，你的任务是统计其中可以组成三角形三条边的三元组个数。
+示例：  输入: [2,2,3,4]
+输出: 3
+解释:
+有效的组合是:
+2,3,4 (使用第一个 2)
+2,3,4 (使用第二个 2)
+2,2,3
+ 注意：  数组长度不超过1000。 数组里整数的范围为 [0, 1000]。  解题思路 排序 + 二分查找 构成三角形的前提条件是两边之和小于第三边，也就是说，两个小边之和大于最长的那条边。
+故，首先对数组进行排序，然后依次枚举两条小边 x 和 y ，其下标为 i 和 j (不妨假设 i ≤ i，则 x ≤ y)，即得到最大边的取值范围 x+y-1， 通过二分查找，找到其最大值的位置，与 j 相减即得到可取值的数量，求和。
+func triangleNumber(nums []int) int { sort.Ints(nums) res := 0 for i := 0; i &amp;lt; len(nums)-2; i++ { if nums[i] == 0 { continue } for j := i + 1; j &amp;lt; len(nums)-1; j++ { pos := sort.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 743. 网络延迟时间</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-743.-%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Tue, 03 Aug 2021 20:16:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-743.-%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/</guid>
+      <description>链接： https://leetcode-cn.com/problems/network-delay-time/
+难度： 中等
+题目描述 有 n 个网络节点，标记为 1 到 n 。
+给你一个列表 times，表示信号经过 有向 边的传递时间。 times[i] = (ui, vi, wi)，其中 ui 是源节点，vi 是目标节点， wi 是一个信号从源节点传递到目标节点的时间。
+现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 -1 。
+示例 1：  输入：times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+输出：2
+ 示例 2：  输入：times = [[1,2,1]], n = 2, k = 1
+输出：1
+ 示例 3：  输入：times = [[1,2,1]], n = 2, k = 2</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 581. 最短无序连续子数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-581.-%E6%9C%80%E7%9F%AD%E6%97%A0%E5%BA%8F%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Tue, 03 Aug 2021 14:28:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-581.-%E6%9C%80%E7%9F%AD%E6%97%A0%E5%BA%8F%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/
+难度： 中等
+题目描述 给你一个整数数组 nums ，你需要找出一个 连续子数组 ，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。
+请你找出符合题意的 最短 子数组，并输出它的长度。
+示例 1：  输入：nums = [2,6,4,8,10,9,15]
+输出：5
+解释：你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
+ 示例 2：  输入：nums = [1,2,3,4]
+输出：0
+ 示例 3：  输入：nums = [1]
+输出：0
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 104 -105 &amp;lt;= nums[i] &amp;lt;= 105  进阶：你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
+解题思路 排序 对于连续子数组以外的元素，其在排序前后位置不会改变，故可以将整个数组排序后，从头和尾开始，依次找到不变的元素加以排除，剩余元素就是 最短 连续子数组。
+func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) copy(sortedNum, nums) sort.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1337. 矩阵中战斗力最弱的 K 行</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1337.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E6%88%98%E6%96%97%E5%8A%9B%E6%9C%80%E5%BC%B1%E7%9A%84-k-%E8%A1%8C/</link>
+      <pubDate>Sun, 01 Aug 2021 09:54:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1337.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E6%88%98%E6%96%97%E5%8A%9B%E6%9C%80%E5%BC%B1%E7%9A%84-k-%E8%A1%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/the-k-weakest-rows-in-a-matrix/
+难度： 简单
+题目描述 给你一个大小为 m * n 的矩阵 mat，矩阵由若干军人和平民组成，分别用 1 和 0 表示。
+请你返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序。
+如果第 i 行的军人数量少于第 j 行，或者两行军人数量相同但 i 小于 j，那么我们认为第 i 行的战斗力比第 j 行弱。
+军人 总是 排在一行中的靠前位置，也就是说 1 总是出现在 0 之前。
+示例 1：  输入：mat =
+[[1,1,0,0,0],
+[1,1,1,1,0],
+[1,0,0,0,0],
+[1,1,0,0,0],
+[1,1,1,1,1]],
+k = 3
+输出：[2,0,3]
+解释： 每行中的军人数目： 行 0 -&amp;gt; 2
+行 1 -&amp;gt; 4
+行 2 -&amp;gt; 1
+行 3 -&amp;gt; 2</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 987. 二叉树的垂序遍历</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-987.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9E%82%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Sat, 31 Jul 2021 12:57:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-987.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9E%82%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <description>链接： https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/
+难度： 困难
+题目描述 给你二叉树的根结点 root ，请你设计算法计算二叉树的 垂序遍历 序列。
+对位于 (row, col) 的每个结点而言，其左右子结点分别位于 (row + 1, col - 1) 和 (row + 1, col + 1) 。树的根结点位于 (0, 0) 。
+二叉树的 垂序遍历 从最左边的列开始直到最右边的列结束，按列索引每一列上的所有结点，形成一个按出现位置从上到下排序的有序列表。如果同行同列上有多个结点，则按结点的值从小到大进行排序。
+返回二叉树的 垂序遍历 序列。
+示例 1：  输入：root = [3,9,20,null,null,15,7]
+输出：[[9],[3,15],[20],[7]]
+解释：
+列 -1 ：只有结点 9 在此列中。
+列 0 ：只有结点 3 和 15 在此列中，按从上到下顺序。
+列 1 ：只有结点 20 在此列中。
+列 2 ：只有结点 7 在此列中。
+ 示例 2：  输入：root = [1,2,3,4,5,6,7]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 171. Excel表列序号</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-171.-excel%E8%A1%A8%E5%88%97%E5%BA%8F%E5%8F%B7/</link>
+      <pubDate>Fri, 30 Jul 2021 10:58:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-171.-excel%E8%A1%A8%E5%88%97%E5%BA%8F%E5%8F%B7/</guid>
+      <description>链接： https://leetcode-cn.com/problems/excel-sheet-column-number/
+难度： 简单
+题目描述 给你一个字符串 columnTitle ，表示 Excel 表格中的列名称。返回该列名称对应的列序号。
+例如，
+ A -&amp;gt; 1
+B -&amp;gt; 2
+C -&amp;gt; 3
+&amp;hellip;
+Z -&amp;gt; 26
+AA -&amp;gt; 27
+AB -&amp;gt; 28
+&amp;hellip;
+ 示例 1：  输入: columnTitle = &amp;ldquo;A&amp;rdquo;
+输出: 1
+ 示例 2：  输入: columnTitle = &amp;ldquo;AB&amp;rdquo;
+输出: 28
+ 示例 3：  输入: columnTitle = &amp;ldquo;ZY&amp;rdquo;
+输出: 701
+ 示例 4：  输入: columnTitle = &amp;ldquo;FXSHRXW&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1104. 二叉树寻路</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1104.-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AF%BB%E8%B7%AF/</link>
+      <pubDate>Thu, 29 Jul 2021 20:22:11 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1104.-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AF%BB%E8%B7%AF/</guid>
+      <description> 链接： https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/
+难度： 中等
+题目描述 在一棵无限的二叉树上，每个节点都有两个子节点，树中的节点 逐行 依次按 “之” 字形进行标记。
+如下图所示，在奇数行（即，第一行、第三行、第五行……）中，按从左到右的顺序进行标记；
+而偶数行（即，第二行、第四行、第六行……）中，按从右到左的顺序进行标记。
+给你树上某一个节点的标号 label，请你返回从根节点到该标号为 label 节点的路径，该路径是由途经的节点标号所组成的。
+示例 1：  输入：label = 14
+输出：[1,3,4,14]
+ 示例 2：  输入：label = 26
+输出：[1,2,6,10,26]
+ 提示：  1 &amp;lt;= label &amp;lt;= 106  解题思路 推导 对于一个完全二叉树，可以快速找到子结点 x 的父结点是 x/2。该题描述的是完全二叉树的一种变种，仅是偶数行的结点整体进行了反转。
+可以使用完全二叉树的编号，快速找到父结点，然后推导出在原二叉树中的原编号，加入到结果中。
+对于反转后的某一层，其元素为公差为 1 的等差数列，某个数反转后的编号即为当前层首尾元素之和减去当前元素。
+func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满二叉树结点数量 	for label &amp;gt; cnt { layer++ cnt = 2*(cnt+1) - 1 } idx := layer - 1 res := make([]int, layer) num := label // 完全二叉树编号 	if layer&amp;amp;1 == 0 { num = cnt/2 + 1 + cnt - label } for layer &amp;gt; 0 { if layer&amp;amp;1 == 0 { // 偶数层，转换 	res[idx] = cnt/2 + 1 + cnt - num } else { res[idx] = num } idx-- num /= 2 layer-- cnt /= 2 } return res } 复杂度  时间复杂度：$ O(logN)), N = label $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 863. 二叉树中所有距离为 K 的结点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-863.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%89%80%E6%9C%89%E8%B7%9D%E7%A6%BB%E4%B8%BA-k-%E7%9A%84%E7%BB%93%E7%82%B9/</link>
+      <pubDate>Wed, 28 Jul 2021 11:09:17 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-863.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%89%80%E6%9C%89%E8%B7%9D%E7%A6%BB%E4%B8%BA-k-%E7%9A%84%E7%BB%93%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/
+难度： 中等
+题目描述 给定一个二叉树（具有根结点 root）， 一个目标结点 target ，和一个整数值 K 。
+返回到目标结点 target 距离为 K 的所有结点的值的列表。 答案可以以任何顺序返回。
+示例：  输入：root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, K = 2
+输出：[7,4,1]
+解释：
+所求结点为与目标结点（值为 5）距离为 2 的结点，值分别为 7，4，以及 1
+注意，输入的 &amp;ldquo;root&amp;rdquo; 和 &amp;ldquo;target&amp;rdquo; 实际上是树上的结点。
+上面的输入仅仅是对这些对象进行了序列化描述。
+ 提示：  给定的树是非空的。 树上的每个结点都具有唯一的值 0 &amp;lt;= node.val &amp;lt;= 500 。 目标结点 target 是树上的结点。 0 &amp;lt;= K &amp;lt;= 1000  解题思路 深度优先搜索 一次遍历，找到结点 target，同时记录每个结点的父结点，使之构成一张无向图。
+然后从 target 结点开始遍历图，找到所有距离为 K 的结点。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 671. 二叉树中第二小的节点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-671.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Tue, 27 Jul 2021 10:31:04 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-671.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/
+难度： 简单
+题目描述 给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节点中较小的一个。
+更正式地说，root.val = min(root.left.val, root.right.val) 总成立。
+给出这样的一个二叉树，你需要输出所有节点中的 第二小的值。如果第二小的值不存在的话，输出 -1 。
+示例 1：  输入：root = [2,2,5,null,null,5,7]
+输出：5
+解释：最小的值是 2 ，第二小的值是 5 。
+ 示例 2：  输入：root = [2,2,2]
+输出：-1
+解释：最小的值是 2, 但是不存在第二小的值。
+ 提示：  树中节点数目在范围 [1, 25] 内 1 &amp;lt;= Node.val &amp;lt;= 231 - 1 对于树中每个节点 root.val == min(root.left.val, root.right.val)  解题思路 深度优先搜索 据题意，树的根结点是最小值，故可以遍历整棵树，使用 min 记录最 第二小的值。
+对于每个结点，当该结点的数值小于 min，并且不与根结点相同时，更新 min，一次遍历完成得到 第二小的值。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1743. 从相邻元素对还原数组</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1743.-%E4%BB%8E%E7%9B%B8%E9%82%BB%E5%85%83%E7%B4%A0%E5%AF%B9%E8%BF%98%E5%8E%9F%E6%95%B0%E7%BB%84/</link>
@@ -156,7 +520,7 @@
 [&amp;ldquo;bat&amp;rdquo;]
 ]
  解题思路 哈希 &amp;amp; 计数 对于每个字符串，使用数组统计每个字母出现的数字，两个同位词得出的统计数组必然相同，故用该数组作为 key
-func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]int) { for i := range s { cnt[s[i]-&amp;#39;a&amp;#39;]++ } return } hash := make(map[[26]int][]string) for _, str := range strs { key := cnt(str) hash[key] = append(hash[key], str) } res := make([][]string, 0, len(hash)) for _, v := range hash { res = append(res, v) } return res }  复杂度  时间复杂度：$ O(NL), N = len(strs), L = max(len(str)) $ 空间复杂度：$ O(NL) $  哈希 &amp;amp; 排序 不同变位词中字母相同，所以将字符串按照字母排序后，其值也一定相同。故可以将其排序后的值作为哈希表的 key，并将其添加进 value 数组中。</description>
+func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]int) { for i := range s { cnt[s[i]-&amp;#39;a&amp;#39;]++ } return } hash := make(map[[26]int][]string) for _, str := range strs { key := cnt(str) hash[key] = append(hash[key], str) } res := make([][]string, 0, len(hash)) for _, v := range hash { res = append(res, v) } return res } 复杂度  时间复杂度：$ O(NL), N = len(strs), L = max(len(str)) $ 空间复杂度：$ O(NL) $  哈希 &amp;amp; 排序 不同变位词中字母相同，所以将字符串按照字母排序后，其值也一定相同。故可以将其排序后的值作为哈希表的 key，并将其添加进 value 数组中。</description>
     </item>
     
     <item>
@@ -174,7 +538,7 @@ func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]in
 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
  提示：  1 &amp;lt;= arr.length &amp;lt;= 105 -100 &amp;lt;= arr[i] &amp;lt;= 100  解题思路 动态规划 用 dp[i] 记录以 i 为结尾的连续子数组和的最大值，容易得到状态转移方程：
  dp[0] = nums[0] dp[i] = max(dp[i-1]+nums[i], nums[i])  由于每次转移仅涉及到前一个结果，使用变量代替数组降低空间复杂度
-func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] max := dp for pre, i := 0, 1; i &amp;lt; len(nums); i++ { pre = dp if pre+nums[i] &amp;gt; nums[i] { dp = pre + nums[i] } else { dp = nums[i] } if max &amp;lt; dp { max = dp } } return max }  复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  </description>
+func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] max := dp for pre, i := 0, 1; i &amp;lt; len(nums); i++ { pre = dp if pre+nums[i] &amp;gt; nums[i] { dp = pre + nums[i] } else { dp = nums[i] } if max &amp;lt; dp { max = dp } } return max } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  </description>
     </item>
     
     <item>
@@ -191,7 +555,7 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
  示例 2：  输入: nums = [5,7,7,8,8,10], target = 6
 输出: 0
  提示：  0 &amp;lt;= 数组长度 &amp;lt;= 50000  解题思路 顺序查找 顺序遍历，统计数量 target。由于数组有序，当当前元素大于 target时，
-func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if num == target { cnt++ } else if num &amp;gt; target { break } } return cnt }  复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  二分查找 二分查找，找到首个等于 target 的元素位置，依次向后遍历到元素不等于 target 为止，记录出现的次数。</description>
+func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if num == target { cnt++ } else if num &amp;gt; target { break } } return cnt } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  二分查找 二分查找，找到首个等于 target 的元素位置，依次向后遍历到元素不等于 target 为止，记录出现的次数。</description>
     </item>
     
     <item>
@@ -298,7 +662,7 @@ kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为
  示例 3：  输入：[2,2,1,1,1,2,2]
 输出：2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
-func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 }  复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
+func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
     </item>
     
     <item>
@@ -525,7 +889,7 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
  解题思路 数学 通过分析题意可以得知，该题是一个进制转换，将一个10进制的数转换为26进制。
 通过数学方法，逐次模26取余数，即可求得倒序的26进制每一位，反转该序列即可求得转换后的数。
 注意：该26进制从1开始计数，每次取模前应减1。
-func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; columnNumber &amp;gt; 0; columnNumber /= 26 { columnNumber = columnNumber - 1 res = append(res, &amp;#39;A&amp;#39;+byte((columnNumber)%26)) } for i := 0; i &amp;lt; len(res)/2; i++ { res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i] } return string(res) }  复杂度  时间复杂度：O(log26columnNumber) 空间复杂度：O(log26columnNumber)  </description>
+func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; columnNumber &amp;gt; 0; columnNumber /= 26 { columnNumber = columnNumber - 1 res = append(res, &amp;#39;A&amp;#39;+byte((columnNumber)%26)) } for i := 0; i &amp;lt; len(res)/2; i++ { res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i] } return string(res) } 复杂度  时间复杂度：O(log26columnNumber) 空间复杂度：O(log26columnNumber)  </description>
     </item>
     
     <item>
@@ -618,7 +982,7 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num !</description>
 示例1：  输入：s = &amp;ldquo;abc&amp;rdquo;
 输出：[&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
  提示：  1 &amp;lt;= s 的长度 &amp;lt;= 8  解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
-func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res }  复杂度  时间复杂度：O(N*N!</description>
+func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res } 复杂度  时间复杂度：O(N*N!</description>
     </item>
     
     <item>
@@ -706,7 +1070,7 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
 调用 isBadVersion(5) -&amp;gt; true
 调用 isBadVersion(4) -&amp;gt; true
 所以，4 是第一个错误的版本。  解题思路 二分查找 对于连续的版本号 [i, j] 每次判断版本号 (i+j)/2 是否出错，未出错查找范围缩小到 [(i+j)/2+1, j]，出错缩小到 [i, (i+j)/2]，直到 i = j 即得到首个出错的版本号 i
-func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i + j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid+1, j) } } return binSearch(1, n) }  复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  </description>
+func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i + j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid+1, j) } } return binSearch(1, n) } 复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  </description>
     </item>
     
     <item>
@@ -961,7 +1325,7 @@ func isPowerOfFour(n int) bool { for ; n &amp;gt; 0; n &amp;gt;&amp;gt;= 2 { if 
 所以答案为：
 HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 + 2 = 6.
  注意：  数组中元素的范围为从 0 到 109。 数组的长度不超过 104。  解题思路 按位计数 当一对数字某一位上的两个数字不同时，汉明距离的总和才会加一。故可以统计数组中相同位的 0 和 1 的数量，相乘可统计当前位的汉明距离和。
-func totalHammingDistance(nums []int) int { totalDistance := 0 for i := 1 &amp;lt;&amp;lt; 30; i &amp;gt; 0; i &amp;gt;&amp;gt;= 1 { ones := 0 zeros := 0 for _, num := range nums { if num&amp;amp;i == 0 { zeros++ } else { ones++ } } totalDistance += ones * zeros } return totalDistance }  复杂度  时间复杂度：O(N*B) 空间复杂度：O(1)  </description>
+func totalHammingDistance(nums []int) int { totalDistance := 0 for i := 1 &amp;lt;&amp;lt; 30; i &amp;gt; 0; i &amp;gt;&amp;gt;= 1 { ones := 0 zeros := 0 for _, num := range nums { if num&amp;amp;i == 0 { zeros++ } else { ones++ } } totalDistance += ones * zeros } return totalDistance } 复杂度  时间复杂度：O(N*B) 空间复杂度：O(1)  </description>
     </item>
     
     <item>
@@ -982,7 +1346,7 @@ func totalHammingDistance(nums []int) int { totalDistance := 0 for i := 1 &amp;l
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↑&amp;nbsp;&amp;nbsp;&amp;nbsp;↑
 上面的箭头指出了对应二进制位不同的位置。
  解题思路 异或 异或操作可以得出标记出两个数二进制位不同的位置，然后统计数量即可。
-func hammingDistance(x int, y int) int { distance := 0 for xor := x ^ y; xor != 0; xor &amp;gt;&amp;gt;= 1 { distance += xor &amp;amp; 1 } return distance }  复杂度  时间复杂度：O(logB) 空间复杂度：O(1)  </description>
+func hammingDistance(x int, y int) int { distance := 0 for xor := x ^ y; xor != 0; xor &amp;gt;&amp;gt;= 1 { distance += xor &amp;amp; 1 } return distance } 复杂度  时间复杂度：O(logB) 空间复杂度：O(1)  </description>
     </item>
     
     <item>
@@ -1070,6 +1434,23 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
     </item>
     
     <item>
+      <title>Leetcode 1738. 找出第 K 大的异或坐标值</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1738.-%E6%89%BE%E5%87%BA%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E5%BC%82%E6%88%96%E5%9D%90%E6%A0%87%E5%80%BC/</link>
+      <pubDate>Wed, 19 May 2021 22:46:08 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1738.-%E6%89%BE%E5%87%BA%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E5%BC%82%E6%88%96%E5%9D%90%E6%A0%87%E5%80%BC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-kth-largest-xor-coordinate-value/
+难度： 中等
+题目描述 给你一个二维矩阵 matrix 和一个整数 k ，矩阵大小为 m x n 由非负整数组成。
+矩阵中坐标 (a, b) 的 值 可由对所有满足 0 &amp;lt;= i &amp;lt;= a &amp;lt; m 且 0 &amp;lt;= j &amp;lt;= b &amp;lt; n 的元素 matrix[i][j]（下标从 0 开始计数）执行异或运算得到。
+请你找出 matrix 的所有坐标中第 k 大的值（k 的值从 1 开始计数）。
+示例1：  输入：matrix = [[5,2],[1,6]], k = 1
+输出：7
+解释：坐标 (0,1) 的值是 5 XOR 2 = 7 ，为最大的值。
+ 示例2：  输入：matrix = [[5,2],[1,6]], k = 2</description>
+    </item>
+    
+    <item>
       <title>Leetcode 1442. 形成两个异或相等数组的三元组数目</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1442.-%E5%BD%A2%E6%88%90%E4%B8%A4%E4%B8%AA%E5%BC%82%E6%88%96%E7%9B%B8%E7%AD%89%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/</link>
       <pubDate>Tue, 18 May 2021 22:40:57 +0800</pubDate>
@@ -1127,6 +1508,19 @@ a 和 b 定义如下：
  示例5：  输入：nums = [14,70,53,83,49,91,36,80,92,51,66,70]
 输出：127
  提示：  1 &amp;lt;= nums.length &amp;lt;= 2 * 104 0 &amp;lt;= nums[i] &amp;lt;= 232 - 1  解题思路 暴力求解 枚举所有的 i 和 j，求解比较得出最大值。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 12. 整数转罗马数字</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-12.-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Fri, 14 May 2021 17:30:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-12.-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/integer-to-roman/
+难度： 中等
+题目描述 罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
+字符 数值 I 1 V 5 X 10 L 50 C 100 D 500 M 1000 例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做 XXVII, 即为 XX + V + II 。
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</description>
     </item>
     
     <item>
@@ -1348,7 +1742,7 @@ func reverse(x int) int { res := 0 for i := 0; x !</description>
  示例2：  输入：nums = [0,1,0,1,0,1,99] 输出：99
  提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 解题思路 哈希 统计每个数出现的次数，然后找出其中只出现一次的数
-func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ } for k, v := range cnt { if v == 1 { return k } } return 0 }  复杂度  时间复杂度：O(N) 空间复杂度：O(N)  排序 将整个数组排序，没三个一组进行首尾比较，相同继续，不同返回。</description>
+func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ } for k, v := range cnt { if v == 1 { return k } } return 0 } 复杂度  时间复杂度：O(N) 空间复杂度：O(N)  排序 将整个数组排序，没三个一组进行首尾比较，相同继续，不同返回。</description>
     </item>
     
     <item>
@@ -1478,6 +1872,24 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
     </item>
     
     <item>
+      <title>Leetcode 363. 矩形区域不超过 K 的最大数值和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-363.-%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87-k-%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/</link>
+      <pubDate>Thu, 22 Apr 2021 10:41:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-363.-%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87-k-%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/
+难度： 困难
+题目描述 给你一个 m x n 的矩阵 matrix 和一个整数 k ，找出并返回矩阵内部矩形区域的不超过 k 的最大数值和。
+题目数据保证总会存在一个数值和不超过 k 的矩形区域。
+示例1：  输入：matrix = [[1,0,1],[0,-2,3]], k = 2
+输出：2
+解释：蓝色边框圈出来的矩形区域 [[0, 1], [-2, 3]] 的数值和是 2，且 2 是不超过 k 的最大数字（k = 2）。
+ 示例2：  输入：matrix = [[2,2,-1]], k = 3
+输出：3
+ 提示：  m == matrix.length n == matrix[i].length -100 &amp;lt;= matrix[i][j] &amp;lt;= 100 -105 &amp;lt;= k &amp;lt;= 105  解题思路 暴力求解 以每个元素为起点，求解</description>
+    </item>
+    
+    <item>
       <title>Leetcode 91. 解码方式</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Wed, 21 Apr 2021 10:35:45 +0800</pubDate>
@@ -1566,6 +1978,25 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 输出：2, nums = [1,2]
 解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
  示例2：  输入：nums = [0,0,1,1,1,2,2,3,3,4]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 220. 存在重复元素 III</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-220.-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-iii/</link>
+      <pubDate>Sat, 17 Apr 2021 20:58:46 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-220.-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-iii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/contains-duplicate-iii/
+难度： 中等
+题目描述 给你一个整数数组 nums 和两个整数 k 和 t 。请你判断是否存在 两个不同下标 i 和 j，使得 abs(nums[i] - nums[j]) &amp;lt;= t ，同时又满足 abs(i - j) &amp;lt;= k 。
+如果存在则返回 true，不存在返回 false。
+示例：  输入：nums = [1,2,3,1], k = 3, t = 0
+输出：true
+示例： 输入：nums = [1,0,1,1], k = 1, t = 2
+输出：true
+示例： 输入：nums = [1,5,9,1,5,9], k = 2, t = 3
+输出：false
+ 提示：  0 &amp;lt;= nums.</description>
     </item>
     
   </channel>

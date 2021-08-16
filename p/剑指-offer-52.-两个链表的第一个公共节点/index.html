@@ -37,7 +37,9 @@
 输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
  示例 2：  输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1">
     </head>
-    <body class="">
+    <body class="
+    article-page 
+">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -54,13 +56,19 @@
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
-            <aside class="sidebar left-sidebar sticky">
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -69,13 +77,14 @@
 
     <header class="site-info">
         
+            
             <figure class="site-avatar">
                 
                     
                     
                     
                         
-                        <img src="/img/avatar_hu56607a142d0531102191ba7dd1f3a72d_38959_300x0_resize_q75_box.jpeg" width="300"
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -84,6 +93,7 @@
                     <span class="emoji">🍥</span>
                 
             </figure>
+            
         
         <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
         <h2 class="site-description"></h2>
@@ -114,7 +124,7 @@
         
 
         <li >
-            <a href='/archives'>
+            <a href='/archives/'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -173,20 +183,8 @@
     </ol>
 </aside>
 
-            <main class="main full-width">
-    <div id="article-toolbar">
-        <a href="https://xianlianghe0123.github.io" class="back-home">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
-</svg>
-
-
-
-            <span>Back</span>
-        </a>
-    </div>
-
+    
+<main class="main full-width">
     <article class="main-article">
     <header class="article-header">
 
@@ -205,17 +203,29 @@
         <a href="/p/%E5%89%91%E6%8C%87-offer-52.-%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/">剑指 Offer 52. 两个链表的第一个公共节点</a>
     </h2>
 
+    
+
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
 </svg>
+                <time class="article-time--published">Jul 21, 2021</time>
+            </div>
+        
 
-
-
-        <time class="article-time--published">Jul 21, 2021</time>
-    </footer></div>
+        
+    </footer>
+    
+</div>
 </header>
 
     <section class="article-content">
@@ -279,7 +289,7 @@
 <h4 id="哈希">哈希</h4>
 
 <p>遍历链表 <code>List1</code>，记录其所有的结点，然后遍历链表 <code>List2</code> ，查找在第一个链表中首次出现的结点并返回，查找不到返回空。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
 	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>]<span style="color:#66d9ef">bool</span>)
 	<span style="color:#66d9ef">for</span> ;<span style="color:#a6e22e">headA</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>;<span style="color:#a6e22e">headA</span> = <span style="color:#a6e22e">headA</span>.<span style="color:#a6e22e">Next</span> {
 		<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">headA</span>] = <span style="color:#66d9ef">true</span>
@@ -290,8 +300,7 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-}
-</code></pre></div>
+}</code></pre></div>
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
@@ -313,7 +322,7 @@
 </ul>
 
 <p>当两个链表等长时候，相当于已经完成了对齐，跳过了第一阶段，直接遍历即可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
 	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node1</span>, <span style="color:#a6e22e">node2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span>;; {
 		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node1</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">node2</span> {
 			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node1</span>
@@ -329,8 +338,7 @@
 			<span style="color:#a6e22e">node2</span> = <span style="color:#a6e22e">node2</span>.<span style="color:#a6e22e">Next</span>
 		}
 	}
-}
-</code></pre></div>
+}</code></pre></div>
 <h5 id="复杂度-1">复杂度</h5>
 
 <ul>
@@ -353,6 +361,7 @@
 
 
     </footer>
+
 
     
         <link 
@@ -386,6 +395,30 @@
         <h2 class="section-title">Related contents</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-313.-%E8%B6%85%E7%BA%A7%E4%B8%91%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 313. 超级丑数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-987.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9E%82%E5%BA%8F%E9%81%8D%E5%8E%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 987. 二叉树的垂序遍历</h2>
+        </div>
+    </a>
+</article>
                 
                     
 <article class="">
@@ -423,37 +456,13 @@
     </a>
 </article>
                 
-                    
-<article class="">
-    <a href="/p/%E9%9D%A2%E8%AF%95%E9%A2%98-10.02.-%E5%8F%98%E4%BD%8D%E8%AF%8D%E7%BB%84/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">面试题 10.02. 变位词组</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-981.-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E9%94%AE%E5%80%BC%E5%AD%98%E5%82%A8/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 981. 基于时间的键值存储</h2>
-        </div>
-    </a>
-</article>
-                
             </div>
         </div>
     
 </aside>
 
-
-    
+     
+     
         
     
 
@@ -468,9 +477,11 @@
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
+    
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     
@@ -547,7 +558,10 @@
                 rel="stylesheet" 
                 href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
             >
+
             </main>
+    
+
         </div>
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
