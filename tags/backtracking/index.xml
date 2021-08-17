@@ -28,5 +28,21 @@
 第 2 个位置（i=2）上的数字是1，i（i=2）能被 1 整除</description>
     </item>
     
+    <item>
+      <title>剑指 Offer 38. 字符串的排列</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-38.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</link>
+      <pubDate>Tue, 22 Jun 2021 21:43:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-38.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
+难度： 中等
+题目描述 输入一个字符串，打印出该字符串中字符的所有排列。
+你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
+示例1：  输入：s = &amp;ldquo;abc&amp;rdquo;
+输出：[&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
+ 提示：  1 &amp;lt;= s 的长度 &amp;lt;= 8  解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
+func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res } 复杂度  时间复杂度：O(N*N!</description>
+    </item>
+    
   </channel>
 </rss>

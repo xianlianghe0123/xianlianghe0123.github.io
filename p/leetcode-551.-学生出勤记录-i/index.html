@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/cousins-in-binary-tree/
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/student-attendance-record-i/
 难度： 简单
-题目描述 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k&#43;1 处。
-如果二叉树的两个节点深度相同，但 父节点不同 ，则它们是一对堂兄弟节点。
-我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
-只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
-示例1：  输入：root = [1,2,3,4], x = 4, y = 3
-输出：false
- 示例2：  输入：root = [1,2,3,null,4,null,5], x = 5, y = 4
-输出：true
- 示例3：  输入：root = [1,2,3,null,4], x = 2, y = 3
-输出：false
- 提示：  二叉树的节点数介于 2 到 100 之间。 每个节点的值都是唯一的、范围为 1 到 100 的整数。  解题思路 搜索 记录两个结点的父节点和高度，然后比较即可。'><title>Leetcode 993. 二叉树的堂兄弟节点</title>
+题目描述  给你一个字符串 s 表示一个学生的出勤记录，其中的每个字符用来标记当天的出勤情况（缺勤、迟到、到场）。记录中只含下面三种字符：
+ &#39;A&#39;：Absent，缺勤
+ &#39;L&#39;：Late，迟到
+ &#39;P&#39;：Present，到场
+  如果学生能够 同时 满足下面两个条件，则可以获得出勤奖励：
+ 按 总出勤 计，学生缺勤（&#39;A&#39;）严格 少于两天。 学生 不会 存在 连续 3 天或 3 天以上的迟到（&#39;L&#39;）记录。  如果学生可以获得出勤奖励，返回 true ；否则，返回 false 。
+示例 1：  输入：s = &amp;ldquo;PPALLP&amp;rdquo;
+ 输出：true
+ 解释：学生缺勤次数少于 2 次，且不存在 3 天或以上的连续迟到记录。  示例 2：  输入：s = &amp;ldquo;PPALLL&amp;rdquo;
+ 输出：false
+ 解释：学生最后三天连续迟到，所以不满足出勤奖励的条件。  提示：  1 &amp;lt;= s.'><title>Leetcode 551. 学生出勤记录 I</title>
 
-<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-993.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9/'>
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-551.-%E5%AD%A6%E7%94%9F%E5%87%BA%E5%8B%A4%E8%AE%B0%E5%BD%95-i/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 993. 二叉树的堂兄弟节点'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/cousins-in-binary-tree/
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 551. 学生出勤记录 I'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/student-attendance-record-i/
 难度： 简单
-题目描述 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k&#43;1 处。
-如果二叉树的两个节点深度相同，但 父节点不同 ，则它们是一对堂兄弟节点。
-我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
-只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
-示例1：  输入：root = [1,2,3,4], x = 4, y = 3
-输出：false
- 示例2：  输入：root = [1,2,3,null,4,null,5], x = 5, y = 4
-输出：true
- 示例3：  输入：root = [1,2,3,null,4], x = 2, y = 3
-输出：false
- 提示：  二叉树的节点数介于 2 到 100 之间。 每个节点的值都是唯一的、范围为 1 到 100 的整数。  解题思路 搜索 记录两个结点的父节点和高度，然后比较即可。'>
-<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-993.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9/'>
+题目描述  给你一个字符串 s 表示一个学生的出勤记录，其中的每个字符用来标记当天的出勤情况（缺勤、迟到、到场）。记录中只含下面三种字符：
+ &#39;A&#39;：Absent，缺勤
+ &#39;L&#39;：Late，迟到
+ &#39;P&#39;：Present，到场
+  如果学生能够 同时 满足下面两个条件，则可以获得出勤奖励：
+ 按 总出勤 计，学生缺勤（&#39;A&#39;）严格 少于两天。 学生 不会 存在 连续 3 天或 3 天以上的迟到（&#39;L&#39;）记录。  如果学生可以获得出勤奖励，返回 true ；否则，返回 false 。
+示例 1：  输入：s = &amp;ldquo;PPALLP&amp;rdquo;
+ 输出：true
+ 解释：学生缺勤次数少于 2 次，且不存在 3 天或以上的连续迟到记录。  示例 2：  输入：s = &amp;ldquo;PPALLL&amp;rdquo;
+ 输出：false
+ 解释：学生最后三天连续迟到，所以不满足出勤奖励的条件。  提示：  1 &amp;lt;= s.'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-551.-%E5%AD%A6%E7%94%9F%E5%87%BA%E5%8B%A4%E8%AE%B0%E5%BD%95-i/'>
 <meta property='og:site_name' content='贺贤良'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-05-17T09:29:10&#43;08:00'/><meta property='article:modified_time' content='2021-05-17T09:29:10&#43;08:00'/>
-<meta name="twitter:title" content="Leetcode 993. 二叉树的堂兄弟节点">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/cousins-in-binary-tree/
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-17T10:51:13&#43;08:00'/><meta property='article:modified_time' content='2021-08-17T10:51:13&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 551. 学生出勤记录 I">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/student-attendance-record-i/
 难度： 简单
-题目描述 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k&#43;1 处。
-如果二叉树的两个节点深度相同，但 父节点不同 ，则它们是一对堂兄弟节点。
-我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
-只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
-示例1：  输入：root = [1,2,3,4], x = 4, y = 3
-输出：false
- 示例2：  输入：root = [1,2,3,null,4,null,5], x = 5, y = 4
-输出：true
- 示例3：  输入：root = [1,2,3,null,4], x = 2, y = 3
-输出：false
- 提示：  二叉树的节点数介于 2 到 100 之间。 每个节点的值都是唯一的、范围为 1 到 100 的整数。  解题思路 搜索 记录两个结点的父节点和高度，然后比较即可。">
+题目描述  给你一个字符串 s 表示一个学生的出勤记录，其中的每个字符用来标记当天的出勤情况（缺勤、迟到、到场）。记录中只含下面三种字符：
+ &#39;A&#39;：Absent，缺勤
+ &#39;L&#39;：Late，迟到
+ &#39;P&#39;：Present，到场
+  如果学生能够 同时 满足下面两个条件，则可以获得出勤奖励：
+ 按 总出勤 计，学生缺勤（&#39;A&#39;）严格 少于两天。 学生 不会 存在 连续 3 天或 3 天以上的迟到（&#39;L&#39;）记录。  如果学生可以获得出勤奖励，返回 true ；否则，返回 false 。
+示例 1：  输入：s = &amp;ldquo;PPALLP&amp;rdquo;
+ 输出：true
+ 解释：学生缺勤次数少于 2 次，且不存在 3 天或以上的连续迟到记录。  示例 2：  输入：s = &amp;ldquo;PPALLL&amp;rdquo;
+ 输出：false
+ 解释：学生最后三天连续迟到，所以不满足出勤奖励的条件。  提示：  1 &amp;lt;= s.">
     </head>
     <body class="
     article-page 
@@ -212,7 +212,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/leetcode-993.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9/">Leetcode 993. 二叉树的堂兄弟节点</a>
+        <a href="/p/leetcode-551.-%E5%AD%A6%E7%94%9F%E5%87%BA%E5%8B%A4%E8%AE%B0%E5%BD%95-i/">Leetcode 551. 学生出勤记录 I</a>
     </h2>
 
     
@@ -230,7 +230,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 17, 2021</time>
+                <time class="article-time--published">Aug 17, 2021</time>
             </div>
         
 
@@ -243,84 +243,89 @@
     <section class="article-content">
     
 
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/cousins-in-binary-tree/" target="_blank">https://leetcode-cn.com/problems/cousins-in-binary-tree/</a><br />
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/student-attendance-record-i/" target="_blank">https://leetcode-cn.com/problems/student-attendance-record-i/</a><br />
 <strong>难度：</strong> <font color="green">简单</font></p>
 
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 
-<p>在二叉树中，根节点位于深度 <code>0</code> 处，每个深度为 <code>k</code> 的节点的子节点位于深度 <code>k+1</code> 处。</p>
+<ul>
+<li><p>给你一个字符串 <code>s</code> 表示一个学生的出勤记录，其中的每个字符用来标记当天的出勤情况（缺勤、迟到、到场）。记录中只含下面三种字符：</p></li>
 
-<p>如果二叉树的两个节点深度相同，但 <strong>父节点不同</strong> ，则它们是一对堂兄弟节点。</p>
+<li><p><code>'A'</code>：Absent，缺勤</p></li>
 
-<p>我们给出了具有唯一值的二叉树的根节点 <code>root</code> ，以及树中两个不同节点的值 <code>x</code> 和 <code>y</code> 。</p>
+<li><p><code>'L'</code>：Late，迟到</p></li>
 
-<p>只有与值 <code>x</code> 和 <code>y</code> 对应的节点是堂兄弟节点时，才返回 <code>true</code> 。否则，返回 <code>false。</code></p>
+<li><p><code>'P'</code>：Present，到场</p></li>
+</ul>
 
-<h5 id="示例1">示例1：</h5>
+<p>如果学生能够 <strong>同时</strong> 满足下面两个条件，则可以获得出勤奖励：</p>
 
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-01.png", width="180px"></p>
+<ul>
+<li>按 <strong>总出勤</strong> 计，学生缺勤（<code>'A'</code>）<strong>严格</strong> 少于两天。</li>
+<li>学生 <strong>不会</strong> 存在 <strong>连续</strong> 3 天或 3 天以上的迟到（<code>'L'</code>）记录。</li>
+</ul>
 
-<blockquote>
-<p><strong>输入：</strong>root = [1,2,3,4], x = 4, y = 3<br />
-<strong>输出：</strong>false</p>
-</blockquote>
+<p>如果学生可以获得出勤奖励，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 
-<h5 id="示例2">示例2：</h5>
+<h4 id="示例-1">示例 1：</h4>
 
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-02.png", width="201px"></p>
+<ul>
+<li><strong>输入：</strong>s = &ldquo;PPALLP&rdquo;<br /></li>
+<li><strong>输出：</strong>true<br /></li>
+<li><strong>解释：</strong>学生缺勤次数少于 2 次，且不存在 3 天或以上的连续迟到记录。</li>
+</ul>
 
-<blockquote>
-<p><strong>输入：</strong>root = [1,2,3,null,4,null,5], x = 5, y = 4<br />
-<strong>输出：</strong>true</p>
-</blockquote>
+<h4 id="示例-2">示例 2：</h4>
 
-<h5 id="示例3">示例3：</h5>
-
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-03.png", width="156px"></p>
-
-<blockquote>
-<p><strong>输入：</strong>root = [1,2,3,null,4], x = 2, y = 3<br />
-<strong>输出：</strong>false</p>
-</blockquote>
+<ul>
+<li><strong>输入：</strong>s = &ldquo;PPALLL&rdquo;<br /></li>
+<li><strong>输出：</strong>false<br /></li>
+<li><strong>解释：</strong>学生最后三天连续迟到，所以不满足出勤奖励的条件。</li>
+</ul>
 
 <h5 id="提示">提示：</h5>
 
 <ul>
-<li>二叉树的节点数介于 <code>2</code> 到 <code>100</code> 之间。</li>
-<li>每个节点的值都是唯一的、范围为 <code>1</code> 到 <code>100</code> 的整数。</li>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s[i]</code> 为 <code>'A'</code>、<code>'L'</code> 或 <code>'P'</code></li>
 </ul>
 
 <h3 id="解题思路">解题思路</h3>
 
-<h4 id="搜索">搜索</h4>
+<h4 id="计数">计数</h4>
 
-<p>记录两个结点的父节点和高度，然后比较即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isCousins</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">parents</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)
-	<span style="color:#a6e22e">heights</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">height</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span>
+<p>遍历字符串，每次针对缺和迟到做如下处理:</p>
+
+<ul>
+<li>每次遇到 <code>'A'</code> , 缺勤次数+1；</li>
+<li>每次遇到 <code>'L'</code> , 迟到次数+1，由于连续迟到才会得不到奖励，故每当遇到 <code>'A'</code> 和 <code>'P'</code> 时，连续迟到次数会被打断，故将连续迟到次数清 <code>0</code>。</li>
+</ul>
+
+<p>每次循环后判断缺勤次数和连续迟到次数，以确定能否得到奖励</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkRecord</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#a6e22e">absent</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#a6e22e">late</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+		<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] {
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;A&#39;</span>:
+			<span style="color:#a6e22e">absent</span><span style="color:#f92672">++</span>
+			<span style="color:#a6e22e">late</span> = <span style="color:#ae81ff">0</span>
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;L&#39;</span>:
+			<span style="color:#a6e22e">late</span><span style="color:#f92672">++</span>
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;P&#39;</span>:
+			<span style="color:#a6e22e">late</span> = <span style="color:#ae81ff">0</span>
 		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">y</span> {
-			<span style="color:#a6e22e">heights</span> = append(<span style="color:#a6e22e">heights</span>, <span style="color:#a6e22e">height</span>)
-			<span style="color:#a6e22e">parents</span> = append(<span style="color:#a6e22e">parents</span>, <span style="color:#a6e22e">parent</span>)
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">absent</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">late</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
 		}
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
 	}
-	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">parents</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">parents</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">heights</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">heights</span>[<span style="color:#ae81ff">1</span>] {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
 }</code></pre></div>
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(N)</li>
+<li>时间复杂度：$ O(N), N = len(s) $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
 </section>
@@ -367,18 +372,6 @@
                 
                     
 <article class="">
-    <a href="/p/leetcode-551.-%E5%AD%A6%E7%94%9F%E5%87%BA%E5%8B%A4%E8%AE%B0%E5%BD%95-i/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 551. 学生出勤记录 I</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/leetcode-526.-%E4%BC%98%E7%BE%8E%E7%9A%84%E6%8E%92%E5%88%97/">
         
         
@@ -421,6 +414,18 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 516. 最长回文子序列</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-413.-%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 413. 等差数列划分</h2>
         </div>
     </a>
 </article>
