@@ -6,7 +6,25 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 17 Aug 2021 10:51:13 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 10:40:59 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 345. 反转字符串中的元音字母</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-345.-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/</link>
+      <pubDate>Thu, 19 Aug 2021 10:40:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-345.-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
+难度： 简单
+题目描述 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
+示例 1：  输入：&amp;ldquo;hello&amp;rdquo;
+输出：&amp;ldquo;holle&amp;rdquo;
+ 示例 2：  输入：&amp;ldquo;leetcode&amp;rdquo;
+输出：&amp;ldquo;leotcede&amp;rdquo;
+ 提示：  元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。  解题思路 双指针 使用两个指针 i, j 分别从字符串首尾向中间遍历：
+ 遇到非元音字母向中间靠拢； i, j 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢  最终两个指针相遇时停止，元音字母反转完毕。
+func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &amp;#39;a&amp;#39;: true, &amp;#39;A&amp;#39;: true, &amp;#39;e&amp;#39;: true, &amp;#39;E&amp;#39;: true, &amp;#39;i&amp;#39;: true, &amp;#39;I&amp;#39;: true, &amp;#39;o&amp;#39;: true, &amp;#39;O&amp;#39;: true, &amp;#39;u&amp;#39;: true, &amp;#39;U&amp;#39;: true, } for i, j := 0, len(s)-1; i &amp;lt; j; { if !</description>
+    </item>
+    
     <item>
       <title>Leetcode 551. 学生出勤记录 I</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-551.-%E5%AD%A6%E7%94%9F%E5%87%BA%E5%8B%A4%E8%AE%B0%E5%BD%95-i/</link>

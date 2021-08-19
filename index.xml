@@ -6,7 +6,91 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Tue, 17 Aug 2021 10:51:13 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 19 Aug 2021 10:40:59 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 345. 反转字符串中的元音字母</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-345.-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/</link>
+        <pubDate>Thu, 19 Aug 2021 10:40:59 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-345.-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/</guid>
+        <description>
+
+&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/reverse-vowels-of-a-string/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/reverse-vowels-of-a-string/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;编写一个函数，以字符串作为输入，反转该字符串中的元音字母。&lt;/p&gt;
+
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&amp;ldquo;hello&amp;rdquo;&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;&amp;ldquo;holle&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&amp;ldquo;leetcode&amp;rdquo;&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;&amp;ldquo;leotcede&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+
+&lt;h4 id=&#34;双指针&#34;&gt;双指针&lt;/h4&gt;
+
+&lt;p&gt;使用两个指针 &lt;code&gt;i, j&lt;/code&gt; 分别从字符串首尾向中间遍历：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;遇到非元音字母向中间靠拢；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;i, j&lt;/code&gt; 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最终两个指针相遇时停止，元音字母反转完毕。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;reverseVowels&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; []byte(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;isVowel&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;{
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;E&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;i&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;I&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;o&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;O&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;u&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;U&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;isVowel&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]] {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;isVowel&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]] {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; string(&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;)
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(s) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 551. 学生出勤记录 I</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-551.-%E5%AD%A6%E7%94%9F%E5%87%BA%E5%8B%A4%E8%AE%B0%E5%BD%95-i/</link>
         <pubDate>Tue, 17 Aug 2021 10:51:13 +0800</pubDate>
