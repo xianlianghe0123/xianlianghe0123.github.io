@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/arithmetic-slices/
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/string-compression/
 难度： 中等
-题目描述 如果一个数列 至少有三个元素 ，并且任意两个相邻元素之差相同，则称该数列为等差数列。
-例如，[1,3,5,7,9]、[7,7,7,7] 和 [3,-1,-5,-9] 都是等差数列。 给你一个整数数组 nums ，返回数组 nums 中所有为等差数组的 子数组 个数。
-子数组 是数组中的一个连续序列。
-示例 1：  输入：nums = [1,2,3,4]
-输出：3
-解释：nums 中有三个子等差数组：[1, 2, 3]、[2, 3, 4] 和 [1,2,3,4] 自身。
- 示例 2：  输入：nums = [1]
-输出：0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 5000 -1000 &amp;lt;= nums[i] &amp;lt;= 1000  解题思路 数学 对于一个等差数列数组，其长度为 n (n ≥ 3)，其等差数列 子数组 的数量由长度为 3, .'><title>Leetcode 413. 等差数列划分</title>
+题目描述 给你一个字符数组 chars ，请使用下述算法压缩：
+从一个空字符串 s 开始。对于 chars 中的每组 连续重复字符 ：
+ 如果这一组长度为 1 ，则将字符追加到 s 中。 否则，需要向 s 追加字符，后跟这一组的长度。  压缩后得到的字符串 s 不应该直接返回 ，需要转储到字符数组 chars 中。需要注意的是，如果组长度为 10 或 10 以上，则在 chars 数组中会被拆分为多个字符。
+请在 修改完输入数组后 ，返回该数组的新长度。
+你必须设计并实现一个只使用常量额外空间的算法来解决此问题。
+示例 1：  输入：chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
+输出：返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
+解释：
+&amp;ldquo;aa&amp;rdquo; 被 &amp;ldquo;a2&amp;rdquo; 替代。&amp;rdquo;bb&amp;rdquo; 被 &amp;ldquo;b2&amp;rdquo; 替代。&amp;rdquo;ccc&amp;rdquo; 被 &amp;ldquo;c3&amp;rdquo; 替代。
+ 示例 2：  输入：chars = [&amp;ldquo;a&amp;rdquo;]'><title>Leetcode 443. 压缩字符串</title>
 
-<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-413.-%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/'>
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 413. 等差数列划分'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/arithmetic-slices/
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 443. 压缩字符串'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/string-compression/
 难度： 中等
-题目描述 如果一个数列 至少有三个元素 ，并且任意两个相邻元素之差相同，则称该数列为等差数列。
-例如，[1,3,5,7,9]、[7,7,7,7] 和 [3,-1,-5,-9] 都是等差数列。 给你一个整数数组 nums ，返回数组 nums 中所有为等差数组的 子数组 个数。
-子数组 是数组中的一个连续序列。
-示例 1：  输入：nums = [1,2,3,4]
-输出：3
-解释：nums 中有三个子等差数组：[1, 2, 3]、[2, 3, 4] 和 [1,2,3,4] 自身。
- 示例 2：  输入：nums = [1]
-输出：0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 5000 -1000 &amp;lt;= nums[i] &amp;lt;= 1000  解题思路 数学 对于一个等差数列数组，其长度为 n (n ≥ 3)，其等差数列 子数组 的数量由长度为 3, .'>
-<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-413.-%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/'>
+题目描述 给你一个字符数组 chars ，请使用下述算法压缩：
+从一个空字符串 s 开始。对于 chars 中的每组 连续重复字符 ：
+ 如果这一组长度为 1 ，则将字符追加到 s 中。 否则，需要向 s 追加字符，后跟这一组的长度。  压缩后得到的字符串 s 不应该直接返回 ，需要转储到字符数组 chars 中。需要注意的是，如果组长度为 10 或 10 以上，则在 chars 数组中会被拆分为多个字符。
+请在 修改完输入数组后 ，返回该数组的新长度。
+你必须设计并实现一个只使用常量额外空间的算法来解决此问题。
+示例 1：  输入：chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
+输出：返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
+解释：
+&amp;ldquo;aa&amp;rdquo; 被 &amp;ldquo;a2&amp;rdquo; 替代。&amp;rdquo;bb&amp;rdquo; 被 &amp;ldquo;b2&amp;rdquo; 替代。&amp;rdquo;ccc&amp;rdquo; 被 &amp;ldquo;c3&amp;rdquo; 替代。
+ 示例 2：  输入：chars = [&amp;ldquo;a&amp;rdquo;]'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/'>
 <meta property='og:site_name' content='贺贤良'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-10T10:42:43&#43;08:00'/><meta property='article:modified_time' content='2021-08-10T10:42:43&#43;08:00'/>
-<meta name="twitter:title" content="Leetcode 413. 等差数列划分">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/arithmetic-slices/
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-21T14:52:12&#43;08:00'/><meta property='article:modified_time' content='2021-08-21T14:52:12&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 443. 压缩字符串">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/string-compression/
 难度： 中等
-题目描述 如果一个数列 至少有三个元素 ，并且任意两个相邻元素之差相同，则称该数列为等差数列。
-例如，[1,3,5,7,9]、[7,7,7,7] 和 [3,-1,-5,-9] 都是等差数列。 给你一个整数数组 nums ，返回数组 nums 中所有为等差数组的 子数组 个数。
-子数组 是数组中的一个连续序列。
-示例 1：  输入：nums = [1,2,3,4]
-输出：3
-解释：nums 中有三个子等差数组：[1, 2, 3]、[2, 3, 4] 和 [1,2,3,4] 自身。
- 示例 2：  输入：nums = [1]
-输出：0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 5000 -1000 &amp;lt;= nums[i] &amp;lt;= 1000  解题思路 数学 对于一个等差数列数组，其长度为 n (n ≥ 3)，其等差数列 子数组 的数量由长度为 3, .">
+题目描述 给你一个字符数组 chars ，请使用下述算法压缩：
+从一个空字符串 s 开始。对于 chars 中的每组 连续重复字符 ：
+ 如果这一组长度为 1 ，则将字符追加到 s 中。 否则，需要向 s 追加字符，后跟这一组的长度。  压缩后得到的字符串 s 不应该直接返回 ，需要转储到字符数组 chars 中。需要注意的是，如果组长度为 10 或 10 以上，则在 chars 数组中会被拆分为多个字符。
+请在 修改完输入数组后 ，返回该数组的新长度。
+你必须设计并实现一个只使用常量额外空间的算法来解决此问题。
+示例 1：  输入：chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
+输出：返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
+解释：
+&amp;ldquo;aa&amp;rdquo; 被 &amp;ldquo;a2&amp;rdquo; 替代。&amp;rdquo;bb&amp;rdquo; 被 &amp;ldquo;b2&amp;rdquo; 替代。&amp;rdquo;ccc&amp;rdquo; 被 &amp;ldquo;c3&amp;rdquo; 替代。
+ 示例 2：  输入：chars = [&amp;ldquo;a&amp;rdquo;]">
     </head>
     <body class="
     article-page 
@@ -206,7 +209,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/leetcode-413.-%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/">Leetcode 413. 等差数列划分</a>
+        <a href="/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/">Leetcode 443. 压缩字符串</a>
     </h2>
 
     
@@ -224,7 +227,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Aug 10, 2021</time>
+                <time class="article-time--published">Aug 21, 2021</time>
             </div>
         
 
@@ -237,74 +240,96 @@
     <section class="article-content">
     
 
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/arithmetic-slices/" target="_blank">https://leetcode-cn.com/problems/arithmetic-slices/</a><br />
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/string-compression/" target="_blank">https://leetcode-cn.com/problems/string-compression/</a><br />
 <strong>难度：</strong> <font color="orange">中等</font></p>
 
 <h3 id="题目描述">题目描述</h3>
 
-<p>如果一个数列 <strong>至少有三个元素</strong> ，并且任意两个相邻元素之差相同，则称该数列为等差数列。</p>
+<p>给你一个字符数组 <code>chars</code> ，请使用下述算法压缩：</p>
 
-<p>例如，<code>[1,3,5,7,9]</code>、<code>[7,7,7,7]</code> 和 <code>[3,-1,-5,-9]</code> 都是等差数列。
-给你一个整数数组 <code>nums</code> ，返回数组 <code>nums</code> 中所有为等差数组的 <strong>子数组</strong> 个数。</p>
+<p>从一个空字符串 <code>s</code> 开始。对于 <code>chars</code> 中的每组 <strong>连续重复字符</strong> ：</p>
 
-<p><strong>子数组</strong> 是数组中的一个连续序列。</p>
+<ul>
+<li>如果这一组长度为 <code>1</code> ，则将字符追加到 <code>s</code> 中。</li>
+<li>否则，需要向 <code>s</code> 追加字符，后跟这一组的长度。</li>
+</ul>
+
+<p>压缩后得到的字符串 <code>s</code> <strong>不应该直接返回</strong> ，需要转储到字符数组 <code>chars</code> 中。需要注意的是，如果组长度为 <code>10</code> 或 <code>10</code> 以上，则在 <code>chars</code> 数组中会被拆分为多个字符。</p>
+
+<p>请在 <strong>修改完输入数组后</strong> ，返回该数组的新长度。</p>
+
+<p>你必须设计并实现一个只使用常量额外空间的算法来解决此问题。</p>
 
 <h4 id="示例-1">示例 1：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>nums = [1,2,3,4]<br />
-<strong>输出：</strong>3<br />
-<strong>解释：</strong>nums 中有三个子等差数组：[1, 2, 3]、[2, 3, 4] 和 [1,2,3,4] 自身。</p>
+<p><strong>输入：</strong>chars = [&ldquo;a&rdquo;,&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;c&rdquo;,&ldquo;c&rdquo;,&ldquo;c&rdquo;]<br />
+<strong>输出：</strong>返回 6 ，输入数组的前 6 个字符应该是：[&ldquo;a&rdquo;,&ldquo;2&rdquo;,&ldquo;b&rdquo;,&ldquo;2&rdquo;,&ldquo;c&rdquo;,&ldquo;3&rdquo;]<br />
+<strong>解释：</strong><br />
+&ldquo;aa&rdquo; 被 &ldquo;a2&rdquo; 替代。&rdquo;bb&rdquo; 被 &ldquo;b2&rdquo; 替代。&rdquo;ccc&rdquo; 被 &ldquo;c3&rdquo; 替代。</p>
 </blockquote>
 
 <h4 id="示例-2">示例 2：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>nums = [1]<br />
-<strong>输出：</strong>0</p>
+<p><strong>输入：</strong>chars = [&ldquo;a&rdquo;]<br />
+<strong>输出：</strong>返回 1 ，输入数组的前 1 个字符应该是：[&ldquo;a&rdquo;]<br />
+<strong>解释：</strong><br />
+没有任何字符串被替代。</p>
+</blockquote>
+
+<h4 id="示例-3">示例 3：</h4>
+
+<blockquote>
+<p><strong>输入：</strong>chars = [&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;]<br />
+<strong>输出：</strong>返回 4 ，输入数组的前 4 个字符应该是：[&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;1&rdquo;,&ldquo;2&rdquo;]。<br />
+<strong>解释：</strong><br />
+由于字符 &ldquo;a&rdquo; 不重复，所以不会被压缩。&rdquo;bbbbbbbbbbbb&rdquo; 被 “b12” 替代。<br />
+注意每个数字在数组中都有它自己的位置。</p>
 </blockquote>
 
 <h5 id="提示">提示：</h5>
 
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 5000</code></li>
-<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
+<li><code>1 &lt;= chars.length &lt;= 2000</code></li>
+<li><code>chars[i]</code> 可以是小写英文字母、大写英文字母、数字或符号</li>
 </ul>
 
 <h3 id="解题思路">解题思路</h3>
 
-<h4 id="数学">数学</h4>
+<h4 id="双指针">双指针</h4>
 
-<p>对于一个等差数列数组，其长度为 <code>n (n ≥ 3)</code>，其等差数列 <strong>子数组</strong> 的数量由长度为 <code>3, ..., n</code> 的子数组构成，对应的 <strong>子数组</strong> 数量为 <code>n-2, ..., 1</code>，其构成等差数列，故总数量为$\sum\limits_{i=1}^{n-2}i = \frac{(n-2+1)(n-2)}{2} = \frac{(n-1)(n-2)}{2}$</p>
-
-<p><strong>子数组</strong> 为等差数列，则其 <strong>父数组</strong> 也必须为等差数列。遍历整个数组，找到所有的等差数列父数组，对于<strong>子数组</strong>的数量求和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numberOfArithmeticSlices</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+<p>使用两个指针，分别指向当前遍历到的位置和当前压缩数组的尾部，向后遍历数组，统计每组相同字符出现的次数，计算得到该组压缩后的长度，添加到压缩数组的尾部。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">compress</span>(<span style="color:#a6e22e">chars</span> []<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 初始只有一个元素
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 公差
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] { <span style="color:#75715e">// 与之前元素构成等差数列
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">n</span><span style="color:#f92672">++</span>
-		} <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 与之前元素不构成等差数列
-</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 累加前一个等差数列 子数组 数量
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span> {
-				<span style="color:#a6e22e">res</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 当前组数量
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">chars</span> {
+		<span style="color:#75715e">// 当前组结束
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">chars</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] {
+			<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">res</span>] = <span style="color:#a6e22e">c</span>
+			<span style="color:#a6e22e">res</span><span style="color:#f92672">++</span>
+			<span style="color:#75715e">// 写入出现次数
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">1</span> {
+				<span style="color:#a6e22e">digits</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>)
+				<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">10</span> {
+					<span style="color:#a6e22e">digits</span> = append(<span style="color:#a6e22e">digits</span>, byte(<span style="color:#e6db74">&#39;0&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cnt</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>))
+				}
+				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">digits</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+					<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">res</span>] = <span style="color:#a6e22e">digits</span>[<span style="color:#a6e22e">j</span>]
+					<span style="color:#a6e22e">res</span><span style="color:#f92672">++</span>
+				}
 			}
-			<span style="color:#75715e">// 初始化公差 &amp; 元素数量
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">d</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-			<span style="color:#a6e22e">n</span> = <span style="color:#ae81ff">2</span>
+			<span style="color:#a6e22e">cnt</span> = <span style="color:#ae81ff">1</span>
+		} <span style="color:#66d9ef">else</span> {
+			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
 		}
-	}
-	<span style="color:#75715e">// 遍历结束，判定尾部等差数列
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span> {
-		<span style="color:#a6e22e">res</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
 }</code></pre></div>
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
-<li>时间复杂度：$ O(N), N = len(nums) $</li>
+<li>时间复杂度：$ O(N), N = len(chars) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
 
@@ -352,18 +377,6 @@
                 
                     
 <article class="">
-    <a href="/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 443. 压缩字符串</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/leetcode-541.-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2-ii/">
         
         
@@ -406,6 +419,18 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 526. 优美的排列</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-576.-%E5%87%BA%E7%95%8C%E7%9A%84%E8%B7%AF%E5%BE%84%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 576. 出界的路径数</h2>
         </div>
     </a>
 </article>

@@ -6,7 +6,109 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Fri, 20 Aug 2021 13:31:40 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Aug 2021 14:52:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 443. 压缩字符串</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+        <pubDate>Sat, 21 Aug 2021 14:52:12 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+        <description>
+
+&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/string-compression/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/string-compression/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;给你一个字符数组 &lt;code&gt;chars&lt;/code&gt; ，请使用下述算法压缩：&lt;/p&gt;
+
+&lt;p&gt;从一个空字符串 &lt;code&gt;s&lt;/code&gt; 开始。对于 &lt;code&gt;chars&lt;/code&gt; 中的每组 &lt;strong&gt;连续重复字符&lt;/strong&gt; ：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如果这一组长度为 &lt;code&gt;1&lt;/code&gt; ，则将字符追加到 &lt;code&gt;s&lt;/code&gt; 中。&lt;/li&gt;
+&lt;li&gt;否则，需要向 &lt;code&gt;s&lt;/code&gt; 追加字符，后跟这一组的长度。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;压缩后得到的字符串 &lt;code&gt;s&lt;/code&gt; &lt;strong&gt;不应该直接返回&lt;/strong&gt; ，需要转储到字符数组 &lt;code&gt;chars&lt;/code&gt; 中。需要注意的是，如果组长度为 &lt;code&gt;10&lt;/code&gt; 或 &lt;code&gt;10&lt;/code&gt; 以上，则在 &lt;code&gt;chars&lt;/code&gt; 数组中会被拆分为多个字符。&lt;/p&gt;
+
+&lt;p&gt;请在 &lt;strong&gt;修改完输入数组后&lt;/strong&gt; ，返回该数组的新长度。&lt;/p&gt;
+
+&lt;p&gt;你必须设计并实现一个只使用常量额外空间的算法来解决此问题。&lt;/p&gt;
+
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br /&gt;
+&amp;ldquo;aa&amp;rdquo; 被 &amp;ldquo;a2&amp;rdquo; 替代。&amp;rdquo;bb&amp;rdquo; 被 &amp;ldquo;b2&amp;rdquo; 替代。&amp;rdquo;ccc&amp;rdquo; 被 &amp;ldquo;c3&amp;rdquo; 替代。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;chars = [&amp;ldquo;a&amp;rdquo;]&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;返回 1 ，输入数组的前 1 个字符应该是：[&amp;ldquo;a&amp;rdquo;]&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br /&gt;
+没有任何字符串被替代。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;]&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;返回 4 ，输入数组的前 4 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;2&amp;rdquo;]。&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br /&gt;
+由于字符 &amp;ldquo;a&amp;rdquo; 不重复，所以不会被压缩。&amp;rdquo;bbbbbbbbbbbb&amp;rdquo; 被 “b12” 替代。&lt;br /&gt;
+注意每个数字在数组中都有它自己的位置。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= chars.length &amp;lt;= 2000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chars[i]&lt;/code&gt; 可以是小写英文字母、大写英文字母、数字或符号&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+
+&lt;h4 id=&#34;双指针&#34;&gt;双指针&lt;/h4&gt;
+
+&lt;p&gt;使用两个指针，分别指向当前遍历到的位置和当前压缩数组的尾部，向后遍历数组，统计每组相同字符出现的次数，计算得到该组压缩后的长度，添加到压缩数组的尾部。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;compress&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;chars&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 当前组数量
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;chars&lt;/span&gt; {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 当前组结束
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;chars&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;chars&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;chars&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+			&lt;span style=&#34;color:#75715e&#34;&gt;// 写入出现次数
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;digits&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; ; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;digits&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;digits&lt;/span&gt;, byte(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;))
+				}
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;digits&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;chars&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;digits&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+				}
+			}
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(chars) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 541. 反转字符串 II</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-541.-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2-ii/</link>
         <pubDate>Fri, 20 Aug 2021 13:31:40 +0800</pubDate>
