@@ -6,7 +6,22 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 21 Aug 2021 14:52:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Aug 2021 10:49:08 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1646. 获取生成数组中的最大值</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1646.-%E8%8E%B7%E5%8F%96%E7%94%9F%E6%88%90%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</link>
+      <pubDate>Mon, 23 Aug 2021 10:49:08 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1646.-%E8%8E%B7%E5%8F%96%E7%94%9F%E6%88%90%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/throne-inheritance/
+难度： 简单
+题目描述 给你一个整数 n 。按下述规则生成一个长度为 n + 1 的数组 nums ：
+ nums[0] = 0 nums[1] = 1 当 2 &amp;lt;= 2 * i &amp;lt;= n 时，nums[2 * i] = nums[i] 当 2 &amp;lt;= 2 * i + 1 &amp;lt;= n 时，nums[2 * i + 1] = nums[i] + nums[i + 1]  返回生成数组 nums 中的 最大 值。
+示例 1：  输入：n = 7
+输出：3
+解释：根据规则：</description>
+    </item>
+    
     <item>
       <title>Leetcode 443. 压缩字符串</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
