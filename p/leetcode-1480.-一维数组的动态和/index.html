@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/running-sum-of-1d-array/
 难度： 简单
-题目描述 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
-不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
-说明： 为什么返回数值是整数，但输出的答案是数组呢?
-请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
-你可以想象内部操作如下:
-// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1：  输入：nums = [1,1,2]
-输出：2, nums = [1,2]
-解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
- 示例2：  输入：nums = [0,0,1,1,1,2,2,3,3,4]'><title>Leetcode 26. 删除有序数组中的重复项</title>
+题目描述 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。
+请返回 nums 的动态和。
+示例 1：  输入：nums = [1,2,3,4]
+输出：[1,3,6,10]
+解释：动态和计算过程为 [1, 1&#43;2, 1&#43;2&#43;3, 1&#43;2&#43;3&#43;4] 。
+ 示例 2：  输入：nums = [1,1,1,1,1]
+输出：[1,2,3,4,5]
+解释：动态和计算过程为 [1, 1&#43;1, 1&#43;1&#43;1, 1&#43;1&#43;1&#43;1, 1&#43;1&#43;1&#43;1&#43;1] 。
+ 示例 3：  输入：nums = [3,1,2,10,1]
+输出：[3,4,6,16,17]
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 1000 -106 &amp;lt;= nums[i] &amp;lt;= 106  解题思路 模拟 按照题目描述，依次求解动态和的每一项
+func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i &amp;lt; len(nums); i&#43;&#43; { for j := 0; j &amp;lt;= i; j&#43;&#43; { sum[i] &#43;= nums[j] } } return sum } 复杂度  时间复杂度：$ O(N^2), N = len(nums) $ 空间复杂度：$ O(1) $  动态规划 使用 sum[i] 记录第 i 项动态和，则可以得出：sum[i] = sum[i-1] &#43; nums[i]，依次向后求解。'><title>Leetcode 1480. 一维数组的动态和</title>
 
-<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-26.-%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/'>
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1480.-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 26. 删除有序数组中的重复项'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1480. 一维数组的动态和'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/running-sum-of-1d-array/
 难度： 简单
-题目描述 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
-不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
-说明： 为什么返回数值是整数，但输出的答案是数组呢?
-请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
-你可以想象内部操作如下:
-// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1：  输入：nums = [1,1,2]
-输出：2, nums = [1,2]
-解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
- 示例2：  输入：nums = [0,0,1,1,1,2,2,3,3,4]'>
-<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-26.-%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/'>
+题目描述 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。
+请返回 nums 的动态和。
+示例 1：  输入：nums = [1,2,3,4]
+输出：[1,3,6,10]
+解释：动态和计算过程为 [1, 1&#43;2, 1&#43;2&#43;3, 1&#43;2&#43;3&#43;4] 。
+ 示例 2：  输入：nums = [1,1,1,1,1]
+输出：[1,2,3,4,5]
+解释：动态和计算过程为 [1, 1&#43;1, 1&#43;1&#43;1, 1&#43;1&#43;1&#43;1, 1&#43;1&#43;1&#43;1&#43;1] 。
+ 示例 3：  输入：nums = [3,1,2,10,1]
+输出：[3,4,6,16,17]
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 1000 -106 &amp;lt;= nums[i] &amp;lt;= 106  解题思路 模拟 按照题目描述，依次求解动态和的每一项
+func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i &amp;lt; len(nums); i&#43;&#43; { for j := 0; j &amp;lt;= i; j&#43;&#43; { sum[i] &#43;= nums[j] } } return sum } 复杂度  时间复杂度：$ O(N^2), N = len(nums) $ 空间复杂度：$ O(1) $  动态规划 使用 sum[i] 记录第 i 项动态和，则可以得出：sum[i] = sum[i-1] &#43; nums[i]，依次向后求解。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1480.-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/'>
 <meta property='og:site_name' content='贺贤良'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-04-18T10:52:18&#43;08:00'/><meta property='article:modified_time' content='2021-04-18T10:52:18&#43;08:00'/>
-<meta name="twitter:title" content="Leetcode 26. 删除有序数组中的重复项">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dp' /><meta property='article:published_time' content='2021-08-28T11:05:35&#43;08:00'/><meta property='article:modified_time' content='2021-08-28T11:05:35&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1480. 一维数组的动态和">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/running-sum-of-1d-array/
 难度： 简单
-题目描述 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
-不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
-说明： 为什么返回数值是整数，但输出的答案是数组呢?
-请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
-你可以想象内部操作如下:
-// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1：  输入：nums = [1,1,2]
-输出：2, nums = [1,2]
-解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
- 示例2：  输入：nums = [0,0,1,1,1,2,2,3,3,4]">
+题目描述 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。
+请返回 nums 的动态和。
+示例 1：  输入：nums = [1,2,3,4]
+输出：[1,3,6,10]
+解释：动态和计算过程为 [1, 1&#43;2, 1&#43;2&#43;3, 1&#43;2&#43;3&#43;4] 。
+ 示例 2：  输入：nums = [1,1,1,1,1]
+输出：[1,2,3,4,5]
+解释：动态和计算过程为 [1, 1&#43;1, 1&#43;1&#43;1, 1&#43;1&#43;1&#43;1, 1&#43;1&#43;1&#43;1&#43;1] 。
+ 示例 3：  输入：nums = [3,1,2,10,1]
+输出：[3,4,6,16,17]
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 1000 -106 &amp;lt;= nums[i] &amp;lt;= 106  解题思路 模拟 按照题目描述，依次求解动态和的每一项
+func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i &amp;lt; len(nums); i&#43;&#43; { for j := 0; j &amp;lt;= i; j&#43;&#43; { sum[i] &#43;= nums[j] } } return sum } 复杂度  时间复杂度：$ O(N^2), N = len(nums) $ 空间复杂度：$ O(1) $  动态规划 使用 sum[i] 记录第 i 项动态和，则可以得出：sum[i] = sum[i-1] &#43; nums[i]，依次向后求解。">
     </head>
     <body class="
     article-page 
@@ -206,7 +215,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/leetcode-26.-%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">Leetcode 26. 删除有序数组中的重复项</a>
+        <a href="/p/leetcode-1480.-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/">Leetcode 1480. 一维数组的动态和</a>
     </h2>
 
     
@@ -224,7 +233,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Apr 18, 2021</time>
+                <time class="article-time--published">Aug 28, 2021</time>
             </div>
         
 
@@ -237,79 +246,84 @@
     <section class="article-content">
     
 
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank">https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/</a><br />
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/running-sum-of-1d-array/" target="_blank">https://leetcode-cn.com/problems/running-sum-of-1d-array/</a><br />
 <strong>难度：</strong> <font color="green">简单</font></p>
 
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 
-<p>给你一个有序数组 <code>nums</code> ，请你 <font color="grey">原地</font> 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。<br />
-不要使用额外的数组空间，你必须在 <font color="grey">原地</font> <strong>修改输入数组</strong> 并在使用 O(1) 额外空间的条件下完成。</p>
+<p>给你一个数组 <code>nums</code> 。数组「动态和」的计算公式为：<code>runningSum[i] = sum(nums[0]…nums[i])</code> 。</p>
 
-<h5 id="说明">说明：</h5>
+<p>请返回 <code>nums</code> 的动态和。</p>
 
-<p>为什么返回数值是整数，但输出的答案是数组呢?<br />
-请注意，输入数组是以<strong>「引用」</strong>方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。<br />
-你可以想象内部操作如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> removeDuplicates(nums);
-
-<span style="color:#75715e">// 在函数里修改输入数组对于调用者是可见的。
-</span><span style="color:#75715e">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">++</span>) {
-	print(nums[i]);
-}</code></pre></div>
-<h5 id="示例1">示例1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>nums = [1,1,2]<br />
-<strong>输出：</strong>2, nums = [1,2]<br />
-<strong>解释：</strong>函数应该返回新的长度 <strong>2</strong> ，并且原数组 nums 的前两个元素被修改为 <strong>1</strong>, <strong>2</strong> 。不需要考虑数组中超出新长度后面的元素。</p>
+<p><strong>输入：</strong>nums = [1,2,3,4]<br />
+<strong>输出：</strong>[1,3,6,10]<br />
+<strong>解释：</strong>动态和计算过程为 [1, 1+2, 1+2+3, 1+2+3+4] 。</p>
 </blockquote>
 
-<h5 id="示例2">示例2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>nums = [0,0,1,1,1,2,2,3,3,4]<br />
-<strong>输出：</strong>5, nums = [0,1,2,3,4]<br />
-<strong>解释：</strong>函数应该返回新的长度 <strong>5</strong> ， 并且原数组 nums 的前五个元素被修改为 <strong>0</strong>, <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, <strong>4</strong> 。不需要考虑数组中超出新长度后面的元素。</p>
+<p><strong>输入：</strong>nums = [1,1,1,1,1]<br />
+<strong>输出：</strong>[1,2,3,4,5]<br />
+<strong>解释：</strong>动态和计算过程为 [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1] 。</p>
+</blockquote>
+
+<h4 id="示例-3">示例 3：</h4>
+
+<blockquote>
+<p><strong>输入：</strong>nums = [3,1,2,10,1]<br />
+<strong>输出：</strong>[3,4,6,16,17]</p>
 </blockquote>
 
 <h5 id="提示">提示：</h5>
 
 <ul>
-<li><code>0 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
-<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
-<li><code>nums</code> 已按升序排列</li>
+<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+<li><code>-10<sup>6</sup> &lt;= nums[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
 <h3 id="解题思路">解题思路</h3>
 
-<h4 id="双指针">双指针</h4>
+<h4 id="模拟">模拟</h4>
 
-<p>由于整个数组已经过排序，排在某个数之前的数不会在其后重复出现，所以可以简单的用双指针实现。<br />
-第一个指针 <code>i</code> 表示当前不重复的数组最后一个数的下标，第二个指针 <code>j</code> 表示当前遍历到的元素下标。</p>
-
-<ul>
-<li>当 <code>nums[i] == nums[j]</code> 时，表示该数已加入结果中，继续向后遍历；</li>
-<li>当 <code>nums[i] != nums[j]</code> 时，表示该数是一个新的不重复数，将其填入 <code>nums[i+1]</code> 中，<code>i</code>指针向后移动一位。</li>
-</ul>
-
-<p>遍历结束，返回数组长度 <code>i+1</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">removeDuplicates</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] {
-			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
-			<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
+<p>按照题目描述，依次求解动态和的每一项</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">runningSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">nums</span>))
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+			<span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
 		}
 	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
 }</code></pre></div>
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：$ O(N^2), N = len(nums) $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+
+<h4 id="动态规划">动态规划</h4>
+
+<p>使用 <code>sum[i]</code> 记录第 <code>i</code> 项动态和，则可以得出：<code>sum[i] = sum[i-1] + nums[i]</code>，依次向后求解。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">runningSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">nums</span>))
+	<span style="color:#a6e22e">sum</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>]
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+}</code></pre></div>
+<h5 id="复杂度-1">复杂度</h5>
+
+<ul>
+<li>时间复杂度：$ O(N), N = len(nums) $</li>
+<li>空间复杂度：$ O(1) $
+​<br />
+<br /></li>
 </ul>
 
 </section>
@@ -317,6 +331,12 @@
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/dp/">dp</a>
+        
+    </section>
+
 
     </footer>
 
@@ -356,60 +376,60 @@
                 
                     
 <article class="">
-    <a href="/p/leetcode-1480.-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/">
+    <a href="/p/leetcode-576.-%E5%87%BA%E7%95%8C%E7%9A%84%E8%B7%AF%E5%BE%84%E6%95%B0/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Leetcode 1480. 一维数组的动态和</h2>
+            <h2 class="article-title">Leetcode 576. 出界的路径数</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/p/leetcode-881.-%E6%95%91%E7%94%9F%E8%89%87/">
+    <a href="/p/leetcode-516.-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Leetcode 881. 救生艇</h2>
+            <h2 class="article-title">Leetcode 516. 最长回文子序列</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/p/leetcode-797.-%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84/">
+    <a href="/p/leetcode-1137.-%E7%AC%AC-n-%E4%B8%AA%E6%B3%B0%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Leetcode 797. 所有可能的路径</h2>
+            <h2 class="article-title">Leetcode 1137. 第 N 个泰波那契数</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/p/leetcode-1646.-%E8%8E%B7%E5%8F%96%E7%94%9F%E6%88%90%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-42.-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Leetcode 1646. 获取生成数组中的最大值</h2>
+            <h2 class="article-title">剑指 Offer 42. 连续子数组的最大和</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+    <a href="/p/lcp-07.-%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Leetcode 443. 压缩字符串</h2>
+            <h2 class="article-title">LCP 07. 传递信息</h2>
         </div>
     </a>
 </article>
