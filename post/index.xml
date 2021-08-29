@@ -6,7 +6,33 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 28 Aug 2021 11:05:35 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 21:32:29 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1588. 所有奇数长度子数组的和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1588.-%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/</link>
+      <pubDate>Sun, 29 Aug 2021 21:32:29 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1588.-%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays/
+难度： 简单
+题目描述 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
+子数组 定义为原数组中的一个连续子序列。
+请你返回 arr 中 所有奇数长度子数组的和 。
+示例 1：  输入：arr = [1,4,2,5,3]
+输出：58
+解释：所有奇数长度子数组和它们的和为：
+[1] = 1
+[4] = 4
+[2] = 2
+[5] = 5
+[3] = 3
+[1,4,2] = 7
+[4,2,5] = 11
+[2,5,3] = 10
+[1,4,2,5,3] = 15
+我们将所有值求和得到 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 = 58</description>
+    </item>
+    
     <item>
       <title>Leetcode 1480. 一维数组的动态和</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1480.-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/</link>
