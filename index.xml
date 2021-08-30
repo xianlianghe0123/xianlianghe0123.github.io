@@ -6,7 +6,159 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Sun, 29 Aug 2021 21:32:29 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 30 Aug 2021 10:33:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 528. 按权重随机选择</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/</link>
+        <pubDate>Mon, 30 Aug 2021 10:33:25 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/</guid>
+        <description>
+
+&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/random-pick-with-weight/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/random-pick-with-weight/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;给定一个正整数数组 &lt;code&gt;w&lt;/code&gt; ，其中 &lt;code&gt;w[i]&lt;/code&gt; 代表下标 &lt;code&gt;i&lt;/code&gt; 的权重（下标从 &lt;code&gt;0&lt;/code&gt; 开始），请写一个函数 &lt;code&gt;pickIndex&lt;/code&gt; ，它可以随机地获取下标 &lt;code&gt;i&lt;/code&gt;，选取下标 &lt;code&gt;i&lt;/code&gt; 的概率与 &lt;code&gt;w[i]&lt;/code&gt; 成正比。&lt;/p&gt;
+
+&lt;p&gt;例如，对于 &lt;code&gt;w = [1, 3]&lt;/code&gt;，挑选下标 &lt;code&gt;0&lt;/code&gt; 的概率为 &lt;code&gt;1 / (1 + 3) = 0.25&lt;/code&gt; （即，25%），而选取下标 &lt;code&gt;1&lt;/code&gt; 的概率为 &lt;code&gt;3 / (1 + 3) = 0.75&lt;/code&gt;（即，75%）。&lt;/p&gt;
+
+&lt;p&gt;也就是说，选取下标 &lt;code&gt;i&lt;/code&gt; 的概率为 &lt;code&gt;w[i] / sum(w)&lt;/code&gt; 。&lt;/p&gt;
+
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br /&gt;
+[&amp;ldquo;Solution&amp;rdquo;,&amp;ldquo;pickIndex&amp;rdquo;]&lt;br /&gt;
+[[[1]],[]]&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;&lt;br /&gt;
+[null,0]&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br /&gt;
+Solution solution = new Solution([1]);&lt;br /&gt;
+solution.pickIndex(); // 返回 0，因为数组中只有一个元素，所以唯一的选择是返回下标 0。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br /&gt;
+[&amp;ldquo;Solution&amp;rdquo;,&amp;ldquo;pickIndex&amp;rdquo;,&amp;ldquo;pickIndex&amp;rdquo;,&amp;ldquo;pickIndex&amp;rdquo;,&amp;ldquo;pickIndex&amp;rdquo;,&amp;ldquo;pickIndex&amp;rdquo;]&lt;br /&gt;
+[[[1,3]],[],[],[],[],[]]&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;&lt;br /&gt;
+[null,1,1,1,1,0]&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br /&gt;
+Solution solution = new Solution([1, 3]);&lt;br /&gt;
+solution.pickIndex(); // 返回 1，返回下标 1，返回该下标概率为 &lt;sup&gt;3&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt; 。&lt;br /&gt;
+solution.pickIndex(); // 返回 1&lt;br /&gt;
+solution.pickIndex(); // 返回 1&lt;br /&gt;
+solution.pickIndex(); // 返回 1&lt;br /&gt;
+solution.pickIndex(); // 返回 0，返回下标 0，返回该下标概率为 &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt; 。&lt;/p&gt;
+
+&lt;p&gt;由于这是一个随机问题，允许多个答案，因此下列输出都可以被认为是正确的:&lt;br /&gt;
+[null,1,1,1,1,0]&lt;br /&gt;
+[null,1,1,1,1,1]&lt;br /&gt;
+[null,1,1,1,0,0]&lt;br /&gt;
+[null,1,1,1,0,1]&lt;br /&gt;
+[null,1,0,1,0,0]
+&amp;hellip;&amp;hellip;&lt;br /&gt;
+诸若此类。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= w.length &amp;lt;= 10000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= w[i] &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pickIndex&lt;/code&gt; 将被调用不超过 &lt;code&gt;10000&lt;/code&gt; 次&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+
+&lt;h4 id=&#34;前缀和&#34;&gt;前缀和&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;Constructor&lt;/code&gt; ，求的数组 &lt;code&gt;w&lt;/code&gt; 的总和 &lt;code&gt;sum&lt;/code&gt;，并构造一个生成器。
+&lt;code&gt;PickIndex&lt;/code&gt;，使用生成器得到一个位于区间 &lt;code&gt;[0,sum)&lt;/code&gt; 的随机数 &lt;code&gt;r&lt;/code&gt; ，依次遍历 &lt;code&gt;w&lt;/code&gt; 数组，计算前缀和，直到前缀和大于 &lt;code&gt;r&lt;/code&gt; 时，返回该下标。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;   &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Rand&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;   []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constructor&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;:   &lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewSource&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Now&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;UnixNano&lt;/span&gt;())),
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;:   &lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;,
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;: &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;,
+	}
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;PickIndex&lt;/span&gt;() &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Intn&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;preSum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;preSum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;preSum&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Constructor&lt;/code&gt; ：$ O(N), N = len(w) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PickIndex&lt;/code&gt; ：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;优化-二分查找&#34;&gt;优化(二分查找)&lt;/h4&gt;
+
+&lt;p&gt;初始化时，构造出前缀和数组，每次生成时即可采用二分查找。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;   &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Rand&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constructor&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;prefixSum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;))
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;prefixSum&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;prefixSum&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prefixSum&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;:   &lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewSource&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Now&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;UnixNano&lt;/span&gt;())),
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;: &lt;span style=&#34;color:#a6e22e&#34;&gt;prefixSum&lt;/span&gt;,
+	}
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;PickIndex&lt;/span&gt;() &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Intn&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;[len(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;])
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Search&lt;/span&gt;(len(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+	})
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Constructor&lt;/code&gt; ：$ O(N), N = len(w) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PickIndex&lt;/code&gt; ：$ O(\log\ N) $&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 1588. 所有奇数长度子数组的和</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-1588.-%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/</link>
         <pubDate>Sun, 29 Aug 2021 21:32:29 +0800</pubDate>
