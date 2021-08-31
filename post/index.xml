@@ -6,7 +6,29 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 30 Aug 2021 10:33:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Aug 2021 10:37:40 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1109. 航班预订统计</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/</link>
+      <pubDate>Tue, 31 Aug 2021 10:37:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/</guid>
+      <description>链接： https://leetcode-cn.com/problems/corporate-flight-bookings/
+难度： 中等
+题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
+有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
+请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
+示例 1：  输入：bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+输出：[10,55,45,25,25]
+解释：
+航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&amp;emsp;3&amp;emsp;4&amp;emsp;5
+预订记录 1 ：10&amp;ensp;10
+预订记录 2 ： &amp;ensp;&amp;emsp;20&amp;ensp;20
+预订记录 3 ： &amp;ensp;&amp;emsp;25&amp;ensp;25&amp;ensp;25&amp;ensp;25
+总座位数：&amp;emsp;10&amp;ensp;55&amp;ensp;45&amp;ensp;25&amp;ensp;25
+因此，answer = [10,55,45,25,25]</description>
+    </item>
+    
     <item>
       <title>Leetcode 528. 按权重随机选择</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/</link>

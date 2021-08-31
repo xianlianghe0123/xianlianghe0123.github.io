@@ -1,44 +1,56 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/decode-xored-permutation/
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/corporate-flight-bookings/
 难度： 中等
-题目描述 给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。
-它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i &#43; 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。
-给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。
-示例1：  输入：encoded = [3,1]
-输出：[1,2,3]
-解释：如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]
- 示例2：  输入：encoded = [6,5,4,6]
-输出：[2,4,1,5,3]'><title>Leetcode 1734. 解码异或后的排列</title>
+题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
+有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
+请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
+示例 1：  输入：bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+输出：[10,55,45,25,25]
+解释：
+航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&amp;emsp;3&amp;emsp;4&amp;emsp;5
+预订记录 1 ：10&amp;ensp;10
+预订记录 2 ： &amp;ensp;&amp;emsp;20&amp;ensp;20
+预订记录 3 ： &amp;ensp;&amp;emsp;25&amp;ensp;25&amp;ensp;25&amp;ensp;25
+总座位数：&amp;emsp;10&amp;ensp;55&amp;ensp;45&amp;ensp;25&amp;ensp;25
+因此，answer = [10,55,45,25,25]'><title>Leetcode 1109. 航班预订统计</title>
 
-<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1734.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%8E%92%E5%88%97/'>
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1734. 解码异或后的排列'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/decode-xored-permutation/
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1109. 航班预订统计'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/corporate-flight-bookings/
 难度： 中等
-题目描述 给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。
-它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i &#43; 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。
-给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。
-示例1：  输入：encoded = [3,1]
-输出：[1,2,3]
-解释：如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]
- 示例2：  输入：encoded = [6,5,4,6]
-输出：[2,4,1,5,3]'>
-<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1734.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%8E%92%E5%88%97/'>
+题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
+有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
+请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
+示例 1：  输入：bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+输出：[10,55,45,25,25]
+解释：
+航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&amp;emsp;3&amp;emsp;4&amp;emsp;5
+预订记录 1 ：10&amp;ensp;10
+预订记录 2 ： &amp;ensp;&amp;emsp;20&amp;ensp;20
+预订记录 3 ： &amp;ensp;&amp;emsp;25&amp;ensp;25&amp;ensp;25&amp;ensp;25
+总座位数：&amp;emsp;10&amp;ensp;55&amp;ensp;45&amp;ensp;25&amp;ensp;25
+因此，answer = [10,55,45,25,25]'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/'>
 <meta property='og:site_name' content='贺贤良'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-05-11T19:55:25&#43;08:00'/><meta property='article:modified_time' content='2021-05-11T19:55:25&#43;08:00'/>
-<meta name="twitter:title" content="Leetcode 1734. 解码异或后的排列">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/decode-xored-permutation/
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-31T10:37:40&#43;08:00'/><meta property='article:modified_time' content='2021-08-31T10:37:40&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1109. 航班预订统计">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/corporate-flight-bookings/
 难度： 中等
-题目描述 给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。
-它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i &#43; 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。
-给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。
-示例1：  输入：encoded = [3,1]
-输出：[1,2,3]
-解释：如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]
- 示例2：  输入：encoded = [6,5,4,6]
-输出：[2,4,1,5,3]">
+题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
+有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
+请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
+示例 1：  输入：bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+输出：[10,55,45,25,25]
+解释：
+航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&amp;emsp;3&amp;emsp;4&amp;emsp;5
+预订记录 1 ：10&amp;ensp;10
+预订记录 2 ： &amp;ensp;&amp;emsp;20&amp;ensp;20
+预订记录 3 ： &amp;ensp;&amp;emsp;25&amp;ensp;25&amp;ensp;25&amp;ensp;25
+总座位数：&amp;emsp;10&amp;ensp;55&amp;ensp;45&amp;ensp;25&amp;ensp;25
+因此，answer = [10,55,45,25,25]">
     </head>
     <body class="
     article-page 
@@ -203,7 +215,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/leetcode-1734.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%8E%92%E5%88%97/">Leetcode 1734. 解码异或后的排列</a>
+        <a href="/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/">Leetcode 1109. 航班预订统计</a>
     </h2>
 
     
@@ -221,7 +233,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 11, 2021</time>
+                <time class="article-time--published">Aug 31, 2021</time>
             </div>
         
 
@@ -234,69 +246,98 @@
     <section class="article-content">
     
 
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/decode-xored-permutation/" target="_blank">https://leetcode-cn.com/problems/decode-xored-permutation/</a><br />
+<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/corporate-flight-bookings/" target="_blank">https://leetcode-cn.com/problems/corporate-flight-bookings/</a><br />
 <strong>难度：</strong> <font color="orange">中等</font></p>
 
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 
-<p>给你一个整数数组 <code>perm</code> ，它是前 <code>n</code> 个正整数的排列，且 <code>n</code> 是个 <strong>奇数</strong> 。</p>
+<p>这里有 <code>n</code> 个航班，它们分别从 <code>1</code> 到 <code>n</code> 进行编号。</p>
 
-<p>它被加密成另一个长度为 <code>n - 1</code> 的整数数组 <code>encoded</code> ，满足 <code>encoded[i] = perm[i] XOR perm[i + 1]</code> 。比方说，如果 <code>perm = [1,3,2]</code> ，那么 <code>encoded = [2,1]</code> 。</p>
+<p>有一份航班预订表 <code>bookings</code> ，表中第 <code>i</code> 条预订记录 <code>bookings[i] = [first<sub>i</sub>, last<sub>i</sub>, seats<sub>i</sub>]</code> 意味着在从 <code>first<sub>i</sub></code> 到 <code>last<sub>i</sub></code> （包含 <code>first<sub>i</sub></code> 和 <code>last<sub>i</sub></code> ）的 每个航班 上预订了 <code>seats<sub>i</sub></code> 个座位。</p>
 
-<p>给你 <code>encoded</code> 数组，请你返回原始数组 <code>perm</code> 。题目保证答案存在且唯一。</p>
+<p>请你返回一个长度为 <code>n</code> 的数组 <code>answer</code>，其中 <code>answer[i]</code> 是航班 <code>i</code> 上预订的座位总数。</p>
 
-<h5 id="示例1">示例1：</h5>
-
-<blockquote>
-<p><strong>输入：</strong>encoded = [3,1]<br />
-<strong>输出：</strong>[1,2,3]<br />
-<strong>解释：</strong>如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]</p>
-</blockquote>
-
-<h5 id="示例2">示例2：</h5>
+<h4 id="示例-1">示例 1：</h4>
 
 <blockquote>
-<p><strong>输入：</strong>encoded = [6,5,4,6]<br />
-<strong>输出：</strong>[2,4,1,5,3]</p>
+<p><strong>输入：</strong>bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5<br />
+<strong>输出：</strong>[10,55,45,25,25]<br />
+<strong>解释：</strong><br />
+航班编号&emsp;&emsp;1&emsp;2&emsp;3&emsp;4&emsp;5<br />
+预订记录 1 ：10&ensp;10<br />
+预订记录 2 ：  &ensp;&emsp;20&ensp;20<br />
+预订记录 3 ：  &ensp;&emsp;25&ensp;25&ensp;25&ensp;25<br />
+总座位数：&emsp;10&ensp;55&ensp;45&ensp;25&ensp;25<br />
+因此，answer = [10,55,45,25,25]</p>
 </blockquote>
 
-<h5 id="提示">提示：</h5>
+<h4 id="示例-2">示例 2：</h4>
+
+<blockquote>
+<p><strong>输入：</strong>bookings = [[1,2,10],[2,2,15]], n = 2<br />
+<strong>输出：</strong>[10,25]<br />
+<strong>解释：</strong><br />
+航班编号&emsp;&emsp;1&emsp;2<br />
+预订记录 1 ：10&ensp;10<br />
+预订记录 2 ：  &ensp;&emsp;15<br />
+总座位数：&emsp;10&ensp;25<br />
+因此，answer = [10,25]</p>
+</blockquote>
+
+<h4 id="提示">提示：</h4>
 
 <ul>
-<li><code>3 &lt;= n &lt; 10<sup>5</sup></code></li>
-<li><code>n</code> 是奇数。</li>
-<li><code>encoded.length == n - 1</code></li>
+<li><code>1 &lt;= n &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= bookings.length &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>bookings[i].length == 3</code></li>
+<li><code>1 &lt;= first<sub>i</sub> &lt;= last<sub>i</sub> &lt;= n</code></li>
+<li><code>1 &lt;= seats<sub>i</sub> &lt;= 10<sup>4</sup></code></li>
 </ul>
 
 <h3 id="解题思路">解题思路</h3>
 
-<h4 id="消除">消除</h4>
+<h4 id="暴力求解">暴力求解</h4>
 
-<p>有题意可知，只要知道原数组 <code>perm</code> 的一个元素，就可以推导得出整个数组，而原数组的所有元素均已知，所以可以求得所有元素的异或值 <code>1⊕2⊕…⊕n</code>。</p>
-
-<p>由 <code>encoded[i] = perm[i]⊕[i+1]</code> 且 <code>n</code>为奇数，可以进一步得到 <code>perm[1]⊕perm[2]⊕…⊕perm[n-1] = encoded[1]⊕encoded[3]⊕...⊕encoded[n-2]</code>。</p>
-
-<p>将上述两个结果异或即可消除除 <code>perm[0]</code> 外的所有值，然后就可以推导 <code>perm</code> 了</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">decode</span>(<span style="color:#a6e22e">encoded</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">perm</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">encoded</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">tmp</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> cap(<span style="color:#a6e22e">perm</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">tmp</span> ^= <span style="color:#a6e22e">i</span>
+<p>遍历 <code>bookings</code> 列表，将 <code>first</code> 到 <code>last</code> 的 <code>seats</code> 累加到对应的航班中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">booking</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">bookings</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>]; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
+		}
 	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">encoded</span>); <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span> {
-		<span style="color:#a6e22e">tmp</span> ^= <span style="color:#a6e22e">encoded</span>[<span style="color:#a6e22e">i</span>]
-	}
-	<span style="color:#a6e22e">perm</span> = append(<span style="color:#a6e22e">perm</span>, <span style="color:#a6e22e">tmp</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">encoded</span> {
-		<span style="color:#a6e22e">perm</span> = append(<span style="color:#a6e22e">perm</span>, <span style="color:#a6e22e">perm</span>[<span style="color:#a6e22e">i</span>]^<span style="color:#a6e22e">encoded</span>[<span style="color:#a6e22e">i</span>])
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">perm</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
 }</code></pre></div>
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：$ O(Mn), M = len(bookings) $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+
+<h4 id="查分数组">查分数组</h4>
+
+<p>使用差分数组，<code>ans[i]</code> 保存与 <code>ans[i-1]</code> 的差值，每次即可进行区间操作：</p>
+
+<p>对 <code>first<sub>i</sub></code> 加上 <code>seats<sub>i</sub></code>，然后对 <code>last<sub>i</sub>+1</code> 减去 <code>seats<sub>i</sub></code>，表示对区间 <code>[first<sub>i</sub>, last<sub>i</sub>]</code> 加上<code>seats<sub>i</sub></code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">booking</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">bookings</span> {
+		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">n</span> {
+			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">-=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
+		}
+	}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+}</code></pre></div>
+<h5 id="复杂度-1">复杂度</h5>
+
+<ul>
+<li>时间复杂度：$ O(M+n), M = len(bookings) $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
 </section>
@@ -343,18 +384,6 @@
                 
                     
 <article class="">
-    <a href="/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
         
         
@@ -397,6 +426,18 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 881. 救生艇</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-797.-%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 797. 所有可能的路径</h2>
         </div>
     </a>
 </article>

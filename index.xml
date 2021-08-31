@@ -6,7 +6,110 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Mon, 30 Aug 2021 10:33:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 31 Aug 2021 10:37:40 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 1109. 航班预订统计</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/</link>
+        <pubDate>Tue, 31 Aug 2021 10:37:40 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/</guid>
+        <description>
+
+&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a href=&#34;https://leetcode-cn.com/problems/corporate-flight-bookings/&#34; target=&#34;_blank&#34;&gt;https://leetcode-cn.com/problems/corporate-flight-bookings/&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;这里有 &lt;code&gt;n&lt;/code&gt; 个航班，它们分别从 &lt;code&gt;1&lt;/code&gt; 到 &lt;code&gt;n&lt;/code&gt; 进行编号。&lt;/p&gt;
+
+&lt;p&gt;有一份航班预订表 &lt;code&gt;bookings&lt;/code&gt; ，表中第 &lt;code&gt;i&lt;/code&gt; 条预订记录 &lt;code&gt;bookings[i] = [first&lt;sub&gt;i&lt;/sub&gt;, last&lt;sub&gt;i&lt;/sub&gt;, seats&lt;sub&gt;i&lt;/sub&gt;]&lt;/code&gt; 意味着在从 &lt;code&gt;first&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 到 &lt;code&gt;last&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; （包含 &lt;code&gt;first&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 和 &lt;code&gt;last&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; ）的 每个航班 上预订了 &lt;code&gt;seats&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 个座位。&lt;/p&gt;
+
+&lt;p&gt;请你返回一个长度为 &lt;code&gt;n&lt;/code&gt; 的数组 &lt;code&gt;answer&lt;/code&gt;，其中 &lt;code&gt;answer[i]&lt;/code&gt; 是航班 &lt;code&gt;i&lt;/code&gt; 上预订的座位总数。&lt;/p&gt;
+
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;[10,55,45,25,25]&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br /&gt;
+航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&amp;emsp;3&amp;emsp;4&amp;emsp;5&lt;br /&gt;
+预订记录 1 ：10&amp;ensp;10&lt;br /&gt;
+预订记录 2 ：  &amp;ensp;&amp;emsp;20&amp;ensp;20&lt;br /&gt;
+预订记录 3 ：  &amp;ensp;&amp;emsp;25&amp;ensp;25&amp;ensp;25&amp;ensp;25&lt;br /&gt;
+总座位数：&amp;emsp;10&amp;ensp;55&amp;ensp;45&amp;ensp;25&amp;ensp;25&lt;br /&gt;
+因此，answer = [10,55,45,25,25]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;bookings = [[1,2,10],[2,2,15]], n = 2&lt;br /&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;[10,25]&lt;br /&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br /&gt;
+航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&lt;br /&gt;
+预订记录 1 ：10&amp;ensp;10&lt;br /&gt;
+预订记录 2 ：  &amp;ensp;&amp;emsp;15&lt;br /&gt;
+总座位数：&amp;emsp;10&amp;ensp;25&lt;br /&gt;
+因此，answer = [10,25]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;提示&#34;&gt;提示：&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 2 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= bookings.length &amp;lt;= 2 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bookings[i].length == 3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= first&lt;sub&gt;i&lt;/sub&gt; &amp;lt;= last&lt;sub&gt;i&lt;/sub&gt; &amp;lt;= n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= seats&lt;sub&gt;i&lt;/sub&gt; &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+
+&lt;h4 id=&#34;暴力求解&#34;&gt;暴力求解&lt;/h4&gt;
+
+&lt;p&gt;遍历 &lt;code&gt;bookings&lt;/code&gt; 列表，将 &lt;code&gt;first&lt;/code&gt; 到 &lt;code&gt;last&lt;/code&gt; 的 &lt;code&gt;seats&lt;/code&gt; 累加到对应的航班中。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;corpFlightBookings&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;bookings&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bookings&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(Mn), M = len(bookings) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;查分数组&#34;&gt;查分数组&lt;/h4&gt;
+
+&lt;p&gt;使用差分数组，&lt;code&gt;ans[i]&lt;/code&gt; 保存与 &lt;code&gt;ans[i-1]&lt;/code&gt; 的差值，每次即可进行区间操作：&lt;/p&gt;
+
+&lt;p&gt;对 &lt;code&gt;first&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 加上 &lt;code&gt;seats&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt;，然后对 &lt;code&gt;last&lt;sub&gt;i&lt;/sub&gt;+1&lt;/code&gt; 减去 &lt;code&gt;seats&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt;，表示对区间 &lt;code&gt;[first&lt;sub&gt;i&lt;/sub&gt;, last&lt;sub&gt;i&lt;/sub&gt;]&lt;/code&gt; 加上&lt;code&gt;seats&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;corpFlightBookings&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;bookings&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bookings&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;booking&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(M+n), M = len(bookings) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 528. 按权重随机选择</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/</link>
         <pubDate>Mon, 30 Aug 2021 10:33:25 +0800</pubDate>
