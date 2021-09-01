@@ -316,8 +316,8 @@
 <h5 id="复杂度">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N+N+max(N, M))</li>
-<li>空间复杂度：O(N+M)</li>
+<li>时间复杂度：$ O(N+M), N = len(version1), M = len(version2) $</li>
+<li>空间复杂度：$ O(N+M) $</li>
 </ul>
 
 <h4 id="双指针">双指针</h4>
@@ -340,7 +340,6 @@
 		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">version2</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">version2</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;.&#39;</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
 			<span style="color:#a6e22e">num2</span> = <span style="color:#a6e22e">num2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> int(<span style="color:#a6e22e">version2</span>[<span style="color:#a6e22e">j</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)
 		}
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">num1</span>, <span style="color:#a6e22e">num2</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>)
 		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num1</span> &gt; <span style="color:#a6e22e">num2</span> {
 			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
 		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num1</span> &lt; <span style="color:#a6e22e">num2</span> {
@@ -356,8 +355,8 @@
 <h5 id="复杂度-1">复杂度</h5>
 
 <ul>
-<li>时间复杂度：O(N+M)</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：$ O(N+M), N = len(version1), M = len(version2) $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
 </section>
