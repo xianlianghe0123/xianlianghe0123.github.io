@@ -4,9 +4,9 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/increasing-order-search-tree/
 难度： 简单
 题目描述 给你一棵二叉搜索树，请你 按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。
-示例1：  输入：root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
+示例1：  **输入：**root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
 输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
- 示例2：  输入：root = [5,1,7]
+ 示例2：  **输入：**root = [5,1,7]
 输出：[1,null,5,null,7]
  提示：  树中节点数的取值范围是 [1, 100] 0 &amp;lt;= Node.val &amp;lt;= 1000  解题思路 新建树 重新构造一棵树，中序遍历原树的每个结点，将其加入到新树的右结点中。
 func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode := newRoot var InorderTraversal func(node *TreeNode) InorderTraversal = func(node *TreeNode) { if node == nil { return } InorderTraversal(node.Left) newNode.Right = &amp;amp;TreeNode{ Val: node.Val, Left: nil, Right: nil, } newNode = newNode.'><title>Leetcode 897. 递增顺序搜索树</title>
@@ -17,9 +17,9 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/increasing-order-search-tree/
 难度： 简单
 题目描述 给你一棵二叉搜索树，请你 按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。
-示例1：  输入：root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
+示例1：  **输入：**root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
 输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
- 示例2：  输入：root = [5,1,7]
+ 示例2：  **输入：**root = [5,1,7]
 输出：[1,null,5,null,7]
  提示：  树中节点数的取值范围是 [1, 100] 0 &amp;lt;= Node.val &amp;lt;= 1000  解题思路 新建树 重新构造一棵树，中序遍历原树的每个结点，将其加入到新树的右结点中。
 func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode := newRoot var InorderTraversal func(node *TreeNode) InorderTraversal = func(node *TreeNode) { if node == nil { return } InorderTraversal(node.Left) newNode.Right = &amp;amp;TreeNode{ Val: node.Val, Left: nil, Right: nil, } newNode = newNode.'>
@@ -30,9 +30,9 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/increasing-order-search-tree/
 难度： 简单
 题目描述 给你一棵二叉搜索树，请你 按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。
-示例1：  输入：root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
+示例1：  **输入：**root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
 输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
- 示例2：  输入：root = [5,1,7]
+ 示例2：  **输入：**root = [5,1,7]
 输出：[1,null,5,null,7]
  提示：  树中节点数的取值范围是 [1, 100] 0 &amp;lt;= Node.val &amp;lt;= 1000  解题思路 新建树 重新构造一棵树，中序遍历原树的每个结点，将其加入到新树的右结点中。
 func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode := newRoot var InorderTraversal func(node *TreeNode) InorderTraversal = func(node *TreeNode) { if node == nil { return } InorderTraversal(node.Left) newNode.Right = &amp;amp;TreeNode{ Val: node.Val, Left: nil, Right: nil, } newNode = newNode.">
@@ -229,44 +229,30 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/increasing-order-search-tree/" target="_blank">https://leetcode-cn.com/problems/increasing-order-search-tree/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/increasing-order-search-tree/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/increasing-order-search-tree/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给你一棵二叉搜索树，请你 <strong>按中序遍历</strong> 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。</p>
-
 <h5 id="示例1">示例1：</h5>
-
-<p><img src="https://assets.leetcode.com/uploads/2020/11/17/ex1.jpg" width="600px"></p>
-
+<img src="https://assets.leetcode.com/uploads/2020/11/17/ex1.jpg" width="600px">
 <blockquote>
-<p><strong>输入：</strong>root = [5,3,6,2,4,null,8,1,null,null,null,7,9]<br />
+<p>**输入：**root = [5,3,6,2,4,null,8,1,null,null,null,7,9]<br>
 <strong>输出：</strong>[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
-<p><img src="https://assets.leetcode.com/uploads/2020/11/17/ex2.jpg" width="300px"></p>
-
+<img src="https://assets.leetcode.com/uploads/2020/11/17/ex2.jpg" width="300px">  
 <blockquote>
-<p><strong>输入：</strong>root = [5,1,7]<br />
+<p>**输入：**root = [5,1,7]<br>
 <strong>输出：</strong>[1,null,5,null,7]</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li>树中节点数的取值范围是 <code>[1, 100]</code></li>
 <li><code>0 &lt;= Node.val &lt;= 1000</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="新建树">新建树</h4>
-
 <p>重新构造一棵树，中序遍历原树的每个结点，将其加入到新树的右结点中。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">increasingBST</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
 	<span style="color:#a6e22e">newRoot</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">TreeNode</span>)
@@ -288,16 +274,13 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 	<span style="color:#a6e22e">InorderTraversal</span>(<span style="color:#a6e22e">root</span>)
 	<span style="color:#a6e22e">newRoot</span> = <span style="color:#a6e22e">newRoot</span>.<span style="color:#a6e22e">Right</span>
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newRoot</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：O(N)</li>
 </ul>
-
 <h4 id="就地改指针">就地改指针</h4>
-
 <p>维护一个叶结点指针，中序遍历整棵树，每当遇到一个新结点时，该结点 <code>left</code> 置为空，叶结点 <code>right</code> 修改为该结点，叶结点修正为该结点。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">increasingBST</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
 	<span style="color:#a6e22e">newRoot</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">TreeNode</span>)
@@ -317,9 +300,8 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 	<span style="color:#a6e22e">LDR</span>(<span style="color:#a6e22e">root</span>)
 	<span style="color:#a6e22e">newRoot</span> = <span style="color:#a6e22e">newRoot</span>.<span style="color:#a6e22e">Right</span>
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newRoot</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：O(1)</li>
@@ -369,6 +351,18 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -411,18 +405,6 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

@@ -45,7 +45,7 @@ solution.pickIndex(); // 返回 0，因为数组中只有一个元素，所以�
 2,3,4 (使用第二个 2)
 2,2,3
  注意：  数组长度不超过1000。 数组里整数的范围为 [0, 1000]。  解题思路 排序 + 二分查找 构成三角形的前提条件是两边之和小于第三边，也就是说，两个小边之和大于最长的那条边。
-故，首先对数组进行排序，然后依次枚举两条小边 x 和 y ，其下标为 i 和 j (不妨假设 i ≤ i，则 x ≤ y)，即得到最大边的取值范围 x+y-1， 通过二分查找，找到其最大值的位置，与 j 相减即得到可取值的数量，求和。
+故，首先对数组进行排序，然后依次枚举两条小边 x 和 y ，其下标为 i 和 j (不妨假设 i ≤ i，则  x ≤ y)，即得到最大边的取值范围 x+y-1， 通过二分查找，找到其最大值的位置，与 j 相减即得到可取值的数量，求和。
 func triangleNumber(nums []int) int { sort.Ints(nums) res := 0 for i := 0; i &amp;lt; len(nums)-2; i++ { if nums[i] == 0 { continue } for j := i + 1; j &amp;lt; len(nums)-1; j++ { pos := sort.</description>
     </item>
     
@@ -61,7 +61,7 @@ func triangleNumber(nums []int) int { sort.Ints(nums) res := 0 for i := 0; i &am
 请你返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序。
 如果第 i 行的军人数量少于第 j 行，或者两行军人数量相同但 i 小于 j，那么我们认为第 i 行的战斗力比第 j 行弱。
 军人 总是 排在一行中的靠前位置，也就是说 1 总是出现在 0 之前。
-示例 1：  输入：mat =
+示例 1：  **输入：**mat =
 [[1,1,0,0,0],
 [1,1,1,1,0],
 [1,0,0,0,0],
@@ -72,7 +72,8 @@ k = 3
 解释： 每行中的军人数目： 行 0 -&amp;gt; 2
 行 1 -&amp;gt; 4
 行 2 -&amp;gt; 1
-行 3 -&amp;gt; 2</description>
+行 3 -&amp;gt; 2
+行 4 -&amp;gt; 5</description>
     </item>
     
     <item>
@@ -105,7 +106,7 @@ func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if
 你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
 在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。因为答案可能很大，所以需要对 109 + 7 取余 后返回。
 |x| 定义为：
- 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  输入：nums1 = [1,7,5], nums2 = [2,3,5]</description>
+ 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  **输入：**nums1 = [1,7,5], nums2 = [2,3,5]</description>
     </item>
     
     <item>
@@ -119,11 +120,11 @@ func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if
 题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）,数组已经按照 升序排列。编写一个方法，计算出研究者的 h 指数。
 h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
 例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
-示例：  输入：citations = [0,1,3,5,6]
-输出：3
-解释：给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 0, 1, 3, 5, 6 次。
+示例：  **输入：**citations = [0,1,3,5,6]
+**输出：**3
+**解释：**给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 0, 1, 3, 5, 6 次。
 由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
- 说明：如果 h 有多种可能的值，h 指数是其中最大的那个。</description>
+ **说明：**如果 h 有多种可能的值，h 指数是其中最大的那个。</description>
     </item>
     
     <item>
@@ -136,7 +137,7 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
 难度： 中等
 题目描述 创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
  set(string key, string value, int timestamp)  存储键 key、值 value，以及给定的时间戳 timestamp。
- get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。   示例1：  输入：inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
+get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。    示例1：  **输入：**inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
 输出：[null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
 解释：
 TimeMap kv;

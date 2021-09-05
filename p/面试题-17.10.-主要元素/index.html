@@ -5,11 +5,11 @@
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
 示例 1：  输入：[1,2,5,9,5,9,5,5,5]
-输出：5
+**输出：**5
  示例 2：  输入：[3,2]
 输出：-1
  示例 3：  输入：[2,2,1,1,1,2,2]
-输出：2
+**输出：**2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
 func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。'><title>面试题 17.10. 主要元素</title>
 
@@ -20,11 +20,11 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
 示例 1：  输入：[1,2,5,9,5,9,5,5,5]
-输出：5
+**输出：**5
  示例 2：  输入：[3,2]
 输出：-1
  示例 3：  输入：[2,2,1,1,1,2,2]
-输出：2
+**输出：**2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
 func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/'>
@@ -35,11 +35,11 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
 示例 1：  输入：[1,2,5,9,5,9,5,5,5]
-输出：5
+**输出：**5
  示例 2：  输入：[3,2]
 输出：-1
  示例 3：  输入：[2,2,1,1,1,2,2]
-输出：2
+**输出：**2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
 func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。">
     </head>
@@ -235,40 +235,28 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/find-majority-element-lcci/" target="_blank">https://leetcode-cn.com/problems/find-majority-element-lcci/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/find-majority-element-lcci/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/find-majority-element-lcci/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>数组中占比超过一半的元素称之为主要元素。给你一个 <strong>整数</strong> 数组，找出其中的主要元素。若没有，返回 <code>-1</code> 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。</p>
-
 <h5 id="示例-1">示例 1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>[1,2,5,9,5,9,5,5,5]<br />
-<strong>输出：</strong>5</p>
+<p><strong>输入：</strong>[1,2,5,9,5,9,5,5,5]<br>
+**输出：**5</p>
 </blockquote>
-
 <h5 id="示例-2">示例 2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>[3,2]<br />
+<p><strong>输入：</strong>[3,2]<br>
 <strong>输出：</strong>-1</p>
 </blockquote>
-
 <h5 id="示例-3">示例 3：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>[2,2,1,1,1,2,2]<br />
-<strong>输出：</strong>2</p>
+<p><strong>输入：</strong>[2,2,1,1,1,2,2]<br>
+**输出：**2</p>
 </blockquote>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="哈希计数">哈希计数</h4>
-
 <p>遍历数组，记录每个数出现的次数，直到某个数 <code>num</code> 出现的次数大于数组长度的一半则返回 <code>num</code>，否则返回 <code>-1</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">majorityElement</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
@@ -279,16 +267,13 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N) $</li>
 <li>空间复杂度：$ O(N) $</li>
 </ul>
-
 <h4 id="排序">排序</h4>
-
 <p>将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">majorityElement</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
@@ -307,32 +292,25 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NlogN) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
-
 <h4 id="摩尔投票算法">摩尔投票算法</h4>
-
 <p>这一算法应用的问题原型是在集合中寻找可能存在的多数元素，这一元素在输入的序列重复出现并占到了序列元素的一半以上。</p>
-
 <p>假设存在占到序列元素一半以上的众数，每次将两个不相同的两个数消除，直到最后剩下的数字即为该数。</p>
-
 <p>如果一个序列中没有占到多数的元素，那么第一次的结果就可能是无效的随机元素，所以在第一遍遍历之后应该再进行一个遍历以统计第一次算法遍历的结果出现次数，以确定其是否占到了序列元素的一半以上。</p>
-
 <p>算法步骤如下：</p>
-
 <ol>
 <li>用 <code>major</code> 和 <code>cnt</code> 记录主要元素和其数量，初始 <code>cnt</code> 为 <code>0</code>；</li>
 <li>当 <code>cnt</code> 数量为 <code>0</code> 时，将 <code>major</code> 设置为当前元素；</li>
 <li>当当前元素 <code>num</code> 和 <code>major</code> 不同时，<code>cnt</code> 减一；</li>
 <li>当当前元素 <code>num</code> 和 <code>major</code> 相同时，<code>cnt</code> 加一；</li>
 <li>一次遍历后，<code>major</code> 即为选出来的元素；</li>
-
-<li><p>二次遍历统计 <code>major</code>，验证其是否占到了序列元素的一半以上。</p>
+<li>二次遍历统计 <code>major</code>，验证其是否占到了序列元素的一半以上。</li>
+</ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">majorityElement</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">major</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
 	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
@@ -358,11 +336,8 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">major</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-}</code></pre></div></li>
-</ol>
-
-<h5 id="复杂度-2">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-2">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N) $</li>
 <li>空间复杂度：$ O(1) $</li>

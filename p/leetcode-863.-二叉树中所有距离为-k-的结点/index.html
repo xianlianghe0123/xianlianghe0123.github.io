@@ -238,46 +238,33 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/" target="_blank">https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给定一个二叉树（具有根结点 <code>root</code>）， 一个目标结点 <code>target</code> ，和一个整数值 <code>K</code> 。</p>
-
 <p>返回到目标结点 <code>target</code> 距离为 <code>K</code> 的所有结点的值的列表。 答案可以以任何顺序返回。</p>
-
 <h5 id="示例">示例：</h5>
-
 <blockquote>
-<p>输入：root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, K = 2<br />
-输出：[7,4,1]<br />
-解释：<br />
-所求结点为与目标结点（值为 5）距离为 2 的结点，值分别为 7，4，以及 1<br />
-注意，输入的 &ldquo;root&rdquo; 和 &ldquo;target&rdquo; 实际上是树上的结点。<br />
-<img src="/img/sketch0.png" width="280px"><br />
+<p>输入：root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, K = 2<br>
+输出：[7,4,1]<br>
+解释：<br>
+所求结点为与目标结点（值为 5）距离为 2 的结点，值分别为 7，4，以及 1<br>
+注意，输入的 &ldquo;root&rdquo; 和 &ldquo;target&rdquo; 实际上是树上的结点。<br>
+<img src="/img/sketch0.png" width="280px"><br>
 上面的输入仅仅是对这些对象进行了序列化描述。</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li>给定的树是非空的。</li>
 <li>树上的每个结点都具有唯一的值 <code>0 &lt;= node.val &lt;= 500</code> 。</li>
 <li>目标结点 <code>target</code> 是树上的结点。</li>
 <li><code>0 &lt;= K &lt;= 1000</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="深度优先搜索">深度优先搜索</h4>
-
 <p>一次遍历，找到结点 <code>target</code>，同时记录每个结点的父结点，使之构成一张无向图。</p>
-
 <p>然后从 <code>target</code> 结点开始遍历图，找到所有距离为 <code>K</code> 的结点。</p>
-
 <p>注意，不要重复遍历，并进行剪枝。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">distanceK</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">target</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">father</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
@@ -317,9 +304,8 @@
 	}
 	<span style="color:#a6e22e">search</span>(<span style="color:#a6e22e">target</span>, <span style="color:#66d9ef">nil</span>, <span style="color:#ae81ff">0</span>)
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree)$</li>
 <li>空间复杂度：$ O(N) $</li>

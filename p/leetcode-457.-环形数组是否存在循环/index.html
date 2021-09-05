@@ -220,69 +220,50 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/circular-array-loop/" target="_blank">https://leetcode-cn.com/problems/circular-array-loop/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/circular-array-loop/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/circular-array-loop/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>存在一个不含 <code>0</code> 的 <strong>环形</strong> 数组 <code>nums</code> ，每个 <code>nums[i]</code> 都表示位于下标 <code>i</code> 的角色应该向前或向后移动的下标个数：</p>
-
 <ul>
 <li>如果 <code>nums[i]</code> 是正数，<strong>向前</strong> 移动 <code>nums[i]</code> 步</li>
 <li>如果 <code>nums[i]</code> 是负数，<strong>向后</strong> 移动 <code>nums[i]</code> 步</li>
 </ul>
-
 <p>因为数组是 <strong>环形</strong> 的，所以可以假设从最后一个元素向前移动一步会到达第一个元素，而第一个元素向后移动一步会到达最后一个元素。</p>
-
 <p>数组中的 <strong>循环</strong> 由长度为 k 的下标序列 seq ：</p>
-
 <ul>
 <li>遵循上述移动规则将导致重复下标序列 <code>seq[0] -&gt; seq[1] -&gt; ... -&gt; seq[k - 1] -&gt; seq[0] -&gt; ...</code></li>
 <li>所有 <code>nums[seq[j]]</code> 应当不是 <strong>全正</strong> 就是 <strong>全负</strong></li>
 <li><code>k &gt; 1</code></li>
 </ul>
-
 <p>如果 <code>nums</code> 中存在循环，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [2,-1,1,2,2]<br />
-<strong>输出：</strong>true<br />
-<strong>解释：</strong>存在循环，按下标 0 -&gt; 2 -&gt; 3 -&gt; 0 。循环长度为 3 。</p>
+<p>**输入：**nums = [2,-1,1,2,2]<br>
+**输出：**true<br>
+**解释：**存在循环，按下标 0 -&gt; 2 -&gt; 3 -&gt; 0 。循环长度为 3 。</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [-1,2]<br />
-<strong>输出：</strong>false<br />
-<strong>解释：</strong>按下标 1 -&gt; 1 -&gt; 1 &hellip; 的运动无法构成循环，因为循环的长度为 1 。根据定义，循环的长度必须大于 1 。</p>
+<p>**输入：**nums = [-1,2]<br>
+**输出：**false<br>
+**解释：**按下标 1 -&gt; 1 -&gt; 1 &hellip; 的运动无法构成循环，因为循环的长度为 1 。根据定义，循环的长度必须大于 1 。</p>
 </blockquote>
-
 <h4 id="示例-3">示例 3：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [-2,1,-1,-2,-2]<br />
-<strong>输出：</strong>false<br />
-<strong>解释：</strong>按下标 1 -&gt; 2 -&gt; 1 -&gt; &hellip; 的运动无法构成循环，因为 nums[1] 是正数，而 nums[2] 是负数。<br />
+<p>**输入：**nums = [-2,1,-1,-2,-2]<br>
+**输出：**false<br>
+**解释：**按下标 1 -&gt; 2 -&gt; 1 -&gt; &hellip; 的运动无法构成循环，因为 nums[1] 是正数，而 nums[2] 是负数。<br>
 所有 nums[seq[j]] 应当不是全正就是全负。</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 5000</code></li>
 <li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
 <li><code>nums[i] != 0</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="快慢指针">快慢指针</h4>
-
 <p>使用快慢指针依次遍历，若有环，则快慢指针最后会相遇。遍历时注意移动方向要一致。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">circularArrayLoop</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
 	<span style="color:#a6e22e">visit</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, len(<span style="color:#a6e22e">nums</span>))
@@ -320,9 +301,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(N) $</li>
@@ -372,6 +352,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -414,18 +406,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

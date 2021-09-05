@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=' 链接： https://leetcode-cn.com/problems/excel-sheet-column-title/
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/excel-sheet-column-title/
 难度： 简单
 题目描述 给定一个正整数，返回它在 Excel 表中相对应的列名称。
 例如，
@@ -21,13 +21,13 @@
 输出: &amp;ldquo;ZY&amp;rdquo;
  解题思路 数学 通过分析题意可以得知，该题是一个进制转换，将一个10进制的数转换为26进制。
 通过数学方法，逐次模26取余数，即可求得倒序的26进制每一位，反转该序列即可求得转换后的数。
-注意：该26进制从1开始计数，每次取模前应减1。
+**注意：**该26进制从1开始计数，每次取模前应减1。
 func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; columnNumber &amp;gt; 0; columnNumber /= 26 { columnNumber = columnNumber - 1 res = append(res, &amp;#39;A&amp;#39;&#43;byte((columnNumber)%26)) } for i := 0; i &amp;lt; len(res)/2; i&#43;&#43; { res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i] } return string(res) } 复杂度  时间复杂度：O(log26columnNumber) 空间复杂度：O(log26columnNumber)  '><title>Leetcode 168. Excel表列名称</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-168.-excel%E8%A1%A8%E5%88%97%E5%90%8D%E7%A7%B0/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 168. Excel表列名称'>
-<meta property='og:description' content=' 链接： https://leetcode-cn.com/problems/excel-sheet-column-title/
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/excel-sheet-column-title/
 难度： 简单
 题目描述 给定一个正整数，返回它在 Excel 表中相对应的列名称。
 例如，
@@ -47,13 +47,13 @@ func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; 
 输出: &amp;ldquo;ZY&amp;rdquo;
  解题思路 数学 通过分析题意可以得知，该题是一个进制转换，将一个10进制的数转换为26进制。
 通过数学方法，逐次模26取余数，即可求得倒序的26进制每一位，反转该序列即可求得转换后的数。
-注意：该26进制从1开始计数，每次取模前应减1。
+**注意：**该26进制从1开始计数，每次取模前应减1。
 func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; columnNumber &amp;gt; 0; columnNumber /= 26 { columnNumber = columnNumber - 1 res = append(res, &amp;#39;A&amp;#39;&#43;byte((columnNumber)%26)) } for i := 0; i &amp;lt; len(res)/2; i&#43;&#43; { res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i] } return string(res) } 复杂度  时间复杂度：O(log26columnNumber) 空间复杂度：O(log26columnNumber)  '>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-168.-excel%E8%A1%A8%E5%88%97%E5%90%8D%E7%A7%B0/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-06-29T10:26:51&#43;08:00'/><meta property='article:modified_time' content='2021-06-29T10:26:51&#43;08:00'/>
 <meta name="twitter:title" content="Leetcode 168. Excel表列名称">
-<meta name="twitter:description" content=" 链接： https://leetcode-cn.com/problems/excel-sheet-column-title/
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/excel-sheet-column-title/
 难度： 简单
 题目描述 给定一个正整数，返回它在 Excel 表中相对应的列名称。
 例如，
@@ -73,7 +73,7 @@ func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; 
 输出: &amp;ldquo;ZY&amp;rdquo;
  解题思路 数学 通过分析题意可以得知，该题是一个进制转换，将一个10进制的数转换为26进制。
 通过数学方法，逐次模26取余数，即可求得倒序的26进制每一位，反转该序列即可求得转换后的数。
-注意：该26进制从1开始计数，每次取模前应减1。
+**注意：**该26进制从1开始计数，每次取模前应减1。
 func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; columnNumber &amp;gt; 0; columnNumber /= 26 { columnNumber = columnNumber - 1 res = append(res, &amp;#39;A&amp;#39;&#43;byte((columnNumber)%26)) } for i := 0; i &amp;lt; len(res)/2; i&#43;&#43; { res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i] } return string(res) } 复杂度  时间复杂度：O(log26columnNumber) 空间复杂度：O(log26columnNumber)  ">
     </head>
     <body class="
@@ -268,58 +268,42 @@ func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; 
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/excel-sheet-column-title/" target="_blank">https://leetcode-cn.com/problems/excel-sheet-column-title/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/excel-sheet-column-title/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/excel-sheet-column-title/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给定一个正整数，返回它在 Excel 表中相对应的列名称。</p>
-
 <p>例如，</p>
-
 <blockquote>
-<p>1 -&gt; A<br />
-2 -&gt; B<br />
-3 -&gt; C<br />
-&hellip;<br />
-26 -&gt; Z<br />
-27 -&gt; AA<br />
-28 -&gt; AB<br />
+<p>1 -&gt; A<br>
+2 -&gt; B<br>
+3 -&gt; C<br>
+&hellip;<br>
+26 -&gt; Z<br>
+27 -&gt; AA<br>
+28 -&gt; AB<br>
 &hellip;</p>
 </blockquote>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入:</strong> 1<br />
+<p><strong>输入:</strong> 1<br>
 <strong>输出:</strong> &ldquo;A&rdquo;</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入:</strong> 28<br />
+<p><strong>输入:</strong> 28<br>
 <strong>输出:</strong> &ldquo;AB&rdquo;</p>
 </blockquote>
-
 <h5 id="示例3">示例3：</h5>
-
 <blockquote>
-<p><strong>输入:</strong> 701<br />
+<p><strong>输入:</strong> 701<br>
 <strong>输出:</strong> &ldquo;ZY&rdquo;</p>
 </blockquote>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="数学">数学</h4>
-
 <p>通过分析题意可以得知，该题是一个进制转换，将一个10进制的数转换为26进制。</p>
-
 <p>通过数学方法，逐次模26取余数，即可求得倒序的26进制每一位，反转该序列即可求得转换后的数。</p>
-
-<p><strong>注意：</strong>该26进制从1开始计数，每次取模前应减1。</p>
+<p>**注意：**该26进制从1开始计数，每次取模前应减1。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertToTitle</span>(<span style="color:#a6e22e">columnNumber</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
 	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)
 	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">columnNumber</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">columnNumber</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">26</span> {
@@ -330,9 +314,8 @@ func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; 
 		<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">res</span>[len(<span style="color:#a6e22e">res</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">res</span>[len(<span style="color:#a6e22e">res</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>]
 	}
 	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">res</span>)
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(log<sub>26</sub>columnNumber)</li>
 <li>空间复杂度：O(log<sub>26</sub>columnNumber)</li>
@@ -382,6 +365,18 @@ func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; 
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -424,18 +419,6 @@ func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; 
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

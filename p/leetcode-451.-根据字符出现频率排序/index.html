@@ -9,21 +9,21 @@
 输出:
 &amp;ldquo;eert&amp;rdquo;
 解释:
-&amp;lsquo;e&amp;rsquo;出现两次，&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;都只出现一次。
-因此&amp;rsquo;e&amp;rsquo;必须出现在&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;之前。此外，&amp;rdquo;eetr&amp;rdquo;也是一个有效的答案。
+&amp;lsquo;e&amp;rsquo;出现两次，&amp;lsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;都只出现一次。
+因此&amp;rsquo;e&amp;rsquo;必须出现在&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;之前。此外，&amp;ldquo;eetr&amp;quot;也是一个有效的答案。
  示例2：  输入:
 &amp;ldquo;cccaaa&amp;rdquo;
 输出:
 &amp;ldquo;cccaaa&amp;rdquo;
 解释:
-&amp;lsquo;c&amp;rsquo;和&amp;rsquo;a&amp;rsquo;都出现三次。此外，&amp;rdquo;aaaccc&amp;rdquo;也是有效的答案。
-注意&amp;rdquo;cacaca&amp;rdquo;是不正确的，因为相同的字母必须放在一起。
+&amp;lsquo;c&amp;rsquo;和&amp;rsquo;a&amp;rsquo;都出现三次。此外，&amp;ldquo;aaaccc&amp;quot;也是有效的答案。
+注意&amp;quot;cacaca&amp;quot;是不正确的，因为相同的字母必须放在一起。
  示例3：  输入:
 &amp;ldquo;Aabb&amp;rdquo;
 输出:
 &amp;ldquo;bbAa&amp;rdquo;
 解释:
-此外，&amp;rdquo;bbaA&amp;rdquo;也是一个有效的答案，但&amp;rdquo;Aabb&amp;rdquo;是不正确的。
+此外，&amp;ldquo;bbaA&amp;quot;也是一个有效的答案，但&amp;quot;Aabb&amp;quot;是不正确的。
 注意&amp;rsquo;A&amp;rsquo;和&amp;rsquo;a&amp;rsquo;被认为是两种不同的字符。
  解题思路 计数&#43;排序 统计每个字符出现的次数，按照统计的次数对字符进行排序，然后按照字符顺序和数量展开。
 func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &amp;lt; len(s); i&#43;&#43; { cnt[s[i]]&#43;&#43; } chars := make([]byte, 0, len(s)) for char := range cnt { chars = append(chars, char) } sort.'><title>Leetcode 451. 根据字符出现频率排序</title>
@@ -39,21 +39,21 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 输出:
 &amp;ldquo;eert&amp;rdquo;
 解释:
-&amp;lsquo;e&amp;rsquo;出现两次，&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;都只出现一次。
-因此&amp;rsquo;e&amp;rsquo;必须出现在&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;之前。此外，&amp;rdquo;eetr&amp;rdquo;也是一个有效的答案。
+&amp;lsquo;e&amp;rsquo;出现两次，&amp;lsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;都只出现一次。
+因此&amp;rsquo;e&amp;rsquo;必须出现在&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;之前。此外，&amp;ldquo;eetr&amp;quot;也是一个有效的答案。
  示例2：  输入:
 &amp;ldquo;cccaaa&amp;rdquo;
 输出:
 &amp;ldquo;cccaaa&amp;rdquo;
 解释:
-&amp;lsquo;c&amp;rsquo;和&amp;rsquo;a&amp;rsquo;都出现三次。此外，&amp;rdquo;aaaccc&amp;rdquo;也是有效的答案。
-注意&amp;rdquo;cacaca&amp;rdquo;是不正确的，因为相同的字母必须放在一起。
+&amp;lsquo;c&amp;rsquo;和&amp;rsquo;a&amp;rsquo;都出现三次。此外，&amp;ldquo;aaaccc&amp;quot;也是有效的答案。
+注意&amp;quot;cacaca&amp;quot;是不正确的，因为相同的字母必须放在一起。
  示例3：  输入:
 &amp;ldquo;Aabb&amp;rdquo;
 输出:
 &amp;ldquo;bbAa&amp;rdquo;
 解释:
-此外，&amp;rdquo;bbaA&amp;rdquo;也是一个有效的答案，但&amp;rdquo;Aabb&amp;rdquo;是不正确的。
+此外，&amp;ldquo;bbaA&amp;quot;也是一个有效的答案，但&amp;quot;Aabb&amp;quot;是不正确的。
 注意&amp;rsquo;A&amp;rsquo;和&amp;rsquo;a&amp;rsquo;被认为是两种不同的字符。
  解题思路 计数&#43;排序 统计每个字符出现的次数，按照统计的次数对字符进行排序，然后按照字符顺序和数量展开。
 func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &amp;lt; len(s); i&#43;&#43; { cnt[s[i]]&#43;&#43; } chars := make([]byte, 0, len(s)) for char := range cnt { chars = append(chars, char) } sort.'>
@@ -69,21 +69,21 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 输出:
 &amp;ldquo;eert&amp;rdquo;
 解释:
-&amp;lsquo;e&amp;rsquo;出现两次，&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;都只出现一次。
-因此&amp;rsquo;e&amp;rsquo;必须出现在&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;之前。此外，&amp;rdquo;eetr&amp;rdquo;也是一个有效的答案。
+&amp;lsquo;e&amp;rsquo;出现两次，&amp;lsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;都只出现一次。
+因此&amp;rsquo;e&amp;rsquo;必须出现在&amp;rsquo;r&amp;rsquo;和&amp;rsquo;t&amp;rsquo;之前。此外，&amp;ldquo;eetr&amp;quot;也是一个有效的答案。
  示例2：  输入:
 &amp;ldquo;cccaaa&amp;rdquo;
 输出:
 &amp;ldquo;cccaaa&amp;rdquo;
 解释:
-&amp;lsquo;c&amp;rsquo;和&amp;rsquo;a&amp;rsquo;都出现三次。此外，&amp;rdquo;aaaccc&amp;rdquo;也是有效的答案。
-注意&amp;rdquo;cacaca&amp;rdquo;是不正确的，因为相同的字母必须放在一起。
+&amp;lsquo;c&amp;rsquo;和&amp;rsquo;a&amp;rsquo;都出现三次。此外，&amp;ldquo;aaaccc&amp;quot;也是有效的答案。
+注意&amp;quot;cacaca&amp;quot;是不正确的，因为相同的字母必须放在一起。
  示例3：  输入:
 &amp;ldquo;Aabb&amp;rdquo;
 输出:
 &amp;ldquo;bbAa&amp;rdquo;
 解释:
-此外，&amp;rdquo;bbaA&amp;rdquo;也是一个有效的答案，但&amp;rdquo;Aabb&amp;rdquo;是不正确的。
+此外，&amp;ldquo;bbaA&amp;quot;也是一个有效的答案，但&amp;quot;Aabb&amp;quot;是不正确的。
 注意&amp;rsquo;A&amp;rsquo;和&amp;rsquo;a&amp;rsquo;被认为是两种不同的字符。
  解题思路 计数&#43;排序 统计每个字符出现的次数，按照统计的次数对字符进行排序，然后按照字符顺序和数量展开。
 func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &amp;lt; len(s); i&#43;&#43; { cnt[s[i]]&#43;&#43; } chars := make([]byte, 0, len(s)) for char := range cnt { chars = append(chars, char) } sort.">
@@ -280,61 +280,43 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/sort-characters-by-frequency/" target="_blank">https://leetcode-cn.com/problems/sort-characters-by-frequency/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/sort-characters-by-frequency/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/sort-characters-by-frequency/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给定一个字符串，请将字符串里的字符按照出现的频率降序排列。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入:</strong><br />
+<p><strong>输入:</strong><br>
 &ldquo;tree&rdquo;</p>
-
-<p><strong>输出:</strong><br />
+<p><strong>输出:</strong><br>
 &ldquo;eert&rdquo;</p>
-
-<p><strong>解释:</strong><br />
-&lsquo;e&rsquo;出现两次，&rsquo;r&rsquo;和&rsquo;t&rsquo;都只出现一次。<br />
-因此&rsquo;e&rsquo;必须出现在&rsquo;r&rsquo;和&rsquo;t&rsquo;之前。此外，&rdquo;eetr&rdquo;也是一个有效的答案。</p>
+<p><strong>解释:</strong><br>
+&lsquo;e&rsquo;出现两次，&lsquo;r&rsquo;和&rsquo;t&rsquo;都只出现一次。<br>
+因此&rsquo;e&rsquo;必须出现在&rsquo;r&rsquo;和&rsquo;t&rsquo;之前。此外，&ldquo;eetr&quot;也是一个有效的答案。</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入:</strong><br />
+<p><strong>输入:</strong><br>
 &ldquo;cccaaa&rdquo;</p>
-
-<p><strong>输出:</strong><br />
+<p><strong>输出:</strong><br>
 &ldquo;cccaaa&rdquo;</p>
-
-<p><strong>解释:</strong><br />
-&lsquo;c&rsquo;和&rsquo;a&rsquo;都出现三次。此外，&rdquo;aaaccc&rdquo;也是有效的答案。<br />
-注意&rdquo;cacaca&rdquo;是不正确的，因为相同的字母必须放在一起。</p>
+<p><strong>解释:</strong><br>
+&lsquo;c&rsquo;和&rsquo;a&rsquo;都出现三次。此外，&ldquo;aaaccc&quot;也是有效的答案。<br>
+注意&quot;cacaca&quot;是不正确的，因为相同的字母必须放在一起。</p>
 </blockquote>
-
 <h5 id="示例3">示例3：</h5>
-
 <blockquote>
-<p><strong>输入:</strong><br />
+<p><strong>输入:</strong><br>
 &ldquo;Aabb&rdquo;</p>
-
-<p><strong>输出:</strong><br />
+<p><strong>输出:</strong><br>
 &ldquo;bbAa&rdquo;</p>
-
-<p><strong>解释:</strong><br />
-此外，&rdquo;bbaA&rdquo;也是一个有效的答案，但&rdquo;Aabb&rdquo;是不正确的。<br />
+<p><strong>解释:</strong><br>
+此外，&ldquo;bbaA&quot;也是一个有效的答案，但&quot;Aabb&quot;是不正确的。<br>
 注意&rsquo;A&rsquo;和&rsquo;a&rsquo;被认为是两种不同的字符。</p>
 </blockquote>
-
 <h3 id="解题思路">解题思路</h3>
-
-<h4 id="计数-排序">计数+排序</h4>
-
+<h4 id="计数排序">计数+排序</h4>
 <p>统计每个字符出现的次数，按照统计的次数对字符进行排序，然后按照字符顺序和数量展开。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">frequencySort</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
 	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
@@ -353,9 +335,8 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Repeat</span>([]<span style="color:#66d9ef">byte</span>{<span style="color:#a6e22e">char</span>}, <span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">char</span>])<span style="color:#f92672">...</span>)
 	}
 	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">res</span>)
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(NlogN), N = len(s)</li>
 <li>空间复杂度：O(N)</li>
@@ -405,6 +386,18 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -447,18 +440,6 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

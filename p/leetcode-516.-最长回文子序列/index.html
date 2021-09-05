@@ -5,12 +5,12 @@
 难度： 中等
 题目描述 给你一个字符串 s ，找出其中最长的回文子序列，并返回该序列的长度。
 子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。
-示例 1：  输入：s = &amp;ldquo;bbbab&amp;rdquo;
-输出：4
-解释：一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
- 示例 2：  输入：s = &amp;ldquo;cbbd&amp;rdquo;
-输出：2
-解释：一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
+示例 1：  **输入：**s = &amp;ldquo;bbbab&amp;rdquo;
+**输出：**4
+**解释：**一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
+ 示例 2：  **输入：**s = &amp;ldquo;cbbd&amp;rdquo;
+**输出：**2
+**解释：**一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
  注意：  1 &amp;lt;= s.length &amp;lt;= 1000 s 仅由小写英文字母组成  解题思路 动态规划 该题可以转化为寻找原字符串 s 和倒序字符串 s&#39; 的最长公共子序列问题。使用动态规划求解，dp[i][j] 表示以下标 i, j 结尾的前缀字串最长公共子序列的长度，状态转移方程如下：
  当 s[i] == s&#39;[j]，dp[i][j] = dp[i-1][j-1] &#43; 1 当 s[i] == s&#39;[j]，dp[i][j] = max(dp[i-1][j], dp[i][j-1]  每次状态转移时仅依赖当前行和上一行，故可以使用滚动数组降低空间复杂度。'><title>Leetcode 516. 最长回文子序列</title>
 
@@ -21,12 +21,12 @@
 难度： 中等
 题目描述 给你一个字符串 s ，找出其中最长的回文子序列，并返回该序列的长度。
 子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。
-示例 1：  输入：s = &amp;ldquo;bbbab&amp;rdquo;
-输出：4
-解释：一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
- 示例 2：  输入：s = &amp;ldquo;cbbd&amp;rdquo;
-输出：2
-解释：一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
+示例 1：  **输入：**s = &amp;ldquo;bbbab&amp;rdquo;
+**输出：**4
+**解释：**一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
+ 示例 2：  **输入：**s = &amp;ldquo;cbbd&amp;rdquo;
+**输出：**2
+**解释：**一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
  注意：  1 &amp;lt;= s.length &amp;lt;= 1000 s 仅由小写英文字母组成  解题思路 动态规划 该题可以转化为寻找原字符串 s 和倒序字符串 s&#39; 的最长公共子序列问题。使用动态规划求解，dp[i][j] 表示以下标 i, j 结尾的前缀字串最长公共子序列的长度，状态转移方程如下：
  当 s[i] == s&#39;[j]，dp[i][j] = dp[i-1][j-1] &#43; 1 当 s[i] == s&#39;[j]，dp[i][j] = max(dp[i-1][j], dp[i][j-1]  每次状态转移时仅依赖当前行和上一行，故可以使用滚动数组降低空间复杂度。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-516.-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/'>
@@ -37,12 +37,12 @@
 难度： 中等
 题目描述 给你一个字符串 s ，找出其中最长的回文子序列，并返回该序列的长度。
 子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。
-示例 1：  输入：s = &amp;ldquo;bbbab&amp;rdquo;
-输出：4
-解释：一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
- 示例 2：  输入：s = &amp;ldquo;cbbd&amp;rdquo;
-输出：2
-解释：一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
+示例 1：  **输入：**s = &amp;ldquo;bbbab&amp;rdquo;
+**输出：**4
+**解释：**一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
+ 示例 2：  **输入：**s = &amp;ldquo;cbbd&amp;rdquo;
+**输出：**2
+**解释：**一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
  注意：  1 &amp;lt;= s.length &amp;lt;= 1000 s 仅由小写英文字母组成  解题思路 动态规划 该题可以转化为寻找原字符串 s 和倒序字符串 s&#39; 的最长公共子序列问题。使用动态规划求解，dp[i][j] 表示以下标 i, j 结尾的前缀字串最长公共子序列的长度，状态转移方程如下：
  当 s[i] == s&#39;[j]，dp[i][j] = dp[i-1][j-1] &#43; 1 当 s[i] == s&#39;[j]，dp[i][j] = max(dp[i-1][j], dp[i][j-1]  每次状态转移时仅依赖当前行和上一行，故可以使用滚动数组降低空间复杂度。">
     </head>
@@ -238,51 +238,36 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/longest-palindromic-subsequence/" target="_blank">https://leetcode-cn.com/problems/longest-palindromic-subsequence/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/longest-palindromic-subsequence/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/longest-palindromic-subsequence/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>给你一个字符串 <code>s</code> ，找出其中最长的回文子序列，并返回该序列的长度。</p>
-
 <p>子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>s = &ldquo;bbbab&rdquo;<br />
-<strong>输出：</strong>4<br />
-<strong>解释：</strong>一个可能的最长回文子序列为 &ldquo;bbbb&rdquo; 。</p>
+<p>**输入：**s = &ldquo;bbbab&rdquo;<br>
+**输出：**4<br>
+**解释：**一个可能的最长回文子序列为 &ldquo;bbbb&rdquo; 。</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>s = &ldquo;cbbd&rdquo;<br />
-<strong>输出：</strong>2<br />
-<strong>解释：</strong>一个可能的最长回文子序列为 &ldquo;bb&rdquo; 。</p>
+<p>**输入：**s = &ldquo;cbbd&rdquo;<br>
+**输出：**2<br>
+**解释：**一个可能的最长回文子序列为 &ldquo;bb&rdquo; 。</p>
 </blockquote>
-
 <h5 id="注意">注意：</h5>
-
 <ul>
 <li><code>1 &lt;= s.length &lt;= 1000</code></li>
 <li><code>s</code> 仅由小写英文字母组成</li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="动态规划">动态规划</h4>
-
 <p>该题可以转化为寻找原字符串 <code>s</code> 和倒序字符串 <code>s'</code> 的最长公共子序列问题。使用动态规划求解，<code>dp[i][j]</code> 表示以下标 <code>i, j</code> 结尾的前缀字串最长公共子序列的长度，状态转移方程如下：</p>
-
 <ul>
 <li>当 <code>s[i] == s'[j]</code>，<code>dp[i][j] = dp[i-1][j-1] + 1</code></li>
 <li>当 <code>s[i] == s'[j]</code>，<code>dp[i][j] = max(dp[i-1][j], dp[i][j-1]</code></li>
 </ul>
-
 <p>每次状态转移时仅依赖当前行和上一行，故可以使用滚动数组降低空间复杂度。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">longestPalindromeSubseq</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{
@@ -304,9 +289,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">cur</span>][len(<span style="color:#a6e22e">s</span>)]
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2), N = len(s) $</li>
 <li>空间复杂度：$ O(N) $</li>

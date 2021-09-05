@@ -226,29 +226,19 @@ func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := he
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/" target="_blank">https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。</p>
-
 <p>例如，一个链表有 <code>6</code> 个节点，从头节点开始，它们的值依次是 <code>1、2、3、4、5、6</code>。这个链表的倒数第 <code>3</code> 个节点是值为 <code>4</code> 的节点。</p>
-
 <h4 id="示例">示例：</h4>
-
 <blockquote>
 <p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 k = 2.</p>
-
 <p>返回链表 4-&gt;5.</p>
 </blockquote>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="顺序遍历">顺序遍历</h4>
-
 <p>遍历一边链表，得到其长度 <code>length</code>，则 <code>length - k</code> 即为需要跳过的结点，重新遍历，跳过前 <code>length - k</code> 个结点。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getKthFromEnd</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
 	<span style="color:#a6e22e">length</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
@@ -260,9 +250,8 @@ func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := he
 		<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(head) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -312,6 +301,18 @@ func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := he
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -354,18 +355,6 @@ func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := he
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1588.-%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1588. 所有奇数长度子数组的和</h2>
         </div>
     </a>
 </article>

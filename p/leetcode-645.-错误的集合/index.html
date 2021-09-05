@@ -6,9 +6,9 @@
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入：nums = [1,2,2,4]
+示例 1：  **输入：**nums = [1,2,2,4]
 输出：[2,3]
- 示例 2：  输入：nums = [1,1]
+ 示例 2：  **输入：**nums = [1,1]
 输出：[1,2]
  提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !'><title>Leetcode 645. 错误的集合</title>
@@ -21,9 +21,9 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入：nums = [1,2,2,4]
+示例 1：  **输入：**nums = [1,2,2,4]
 输出：[2,3]
- 示例 2：  输入：nums = [1,1]
+ 示例 2：  **输入：**nums = [1,1]
 输出：[1,2]
  提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !'>
@@ -36,9 +36,9 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入：nums = [1,2,2,4]
+示例 1：  **输入：**nums = [1,2,2,4]
 输出：[2,3]
- 示例 2：  输入：nums = [1,1]
+ 示例 2：  **输入：**nums = [1,1]
 输出：[1,2]
  提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !">
@@ -235,44 +235,30 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/set-mismatch/" target="_blank">https://leetcode-cn.com/problems/set-mismatch/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/set-mismatch/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/set-mismatch/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>集合 <code>s</code> 包含从 <code>1</code> 到 <code>n</code> 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 <strong>丢失了一个数字</strong> 并且 <strong>有一个数字重复</strong> 。</p>
-
 <p>给定一个数组 <code>nums</code> 代表了集合 <code>S</code> 发生错误后的结果。</p>
-
 <p>请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。</p>
-
 <h5 id="示例-1">示例 1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [1,2,2,4]<br />
+<p>**输入：**nums = [1,2,2,4]<br>
 <strong>输出：</strong>[2,3]</p>
 </blockquote>
-
 <h5 id="示例-2">示例 2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [1,1]<br />
+<p>**输入：**nums = [1,1]<br>
 <strong>输出：</strong>[1,2]</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
 <li><code>1 &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="哈希">哈希</h4>
-
 <p>利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findErrorNums</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}
@@ -289,9 +275,8 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N), N = len(nums)</li>
 <li>空间复杂度：O(N)</li>
@@ -341,6 +326,18 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -383,18 +380,6 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

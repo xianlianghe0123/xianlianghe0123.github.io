@@ -5,7 +5,7 @@
 难度： 中等
 题目描述 输入一个字符串，打印出该字符串中字符的所有排列。
 你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
-示例1：  输入：s = &amp;ldquo;abc&amp;rdquo;
+示例1：  **输入：**s = &amp;ldquo;abc&amp;rdquo;
 输出：[&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
  提示：  1 &amp;lt;= s 的长度 &amp;lt;= 8  解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
 func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res } 复杂度  时间复杂度：O(N*N!'><title>剑指 Offer 38. 字符串的排列</title>
@@ -17,7 +17,7 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
 难度： 中等
 题目描述 输入一个字符串，打印出该字符串中字符的所有排列。
 你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
-示例1：  输入：s = &amp;ldquo;abc&amp;rdquo;
+示例1：  **输入：**s = &amp;ldquo;abc&amp;rdquo;
 输出：[&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
  提示：  1 &amp;lt;= s 的长度 &amp;lt;= 8  解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
 func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res } 复杂度  时间复杂度：O(N*N!'>
@@ -29,7 +29,7 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
 难度： 中等
 题目描述 输入一个字符串，打印出该字符串中字符的所有排列。
 你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
-示例1：  输入：s = &amp;ldquo;abc&amp;rdquo;
+示例1：  **输入：**s = &amp;ldquo;abc&amp;rdquo;
 输出：[&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
  提示：  1 &amp;lt;= s 的长度 &amp;lt;= 8  解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
 func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res } 复杂度  时间复杂度：O(N*N!">
@@ -226,34 +226,23 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/" target="_blank">https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>输入一个字符串，打印出该字符串中字符的所有排列。</p>
-
 <p>你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>s = &ldquo;abc&rdquo;<br />
+<p>**输入：**s = &ldquo;abc&rdquo;<br>
 <strong>输出：</strong>[&ldquo;abc&rdquo;,&ldquo;acb&rdquo;,&ldquo;bac&rdquo;,&ldquo;bca&rdquo;,&ldquo;cab&rdquo;,&ldquo;cba&rdquo;]</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= s 的长度 &lt;= 8</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="回溯">回溯</h4>
-
 <p>遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">permutation</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">string</span> {
 	<span style="color:#a6e22e">only</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">bool</span>)
@@ -283,9 +272,8 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
 		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">k</span>)
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N*N!)</li>
 <li>空间复杂度：O(N*N!)</li>
@@ -353,6 +341,18 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -383,18 +383,6 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
 
         <div class="article-details">
             <h2 class="article-title">剑指 Offer 22. 链表中倒数第k个节点</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
         </div>
     </a>
 </article>

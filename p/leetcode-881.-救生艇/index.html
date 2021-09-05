@@ -6,15 +6,15 @@
 题目描述 第 i 个人的体重为 people[i]，每艘船可以承载的最大重量为 limit。
 每艘船最多可同时载两人，但条件是这些人的重量之和最多为 limit。
 返回载到每一个人所需的最小船数。(保证每个人都能被船载)。
-示例 1：  输入：people = [1,2], limit = 3
-输出：1
-解释：1 艘船载 (1, 2)
- 示例 2：  输入：people = [3,2,2,1], limit = 3
-输出：3
-解释：3 艘船分别载 (1, 2), (2) 和 (3)
- 示例 3：  输入：people = [3,5,3,4], limit = 5
-输出：4
-解释：4 艘船分别载 (3), (3), (4), (5)
+示例 1：  **输入：**people = [1,2], limit = 3
+**输出：**1
+**解释：**1 艘船载 (1, 2)
+ 示例 2：  **输入：**people = [3,2,2,1], limit = 3
+**输出：**3
+**解释：**3 艘船分别载 (1, 2), (2) 和 (3)
+ 示例 3：  **输入：**people = [3,5,3,4], limit = 5
+**输出：**4
+**解释：**4 艘船分别载 (3), (3), (4), (5)
  提示：  1 &amp;lt;= people.length &amp;lt;= 50000 1 &amp;lt;= people[i] &amp;lt;= limit &amp;lt;= 30000  解题思路 排序 &#43; 贪心 由于每艘船最多仅能搭乘两人，可以按照体重排序，每次选出最重的和最轻的两个人，尝试能否同乘一条船：'><title>Leetcode 881. 救生艇</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-881.-%E6%95%91%E7%94%9F%E8%89%87/'>
@@ -25,15 +25,15 @@
 题目描述 第 i 个人的体重为 people[i]，每艘船可以承载的最大重量为 limit。
 每艘船最多可同时载两人，但条件是这些人的重量之和最多为 limit。
 返回载到每一个人所需的最小船数。(保证每个人都能被船载)。
-示例 1：  输入：people = [1,2], limit = 3
-输出：1
-解释：1 艘船载 (1, 2)
- 示例 2：  输入：people = [3,2,2,1], limit = 3
-输出：3
-解释：3 艘船分别载 (1, 2), (2) 和 (3)
- 示例 3：  输入：people = [3,5,3,4], limit = 5
-输出：4
-解释：4 艘船分别载 (3), (3), (4), (5)
+示例 1：  **输入：**people = [1,2], limit = 3
+**输出：**1
+**解释：**1 艘船载 (1, 2)
+ 示例 2：  **输入：**people = [3,2,2,1], limit = 3
+**输出：**3
+**解释：**3 艘船分别载 (1, 2), (2) 和 (3)
+ 示例 3：  **输入：**people = [3,5,3,4], limit = 5
+**输出：**4
+**解释：**4 艘船分别载 (3), (3), (4), (5)
  提示：  1 &amp;lt;= people.length &amp;lt;= 50000 1 &amp;lt;= people[i] &amp;lt;= limit &amp;lt;= 30000  解题思路 排序 &#43; 贪心 由于每艘船最多仅能搭乘两人，可以按照体重排序，每次选出最重的和最轻的两个人，尝试能否同乘一条船：'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-881.-%E6%95%91%E7%94%9F%E8%89%87/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -44,15 +44,15 @@
 题目描述 第 i 个人的体重为 people[i]，每艘船可以承载的最大重量为 limit。
 每艘船最多可同时载两人，但条件是这些人的重量之和最多为 limit。
 返回载到每一个人所需的最小船数。(保证每个人都能被船载)。
-示例 1：  输入：people = [1,2], limit = 3
-输出：1
-解释：1 艘船载 (1, 2)
- 示例 2：  输入：people = [3,2,2,1], limit = 3
-输出：3
-解释：3 艘船分别载 (1, 2), (2) 和 (3)
- 示例 3：  输入：people = [3,5,3,4], limit = 5
-输出：4
-解释：4 艘船分别载 (3), (3), (4), (5)
+示例 1：  **输入：**people = [1,2], limit = 3
+**输出：**1
+**解释：**1 艘船载 (1, 2)
+ 示例 2：  **输入：**people = [3,2,2,1], limit = 3
+**输出：**3
+**解释：**3 艘船分别载 (1, 2), (2) 和 (3)
+ 示例 3：  **输入：**people = [3,5,3,4], limit = 5
+**输出：**4
+**解释：**4 艘船分别载 (3), (3), (4), (5)
  提示：  1 &amp;lt;= people.length &amp;lt;= 50000 1 &amp;lt;= people[i] &amp;lt;= limit &amp;lt;= 30000  解题思路 排序 &#43; 贪心 由于每艘船最多仅能搭乘两人，可以按照体重排序，每次选出最重的和最轻的两个人，尝试能否同乘一条船：">
     </head>
     <body class="
@@ -247,61 +247,43 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/boats-to-save-people/" target="_blank">https://leetcode-cn.com/problems/boats-to-save-people/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/boats-to-save-people/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/boats-to-save-people/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>第 <code>i</code> 个人的体重为 <code>people[i]</code>，每艘船可以承载的最大重量为 <code>limit</code>。</p>
-
 <p>每艘船最多可同时载两人，但条件是这些人的重量之和最多为 <code>limit</code>。</p>
-
 <p>返回载到每一个人所需的最小船数。(保证每个人都能被船载)。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>people = [1,2], limit = 3<br />
-<strong>输出：</strong>1<br />
-<strong>解释：</strong>1 艘船载 (1, 2)</p>
+<p>**输入：**people = [1,2], limit = 3<br>
+**输出：**1<br>
+**解释：**1 艘船载 (1, 2)</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>people = [3,2,2,1], limit = 3<br />
-<strong>输出：</strong>3<br />
-<strong>解释：</strong>3 艘船分别载 (1, 2), (2) 和 (3)</p>
+<p>**输入：**people = [3,2,2,1], limit = 3<br>
+**输出：**3<br>
+**解释：**3 艘船分别载 (1, 2), (2) 和 (3)</p>
 </blockquote>
-
 <h4 id="示例-3">示例 3：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>people = [3,5,3,4], limit = 5<br />
-<strong>输出：</strong>4<br />
-<strong>解释：</strong>4 艘船分别载 (3), (3), (4), (5)</p>
+<p>**输入：**people = [3,5,3,4], limit = 5<br>
+**输出：**4<br>
+**解释：**4 艘船分别载 (3), (3), (4), (5)</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= people.length &lt;= 50000</code></li>
 <li><code>1 &lt;= people[i] &lt;= limit &lt;= 30000</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
-<h4 id="排序-贪心">排序 + 贪心</h4>
-
+<h4 id="排序--贪心">排序 + 贪心</h4>
 <p>由于每艘船最多仅能搭乘两人，可以按照体重排序，每次选出最重的和最轻的两个人，尝试能否同乘一条船：</p>
-
 <ul>
 <li>当可以同乘一条船时，所需船数量加一，从剩余人中继续挑选；</li>
 <li>当无法同乘一条船时，最重的那个人需要独自乘坐一条船，所需船数量加一，轻的人回到队列中</li>
 </ul>
-
 <p>最终使得所有人都乘到船为止，返回所需船的数量。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numRescueBoats</span>(<span style="color:#a6e22e">people</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">limit</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">boats</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
@@ -315,9 +297,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">boats</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log\ N), N = len(people) $</li>
 <li>空间复杂度：$ O(\log\ N) $</li>
@@ -367,6 +348,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -409,18 +402,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

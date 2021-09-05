@@ -4,7 +4,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/group-anagrams-lcci/
 难度： 中等
 题目描述 编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。
-注意：本题相对原题稍作修改
+**注意：**本题相对原题稍作修改
 示例：  输入: [&amp;ldquo;eat&amp;rdquo;, &amp;ldquo;tea&amp;rdquo;, &amp;ldquo;tan&amp;rdquo;, &amp;ldquo;ate&amp;rdquo;, &amp;ldquo;nat&amp;rdquo;, &amp;ldquo;bat&amp;rdquo;],
 输出:
 [
@@ -21,7 +21,7 @@ func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]in
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/group-anagrams-lcci/
 难度： 中等
 题目描述 编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。
-注意：本题相对原题稍作修改
+**注意：**本题相对原题稍作修改
 示例：  输入: [&amp;ldquo;eat&amp;rdquo;, &amp;ldquo;tea&amp;rdquo;, &amp;ldquo;tan&amp;rdquo;, &amp;ldquo;ate&amp;rdquo;, &amp;ldquo;nat&amp;rdquo;, &amp;ldquo;bat&amp;rdquo;],
 输出:
 [
@@ -38,7 +38,7 @@ func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]in
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/group-anagrams-lcci/
 难度： 中等
 题目描述 编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。
-注意：本题相对原题稍作修改
+**注意：**本题相对原题稍作修改
 示例：  输入: [&amp;ldquo;eat&amp;rdquo;, &amp;ldquo;tea&amp;rdquo;, &amp;ldquo;tan&amp;rdquo;, &amp;ldquo;ate&amp;rdquo;, &amp;ldquo;nat&amp;rdquo;, &amp;ldquo;bat&amp;rdquo;],
 输出:
 [
@@ -241,33 +241,24 @@ func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]in
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/group-anagrams-lcci/" target="_blank">https://leetcode-cn.com/problems/group-anagrams-lcci/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/group-anagrams-lcci/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/group-anagrams-lcci/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。</p>
-
-<p><strong>注意：</strong>本题相对原题稍作修改</p>
-
+<p>**注意：**本题相对原题稍作修改</p>
 <h5 id="示例">示例：</h5>
-
 <blockquote>
-<p><strong>输入:</strong> [&ldquo;eat&rdquo;, &ldquo;tea&rdquo;, &ldquo;tan&rdquo;, &ldquo;ate&rdquo;, &ldquo;nat&rdquo;, &ldquo;bat&rdquo;],<br />
-<strong>输出:</strong><br />
-[<br />
-  [&ldquo;ate&rdquo;,&ldquo;eat&rdquo;,&ldquo;tea&rdquo;],<br />
-  [&ldquo;nat&rdquo;,&ldquo;tan&rdquo;],<br />
-  [&ldquo;bat&rdquo;]<br />
+<p><strong>输入:</strong> [&ldquo;eat&rdquo;, &ldquo;tea&rdquo;, &ldquo;tan&rdquo;, &ldquo;ate&rdquo;, &ldquo;nat&rdquo;, &ldquo;bat&rdquo;],<br>
+<strong>输出:</strong><br>
+[<br>
+[&ldquo;ate&rdquo;,&ldquo;eat&rdquo;,&ldquo;tea&rdquo;],<br>
+[&ldquo;nat&rdquo;,&ldquo;tan&rdquo;],<br>
+[&ldquo;bat&rdquo;]<br>
 ]</p>
 </blockquote>
-
 <h3 id="解题思路">解题思路</h3>
-
-<h4 id="哈希-计数">哈希 &amp; 计数</h4>
-
+<h4 id="哈希--计数">哈希 &amp; 计数</h4>
 <p>对于每个字符串，使用数组统计每个字母出现的数字，两个同位词得出的统计数组必然相同，故用该数组作为 <code>key</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">groupAnagrams</span>(<span style="color:#a6e22e">strs</span> []<span style="color:#66d9ef">string</span>) [][]<span style="color:#66d9ef">string</span> {
 	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">cnt</span> [<span style="color:#ae81ff">26</span>]<span style="color:#66d9ef">int</span>) {
@@ -286,16 +277,13 @@ func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]in
 		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">v</span>)
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NL), N = len(strs), L = max(len(str)) $</li>
 <li>空间复杂度：$ O(NL) $</li>
 </ul>
-
-<h4 id="哈希-排序">哈希 &amp; 排序</h4>
-
+<h4 id="哈希--排序">哈希 &amp; 排序</h4>
 <p>不同变位词中字母相同，所以将字符串按照字母排序后，其值也一定相同。故可以将其排序后的值作为哈希表的 <code>key</code>，并将其添加进 <code>value</code> 数组中。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">groupAnagrams</span>(<span style="color:#a6e22e">strs</span> []<span style="color:#66d9ef">string</span>) [][]<span style="color:#66d9ef">string</span> {
 	<span style="color:#a6e22e">hash</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>][]<span style="color:#66d9ef">string</span>)
@@ -311,9 +299,8 @@ func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]in
 		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">v</span>)
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NLlogL), N = len(strs), L = max(len(str)) $</li>
 <li>空间复杂度：$ O(NL) $</li>

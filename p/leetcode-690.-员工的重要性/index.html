@@ -220,40 +220,27 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/employee-importance/" target="_blank">https://leetcode-cn.com/problems/employee-importance/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/employee-importance/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/employee-importance/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给定一个保存员工信息的数据结构，它包含了员工 <strong>唯一的 id</strong> ，<strong>重要度</strong> 和 <strong>直系下属的 id</strong> 。</p>
-
 <p>比如，员工 1 是员工 2 的领导，员工 2 是员工 3 的领导。他们相应的重要度为 15 , 10 , 5 。那么员工 1 的数据结构是 [1, 15, [2]] ，员工 2的 数据结构是 [2, 10, [3]] ，员工 3 的数据结构是 [3, 5, []] 。注意虽然员工 3 也是员工 1 的一个下属，但是由于 <strong>并不是直系</strong> 下属，因此没有体现在员工 1 的数据结构中。</p>
-
 <p>现在输入一个公司的所有员工信息，以及单个员工 id ，返回这个员工和他所有下属的重要度之和。</p>
-
 <h5 id="示例">示例：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>[[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1<br />
-<strong>输出：</strong>11<br />
-<strong>解释：</strong>员工 1 自身的重要度是 5 ，他有两个直系下属 2 和 3 ，而且 2 和 3 的重要度均为 3 。因此员工 1 的总重要度是 5 + 3 + 3 = 11 。</p>
+<p><strong>输入：</strong>[[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1<br>
+**输出：**11<br>
+**解释：**员工 1 自身的重要度是 5 ，他有两个直系下属 2 和 3 ，而且 2 和 3 的重要度均为 3 。因此员工 1 的总重要度是 5 + 3 + 3 = 11 。</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li>一个员工最多有一个 <strong>直系</strong> 领导，但是可以有多个 <strong>直系</strong> 下属</li>
 <li>员工数量不超过 2000</li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="深度优先搜素">深度优先搜素</h4>
-
 <p>很容易可以看出整个的员工体系是一个树状结构，故可以采用深度优先搜索的策略，对某一员工及其下属逐一求和。</p>
-
 <p>为能快速定位到某一个员工，另使用一个 <code>map</code> 维护<strong>员工id</strong>到员工信息的映射。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getImportance</span>(<span style="color:#a6e22e">employees</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">Employee</span>, <span style="color:#a6e22e">id</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Employee</span>)
@@ -273,9 +260,8 @@
 		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">id</span>)
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：O(N)</li>
@@ -325,6 +311,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -367,18 +365,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

@@ -5,14 +5,14 @@
 难度： 中等
 题目描述 给你一个整数数组 nums ，你需要找出一个 连续子数组 ，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。
 请你找出符合题意的 最短 子数组，并输出它的长度。
-示例 1：  输入：nums = [2,6,4,8,10,9,15]
-输出：5
-解释：你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
- 示例 2：  输入：nums = [1,2,3,4]
-输出：0
- 示例 3：  输入：nums = [1]
-输出：0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 104 -105 &amp;lt;= nums[i] &amp;lt;= 105  进阶：你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
+示例 1：  **输入：**nums = [2,6,4,8,10,9,15]
+**输出：**5
+**解释：**你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
+ 示例 2：  **输入：**nums = [1,2,3,4]
+**输出：**0
+ 示例 3：  **输入：**nums = [1]
+**输出：**0
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 104 -105 &amp;lt;= nums[i] &amp;lt;= 105  **进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
 解题思路 排序 对于连续子数组以外的元素，其在排序前后位置不会改变，故可以将整个数组排序后，从头和尾开始，依次找到不变的元素加以排除，剩余元素就是 最短 连续子数组。
 func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) copy(sortedNum, nums) sort.'><title>Leetcode 581. 最短无序连续子数组</title>
 
@@ -23,14 +23,14 @@ func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) 
 难度： 中等
 题目描述 给你一个整数数组 nums ，你需要找出一个 连续子数组 ，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。
 请你找出符合题意的 最短 子数组，并输出它的长度。
-示例 1：  输入：nums = [2,6,4,8,10,9,15]
-输出：5
-解释：你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
- 示例 2：  输入：nums = [1,2,3,4]
-输出：0
- 示例 3：  输入：nums = [1]
-输出：0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 104 -105 &amp;lt;= nums[i] &amp;lt;= 105  进阶：你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
+示例 1：  **输入：**nums = [2,6,4,8,10,9,15]
+**输出：**5
+**解释：**你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
+ 示例 2：  **输入：**nums = [1,2,3,4]
+**输出：**0
+ 示例 3：  **输入：**nums = [1]
+**输出：**0
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 104 -105 &amp;lt;= nums[i] &amp;lt;= 105  **进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
 解题思路 排序 对于连续子数组以外的元素，其在排序前后位置不会改变，故可以将整个数组排序后，从头和尾开始，依次找到不变的元素加以排除，剩余元素就是 最短 连续子数组。
 func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) copy(sortedNum, nums) sort.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-581.-%E6%9C%80%E7%9F%AD%E6%97%A0%E5%BA%8F%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84/'>
@@ -41,14 +41,14 @@ func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) 
 难度： 中等
 题目描述 给你一个整数数组 nums ，你需要找出一个 连续子数组 ，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。
 请你找出符合题意的 最短 子数组，并输出它的长度。
-示例 1：  输入：nums = [2,6,4,8,10,9,15]
-输出：5
-解释：你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
- 示例 2：  输入：nums = [1,2,3,4]
-输出：0
- 示例 3：  输入：nums = [1]
-输出：0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 104 -105 &amp;lt;= nums[i] &amp;lt;= 105  进阶：你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
+示例 1：  **输入：**nums = [2,6,4,8,10,9,15]
+**输出：**5
+**解释：**你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
+ 示例 2：  **输入：**nums = [1,2,3,4]
+**输出：**0
+ 示例 3：  **输入：**nums = [1]
+**输出：**0
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 104 -105 &amp;lt;= nums[i] &amp;lt;= 105  **进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
 解题思路 排序 对于连续子数组以外的元素，其在排序前后位置不会改变，故可以将整个数组排序后，从头和尾开始，依次找到不变的元素加以排除，剩余元素就是 最短 连续子数组。
 func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) copy(sortedNum, nums) sort.">
     </head>
@@ -244,52 +244,36 @@ func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) 
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/" target="_blank">https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>给你一个整数数组 <code>nums</code> ，你需要找出一个 <strong>连续子数组</strong> ，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。</p>
-
 <p>请你找出符合题意的 <strong>最短</strong> 子数组，并输出它的长度。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [2,6,4,8,10,9,15]<br />
-<strong>输出：</strong>5<br />
-<strong>解释：</strong>你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。</p>
+<p>**输入：**nums = [2,6,4,8,10,9,15]<br>
+**输出：**5<br>
+**解释：**你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [1,2,3,4]<br />
-<strong>输出：</strong>0</p>
+<p>**输入：**nums = [1,2,3,4]<br>
+**输出：**0</p>
 </blockquote>
-
 <h4 id="示例-3">示例 3：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [1]<br />
-<strong>输出：</strong>0</p>
+<p>**输入：**nums = [1]<br>
+**输出：**0</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
 <li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
-
-<p><strong>进阶：</strong>你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？</p>
-
+<p>**进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？</p>
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="排序">排序</h4>
-
 <p>对于连续子数组以外的元素，其在排序前后位置不会改变，故可以将整个数组排序后，从头和尾开始，依次找到不变的元素加以排除，剩余元素就是 <strong>最短</strong> <strong>连续子数组</strong>。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findUnsortedSubarray</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">sortedNum</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">nums</span>))
@@ -307,23 +291,18 @@ func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) 
 		<span style="color:#a6e22e">l</span><span style="color:#f92672">--</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">l</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log\ N), N = len(nums) $</li>
 <li>空间复杂度：$ O(N) $</li>
 </ul>
-
 <h4 id="确定边界">确定边界</h4>
-
 <p>设 <code>min</code> 和 <code>max</code> 为目标数组的最大值和最小值，则该数组左边的所有元素均小于 <code>min</code>，而右边的所有元素均大于 <code>max</code>。</p>
-
 <ul>
 <li>可以从左向右遍历，同时记录遍历到的最大值，每当当前值小于最大值时，需要扩展右边界，最后确定右边界；</li>
 <li>同理，从右向左遍历，同时记录遍历到的最小值，每当当前值大于最小值时 需要扩展左边界， 最后确定左边界。</li>
 </ul>
-
 <p>通过比较左右边界，得到数组长度。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findUnsortedSubarray</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>]
@@ -348,9 +327,8 @@ func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) 
 		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>

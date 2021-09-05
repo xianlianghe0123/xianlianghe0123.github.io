@@ -5,12 +5,12 @@
 难度： 中等
 题目描述 给你一个二元数组 nums ，和一个整数 goal ，请你统计并返回有多少个和为 goal 的 非空 子数组。
 子数组 是数组的一段连续部分。
-示例 1：  输入：nums = [1,0,1,0,1], goal = 2
-输出：4
+示例 1：  **输入：**nums = [1,0,1,0,1], goal = 2
+**输出：**4
 解释：
 有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]
- 示例 2：  输入：nums = [0,0,0,0,0], goal = 0
-输出：15
+ 示例 2：  **输入：**nums = [0,0,0,0,0], goal = 0
+**输出：**15
  提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 nums[i] 不是 0 就是 1 0 &amp;lt;= goal &amp;lt;= nums.length  解题思路 哈希 假设满足条件的子数组下标为 [i, j) ，则以 i 和 j 为结尾的两个前缀数组的前缀和记作 sum[i]、sum[j] ，有 goal = sum[j] - sum[i]。'><title>Leetcode 930. 和相同的二元子数组</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-930.-%E5%92%8C%E7%9B%B8%E5%90%8C%E7%9A%84%E4%BA%8C%E5%85%83%E5%AD%90%E6%95%B0%E7%BB%84/'>
@@ -20,12 +20,12 @@
 难度： 中等
 题目描述 给你一个二元数组 nums ，和一个整数 goal ，请你统计并返回有多少个和为 goal 的 非空 子数组。
 子数组 是数组的一段连续部分。
-示例 1：  输入：nums = [1,0,1,0,1], goal = 2
-输出：4
+示例 1：  **输入：**nums = [1,0,1,0,1], goal = 2
+**输出：**4
 解释：
 有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]
- 示例 2：  输入：nums = [0,0,0,0,0], goal = 0
-输出：15
+ 示例 2：  **输入：**nums = [0,0,0,0,0], goal = 0
+**输出：**15
  提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 nums[i] 不是 0 就是 1 0 &amp;lt;= goal &amp;lt;= nums.length  解题思路 哈希 假设满足条件的子数组下标为 [i, j) ，则以 i 和 j 为结尾的两个前缀数组的前缀和记作 sum[i]、sum[j] ，有 goal = sum[j] - sum[i]。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-930.-%E5%92%8C%E7%9B%B8%E5%90%8C%E7%9A%84%E4%BA%8C%E5%85%83%E5%AD%90%E6%95%B0%E7%BB%84/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -35,12 +35,12 @@
 难度： 中等
 题目描述 给你一个二元数组 nums ，和一个整数 goal ，请你统计并返回有多少个和为 goal 的 非空 子数组。
 子数组 是数组的一段连续部分。
-示例 1：  输入：nums = [1,0,1,0,1], goal = 2
-输出：4
+示例 1：  **输入：**nums = [1,0,1,0,1], goal = 2
+**输出：**4
 解释：
 有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]
- 示例 2：  输入：nums = [0,0,0,0,0], goal = 0
-输出：15
+ 示例 2：  **输入：**nums = [0,0,0,0,0], goal = 0
+**输出：**15
  提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 nums[i] 不是 0 就是 1 0 &amp;lt;= goal &amp;lt;= nums.length  解题思路 哈希 假设满足条件的子数组下标为 [i, j) ，则以 i 和 j 为结尾的两个前缀数组的前缀和记作 sum[i]、sum[j] ，有 goal = sum[j] - sum[i]。">
     </head>
     <body class="
@@ -235,47 +235,33 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/binary-subarrays-with-sum/" target="_blank">https://leetcode-cn.com/problems/binary-subarrays-with-sum/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/binary-subarrays-with-sum/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/binary-subarrays-with-sum/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给你一个二元数组 <code>nums</code> ，和一个整数 <code>goal</code> ，请你统计并返回有多少个和为 <code>goal</code> 的 <strong>非空</strong> 子数组。</p>
-
 <p><strong>子数组</strong> 是数组的一段连续部分。</p>
-
 <h5 id="示例-1">示例 1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [1,0,1,0,1], goal = 2<br />
-<strong>输出：</strong>4<br />
-<strong>解释：</strong><br />
+<p>**输入：**nums = [1,0,1,0,1], goal = 2<br>
+**输出：**4<br>
+<strong>解释：</strong><br>
 有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]</p>
 </blockquote>
-
 <h5 id="示例-2">示例 2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [0,0,0,0,0], goal = 0<br />
-<strong>输出：</strong>15</p>
+<p>**输入：**nums = [0,0,0,0,0], goal = 0<br>
+**输出：**15</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
 <li><code>nums[i]</code> 不是 <code>0</code> 就是 <code>1</code></li>
 <li><code>0 &lt;= goal &lt;= nums.length</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="哈希">哈希</h4>
-
 <p>假设满足条件的子数组下标为 <code>[i, j)</code> ，则以 <code>i</code> 和 <code>j</code> 为结尾的两个前缀数组的前缀和记作 <code>sum[i]</code>、<code>sum[j]</code> ，有 <code>goal = sum[j] - sum[i]</code>。</p>
-
 <p>将上式变换为：<code>sum[i] = sum[j] - goal</code> ，故可以用哈希表记录前缀和出现的次数，当遍历到 <code>j</code> 时，将 <code>sum[j]</code> 出现的次数加入到结果中。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numSubarraysWithSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">goal</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
@@ -287,9 +273,8 @@
 		<span style="color:#a6e22e">res</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">sum</span><span style="color:#f92672">-</span><span style="color:#a6e22e">goal</span>]
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N=len(nums) $</li>
 <li>空间复杂度：$ O(N) $</li>

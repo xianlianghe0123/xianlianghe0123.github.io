@@ -6,11 +6,11 @@
 题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
 子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
 如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入：nums = [23,2,4,6,7], k = 6
-输出：true
+示例1：  **输入：**nums = [23,2,4,6,7], k = 6
+**输出：**true
 解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入：nums = [23,2,6,4,7], k = 6
-输出：true
+ 示例2：  **输入：**nums = [23,2,6,4,7], k = 6
+**输出：**true
 解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。'><title>Leetcode 523. 连续的子数组和</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-523.-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/'>
@@ -21,11 +21,11 @@
 题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
 子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
 如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入：nums = [23,2,4,6,7], k = 6
-输出：true
+示例1：  **输入：**nums = [23,2,4,6,7], k = 6
+**输出：**true
 解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入：nums = [23,2,6,4,7], k = 6
-输出：true
+ 示例2：  **输入：**nums = [23,2,6,4,7], k = 6
+**输出：**true
 解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-523.-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -36,11 +36,11 @@
 题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
 子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
 如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入：nums = [23,2,4,6,7], k = 6
-输出：true
+示例1：  **输入：**nums = [23,2,4,6,7], k = 6
+**输出：**true
 解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入：nums = [23,2,6,4,7], k = 6
-输出：true
+ 示例2：  **输入：**nums = [23,2,6,4,7], k = 6
+**输出：**true
 解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。">
     </head>
     <body class="
@@ -235,64 +235,45 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/continuous-subarray-sum/" target="_blank">https://leetcode-cn.com/problems/continuous-subarray-sum/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/continuous-subarray-sum/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/continuous-subarray-sum/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：</p>
-
 <p>子数组大小 <strong>至少为 2</strong> ，且
 子数组元素总和为 <code>k</code> 的倍数。
 如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
-
 <p>如果存在一个整数 <code>n</code> ，令整数 <code>x</code> 符合 <code>x = n * k</code> ，则称 <code>x</code> 是 <code>k</code> 的一个倍数。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [23,<u>2,4</u>,6,7], k = 6<br />
-<strong>输出：</strong>true<br />
+<p>**输入：**nums = [23,<u>2,4</u>,6,7], k = 6<br>
+**输出：**true<br>
 <strong>解释：</strong>[2,4] 是一个大小为 2 的子数组，并且和为 6 。</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [<u>23,2,6,4,7</u>], k = 6<br />
-<strong>输出：</strong>true<br />
-<strong>解释：</strong>[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。<br />
+<p>**输入：**nums = [<u>23,2,6,4,7</u>], k = 6<br>
+**输出：**true<br>
+<strong>解释：</strong>[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。<br>
 42 是 6 的倍数，因为 42 = 7 * 6 且 7 是一个整数。</p>
 </blockquote>
-
 <h5 id="示例3">示例3：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [23,2,6,4,7], k = 13<br />
-<strong>输出：</strong>false</p>
+<p>**输入：**nums = [23,2,6,4,7], k = 13<br>
+**输出：**false</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
 <li><code>0 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 <li><code>0 &lt;= sum(nums[i]) &lt;= 2<sup>31</sup> - 1</code></li>
 <li><code>1 &lt;= k &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
-<h4 id="前缀和-哈希">前缀和+哈希</h4>
-
+<h4 id="前缀和哈希">前缀和+哈希</h4>
 <p>要求解连续子区间的和，首先考虑利用前缀和来降低区间运算的复杂度，两个前缀数组和的差值是 <code>k</code> 的倍数即可。</p>
-
 <p>又结果要求对 <code>k</code> 取模为 <code>0</code>，所以前缀和可以只需保留对 <code>k</code> 取模的值，此时两个前缀数组的差值就变为了 <code>0</code> ，原问题转化为在一个数组中找到两个相同的数，要求其距离大于 <code>1</code>。</p>
-
 <p>可以利用哈希表保存每个数最早出现的位置，直到找到相同的数，其距离必然为最大，判断是否满足条件即可。</p>
-
 <p>注意，对 <code>0</code> 需要特殊判断，可以预先在哈希表中存入其位置为 <code>-1</code>。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkSubarraySum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
 	<span style="color:#a6e22e">pos</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{
@@ -310,9 +291,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：O(min(N,k))</li>
@@ -362,6 +342,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -404,18 +396,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

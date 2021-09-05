@@ -4,16 +4,16 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/sum-of-square-numbers/
 难度： 中等
 题目描述 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 &#43; b2 = c 。
-示例1：  输入：c = 5
-输出：true
-解释：1 * 1 &#43; 2 * 2 = 5
- 示例2：  输入：c = 3
-输出：false
- 示例3：  输入：c = 4
-输出：true
- 示例4：  输入：c = 2
-输出：true
- 示例5：  输入：c = 1 输出：true
+示例1：  **输入：**c = 5
+**输出：**true
+**解释：**1 * 1 &#43; 2 * 2 = 5
+ 示例2：  **输入：**c = 3
+**输出：**false
+ 示例3：  **输入：**c = 4
+**输出：**true
+ 示例4：  **输入：**c = 2
+**输出：**true
+ 示例5：  **输入：**c = 1 **输出：**true
  提示：  0 &amp;lt;= c &amp;lt;= 231 - 1  解题思路 打表 维护一个保存所有平方数的 map，然后从0开始枚举所有可能是 a 的情况，寻找 b = c-a2 是否存在于 map 中'><title>Leetcode 633. 平方数之和</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-633.-%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/'>
@@ -22,16 +22,16 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/sum-of-square-numbers/
 难度： 中等
 题目描述 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 &#43; b2 = c 。
-示例1：  输入：c = 5
-输出：true
-解释：1 * 1 &#43; 2 * 2 = 5
- 示例2：  输入：c = 3
-输出：false
- 示例3：  输入：c = 4
-输出：true
- 示例4：  输入：c = 2
-输出：true
- 示例5：  输入：c = 1 输出：true
+示例1：  **输入：**c = 5
+**输出：**true
+**解释：**1 * 1 &#43; 2 * 2 = 5
+ 示例2：  **输入：**c = 3
+**输出：**false
+ 示例3：  **输入：**c = 4
+**输出：**true
+ 示例4：  **输入：**c = 2
+**输出：**true
+ 示例5：  **输入：**c = 1 **输出：**true
  提示：  0 &amp;lt;= c &amp;lt;= 231 - 1  解题思路 打表 维护一个保存所有平方数的 map，然后从0开始枚举所有可能是 a 的情况，寻找 b = c-a2 是否存在于 map 中'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-633.-%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -40,16 +40,16 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/sum-of-square-numbers/
 难度： 中等
 题目描述 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 &#43; b2 = c 。
-示例1：  输入：c = 5
-输出：true
-解释：1 * 1 &#43; 2 * 2 = 5
- 示例2：  输入：c = 3
-输出：false
- 示例3：  输入：c = 4
-输出：true
- 示例4：  输入：c = 2
-输出：true
- 示例5：  输入：c = 1 输出：true
+示例1：  **输入：**c = 5
+**输出：**true
+**解释：**1 * 1 &#43; 2 * 2 = 5
+ 示例2：  **输入：**c = 3
+**输出：**false
+ 示例3：  **输入：**c = 4
+**输出：**true
+ 示例4：  **输入：**c = 2
+**输出：**true
+ 示例5：  **输入：**c = 1 **输出：**true
  提示：  0 &amp;lt;= c &amp;lt;= 231 - 1  解题思路 打表 维护一个保存所有平方数的 map，然后从0开始枚举所有可能是 a 的情况，寻找 b = c-a2 是否存在于 map 中">
     </head>
     <body class="
@@ -244,61 +244,43 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/sum-of-square-numbers/" target="_blank">https://leetcode-cn.com/problems/sum-of-square-numbers/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/sum-of-square-numbers/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/sum-of-square-numbers/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给定一个非负整数 <code>c</code> ，你要判断是否存在两个整数 <code>a</code> 和 <code>b</code>，使得 <code>a2 + b2 = c</code> 。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>c = 5<br />
-<strong>输出：</strong>true<br />
-<strong>解释：</strong>1 * 1 + 2 * 2 = 5</p>
+<p>**输入：**c = 5<br>
+**输出：**true<br>
+**解释：**1 * 1 + 2 * 2 = 5</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>c = 3<br />
-<strong>输出：</strong>false</p>
+<p>**输入：**c = 3<br>
+**输出：**false</p>
 </blockquote>
-
 <h5 id="示例3">示例3：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>c = 4<br />
-<strong>输出：</strong>true</p>
+<p>**输入：**c = 4<br>
+**输出：**true</p>
 </blockquote>
-
 <h5 id="示例4">示例4：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>c = 2<br />
-<strong>输出：</strong>true</p>
+<p>**输入：**c = 2<br>
+**输出：**true</p>
 </blockquote>
-
 <h5 id="示例5">示例5：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>c = 1
-<strong>输出：</strong>true</p>
+<p>**输入：**c = 1
+**输出：**true</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>0 &lt;= c &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="打表">打表</h4>
-
 <p>维护一个保存所有平方数的 <code>map</code>，然后从0开始枚举所有可能是 <code>a</code> 的情况，寻找 <code>b = c-a<sup>2</sup></code> 是否存在于 <code>map</code> 中</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">exist</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">bool</span>)
 
@@ -315,16 +297,13 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(√c)</li>
 <li>空间复杂度：O(√N)</li>
 </ul>
-
 <h4 id="开方">开方</h4>
-
 <p>枚举所有可能是 <code>a</code> 的情况，然后对 <code>b = c-a<sup>2</sup></code> 开放，判断开方后的结果是否为整数即可</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">judgeSquareSum</span>(<span style="color:#a6e22e">c</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
 	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">c</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
@@ -334,24 +313,19 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：O(√c)</li>
 <li>空间复杂度：O(1)</li>
 </ul>
-
 <h4 id="双指针">双指针</h4>
-
 <p>用 <code>i, j(i &lt; j)</code> 表示两个指针，向中间遍历，初始 <code>i = 0, j = √c</code></p>
-
 <ul>
 <li>当 <code>i*i + j*j == c</code> 时，返回 <code>true</code>;</li>
 <li>当 <code>i*i + j*j &lt; c</code> 时， <code>i++</code>;</li>
 <li>当 <code>i*i + j*j &gt; c</code> 时， <code>j--</code>;</li>
 </ul>
-
 <p>直到 <code>i &gt; j</code> 时，依然未能找到 <code>a, b</code>，返回 <code>false</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">judgeSquareSum</span>(<span style="color:#a6e22e">c</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
 	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> int(); <span style="color:#a6e22e">i</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">c</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
@@ -361,9 +335,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}</code></pre></div>
-<h5 id="复杂度-2">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-2">复杂度</h5>
 <ul>
 <li>时间复杂度：O(√c)</li>
 <li>空间复杂度：O(1)</li>
@@ -413,6 +386,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -455,18 +440,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

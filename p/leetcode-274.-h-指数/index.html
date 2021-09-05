@@ -6,11 +6,12 @@
 题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）。编写一个方法，计算出研究者的 h 指数。
 h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
 例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
-示例：  输入：citations = [3,0,6,1,5]
-输出：3
-解释：给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
+示例：  **输入：**citations = [3,0,6,1,5]
+**输出：**3
+**解释：**给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
 由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
- 提示：如果 h 有多种可能的值，h 指数是其中最大的那个。'><title>Leetcode 274. H 指数</title>
+ **提示：**如果 h 有多种可能的值，h 指数是其中最大的那个。
+解题思路 排序 按照每篇论文被引用次数从多到少排序，依次遍历直到首次找到第 i 篇论文，其被引用次数 &amp;lt; i，则说明其前面的论文被引用数均 ≥ i-1，且其前一篇恰好时第 i-1 篇，返回 i-1。'><title>Leetcode 274. H 指数</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/'>
 
@@ -20,11 +21,12 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
 题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）。编写一个方法，计算出研究者的 h 指数。
 h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
 例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
-示例：  输入：citations = [3,0,6,1,5]
-输出：3
-解释：给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
+示例：  **输入：**citations = [3,0,6,1,5]
+**输出：**3
+**解释：**给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
 由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
- 提示：如果 h 有多种可能的值，h 指数是其中最大的那个。'>
+ **提示：**如果 h 有多种可能的值，h 指数是其中最大的那个。
+解题思路 排序 按照每篇论文被引用次数从多到少排序，依次遍历直到首次找到第 i 篇论文，其被引用次数 &amp;lt; i，则说明其前面的论文被引用数均 ≥ i-1，且其前一篇恰好时第 i-1 篇，返回 i-1。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-274.-h-%E6%8C%87%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='sort' /><meta property='article:published_time' content='2021-07-11T12:04:41&#43;08:00'/><meta property='article:modified_time' content='2021-07-11T12:04:41&#43;08:00'/>
@@ -34,11 +36,12 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
 题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）。编写一个方法，计算出研究者的 h 指数。
 h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
 例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
-示例：  输入：citations = [3,0,6,1,5]
-输出：3
-解释：给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
+示例：  **输入：**citations = [3,0,6,1,5]
+**输出：**3
+**解释：**给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
 由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
- 提示：如果 h 有多种可能的值，h 指数是其中最大的那个。">
+ **提示：**如果 h 有多种可能的值，h 指数是其中最大的那个。
+解题思路 排序 按照每篇论文被引用次数从多到少排序，依次遍历直到首次找到第 i 篇论文，其被引用次数 &amp;lt; i，则说明其前面的论文被引用数均 ≥ i-1，且其前一篇恰好时第 i-1 篇，返回 i-1。">
     </head>
     <body class="
     article-page 
@@ -232,36 +235,24 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/h-index/" target="_blank">https://leetcode-cn.com/problems/h-index/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/h-index/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/h-index/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给定一位研究者论文被引用次数的数组（被引用次数是非负整数）。编写一个方法，计算出研究者的 h 指数。</p>
-
 <p><font color="grey">h 指数的定义：</font>h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）<strong>总共</strong> 有 h 篇论文分别被引用了<strong>至少</strong> h 次。且其余的 $N - h$ 篇论文每篇被引用次数 <strong>不超过</strong> h 次。</p>
-
 <p>例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。</p>
-
 <h5 id="示例">示例：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>citations = [3,0,6,1,5]<br />
-<strong>输出：</strong>3<br />
-<strong>解释：</strong>给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。<br />
+<p>**输入：**citations = [3,0,6,1,5]<br>
+**输出：**3<br>
+**解释：**给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。<br>
      由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。</p>
 </blockquote>
-
-<p><strong>提示：</strong>如果 h 有多种可能的值，h 指数是其中最大的那个。</p>
-
+<p>**提示：**如果 h 有多种可能的值，h 指数是其中最大的那个。</p>
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="排序">排序</h4>
-
 <p>按照每篇论文被引用次数从多到少排序，依次遍历直到首次找到第 <code>i</code> 篇论文，其被引用次数 <code>&lt; i</code>，则说明其前面的论文被引用数均 <code>≥ i-1</code>，且其前一篇恰好时第 <code>i-1</code> 篇，返回 <code>i-1</code>。</p>
-
 <p>当遍历完整个数组均为找到时，表明最后一篇被引用数仍 <code>≥ len(citations)</code>，返回 <code>len(citations)</code>。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">hIndex</span>(<span style="color:#a6e22e">citations</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Sort</span>(<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Reverse</span>(<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">IntSlice</span>(<span style="color:#a6e22e">citations</span>)))
@@ -271,9 +262,8 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
 		}
 	}
 	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">citations</span>)
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NlogN), N=len(citations) $</li>
 <li>空间复杂度：$ O(logN) $</li>

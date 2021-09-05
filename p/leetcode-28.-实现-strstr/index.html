@@ -7,12 +7,12 @@
 给你两个字符串 haystack 和 needle ，请你在 haystack 字符串中找出 needle 字符串出现的第一个位置（下标从 0 开始）。如果不存在，则返回 -1 。
 说明： 当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
 对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与 C 语言的 strstr() 以及 Java 的 indexOf() 定义相符。
-示例1：  输入：haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
-输出：2
- 示例2：  输入：haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
+示例1：  **输入：**haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
+**输出：**2
+ 示例2：  **输入：**haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
 输出：-1
- 示例3：  输入：haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;ldquo;&amp;rdquo;
-输出：0
+ 示例3：  **输入：**haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;quot;&amp;quot;
+**输出：**0
  提示：  0 &amp;lt;= haystack.'><title>Leetcode 28. 实现 strStr()</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-28.-%E5%AE%9E%E7%8E%B0-strstr/'>
@@ -24,12 +24,12 @@
 给你两个字符串 haystack 和 needle ，请你在 haystack 字符串中找出 needle 字符串出现的第一个位置（下标从 0 开始）。如果不存在，则返回 -1 。
 说明： 当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
 对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与 C 语言的 strstr() 以及 Java 的 indexOf() 定义相符。
-示例1：  输入：haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
-输出：2
- 示例2：  输入：haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
+示例1：  **输入：**haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
+**输出：**2
+ 示例2：  **输入：**haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
 输出：-1
- 示例3：  输入：haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;ldquo;&amp;rdquo;
-输出：0
+ 示例3：  **输入：**haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;quot;&amp;quot;
+**输出：**0
  提示：  0 &amp;lt;= haystack.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-28.-%E5%AE%9E%E7%8E%B0-strstr/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -41,12 +41,12 @@
 给你两个字符串 haystack 和 needle ，请你在 haystack 字符串中找出 needle 字符串出现的第一个位置（下标从 0 开始）。如果不存在，则返回 -1 。
 说明： 当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
 对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与 C 语言的 strstr() 以及 Java 的 indexOf() 定义相符。
-示例1：  输入：haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
-输出：2
- 示例2：  输入：haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
+示例1：  **输入：**haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
+**输出：**2
+ 示例2：  **输入：**haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
 输出：-1
- 示例3：  输入：haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;ldquo;&amp;rdquo;
-输出：0
+ 示例3：  **输入：**haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;quot;&amp;quot;
+**输出：**0
  提示：  0 &amp;lt;= haystack.">
     </head>
     <body class="
@@ -241,61 +241,43 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/implement-strstr/" target="_blank">https://leetcode-cn.com/problems/implement-strstr/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/implement-strstr/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/implement-strstr/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
-<p>实现 <code>strStr()</code> 函数。<br />
+<p>实现 <code>strStr()</code> 函数。<br>
 给你两个字符串 <code>haystack</code> 和 <code>needle</code> ，请你在 <code>haystack</code> 字符串中找出 <code>needle</code> 字符串出现的第一个位置（下标从 0 开始）。如果不存在，则返回  <code>-1</code> 。</p>
-
 <h5 id="说明">说明：</h5>
-
-<p>当 <code>needle</code> 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。<br />
+<p>当 <code>needle</code> 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。<br>
 对于本题而言，当 <code>needle</code> 是空字符串时我们应当返回 <code>0</code> 。这与 C 语言的 <code>strstr()</code> 以及 Java 的 <code>indexOf()</code> 定义相符。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>haystack = &ldquo;hello&rdquo;, needle = &ldquo;ll&rdquo;<br />
-<strong>输出：</strong>2</p>
+<p>**输入：**haystack = &ldquo;hello&rdquo;, needle = &ldquo;ll&rdquo;<br>
+**输出：**2</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>haystack = &ldquo;aaaaa&rdquo;, needle = &ldquo;bba&rdquo;<br />
+<p>**输入：**haystack = &ldquo;aaaaa&rdquo;, needle = &ldquo;bba&rdquo;<br>
 <strong>输出：</strong>-1</p>
 </blockquote>
-
 <h5 id="示例3">示例3：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>haystack = &ldquo;&rdquo;, needle = &ldquo;&rdquo;<br />
-<strong>输出：</strong>0</p>
+<p>**输入：**haystack = &ldquo;&rdquo;, needle = &quot;&quot;<br>
+**输出：**0</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>0 &lt;= haystack.length, needle.length &lt;= 5 * 10<sup>4</sup></code></li>
 <li><code>haystack</code> 和 <code>needle</code> 仅由小写英文字符组成</li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="暴力匹配">暴力匹配</h4>
-
 <p>从 <code>haystack</code> 的每个字符开始，依次向后和 <code>needle</code> 中的字符逐个匹配：</p>
-
 <ul>
 <li>匹配成功，继续向后匹配；</li>
 <li>匹配失败，从 <code>haystack</code> 的下个字符重新进行匹配；</li>
 <li>匹配到 <code>needle</code> 结束，说明完成了查找，返回 <code>haystack</code> 初始匹配的下标。</li>
 </ul>
-
 <p>遍历结束，都未完成匹配，表示无法找到，返回 <code>-1</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">strStr</span>(<span style="color:#a6e22e">haystack</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">needle</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">maxIdx</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">haystack</span>) <span style="color:#f92672">-</span> len(<span style="color:#a6e22e">needle</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
@@ -311,14 +293,12 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N*M)</li>
 <li>空间复杂度：O(1)</li>
 </ul>
-
 <h4 id="kmp算法">KMP算法</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">strStr</span>(<span style="color:#a6e22e">haystack</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">needle</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">needle</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
@@ -355,9 +335,8 @@
 		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">j</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N+M)</li>
 <li>空间复杂度：O(1)</li>
@@ -407,6 +386,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -449,18 +440,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

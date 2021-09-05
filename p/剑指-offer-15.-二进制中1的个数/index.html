@@ -4,17 +4,17 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/
 难度： 简单
 题目描述 请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。
-示例1：  输入：00000000000000000000000000001011
-输出：3
-解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
- 示例 2：  输入：00000000000000000000000010000000
-输出：1
-解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
- 示例 3：  输入：11111111111111111111111111111101
-输出：31
-解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
+示例1：  **输入：**00000000000000000000000000001011
+**输出：**3
+**解释：**输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 2：  **输入：**00000000000000000000000010000000
+**输出：**1
+**解释：**输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 3：  **输入：**11111111111111111111111111111101
+**输出：**31
+**解释：**输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
  提示：  输入必须是长度为 32 的 二进制串 。  解题思路 计数 每次统计最右边的一位，并向右移动一位。
-func hammingWeight(num uint32) int { cnt := 0 for ; num !'><title>剑指 Offer 15. 二进制中1的个数</title>
+func hammingWeight(num uint32) int { cnt := 0 for ; num != 0; num &amp;gt;&amp;gt;= 1 { cnt &#43;= int(num &amp;amp; 1) } return cnt } 复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  消除 使用lowbit算法，每次消除最右边的 1，直到该数为 0，消除次数即为1的个数 每次统计最右边的一位，并向右移动一位。'><title>剑指 Offer 15. 二进制中1的个数</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-15.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/'>
 
@@ -22,17 +22,17 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num !'><title>剑指 Offer 1
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/
 难度： 简单
 题目描述 请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。
-示例1：  输入：00000000000000000000000000001011
-输出：3
-解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
- 示例 2：  输入：00000000000000000000000010000000
-输出：1
-解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
- 示例 3：  输入：11111111111111111111111111111101
-输出：31
-解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
+示例1：  **输入：**00000000000000000000000000001011
+**输出：**3
+**解释：**输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 2：  **输入：**00000000000000000000000010000000
+**输出：**1
+**解释：**输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 3：  **输入：**11111111111111111111111111111101
+**输出：**31
+**解释：**输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
  提示：  输入必须是长度为 32 的 二进制串 。  解题思路 计数 每次统计最右边的一位，并向右移动一位。
-func hammingWeight(num uint32) int { cnt := 0 for ; num !'>
+func hammingWeight(num uint32) int { cnt := 0 for ; num != 0; num &amp;gt;&amp;gt;= 1 { cnt &#43;= int(num &amp;amp; 1) } return cnt } 复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  消除 使用lowbit算法，每次消除最右边的 1，直到该数为 0，消除次数即为1的个数 每次统计最右边的一位，并向右移动一位。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-15.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-06-23T21:39:35&#43;08:00'/><meta property='article:modified_time' content='2021-06-23T21:39:35&#43;08:00'/>
@@ -40,17 +40,17 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num !'>
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/
 难度： 简单
 题目描述 请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。
-示例1：  输入：00000000000000000000000000001011
-输出：3
-解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
- 示例 2：  输入：00000000000000000000000010000000
-输出：1
-解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
- 示例 3：  输入：11111111111111111111111111111101
-输出：31
-解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
+示例1：  **输入：**00000000000000000000000000001011
+**输出：**3
+**解释：**输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 2：  **输入：**00000000000000000000000010000000
+**输出：**1
+**解释：**输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 3：  **输入：**11111111111111111111111111111101
+**输出：**31
+**解释：**输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
  提示：  输入必须是长度为 32 的 二进制串 。  解题思路 计数 每次统计最右边的一位，并向右移动一位。
-func hammingWeight(num uint32) int { cnt := 0 for ; num !">
+func hammingWeight(num uint32) int { cnt := 0 for ; num != 0; num &amp;gt;&amp;gt;= 1 { cnt &#43;= int(num &amp;amp; 1) } return cnt } 复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  消除 使用lowbit算法，每次消除最右边的 1，直到该数为 0，消除次数即为1的个数 每次统计最右边的一位，并向右移动一位。">
     </head>
     <body class="
     article-page 
@@ -244,49 +244,35 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num !">
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/" target="_blank">https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>00000000000000000000000000001011<br />
-<strong>输出：</strong>3<br />
-<strong>解释：</strong>输入的二进制串 00000000000000000000000000001011 中，共有三位为 &lsquo;1&rsquo;。</p>
+<p>**输入：**00000000000000000000000000001011<br>
+**输出：**3<br>
+**解释：**输入的二进制串 00000000000000000000000000001011 中，共有三位为 &lsquo;1&rsquo;。</p>
 </blockquote>
-
 <h5 id="示例-2">示例 2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>00000000000000000000000010000000<br />
-<strong>输出：</strong>1<br />
-<strong>解释：</strong>输入的二进制串 00000000000000000000000010000000 中，共有一位为 &lsquo;1&rsquo;。</p>
+<p>**输入：**00000000000000000000000010000000<br>
+**输出：**1<br>
+**解释：**输入的二进制串 00000000000000000000000010000000 中，共有一位为 &lsquo;1&rsquo;。</p>
 </blockquote>
-
 <h5 id="示例-3">示例 3：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>11111111111111111111111111111101<br />
-<strong>输出：</strong>31<br />
-<strong>解释：</strong>输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &lsquo;1&rsquo;。</p>
+<p>**输入：**11111111111111111111111111111101<br>
+**输出：**31<br>
+**解释：**输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &lsquo;1&rsquo;。</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li>输入必须是长度为 <code>32</code> 的 二进制串 。</li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="计数">计数</h4>
-
 <p>每次统计最右边的一位，并向右移动一位。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">hammingWeight</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">uint32</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
@@ -294,16 +280,13 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num !">
 		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">+=</span> int(<span style="color:#a6e22e">num</span> <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>)
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(logN)</li>
 <li>空间复杂度：O(1)</li>
 </ul>
-
 <h4 id="消除">消除</h4>
-
 <p>使用lowbit算法，每次消除最右边的 1，直到该数为 0，消除次数即为1的个数
 每次统计最右边的一位，并向右移动一位。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">hammingWeight</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">uint32</span>) <span style="color:#66d9ef">int</span> {
@@ -312,9 +295,8 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num !">
 		<span style="color:#a6e22e">num</span> <span style="color:#f92672">&amp;=</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：O(logN)</li>
 <li>空间复杂度：O(1)</li>
@@ -364,6 +346,18 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num !">
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -406,18 +400,6 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num !">
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

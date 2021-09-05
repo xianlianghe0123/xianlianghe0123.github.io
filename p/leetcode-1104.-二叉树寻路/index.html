@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=' 链接： https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/
 难度： 中等
 题目描述 在一棵无限的二叉树上，每个节点都有两个子节点，树中的节点 逐行 依次按 “之” 字形进行标记。
 如下图所示，在奇数行（即，第一行、第三行、第五行……）中，按从左到右的顺序进行标记；
 而偶数行（即，第二行、第四行、第六行……）中，按从右到左的顺序进行标记。
 给你树上某一个节点的标号 label，请你返回从根节点到该标号为 label 节点的路径，该路径是由途经的节点标号所组成的。
-示例 1：  输入：label = 14
+示例 1：  **输入：**label = 14
 输出：[1,3,4,14]
- 示例 2：  输入：label = 26
+ 示例 2：  **输入：**label = 26
 输出：[1,2,6,10,26]
  提示：  1 &amp;lt;= label &amp;lt;= 106  解题思路 推导 对于一个完全二叉树，可以快速找到子结点 x 的父结点是 x/2。该题描述的是完全二叉树的一种变种，仅是偶数行的结点整体进行了反转。
 可以使用完全二叉树的编号，快速找到父结点，然后推导出在原二叉树中的原编号，加入到结果中。
@@ -19,15 +19,15 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1104.-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AF%BB%E8%B7%AF/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1104. 二叉树寻路'>
-<meta property='og:description' content=' 链接： https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/
 难度： 中等
 题目描述 在一棵无限的二叉树上，每个节点都有两个子节点，树中的节点 逐行 依次按 “之” 字形进行标记。
 如下图所示，在奇数行（即，第一行、第三行、第五行……）中，按从左到右的顺序进行标记；
 而偶数行（即，第二行、第四行、第六行……）中，按从右到左的顺序进行标记。
 给你树上某一个节点的标号 label，请你返回从根节点到该标号为 label 节点的路径，该路径是由途经的节点标号所组成的。
-示例 1：  输入：label = 14
+示例 1：  **输入：**label = 14
 输出：[1,3,4,14]
- 示例 2：  输入：label = 26
+ 示例 2：  **输入：**label = 26
 输出：[1,2,6,10,26]
  提示：  1 &amp;lt;= label &amp;lt;= 106  解题思路 推导 对于一个完全二叉树，可以快速找到子结点 x 的父结点是 x/2。该题描述的是完全二叉树的一种变种，仅是偶数行的结点整体进行了反转。
 可以使用完全二叉树的编号，快速找到父结点，然后推导出在原二叉树中的原编号，加入到结果中。
@@ -37,15 +37,15 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-07-29T20:22:11&#43;08:00'/><meta property='article:modified_time' content='2021-07-29T20:22:11&#43;08:00'/>
 <meta name="twitter:title" content="Leetcode 1104. 二叉树寻路">
-<meta name="twitter:description" content=" 链接： https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/
 难度： 中等
 题目描述 在一棵无限的二叉树上，每个节点都有两个子节点，树中的节点 逐行 依次按 “之” 字形进行标记。
 如下图所示，在奇数行（即，第一行、第三行、第五行……）中，按从左到右的顺序进行标记；
 而偶数行（即，第二行、第四行、第六行……）中，按从右到左的顺序进行标记。
 给你树上某一个节点的标号 label，请你返回从根节点到该标号为 label 节点的路径，该路径是由途经的节点标号所组成的。
-示例 1：  输入：label = 14
+示例 1：  **输入：**label = 14
 输出：[1,3,4,14]
- 示例 2：  输入：label = 26
+ 示例 2：  **输入：**label = 26
 输出：[1,2,6,10,26]
  提示：  1 &amp;lt;= label &amp;lt;= 106  解题思路 推导 对于一个完全二叉树，可以快速找到子结点 x 的父结点是 x/2。该题描述的是完全二叉树的一种变种，仅是偶数行的结点整体进行了反转。
 可以使用完全二叉树的编号，快速找到父结点，然后推导出在原二叉树中的原编号，加入到结果中。
@@ -244,51 +244,33 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/" target="_blank">https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>在一棵无限的二叉树上，每个节点都有两个子节点，树中的节点 <strong>逐行</strong> 依次按 “之” 字形进行标记。</p>
-
 <p>如下图所示，在奇数行（即，第一行、第三行、第五行……）中，按从左到右的顺序进行标记；</p>
-
 <p>而偶数行（即，第二行、第四行、第六行……）中，按从右到左的顺序进行标记。</p>
-
-<p><img src="/img/tree.png" width="600px"></p>
-
+<img src="/img/tree.png" width="600px">
 <p>给你树上某一个节点的标号 <code>label</code>，请你返回从根节点到该标号为 <code>label</code> 节点的路径，该路径是由途经的节点标号所组成的。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>label = 14<br />
+<p>**输入：**label = 14<br>
 <strong>输出：</strong>[1,3,4,14]</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>label = 26<br />
+<p>**输入：**label = 26<br>
 <strong>输出：</strong>[1,2,6,10,26]</p>
 </blockquote>
-
 <h4 id="提示">提示：</h4>
-
 <ul>
 <li><code>1 &lt;= label &lt;= 10<sup>6</sup></code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="推导">推导</h4>
-
 <p>对于一个完全二叉树，可以快速找到子结点 <code>x</code> 的父结点是 <code>x/2</code>。该题描述的是完全二叉树的一种变种，仅是偶数行的结点整体进行了反转。</p>
-
 <p>可以使用完全二叉树的编号，快速找到父结点，然后推导出在原二叉树中的原编号，加入到结果中。</p>
-
 <p>对于反转后的某一层，其元素为公差为 <code>1</code> 的等差数列，某个数反转后的编号即为当前层首尾元素之和减去当前元素。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pathInZigZagTree</span>(<span style="color:#a6e22e">label</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">layer</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>   <span style="color:#75715e">// 层
@@ -315,9 +297,8 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">2</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(logN)), N = label $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -367,6 +348,18 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -409,18 +402,6 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

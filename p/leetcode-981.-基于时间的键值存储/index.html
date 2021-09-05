@@ -5,7 +5,7 @@
 难度： 中等
 题目描述 创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
  set(string key, string value, int timestamp)  存储键 key、值 value，以及给定的时间戳 timestamp。
- get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。   示例1：  输入：inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
+get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。    示例1：  **输入：**inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
 输出：[null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
 解释：
 TimeMap kv;
@@ -20,7 +20,7 @@ kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为
 难度： 中等
 题目描述 创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
  set(string key, string value, int timestamp)  存储键 key、值 value，以及给定的时间戳 timestamp。
- get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。   示例1：  输入：inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
+get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。    示例1：  **输入：**inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
 输出：[null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
 解释：
 TimeMap kv;
@@ -35,7 +35,7 @@ kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为
 难度： 中等
 题目描述 创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
  set(string key, string value, int timestamp)  存储键 key、值 value，以及给定的时间戳 timestamp。
- get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。   示例1：  输入：inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
+get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。    示例1：  **输入：**inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
 输出：[null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
 解释：
 TimeMap kv;
@@ -235,55 +235,43 @@ kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/time-based-key-value-store/" target="_blank">https://leetcode-cn.com/problems/time-based-key-value-store/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/time-based-key-value-store/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/time-based-key-value-store/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>创建一个基于时间的键值存储类 <code>TimeMap</code>，它支持下面两个操作：</p>
-
 <ol>
 <li><code>set(string key, string value, int timestamp)</code></li>
 </ol>
-
 <p>存储键 <code>key</code>、值 <code>value</code>，以及给定的时间戳 <code>timestamp</code>。</p>
-
-<ol>
+<ol start="2">
 <li><code>get(string key, int timestamp)</code>
-
 <ul>
 <li>返回先前调用 <code>set(key, value, timestamp_prev)</code> 所存储的值，其中 <code>timestamp_prev &lt;= timestamp</code>。</li>
 <li>如果有多个这样的值，则返回对应最大的  <code>timestamp_prev</code> 的那个值。</li>
 <li>如果没有值，则返回空字符串（<code>&quot;&quot;</code>）。</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>inputs = [&ldquo;TimeMap&rdquo;,&ldquo;set&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;,&ldquo;set&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;], inputs = [[],[&ldquo;foo&rdquo;,&ldquo;bar&rdquo;,1],[&ldquo;foo&rdquo;,1],[&ldquo;foo&rdquo;,3],[&ldquo;foo&rdquo;,&ldquo;bar2&rdquo;,4],[&ldquo;foo&rdquo;,4],[&ldquo;foo&rdquo;,5]]<br />
-<strong>输出：</strong>[null,null,&ldquo;bar&rdquo;,&ldquo;bar&rdquo;,null,&ldquo;bar2&rdquo;,&ldquo;bar2&rdquo;]<br />
-<strong>解释：</strong><br />
-TimeMap kv;<br />
-kv.set(&ldquo;foo&rdquo;, &ldquo;bar&rdquo;, 1); // 存储键 &ldquo;foo&rdquo; 和值 &ldquo;bar&rdquo; 以及时间戳 timestamp = 1<br />
-kv.get(&ldquo;foo&rdquo;, 1);  // 输出 &ldquo;bar&rdquo;<br />
-kv.get(&ldquo;foo&rdquo;, 3); // 输出 &ldquo;bar&rdquo; 因为在时间戳 3 和时间戳 2 处没有对应 &ldquo;foo&rdquo; 的值，所以唯一的值位于时间戳 1 处（即 &gt; &ldquo;bar&rdquo;）<br />
-kv.set(&ldquo;foo&rdquo;, &ldquo;bar2&rdquo;, 4);<br />
-kv.get(&ldquo;foo&rdquo;, 4); // 输出 &ldquo;bar2&rdquo;<br />
+<p>**输入：**inputs = [&ldquo;TimeMap&rdquo;,&ldquo;set&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;,&ldquo;set&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;], inputs = [[],[&ldquo;foo&rdquo;,&ldquo;bar&rdquo;,1],[&ldquo;foo&rdquo;,1],[&ldquo;foo&rdquo;,3],[&ldquo;foo&rdquo;,&ldquo;bar2&rdquo;,4],[&ldquo;foo&rdquo;,4],[&ldquo;foo&rdquo;,5]]<br>
+<strong>输出：</strong>[null,null,&ldquo;bar&rdquo;,&ldquo;bar&rdquo;,null,&ldquo;bar2&rdquo;,&ldquo;bar2&rdquo;]<br>
+<strong>解释：</strong><br>
+TimeMap kv;<br>
+kv.set(&ldquo;foo&rdquo;, &ldquo;bar&rdquo;, 1); // 存储键 &ldquo;foo&rdquo; 和值 &ldquo;bar&rdquo; 以及时间戳 timestamp = 1<br>
+kv.get(&ldquo;foo&rdquo;, 1);  // 输出 &ldquo;bar&rdquo;<br>
+kv.get(&ldquo;foo&rdquo;, 3); // 输出 &ldquo;bar&rdquo; 因为在时间戳 3 和时间戳 2 处没有对应 &ldquo;foo&rdquo; 的值，所以唯一的值位于时间戳 1 处（即 &gt; &ldquo;bar&rdquo;）<br>
+kv.set(&ldquo;foo&rdquo;, &ldquo;bar2&rdquo;, 4);<br>
+kv.get(&ldquo;foo&rdquo;, 4); // 输出 &ldquo;bar2&rdquo;<br>
 kv.get(&ldquo;foo&rdquo;, 5); // 输出 &ldquo;bar2&rdquo;</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>inputs = [&ldquo;TimeMap&rdquo;,&ldquo;set&rdquo;,&ldquo;set&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;], inputs = [[],[&ldquo;love&rdquo;,&ldquo;high&rdquo;,10],[&ldquo;love&rdquo;,&ldquo;low&rdquo;,20],[&ldquo;love&rdquo;,5],[&ldquo;love&rdquo;,10],[&ldquo;love&rdquo;,15],[&ldquo;love&rdquo;,20],[&ldquo;love&rdquo;,25]]<br />
-<strong>输出：</strong>[null,null,null,&ldquo;&rdquo;,&ldquo;high&rdquo;,&ldquo;high&rdquo;,&ldquo;low&rdquo;,&ldquo;low&rdquo;]</p>
+<p>**输入：**inputs = [&ldquo;TimeMap&rdquo;,&ldquo;set&rdquo;,&ldquo;set&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;,&ldquo;get&rdquo;], inputs = [[],[&ldquo;love&rdquo;,&ldquo;high&rdquo;,10],[&ldquo;love&rdquo;,&ldquo;low&rdquo;,20],[&ldquo;love&rdquo;,5],[&ldquo;love&rdquo;,10],[&ldquo;love&rdquo;,15],[&ldquo;love&rdquo;,20],[&ldquo;love&rdquo;,25]]<br>
+<strong>输出：</strong>[null,null,null,&quot;&quot;,&ldquo;high&rdquo;,&ldquo;high&rdquo;,&ldquo;low&rdquo;,&ldquo;low&rdquo;]</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li>所有的键/值字符串都是小写的。</li>
 <li>所有的键/值字符串长度都在 <code>[1, 100]</code> 范围内。</li>
@@ -291,17 +279,13 @@ kv.get(&ldquo;foo&rdquo;, 5); // 输出 &ldquo;bar2&rdquo;</p>
 <li><code>1 &lt;= timestamp &lt;= 10<sup>7</sup></code></li>
 <li><code>TimeMap.set</code> 和 <code>TimeMap.get</code> 函数在每个测试用例中将（组合）调用总计 <code>120000</code> 次。</li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
-<h4 id="哈希-二分查找">哈希+二分查找</h4>
-
+<h4 id="哈希二分查找">哈希+二分查找</h4>
 <p>利用哈希表作为存储。每个 <code>key</code> 记录按照 <code>timestamp</code> 顺序记录的数组，数组元素记录 <code>value</code> 和 <code>timestamp</code> 。</p>
-
 <ul>
 <li><code>Set</code> ，由于 <code>timestamp</code> 严格递增，只需将 <code>value</code> 和 <code>timestamp</code> 添加到对应数组的尾部；</li>
-
-<li><p><code>Get</code> ，利用数组的有序性，使用二分查找，找到不大于 <code>timestamp</code> 的首个值。</p>
+<li><code>Get</code> ，利用数组的有序性，使用二分查找，找到不大于 <code>timestamp</code> 的首个值。</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Value</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">value</span>     <span style="color:#66d9ef">string</span>
 	<span style="color:#a6e22e">timestamp</span> <span style="color:#66d9ef">int</span>
@@ -344,18 +328,15 @@ kv.get(&ldquo;foo&rdquo;, 5); // 输出 &ldquo;bar2&rdquo;</p>
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
-}</code></pre></div></li>
-</ul>
-
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
-
 <ul>
 <li><code>Set</code>：$ O(1) $</li>
 <li><code>Get</code>：$ O(logN), N=len(keys) $</li>
-</ul></li>
+</ul>
+</li>
 <li>空间复杂度：$ O(N) $</li>
 </ul>
 

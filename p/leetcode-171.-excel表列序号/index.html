@@ -259,60 +259,44 @@ AB -&amp;gt; 28
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/excel-sheet-column-number/" target="_blank">https://leetcode-cn.com/problems/excel-sheet-column-number/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/excel-sheet-column-number/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/excel-sheet-column-number/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>给你一个字符串 <code>columnTitle</code> ，表示 Excel 表格中的列名称。返回该列名称对应的列序号。</p>
-
 <p>例如，</p>
-
 <blockquote>
-<p>A -&gt; 1<br />
-B -&gt; 2<br />
-C -&gt; 3<br />
-&hellip;<br />
-Z -&gt; 26<br />
-AA -&gt; 27<br />
-AB -&gt; 28<br />
+<p>A -&gt; 1<br>
+B -&gt; 2<br>
+C -&gt; 3<br>
+&hellip;<br>
+Z -&gt; 26<br>
+AA -&gt; 27<br>
+AB -&gt; 28<br>
 &hellip;</p>
 </blockquote>
-
 <h4 id="示例-1">示例 1：</h4>
-
 <blockquote>
-<p>输入: columnTitle = &ldquo;A&rdquo;<br />
+<p>输入: columnTitle = &ldquo;A&rdquo;<br>
 输出: 1</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p>输入: columnTitle = &ldquo;AB&rdquo;<br />
+<p>输入: columnTitle = &ldquo;AB&rdquo;<br>
 输出: 28</p>
 </blockquote>
-
 <h4 id="示例-3">示例 3：</h4>
-
 <blockquote>
-<p>输入: columnTitle = &ldquo;ZY&rdquo;<br />
+<p>输入: columnTitle = &ldquo;ZY&rdquo;<br>
 输出: 701</p>
 </blockquote>
-
 <h4 id="示例-4">示例 4：</h4>
-
 <blockquote>
-<p>输入: columnTitle = &ldquo;FXSHRXW&rdquo;<br />
+<p>输入: columnTitle = &ldquo;FXSHRXW&rdquo;<br>
 输出: 2147483647</p>
 </blockquote>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="数学">数学</h4>
-
 <p>进制转换，将一个26进制的数转换为10进制。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">titleToNumber</span>(<span style="color:#a6e22e">columnTitle</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
@@ -320,9 +304,8 @@ AB -&gt; 28<br />
 		<span style="color:#a6e22e">res</span> = <span style="color:#a6e22e">res</span><span style="color:#f92672">*</span><span style="color:#ae81ff">26</span> <span style="color:#f92672">+</span> int(<span style="color:#a6e22e">columnTitle</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;A&#39;</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N) , N = len(columnTitle) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -372,6 +355,18 @@ AB -&gt; 28<br />
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -414,18 +409,6 @@ AB -&gt; 28<br />
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

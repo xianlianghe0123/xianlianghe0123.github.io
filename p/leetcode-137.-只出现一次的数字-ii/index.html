@@ -4,9 +4,9 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/single-number-ii/
 难度： 中等
 题目描述 给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
-示例1：  输入：nums = [2,2,3,2] 输出：3
- 示例2：  输入：nums = [0,1,0,1,0,1,99] 输出：99
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+示例1：  **输入：**nums = [2,2,3,2] **输出：**3
+ 示例2：  **输入：**nums = [0,1,0,1,0,1,99] **输出：**99
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  **进阶：**你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 解题思路 哈希 统计每个数出现的次数，然后找出其中只出现一次的数
 func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; } for k, v := range cnt { if v == 1 { return k } } return 0 } 复杂度  时间复杂度：O(N) 空间复杂度：O(N)  排序 将整个数组排序，没三个一组进行首尾比较，相同继续，不同返回。'><title>Leetcode 137. 只出现一次的数字 II</title>
 
@@ -16,9 +16,9 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/single-number-ii/
 难度： 中等
 题目描述 给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
-示例1：  输入：nums = [2,2,3,2] 输出：3
- 示例2：  输入：nums = [0,1,0,1,0,1,99] 输出：99
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+示例1：  **输入：**nums = [2,2,3,2] **输出：**3
+ 示例2：  **输入：**nums = [0,1,0,1,0,1,99] **输出：**99
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  **进阶：**你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 解题思路 哈希 统计每个数出现的次数，然后找出其中只出现一次的数
 func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; } for k, v := range cnt { if v == 1 { return k } } return 0 } 复杂度  时间复杂度：O(N) 空间复杂度：O(N)  排序 将整个数组排序，没三个一组进行首尾比较，相同继续，不同返回。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-137.-%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97-ii/'>
@@ -28,9 +28,9 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/single-number-ii/
 难度： 中等
 题目描述 给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
-示例1：  输入：nums = [2,2,3,2] 输出：3
- 示例2：  输入：nums = [0,1,0,1,0,1,99] 输出：99
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+示例1：  **输入：**nums = [2,2,3,2] **输出：**3
+ 示例2：  **输入：**nums = [0,1,0,1,0,1,99] **输出：**99
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  **进阶：**你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 解题思路 哈希 统计每个数出现的次数，然后找出其中只出现一次的数
 func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; } for k, v := range cnt { if v == 1 { return k } } return 0 } 复杂度  时间复杂度：O(N) 空间复杂度：O(N)  排序 将整个数组排序，没三个一组进行首尾比较，相同继续，不同返回。">
     </head>
@@ -226,43 +226,30 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/single-number-ii/" target="_blank">https://leetcode-cn.com/problems/single-number-ii/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/single-number-ii/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/single-number-ii/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给你一个整数数组 <code>nums</code> ，除某个元素仅出现 <strong>一次</strong> 外，其余每个元素都恰出现 <strong>三次</strong> 。请你找出并返回那个只出现了一次的元素。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [2,2,3,2]
-<strong>输出：</strong>3</p>
+<p>**输入：**nums = [2,2,3,2]
+**输出：**3</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>nums = [0,1,0,1,0,1,99]
-<strong>输出：</strong>99</p>
+<p>**输入：**nums = [0,1,0,1,0,1,99]
+**输出：**99</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
 <li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>
 <li><code>nums</code> 中，除某个元素仅出现 <strong>一次</strong> 外，其余每个元素都恰出现 <strong>三次</strong></li>
 </ul>
-
-<p><strong>进阶：</strong>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-
+<p>**进阶：**你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="哈希">哈希</h4>
-
 <p>统计每个数出现的次数，然后找出其中只出现一次的数</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">singleNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
@@ -275,16 +262,13 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：O(N)</li>
 </ul>
-
 <h4 id="排序">排序</h4>
-
 <p>将整个数组排序，没三个一组进行首尾比较，相同继续，不同返回。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">singleNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">nums</span>)
@@ -298,184 +282,181 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：O(NlogN)</li>
 <li>空间复杂度：O(1)</li>
 </ul>
-
 <h4 id="位运算">位运算</h4>
-
 <p>统计每一位的数字总和，其必然是 <code>0</code> 或者 <code>3n+1</code>，在统计过程中就可以逢<code>3</code>清零，依次求解下去即可。
 考虑用两个位 <code>a, b</code> 记录求和数据，表如下所示:</p>
-
 <table>
 <thead>
 <tr>
-<th align="center">cur</th>
-<th align="center">num</th>
-<th align="center">next</th>
+<th style="text-align:center">cur</th>
+<th style="text-align:center">num</th>
+<th style="text-align:center">next</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">00</td>
-<td align="center">0</td>
-<td align="center">00</td>
+<td style="text-align:center">00</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">00</td>
 </tr>
-
 <tr>
-<td align="center">00</td>
-<td align="center">1</td>
-<td align="center">01</td>
+<td style="text-align:center">00</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">01</td>
 </tr>
-
 <tr>
-<td align="center">01</td>
-<td align="center">0</td>
-<td align="center">01</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">01</td>
 </tr>
-
 <tr>
-<td align="center">01</td>
-<td align="center">1</td>
-<td align="center">10</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">10</td>
 </tr>
-
 <tr>
-<td align="center">10</td>
-<td align="center">0</td>
-<td align="center">10</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">10</td>
 </tr>
-
 <tr>
-<td align="center">10</td>
-<td align="center">1</td>
-<td align="center">00</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">00</td>
+</tr>
+<tr>
+<td style="text-align:center">根据上表可推导出 <code>a</code> 和 <code>b</code> 的变换表：</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
-<p>根据上表可推导出 <code>a</code> 和 <code>b</code> 的变换表：</p>
-
 <table>
 <thead>
 <tr>
-<th align="center">a</th>
-<th align="center">b</th>
-<th align="center">x</th>
-<th align="center">new_a</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">b</th>
+<th style="text-align:center">x</th>
+<th style="text-align:center">new_a</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
 </tr>
-
 <tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
 </tr>
-
 <tr>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
 </tr>
-
 <tr>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
 </tr>
-
 <tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
 </tr>
-
 <tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">得到a的转移方程：</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>new_a = a'bx + ab'x'</code></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
-<p>得到a的转移方程：
-<code>new_a = a'bx + ab'x'</code></p>
-
 <table>
 <thead>
 <tr>
-<th align="center">b</th>
-<th align="center">a</th>
-<th align="center">x</th>
-<th align="center">new_b</th>
+<th style="text-align:center">b</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">x</th>
+<th style="text-align:center">new_b</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
 </tr>
-
 <tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
 </tr>
-
 <tr>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
 </tr>
-
 <tr>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
 </tr>
-
 <tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
 </tr>
-
 <tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">得到b的转移方程：</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>new_b = a'b'x + a'bx' = a'(b'x+bx') = a'(b⊕x)</code></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
-<p>得到b的转移方程：
-<code>new_b = a'b'x + a'bx' = a'(b'x+bx') = a'(b⊕x)</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">singleNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
 	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
@@ -484,7 +465,8 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 		<span style="color:#a6e22e">a</span> = <span style="color:#a6e22e">t</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>
-}</code></pre></div>
+}
+</code></pre></div>
 </section>
 
 
@@ -526,6 +508,18 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
         <h2 class="section-title">Related contents</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
                 
                     
 <article class="">
@@ -571,18 +565,6 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

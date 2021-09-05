@@ -6,11 +6,11 @@
 题目描述 有 n 个网络节点，标记为 1 到 n 。
 给你一个列表 times，表示信号经过 有向 边的传递时间。 times[i] = (ui, vi, wi)，其中 ui 是源节点，vi 是目标节点， wi 是一个信号从源节点传递到目标节点的时间。
 现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 -1 。
-示例 1：  输入：times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
-输出：2
- 示例 2：  输入：times = [[1,2,1]], n = 2, k = 1
-输出：1
- 示例 3：  输入：times = [[1,2,1]], n = 2, k = 2'><title>Leetcode 743. 网络延迟时间</title>
+示例 1：  **输入：**times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+**输出：**2
+ 示例 2：  **输入：**times = [[1,2,1]], n = 2, k = 1
+**输出：**1
+ 示例 3：  **输入：**times = [[1,2,1]], n = 2, k = 2'><title>Leetcode 743. 网络延迟时间</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-743.-%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/'>
 
@@ -20,11 +20,11 @@
 题目描述 有 n 个网络节点，标记为 1 到 n 。
 给你一个列表 times，表示信号经过 有向 边的传递时间。 times[i] = (ui, vi, wi)，其中 ui 是源节点，vi 是目标节点， wi 是一个信号从源节点传递到目标节点的时间。
 现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 -1 。
-示例 1：  输入：times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
-输出：2
- 示例 2：  输入：times = [[1,2,1]], n = 2, k = 1
-输出：1
- 示例 3：  输入：times = [[1,2,1]], n = 2, k = 2'>
+示例 1：  **输入：**times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+**输出：**2
+ 示例 2：  **输入：**times = [[1,2,1]], n = 2, k = 1
+**输出：**1
+ 示例 3：  **输入：**times = [[1,2,1]], n = 2, k = 2'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-743.-%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Dijkstra' /><meta property='article:tag' content='heap' /><meta property='article:published_time' content='2021-08-03T20:16:01&#43;08:00'/><meta property='article:modified_time' content='2021-08-03T20:16:01&#43;08:00'/>
@@ -34,11 +34,11 @@
 题目描述 有 n 个网络节点，标记为 1 到 n 。
 给你一个列表 times，表示信号经过 有向 边的传递时间。 times[i] = (ui, vi, wi)，其中 ui 是源节点，vi 是目标节点， wi 是一个信号从源节点传递到目标节点的时间。
 现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 -1 。
-示例 1：  输入：times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
-输出：2
- 示例 2：  输入：times = [[1,2,1]], n = 2, k = 1
-输出：1
- 示例 3：  输入：times = [[1,2,1]], n = 2, k = 2">
+示例 1：  **输入：**times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+**输出：**2
+ 示例 2：  **输入：**times = [[1,2,1]], n = 2, k = 1
+**输出：**1
+ 示例 3：  **输入：**times = [[1,2,1]], n = 2, k = 2">
     </head>
     <body class="
     article-page 
@@ -232,44 +232,30 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/network-delay-time/" target="_blank">https://leetcode-cn.com/problems/network-delay-time/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/network-delay-time/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/network-delay-time/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>有 <code>n</code> 个网络节点，标记为 <code>1</code> 到 <code>n</code> 。</p>
-
 <p>给你一个列表 <code>times</code>，表示信号经过 有向 边的传递时间。 <code>times[i] = (u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>)</code>，其中 <code>u<sub>i</sub></code> 是源节点，<code>v<sub>i</sub></code> 是目标节点， <code>w<sub>i</sub></code> 是一个信号从源节点传递到目标节点的时间。</p>
-
 <p>现在，从某个节点 <code>K</code> 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 <code>-1</code> 。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
-<p><img src="/img/931_example_1.png" width="200px"></p>
-
+<img src="/img/931_example_1.png" width="200px">
 <blockquote>
-<p><strong>输入：</strong>times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2<br />
-<strong>输出：</strong>2</p>
+<p>**输入：**times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2<br>
+**输出：**2</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>times = [[1,2,1]], n = 2, k = 1<br />
-<strong>输出：</strong>1</p>
+<p>**输入：**times = [[1,2,1]], n = 2, k = 1<br>
+**输出：**1</p>
 </blockquote>
-
 <h4 id="示例-3">示例 3：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>times = [[1,2,1]], n = 2, k = 2<br />
+<p>**输入：**times = [[1,2,1]], n = 2, k = 2<br>
 <strong>输出：</strong>-1</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= k &lt;= n &lt;= 100</code></li>
 <li><code>1 &lt;= times.length &lt;= 6000</code></li>
@@ -279,11 +265,8 @@
 <li><code>0 &lt;= w<sub>i</sub> &lt;= 100</code></li>
 <li>所有 <code>(u<sub>i</sub>, <sub>v</sub>i)</code> 对都 <strong>互不相同</strong>（即，不含重复边）</li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
-<h4 id="迪杰斯特拉算法-堆">迪杰斯特拉算法 + 堆</h4>
-
+<h4 id="迪杰斯特拉算法--堆">迪杰斯特拉算法 + 堆</h4>
 <p>典型的单源最短路径问题，求解到所有结点的最短距离中的最大值，采用迪杰斯特拉算法，使用堆维护结点列表，降低算法复杂度。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">NextNode</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">To</span>     <span style="color:#66d9ef">int</span> <span style="color:#75715e">// 下一个结点
@@ -376,9 +359,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(E(n+\log\ E)), E = len(times) $</li>
 <li>空间复杂度：$ O(n+E) $</li>
@@ -460,6 +442,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -478,18 +472,6 @@
 
         <div class="article-details">
             <h2 class="article-title">剑指 Offer 22. 链表中倒数第k个节点</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
         </div>
     </a>
 </article>

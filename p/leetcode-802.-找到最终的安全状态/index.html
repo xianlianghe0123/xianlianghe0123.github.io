@@ -7,10 +7,10 @@
 对于一个起始节点，如果从该节点出发，无论每一步选择沿哪条有向边行走，最后必然在有限步内到达终点，则将该起始节点称作是 安全 的。
 返回一个由图中所有安全的起始节点组成的数组作为答案。答案数组中的元素应当按 升序 排列。
 该有向图有 n 个节点，按 0 到 n - 1 编号，其中 n 是 graph 的节点数。图以下述形式给出：graph[i] 是编号 j 节点的一个列表，满足 (i, j) 是图的一条有向边。
-示例 1：  输入：graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+示例 1：  **输入：**graph = [[1,2],[2,3],[5],[0],[5],[],[]]
 输出：[2,4,5,6]
-解释：示意图如上。
- 示例 2：  输入：graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+**解释：**示意图如上。
+ 示例 2：  **输入：**graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
 输出：[4]
  提示：  n == graph.length 1 &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= graph[i].length &amp;lt;= n graph[i] 按严格递增顺序排列。 图中可能包含自环。 图中边的数目在范围 [1, 4 * 104] 内。  解题思路 深度优先搜索 通过分析题目得知，当图无环时，所有结点均为 安全 结点；当图有环时，无法到达环的结点属于 安全 结点。'><title>Leetcode 802. 找到最终的安全状态</title>
 
@@ -23,10 +23,10 @@
 对于一个起始节点，如果从该节点出发，无论每一步选择沿哪条有向边行走，最后必然在有限步内到达终点，则将该起始节点称作是 安全 的。
 返回一个由图中所有安全的起始节点组成的数组作为答案。答案数组中的元素应当按 升序 排列。
 该有向图有 n 个节点，按 0 到 n - 1 编号，其中 n 是 graph 的节点数。图以下述形式给出：graph[i] 是编号 j 节点的一个列表，满足 (i, j) 是图的一条有向边。
-示例 1：  输入：graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+示例 1：  **输入：**graph = [[1,2],[2,3],[5],[0],[5],[],[]]
 输出：[2,4,5,6]
-解释：示意图如上。
- 示例 2：  输入：graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+**解释：**示意图如上。
+ 示例 2：  **输入：**graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
 输出：[4]
  提示：  n == graph.length 1 &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= graph[i].length &amp;lt;= n graph[i] 按严格递增顺序排列。 图中可能包含自环。 图中边的数目在范围 [1, 4 * 104] 内。  解题思路 深度优先搜索 通过分析题目得知，当图无环时，所有结点均为 安全 结点；当图有环时，无法到达环的结点属于 安全 结点。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-802.-%E6%89%BE%E5%88%B0%E6%9C%80%E7%BB%88%E7%9A%84%E5%AE%89%E5%85%A8%E7%8A%B6%E6%80%81/'>
@@ -39,10 +39,10 @@
 对于一个起始节点，如果从该节点出发，无论每一步选择沿哪条有向边行走，最后必然在有限步内到达终点，则将该起始节点称作是 安全 的。
 返回一个由图中所有安全的起始节点组成的数组作为答案。答案数组中的元素应当按 升序 排列。
 该有向图有 n 个节点，按 0 到 n - 1 编号，其中 n 是 graph 的节点数。图以下述形式给出：graph[i] 是编号 j 节点的一个列表，满足 (i, j) 是图的一条有向边。
-示例 1：  输入：graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+示例 1：  **输入：**graph = [[1,2],[2,3],[5],[0],[5],[],[]]
 输出：[2,4,5,6]
-解释：示意图如上。
- 示例 2：  输入：graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+**解释：**示意图如上。
+ 示例 2：  **输入：**graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
 输出：[4]
  提示：  n == graph.length 1 &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= graph[i].length &amp;lt;= n graph[i] 按严格递增顺序排列。 图中可能包含自环。 图中边的数目在范围 [1, 4 * 104] 内。  解题思路 深度优先搜索 通过分析题目得知，当图无环时，所有结点均为 安全 结点；当图有环时，无法到达环的结点属于 安全 结点。">
     </head>
@@ -238,40 +238,27 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/find-eventual-safe-states/" target="_blank">https://leetcode-cn.com/problems/find-eventual-safe-states/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/find-eventual-safe-states/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/find-eventual-safe-states/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>在有向图中，以某个节点为起始节点，从该点出发，每一步沿着图中的一条有向边行走。如果到达的节点是终点（即它没有连出的有向边），则停止。</p>
-
 <p>对于一个起始节点，如果从该节点出发，<strong>无论每一步选择沿哪条有向边行走</strong>，最后必然在有限步内到达终点，则将该起始节点称作是 <strong>安全</strong> 的。</p>
-
 <p>返回一个由图中所有安全的起始节点组成的数组作为答案。答案数组中的元素应当按 <strong>升序</strong> 排列。</p>
-
 <p>该有向图有 <code>n</code> 个节点，按 <code>0</code> 到 <code>n - 1</code> 编号，其中 <code>n</code> 是 <code>graph</code> 的节点数。图以下述形式给出：<code>graph[i]</code> 是编号 <code>j</code> 节点的一个列表，满足 <code>(i, j)</code> 是图的一条有向边。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
-<p><img src="/img/802.picture1.png" width="600px"></p>
-
+<img src="/img/802.picture1.png" width="600px">
 <blockquote>
-<p><strong>输入：</strong>graph = [[1,2],[2,3],[5],[0],[5],[],[]]<br />
-<strong>输出：</strong>[2,4,5,6]<br />
-<strong>解释：</strong>示意图如上。</p>
+<p>**输入：**graph = [[1,2],[2,3],[5],[0],[5],[],[]]<br>
+<strong>输出：</strong>[2,4,5,6]<br>
+**解释：**示意图如上。</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]<br />
+<p>**输入：**graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]<br>
 <strong>输出：</strong>[4]</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>n == graph.length</code></li>
 <li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
@@ -280,13 +267,9 @@
 <li>图中可能包含自环。</li>
 <li>图中边的数目在范围 <code>[1, 4 * 10<sup>4</sup>]</code> 内。</li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="深度优先搜索">深度优先搜索</h4>
-
 <p>通过分析题目得知，当图无环时，所有结点均为 <strong>安全</strong> 结点；当图有环时，无法到达环的结点属于 <strong>安全</strong> 结点。</p>
-
 <p>通过一次深度优先搜索找到环上的结点，找出能到达环结点的所有结点，剩余结点即为 <strong>安全</strong> 结点。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">eventualSafeNodes</span>(<span style="color:#a6e22e">graph</span> [][]<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
 	<span style="color:#66d9ef">const</span> (
@@ -338,9 +321,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(n+E), E = size(edges) $</li>
 <li>空间复杂度：$ O(n) $</li>

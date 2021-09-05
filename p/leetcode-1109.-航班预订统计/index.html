@@ -6,15 +6,13 @@
 题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
 请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
-示例 1：  输入：bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+示例 1：  **输入：**bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
 输出：[10,55,45,25,25]
 解释：
-航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&amp;emsp;3&amp;emsp;4&amp;emsp;5
-预订记录 1 ：10&amp;ensp;10
-预订记录 2 ： &amp;ensp;&amp;emsp;20&amp;ensp;20
-预订记录 3 ： &amp;ensp;&amp;emsp;25&amp;ensp;25&amp;ensp;25&amp;ensp;25
-总座位数：&amp;emsp;10&amp;ensp;55&amp;ensp;45&amp;ensp;25&amp;ensp;25
-因此，answer = [10,55,45,25,25]'><title>Leetcode 1109. 航班预订统计</title>
+航班编号 1 2 3 4 5
+预订记录 1 ：10 10
+预订记录 2 ： 20 20
+预订记录 3 ： 25 25 25 25'><title>Leetcode 1109. 航班预订统计</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/'>
 
@@ -24,15 +22,13 @@
 题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
 请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
-示例 1：  输入：bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+示例 1：  **输入：**bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
 输出：[10,55,45,25,25]
 解释：
-航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&amp;emsp;3&amp;emsp;4&amp;emsp;5
-预订记录 1 ：10&amp;ensp;10
-预订记录 2 ： &amp;ensp;&amp;emsp;20&amp;ensp;20
-预订记录 3 ： &amp;ensp;&amp;emsp;25&amp;ensp;25&amp;ensp;25&amp;ensp;25
-总座位数：&amp;emsp;10&amp;ensp;55&amp;ensp;45&amp;ensp;25&amp;ensp;25
-因此，answer = [10,55,45,25,25]'>
+航班编号 1 2 3 4 5
+预订记录 1 ：10 10
+预订记录 2 ： 20 20
+预订记录 3 ： 25 25 25 25'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1109.-%E8%88%AA%E7%8F%AD%E9%A2%84%E8%AE%A2%E7%BB%9F%E8%AE%A1/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-31T10:37:40&#43;08:00'/><meta property='article:modified_time' content='2021-08-31T10:37:40&#43;08:00'/>
@@ -42,15 +38,13 @@
 题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
 请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
-示例 1：  输入：bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+示例 1：  **输入：**bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
 输出：[10,55,45,25,25]
 解释：
-航班编号&amp;emsp;&amp;emsp;1&amp;emsp;2&amp;emsp;3&amp;emsp;4&amp;emsp;5
-预订记录 1 ：10&amp;ensp;10
-预订记录 2 ： &amp;ensp;&amp;emsp;20&amp;ensp;20
-预订记录 3 ： &amp;ensp;&amp;emsp;25&amp;ensp;25&amp;ensp;25&amp;ensp;25
-总座位数：&amp;emsp;10&amp;ensp;55&amp;ensp;45&amp;ensp;25&amp;ensp;25
-因此，answer = [10,55,45,25,25]">
+航班编号 1 2 3 4 5
+预订记录 1 ：10 10
+预订记录 2 ： 20 20
+预订记录 3 ： 25 25 25 25">
     </head>
     <body class="
     article-page 
@@ -244,48 +238,37 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/corporate-flight-bookings/" target="_blank">https://leetcode-cn.com/problems/corporate-flight-bookings/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/corporate-flight-bookings/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/corporate-flight-bookings/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>这里有 <code>n</code> 个航班，它们分别从 <code>1</code> 到 <code>n</code> 进行编号。</p>
-
 <p>有一份航班预订表 <code>bookings</code> ，表中第 <code>i</code> 条预订记录 <code>bookings[i] = [first<sub>i</sub>, last<sub>i</sub>, seats<sub>i</sub>]</code> 意味着在从 <code>first<sub>i</sub></code> 到 <code>last<sub>i</sub></code> （包含 <code>first<sub>i</sub></code> 和 <code>last<sub>i</sub></code> ）的 每个航班 上预订了 <code>seats<sub>i</sub></code> 个座位。</p>
-
 <p>请你返回一个长度为 <code>n</code> 的数组 <code>answer</code>，其中 <code>answer[i]</code> 是航班 <code>i</code> 上预订的座位总数。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5<br />
-<strong>输出：</strong>[10,55,45,25,25]<br />
-<strong>解释：</strong><br />
-航班编号&emsp;&emsp;1&emsp;2&emsp;3&emsp;4&emsp;5<br />
-预订记录 1 ：10&ensp;10<br />
-预订记录 2 ：  &ensp;&emsp;20&ensp;20<br />
-预订记录 3 ：  &ensp;&emsp;25&ensp;25&ensp;25&ensp;25<br />
-总座位数：&emsp;10&ensp;55&ensp;45&ensp;25&ensp;25<br />
+<p>**输入：**bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5<br>
+<strong>输出：</strong>[10,55,45,25,25]<br>
+<strong>解释：</strong><br>
+航班编号  1 2 3 4 5<br>
+预订记录 1 ：10 10<br>
+预订记录 2 ：    20 20<br>
+预订记录 3 ：    25 25 25 25<br>
+总座位数： 10 55 45 25 25<br>
 因此，answer = [10,55,45,25,25]</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>bookings = [[1,2,10],[2,2,15]], n = 2<br />
-<strong>输出：</strong>[10,25]<br />
-<strong>解释：</strong><br />
-航班编号&emsp;&emsp;1&emsp;2<br />
-预订记录 1 ：10&ensp;10<br />
-预订记录 2 ：  &ensp;&emsp;15<br />
-总座位数：&emsp;10&ensp;25<br />
+<p>**输入：**bookings = [[1,2,10],[2,2,15]], n = 2<br>
+<strong>输出：</strong>[10,25]<br>
+<strong>解释：</strong><br>
+航班编号  1 2<br>
+预订记录 1 ：10 10<br>
+预订记录 2 ：    15<br>
+总座位数： 10 25<br>
 因此，answer = [10,25]</p>
 </blockquote>
-
 <h4 id="提示">提示：</h4>
-
 <ul>
 <li><code>1 &lt;= n &lt;= 2 * 10<sup>4</sup></code></li>
 <li><code>1 &lt;= bookings.length &lt;= 2 * 10<sup>4</sup></code></li>
@@ -293,11 +276,8 @@
 <li><code>1 &lt;= first<sub>i</sub> &lt;= last<sub>i</sub> &lt;= n</code></li>
 <li><code>1 &lt;= seats<sub>i</sub> &lt;= 10<sup>4</sup></code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="暴力求解">暴力求解</h4>
-
 <p>遍历 <code>bookings</code> 列表，将 <code>first</code> 到 <code>last</code> 的 <code>seats</code> 累加到对应的航班中。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
@@ -307,18 +287,14 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(Mn), M = len(bookings) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
-
 <h4 id="查分数组">查分数组</h4>
-
 <p>使用差分数组，<code>ans[i]</code> 保存与 <code>ans[i-1]</code> 的差值，每次即可进行区间操作：</p>
-
 <p>对 <code>first<sub>i</sub></code> 加上 <code>seats<sub>i</sub></code>，然后对 <code>last<sub>i</sub>+1</code> 减去 <code>seats<sub>i</sub></code>，表示对区间 <code>[first<sub>i</sub>, last<sub>i</sub>]</code> 加上<code>seats<sub>i</sub></code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
@@ -332,9 +308,8 @@
 		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(M+n), M = len(bookings) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -384,6 +359,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -426,18 +413,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1588.-%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1588. 所有奇数长度子数组的和</h2>
         </div>
     </a>
 </article>

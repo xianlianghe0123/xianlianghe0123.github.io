@@ -6,9 +6,9 @@
 题目描述 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
 子数组 定义为原数组中的一个连续子序列。
 请你返回 arr 中 所有奇数长度子数组的和 。
-示例 1：  输入：arr = [1,4,2,5,3]
-输出：58
-解释：所有奇数长度子数组和它们的和为：
+示例 1：  **输入：**arr = [1,4,2,5,3]
+**输出：**58
+**解释：**所有奇数长度子数组和它们的和为：
 [1] = 1
 [4] = 4
 [2] = 2
@@ -28,9 +28,9 @@
 题目描述 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
 子数组 定义为原数组中的一个连续子序列。
 请你返回 arr 中 所有奇数长度子数组的和 。
-示例 1：  输入：arr = [1,4,2,5,3]
-输出：58
-解释：所有奇数长度子数组和它们的和为：
+示例 1：  **输入：**arr = [1,4,2,5,3]
+**输出：**58
+**解释：**所有奇数长度子数组和它们的和为：
 [1] = 1
 [4] = 4
 [2] = 2
@@ -50,9 +50,9 @@
 题目描述 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
 子数组 定义为原数组中的一个连续子序列。
 请你返回 arr 中 所有奇数长度子数组的和 。
-示例 1：  输入：arr = [1,4,2,5,3]
-输出：58
-解释：所有奇数长度子数组和它们的和为：
+示例 1：  **输入：**arr = [1,4,2,5,3]
+**输出：**58
+**解释：**所有奇数长度子数组和它们的和为：
 [1] = 1
 [4] = 4
 [2] = 2
@@ -256,63 +256,47 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays/" target="_blank">https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-
 <h3 id="题目描述">题目描述</h3>
-
 <p>给你一个正整数数组 <code>arr</code> ，请你计算所有可能的奇数长度子数组的和。</p>
-
 <p><strong>子数组</strong> 定义为原数组中的一个连续子序列。</p>
-
 <p>请你返回 <code>arr</code> 中 <strong>所有奇数长度子数组的和</strong> 。</p>
-
 <h4 id="示例-1">示例 1：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>arr = [1,4,2,5,3]<br />
-<strong>输出：</strong>58<br />
-<strong>解释：</strong>所有奇数长度子数组和它们的和为：<br />
-[1] = 1<br />
-[4] = 4<br />
-[2] = 2<br />
-[5] = 5<br />
-[3] = 3<br />
-[1,4,2] = 7<br />
-[4,2,5] = 11<br />
-[2,5,3] = 10<br />
-[1,4,2,5,3] = 15<br />
+<p>**输入：**arr = [1,4,2,5,3]<br>
+**输出：**58<br>
+**解释：**所有奇数长度子数组和它们的和为：<br>
+[1] = 1<br>
+[4] = 4<br>
+[2] = 2<br>
+[5] = 5<br>
+[3] = 3<br>
+[1,4,2] = 7<br>
+[4,2,5] = 11<br>
+[2,5,3] = 10<br>
+[1,4,2,5,3] = 15<br>
 我们将所有值求和得到 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 = 58</p>
 </blockquote>
-
 <h4 id="示例-2">示例 2：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>arr = [1,2]<br />
-<strong>输出：</strong>3<br />
-<strong>解释：</strong>总共只有 2 个长度为奇数的子数组，[1] 和 [2]。它们的和为 3 。</p>
+<p>**输入：**arr = [1,2]<br>
+**输出：**3<br>
+**解释：**总共只有 2 个长度为奇数的子数组，[1] 和 [2]。它们的和为 3 。</p>
 </blockquote>
-
 <h4 id="示例-3">示例 3：</h4>
-
 <blockquote>
-<p><strong>输入：</strong>arr = [10,11,12]<br />
-<strong>输出：</strong>66</p>
+<p>**输入：**arr = [10,11,12]<br>
+**输出：**66</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= arr.length &lt;= 100</code></li>
 <li><code>1 &lt;= arr[i] &lt;= 1000</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="暴力求解">暴力求解</h4>
-
 <p>枚举出所有奇数子数组的 <code>[i, j]</code>，求得子数组的和，累加进结果中。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOddLengthSubarrays</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
@@ -326,16 +310,13 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^3), N = len(arr) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
-
 <h4 id="前缀和">前缀和</h4>
-
 <p>依次枚举出所有子数组的开始下标 <code>i</code>，对于每个 <code>i</code> ，遍历其后元素，求得子数组的和，每当子数组长度为奇数时，将该数组的和累加进结果中。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOddLengthSubarrays</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
@@ -349,9 +330,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-}</code></pre></div>
-<h5 id="复杂度-1">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2), N = len(arr) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -401,6 +381,18 @@
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -443,18 +435,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>

@@ -17,13 +17,13 @@
 难度： 简单
 题目描述 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。
 请返回 nums 的动态和。
-示例 1：  输入：nums = [1,2,3,4]
+示例 1：  **输入：**nums = [1,2,3,4]
 输出：[1,3,6,10]
-解释：动态和计算过程为 [1, 1+2, 1+2+3, 1+2+3+4] 。
- 示例 2：  输入：nums = [1,1,1,1,1]
+**解释：**动态和计算过程为 [1, 1+2, 1+2+3, 1+2+3+4] 。
+ 示例 2：  **输入：**nums = [1,1,1,1,1]
 输出：[1,2,3,4,5]
-解释：动态和计算过程为 [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1] 。
- 示例 3：  输入：nums = [3,1,2,10,1]
+**解释：**动态和计算过程为 [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1] 。
+ 示例 3：  **输入：**nums = [3,1,2,10,1]
 输出：[3,4,6,16,17]
  提示：  1 &amp;lt;= nums.length &amp;lt;= 1000 -106 &amp;lt;= nums[i] &amp;lt;= 106  解题思路 模拟 按照题目描述，依次求解动态和的每一项
 func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i &amp;lt; len(nums); i++ { for j := 0; j &amp;lt;= i; j++ { sum[i] += nums[j] } } return sum } 复杂度  时间复杂度：$ O(N^2), N = len(nums) $ 空间复杂度：$ O(1) $  动态规划 使用 sum[i] 记录第 i 项动态和，则可以得出：sum[i] = sum[i-1] + nums[i]，依次向后求解。</description>
@@ -39,11 +39,11 @@ func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i 
 难度： 中等
 题目描述 给你一个大小为 m x n 的网格和一个球。球的起始坐标为 [startRow, startColumn] 。你可以将球移到在四个方向上相邻的单元格内（可以穿过网格边界到达网格之外）。你 最多 可以移动 maxMove 次球。
 给你五个整数 m、n、maxMove、startRow 以及 startColumn ，找出并返回可以将球移出边界的路径数量。因为答案可能非常大，返回对 109 + 7 取余 后的结果。
-示例 1：  输入：m = 2, n = 2, maxMove = 2, startRow = 0, startColumn = 0
-输出：6
- 示例 2：  输入：m = 1, n = 3, maxMove = 3, startRow = 0, startColumn = 1
-输出：12
- 提示：  1 &amp;lt;= m, n &amp;lt;= 50 0 &amp;lt;= maxMove &amp;lt;= 50 0 &amp;lt;= startRow &amp;lt; m 0 &amp;lt;= startColumn &amp;lt; n  解题思路 动态规划 使用 dp[move][row][col] 记录移动 move 次后，球位于第 row 行 col 列的方案数量。由于球只能来自周围的单元格，易得状态转移方程：</description>
+示例 1： &amp;lt;img src=&amp;quot;/img/576.out_of_boundary_paths_1.png&amp;quot;, width=&amp;ldquo;500px&amp;rdquo;&amp;gt;
+ **输入：**m = 2, n = 2, maxMove = 2, startRow = 0, startColumn = 0
+**输出：**6
+ 示例 2： &amp;lt;img src=&amp;quot;/img/576.out_of_boundary_paths_2.png&amp;quot;, width=&amp;ldquo;500px&amp;rdquo;&amp;gt;
+ **输入：**m = 1, n = 3, maxMove = 3, startRow = 0, startColumn = 1</description>
     </item>
     
     <item>
@@ -56,12 +56,12 @@ func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i 
 难度： 中等
 题目描述 给你一个字符串 s ，找出其中最长的回文子序列，并返回该序列的长度。
 子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。
-示例 1：  输入：s = &amp;ldquo;bbbab&amp;rdquo;
-输出：4
-解释：一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
- 示例 2：  输入：s = &amp;ldquo;cbbd&amp;rdquo;
-输出：2
-解释：一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
+示例 1：  **输入：**s = &amp;ldquo;bbbab&amp;rdquo;
+**输出：**4
+**解释：**一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
+ 示例 2：  **输入：**s = &amp;ldquo;cbbd&amp;rdquo;
+**输出：**2
+**解释：**一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
  注意：  1 &amp;lt;= s.length &amp;lt;= 1000 s 仅由小写英文字母组成  解题思路 动态规划 该题可以转化为寻找原字符串 s 和倒序字符串 s&#39; 的最长公共子序列问题。使用动态规划求解，dp[i][j] 表示以下标 i, j 结尾的前缀字串最长公共子序列的长度，状态转移方程如下：
  当 s[i] == s&#39;[j]，dp[i][j] = dp[i-1][j-1] + 1 当 s[i] == s&#39;[j]，dp[i][j] = max(dp[i-1][j], dp[i][j-1]  每次状态转移时仅依赖当前行和上一行，故可以使用滚动数组降低空间复杂度。</description>
     </item>
@@ -76,12 +76,13 @@ func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i 
 难度： 简单
 题目描述 泰波那契序列 Tn 定义如下： T0 = 0, T1 = 1, T2 = 1, 且在 n &amp;gt;= 0 的条件下 Tn+3 = Tn + Tn+1 + Tn+2
 给你整数 n，请返回第 n 个泰波那契数 Tn 的值。
-示例 1：  输入：n = 4
-输出：4
+示例 1：  **输入：**n = 4
+**输出：**4
 解释：
 T_3 = 0 + 1 + 1 = 2
 T_4 = 1 + 1 + 2 = 4
- 示例 2：  输入：n = 25 输出：1389537</description>
+ 示例 2：  **输入：**n = 25 **输出：**1389537
+ 提示：  0 &amp;lt;= n &amp;lt;= 37 答案保证是一个 32 位整数，即 answer &amp;lt;= 231 - 1。  解题思路 动态规划 初始 t[0] = 0, t[1] = 1, t[2] = 1，依次向后递推计算，直到 t[n]。</description>
     </item>
     
     <item>
@@ -90,7 +91,7 @@ T_4 = 1 + 1 + 2 = 4
       <pubDate>Sat, 17 Jul 2021 13:21:52 +0800</pubDate>
       
       <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-42.-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/</guid>
-      <description> 链接： https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/
+      <description>链接： https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/
 难度： 简单
 题目描述 输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。
 要求时间复杂度为$O(n)$。
@@ -112,9 +113,9 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 难度： 简单
 题目描述 小朋友 A 在和 ta 的小伙伴们玩传信息游戏，游戏规则如下：
  有 n 名玩家，所有玩家编号分别为 0 ～ n-1，其中小朋友 A 的编号为 0 每个玩家都有固定的若干个可传信息的其他玩家（也可能没有）。传信息的关系是单向的（比如 A 可以向 B 传信息，但 B 不能向 A 传信息）。 每轮信息必须需要传递给另一个人，且信息可重复经过同一个人  给定总玩家数 n，以及按 [玩家编号,对应可传递玩家编号] 关系组成的二维数组 relation。返回信息从小 A (编号 0 ) 经过 k 轮传递到编号为 n-1 的小伙伴处的方案数；若不能到达，返回 0。
-示例1：  输入：n = 5, relation = [[0,2],[2,1],[3,4],[2,3],[1,4],[2,0],[0,4]], k = 3
-输出：3
-解释：信息从小 A 编号 0 处开始，经 3 轮传递，到达编号 4。共有 3 种方案，分别是 0-&amp;gt;2-&amp;gt;0-&amp;gt;4， 0-&amp;gt;2-&amp;gt;1-&amp;gt;4， 0-&amp;gt;2-&amp;gt;3-&amp;gt;4。</description>
+示例1：  **输入：**n = 5, relation = [[0,2],[2,1],[3,4],[2,3],[1,4],[2,0],[0,4]], k = 3
+**输出：**3
+**解释：**信息从小 A 编号 0 处开始，经 3 轮传递，到达编号 4。共有 3 种方案，分别是 0-&amp;gt;2-&amp;gt;0-&amp;gt;4， 0-&amp;gt;2-&amp;gt;1-&amp;gt;4， 0-&amp;gt;2-&amp;gt;3-&amp;gt;4。</description>
     </item>
     
     <item>
@@ -125,17 +126,17 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
       <guid>https://xianlianghe0123.github.io/p/leetcode-279.-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/</guid>
       <description>链接： https://leetcode-cn.com/problems/perfect-squares/
 难度： 中等
-题目描述 给定正整数 *n*，找到若干个完全平方数（比如 1, 4, 9, 16, ...）使得它们的和等于 *n*。你需要让组成和的完全平方数的个数最少。
+题目描述 给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, ...）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。
 给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。
 完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。
-示例 1：  输入：n = 12
-输出：3
-解释：12 = 4 + 4 + 4
- 示例 2：  输入：n = 13
-输出：2
-解释：13 = 4 + 9
- 注意： 你可以假设： - 1 &amp;lt;= n &amp;lt;= 104
-解题思路 动态规划 dp[i] 表示组成数字 i 的最少完全平方数，易得到状态转移方程：</description>
+示例 1：  **输入：**n = 12
+**输出：**3
+**解释：**12 = 4 + 4 + 4
+ 示例 2：  **输入：**n = 13
+**输出：**2
+**解释：**13 = 4 + 9
+ 注意： 你可以假设：
+ 1 &amp;lt;= n &amp;lt;= 104  解题思路 动态规划 dp[i] 表示组成数字 i 的最少完全平方数，易得到状态转移方程：</description>
     </item>
     
     <item>
@@ -159,7 +160,8 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 解释: 只用面额2的硬币不能凑成总金额3。
  示例 3：  输入: amount = 10, coins = [10]
 输出: 1
- 注意： 你可以假设： - 0 &amp;lt;= amount (总金额) &amp;lt;= 5000 - 1 &amp;lt;= coin (硬币面额) &amp;lt;= 5000 - 硬币种类不超过 500 种 - 结果符合 32 位符号整数</description>
+ 注意： 你可以假设：
+ 0 &amp;lt;= amount (总金额) &amp;lt;= 5000 1 &amp;lt;= coin (硬币面额) &amp;lt;= 5000 硬币种类不超过 500 种 结果符合 32 位符号整数  解题思路 动态规划 dp[i][j] 表示前 i 种面额的硬币，组成总金额 j 的方案数，则可以得到状态转移方程：</description>
     </item>
     
     <item>
@@ -173,8 +175,8 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 题目描述 有一堆石头，用整数数组 stones 表示。其中 stones[i] 表示第 i 块石头的重量。
 每一回合，从中选出 任意两块石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x &amp;lt;= y。那么粉碎的可能结果如下：
  如果 x == y，那么两块石头都会被完全粉碎； 如果 x != y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x。  最后，最多只会剩下一块 石头。返回此石头 最小的可能重量 。如果没有石头剩下，就返回 0。
-示例 1：  输入：stones = [2,7,4,1,8,1]
-输出：1
+示例 1：  **输入：**stones = [2,7,4,1,8,1]
+**输出：**1
 解释：
 组合 2 和 4，得到 2，所以数组转化为 [2,7,1,8,1]，
 组合 7 和 8，得到 1，所以数组转化为 [2,1,1,1]，
@@ -193,9 +195,9 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 题目描述 给你一个整数数组 nums 和一个整数 target 。
 向数组中的每个整数前添加 &#39;+&#39; 或 &#39;-&#39; ，然后串联起所有整数，可以构造一个 表达式 ：
  例如，nums = [2, 1] ，可以在 2 之前添加 &#39;+&#39; ，在 1 之前添加 &#39;-&#39; ，然后串联起来得到表达式 &amp;quot;+2-1&amp;quot; 。  返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
-示例 1：  输入：nums = [1,1,1,1,1], target = 3
-输出：5
-解释：一共有 5 种方法让最终目标和为 3 。
+示例 1：  **输入：**nums = [1,1,1,1,1], target = 3
+**输出：**5
+**解释：**一共有 5 种方法让最终目标和为 3 。
 -1 + 1 + 1 + 1 + 1 = 3
 +1 - 1 + 1 + 1 + 1 = 3</description>
     </item>
@@ -211,9 +213,9 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 题目描述 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
 请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。
 如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 。
-示例 1：  输入：strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
-输出：4
-解释：最多有 5 个 0 和 3 个 1 的最大子集是 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} ，因此答案是 4 。
+示例 1：  **输入：**strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
+**输出：**4
+**解释：**最多有 5 个 0 和 3 个 1 的最大子集是 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} ，因此答案是 4 。
 其他满足题意但较小的子集包括 {&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;} 和 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} 。{&amp;ldquo;111001&amp;rdquo;} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。</description>
     </item>
     
@@ -229,14 +231,14 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 现在，可以绘制一些连接两个数字 nums1[i] 和 nums2[j] 的直线，这些直线需要同时满足满足：
  nums1[i] == nums2[j] 且绘制的直线不与任何其他连线（非水平线）相交。 请注意，连线即使在端点也不能相交：每个数字只能属于一条连线。
 以这种方法绘制线条，并返回可以绘制的最大连线数。
-示例1：  输入：nums1 = [1,4,2], nums2 = [1,2,4]
-输出：2
-解释：可以画出两条不交叉的线，如上图所示。
+示例1：  **输入：**nums1 = [1,4,2], nums2 = [1,2,4]
+**输出：**2
+**解释：**可以画出两条不交叉的线，如上图所示。
 但无法画出第三条不相交的直线，因为从 nums1[1]=4 到 nums2[2]=4 的直线将与从 nums1[2]=2 到 nums2[1]=2 的直线相交。
- 示例2：  输入：nums1 = [2,5,1,2,5], nums2 = [10,5,2,1,5,2]
-输出：3
- 示例3:  输入：nums1 = [1,3,7,1,7,5], nums2 = [1,9,2,5,1]
-输出：2
+ 示例2：  **输入：**nums1 = [2,5,1,2,5], nums2 = [10,5,2,1,5,2]
+**输出：**3
+ 示例3:  **输入：**nums1 = [1,3,7,1,7,5], nums2 = [1,9,2,5,1]
+**输出：**2
  提示：  1 &amp;lt;= nums1.length &amp;lt;= 500 1 &amp;lt;= nums2.</description>
     </item>
     
@@ -252,19 +254,19 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 每一步操作中，你可以将指针向左或向右移动 1 步，或者停在原地（指针不能被移动到数组范围外）。
 给你两个整数 steps 和 arrLen ，请你计算并返回：在恰好执行 steps 次操作以后，指针仍然指向索引 0 处的方案数。
 由于答案可能会很大，请返回方案数 模 10^9 + 7 后的结果。
-示例1：  输入：steps = 3, arrLen = 2
-输出：4
-解释：3 步后，总共有 4 种不同的方法可以停在索引 0 处。
+示例1：  **输入：**steps = 3, arrLen = 2
+**输出：**4
+**解释：**3 步后，总共有 4 种不同的方法可以停在索引 0 处。
 向右，向左，不动
 不动，向右，向左
 向右，不动，向左
 不动，不动，不动
- 示例2：  输入：steps = 2, arrLen = 4
-输出：2
-解释：2 步后，总共有 2 种不同的方法可以停在索引 0 处。
+ 示例2：  **输入：**steps = 2, arrLen = 4
+**输出：**2
+**解释：**2 步后，总共有 2 种不同的方法可以停在索引 0 处。
 向右，向左
 不动，不动
- 示例2：  输入：steps = 4, arrLen = 2</description>
+ 示例2：  **输入：**steps = 4, arrLen = 2</description>
     </item>
     
     <item>
@@ -278,14 +280,15 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 题目描述 给你一个整数数组 nums ，你可以对它进行一些操作。
 每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。
 开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。
-示例1：  输入：nums = [3,4,2]
-输出：6
-解释：删除 4 获得 4 个点数，因此 3 也被删除。
+示例1：  **输入：**nums = [3,4,2]
+**输出：**6
+**解释：**删除 4 获得 4 个点数，因此 3 也被删除。
 之后，删除 2 获得 2 个点数。总共获得 6 个点数。
- 示例2：  输入：nums = [2,2,3,3,3,4]
-输出：9
-解释：删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
-之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。</description>
+ 示例2：  **输入：**nums = [2,2,3,3,3,4]
+**输出：**9
+**解释：**删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
+之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。
+总共获得 9 个点数。</description>
     </item>
     
     <item>
@@ -300,10 +303,10 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 给你石子的位置列表 stones（用单元格序号 升序 表示）， 请判定青蛙能否成功过河（即能否在最后一步跳至最后一块石子上）。
 开始时， 青蛙默认已站在第一块石子上，并可以假定它第一步只能跳跃一个单位（即只能从单元格 1 跳至单元格 2 ）。
 如果青蛙上一步跳跃了 k 个单位，那么它接下来的跳跃距离只能选择为 k - 1、k 或 k + 1 个单位。 另请注意，青蛙只能向前方（终点的方向）跳跃。
-示例1：  输入：stones = [0,1,3,5,6,8,12,17]
-输出：true
-解释：青蛙可以成功过河，按照如下方案跳跃：跳 1 个单位到第 2 块石子, 然后跳 2 个单位到第 3 块石子, 接着 跳 2 个单位到第 4 块石子, 然后跳 3 个单位到第 6 块石子, 跳 4 个单位到第 7 块石子, 最后，跳 5 个单位到第 8 个石子（即最后一块石子）。
- 示例2：  输入：stones = [0,1,2,3,4,8,9,11]</description>
+示例1：  **输入：**stones = [0,1,3,5,6,8,12,17]
+**输出：**true
+**解释：**青蛙可以成功过河，按照如下方案跳跃：跳 1 个单位到第 2 块石子, 然后跳 2 个单位到第 3 块石子, 接着 跳 2 个单位到第 4 块石子, 然后跳 3 个单位到第 6 块石子, 跳 4 个单位到第 7 块石子, 最后，跳 5 个单位到第 8 个石子（即最后一块石子）。
+ 示例2：  **输入：**stones = [0,1,2,3,4,8,9,11]</description>
     </item>
     
     <item>
@@ -312,12 +315,11 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
       <pubDate>Sat, 24 Apr 2021 21:50:28 +0800</pubDate>
       
       <guid>https://xianlianghe0123.github.io/p/leetcode-377.-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</guid>
-      <description>链接： https://leetcode-cn.com/problems/combination-sum-iv/
-难度： 中等
+      <description>链接： https://leetcode-cn.com/problems/combination-sum-iv/ 难度： 中等
 题目描述 给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素组合的个数。
 题目数据保证答案符合 32 位整数范围。
-示例1：  输入：nums = [1,2,3], target = 4
-输出：7
+示例1：  **输入：**nums = [1,2,3], target = 4
+**输出：**7
 解释：
 所有可能的组合为：
 (1, 1, 1, 1)
@@ -328,8 +330,8 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
 (2, 2)
 (3, 1)
 请注意，顺序不同的序列被视作不同的组合。
- 示例2：  输入：nums = [9], target = 3
-输出：0
+ 示例2：  **输入：**nums = [9], target = 3
+**输出：**0
  提示：  1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 1000 nums 中的所有元素 互不相同 1 &amp;lt;= target &amp;lt;= 1000  解题思路 动态规划 用 dp[i] 表示当 i 作为 target 时，排列方案的数量。当 dp[i] 不为 0 时，不妨假设排列的做后一位数字为 num，则 i-num 的排列数为 dp[i-num] ，容易得知状态转移方程：</description>
     </item>
     
@@ -342,12 +344,13 @@ func maxSubArray(nums []int) int { if len(nums) == 0 { return 0 } dp := nums[0] 
       <description>链接： https://leetcode-cn.com/problems/decode-ways/
 难度： 中等
 题目描述 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
-&amp;#39;A&amp;#39; -&amp;gt; 1 &amp;#39;B&amp;#39; -&amp;gt; 2 ... &amp;#39;Z&amp;#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
+&#39;A&#39; -&amp;gt; 1 &#39;B&#39; -&amp;gt; 2 ... &#39;Z&#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
  &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  输入：s = &amp;ldquo;12&amp;rdquo;
-输出：2</description>
+示例1：  **输入：**s = &amp;ldquo;12&amp;rdquo;
+**输出：**2
+**解释：**它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。</description>
     </item>
     
   </channel>

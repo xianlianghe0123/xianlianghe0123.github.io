@@ -6,8 +6,8 @@
 题目描述 给你一个正整数数组 arr 。请你对 arr 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：
  arr 中 第一个 元素必须为 1 。 任意相邻两个元素的差的绝对值 小于等于 1 ，也就是说，对于任意的 1 &amp;lt;= i &amp;lt; arr.length （数组下标从 0 开始），都满足 abs(arr[i] - arr[i - 1]) &amp;lt;= 1 。abs(x) 为 x 的绝对值。  你可以执行以下 2 种操作任意次：
  减小 arr 中任意元素的值，使其变为一个 更小的正整数 。 重新排列 arr 中的元素，你可以以任意顺序重新排列。  请你返回执行以上操作后，在满足前文所述的条件下，arr 中可能的 最大值 。
-示例 1：  输入：arr = [2,2,1,2,1]
-输出：2
+示例 1：  **输入：**arr = [2,2,1,2,1]
+**输出：**2
 解释：
 我们可以重新排列 arr 得到 [1,2,2,2,1] ，该数组满足所有条件。'><title>Leetcode 1846. 减小和重新排列数组后的最大元素</title>
 
@@ -19,8 +19,8 @@
 题目描述 给你一个正整数数组 arr 。请你对 arr 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：
  arr 中 第一个 元素必须为 1 。 任意相邻两个元素的差的绝对值 小于等于 1 ，也就是说，对于任意的 1 &amp;lt;= i &amp;lt; arr.length （数组下标从 0 开始），都满足 abs(arr[i] - arr[i - 1]) &amp;lt;= 1 。abs(x) 为 x 的绝对值。  你可以执行以下 2 种操作任意次：
  减小 arr 中任意元素的值，使其变为一个 更小的正整数 。 重新排列 arr 中的元素，你可以以任意顺序重新排列。  请你返回执行以上操作后，在满足前文所述的条件下，arr 中可能的 最大值 。
-示例 1：  输入：arr = [2,2,1,2,1]
-输出：2
+示例 1：  **输入：**arr = [2,2,1,2,1]
+**输出：**2
 解释：
 我们可以重新排列 arr 得到 [1,2,2,2,1] ，该数组满足所有条件。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1846.-%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/'>
@@ -32,8 +32,8 @@
 题目描述 给你一个正整数数组 arr 。请你对 arr 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：
  arr 中 第一个 元素必须为 1 。 任意相邻两个元素的差的绝对值 小于等于 1 ，也就是说，对于任意的 1 &amp;lt;= i &amp;lt; arr.length （数组下标从 0 开始），都满足 abs(arr[i] - arr[i - 1]) &amp;lt;= 1 。abs(x) 为 x 的绝对值。  你可以执行以下 2 种操作任意次：
  减小 arr 中任意元素的值，使其变为一个 更小的正整数 。 重新排列 arr 中的元素，你可以以任意顺序重新排列。  请你返回执行以上操作后，在满足前文所述的条件下，arr 中可能的 最大值 。
-示例 1：  输入：arr = [2,2,1,2,1]
-输出：2
+示例 1：  **输入：**arr = [2,2,1,2,1]
+**输出：**2
 解释：
 我们可以重新排列 arr 得到 [1,2,2,2,1] ，该数组满足所有条件。">
     </head>
@@ -229,72 +229,56 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/" target="_blank">https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>给你一个正整数数组 <code>arr</code> 。请你对 <code>arr</code> 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：</p>
-
 <ul>
 <li><code>arr</code> 中 <strong>第一个</strong> 元素必须为 <code>1</code> 。</li>
 <li>任意相邻两个元素的差的绝对值 <strong>小于等于</strong> <code>1</code> ，也就是说，对于任意的 <code>1 &lt;= i &lt; arr.length</code> （<strong>数组下标从 0 开始</strong>），都满足 <code>abs(arr[i] - arr[i - 1]) &lt;= 1</code> 。<code>abs(x)</code> 为 <code>x</code> 的绝对值。</li>
 </ul>
-
 <p>你可以执行以下 2 种操作任意次：</p>
-
 <ul>
 <li><strong>减小</strong> <code>arr</code> 中任意元素的值，使其变为一个 <strong>更小的正整数</strong> 。</li>
 <li><strong>重新排列</strong> <code>arr</code> 中的元素，你可以以任意顺序重新排列。</li>
 </ul>
-
 <p>请你返回执行以上操作后，在满足前文所述的条件下，<code>arr</code> 中可能的 <strong>最大值</strong> 。</p>
-
 <h5 id="示例-1">示例 1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>arr = [2,2,1,2,1]<br />
-<strong>输出：</strong>2<br />
-<strong>解释：</strong><br />
-我们可以重新排列 arr 得到 [1,2,2,2,1] ，该数组满足所有条件。<br />
+<p>**输入：**arr = [2,2,1,2,1]<br>
+**输出：**2<br>
+<strong>解释：</strong><br>
+我们可以重新排列 arr 得到 [1,2,2,2,1] ，该数组满足所有条件。<br>
 arr 中最大元素为 2 。</p>
 </blockquote>
-
 <h5 id="示例-2">示例 2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>arr = [100,1,1000]<br />
-<strong>输出：</strong>3<br />
-<strong>解释：</strong><br />
-一个可行的方案如下：<br />
-1. 重新排列 arr 得到 [1,100,1000] 。<br />
-2. 将第二个元素减小为 2 。<br />
-3. 将第三个元素减小为 3 。<br />
-现在 arr = [1,2,3] ，满足所有条件。<br />
-arr 中最大元素为 3 。</p>
+<p>**输入：**arr = [100,1,1000]<br>
+**输出：**3<br>
+<strong>解释：</strong><br>
+一个可行的方案如下：</p>
+<ol>
+<li>重新排列 arr 得到 [1,100,1000] 。</li>
+<li>将第二个元素减小为 2 。</li>
+<li>将第三个元素减小为 3 。<br>
+现在 arr = [1,2,3] ，满足所有条件。<br>
+arr 中最大元素为 3 。</li>
+</ol>
 </blockquote>
-
 <h5 id="示例-3">示例 3：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>arr = [1,2,3,4,5]
-<strong>输出：</strong>5
-<strong>解释：</strong>数组已经满足所有条件，最大元素为 5</p>
+<p>**输入：**arr = [1,2,3,4,5]
+**输出：**5
+**解释：**数组已经满足所有条件，最大元素为 5</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= arr.length &lt;= 10<sup>5</sup></code></li>
 <li><code>1 &lt;= arr[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="排序">排序</h4>
-
 <p>先将数组排序，并令<code>arr[0] = 1</code>，然后逐一地调整后续元素，其值为上个元素值加一。当遇到小于等于前一个值的元素时，从当前元素重新开始调整，直至遍历结束，返回尾部元素。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximumElementAfterDecrementingAndRearranging</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">arr</span>)
@@ -305,9 +289,8 @@ arr 中最大元素为 3 。</p>
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>[len(<span style="color:#a6e22e">arr</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NlogN), N = len(arr) $</li>
 <li>空间复杂度：$ O(logN) $</li>

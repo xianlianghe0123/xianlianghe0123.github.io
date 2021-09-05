@@ -4,12 +4,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/decode-ways/
 难度： 中等
 题目描述 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
-&amp;#39;A&amp;#39; -&amp;gt; 1 &amp;#39;B&amp;#39; -&amp;gt; 2 ... &amp;#39;Z&amp;#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
+&#39;A&#39; -&amp;gt; 1 &#39;B&#39; -&amp;gt; 2 ... &#39;Z&#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
  &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  输入：s = &amp;ldquo;12&amp;rdquo;
-输出：2'><title>Leetcode 91. 解码方式</title>
+示例1：  **输入：**s = &amp;ldquo;12&amp;rdquo;
+**输出：**2
+**解释：**它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。'><title>Leetcode 91. 解码方式</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/'>
 
@@ -17,12 +18,13 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/decode-ways/
 难度： 中等
 题目描述 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
-&amp;#39;A&amp;#39; -&amp;gt; 1 &amp;#39;B&amp;#39; -&amp;gt; 2 ... &amp;#39;Z&amp;#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
+&#39;A&#39; -&amp;gt; 1 &#39;B&#39; -&amp;gt; 2 ... &#39;Z&#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
  &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  输入：s = &amp;ldquo;12&amp;rdquo;
-输出：2'>
+示例1：  **输入：**s = &amp;ldquo;12&amp;rdquo;
+**输出：**2
+**解释：**它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dp' /><meta property='article:published_time' content='2021-04-21T10:35:45&#43;08:00'/><meta property='article:modified_time' content='2021-04-21T10:35:45&#43;08:00'/>
@@ -30,12 +32,13 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/decode-ways/
 难度： 中等
 题目描述 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
-&amp;#39;A&amp;#39; -&amp;gt; 1 &amp;#39;B&amp;#39; -&amp;gt; 2 ... &amp;#39;Z&amp;#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
+&#39;A&#39; -&amp;gt; 1 &#39;B&#39; -&amp;gt; 2 ... &#39;Z&#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
  &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  输入：s = &amp;ldquo;12&amp;rdquo;
-输出：2">
+示例1：  **输入：**s = &amp;ldquo;12&amp;rdquo;
+**输出：**2
+**解释：**它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。">
     </head>
     <body class="
     article-page 
@@ -229,83 +232,62 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/decode-ways/" target="_blank">https://leetcode-cn.com/problems/decode-ways/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/decode-ways/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/decode-ways/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：</p>
-<pre tabindex="0"><code>&#39;A&#39; -&gt; 1
-&#39;B&#39; -&gt; 2
+<pre><code>'A' -&gt; 1
+'B' -&gt; 2
 ...
-&#39;Z&#39; -&gt; 26</code></pre>
-<p>要 <strong>解码</strong> 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，<code>&quot;11106&quot;</code> 可以映射为：</p>
-
+'Z' -&gt; 26
+</code></pre><p>要 <strong>解码</strong> 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，<code>&quot;11106&quot;</code> 可以映射为：</p>
 <ul>
 <li><code>&quot;AAJF&quot;</code> ，将消息分组为 <code>(1 1 10 6)</code></li>
 <li><code>&quot;KJF&quot;</code> ，将消息分组为 <code>(11 10 6)</code></li>
 </ul>
-
-<p>注意，消息不能分组为 <code>(1 11 06)</code> ，因为 <code>&quot;06&quot;</code> 不能映射为 <code>&quot;F&quot;</code> ，这是由于 <code>&quot;6&quot;</code> 和 <code>&quot;06&quot;</code> 在映射中并不等价。<br />
-给你一个只含数字的 <strong>非空</strong> 字符串 <code>s</code> ，请计算并返回 <strong>解码</strong> 方法的 <strong>总数</strong> 。<br />
+<p>注意，消息不能分组为 <code>(1 11 06)</code> ，因为 <code>&quot;06&quot;</code> 不能映射为 <code>&quot;F&quot;</code> ，这是由于 <code>&quot;6&quot;</code> 和 <code>&quot;06&quot;</code> 在映射中并不等价。<br>
+给你一个只含数字的 <strong>非空</strong> 字符串 <code>s</code> ，请计算并返回 <strong>解码</strong> 方法的 <strong>总数</strong> 。<br>
 题目数据保证答案肯定是一个 <strong>32 位</strong> 的整数。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>s = &ldquo;12&rdquo;<br />
-<strong>输出：</strong>2<br />
-<strong>解释：</strong>它可以解码为 &ldquo;AB&rdquo;（1 2）或者 &ldquo;L&rdquo;（12）。</p>
+<p>**输入：**s = &ldquo;12&rdquo;<br>
+**输出：**2<br>
+**解释：**它可以解码为 &ldquo;AB&rdquo;（1 2）或者 &ldquo;L&rdquo;（12）。</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>s = &ldquo;226&rdquo;<br />
-<strong>输出：</strong>3<br />
-<strong>解释：</strong>它可以解码为 &ldquo;BZ&rdquo; (2 26), &ldquo;VF&rdquo; (22 6), 或者 &ldquo;BBF&rdquo; (2 2 6) 。</p>
+<p>**输入：**s = &ldquo;226&rdquo;<br>
+**输出：**3<br>
+**解释：**它可以解码为 &ldquo;BZ&rdquo; (2 26), &ldquo;VF&rdquo; (22 6), 或者 &ldquo;BBF&rdquo; (2 2 6) 。</p>
 </blockquote>
-
 <h5 id="示例3">示例3：</h5>
-
 <blockquote>
-<p><strong>输入：</strong>s = &ldquo;0&rdquo;<br />
-<strong>输出：</strong>0<br />
-<strong>解释：</strong>没有字符映射到以 0 开头的数字。<br />
-含有 0 的有效映射是 &lsquo;J&rsquo; -&gt; &ldquo;10&rdquo; 和 &rsquo;T&rsquo;-&gt; &ldquo;20&rdquo; 。<br />
+<p>**输入：**s = &ldquo;0&rdquo;<br>
+**输出：**0<br>
+**解释：**没有字符映射到以 0 开头的数字。<br>
+含有 0 的有效映射是 &lsquo;J&rsquo; -&gt; &ldquo;10&rdquo; 和 &lsquo;T&rsquo;-&gt; &ldquo;20&rdquo; 。<br>
 由于没有字符，因此没有有效的方法对此进行解码，因为所有数字都需要映射。</p>
 </blockquote>
-
 <h5 id="示例4">示例4:</h5>
-
 <blockquote>
-<p><strong>输入：</strong>s = &ldquo;06&rdquo;<br />
-<strong>输出：</strong>0<br />
-<strong>解释：</strong>&ldquo;06&rdquo; 不能映射到 &ldquo;F&rdquo; ，因为字符串含有前导 0（&rdquo;6&rdquo; 和 &ldquo;06&rdquo; 在映射中并不等价）。</p>
+<p>**输入：**s = &ldquo;06&rdquo;<br>
+**输出：**0<br>
+<strong>解释：</strong>&ldquo;06&rdquo; 不能映射到 &ldquo;F&rdquo; ，因为字符串含有前导 0（&ldquo;6&rdquo; 和 &ldquo;06&rdquo; 在映射中并不等价）。</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= s.length &lt;= 100</code></li>
 <li><code>s</code> 只包含数字，并且可能包含前导零。</li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="动态规划">动态规划</h4>
-
 <p>使用数组 <code>dp</code> 保存解码的总数， <code>dp[i]</code> 表示截止到长度为 <code>i</code> 的字串可以解码的总数，转移时有两种情况需要考虑：</p>
-
 <ul>
 <li>第一种情况，对 <code>s[i]</code> 进行解码，要求 <code>s[i] != 0</code></li>
 <li>第二种情况，对 <code>s[i-1]s[i]</code> 解码, 要求 <code>&quot;00&quot; &lt; s[i-1]s[i] &lt;= &quot;26</code></li>
 </ul>
-
 <p>然后就可以推导出状态转移方程：</p>
-
 <ul>
 <li>初始时，<code>dp[0] = 0</code>, 表示空字符串有一种解法 - 空串</li>
 <li>仅满足情况一， <code>dp[i+1] = dp[i]</code></li>
@@ -313,7 +295,6 @@
 <li>同时满足情况一和二， <code>dp[i+1] = dp[i] + dp[i-1]</code></li>
 <li>情况一和二均不满足，说明该字符串不能解码</li>
 </ul>
-
 <p>求解到 <code>s</code> 尾，即可求解得所有解码总数 <code>dp[len(s)]</code>。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numDecodings</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
@@ -338,9 +319,8 @@
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[len(<span style="color:#a6e22e">s</span>)]
-}</code></pre></div>
-<h5 id="优化">优化</h5>
-
+}
+</code></pre></div><h5 id="优化">优化</h5>
 <p>每次迭代只涉及到三个变量，故可以用三个变量代替数组，进一步降低空间复杂度</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numDecodings</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}
@@ -366,9 +346,8 @@
 		<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>]
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>]
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：优化前：O(N)，优化后O(1)</li>

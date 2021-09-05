@@ -18,12 +18,12 @@
 题目描述 超级丑数 是一个正整数，并满足其所有质因数都出现在质数数组 primes 中。
 给你一个整数 n 和一个整数数组 primes ，返回第 n 个 超级丑数 。
 题目数据保证第 n 个 超级丑数 在 32-bit 带符号整数范围内。
-示例 1：  输入：n = 12, primes = [2,7,13,19]
-输出：32
-解释：给定长度为 4 的质数数组 primes = [2,7,13,19]，前 12 个超级丑数序列为：[1,2,4,7,8,13,14,16,19,26,28,32] 。
- 示例 2：  输入：n = 1, primes = [2,3,5]
-输出：1
-解释：1 不含质因数，因此它的所有质因数都在质数数组 primes = [2,3,5] 中。
+示例 1：  **输入：**n = 12, primes = [2,7,13,19]
+**输出：**32
+**解释：**给定长度为 4 的质数数组 primes = [2,7,13,19]，前 12 个超级丑数序列为：[1,2,4,7,8,13,14,16,19,26,28,32] 。
+ 示例 2：  **输入：**n = 1, primes = [2,3,5]
+**输出：**1
+**解释：**1 不含质因数，因此它的所有质因数都在质数数组 primes = [2,3,5] 中。
  注意：  1 &amp;lt;= n &amp;lt;= 106 1 &amp;lt;= primes.</description>
     </item>
     
@@ -39,14 +39,14 @@
 对位于 (row, col) 的每个结点而言，其左右子结点分别位于 (row + 1, col - 1) 和 (row + 1, col + 1) 。树的根结点位于 (0, 0) 。
 二叉树的 垂序遍历 从最左边的列开始直到最右边的列结束，按列索引每一列上的所有结点，形成一个按出现位置从上到下排序的有序列表。如果同行同列上有多个结点，则按结点的值从小到大进行排序。
 返回二叉树的 垂序遍历 序列。
-示例 1：  输入：root = [3,9,20,null,null,15,7]
+示例 1：  **输入：**root = [3,9,20,null,null,15,7]
 输出：[[9],[3,15],[20],[7]]
 解释：
 列 -1 ：只有结点 9 在此列中。
 列 0 ：只有结点 3 和 15 在此列中，按从上到下顺序。
 列 1 ：只有结点 20 在此列中。
 列 2 ：只有结点 7 在此列中。
- 示例 2：  输入：root = [1,2,3,4,5,6,7]</description>
+ 示例 2：  **输入：**root = [1,2,3,4,5,6,7]</description>
     </item>
     
     <item>
@@ -61,11 +61,11 @@
 给你一个二维整数数组 adjacentPairs ，大小为 n - 1 ，其中每个 adjacentPairs[i] = [ui, vi] 表示元素 ui 和 vi 在 nums 中相邻。
 题目数据保证所有由元素 nums[i] 和 nums[i+1] 组成的相邻元素对都存在于 adjacentPairs 中，存在形式可能是 [nums[i], nums[i+1]] ，也可能是 [nums[i+1], nums[i]] 。这些相邻元素对可以 按任意顺序 出现。
 返回 原始数组 nums 。如果存在多种解答，返回 其中任意一个 即可。
-示例 1：  输入：adjacentPairs = [[2,1],[3,4],[3,2]]
+示例 1：  **输入：**adjacentPairs = [[2,1],[3,4],[3,2]]
 输出：[1,2,3,4]
-解释：数组的所有相邻元素对都在 adjacentPairs 中。
+**解释：**数组的所有相邻元素对都在 adjacentPairs 中。
 特别要注意的是，adjacentPairs[i] 只表示两个元素相邻，并不保证其 左-右 顺序。
- 示例 2：  输入：adjacentPairs = [[4,-2],[1,4],[-3,1]]</description>
+ 示例 2：  **输入：**adjacentPairs = [[4,-2],[1,4],[-3,1]]</description>
     </item>
     
     <item>
@@ -79,10 +79,10 @@
 题目描述 给你一个二维整数数组 ranges 和两个整数 left 和 right 。每个 ranges[i] = [starti, endi] 表示一个从 starti 到 endi 的 闭区间 。
 如果闭区间 [left, right] 内每个整数都被 ranges 中 至少一个 区间覆盖，那么请你返回 true ，否则返回 false 。
 已知区间 ranges[i] = [starti, endi] ，如果整数 x 满足 starti &amp;lt;= x &amp;lt;= endi ，那么我们称整数 x 被覆盖了。
-示例 1：  输入：ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
-输出：true
-解释：2 到 5 的每个整数都被覆盖了：
-- 2 被第一个区间覆盖。</description>
+示例 1：  **输入：**ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
+**输出：**true
+**解释：**2 到 5 的每个整数都被覆盖了：
+ 2 被第一个区间覆盖。 3 和 4 被第二个区间覆盖。 5 被第三个区间覆盖   示例 2：  **输入：**ranges = [[1,10],[10,20]], left = 21, right = 21</description>
     </item>
     
     <item>
@@ -99,8 +99,9 @@
 返回复制链表的头节点。
 用一个由 n 个节点组成的链表来表示输入/输出中的链表。每个节点用一个 [val, random_index] 表示：
  val：一个表示 Node.val 的整数。 random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如果不指向任何节点，则为 null 。  你的代码 只 接受原链表的头节点 head 作为传入参数。
-示例 1：  输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
-输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]</description>
+示例 1：  **输入：**head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
+ 示例 2：  **输入：**head = [[1,1],[2,1]]</description>
     </item>
     
     <item>
@@ -114,10 +115,10 @@
 题目描述 输入两个链表，找出它们的第一个公共节点。
 如下面的两个链表：
 在节点 c1 开始相交。
-示例 1：  输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
-输出：Reference of the node with value = 8
-输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
- 示例 2：  输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
+示例 1：  **输入：**intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+**输出：**Reference of the node with value = 8
+**输入解释：**相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
+ 示例 2：  **输入：**intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
     </item>
     
     <item>
@@ -129,7 +130,7 @@
       <description>链接： https://leetcode-cn.com/problems/group-anagrams-lcci/
 难度： 中等
 题目描述 编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。
-注意：本题相对原题稍作修改
+**注意：**本题相对原题稍作修改
 示例：  输入: [&amp;ldquo;eat&amp;rdquo;, &amp;ldquo;tea&amp;rdquo;, &amp;ldquo;tan&amp;rdquo;, &amp;ldquo;ate&amp;rdquo;, &amp;ldquo;nat&amp;rdquo;, &amp;ldquo;bat&amp;rdquo;],
 输出:
 [
@@ -151,7 +152,7 @@ func groupAnagrams(strs []string) [][]string { cnt := func(s string) (cnt [26]in
 难度： 中等
 题目描述 创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
  set(string key, string value, int timestamp)  存储键 key、值 value，以及给定的时间戳 timestamp。
- get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。   示例1：  输入：inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
+get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。    示例1：  **输入：**inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
 输出：[null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
 解释：
 TimeMap kv;
@@ -170,11 +171,11 @@ kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
 示例 1：  输入：[1,2,5,9,5,9,5,5,5]
-输出：5
+**输出：**5
  示例 2：  输入：[3,2]
 输出：-1
  示例 3：  输入：[2,2,1,1,1,2,2]
-输出：2
+**输出：**2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
 func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
     </item>
@@ -189,12 +190,12 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 难度： 中等
 题目描述 给你一个二元数组 nums ，和一个整数 goal ，请你统计并返回有多少个和为 goal 的 非空 子数组。
 子数组 是数组的一段连续部分。
-示例 1：  输入：nums = [1,0,1,0,1], goal = 2
-输出：4
+示例 1：  **输入：**nums = [1,0,1,0,1], goal = 2
+**输出：**4
 解释：
 有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]
- 示例 2：  输入：nums = [0,0,0,0,0], goal = 0
-输出：15
+ 示例 2：  **输入：**nums = [0,0,0,0,0], goal = 0
+**输出：**15
  提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 nums[i] 不是 0 就是 1 0 &amp;lt;= goal &amp;lt;= nums.length  解题思路 哈希 假设满足条件的子数组下标为 [i, j) ，则以 i 和 j 为结尾的两个前缀数组的前缀和记作 sum[i]、sum[j] ，有 goal = sum[j] - sum[i]。</description>
     </item>
     

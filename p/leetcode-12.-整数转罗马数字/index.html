@@ -217,90 +217,66 @@
 </header>
 
     <section class="article-content">
-    
-
-<p><strong>链接：</strong> <a href="https://leetcode-cn.com/problems/integer-to-roman/" target="_blank">https://leetcode-cn.com/problems/integer-to-roman/</a><br />
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/integer-to-roman/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/integer-to-roman/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-
 <h4 id="题目描述">题目描述</h4>
-
 <p>罗马数字包含以下七种字符： <code>I</code>， <code>V</code>， <code>X</code>， <code>L</code>，<code>C</code>，<code>D</code> 和 <code>M</code>。</p>
-<pre tabindex="0"><code>字符          数值  
+<pre><code>字符          数值  
 I             1  
 V             5  
 X             10  
 L             50  
 C             100  
 D             500  
-M             1000</code></pre>
-<p>例如， 罗马数字 2 写做 <code>II</code> ，即为两个并列的 1。12 写做 <code>XII</code> ，即为 <code>X</code> + <code>II</code> 。 27 写做  <code>XXVII</code>, 即为 <code>XX</code> + <code>V</code> + <code>II</code> 。</p>
-
+M             1000
+</code></pre><p>例如， 罗马数字 2 写做 <code>II</code> ，即为两个并列的 1。12 写做 <code>XII</code> ，即为 <code>X</code> + <code>II</code> 。 27 写做  <code>XXVII</code>, 即为 <code>XX</code> + <code>V</code> + <code>II</code> 。</p>
 <p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 <code>IIII</code>，而是 <code>IV</code>。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 <code>IX</code>。这个特殊的规则只适用于以下六种情况：</p>
-
 <ul>
 <li><code>I</code> 可以放在 <code>V</code> (5) 和 <code>X</code> (10) 的左边，来表示 4 和 9。</li>
 <li><code>X</code> 可以放在 <code>L</code> (50) 和 <code>C</code> (100) 的左边，来表示 40 和 90。 </li>
 <li><code>C</code> 可以放在 <code>D</code> (500) 和 <code>M</code> (1000) 的左边，来表示 400 和 900。</li>
 </ul>
-
 <p>给你一个整数，将其转为罗马数字。</p>
-
 <h5 id="示例1">示例1：</h5>
-
 <blockquote>
-<p><strong>输入:</strong> num = 3<br />
+<p><strong>输入:</strong> num = 3<br>
 <strong>输出:</strong> &ldquo;III&rdquo;</p>
 </blockquote>
-
 <h5 id="示例2">示例2：</h5>
-
 <blockquote>
-<p><strong>输入:</strong> num = 4<br />
+<p><strong>输入:</strong> num = 4<br>
 <strong>输出:</strong> &ldquo;IV&rdquo;</p>
 </blockquote>
-
 <h5 id="示例3">示例3：</h5>
-
 <blockquote>
-<p><strong>输入:</strong> num = 9<br />
+<p><strong>输入:</strong> num = 9<br>
 <strong>输出:</strong> &ldquo;IX&rdquo;</p>
 </blockquote>
-
 <h5 id="示例4">示例4:</h5>
-
 <blockquote>
-<p><strong>输入:</strong> num = 58<br />
-<strong>输出:</strong> &ldquo;LVIII&rdquo;<br />
+<p><strong>输入:</strong> num = 58<br>
+<strong>输出:</strong> &ldquo;LVIII&rdquo;<br>
 <strong>解释:</strong> L = 50, V = 5, III = 3.</p>
 </blockquote>
-
 <h5 id="示例5">示例5:</h5>
-
 <blockquote>
-<p><strong>输入:</strong> num = 1994<br />
-<strong>输出:</strong> &ldquo;MCMXCIV&rdquo;<br />
+<p><strong>输入:</strong> num = 1994<br>
+<strong>输出:</strong> &ldquo;MCMXCIV&rdquo;<br>
 <strong>解释:</strong> M = 1000, CM = 900, XC = 90, IV = 4.</p>
 </blockquote>
-
 <h5 id="提示">提示：</h5>
-
 <ul>
 <li><code>1 &lt;= num &lt;= 3999</code></li>
 </ul>
-
 <h3 id="解题思路">解题思路</h3>
-
 <h4 id="模拟">模拟</h4>
-
 <p>使用数组 <code>dp</code> 保存解码的总数， <code>dp[i]</code> 表示截止到长度为 <code>i</code> 的字串可以解码的总数，转移时有两种情况需要考虑：</p>
-
 <ul>
 <li>第一种情况，对 <code>s[i]</code> 进行解码，要求 <code>s[i] != 0</code></li>
 <li>第二种情况，对 <code>s[i-1]s[i]</code> 解码, 要求 <code>&quot;00&quot; &lt; s[i-1]s[i] &lt;= &quot;26</code></li>
 </ul>
-
 <p>然后就可以推导出状态转移方程：</p>
-
 <ul>
 <li>初始时，<code>dp[0] = 0</code>, 表示空字符串有一种解法 - 空串</li>
 <li>仅满足情况一， <code>dp[i+1] = dp[i]</code></li>
@@ -308,7 +284,6 @@ M             1000</code></pre>
 <li>同时满足情况一和二， <code>dp[i+1] = dp[i] + dp[i-1]</code></li>
 <li>情况一和二均不满足，说明该字符串不能解码</li>
 </ul>
-
 <p>求解到 <code>s</code> 尾，即可求解得所有解码总数 <code>dp[len(s)]</code>。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numDecodings</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
@@ -333,9 +308,8 @@ M             1000</code></pre>
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[len(<span style="color:#a6e22e">s</span>)]
-}</code></pre></div>
-<h5 id="优化">优化</h5>
-
+}
+</code></pre></div><h5 id="优化">优化</h5>
 <p>每次迭代只涉及到三个变量，故可以用三个变量代替数组，进一步降低空间复杂度</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numDecodings</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
 	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}
@@ -361,9 +335,8 @@ M             1000</code></pre>
 		<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>]
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>]
-}</code></pre></div>
-<h5 id="复杂度">复杂度</h5>
-
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：优化前：O(N)，优化后O(1)</li>
@@ -413,6 +386,18 @@ M             1000</code></pre>
                 
                     
 <article class="">
+    <a href="/p/leetcode-470.-%E7%94%A8-rand7-%E5%AE%9E%E7%8E%B0-rand10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 470. 用 Rand7() 实现 Rand10()</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/%E5%89%91%E6%8C%87-offer-10-i.-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
         
         
@@ -455,18 +440,6 @@ M             1000</code></pre>
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 1109. 航班预订统计</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-528.-%E6%8C%89%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 528. 按权重随机选择</h2>
         </div>
     </a>
 </article>
