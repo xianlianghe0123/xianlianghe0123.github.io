@@ -8,11 +8,11 @@
  如果这一组长度为 1 ，则将字符追加到 s 中。 否则，需要向 s 追加字符，后跟这一组的长度。  压缩后得到的字符串 s 不应该直接返回 ，需要转储到字符数组 chars 中。需要注意的是，如果组长度为 10 或 10 以上，则在 chars 数组中会被拆分为多个字符。
 请在 修改完输入数组后 ，返回该数组的新长度。
 你必须设计并实现一个只使用常量额外空间的算法来解决此问题。
-示例 1：  **输入：**chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
-**输出：**返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
+示例 1：  输入： chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
+输出： 返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
 解释：
 &amp;ldquo;aa&amp;rdquo; 被 &amp;ldquo;a2&amp;rdquo; 替代。&amp;ldquo;bb&amp;rdquo; 被 &amp;ldquo;b2&amp;rdquo; 替代。&amp;ldquo;ccc&amp;rdquo; 被 &amp;ldquo;c3&amp;rdquo; 替代。
- 示例 2：  **输入：**chars = [&amp;ldquo;a&amp;rdquo;]'><title>Leetcode 443. 压缩字符串</title>
+ 示例 2：  输入： chars = [&amp;ldquo;a&amp;rdquo;]'><title>Leetcode 443. 压缩字符串</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/'>
 
@@ -24,11 +24,11 @@
  如果这一组长度为 1 ，则将字符追加到 s 中。 否则，需要向 s 追加字符，后跟这一组的长度。  压缩后得到的字符串 s 不应该直接返回 ，需要转储到字符数组 chars 中。需要注意的是，如果组长度为 10 或 10 以上，则在 chars 数组中会被拆分为多个字符。
 请在 修改完输入数组后 ，返回该数组的新长度。
 你必须设计并实现一个只使用常量额外空间的算法来解决此问题。
-示例 1：  **输入：**chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
-**输出：**返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
+示例 1：  输入： chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
+输出： 返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
 解释：
 &amp;ldquo;aa&amp;rdquo; 被 &amp;ldquo;a2&amp;rdquo; 替代。&amp;ldquo;bb&amp;rdquo; 被 &amp;ldquo;b2&amp;rdquo; 替代。&amp;ldquo;ccc&amp;rdquo; 被 &amp;ldquo;c3&amp;rdquo; 替代。
- 示例 2：  **输入：**chars = [&amp;ldquo;a&amp;rdquo;]'>
+ 示例 2：  输入： chars = [&amp;ldquo;a&amp;rdquo;]'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-443.-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-21T14:52:12&#43;08:00'/><meta property='article:modified_time' content='2021-08-21T14:52:12&#43;08:00'/>
@@ -40,11 +40,11 @@
  如果这一组长度为 1 ，则将字符追加到 s 中。 否则，需要向 s 追加字符，后跟这一组的长度。  压缩后得到的字符串 s 不应该直接返回 ，需要转储到字符数组 chars 中。需要注意的是，如果组长度为 10 或 10 以上，则在 chars 数组中会被拆分为多个字符。
 请在 修改完输入数组后 ，返回该数组的新长度。
 你必须设计并实现一个只使用常量额外空间的算法来解决此问题。
-示例 1：  **输入：**chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
-**输出：**返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
+示例 1：  输入： chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
+输出： 返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
 解释：
 &amp;ldquo;aa&amp;rdquo; 被 &amp;ldquo;a2&amp;rdquo; 替代。&amp;ldquo;bb&amp;rdquo; 被 &amp;ldquo;b2&amp;rdquo; 替代。&amp;ldquo;ccc&amp;rdquo; 被 &amp;ldquo;c3&amp;rdquo; 替代。
- 示例 2：  **输入：**chars = [&amp;ldquo;a&amp;rdquo;]">
+ 示例 2：  输入： chars = [&amp;ldquo;a&amp;rdquo;]">
     </head>
     <body class="
     article-page 
@@ -253,22 +253,22 @@
 <p>你必须设计并实现一个只使用常量额外空间的算法来解决此问题。</p>
 <h4 id="示例-1">示例 1：</h4>
 <blockquote>
-<p>**输入：**chars = [&ldquo;a&rdquo;,&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;c&rdquo;,&ldquo;c&rdquo;,&ldquo;c&rdquo;]<br>
-**输出：**返回 6 ，输入数组的前 6 个字符应该是：[&ldquo;a&rdquo;,&ldquo;2&rdquo;,&ldquo;b&rdquo;,&ldquo;2&rdquo;,&ldquo;c&rdquo;,&ldquo;3&rdquo;]<br>
+<p><strong>输入：</strong> chars = [&ldquo;a&rdquo;,&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;c&rdquo;,&ldquo;c&rdquo;,&ldquo;c&rdquo;]<br>
+<strong>输出：</strong> 返回 6 ，输入数组的前 6 个字符应该是：[&ldquo;a&rdquo;,&ldquo;2&rdquo;,&ldquo;b&rdquo;,&ldquo;2&rdquo;,&ldquo;c&rdquo;,&ldquo;3&rdquo;]<br>
 <strong>解释：</strong><br>
 &ldquo;aa&rdquo; 被 &ldquo;a2&rdquo; 替代。&ldquo;bb&rdquo; 被 &ldquo;b2&rdquo; 替代。&ldquo;ccc&rdquo; 被 &ldquo;c3&rdquo; 替代。</p>
 </blockquote>
 <h4 id="示例-2">示例 2：</h4>
 <blockquote>
-<p>**输入：**chars = [&ldquo;a&rdquo;]<br>
-**输出：**返回 1 ，输入数组的前 1 个字符应该是：[&ldquo;a&rdquo;]<br>
+<p><strong>输入：</strong> chars = [&ldquo;a&rdquo;]<br>
+<strong>输出：</strong> 返回 1 ，输入数组的前 1 个字符应该是：[&ldquo;a&rdquo;]<br>
 <strong>解释：</strong><br>
 没有任何字符串被替代。</p>
 </blockquote>
 <h4 id="示例-3">示例 3：</h4>
 <blockquote>
-<p>**输入：**chars = [&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;]<br>
-**输出：**返回 4 ，输入数组的前 4 个字符应该是：[&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;1&rdquo;,&ldquo;2&rdquo;]。<br>
+<p><strong>输入：</strong> chars = [&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;,&ldquo;b&rdquo;]<br>
+<strong>输出：</strong> 返回 4 ，输入数组的前 4 个字符应该是：[&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;1&rdquo;,&ldquo;2&rdquo;]。<br>
 <strong>解释：</strong><br>
 由于字符 &ldquo;a&rdquo; 不重复，所以不会被压缩。&ldquo;bbbbbbbbbbbb&rdquo; 被 “b12” 替代。<br>
 注意每个数字在数组中都有它自己的位置。</p>
@@ -357,60 +357,60 @@
                 
                     
 <article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 04. 二维数组中的查找</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 03. 数组中重复的数字</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/leetcode-162.-%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 162. 寻找峰值</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-524.-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 524. 通过删除字母匹配到字典里最长单词</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-447.-%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 447. 回旋镖的数量</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-678.-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 678. 有效的括号字符串</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1894.-%E6%89%BE%E5%88%B0%E9%9C%80%E8%A6%81%E8%A1%A5%E5%85%85%E7%B2%89%E7%AC%94%E7%9A%84%E5%AD%A6%E7%94%9F%E7%BC%96%E5%8F%B7/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1894. 找到需要补充粉笔的学生编号</h2>
         </div>
     </a>
 </article>

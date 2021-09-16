@@ -8,9 +8,8 @@
  &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  **输入：**s = &amp;ldquo;12&amp;rdquo;
-**输出：**2
-**解释：**它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。'><title>Leetcode 91. 解码方式</title>
+示例1：  输入： s = &amp;ldquo;12&amp;rdquo;
+输出： 2'><title>Leetcode 91. 解码方式</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/'>
 
@@ -22,9 +21,8 @@
  &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  **输入：**s = &amp;ldquo;12&amp;rdquo;
-**输出：**2
-**解释：**它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。'>
+示例1：  输入： s = &amp;ldquo;12&amp;rdquo;
+输出： 2'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dp' /><meta property='article:published_time' content='2021-04-21T10:35:45&#43;08:00'/><meta property='article:modified_time' content='2021-04-21T10:35:45&#43;08:00'/>
@@ -36,9 +34,8 @@
  &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  **输入：**s = &amp;ldquo;12&amp;rdquo;
-**输出：**2
-**解释：**它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。">
+示例1：  输入： s = &amp;ldquo;12&amp;rdquo;
+输出： 2">
     </head>
     <body class="
     article-page 
@@ -251,29 +248,29 @@
 题目数据保证答案肯定是一个 <strong>32 位</strong> 的整数。</p>
 <h5 id="示例1">示例1：</h5>
 <blockquote>
-<p>**输入：**s = &ldquo;12&rdquo;<br>
-**输出：**2<br>
-**解释：**它可以解码为 &ldquo;AB&rdquo;（1 2）或者 &ldquo;L&rdquo;（12）。</p>
+<p><strong>输入：</strong> s = &ldquo;12&rdquo;<br>
+<strong>输出：</strong> 2<br>
+<strong>解释：</strong> 它可以解码为 &ldquo;AB&rdquo;（1 2）或者 &ldquo;L&rdquo;（12）。</p>
 </blockquote>
 <h5 id="示例2">示例2：</h5>
 <blockquote>
-<p>**输入：**s = &ldquo;226&rdquo;<br>
-**输出：**3<br>
-**解释：**它可以解码为 &ldquo;BZ&rdquo; (2 26), &ldquo;VF&rdquo; (22 6), 或者 &ldquo;BBF&rdquo; (2 2 6) 。</p>
+<p><strong>输入：</strong> s = &ldquo;226&rdquo;<br>
+<strong>输出：</strong> 3<br>
+<strong>解释：</strong> 它可以解码为 &ldquo;BZ&rdquo; (2 26), &ldquo;VF&rdquo; (22 6), 或者 &ldquo;BBF&rdquo; (2 2 6) 。</p>
 </blockquote>
 <h5 id="示例3">示例3：</h5>
 <blockquote>
-<p>**输入：**s = &ldquo;0&rdquo;<br>
-**输出：**0<br>
-**解释：**没有字符映射到以 0 开头的数字。<br>
+<p><strong>输入：</strong> s = &ldquo;0&rdquo;<br>
+<strong>输出：</strong> 0<br>
+<strong>解释：</strong> 没有字符映射到以 0 开头的数字。<br>
 含有 0 的有效映射是 &lsquo;J&rsquo; -&gt; &ldquo;10&rdquo; 和 &lsquo;T&rsquo;-&gt; &ldquo;20&rdquo; 。<br>
 由于没有字符，因此没有有效的方法对此进行解码，因为所有数字都需要映射。</p>
 </blockquote>
 <h5 id="示例4">示例4:</h5>
 <blockquote>
-<p>**输入：**s = &ldquo;06&rdquo;<br>
-**输出：**0<br>
-<strong>解释：</strong>&ldquo;06&rdquo; 不能映射到 &ldquo;F&rdquo; ，因为字符串含有前导 0（&ldquo;6&rdquo; 和 &ldquo;06&rdquo; 在映射中并不等价）。</p>
+<p><strong>输入：</strong> s = &ldquo;06&rdquo;<br>
+<strong>输出：</strong> 0<br>
+<strong>解释：</strong> &ldquo;06&rdquo; 不能映射到 &ldquo;F&rdquo; ，因为字符串含有前导 0（&ldquo;6&rdquo; 和 &ldquo;06&rdquo; 在映射中并不等价）。</p>
 </blockquote>
 <h5 id="提示">提示：</h5>
 <ul>

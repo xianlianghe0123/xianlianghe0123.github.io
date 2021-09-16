@@ -6,11 +6,11 @@
 题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
 **提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
-示例1：  **输入：**root = [1,2,3,null,null,4,5]
-输出：[1,2,3,null,null,4,5]
+示例1：  输入： root = [1,2,3,null,null,4,5]
+输出： [1,2,3,null,null,4,5]
  解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。
 反序列化时，按照列表顺序构建二叉树，遇到空结点表示该分支已结束，回到另一个分支处，继续构造结点。
-class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree. :type data: str :rtype: TreeNode &amp;#34;&amp;#34;&amp;#34; list = data.'><title>剑指 Offer 37. 序列化二叉树</title>
+class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree.'><title>剑指 Offer 37. 序列化二叉树</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-37.-%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/'>
 
@@ -20,11 +20,11 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
 题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
 **提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
-示例1：  **输入：**root = [1,2,3,null,null,4,5]
-输出：[1,2,3,null,null,4,5]
+示例1：  输入： root = [1,2,3,null,null,4,5]
+输出： [1,2,3,null,null,4,5]
  解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。
 反序列化时，按照列表顺序构建二叉树，遇到空结点表示该分支已结束，回到另一个分支处，继续构造结点。
-class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree. :type data: str :rtype: TreeNode &amp;#34;&amp;#34;&amp;#34; list = data.'>
+class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-37.-%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-06-30T15:51:24&#43;08:00'/><meta property='article:modified_time' content='2021-06-30T15:51:24&#43;08:00'/>
@@ -34,11 +34,11 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
 题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
 **提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
-示例1：  **输入：**root = [1,2,3,null,null,4,5]
-输出：[1,2,3,null,null,4,5]
+示例1：  输入： root = [1,2,3,null,null,4,5]
+输出： [1,2,3,null,null,4,5]
  解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。
 反序列化时，按照列表顺序构建二叉树，遇到空结点表示该分支已结束，回到另一个分支处，继续构造结点。
-class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree. :type data: str :rtype: TreeNode &amp;#34;&amp;#34;&amp;#34; list = data.">
+class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree.">
     </head>
     <body class="
     article-page 
@@ -242,8 +242,8 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
 <h5 id="示例1">示例1：</h5>
 <img src="/img/serdeser.jpeg" width="324px">
 <blockquote>
-<p>**输入：**root = [1,2,3,null,null,4,5]<br>
-<strong>输出：</strong>[1,2,3,null,null,4,5]</p>
+<p><strong>输入：</strong> root = [1,2,3,null,null,4,5]<br>
+<strong>输出：</strong> [1,2,3,null,null,4,5]</p>
 </blockquote>
 <h3 id="解题思路">解题思路</h3>
 <h4 id="先序遍历">先序遍历</h4>
@@ -342,60 +342,60 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
                 
                     
 <article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 04. 二维数组中的查找</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 03. 数组中重复的数字</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/leetcode-162.-%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 162. 寻找峰值</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-524.-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 524. 通过删除字母匹配到字典里最长单词</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-447.-%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 447. 回旋镖的数量</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-678.-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 678. 有效的括号字符串</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1894.-%E6%89%BE%E5%88%B0%E9%9C%80%E8%A6%81%E8%A1%A5%E5%85%85%E7%B2%89%E7%AC%94%E7%9A%84%E5%AD%A6%E7%94%9F%E7%BC%96%E5%8F%B7/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1894. 找到需要补充粉笔的学生编号</h2>
         </div>
     </a>
 </article>

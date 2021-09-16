@@ -40,18 +40,16 @@
 两个化学式连在一起是新的化学式。例如 H2O2He3Mg4 也是化学式。
 一个括号中的化学式和数字（可选择性添加）也是化学式。例如 (H2O2) 和 (H2O2)3 是化学式。
 给定一个化学式 formula ，返回所有原子的数量。格式为：第一个（按字典序）原子的名字，跟着它的数量（如果数量大于 1），然后是第二个原子的名字（按字典序），跟着它的数量（如果数量大于 1），以此类推。
-示例1：  **输入：**formula = &amp;ldquo;H2O&amp;rdquo;
-输出：&amp;ldquo;H2O&amp;rdquo;
+示例1：  输入： formula = &amp;ldquo;H2O&amp;rdquo;
+输出： &amp;ldquo;H2O&amp;rdquo;
 解释：
 原子的数量是 {&amp;lsquo;H&amp;rsquo;: 2, &amp;lsquo;O&amp;rsquo;: 1}。
- 示例2：  **输入：**formula = &amp;ldquo;Mg(OH)2&amp;rdquo;
-输出：&amp;ldquo;H2MgO2&amp;rdquo;
+ 示例2：  输入： formula = &amp;ldquo;Mg(OH)2&amp;rdquo;
+输出： &amp;ldquo;H2MgO2&amp;rdquo;
 解释：
 原子的数量是 {&amp;lsquo;H&amp;rsquo;: 2, &amp;lsquo;Mg&amp;rsquo;: 1, &amp;lsquo;O&amp;rsquo;: 2}。
- 示例3：  **输入：**formula = &amp;ldquo;K4(ON(SO3)2)2&amp;rdquo;
-输出：&amp;ldquo;K4N2O14S4&amp;rdquo;
-解释：
-原子的数量是 {&amp;lsquo;K&amp;rsquo;: 4, &amp;lsquo;N&amp;rsquo;: 2, &amp;lsquo;O&amp;rsquo;: 14, &amp;lsquo;S&amp;rsquo;: 4}。</description>
+ 示例3：  输入： formula = &amp;ldquo;K4(ON(SO3)2)2&amp;rdquo;
+输出： &amp;ldquo;K4N2O14S4&amp;rdquo;</description>
     </item>
     
   </channel>

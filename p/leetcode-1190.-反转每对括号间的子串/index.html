@@ -6,17 +6,16 @@
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例1：  **输入：**s = &amp;ldquo;(abcd)&amp;rdquo;
-输出：&amp;ldquo;dcba&amp;rdquo;
- 示例 2：  **输入：**s = &amp;ldquo;(u(love)i)&amp;rdquo;
-输出：&amp;ldquo;iloveu&amp;rdquo;
- 示例 3：  **输入：**s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
-输出：&amp;ldquo;leetcode&amp;rdquo;
- 示例 4：  **输入：**s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
-输出：&amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
+示例1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+输出： &amp;ldquo;dcba&amp;rdquo;
+ 示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
+输出： &amp;ldquo;iloveu&amp;rdquo;
+ 示例 3：  输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
+输出： &amp;ldquo;leetcode&amp;rdquo;
+ 示例 4：  输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
+输出： &amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
  提示：  0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的  解题思路 栈 利用栈来进行每一次的反转：
- 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。
-func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queue := make([]byte, 0, len(s)) for i := range s { if s[i] !'><title>Leetcode 1190. 反转每对括号间的子串</title>
+ 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。'><title>Leetcode 1190. 反转每对括号间的子串</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1190.-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2/'>
 
@@ -26,17 +25,16 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例1：  **输入：**s = &amp;ldquo;(abcd)&amp;rdquo;
-输出：&amp;ldquo;dcba&amp;rdquo;
- 示例 2：  **输入：**s = &amp;ldquo;(u(love)i)&amp;rdquo;
-输出：&amp;ldquo;iloveu&amp;rdquo;
- 示例 3：  **输入：**s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
-输出：&amp;ldquo;leetcode&amp;rdquo;
- 示例 4：  **输入：**s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
-输出：&amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
+示例1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+输出： &amp;ldquo;dcba&amp;rdquo;
+ 示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
+输出： &amp;ldquo;iloveu&amp;rdquo;
+ 示例 3：  输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
+输出： &amp;ldquo;leetcode&amp;rdquo;
+ 示例 4：  输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
+输出： &amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
  提示：  0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的  解题思路 栈 利用栈来进行每一次的反转：
- 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。
-func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queue := make([]byte, 0, len(s)) for i := range s { if s[i] !'>
+ 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1190.-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-05-26T23:59:13&#43;08:00'/><meta property='article:modified_time' content='2021-05-26T23:59:13&#43;08:00'/>
@@ -46,17 +44,16 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例1：  **输入：**s = &amp;ldquo;(abcd)&amp;rdquo;
-输出：&amp;ldquo;dcba&amp;rdquo;
- 示例 2：  **输入：**s = &amp;ldquo;(u(love)i)&amp;rdquo;
-输出：&amp;ldquo;iloveu&amp;rdquo;
- 示例 3：  **输入：**s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
-输出：&amp;ldquo;leetcode&amp;rdquo;
- 示例 4：  **输入：**s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
-输出：&amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
+示例1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+输出： &amp;ldquo;dcba&amp;rdquo;
+ 示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
+输出： &amp;ldquo;iloveu&amp;rdquo;
+ 示例 3：  输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
+输出： &amp;ldquo;leetcode&amp;rdquo;
+ 示例 4：  输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
+输出： &amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
  提示：  0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的  解题思路 栈 利用栈来进行每一次的反转：
- 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。
-func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queue := make([]byte, 0, len(s)) for i := range s { if s[i] !">
+ 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。">
     </head>
     <body class="
     article-page 
@@ -259,23 +256,23 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
 <p>注意，您的结果中 <strong>不应</strong> 包含任何括号。</p>
 <h5 id="示例1">示例1：</h5>
 <blockquote>
-<p>**输入：**s = &ldquo;(abcd)&rdquo;<br>
-<strong>输出：</strong>&ldquo;dcba&rdquo;</p>
+<p><strong>输入：</strong> s = &ldquo;(abcd)&rdquo;<br>
+<strong>输出：</strong> &ldquo;dcba&rdquo;</p>
 </blockquote>
 <h5 id="示例-2">示例 2：</h5>
 <blockquote>
-<p>**输入：**s = &ldquo;(u(love)i)&rdquo;<br>
-<strong>输出：</strong>&ldquo;iloveu&rdquo;</p>
+<p><strong>输入：</strong> s = &ldquo;(u(love)i)&rdquo;<br>
+<strong>输出：</strong> &ldquo;iloveu&rdquo;</p>
 </blockquote>
 <h5 id="示例-3">示例 3：</h5>
 <blockquote>
-<p>**输入：**s = &ldquo;(ed(et(oc))el)&rdquo;<br>
-<strong>输出：</strong>&ldquo;leetcode&rdquo;</p>
+<p><strong>输入：</strong> s = &ldquo;(ed(et(oc))el)&rdquo;<br>
+<strong>输出：</strong> &ldquo;leetcode&rdquo;</p>
 </blockquote>
 <h5 id="示例-4">示例 4：</h5>
 <blockquote>
-<p>**输入：**s = &ldquo;a(bcdefghijkl(mno)p)q&rdquo;<br>
-<strong>输出：</strong>&ldquo;apmnolkjihgfedcbq&rdquo;</p>
+<p><strong>输入：</strong> s = &ldquo;a(bcdefghijkl(mno)p)q&rdquo;<br>
+<strong>输出：</strong> &ldquo;apmnolkjihgfedcbq&rdquo;</p>
 </blockquote>
 <h5 id="提示">提示：</h5>
 <ul>
@@ -392,60 +389,60 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
                 
                     
 <article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 04. 二维数组中的查找</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 03. 数组中重复的数字</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/leetcode-162.-%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 162. 寻找峰值</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-524.-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 524. 通过删除字母匹配到字典里最长单词</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-447.-%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 447. 回旋镖的数量</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-678.-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 678. 有效的括号字符串</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1894.-%E6%89%BE%E5%88%B0%E9%9C%80%E8%A6%81%E8%A1%A5%E5%85%85%E7%B2%89%E7%AC%94%E7%9A%84%E5%AD%A6%E7%94%9F%E7%BC%96%E5%8F%B7/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1894. 找到需要补充粉笔的学生编号</h2>
         </div>
     </a>
 </article>

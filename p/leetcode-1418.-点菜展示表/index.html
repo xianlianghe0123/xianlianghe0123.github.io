@@ -6,8 +6,8 @@
 题目描述 给你一个数组 orders ，表示客户在餐厅中完成的订单，确切地说， orders[i]=[customerNamei,tableNumberi,foodItemi] ，其中 customerNamei 是客户的姓名，tableNumberi 是客户所在餐桌的桌号，而 foodItemi 是客户点的餐品名称。
 请你返回该餐厅的 点菜展示表 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。
 注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
-示例 1：  **输入：**orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
-输出：[[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
+示例 1：  输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
+输出： [[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
 解释：
 点菜展示表如下所示：
 Table,Beef Burrito,Ceviche,Fried Chicken,Water
@@ -15,8 +15,7 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 5 ,0 ,1 ,0 ,1
 10 ,1 ,0 ,0 ,0
 对于餐桌 3：David 点了 &amp;ldquo;Ceviche&amp;rdquo; 和 &amp;ldquo;Fried Chicken&amp;rdquo;，而 Rous 点了 &amp;ldquo;Ceviche&amp;rdquo;
-而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;
-餐桌 10：Corina 点了 &amp;ldquo;Beef Burrito&amp;rdquo;'><title>Leetcode 1418. 点菜展示表</title>
+而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;'><title>Leetcode 1418. 点菜展示表</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1418.-%E7%82%B9%E8%8F%9C%E5%B1%95%E7%A4%BA%E8%A1%A8/'>
 
@@ -26,8 +25,8 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 题目描述 给你一个数组 orders ，表示客户在餐厅中完成的订单，确切地说， orders[i]=[customerNamei,tableNumberi,foodItemi] ，其中 customerNamei 是客户的姓名，tableNumberi 是客户所在餐桌的桌号，而 foodItemi 是客户点的餐品名称。
 请你返回该餐厅的 点菜展示表 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。
 注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
-示例 1：  **输入：**orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
-输出：[[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
+示例 1：  输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
+输出： [[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
 解释：
 点菜展示表如下所示：
 Table,Beef Burrito,Ceviche,Fried Chicken,Water
@@ -35,8 +34,7 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 5 ,0 ,1 ,0 ,1
 10 ,1 ,0 ,0 ,0
 对于餐桌 3：David 点了 &amp;ldquo;Ceviche&amp;rdquo; 和 &amp;ldquo;Fried Chicken&amp;rdquo;，而 Rous 点了 &amp;ldquo;Ceviche&amp;rdquo;
-而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;
-餐桌 10：Corina 点了 &amp;ldquo;Beef Burrito&amp;rdquo;'>
+而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1418.-%E7%82%B9%E8%8F%9C%E5%B1%95%E7%A4%BA%E8%A1%A8/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-07-06T09:20:22&#43;08:00'/><meta property='article:modified_time' content='2021-07-06T09:20:22&#43;08:00'/>
@@ -46,8 +44,8 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 题目描述 给你一个数组 orders ，表示客户在餐厅中完成的订单，确切地说， orders[i]=[customerNamei,tableNumberi,foodItemi] ，其中 customerNamei 是客户的姓名，tableNumberi 是客户所在餐桌的桌号，而 foodItemi 是客户点的餐品名称。
 请你返回该餐厅的 点菜展示表 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。
 注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
-示例 1：  **输入：**orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
-输出：[[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
+示例 1：  输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
+输出： [[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
 解释：
 点菜展示表如下所示：
 Table,Beef Burrito,Ceviche,Fried Chicken,Water
@@ -55,8 +53,7 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 5 ,0 ,1 ,0 ,1
 10 ,1 ,0 ,0 ,0
 对于餐桌 3：David 点了 &amp;ldquo;Ceviche&amp;rdquo; 和 &amp;ldquo;Fried Chicken&amp;rdquo;，而 Rous 点了 &amp;ldquo;Ceviche&amp;rdquo;
-而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;
-餐桌 10：Corina 点了 &amp;ldquo;Beef Burrito&amp;rdquo;">
+而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;">
     </head>
     <body class="
     article-page 
@@ -259,8 +256,8 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 <p>注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。</p>
 <h5 id="示例-1">示例 1：</h5>
 <blockquote>
-<p>**输入：**orders = [[&ldquo;David&rdquo;,&ldquo;3&rdquo;,&ldquo;Ceviche&rdquo;],[&ldquo;Corina&rdquo;,&ldquo;10&rdquo;,&ldquo;Beef Burrito&rdquo;],[&ldquo;David&rdquo;,&ldquo;3&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Carla&rdquo;,&ldquo;5&rdquo;,&ldquo;Water&rdquo;],[&ldquo;Carla&rdquo;,&ldquo;5&rdquo;,&ldquo;Ceviche&rdquo;],[&ldquo;Rous&rdquo;,&ldquo;3&rdquo;,&ldquo;Ceviche&rdquo;]]<br>
-<strong>输出：</strong>[[&ldquo;Table&rdquo;,&ldquo;Beef Burrito&rdquo;,&ldquo;Ceviche&rdquo;,&ldquo;Fried Chicken&rdquo;,&ldquo;Water&rdquo;],[&ldquo;3&rdquo;,&ldquo;0&rdquo;,&ldquo;2&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;],[&ldquo;5&rdquo;,&ldquo;0&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;,&ldquo;1&rdquo;],[&ldquo;10&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;,&ldquo;0&rdquo;,&ldquo;0&rdquo;]]<br>
+<p><strong>输入：</strong> orders = [[&ldquo;David&rdquo;,&ldquo;3&rdquo;,&ldquo;Ceviche&rdquo;],[&ldquo;Corina&rdquo;,&ldquo;10&rdquo;,&ldquo;Beef Burrito&rdquo;],[&ldquo;David&rdquo;,&ldquo;3&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Carla&rdquo;,&ldquo;5&rdquo;,&ldquo;Water&rdquo;],[&ldquo;Carla&rdquo;,&ldquo;5&rdquo;,&ldquo;Ceviche&rdquo;],[&ldquo;Rous&rdquo;,&ldquo;3&rdquo;,&ldquo;Ceviche&rdquo;]]<br>
+<strong>输出：</strong> [[&ldquo;Table&rdquo;,&ldquo;Beef Burrito&rdquo;,&ldquo;Ceviche&rdquo;,&ldquo;Fried Chicken&rdquo;,&ldquo;Water&rdquo;],[&ldquo;3&rdquo;,&ldquo;0&rdquo;,&ldquo;2&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;],[&ldquo;5&rdquo;,&ldquo;0&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;,&ldquo;1&rdquo;],[&ldquo;10&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;,&ldquo;0&rdquo;,&ldquo;0&rdquo;]]<br>
 <strong>解释：</strong><br>
 点菜展示表如下所示：<br>
 Table,Beef Burrito,Ceviche,Fried Chicken,Water<br>
@@ -273,16 +270,16 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water<br>
 </blockquote>
 <h5 id="示例-2">示例 2:</h5>
 <blockquote>
-<p>**输入：**orders = [[&ldquo;James&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Ratesh&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Amadeus&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Adam&rdquo;,&ldquo;1&rdquo;,&ldquo;Canadian Waffles&rdquo;],[&ldquo;Brianna&rdquo;,&ldquo;1&rdquo;,&ldquo;Canadian Waffles&rdquo;]]<br>
-<strong>输出：</strong>[[&ldquo;Table&rdquo;,&ldquo;Canadian Waffles&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;1&rdquo;,&ldquo;2&rdquo;,&ldquo;0&rdquo;],[&ldquo;12&rdquo;,&ldquo;0&rdquo;,&ldquo;3&rdquo;]]<br>
+<p><strong>输入：</strong> orders = [[&ldquo;James&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Ratesh&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Amadeus&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Adam&rdquo;,&ldquo;1&rdquo;,&ldquo;Canadian Waffles&rdquo;],[&ldquo;Brianna&rdquo;,&ldquo;1&rdquo;,&ldquo;Canadian Waffles&rdquo;]]<br>
+<strong>输出：</strong> [[&ldquo;Table&rdquo;,&ldquo;Canadian Waffles&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;1&rdquo;,&ldquo;2&rdquo;,&ldquo;0&rdquo;],[&ldquo;12&rdquo;,&ldquo;0&rdquo;,&ldquo;3&rdquo;]]<br>
 <strong>解释：</strong><br>
 对于餐桌 1：Adam 和 Brianna 都点了 &ldquo;Canadian Waffles&rdquo;<br>
 而餐桌 12：James, Ratesh 和 Amadeus 都点了 &ldquo;Fried Chicken&rdquo;</p>
 </blockquote>
 <h5 id="示例-3">示例 3:</h5>
 <blockquote>
-<p>**输入：**orders = [[&ldquo;Laura&rdquo;,&ldquo;2&rdquo;,&ldquo;Bean Burrito&rdquo;],[&ldquo;Jhon&rdquo;,&ldquo;2&rdquo;,&ldquo;Beef Burrito&rdquo;],[&ldquo;Melissa&rdquo;,&ldquo;2&rdquo;,&ldquo;Soda&rdquo;]]<br>
-<strong>输出：</strong>[[&ldquo;Table&rdquo;,&ldquo;Bean Burrito&rdquo;,&ldquo;Beef Burrito&rdquo;,&ldquo;Soda&rdquo;],[&ldquo;2&rdquo;,&ldquo;1&rdquo;,&ldquo;1&rdquo;,&ldquo;1&rdquo;]]</p>
+<p><strong>输入：</strong> orders = [[&ldquo;Laura&rdquo;,&ldquo;2&rdquo;,&ldquo;Bean Burrito&rdquo;],[&ldquo;Jhon&rdquo;,&ldquo;2&rdquo;,&ldquo;Beef Burrito&rdquo;],[&ldquo;Melissa&rdquo;,&ldquo;2&rdquo;,&ldquo;Soda&rdquo;]]<br>
+<strong>输出：</strong> [[&ldquo;Table&rdquo;,&ldquo;Bean Burrito&rdquo;,&ldquo;Beef Burrito&rdquo;,&ldquo;Soda&rdquo;],[&ldquo;2&rdquo;,&ldquo;1&rdquo;,&ldquo;1&rdquo;,&ldquo;1&rdquo;]]</p>
 </blockquote>
 <h5 id="提示">提示：</h5>
 <ul>
@@ -391,60 +388,60 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water<br>
                 
                     
 <article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 04. 二维数组中的查找</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 03. 数组中重复的数字</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/leetcode-162.-%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 162. 寻找峰值</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-524.-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 524. 通过删除字母匹配到字典里最长单词</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-447.-%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 447. 回旋镖的数量</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-678.-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 678. 有效的括号字符串</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1894.-%E6%89%BE%E5%88%B0%E9%9C%80%E8%A6%81%E8%A1%A5%E5%85%85%E7%B2%89%E7%AC%94%E7%9A%84%E5%AD%A6%E7%94%9F%E7%BC%96%E5%8F%B7/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1894. 找到需要补充粉笔的学生编号</h2>
         </div>
     </a>
 </article>

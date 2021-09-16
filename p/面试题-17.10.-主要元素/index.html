@@ -4,12 +4,12 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/find-majority-element-lcci/
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
-示例 1：  输入：[1,2,5,9,5,9,5,5,5]
-**输出：**5
- 示例 2：  输入：[3,2]
-输出：-1
- 示例 3：  输入：[2,2,1,1,1,2,2]
-**输出：**2
+示例 1：  输入： [1,2,5,9,5,9,5,5,5]
+输出： 5
+ 示例 2：  输入： [3,2]
+输出： -1
+ 示例 3：  输入： [2,2,1,1,1,2,2]
+输出： 2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
 func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。'><title>面试题 17.10. 主要元素</title>
 
@@ -19,12 +19,12 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/find-majority-element-lcci/
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
-示例 1：  输入：[1,2,5,9,5,9,5,5,5]
-**输出：**5
- 示例 2：  输入：[3,2]
-输出：-1
- 示例 3：  输入：[2,2,1,1,1,2,2]
-**输出：**2
+示例 1：  输入： [1,2,5,9,5,9,5,5,5]
+输出： 5
+ 示例 2：  输入： [3,2]
+输出： -1
+ 示例 3：  输入： [2,2,1,1,1,2,2]
+输出： 2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
 func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/'>
@@ -34,12 +34,12 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/find-majority-element-lcci/
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
-示例 1：  输入：[1,2,5,9,5,9,5,5,5]
-**输出：**5
- 示例 2：  输入：[3,2]
-输出：-1
- 示例 3：  输入：[2,2,1,1,1,2,2]
-**输出：**2
+示例 1：  输入： [1,2,5,9,5,9,5,5,5]
+输出： 5
+ 示例 2：  输入： [3,2]
+输出： -1
+ 示例 3：  输入： [2,2,1,1,1,2,2]
+输出： 2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
 func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]&#43;&#43; if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。">
     </head>
@@ -242,18 +242,18 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 <p>数组中占比超过一半的元素称之为主要元素。给你一个 <strong>整数</strong> 数组，找出其中的主要元素。若没有，返回 <code>-1</code> 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。</p>
 <h5 id="示例-1">示例 1：</h5>
 <blockquote>
-<p><strong>输入：</strong>[1,2,5,9,5,9,5,5,5]<br>
-**输出：**5</p>
+<p><strong>输入：</strong> [1,2,5,9,5,9,5,5,5]<br>
+<strong>输出：</strong> 5</p>
 </blockquote>
 <h5 id="示例-2">示例 2：</h5>
 <blockquote>
-<p><strong>输入：</strong>[3,2]<br>
-<strong>输出：</strong>-1</p>
+<p><strong>输入：</strong> [3,2]<br>
+<strong>输出：</strong> -1</p>
 </blockquote>
 <h5 id="示例-3">示例 3：</h5>
 <blockquote>
-<p><strong>输入：</strong>[2,2,1,1,1,2,2]<br>
-**输出：**2</p>
+<p><strong>输入：</strong> [2,2,1,1,1,2,2]<br>
+<strong>输出：</strong> 2</p>
 </blockquote>
 <h3 id="解题思路">解题思路</h3>
 <h4 id="哈希计数">哈希计数</h4>
@@ -409,6 +409,18 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
                 
                     
 <article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 03. 数组中重复的数字</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/leetcode-447.-%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/">
         
         
@@ -439,18 +451,6 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 313. 超级丑数</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-611.-%E6%9C%89%E6%95%88%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 611. 有效三角形的个数</h2>
         </div>
     </a>
 </article>

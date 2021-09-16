@@ -6,7 +6,71 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Wed, 15 Sep 2021 10:11:21 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Sep 2021 22:20:54 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 06. 从尾到头打印链表</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 16 Sep 2021 22:20:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/
+难度： 简单
+题目描述 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+示例：  输入： head = [1,3,2]
+输出： [2,3,1]
+ 提示：  0 &amp;lt;= 链表长度 &amp;lt;= 10000  解题思路 递归 递归的添加当前节点的元素到子节点返回的数组后面。递归的终止条件为：当前元素不存在，返回空数组。
+func reversePrint(head *ListNode) []int { if head == nil { return make([]int, 0) } return append(reversePrint(head.Next), head.Val) } 复杂度  时间复杂度：$ O(N), N = len(list) $ 空间复杂度：$ O(N) $  栈 遍历链表，依次压栈，之后反转栈中元素即可。
+func reversePrint(head *ListNode) []int { if head == nil { return make([]int, 0) } return append(reversePrint(head.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 06. 从尾到头打印链表</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 16 Sep 2021 22:15:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/
+难度： 简单
+题目描述 请实现一个函数，把字符串 s 中的每个空格替换成&amp;quot;%20&amp;quot;。
+示例：  输入： s = &amp;ldquo;We are happy.&amp;rdquo;
+输出： &amp;ldquo;We%20are%20happy.&amp;rdquo;
+ 提示：  0 &amp;lt;= s 的长度 &amp;lt;= 10000  解题思路 模拟 遍历原字符串，将每个字符加入到结果字符串的末尾，遇到 &#39; &#39; 需替换为 &amp;quot;%20&amp;quot;。
+func replaceSpace(s string) string { t := make([]byte, 0, len(s)*3) for i := range s { if s[i] == &amp;#39; &amp;#39; { t = append(t, &amp;#34;%20&amp;#34;...) } else { t = append(t, s[i]) } } return string(t) } 复杂度  时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 04. 二维数组中的查找</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/</link>
+      <pubDate>Thu, 16 Sep 2021 19:42:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/
+难度： 中等
+题目描述 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+示例：  现有矩阵 matrix 如下：
+[ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30] ] 给定 target = 5，返回 true。
+给定 target = 20，返回 false。
+ 提示：  0 &amp;lt;= n &amp;lt;= 1000 0 &amp;lt;= m &amp;lt;= 1000  解题思路 暴力求解 遍历整个二维数组，寻找该整数。
+func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } else if cell &amp;gt; target { break } } } return false } 复杂度  时间复杂度：$ O(nm) $ 空间复杂度：$ O(1) $  阶梯遍历 从矩阵右上角开始遍历：</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 03. 数组中重复的数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Thu, 16 Sep 2021 19:19:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/
+难度： 简单
+题目描述 找出数组中重复的数字。
+在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。
+示例：  输入：
+[2, 3, 1, 0, 2, 5, 3]
+输出： 2 或 3
+ 提示：  2 &amp;lt;= n &amp;lt;= 100000  解题思路 哈希 使用哈希表记录数组中的元素是否出现过。遍历数组，如果出现过则返回；否则，在哈希表中标记该元素已出现。
+func findRepeatNumber(nums []int) int { appear := make(map[int]struct{}) for _, num := range nums { if _, ok := appear[num]; ok { return num } appear[num] = struct{}{} } return 0 } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  </description>
+    </item>
+    
     <item>
       <title>Leetcode 162. 寻找峰值</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-162.-%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC/</link>
@@ -19,14 +83,14 @@
 给你一个整数数组 nums，找到峰值元素并返回其索引。数组可能包含多个峰值，在这种情况下，返回 任何一个峰值 所在位置即可。
 你可以假设 nums[-1] = nums[n] = -∞ 。
 你必须实现时间复杂度为 O(log n) 的算法来解决此问题。
-示例 1：  **输入：**nums = [1,2,3,1]
-**输出：**2
-**解释：**3 是峰值元素，你的函数应该返回其索引 2。
- 示例 2：  **输入：**nums = [1,2,1,3,5,6,4]
-**输出：**1 或 5
-**解释：**你的函数可以返回索引 1，其峰值元素为 2；
+示例 1：  输入： nums = [1,2,3,1]
+输出： 2
+解释： 3 是峰值元素，你的函数应该返回其索引 2。
+ 示例 2：  输入： nums = [1,2,1,3,5,6,4]
+输出： 1 或 5
+解释： 你的函数可以返回索引 1，其峰值元素为 2；
 或者返回索引 5， 其峰值元素为 6。
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 1000 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 对于所有有效的 i 都有 nums[i] != nums[i + 1]  解题思路 暴力求解 遍历数组，每个元素均和左右侧元素比较找出峰值元素，边界元素需要特判。</description>
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 1000 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 对于所有有效的 i 都有 nums[i] !</description>
     </item>
     
     <item>
@@ -39,10 +103,10 @@
 难度： 中等
 题目描述 给你一个字符串 s 和一个字符串数组 dictionary 作为字典，找出并返回字典中最长的字符串，该字符串可以通过删除 s 中的某些字符得到。
 如果答案不止一个，返回长度最长且字典序最小的字符串。如果答案不存在，则返回空字符串。
-示例 1：  **输入：**s = &amp;ldquo;abpcplea&amp;rdquo;, dictionary = [&amp;ldquo;ale&amp;rdquo;,&amp;ldquo;apple&amp;rdquo;,&amp;ldquo;monkey&amp;rdquo;,&amp;ldquo;plea&amp;rdquo;]
-输出：&amp;ldquo;apple&amp;rdquo;
- 示例 2：  **输入：**s = &amp;ldquo;abpcplea&amp;rdquo;, dictionary = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
-输出：&amp;ldquo;a&amp;rdquo;
+示例 1：  输入： s = &amp;ldquo;abpcplea&amp;rdquo;, dictionary = [&amp;ldquo;ale&amp;rdquo;,&amp;ldquo;apple&amp;rdquo;,&amp;ldquo;monkey&amp;rdquo;,&amp;ldquo;plea&amp;rdquo;]
+输出： &amp;ldquo;apple&amp;rdquo;
+ 示例 2：  输入： s = &amp;ldquo;abpcplea&amp;rdquo;, dictionary = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
+输出： &amp;ldquo;a&amp;rdquo;
  提示：  1 &amp;lt;= s.length &amp;lt;= 1000 1 &amp;lt;= dictionary.length &amp;lt;= 1000 1 &amp;lt;= dictionary[i].length &amp;lt;= 1000 s 和 dictionary[i] 仅由小写英文字母组成  解题思路 暴力求解 遍历字典，对于符合 s 的子序列的每个元素，记录最大长度的最小元素。
 func findLongestWord(s string, dictionary []string) string { contains := func(s, sub string) bool { j := 0 for i := 0; i &amp;lt; len(s) &amp;amp;&amp;amp; j &amp;lt; len(sub); i++ { if s[i] == sub[j] { j++ } } if j == len(sub) { return true } return false } maxLen := 0 ans := &amp;#34;&amp;#34; for _, d := range dictionary { if contains(s, d) { if maxLen &amp;lt; len(d) { maxLen = len(d) ans = d } else if maxLen == len(d) &amp;amp;&amp;amp; ans &amp;gt; d { ans = d } } } return ans } 复杂度  时间复杂度：$ O(N*L), N = len(dictionary), L = max(dictionory[i]) $ 空间复杂度：$ O(1) $  </description>
     </item>
@@ -57,14 +121,14 @@ func findLongestWord(s string, dictionary []string) string { contains := func(s,
 难度： 中等
 题目描述 给定平面上 n 对 互不相同 的点 points ，其中 points[i] = [xi, yi] 。回旋镖 是由点 (i, j, k) 表示的元组 ，其中 i 和 j 之间的距离和 i 和 k 之间的距离相等（需要考虑元组的顺序）。
 返回平面上所有回旋镖的数量。
-示例 1：  **输入：**points = [[0,0],[1,0],[2,0]]
-**输出：**2
-**解释：**两个回旋镖为 [[1,0],[0,0],[2,0]] 和 [[1,0],[2,0],[0,0]]
- 示例 2：  **输入：**points = [[1,1],[2,2],[3,3]]
-**输出：**2
- 示例 3：  **输入：**points = [[1,1]]
-**输出：**0
- 提示：  n == points.length 1 &amp;lt;= n &amp;lt;= 500 points[i].</description>
+示例 1：  输入： points = [[0,0],[1,0],[2,0]]
+输出： 2
+解释： 两个回旋镖为 [[1,0],[0,0],[2,0]] 和 [[1,0],[2,0],[0,0]]
+ 示例 2：  输入： points = [[1,1],[2,2],[3,3]]
+输出： 2
+ 示例 3：  输入： points = [[1,1]]
+输出： 0
+ 提示：  n == points.</description>
     </item>
     
     <item>
@@ -97,9 +161,9 @@ func findLongestWord(s string, dictionary []string) string { contains := func(s,
 题目描述 一个班级里有 n 个学生，编号为 0 到 n - 1 。每个学生会依次回答问题，编号为 0 的学生先回答，然后是编号为 1 的学生，以此类推，直到编号为 n - 1 的学生，然后老师会重复这个过程，重新从编号为 0 的学生开始回答问题。
 给你一个长度为 n 且下标从 0 开始的整数数组 chalk 和一个整数 k 。一开始粉笔盒里总共有 k 支粉笔。当编号为 i 的学生回答问题时，他会消耗 chalk[i] 支粉笔。如果剩余粉笔数量 严格小于 chalk[i] ，那么学生 i 需要 补充 粉笔。
 请你返回需要 补充 粉笔的学生 编号 。
-示例 1：  **输入：**chalk = [5,1,5], k = 22
-**输出：**0
-**解释：**学生消耗粉笔情况如下：
+示例 1：  输入： chalk = [5,1,5], k = 22
+输出： 0
+解释： 学生消耗粉笔情况如下：
  编号为 0 的学生使用 5 支粉笔，然后 k = 17 。 编号为 1 的学生使用 1 支粉笔，然后 k = 16 。 编号为 2 的学生使用 5 支粉笔，然后 k = 11 。 编号为 0 的学生使用 5 支粉笔，然后 k = 6 。 编号为 1 的学生使用 1 支粉笔，然后 k = 5 。 编号为 2 的学生使用 5 支粉笔，然后 k = 0 。</description>
     </item>
     
@@ -115,18 +179,16 @@ func findLongestWord(s string, dictionary []string) string { contains := func(s,
 给你一个平衡字符串 s，请你将它分割成尽可能多的平衡字符串。
 **注意：**分割得到的每个字符串都必须是平衡字符串。
 返回可以通过分割得到的平衡字符串的 最大数量 。
-示例 1：  **输入：**s = &amp;ldquo;RLRRLLRLRL&amp;rdquo;
-**输出：**4
-**解释：**s 可以分割为 &amp;ldquo;RL&amp;rdquo;、&amp;ldquo;RRLL&amp;rdquo;、&amp;ldquo;RL&amp;rdquo;、&amp;ldquo;RL&amp;rdquo; ，每个子字符串中都包含相同数量的 &amp;lsquo;L&amp;rsquo; 和 &amp;lsquo;R&amp;rsquo; 。
- 示例 2：  **输入：**s = &amp;ldquo;RLLLLRRRLR&amp;rdquo;
-**输出：**3
-**解释：**s 可以分割为 &amp;ldquo;RL&amp;rdquo;、&amp;ldquo;LLLRRR&amp;rdquo;、&amp;ldquo;LR&amp;rdquo; ，每个子字符串中都包含相同数量的 &amp;lsquo;L&amp;rsquo; 和 &amp;lsquo;R&amp;rsquo; 。
- 示例 3：  **输入：**s = &amp;ldquo;LLLLRRRR&amp;rdquo;
-**输出：**1
-**解释：**s 只能保持原样 &amp;ldquo;LLLLRRRR&amp;rdquo;.
- 示例 4：  **输入：**s = &amp;ldquo;RLRRRLLRLL&amp;rdquo;
-**输出：**2
-**解释：**s 可以分割为 &amp;ldquo;RL&amp;rdquo;、&amp;ldquo;RRRLLRLL&amp;rdquo; ，每个子字符串中都包含相同数量的 &amp;lsquo;L&amp;rsquo; 和 &amp;lsquo;R&amp;rsquo; 。</description>
+示例 1：  输入： s = &amp;ldquo;RLRRLLRLRL&amp;rdquo;
+输出： 4
+解释： s 可以分割为 &amp;ldquo;RL&amp;rdquo;、&amp;ldquo;RRLL&amp;rdquo;、&amp;ldquo;RL&amp;rdquo;、&amp;ldquo;RL&amp;rdquo; ，每个子字符串中都包含相同数量的 &amp;lsquo;L&amp;rsquo; 和 &amp;lsquo;R&amp;rsquo; 。
+ 示例 2：  输入： s = &amp;ldquo;RLLLLRRRLR&amp;rdquo;
+输出： 3
+解释： s 可以分割为 &amp;ldquo;RL&amp;rdquo;、&amp;ldquo;LLLRRR&amp;rdquo;、&amp;ldquo;LR&amp;rdquo; ，每个子字符串中都包含相同数量的 &amp;lsquo;L&amp;rsquo; 和 &amp;lsquo;R&amp;rsquo; 。
+ 示例 3：  输入： s = &amp;ldquo;LLLLRRRR&amp;rdquo;
+输出： 1
+解释： s 只能保持原样 &amp;ldquo;LLLLRRRR&amp;rdquo;.
+ 示例 4：  输入： s = &amp;ldquo;RLRRRLLRLL&amp;rdquo;</description>
     </item>
     
     <item>
@@ -177,10 +239,10 @@ func findLongestWord(s string, dictionary []string) string { contains := func(s,
 题目描述 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）。斐波那契数列的定义如下：
 F(0) = 0, F(1) = 1 F(N) = F(N - 1) + F(N - 2), 其中 N &amp;gt; 1. 斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。
 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
-示例 1：  **输入：**n = 2
-**输出：**1
- 示例 2：  **输入：**n = 5
-**输出：**5
+示例 1：  输入： n = 2
+输出： 1
+ 示例 2：  输入： n = 5
+输出： 5
  提示：  0 &amp;lt;= n &amp;lt;= 100  解题思路 动态规划 动态规划的状态转移方程已在题目中给出，使用三个变量降低空间复杂度。
 func fib(n int) int { const MOD = 1e9 + 7 dp := []int{0, 1, 0} if n &amp;lt; 2 { return dp[n] } for i := 2; i &amp;lt;= n; i++ { dp[2] = (dp[0] + dp[1]) % MOD dp[0], dp[1] = dp[1], dp[2] } return dp[2] } 复杂度  时间复杂度：$ O(n) $ 空间复杂度：$ O(1) $  </description>
     </item>
@@ -228,13 +290,12 @@ func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := he
 题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
 请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
-示例 1：  **输入：**bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
-输出：[10,55,45,25,25]
+示例 1：  输入： bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+输出： [10,55,45,25,25]
 解释：
 航班编号 1 2 3 4 5
 预订记录 1 ：10 10
-预订记录 2 ： 20 20
-预订记录 3 ： 25 25 25 25</description>
+预订记录 2 ： 20 20</description>
     </item>
     
     <item>
@@ -269,9 +330,9 @@ solution.pickIndex(); // 返回 0，因为数组中只有一个元素，所以�
 题目描述 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
 子数组 定义为原数组中的一个连续子序列。
 请你返回 arr 中 所有奇数长度子数组的和 。
-示例 1：  **输入：**arr = [1,4,2,5,3]
-**输出：**58
-**解释：**所有奇数长度子数组和它们的和为：
+示例 1：  输入： arr = [1,4,2,5,3]
+输出： 58
+解释： 所有奇数长度子数组和它们的和为：
 [1] = 1
 [4] = 4
 [2] = 2
@@ -294,16 +355,15 @@ solution.pickIndex(); // 返回 0，因为数组中只有一个元素，所以�
 难度： 简单
 题目描述 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。
 请返回 nums 的动态和。
-示例 1：  **输入：**nums = [1,2,3,4]
-输出：[1,3,6,10]
-**解释：**动态和计算过程为 [1, 1+2, 1+2+3, 1+2+3+4] 。
- 示例 2：  **输入：**nums = [1,1,1,1,1]
-输出：[1,2,3,4,5]
-**解释：**动态和计算过程为 [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1] 。
- 示例 3：  **输入：**nums = [3,1,2,10,1]
-输出：[3,4,6,16,17]
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 1000 -106 &amp;lt;= nums[i] &amp;lt;= 106  解题思路 模拟 按照题目描述，依次求解动态和的每一项
-func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i &amp;lt; len(nums); i++ { for j := 0; j &amp;lt;= i; j++ { sum[i] += nums[j] } } return sum } 复杂度  时间复杂度：$ O(N^2), N = len(nums) $ 空间复杂度：$ O(1) $  动态规划 使用 sum[i] 记录第 i 项动态和，则可以得出：sum[i] = sum[i-1] + nums[i]，依次向后求解。</description>
+示例 1：  输入： nums = [1,2,3,4]
+输出： [1,3,6,10]
+解释： 动态和计算过程为 [1, 1+2, 1+2+3, 1+2+3+4] 。
+ 示例 2：  输入： nums = [1,1,1,1,1]
+输出： [1,2,3,4,5]
+解释： 动态和计算过程为 [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1] 。
+ 示例 3：  输入： nums = [3,1,2,10,1]
+输出： [3,4,6,16,17]
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 1000 -106 &amp;lt;= nums[i] &amp;lt;= 106  解题思路 模拟 按照题目描述，依次求解动态和的每一项</description>
     </item>
     
     <item>
@@ -317,16 +377,15 @@ func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i 
 题目描述 第 i 个人的体重为 people[i]，每艘船可以承载的最大重量为 limit。
 每艘船最多可同时载两人，但条件是这些人的重量之和最多为 limit。
 返回载到每一个人所需的最小船数。(保证每个人都能被船载)。
-示例 1：  **输入：**people = [1,2], limit = 3
-**输出：**1
-**解释：**1 艘船载 (1, 2)
- 示例 2：  **输入：**people = [3,2,2,1], limit = 3
-**输出：**3
-**解释：**3 艘船分别载 (1, 2), (2) 和 (3)
- 示例 3：  **输入：**people = [3,5,3,4], limit = 5
-**输出：**4
-**解释：**4 艘船分别载 (3), (3), (4), (5)
- 提示：  1 &amp;lt;= people.length &amp;lt;= 50000 1 &amp;lt;= people[i] &amp;lt;= limit &amp;lt;= 30000  解题思路 排序 + 贪心 由于每艘船最多仅能搭乘两人，可以按照体重排序，每次选出最重的和最轻的两个人，尝试能否同乘一条船：</description>
+示例 1：  输入： people = [1,2], limit = 3
+输出： 1
+解释： 1 艘船载 (1, 2)
+ 示例 2：  输入： people = [3,2,2,1], limit = 3
+输出： 3
+解释： 3 艘船分别载 (1, 2), (2) 和 (3)
+ 示例 3：  输入： people = [3,5,3,4], limit = 5
+输出： 4
+解释： 4 艘船分别载 (3), (3), (4), (5)</description>
     </item>
     
     <item>
@@ -340,16 +399,14 @@ func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i 
 题目描述 给你一个有 n 个节点的 有向无环图（DAG），请你找出所有从节点 0 到节点 n-1 的路径并输出（不要求按特定顺序）
 二维数组的第 i 个数组中的单元都表示有向图中 i 号节点所能到达的下一些节点，空就是没有下一个结点了。
 译者注：有向图是有方向的，即规定了 a→b 你就不能从 b→a 。
-示例 1：  **输入：**graph = [[1,2],[3],[3],[]]
-输出：[[0,1,3],[0,2,3]]
-**解释：**有两条路径 0 -&amp;gt; 1 -&amp;gt; 3 和 0 -&amp;gt; 2 -&amp;gt; 3
- 示例 2：  **输入：**graph = [[4,3,1],[3,2,4],[3],[4],[]]
-输出：[[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]
- 示例 3：  **输入：**graph = [[1],[]]
-输出：[[0,1]]
- 示例 4：  **输入：**graph = [[1,2,3],[2],[3],[]]
-输出：[[0,1,2,3],[0,2,3],[0,3]]
- 示例 5：  **输入：**graph = [[1,3],[2],[3],[]]</description>
+示例 1：  输入： graph = [[1,2],[3],[3],[]]
+输出： [[0,1,3],[0,2,3]]
+解释： 有两条路径 0 -&amp;gt; 1 -&amp;gt; 3 和 0 -&amp;gt; 2 -&amp;gt; 3
+ 示例 2：  输入： graph = [[4,3,1],[3,2,4],[3],[4],[]]
+输出： [[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]
+ 示例 3：  输入： graph = [[1],[]]
+输出： [[0,1]]
+ 示例 4：  输入： graph = [[1,2,3],[2],[3],[]]</description>
     </item>
     
     <item>
@@ -362,10 +419,8 @@ func runningSum(nums []int) []int { sum := make([]int, len(nums)) for i := 0; i 
 难度： 简单
 题目描述 给你一个整数 n 。按下述规则生成一个长度为 n + 1 的数组 nums ：
  nums[0] = 0 nums[1] = 1 当 2 &amp;lt;= 2 * i &amp;lt;= n 时，nums[2 * i] = nums[i] 当 2 &amp;lt;= 2 * i + 1 &amp;lt;= n 时，nums[2 * i + 1] = nums[i] + nums[i + 1]  返回生成数组 nums 中的 最大 值。
-示例 1：  **输入：**n = 7
-**输出：**3
-**解释：**根据规则：
-nums[0] = 0</description>
+示例 1：  输入： n = 7
+输出： 3</description>
     </item>
     
     <item>
@@ -381,11 +436,11 @@ nums[0] = 0</description>
  如果这一组长度为 1 ，则将字符追加到 s 中。 否则，需要向 s 追加字符，后跟这一组的长度。  压缩后得到的字符串 s 不应该直接返回 ，需要转储到字符数组 chars 中。需要注意的是，如果组长度为 10 或 10 以上，则在 chars 数组中会被拆分为多个字符。
 请在 修改完输入数组后 ，返回该数组的新长度。
 你必须设计并实现一个只使用常量额外空间的算法来解决此问题。
-示例 1：  **输入：**chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
-**输出：**返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
+示例 1：  输入： chars = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;c&amp;rdquo;]
+输出： 返回 6 ，输入数组的前 6 个字符应该是：[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;3&amp;rdquo;]
 解释：
 &amp;ldquo;aa&amp;rdquo; 被 &amp;ldquo;a2&amp;rdquo; 替代。&amp;ldquo;bb&amp;rdquo; 被 &amp;ldquo;b2&amp;rdquo; 替代。&amp;ldquo;ccc&amp;rdquo; 被 &amp;ldquo;c3&amp;rdquo; 替代。
- 示例 2：  **输入：**chars = [&amp;ldquo;a&amp;rdquo;]</description>
+ 示例 2：  输入： chars = [&amp;ldquo;a&amp;rdquo;]</description>
     </item>
     
     <item>
@@ -398,12 +453,11 @@ nums[0] = 0</description>
 难度： 简单
 题目描述 给定一个字符串 s 和一个整数 k，从字符串开头算起，每 2k 个字符反转前 k 个字符。
 如果剩余字符少于 k 个，则将剩余字符全部反转。 如果剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符，其余字符保持原样。
-示例 1：  **输入：**s = &amp;ldquo;abcdefg&amp;rdquo;, k = 2
-输出：&amp;ldquo;bacdfeg&amp;rdquo;
- 示例 2：  **输入：**s = &amp;ldquo;abcd&amp;rdquo;, k = 2
-输出：&amp;ldquo;bacd&amp;rdquo;
- 提示：  1 &amp;lt;= s.length &amp;lt;= 104 s 仅由小写英文组成 1 &amp;lt;= k &amp;lt;= 104  解题思路 模拟 以长度为 2k 为单位将字符串分割，对于每个区间，反转前 k 个字符。
-对于尾部需进行特判，反转区间不足 k 时，反转到尾部为止。</description>
+示例 1：  输入： s = &amp;ldquo;abcdefg&amp;rdquo;, k = 2
+输出： &amp;ldquo;bacdfeg&amp;rdquo;
+ 示例 2：  输入： s = &amp;ldquo;abcd&amp;rdquo;, k = 2
+输出： &amp;ldquo;bacd&amp;rdquo;
+ 提示：  1 &amp;lt;= s.length &amp;lt;= 104 s 仅由小写英文组成 1 &amp;lt;= k &amp;lt;= 104  解题思路 模拟 以长度为 2k 为单位将字符串分割，对于每个区间，反转前 k 个字符。</description>
     </item>
     
     <item>
@@ -415,10 +469,10 @@ nums[0] = 0</description>
       <description>链接： https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
 难度： 简单
 题目描述 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
-示例 1：  输入：&amp;ldquo;hello&amp;rdquo;
-输出：&amp;ldquo;holle&amp;rdquo;
- 示例 2：  输入：&amp;ldquo;leetcode&amp;rdquo;
-输出：&amp;ldquo;leotcede&amp;rdquo;
+示例 1：  输入： &amp;ldquo;hello&amp;rdquo;
+输出： &amp;ldquo;holle&amp;rdquo;
+ 示例 2：  输入： &amp;ldquo;leetcode&amp;rdquo;
+输出： &amp;ldquo;leotcede&amp;rdquo;
  提示：  元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。  解题思路 双指针 使用两个指针 i, j 分别从字符串首尾向中间遍历：
  遇到非元音字母向中间靠拢； i, j 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢  最终两个指针相遇时停止，元音字母反转完毕。
 func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &amp;#39;a&amp;#39;: true, &amp;#39;A&amp;#39;: true, &amp;#39;e&amp;#39;: true, &amp;#39;E&amp;#39;: true, &amp;#39;i&amp;#39;: true, &amp;#39;I&amp;#39;: true, &amp;#39;o&amp;#39;: true, &amp;#39;O&amp;#39;: true, &amp;#39;u&amp;#39;: true, &amp;#39;U&amp;#39;: true, } for i, j := 0, len(s)-1; i &amp;lt; j; { if !</description>
@@ -438,7 +492,7 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
   &#39;P&#39;：Present，到场
   如果学生能够 同时 满足下面两个条件，则可以获得出勤奖励：
  按 总出勤 计，学生缺勤（&#39;A&#39;）严格 少于两天。 学生 不会 存在 连续 3 天或 3 天以上的迟到（&#39;L&#39;）记录。  如果学生可以获得出勤奖励，返回 true ；否则，返回 false 。
-示例 1：  **输入：**s = &amp;ldquo;PPALLP&amp;rdquo; **输出：**true **解释：**学生缺勤次数少于 2 次，且不存在 3 天或以上的连续迟到记录。  示例 2：  **输入：**s = &amp;ldquo;PPALLL&amp;rdquo; **输出：**false **解释：**学生最后三天连续迟到，所以不满足出勤奖励的条件。  提示：  1 &amp;lt;= s.length &amp;lt;= 1000 s[i] 为 &#39;A&#39;、&#39;L&#39; 或 &#39;P&#39;  解题思路 计数 遍历字符串，每次针对缺和迟到做如下处理:</description>
+示例 1：  输入： s = &amp;ldquo;PPALLP&amp;rdquo; 输出： true 解释： 学生缺勤次数少于 2 次，且不存在 3 天或以上的连续迟到记录。  示例 2：  输入： s = &amp;ldquo;PPALLL&amp;rdquo; 输出： false 解释： 学生最后三天连续迟到，所以不满足出勤奖励的条件。  提示：  1 &amp;lt;= s.</description>
     </item>
     
     <item>
@@ -474,10 +528,10 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 题目描述 给你一个大小为 m x n 的网格和一个球。球的起始坐标为 [startRow, startColumn] 。你可以将球移到在四个方向上相邻的单元格内（可以穿过网格边界到达网格之外）。你 最多 可以移动 maxMove 次球。
 给你五个整数 m、n、maxMove、startRow 以及 startColumn ，找出并返回可以将球移出边界的路径数量。因为答案可能非常大，返回对 109 + 7 取余 后的结果。
 示例 1： &amp;lt;img src=&amp;quot;/img/576.out_of_boundary_paths_1.png&amp;quot;, width=&amp;ldquo;500px&amp;rdquo;&amp;gt;
- **输入：**m = 2, n = 2, maxMove = 2, startRow = 0, startColumn = 0
-**输出：**6
+ 输入： m = 2, n = 2, maxMove = 2, startRow = 0, startColumn = 0
+输出： 6
  示例 2： &amp;lt;img src=&amp;quot;/img/576.out_of_boundary_paths_2.png&amp;quot;, width=&amp;ldquo;500px&amp;rdquo;&amp;gt;
- **输入：**m = 1, n = 3, maxMove = 3, startRow = 0, startColumn = 1</description>
+ 输入： m = 1, n = 3, maxMove = 3, startRow = 0, startColumn = 1</description>
     </item>
     
     <item>
@@ -493,7 +547,7 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 所有的朋友被分成几对，配对情况以列表 pairs 给出，其中 pairs[i] = [xi, yi] 表示 xi 与 yi 配对，且 yi 与 xi 配对。
 但是，这样的配对情况可能会是其中部分朋友感到不开心。在 x 与 y 配对且 u 与 v 配对的情况下，如果同时满足下述两个条件，x 就会不开心：
  x 与 u 的亲近程度胜过 x 与 y，且 u 与 x 的亲近程度胜过 u 与 v  返回 不开心的朋友的数目 。
-示例 1：  **输入：**n = 4, preferences = [[1, 2, 3], [3, 2, 0], [3, 1, 0], [1, 2, 0]], pairs = [[0, 1], [2, 3]]</description>
+示例 1：  输入： n = 4, preferences = [[1, 2, 3], [3, 2, 0], [3, 1, 0], [1, 2, 0]], pairs = [[0, 1], [2, 3]]</description>
     </item>
     
     <item>
@@ -506,12 +560,12 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 难度： 中等
 题目描述 给你一个字符串 s ，找出其中最长的回文子序列，并返回该序列的长度。
 子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。
-示例 1：  **输入：**s = &amp;ldquo;bbbab&amp;rdquo;
-**输出：**4
-**解释：**一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
- 示例 2：  **输入：**s = &amp;ldquo;cbbd&amp;rdquo;
-**输出：**2
-**解释：**一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
+示例 1：  输入： s = &amp;ldquo;bbbab&amp;rdquo;
+输出： 4
+解释： 一个可能的最长回文子序列为 &amp;ldquo;bbbb&amp;rdquo; 。
+ 示例 2：  输入： s = &amp;ldquo;cbbd&amp;rdquo;
+输出： 2
+解释： 一个可能的最长回文子序列为 &amp;ldquo;bb&amp;rdquo; 。
  注意：  1 &amp;lt;= s.length &amp;lt;= 1000 s 仅由小写英文字母组成  解题思路 动态规划 该题可以转化为寻找原字符串 s 和倒序字符串 s&#39; 的最长公共子序列问题。使用动态规划求解，dp[i][j] 表示以下标 i, j 结尾的前缀字串最长公共子序列的长度，状态转移方程如下：
  当 s[i] == s&#39;[j]，dp[i][j] = dp[i-1][j-1] + 1 当 s[i] == s&#39;[j]，dp[i][j] = max(dp[i-1][j], dp[i][j-1]  每次状态转移时仅依赖当前行和上一行，故可以使用滚动数组降低空间复杂度。</description>
     </item>
@@ -527,12 +581,12 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 题目描述 如果一个数列 至少有三个元素 ，并且任意两个相邻元素之差相同，则称该数列为等差数列。
 例如，[1,3,5,7,9]、[7,7,7,7] 和 [3,-1,-5,-9] 都是等差数列。 给你一个整数数组 nums ，返回数组 nums 中所有为等差数组的 子数组 个数。
 子数组 是数组中的一个连续序列。
-示例 1：  **输入：**nums = [1,2,3,4]
-**输出：**3
-**解释：**nums 中有三个子等差数组：[1, 2, 3]、[2, 3, 4] 和 [1,2,3,4] 自身。
- 示例 2：  **输入：**nums = [1]
-**输出：**0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 5000 -1000 &amp;lt;= nums[i] &amp;lt;= 1000  解题思路 数学 对于一个等差数列数组，其长度为 n (n ≥ 3)，其等差数列 子数组 的数量由长度为 3, ..., n 的子数组构成，对应的 子数组 数量为 n-2, .</description>
+示例 1：  输入： nums = [1,2,3,4]
+输出： 3
+解释： nums 中有三个子等差数组：[1, 2, 3]、[2, 3, 4] 和 [1,2,3,4] 自身。
+ 示例 2：  输入： nums = [1]
+输出： 0
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 5000 -1000 &amp;lt;= nums[i] &amp;lt;= 1000  解题思路 数学 对于一个等差数列数组，其长度为 n (n ≥ 3)，其等差数列 子数组 的数量由长度为 3, .</description>
     </item>
     
     <item>
@@ -546,12 +600,12 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 题目描述 超级丑数 是一个正整数，并满足其所有质因数都出现在质数数组 primes 中。
 给你一个整数 n 和一个整数数组 primes ，返回第 n 个 超级丑数 。
 题目数据保证第 n 个 超级丑数 在 32-bit 带符号整数范围内。
-示例 1：  **输入：**n = 12, primes = [2,7,13,19]
-**输出：**32
-**解释：**给定长度为 4 的质数数组 primes = [2,7,13,19]，前 12 个超级丑数序列为：[1,2,4,7,8,13,14,16,19,26,28,32] 。
- 示例 2：  **输入：**n = 1, primes = [2,3,5]
-**输出：**1
-**解释：**1 不含质因数，因此它的所有质因数都在质数数组 primes = [2,3,5] 中。
+示例 1：  输入： n = 12, primes = [2,7,13,19]
+输出： 32
+解释： 给定长度为 4 的质数数组 primes = [2,7,13,19]，前 12 个超级丑数序列为：[1,2,4,7,8,13,14,16,19,26,28,32] 。
+ 示例 2：  输入： n = 1, primes = [2,3,5]
+输出： 1
+解释： 1 不含质因数，因此它的所有质因数都在质数数组 primes = [2,3,5] 中。
  注意：  1 &amp;lt;= n &amp;lt;= 106 1 &amp;lt;= primes.</description>
     </item>
     
@@ -565,13 +619,12 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 难度： 简单
 题目描述 泰波那契序列 Tn 定义如下： T0 = 0, T1 = 1, T2 = 1, 且在 n &amp;gt;= 0 的条件下 Tn+3 = Tn + Tn+1 + Tn+2
 给你整数 n，请返回第 n 个泰波那契数 Tn 的值。
-示例 1：  **输入：**n = 4
-**输出：**4
+示例 1：  输入： n = 4
+输出： 4
 解释：
 T_3 = 0 + 1 + 1 = 2
 T_4 = 1 + 1 + 2 = 4
- 示例 2：  **输入：**n = 25 **输出：**1389537
- 提示：  0 &amp;lt;= n &amp;lt;= 37 答案保证是一个 32 位整数，即 answer &amp;lt;= 231 - 1。  解题思路 动态规划 初始 t[0] = 0, t[1] = 1, t[2] = 1，依次向后递推计算，直到 t[n]。</description>
+ 示例 2：  输入： n = 25 输出： 1389537</description>
     </item>
     
     <item>
@@ -600,11 +653,11 @@ T_4 = 1 + 1 + 2 = 4
 对于一个起始节点，如果从该节点出发，无论每一步选择沿哪条有向边行走，最后必然在有限步内到达终点，则将该起始节点称作是 安全 的。
 返回一个由图中所有安全的起始节点组成的数组作为答案。答案数组中的元素应当按 升序 排列。
 该有向图有 n 个节点，按 0 到 n - 1 编号，其中 n 是 graph 的节点数。图以下述形式给出：graph[i] 是编号 j 节点的一个列表，满足 (i, j) 是图的一条有向边。
-示例 1：  **输入：**graph = [[1,2],[2,3],[5],[0],[5],[],[]]
-输出：[2,4,5,6]
-**解释：**示意图如上。
- 示例 2：  **输入：**graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
-输出：[4]
+示例 1：  输入： graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+输出： [2,4,5,6]
+解释： 示意图如上。
+ 示例 2：  输入： graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+输出： [4]
  提示：  n == graph.length 1 &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= graph[i].length &amp;lt;= n graph[i] 按严格递增顺序排列。 图中可能包含自环。 图中边的数目在范围 [1, 4 * 104] 内。  解题思路 深度优先搜索 通过分析题目得知，当图无环时，所有结点均为 安全 结点；当图有环时，无法到达环的结点属于 安全 结点。</description>
     </item>
     
@@ -640,11 +693,11 @@ func triangleNumber(nums []int) int { sort.Ints(nums) res := 0 for i := 0; i &am
 题目描述 有 n 个网络节点，标记为 1 到 n 。
 给你一个列表 times，表示信号经过 有向 边的传递时间。 times[i] = (ui, vi, wi)，其中 ui 是源节点，vi 是目标节点， wi 是一个信号从源节点传递到目标节点的时间。
 现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 -1 。
-示例 1：  **输入：**times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
-**输出：**2
- 示例 2：  **输入：**times = [[1,2,1]], n = 2, k = 1
-**输出：**1
- 示例 3：  **输入：**times = [[1,2,1]], n = 2, k = 2</description>
+示例 1：  输入： times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+输出： 2
+ 示例 2：  输入： times = [[1,2,1]], n = 2, k = 1
+输出： 1
+ 示例 3：  输入： times = [[1,2,1]], n = 2, k = 2</description>
     </item>
     
     <item>
@@ -657,16 +710,15 @@ func triangleNumber(nums []int) int { sort.Ints(nums) res := 0 for i := 0; i &am
 难度： 中等
 题目描述 给你一个整数数组 nums ，你需要找出一个 连续子数组 ，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。
 请你找出符合题意的 最短 子数组，并输出它的长度。
-示例 1：  **输入：**nums = [2,6,4,8,10,9,15]
-**输出：**5
-**解释：**你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
- 示例 2：  **输入：**nums = [1,2,3,4]
-**输出：**0
- 示例 3：  **输入：**nums = [1]
-**输出：**0
+示例 1：  输入： nums = [2,6,4,8,10,9,15]
+输出： 5
+解释： 你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。
+ 示例 2：  输入： nums = [1,2,3,4]
+输出： 0
+ 示例 3：  输入： nums = [1]
+输出： 0
  提示：  1 &amp;lt;= nums.length &amp;lt;= 104 -105 &amp;lt;= nums[i] &amp;lt;= 105  **进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
-解题思路 排序 对于连续子数组以外的元素，其在排序前后位置不会改变，故可以将整个数组排序后，从头和尾开始，依次找到不变的元素加以排除，剩余元素就是 最短 连续子数组。
-func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) copy(sortedNum, nums) sort.</description>
+解题思路 排序 对于连续子数组以外的元素，其在排序前后位置不会改变，故可以将整个数组排序后，从头和尾开始，依次找到不变的元素加以排除，剩余元素就是 最短 连续子数组。</description>
     </item>
     
     <item>
@@ -681,19 +733,19 @@ func findUnsortedSubarray(nums []int) int { sortedNum := make([]int, len(nums)) 
 请你返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序。
 如果第 i 行的军人数量少于第 j 行，或者两行军人数量相同但 i 小于 j，那么我们认为第 i 行的战斗力比第 j 行弱。
 军人 总是 排在一行中的靠前位置，也就是说 1 总是出现在 0 之前。
-示例 1：  **输入：**mat =
+示例 1：  输入： mat =
 [[1,1,0,0,0],
 [1,1,1,1,0],
 [1,0,0,0,0],
 [1,1,0,0,0],
 [1,1,1,1,1]],
 k = 3
-输出：[2,0,3]
-解释： 每行中的军人数目： 行 0 -&amp;gt; 2
+输出： [2,0,3]
+解释：
+每行中的军人数目： 行 0 -&amp;gt; 2
 行 1 -&amp;gt; 4
 行 2 -&amp;gt; 1
-行 3 -&amp;gt; 2
-行 4 -&amp;gt; 5</description>
+行 3 -&amp;gt; 2</description>
     </item>
     
     <item>
@@ -708,14 +760,14 @@ k = 3
 对位于 (row, col) 的每个结点而言，其左右子结点分别位于 (row + 1, col - 1) 和 (row + 1, col + 1) 。树的根结点位于 (0, 0) 。
 二叉树的 垂序遍历 从最左边的列开始直到最右边的列结束，按列索引每一列上的所有结点，形成一个按出现位置从上到下排序的有序列表。如果同行同列上有多个结点，则按结点的值从小到大进行排序。
 返回二叉树的 垂序遍历 序列。
-示例 1：  **输入：**root = [3,9,20,null,null,15,7]
-输出：[[9],[3,15],[20],[7]]
+示例 1：  输入： root = [3,9,20,null,null,15,7]
+输出： [[9],[3,15],[20],[7]]
 解释：
 列 -1 ：只有结点 9 在此列中。
 列 0 ：只有结点 3 和 15 在此列中，按从上到下顺序。
 列 1 ：只有结点 20 在此列中。
 列 2 ：只有结点 7 在此列中。
- 示例 2：  **输入：**root = [1,2,3,4,5,6,7]</description>
+ 示例 2：  输入： root = [1,2,3,4,5,6,7]</description>
     </item>
     
     <item>
@@ -757,10 +809,10 @@ AB -&amp;gt; 28
 如下图所示，在奇数行（即，第一行、第三行、第五行……）中，按从左到右的顺序进行标记；
 而偶数行（即，第二行、第四行、第六行……）中，按从右到左的顺序进行标记。
 给你树上某一个节点的标号 label，请你返回从根节点到该标号为 label 节点的路径，该路径是由途经的节点标号所组成的。
-示例 1：  **输入：**label = 14
-输出：[1,3,4,14]
- 示例 2：  **输入：**label = 26
-输出：[1,2,6,10,26]
+示例 1：  输入： label = 14
+输出： [1,3,4,14]
+ 示例 2：  输入： label = 26
+输出： [1,2,6,10,26]
  提示：  1 &amp;lt;= label &amp;lt;= 106  解题思路 推导 对于一个完全二叉树，可以快速找到子结点 x 的父结点是 x/2。该题描述的是完全二叉树的一种变种，仅是偶数行的结点整体进行了反转。
 可以使用完全二叉树的编号，快速找到父结点，然后推导出在原二叉树中的原编号，加入到结果中。
 对于反转后的某一层，其元素为公差为 1 的等差数列，某个数反转后的编号即为当前层首尾元素之和减去当前元素。
@@ -798,14 +850,13 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 题目描述 给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节点中较小的一个。
 更正式地说，root.val = min(root.left.val, root.right.val) 总成立。
 给出这样的一个二叉树，你需要输出所有节点中的 第二小的值。如果第二小的值不存在的话，输出 -1 。
-示例 1：  **输入：**root = [2,2,5,null,null,5,7]
-**输出：**5
-**解释：**最小的值是 2 ，第二小的值是 5 。
- 示例 2：  **输入：**root = [2,2,2]
-输出：-1
-**解释：**最小的值是 2, 但是不存在第二小的值。
- 提示：  树中节点数目在范围 [1, 25] 内 1 &amp;lt;= Node.val &amp;lt;= 231 - 1 对于树中每个节点 root.val == min(root.left.val, root.right.val)  解题思路 深度优先搜索 据题意，树的根结点是最小值，故可以遍历整棵树，使用 min 记录最 第二小的值。
-对于每个结点，当该结点的数值小于 min，并且不与根结点相同时，更新 min，一次遍历完成得到 第二小的值。</description>
+示例 1：  输入： root = [2,2,5,null,null,5,7]
+输出： 5
+解释： 最小的值是 2 ，第二小的值是 5 。
+ 示例 2：  输入： root = [2,2,2]
+输出： -1
+解释： 最小的值是 2, 但是不存在第二小的值。
+ 提示：  树中节点数目在范围 [1, 25] 内 1 &amp;lt;= Node.val &amp;lt;= 231 - 1 对于树中每个节点 root.val == min(root.left.val, root.right.val)  解题思路 深度优先搜索 据题意，树的根结点是最小值，故可以遍历整棵树，使用 min 记录最 第二小的值。</description>
     </item>
     
     <item>
@@ -820,11 +871,11 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 给你一个二维整数数组 adjacentPairs ，大小为 n - 1 ，其中每个 adjacentPairs[i] = [ui, vi] 表示元素 ui 和 vi 在 nums 中相邻。
 题目数据保证所有由元素 nums[i] 和 nums[i+1] 组成的相邻元素对都存在于 adjacentPairs 中，存在形式可能是 [nums[i], nums[i+1]] ，也可能是 [nums[i+1], nums[i]] 。这些相邻元素对可以 按任意顺序 出现。
 返回 原始数组 nums 。如果存在多种解答，返回 其中任意一个 即可。
-示例 1：  **输入：**adjacentPairs = [[2,1],[3,4],[3,2]]
-输出：[1,2,3,4]
-**解释：**数组的所有相邻元素对都在 adjacentPairs 中。
+示例 1：  输入： adjacentPairs = [[2,1],[3,4],[3,2]]
+输出： [1,2,3,4]
+解释： 数组的所有相邻元素对都在 adjacentPairs 中。
 特别要注意的是，adjacentPairs[i] 只表示两个元素相邻，并不保证其 左-右 顺序。
- 示例 2：  **输入：**adjacentPairs = [[4,-2],[1,4],[-3,1]]</description>
+ 示例 2：  输入： adjacentPairs = [[4,-2],[1,4],[-3,1]]</description>
     </item>
     
     <item>
@@ -838,16 +889,14 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 题目描述 给你一个字符串 time ，格式为 hh:mm（小时：分钟），其中某几位数字被隐藏（用 ? 表示）。
 有效的时间为 00:00 到 23:59 之间的所有时间，包括 00:00 和 23:59 。
 替换 time 中隐藏的数字，返回你可以得到的最晚有效时间。
-示例 1：  **输入：**time = &amp;ldquo;2?:?0&amp;rdquo;
-输出：&amp;ldquo;23:50&amp;rdquo;
-**解释：**以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
- 示例 2：  **输入：**time = &amp;ldquo;0?:3?&amp;rdquo;
-输出：&amp;ldquo;09:39&amp;rdquo;
- 示例 3：  **输入：**time = &amp;ldquo;1?:22&amp;rdquo;
-输出：&amp;ldquo;19:22&amp;rdquo;
- 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。
-小时的有效范围为 00 ~ 23，十位和个位相互影响：
- 当十位为 ?</description>
+示例 1：  输入： time = &amp;ldquo;2?:?0&amp;rdquo;
+输出： &amp;ldquo;23:50&amp;rdquo;
+解释： 以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
+ 示例 2：  输入： time = &amp;ldquo;0?:3?&amp;rdquo;
+输出： &amp;ldquo;09:39&amp;rdquo;
+ 示例 3：  输入： time = &amp;ldquo;1?:22&amp;rdquo;
+输出： &amp;ldquo;19:22&amp;rdquo;
+ 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。</description>
     </item>
     
     <item>
@@ -861,10 +910,9 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 题目描述 给你一个二维整数数组 ranges 和两个整数 left 和 right 。每个 ranges[i] = [starti, endi] 表示一个从 starti 到 endi 的 闭区间 。
 如果闭区间 [left, right] 内每个整数都被 ranges 中 至少一个 区间覆盖，那么请你返回 true ，否则返回 false 。
 已知区间 ranges[i] = [starti, endi] ，如果整数 x 满足 starti &amp;lt;= x &amp;lt;= endi ，那么我们称整数 x 被覆盖了。
-示例 1：  **输入：**ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
-**输出：**true
-**解释：**2 到 5 的每个整数都被覆盖了：
- 2 被第一个区间覆盖。 3 和 4 被第二个区间覆盖。 5 被第三个区间覆盖   示例 2：  **输入：**ranges = [[1,10],[10,20]], left = 21, right = 21</description>
+示例 1：  输入： ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
+输出： true
+解释： 2 到 5 的每个整数都被覆盖了：</description>
     </item>
     
     <item>
@@ -881,9 +929,8 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 返回复制链表的头节点。
 用一个由 n 个节点组成的链表来表示输入/输出中的链表。每个节点用一个 [val, random_index] 表示：
  val：一个表示 Node.val 的整数。 random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如果不指向任何节点，则为 null 。  你的代码 只 接受原链表的头节点 head 作为传入参数。
-示例 1：  **输入：**head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
-输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
- 示例 2：  **输入：**head = [[1,1],[2,1]]</description>
+示例 1：  输入： head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+输出： [[7,null],[13,0],[11,4],[10,2],[1,0]]</description>
     </item>
     
     <item>
@@ -897,10 +944,10 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 题目描述 输入两个链表，找出它们的第一个公共节点。
 如下面的两个链表：
 在节点 c1 开始相交。
-示例 1：  **输入：**intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
-**输出：**Reference of the node with value = 8
-**输入解释：**相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
- 示例 2：  **输入：**intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
+示例 1：  输入： intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+输出： Reference of the node with value = 8
+输入解释： 相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
+ 示例 2：  输入： intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
     </item>
     
     <item>
@@ -914,9 +961,9 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 题目描述 一个数对 (a,b) 的 数对和 等于 a + b 。最大数对和 是一个数对数组中最大的 数对和 。
 比方说，如果我们有数对 (1,5) ，(2,3) 和 (4,4)，最大数对和 为 max(1+5, 2+3, 4+4) = max(6, 5, 8) = 8 。 给你一个长度为 偶数 n 的数组 nums ，请你将 nums 中的元素分成 n / 2 个数对，使得：
  nums 中每个元素 恰好 在 一个 数对中，且 最大数对和 的值 最小 。  请你在最优数对划分的方案下，返回最小的 最大数对和 。
-示例 1：  **输入：**nums = [3,5,2,3]
-**输出：**7
-**解释：**数组中的元素可以分为数对 (3,3) 和 (5,2) 。</description>
+示例 1：  输入： nums = [3,5,2,3]
+输出： 7
+解释： 数组中的元素可以分为数对 (3,3) 和 (5,2) 。</description>
     </item>
     
     <item>
@@ -930,14 +977,14 @@ func pathInZigZagTree(label int) []int { layer := 0 // 层 	cnt := layer // 满�
 题目描述 元素的 频数 是该元素在一个数组中出现的次数。
 给你一个整数数组 nums 和一个整数 k 。在一步操作中，你可以选择 nums 的一个下标，并将该下标对应元素的值增加 1 。
 执行最多 k 次操作后，返回数组中最高频元素的 最大可能频数 。
-示例 1：  **输入：**nums = [1,2,4], k = 5
-**输出：**3
-**解释：**对第一个元素执行 3 次递增操作，对第二个元素执 2 次递增操作，此时 nums = [4,4,4] 。
+示例 1：  输入： nums = [1,2,4], k = 5
+输出： 3
+解释： 对第一个元素执行 3 次递增操作，对第二个元素执 2 次递增操作，此时 nums = [4,4,4] 。
 4 是数组中最高频元素，频数是 3 。
- 示例 2：  **输入：**nums = [1,4,8,13], k = 5
-**输出：**2
-**解释：**存在多种最优解决方案：
- 对第一个元素执行 3 次递增操作，此时 nums = [4,4,8,13] 。4 是数组中最高频元素，频数是 2 。 对第二个元素执行 4 次递增操作，此时 nums = [1,8,8,13] 。8 是数组中最高频元素，频数是 2 。 对第三个元素执行 5 次递增操作，此时 nums = [1,4,13,13] 。13 是数组中最高频元素，频数是 2 。   示例 3：  **输入：**nums = [3,9,6], k = 2</description>
+ 示例 2：  输入： nums = [1,4,8,13], k = 5
+输出： 2
+解释： 存在多种最优解决方案：
+ 对第一个元素执行 3 次递增操作，此时 nums = [4,4,8,13] 。4 是数组中最高频元素，频数是 2 。 对第二个元素执行 4 次递增操作，此时 nums = [1,8,8,13] 。8 是数组中最高频元素，频数是 2 。 对第三个元素执行 5 次递增操作，此时 nums = [1,4,13,13] 。13 是数组中最高频元素，频数是 2 。   示例 3：  输入： nums = [3,9,6], k = 2</description>
     </item>
     
     <item>
@@ -1007,8 +1054,8 @@ func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if
 题目描述 给你一个正整数数组 arr 。请你对 arr 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：
  arr 中 第一个 元素必须为 1 。 任意相邻两个元素的差的绝对值 小于等于 1 ，也就是说，对于任意的 1 &amp;lt;= i &amp;lt; arr.length （数组下标从 0 开始），都满足 abs(arr[i] - arr[i - 1]) &amp;lt;= 1 。abs(x) 为 x 的绝对值。  你可以执行以下 2 种操作任意次：
  减小 arr 中任意元素的值，使其变为一个 更小的正整数 。 重新排列 arr 中的元素，你可以以任意顺序重新排列。  请你返回执行以上操作后，在满足前文所述的条件下，arr 中可能的 最大值 。
-示例 1：  **输入：**arr = [2,2,1,2,1]
-**输出：**2
+示例 1：  输入： arr = [2,2,1,2,1]
+输出： 2
 解释：
 我们可以重新排列 arr 得到 [1,2,2,2,1] ，该数组满足所有条件。</description>
     </item>
@@ -1026,7 +1073,7 @@ func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if
 你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
 在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。因为答案可能很大，所以需要对 109 + 7 取余 后返回。
 |x| 定义为：
- 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  **输入：**nums1 = [1,7,5], nums2 = [2,3,5]</description>
+ 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  输入： nums1 = [1,7,5], nums2 = [2,3,5]</description>
     </item>
     
     <item>
@@ -1040,9 +1087,9 @@ func search(nums []int, target int) int { cnt := 0 for _, num := range nums { if
 题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）,数组已经按照 升序排列。编写一个方法，计算出研究者的 h 指数。
 h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
 例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
-示例：  **输入：**citations = [0,1,3,5,6]
-**输出：**3
-**解释：**给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 0, 1, 3, 5, 6 次。
+示例：  输入： citations = [0,1,3,5,6]
+输出： 3
+解释： 给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 0, 1, 3, 5, 6 次。
 由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
  **说明：**如果 h 有多种可能的值，h 指数是其中最大的那个。</description>
     </item>
@@ -1058,12 +1105,11 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
 题目描述 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）。编写一个方法，计算出研究者的 h 指数。
 h 指数的定义：h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）总共 有 h 篇论文分别被引用了至少 h 次。且其余的 $N - h$ 篇论文每篇被引用次数 不超过 h 次。
 例如：某人的 h 指数是 20，这表示他已发表的论文中，每篇被引用了至少 20 次的论文总共有 20 篇。
-示例：  **输入：**citations = [3,0,6,1,5]
-**输出：**3
-**解释：**给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
+示例：  输入： citations = [3,0,6,1,5]
+输出： 3
+解释： 给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 3, 0, 6, 1, 5 次。
 由于研究者有 3 篇论文每篇 至少 被引用了 3 次，其余两篇论文每篇被引用 不多于 3 次，所以她的 h 指数是 3。
- **提示：**如果 h 有多种可能的值，h 指数是其中最大的那个。
-解题思路 排序 按照每篇论文被引用次数从多到少排序，依次遍历直到首次找到第 i 篇论文，其被引用次数 &amp;lt; i，则说明其前面的论文被引用数均 ≥ i-1，且其前一篇恰好时第 i-1 篇，返回 i-1。</description>
+ **提示：**如果 h 有多种可能的值，h 指数是其中最大的那个。</description>
     </item>
     
     <item>
@@ -1076,13 +1122,12 @@ h 指数的定义：h 代表“高引用次数”（high citations），一名�
 难度： 中等
 题目描述 创建一个基于时间的键值存储类 TimeMap，它支持下面两个操作：
  set(string key, string value, int timestamp)  存储键 key、值 value，以及给定的时间戳 timestamp。
-get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。    示例1：  **输入：**inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
-输出：[null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
+get(string key, int timestamp)  返回先前调用 set(key, value, timestamp_prev) 所存储的值，其中 timestamp_prev &amp;lt;= timestamp。 如果有多个这样的值，则返回对应最大的 timestamp_prev 的那个值。 如果没有值，则返回空字符串（&amp;quot;&amp;quot;）。    示例1：  输入： inputs = [&amp;ldquo;TimeMap&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;set&amp;rdquo;,&amp;ldquo;get&amp;rdquo;,&amp;ldquo;get&amp;rdquo;], inputs = [[],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,1],[&amp;ldquo;foo&amp;rdquo;,3],[&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,4],[&amp;ldquo;foo&amp;rdquo;,5]]
+输出： [null,null,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,null,&amp;ldquo;bar2&amp;rdquo;,&amp;ldquo;bar2&amp;rdquo;]
 解释：
 TimeMap kv;
 kv.set(&amp;ldquo;foo&amp;rdquo;, &amp;ldquo;bar&amp;rdquo;, 1); // 存储键 &amp;ldquo;foo&amp;rdquo; 和值 &amp;ldquo;bar&amp;rdquo; 以及时间戳 timestamp = 1
-kv.get(&amp;ldquo;foo&amp;rdquo;, 1); // 输出 &amp;ldquo;bar&amp;rdquo;
-kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为在时间戳 3 和时间戳 2 处没有对应 &amp;ldquo;foo&amp;rdquo; 的值，所以唯一的值位于时间戳 1 处（即 &amp;gt; &amp;ldquo;bar&amp;rdquo;）</description>
+kv.get(&amp;ldquo;foo&amp;rdquo;, 1); // 输出 &amp;ldquo;bar&amp;rdquo;</description>
     </item>
     
     <item>
@@ -1094,12 +1139,12 @@ kv.get(&amp;ldquo;foo&amp;rdquo;, 3); // 输出 &amp;ldquo;bar&amp;rdquo; 因为
       <description>链接： https://leetcode-cn.com/problems/find-majority-element-lcci/
 难度： 简单
 题目描述 数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。请设计时间复杂度为 $O(N)$ 、空间复杂度为 $O(1)$ 的解决方案。
-示例 1：  输入：[1,2,5,9,5,9,5,5,5]
-**输出：**5
- 示例 2：  输入：[3,2]
-输出：-1
- 示例 3：  输入：[2,2,1,1,1,2,2]
-**输出：**2
+示例 1：  输入： [1,2,5,9,5,9,5,5,5]
+输出： 5
+ 示例 2：  输入： [3,2]
+输出： -1
+ 示例 3：  输入： [2,2,1,1,1,2,2]
+输出： 2
  解题思路 哈希计数 遍历数组，记录每个数出现的次数，直到某个数 num 出现的次数大于数组长度的一半则返回 num，否则返回 -1
 func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return -1 } 复杂度  时间复杂度：$ O(N) $ 空间复杂度：$ O(N) $  排序 将数组排序，依次统计连续相同数字的数量，直到满足条件为止。</description>
     </item>
@@ -1114,12 +1159,12 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 难度： 中等
 题目描述 给你一个二元数组 nums ，和一个整数 goal ，请你统计并返回有多少个和为 goal 的 非空 子数组。
 子数组 是数组的一段连续部分。
-示例 1：  **输入：**nums = [1,0,1,0,1], goal = 2
-**输出：**4
+示例 1：  输入： nums = [1,0,1,0,1], goal = 2
+输出： 4
 解释：
 有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]
- 示例 2：  **输入：**nums = [0,0,0,0,0], goal = 0
-**输出：**15
+ 示例 2：  输入： nums = [0,0,0,0,0], goal = 0
+输出： 15
  提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 nums[i] 不是 0 就是 1 0 &amp;lt;= goal &amp;lt;= nums.length  解题思路 哈希 假设满足条件的子数组下标为 [i, j) ，则以 i 和 j 为结尾的两个前缀数组的前缀和记作 sum[i]、sum[j] ，有 goal = sum[j] - sum[i]。</description>
     </item>
     
@@ -1135,13 +1180,13 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 你可以搭配 任意 两道餐品做一顿大餐。
 给你一个整数数组 deliciousness ，其中 deliciousness[i] 是第 i​​​​​​​​​​​​​​ 道餐品的美味程度，返回你可以用数组中的餐品做出的不同 大餐 的数量。结果需要对 109 + 7 取余。
 注意，只要餐品下标不同，就可以认为是不同的餐品，即便它们的美味程度相同。
-示例 1：  **输入：**deliciousness = [1,3,5,7,9]
-**输出：**4
-**解释：**大餐的美味程度组合为 (1,3) 、(1,7) 、(3,5) 和 (7,9) 。
+示例 1：  输入： deliciousness = [1,3,5,7,9]
+输出： 4
+解释： 大餐的美味程度组合为 (1,3) 、(1,7) 、(3,5) 和 (7,9) 。
 它们各自的美味程度之和分别为 4 、8 、8 和 16 ，都是 2 的幂。
- 示例 2:  **输入：**deliciousness = [1,1,1,3,3,3,7]
-**输出：**15
-**解释：**大餐的美味程度组合为 3 种 (1,1) ，9 种 (1,3) ，和 3 种 (1,7) 。</description>
+ 示例 2:  输入： deliciousness = [1,1,1,3,3,3,7]
+输出： 15
+解释： 大餐的美味程度组合为 3 种 (1,1) ，9 种 (1,3) ，和 3 种 (1,7) 。</description>
     </item>
     
     <item>
@@ -1155,8 +1200,8 @@ func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := ra
 题目描述 给你一个数组 orders ，表示客户在餐厅中完成的订单，确切地说， orders[i]=[customerNamei,tableNumberi,foodItemi] ，其中 customerNamei 是客户的姓名，tableNumberi 是客户所在餐桌的桌号，而 foodItemi 是客户点的餐品名称。
 请你返回该餐厅的 点菜展示表 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。
 注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
-示例 1：  **输入：**orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
-输出：[[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
+示例 1：  输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
+输出： [[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
 解释：
 点菜展示表如下所示：
 Table,Beef Burrito,Ceviche,Fried Chicken,Water
@@ -1164,8 +1209,7 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 5 ,0 ,1 ,0 ,1
 10 ,1 ,0 ,0 ,0
 对于餐桌 3：David 点了 &amp;ldquo;Ceviche&amp;rdquo; 和 &amp;ldquo;Fried Chicken&amp;rdquo;，而 Rous 点了 &amp;ldquo;Ceviche&amp;rdquo;
-而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;
-餐桌 10：Corina 点了 &amp;ldquo;Beef Burrito&amp;rdquo;</description>
+而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;</description>
     </item>
     
     <item>
@@ -1182,18 +1226,16 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 两个化学式连在一起是新的化学式。例如 H2O2He3Mg4 也是化学式。
 一个括号中的化学式和数字（可选择性添加）也是化学式。例如 (H2O2) 和 (H2O2)3 是化学式。
 给定一个化学式 formula ，返回所有原子的数量。格式为：第一个（按字典序）原子的名字，跟着它的数量（如果数量大于 1），然后是第二个原子的名字（按字典序），跟着它的数量（如果数量大于 1），以此类推。
-示例1：  **输入：**formula = &amp;ldquo;H2O&amp;rdquo;
-输出：&amp;ldquo;H2O&amp;rdquo;
+示例1：  输入： formula = &amp;ldquo;H2O&amp;rdquo;
+输出： &amp;ldquo;H2O&amp;rdquo;
 解释：
 原子的数量是 {&amp;lsquo;H&amp;rsquo;: 2, &amp;lsquo;O&amp;rsquo;: 1}。
- 示例2：  **输入：**formula = &amp;ldquo;Mg(OH)2&amp;rdquo;
-输出：&amp;ldquo;H2MgO2&amp;rdquo;
+ 示例2：  输入： formula = &amp;ldquo;Mg(OH)2&amp;rdquo;
+输出： &amp;ldquo;H2MgO2&amp;rdquo;
 解释：
 原子的数量是 {&amp;lsquo;H&amp;rsquo;: 2, &amp;lsquo;Mg&amp;rsquo;: 1, &amp;lsquo;O&amp;rsquo;: 2}。
- 示例3：  **输入：**formula = &amp;ldquo;K4(ON(SO3)2)2&amp;rdquo;
-输出：&amp;ldquo;K4N2O14S4&amp;rdquo;
-解释：
-原子的数量是 {&amp;lsquo;K&amp;rsquo;: 4, &amp;lsquo;N&amp;rsquo;: 2, &amp;lsquo;O&amp;rsquo;: 14, &amp;lsquo;S&amp;rsquo;: 4}。</description>
+ 示例3：  输入： formula = &amp;ldquo;K4(ON(SO3)2)2&amp;rdquo;
+输出： &amp;ldquo;K4N2O14S4&amp;rdquo;</description>
     </item>
     
     <item>
@@ -1207,10 +1249,10 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  **输入：**nums = [1,2,2,4]
-输出：[2,3]
- 示例 2：  **输入：**nums = [1,1]
-输出：[1,2]
+示例 1：  输入： nums = [1,2,2,4]
+输出： [2,3]
+ 示例 2：  输入： nums = [1,1]
+输出： [1,2]
  提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !</description>
     </item>
@@ -1261,12 +1303,10 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 商店中新到 n 支雪糕，用长度为 n 的数组 costs 表示雪糕的定价，其中 costs[i] 表示第 i 支雪糕的现金价格。Tony 一共有 coins 现金可以用于消费，他想要买尽可能多的雪糕。
 给你价格数组 costs 和现金量 coins ，请你计算并返回 Tony 用 coins 现金能够买到的雪糕的 最大数量 。
 **注意：**Tony 可以按任意顺序购买雪糕。
-示例 1：  **输入：**costs = [1,3,2,4,1], coins = 7
-**输出：**4
-**解释：**Tony 可以买下标为 0、1、2、4 的雪糕，总价为 1 + 3 + 2 + 1 = 7
- 示例 2：  **输入：**costs = [10,6,8,7,7,8], coins = 5
-**输出：**0
-**解释：**Tony 没有足够的钱买任何一支雪糕。</description>
+示例 1：  输入： costs = [1,3,2,4,1], coins = 7
+输出： 4
+解释： Tony 可以买下标为 0、1、2、4 的雪糕，总价为 1 + 3 + 2 + 1 = 7
+ 示例 2：  输入： costs = [10,6,8,7,7,8], coins = 5</description>
     </item>
     
     <item>
@@ -1279,9 +1319,9 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 难度： 简单
 题目描述 小朋友 A 在和 ta 的小伙伴们玩传信息游戏，游戏规则如下：
  有 n 名玩家，所有玩家编号分别为 0 ～ n-1，其中小朋友 A 的编号为 0 每个玩家都有固定的若干个可传信息的其他玩家（也可能没有）。传信息的关系是单向的（比如 A 可以向 B 传信息，但 B 不能向 A 传信息）。 每轮信息必须需要传递给另一个人，且信息可重复经过同一个人  给定总玩家数 n，以及按 [玩家编号,对应可传递玩家编号] 关系组成的二维数组 relation。返回信息从小 A (编号 0 ) 经过 k 轮传递到编号为 n-1 的小伙伴处的方案数；若不能到达，返回 0。
-示例1：  **输入：**n = 5, relation = [[0,2],[2,1],[3,4],[2,3],[1,4],[2,0],[0,4]], k = 3
-**输出：**3
-**解释：**信息从小 A 编号 0 处开始，经 3 轮传递，到达编号 4。共有 3 种方案，分别是 0-&amp;gt;2-&amp;gt;0-&amp;gt;4， 0-&amp;gt;2-&amp;gt;1-&amp;gt;4， 0-&amp;gt;2-&amp;gt;3-&amp;gt;4。</description>
+示例1：  输入： n = 5, relation = [[0,2],[2,1],[3,4],[2,3],[1,4],[2,0],[0,4]], k = 3
+输出： 3
+解释： 信息从小 A 编号 0 处开始，经 3 轮传递，到达编号 4。共有 3 种方案，分别是 0-&amp;gt;2-&amp;gt;0-&amp;gt;4， 0-&amp;gt;2-&amp;gt;1-&amp;gt;4， 0-&amp;gt;2-&amp;gt;3-&amp;gt;4。</description>
     </item>
     
     <item>
@@ -1295,11 +1335,11 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
 **提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
-示例1：  **输入：**root = [1,2,3,null,null,4,5]
-输出：[1,2,3,null,null,4,5]
+示例1：  输入： root = [1,2,3,null,null,4,5]
+输出： [1,2,3,null,null,4,5]
  解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。
 反序列化时，按照列表顺序构建二叉树，遇到空结点表示该分支已结束，回到另一个分支处，继续构造结点。
-class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree. :type data: str :rtype: TreeNode &amp;#34;&amp;#34;&amp;#34; list = data.</description>
+class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tree to a single string. :type root: TreeNode :rtype: str &amp;#34;&amp;#34;&amp;#34; list = [] def dfs(node): if node == None: list.append(&amp;#34;None&amp;#34;) else: list.append(str(node.val)) dfs(node.left) dfs(node.right) dfs(root) return &amp;#34;,&amp;#34;.join(list) def deserialize(self, data): &amp;#34;&amp;#34;&amp;#34;Decodes your encoded data to tree.</description>
     </item>
     
     <item>
@@ -1343,10 +1383,9 @@ func convertToTitle(columnNumber int) string { res := make([]byte, 0, 10) for ; 
 题目描述 给你一个数组 routes ，表示一系列公交线路，其中每个 routes[i] 表示一条公交线路，第 i 辆公交车将会在上面循环行驶。
  例如，路线 routes[0] = [1, 5, 7] 表示第 0 辆公交车会一直按序列 1 -&amp;gt; 5 -&amp;gt; 7 -&amp;gt; 1 -&amp;gt; 5 -&amp;gt; 7 -&amp;gt; 1 -&amp;gt; ... 这样的车站路线行驶。  现在从 source 车站出发（初始时不在公交车上），要前往 target 车站。 期间仅可乘坐公交车。
 求出 最少乘坐的公交车数量 。如果不可能到达终点车站，返回 -1 。
-示例 1：  **输入：**routes = [[1,2,7],[3,6,7]], source = 1, target = 6
-**输出：**2
-**解释：**最优策略是先乘坐第一辆公交车到达车站 7 , 然后换乘第二辆公交车到车站 6 。
- 示例 2：  **输入：**routes = [[7,12],[4,5,15],[6],[15,19],[9,12,13]], source = 15, target = 12</description>
+示例 1：  输入： routes = [[1,2,7],[3,6,7]], source = 1, target = 6
+输出： 2
+解释： 最优策略是先乘坐第一辆公交车到达车站 7 , 然后换乘第二辆公交车到车站 6 。</description>
     </item>
     
     <item>
@@ -1363,8 +1402,7 @@ r 行 c 列的棋盘，按前述方法编号，棋盘格中可能存在 “蛇�
 玩家从棋盘上的方格 1 （总是在最后一行、第一列）开始出发。
 每一回合，玩家需要从当前方格 x 开始出发，按下述要求前进：
  选定目标方格：选择从编号 x+1，x+2，x+3，x+4，x+5，或者 x+6 的方格中选出一个目标方格 s ，目标方格的编号 &amp;lt;= N*N。  该选择模拟了掷骰子的情景，无论棋盘大小如何，你的目的地范围也只能处于区间 [x+1, x+6] 之间。   传送玩家：如果目标方格 S 处存在蛇或梯子，那么玩家会传送到蛇或梯子的目的地。否则，玩家传送到目标方格 S。 注意，玩家在每回合的前进过程中最多只能爬过蛇或梯子一次：就算目的地是另一条蛇或梯子的起点，你也不会继续移动。  返回达到方格 N*N 所需的最少移动次数，如果不可能，则返回 -1。
-示例：  输入：[
-[-1,-1,-1,-1,-1,-1],
+示例：  输入： [
 [-1,-1,-1,-1,-1,-1],
 [-1,-1,-1,-1,-1,-1],</description>
     </item>
@@ -1381,12 +1419,11 @@ r 行 c 列的棋盘，按前述方法编号，棋盘格中可能存在 “蛇�
 锁的初始数字为 &#39;0000&#39; ，一个代表四个拨轮的数字的字符串。
 列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
 字符串 target 代表可以解锁的数字，你需要给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
-示例1：  **输入：**deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
-**输出：**6
+示例1：  输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
+输出： 6
 解释：
 可能的移动序列为 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;1000&amp;rdquo; -&amp;gt; &amp;ldquo;1100&amp;rdquo; -&amp;gt; &amp;ldquo;1200&amp;rdquo; -&amp;gt; &amp;ldquo;1201&amp;rdquo; -&amp;gt; &amp;ldquo;1202&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo;。
-注意 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;0001&amp;rdquo; -&amp;gt; &amp;ldquo;0002&amp;rdquo; -&amp;gt; &amp;ldquo;0102&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo; 这样的序列是不能解锁的，
-因为当拨动到 &amp;ldquo;0102&amp;rdquo; 时这个锁就会被锁定。</description>
+注意 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;0001&amp;rdquo; -&amp;gt; &amp;ldquo;0002&amp;rdquo; -&amp;gt; &amp;ldquo;0102&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo; 这样的序列是不能解锁的，</description>
     </item>
     
     <item>
@@ -1398,17 +1435,17 @@ r 行 c 列的棋盘，按前述方法编号，棋盘格中可能存在 “蛇�
       <description>链接： https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/
 难度： 简单
 题目描述 请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。
-示例1：  **输入：**00000000000000000000000000001011
-**输出：**3
-**解释：**输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
- 示例 2：  **输入：**00000000000000000000000010000000
-**输出：**1
-**解释：**输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
- 示例 3：  **输入：**11111111111111111111111111111101
-**输出：**31
-**解释：**输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
+示例1：  输入： 00000000000000000000000000001011
+输出： 3
+解释： 输入的二进制串 00000000000000000000000000001011 中，共有三位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 2：  输入： 00000000000000000000000010000000
+输出： 1
+解释： 输入的二进制串 00000000000000000000000010000000 中，共有一位为 &amp;lsquo;1&amp;rsquo;。
+ 示例 3：  输入： 11111111111111111111111111111101
+输出： 31
+解释： 输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &amp;lsquo;1&amp;rsquo;。
  提示：  输入必须是长度为 32 的 二进制串 。  解题思路 计数 每次统计最右边的一位，并向右移动一位。
-func hammingWeight(num uint32) int { cnt := 0 for ; num != 0; num &amp;gt;&amp;gt;= 1 { cnt += int(num &amp;amp; 1) } return cnt } 复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  消除 使用lowbit算法，每次消除最右边的 1，直到该数为 0，消除次数即为1的个数 每次统计最右边的一位，并向右移动一位。</description>
+func hammingWeight(num uint32) int { cnt := 0 for ; num !</description>
     </item>
     
     <item>
@@ -1421,8 +1458,8 @@ func hammingWeight(num uint32) int { cnt := 0 for ; num != 0; num &amp;gt;&amp;g
 难度： 中等
 题目描述 输入一个字符串，打印出该字符串中字符的所有排列。
 你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
-示例1：  **输入：**s = &amp;ldquo;abc&amp;rdquo;
-输出：[&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
+示例1：  输入： s = &amp;ldquo;abc&amp;rdquo;
+输出： [&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
  提示：  1 &amp;lt;= s 的长度 &amp;lt;= 8  解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
 func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res } 复杂度  时间复杂度：O(N*N!</description>
     </item>
@@ -1439,10 +1476,10 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
  例如，下面的二进制手表读取 &amp;quot;3:25&amp;quot; 。  给你一个整数 turnedOn ，表示当前亮着的 LED 的数量，返回二进制手表可以表示的所有可能时间。你可以 按任意顺序 返回答案。
 小时不会以零开头：
  例如，&amp;quot;01:00&amp;quot; 是无效的时间，正确的写法应该是 &amp;quot;1:00&amp;quot; 。  分钟必须由两位数组成，可能会以零开头：
- 例如，&amp;quot;10:2&amp;quot; 是无效的时间，正确的写法应该是 &amp;quot;10:02&amp;quot; 。  示例 1：  **输入：**turnedOn = 1
-输出：[&amp;ldquo;0:01&amp;rdquo;,&amp;ldquo;0:02&amp;rdquo;,&amp;ldquo;0:04&amp;rdquo;,&amp;ldquo;0:08&amp;rdquo;,&amp;ldquo;0:16&amp;rdquo;,&amp;ldquo;0:32&amp;rdquo;,&amp;ldquo;1:00&amp;rdquo;,&amp;ldquo;2:00&amp;rdquo;,&amp;ldquo;4:00&amp;rdquo;,&amp;ldquo;8:00&amp;rdquo;]
- 示例 2：  **输入：**turnedOn = 9
-输出：[]
+ 例如，&amp;quot;10:2&amp;quot; 是无效的时间，正确的写法应该是 &amp;quot;10:02&amp;quot; 。  示例 1：  输入： turnedOn = 1
+输出： [&amp;ldquo;0:01&amp;rdquo;,&amp;ldquo;0:02&amp;rdquo;,&amp;ldquo;0:04&amp;rdquo;,&amp;ldquo;0:08&amp;rdquo;,&amp;ldquo;0:16&amp;rdquo;,&amp;ldquo;0:32&amp;rdquo;,&amp;ldquo;1:00&amp;rdquo;,&amp;ldquo;2:00&amp;rdquo;,&amp;ldquo;4:00&amp;rdquo;,&amp;ldquo;8:00&amp;rdquo;]
+ 示例 2：  输入： turnedOn = 9
+输出： []
  提示：  0 &amp;lt;= turnedOn &amp;lt;= 10  解题思路 穷举 枚举出所有小时和分钟的合法数，将符合条件的加入到结果列表中</description>
     </item>
     
@@ -1475,7 +1512,7 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
 难度： 简单
 题目描述 符合下列属性的数组 arr 称为 山脉数组 ：
  arr.length &amp;gt;= 3 存在 i（0 &amp;lt; i &amp;lt; arr.length - 1）使得：  arr[0] &amp;lt; arr[1] &amp;lt; &amp;hellip; arr[i-1] &amp;lt; arr[i] arr[i] &amp;gt; arr[i+1] &amp;gt; &amp;hellip; &amp;gt; arr[arr.length - 1]    给你由整数组成的山脉数组 arr ，返回任何满足 arr[0] &amp;lt; arr[1] &amp;lt; ... arr[i - 1] &amp;lt; arr[i] &amp;gt; arr[i + 1] &amp;gt; ... &amp;gt; arr[arr.length - 1] 的下标 i 。
-示例 1：  **输入：**arr = [0,1,0]</description>
+示例 1：  输入： arr = [0,1,0]</description>
     </item>
     
     <item>
@@ -1489,12 +1526,11 @@ func permutation(s string) []string { only := make(map[string]bool) choice := ma
 题目描述 猜数字游戏的规则如下：
  每轮游戏，我都会从 1 到 n 随机选择一个数字。 请你猜选出的是哪个数字。 如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。  你可以通过调用一个预先定义好的接口 int guess(int num) 来获取猜测结果，返回值一共有 3 种可能的情况（-1，1 或 0）：
  -1：我选出的数字比你猜的数字小 pick &amp;lt; num 1：我选出的数字比你猜的数字大 pick &amp;gt; num 0：我选出的数字和你猜的数字一样。恭喜！你猜对了！pick == num  返回我选出的数字。
-示例 1：  **输入：**n = 10, pick = 6
-**输出：**6
- 示例 2：  **输入：**n = 1, pick = 1
-**输出：**1
- 示例 3：  **输入：**n = 2, pick = 1
-**输出：**1</description>
+示例 1：  输入： n = 10, pick = 6
+输出： 6
+ 示例 2：  输入： n = 1, pick = 1
+输出： 1
+ 示例 3：  输入： n = 2, pick = 1</description>
     </item>
     
     <item>
@@ -1527,12 +1563,12 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 题目描述 给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, ...）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。
 给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。
 完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。
-示例 1：  **输入：**n = 12
-**输出：**3
-**解释：**12 = 4 + 4 + 4
- 示例 2：  **输入：**n = 13
-**输出：**2
-**解释：**13 = 4 + 9
+示例 1：  输入： n = 12
+输出： 3
+解释： 12 = 4 + 4 + 4
+ 示例 2：  输入： n = 13
+输出： 2
+解释： 13 = 4 + 9
  注意： 你可以假设：
  1 &amp;lt;= n &amp;lt;= 104  解题思路 动态规划 dp[i] 表示组成数字 i 的最少完全平方数，易得到状态转移方程：</description>
     </item>
@@ -1573,8 +1609,8 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 题目描述 有一堆石头，用整数数组 stones 表示。其中 stones[i] 表示第 i 块石头的重量。
 每一回合，从中选出 任意两块石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x &amp;lt;= y。那么粉碎的可能结果如下：
  如果 x == y，那么两块石头都会被完全粉碎； 如果 x != y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x。  最后，最多只会剩下一块 石头。返回此石头 最小的可能重量 。如果没有石头剩下，就返回 0。
-示例 1：  **输入：**stones = [2,7,4,1,8,1]
-**输出：**1
+示例 1：  输入： stones = [2,7,4,1,8,1]
+输出： 1
 解释：
 组合 2 和 4，得到 2，所以数组转化为 [2,7,1,8,1]，
 组合 7 和 8，得到 1，所以数组转化为 [2,1,1,1]，
@@ -1593,9 +1629,9 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 题目描述 给你一个整数数组 nums 和一个整数 target 。
 向数组中的每个整数前添加 &#39;+&#39; 或 &#39;-&#39; ，然后串联起所有整数，可以构造一个 表达式 ：
  例如，nums = [2, 1] ，可以在 2 之前添加 &#39;+&#39; ，在 1 之前添加 &#39;-&#39; ，然后串联起来得到表达式 &amp;quot;+2-1&amp;quot; 。  返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
-示例 1：  **输入：**nums = [1,1,1,1,1], target = 3
-**输出：**5
-**解释：**一共有 5 种方法让最终目标和为 3 。
+示例 1：  输入： nums = [1,1,1,1,1], target = 3
+输出： 5
+解释： 一共有 5 种方法让最终目标和为 3 。
 -1 + 1 + 1 + 1 + 1 = 3
 +1 - 1 + 1 + 1 + 1 = 3</description>
     </item>
@@ -1611,9 +1647,9 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 题目描述 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
 请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。
 如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 。
-示例 1：  **输入：**strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
-**输出：**4
-**解释：**最多有 5 个 0 和 3 个 1 的最大子集是 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} ，因此答案是 4 。
+示例 1：  输入： strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
+输出： 4
+解释： 最多有 5 个 0 和 3 个 1 的最大子集是 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} ，因此答案是 4 。
 其他满足题意但较小的子集包括 {&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;} 和 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} 。{&amp;ldquo;111001&amp;rdquo;} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。</description>
     </item>
     
@@ -1627,12 +1663,12 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 难度： 简单
 题目描述 给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
 示例 1： &amp;lt;img src=&amp;ldquo;https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg&#34;, width=&amp;ldquo;500px&amp;rdquo;&amp;gt;
- **输入：**head = [1,2,6,3,4,5,6], val = 6
-输出：[1,2,3,4,5]
- 示例 2：  **输入：**head = [], val = 1
-输出：[]
- 示例 3：  **输入：**head = [7,7,7,7], val = 7
-输出：[]
+ 输入： head = [1,2,6,3,4,5,6], val = 6
+输出： [1,2,3,4,5]
+ 示例 2：  输入： head = [], val = 1
+输出： []
+ 示例 3：  输入： head = [7,7,7,7], val = 7
+输出： []
  提示：  列表中的节点在范围 [0, 10] 内 1 &amp;lt;= Node.val &amp;lt;= 50 0 &amp;lt;= k &amp;lt;= 50  解题思路 模拟 遍历整个链表，遇到值为 val 的结点，将其从链表中删除。</description>
     </item>
     
@@ -1648,13 +1684,13 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 图示两个链表在节点 c1 开始相交：
 题目数据 保证 整个链式结构中不存在环。
 注意，函数返回结果后，链表必须 保持其原始结构。
-示例1：  **输入：**intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
-**输出：**Intersected at &amp;lsquo;8&amp;rsquo;
-**解释：**相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。
+示例1：  输入： intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+输出： Intersected at &amp;lsquo;8&amp;rsquo;
+解释： 相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。
 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
  示例2： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_2.png&#34;, width=&amp;ldquo;350px&amp;rdquo;&amp;gt;
- **输入：**intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
+ 输入： intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
     </item>
     
     <item>
@@ -1672,8 +1708,8 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
  示例2：  输入: nums = [0,1,0]
 输出: 2
 说明: [0, 1] (或 [1, 0]) 是具有相同数量0和1的最长连续子数组。
- 示例3：  **输入：**nums = [23,2,6,4,7], k = 13
-**输出：**false
+ 示例3：  输入： nums = [23,2,6,4,7], k = 13
+输出： false
  提示：  1 &amp;lt;= nums.length &amp;lt;= 105 nums[i] 不是 0 就是 1  解题思路 前缀和+哈希 在一段区间内，对该段区间求和即可得出 1 的数量，用区间长度减去 1 的数量，就可以得到 0 的数量，可以用前缀和降低时间复杂度。</description>
     </item>
     
@@ -1688,12 +1724,12 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
 子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
 如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  **输入：**nums = [23,2,4,6,7], k = 6
-**输出：**true
-解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  **输入：**nums = [23,2,6,4,7], k = 6
-**输出：**true
-解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。</description>
+示例1：  输入： nums = [23,2,4,6,7], k = 6
+输出： true
+解释： [2,4] 是一个大小为 2 的子数组，并且和为 6 。
+ 示例2：  输入： nums = [23,2,6,4,7], k = 6
+输出： true
+解释： [23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。</description>
     </item>
     
     <item>
@@ -1708,7 +1744,7 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 你按照如下规则进行一场游戏：
  你从第 0 天开始吃糖果。 你在吃完 所有 第 i - 1 类糖果之前，不能 吃任何一颗第 i 类糖果。 在吃完所有糖果之前，你必须每天 至少 吃 一颗 糖果。  请你构建一个布尔型数组 answer ，满足 answer.length == queries.length 。answer[i] 为 true 的条件是：在每天吃 不超过 dailyCapi 颗糖果的前提下，你可以在第 favoriteDayi 天吃到第 favoriteTypei 类糖果；否则 answer[i] 为 false 。注意，只要满足上面 3 条规则中的第二条规则，你就可以在同一天吃不同类型的糖果。
 请你返回得到的数组 answer 。
-示例1：  **输入：**candiesCount = [7,4,5,3,8], queries = [[0,2,2],[4,2,4],[2,13,1000000000]]</description>
+示例1：  输入： candiesCount = [7,4,5,3,8], queries = [[0,2,2],[4,2,4],[2,13,1000000000]]</description>
     </item>
     
     <item>
@@ -1721,15 +1757,13 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 难度： 简单
 题目描述 给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。
 整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == 4x
-示例 1：  **输入：**n = 16
-**输出：**true
- 示例 2：  **输入：**n = 5
-**输出：**false
- 示例 3：  **输入：**n = 1
-**输出：**true
- 提示：  -231 &amp;lt;= n &amp;lt;= 231 - 1&amp;gt;  解题思路 二进制 2 的幂其二进制表示为最高位为 1，后跟偶数个 0 的数，每次向右移位两位，最终结果为 1，即说明是 4 的幂。
-另，4 的幂为非负数。
-func isPowerOfFour(n int) bool { for ; n &amp;gt; 0; n &amp;gt;&amp;gt;= 2 { if n == 1 { return true } else if n&amp;amp;3 !</description>
+示例 1：  输入： n = 16
+输出： true
+ 示例 2：  输入： n = 5
+输出： false
+ 示例 3：  输入： n = 1
+输出： true
+ 提示：  -231 &amp;lt;= n &amp;lt;= 231 - 1&amp;gt;  解题思路 二进制 2 的幂其二进制表示为最高位为 1，后跟偶数个 0 的数，每次向右移位两位，最终结果为 1，即说明是 4 的幂。</description>
     </item>
     
     <item>
@@ -1742,19 +1776,16 @@ func isPowerOfFour(n int) bool { for ; n &amp;gt; 0; n &amp;gt;&amp;gt;= 2 { if 
 难度： 简单
 题目描述 给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。
 如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。
-示例 1：  **输入：**n = 1
-**输出：**true
-**解释：**20 = 1
- 示例 2：  **输入：**n = 16
-**输出：**true
-**解释：**24 = 16
- 示例 3：  **输入：**n = 3
-**输出：**false
- 示例 4：  **输入：**n = 4
-**输出：**true
- 示例 5：  **输入：**n = 5
-**输出：**false
- 提示：  -231 &amp;lt;= n &amp;lt;= 231 - 1&amp;gt;  解题思路 二进制 2 的幂其二进制表示为最高位为 1，其余位为 0 的数，只有二进制位中 1 的数量是 1的数才满足条件。</description>
+示例 1：  输入： n = 1
+输出： true
+解释： 20 = 1
+ 示例 2：  输入： n = 16
+输出： true
+解释： 24 = 16
+ 示例 3：  输入： n = 3
+输出： false
+ 示例 4：  输入： n = 4
+输出： true</description>
     </item>
     
     <item>
@@ -1808,17 +1839,16 @@ func hammingDistance(x int, y int) int { distance := 0 for xor := x ^ y; xor != 
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例1：  **输入：**s = &amp;ldquo;(abcd)&amp;rdquo;
-输出：&amp;ldquo;dcba&amp;rdquo;
- 示例 2：  **输入：**s = &amp;ldquo;(u(love)i)&amp;rdquo;
-输出：&amp;ldquo;iloveu&amp;rdquo;
- 示例 3：  **输入：**s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
-输出：&amp;ldquo;leetcode&amp;rdquo;
- 示例 4：  **输入：**s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
-输出：&amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
+示例1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+输出： &amp;ldquo;dcba&amp;rdquo;
+ 示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
+输出： &amp;ldquo;iloveu&amp;rdquo;
+ 示例 3：  输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
+输出： &amp;ldquo;leetcode&amp;rdquo;
+ 示例 4：  输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
+输出： &amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
  提示：  0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的  解题思路 栈 利用栈来进行每一次的反转：
- 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。
-func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queue := make([]byte, 0, len(s)) for i := range s { if s[i] !</description>
+ 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。</description>
     </item>
     
     <item>
@@ -1832,8 +1862,8 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
 题目描述 给你一个由非负整数组成的数组 nums 。另有一个查询数组 queries ，其中 queries[i] = [xi, mi] 。
 第 i 个查询的答案是 xi 和任何 nums 数组中不超过 mi 的元素按位异或（XOR）得到的最大值。换句话说，答案是 max(nums[j] XOR xi) ，其中所有 j 均满足 nums[j] &amp;lt;= mi 。如果 nums 中的所有元素都大于 mi，最终答案就是 -1 。
 返回一个整数数组 answer 作为查询的答案，其中 answer.length == queries.length 且 answer[i] 是第 i 个查询的答案。
-示例1：  **输入：**nums = [0,1,2,3,4], queries = [[3,1],[1,3],[5,6]]
-输出：[3,3,7]
+示例1：  输入： nums = [0,1,2,3,4], queries = [[3,1],[1,3],[5,6]]
+输出： [3,3,7]
 解释：
  0 和 1 是仅有的两个不超过 1 的整数。0 XOR 3 = 3 而 1 XOR 3 = 2 。二者中的更大值是 3 。 1 XOR 2 = 3.</description>
     </item>
@@ -1850,15 +1880,15 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
 现在，可以绘制一些连接两个数字 nums1[i] 和 nums2[j] 的直线，这些直线需要同时满足满足：
  nums1[i] == nums2[j] 且绘制的直线不与任何其他连线（非水平线）相交。 请注意，连线即使在端点也不能相交：每个数字只能属于一条连线。
 以这种方法绘制线条，并返回可以绘制的最大连线数。
-示例1：  **输入：**nums1 = [1,4,2], nums2 = [1,2,4]
-**输出：**2
-**解释：**可以画出两条不交叉的线，如上图所示。
+示例1：  输入： nums1 = [1,4,2], nums2 = [1,2,4]
+输出： 2
+解释： 可以画出两条不交叉的线，如上图所示。
 但无法画出第三条不相交的直线，因为从 nums1[1]=4 到 nums2[2]=4 的直线将与从 nums1[2]=2 到 nums2[1]=2 的直线相交。
- 示例2：  **输入：**nums1 = [2,5,1,2,5], nums2 = [10,5,2,1,5,2]
-**输出：**3
- 示例3:  **输入：**nums1 = [1,3,7,1,7,5], nums2 = [1,9,2,5,1]
-**输出：**2
- 提示：  1 &amp;lt;= nums1.length &amp;lt;= 500 1 &amp;lt;= nums2.</description>
+ 示例2：  输入： nums1 = [2,5,1,2,5], nums2 = [10,5,2,1,5,2]
+输出： 3
+ 示例3:  输入： nums1 = [1,3,7,1,7,5], nums2 = [1,9,2,5,1]
+输出： 2
+ 提示：  1 &amp;lt;= nums1.</description>
     </item>
     
     <item>
@@ -1892,10 +1922,10 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
 题目描述 给你一个二维矩阵 matrix 和一个整数 k ，矩阵大小为 m x n 由非负整数组成。
 矩阵中坐标 (a, b) 的 值 可由对所有满足 0 &amp;lt;= i &amp;lt;= a &amp;lt; m 且 0 &amp;lt;= j &amp;lt;= b &amp;lt; n 的元素 matrix[i][j]（下标从 0 开始计数）执行异或运算得到。
 请你找出 matrix 的所有坐标中第 k 大的值（k 的值从 1 开始计数）。
-示例1：  **输入：**matrix = [[5,2],[1,6]], k = 1
-**输出：**7
-**解释：**坐标 (0,1) 的值是 5 XOR 2 = 7 ，为最大的值。
- 示例2：  **输入：**matrix = [[5,2],[1,6]], k = 2</description>
+示例1：  输入： matrix = [[5,2],[1,6]], k = 1
+输出： 7
+解释： 坐标 (0,1) 的值是 5 XOR 2 = 7 ，为最大的值。
+ 示例2：  输入： matrix = [[5,2],[1,6]], k = 2</description>
     </item>
     
     <item>
@@ -1910,7 +1940,7 @@ func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queu
 现需要从数组中取三个下标 i、j 和 k ，其中 (0 &amp;lt;= i &amp;lt; j &amp;lt;= k &amp;lt; arr.length) 。
 a 和 b 定义如下：
  a = arr[i] ^ arr[i + 1] ^ ... ^ arr[j - 1] b = arr[j] ^ arr[j + 1] ^ ... ^ arr[k] 注意：^ 表示 按位异或 操作。  请返回能够令 a == b 成立的三元组 (i, j , k) 的数目。
-示例1：  **输入：**arr = [2,3,1,6,7]</description>
+示例1：  输入： arr = [2,3,1,6,7]</description>
     </item>
     
     <item>
@@ -1926,13 +1956,12 @@ a 和 b 定义如下：
 我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
 只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
 示例1： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-01.png&#34;, width=&amp;ldquo;180px&amp;rdquo;&amp;gt;
- **输入：**root = [1,2,3,4], x = 4, y = 3
-**输出：**false
+ 输入： root = [1,2,3,4], x = 4, y = 3
+输出： false
  示例2： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-02.png&#34;, width=&amp;ldquo;201px&amp;rdquo;&amp;gt;
- **输入：**root = [1,2,3,null,4,null,5], x = 5, y = 4
-**输出：**true
- 示例3： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-03.png&#34;, width=&amp;ldquo;156px&amp;rdquo;&amp;gt;
- **输入：**root = [1,2,3,null,4], x = 2, y = 3</description>
+ 输入： root = [1,2,3,null,4,null,5], x = 5, y = 4
+输出： true
+ 示例3： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-03.png&#34;, width=&amp;ldquo;156px&amp;rdquo;&amp;gt;</description>
     </item>
     
     <item>
@@ -1945,18 +1974,16 @@ a 和 b 定义如下：
 难度： 中等
 题目描述 给你一个整数数组 nums ，返回 nums[i] XOR nums[j] 的最大运算结果，其中 0 ≤ i ≤ j &amp;lt; n 。
 **进阶：**你可以在 O(n) 的时间解决这个问题吗？
-示例1：  **输入：**nums = [3,10,5,25,2,8]
-**输出：**28
-**解释：**最大运算结果是 5 XOR 25 = 28.
- 示例2：  **输入：**nums = [0]
-**输出：**0
- 示例3：  **输入：**nums = [2,4]
-**输出：**6
- 示例4：  **输入：**nums = [8,10,2]
-**输出：**10
- 示例5：  **输入：**nums = [14,70,53,83,49,91,36,80,92,51,66,70]
-**输出：**127
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 2 * 104 0 &amp;lt;= nums[i] &amp;lt;= 232 - 1  解题思路 暴力求解 枚举所有的 i 和 j，求解比较得出最大值。</description>
+示例1：  输入： nums = [3,10,5,25,2,8]
+输出： 28
+解释： 最大运算结果是 5 XOR 25 = 28.
+ 示例2：  输入： nums = [0]
+输出： 0
+ 示例3：  输入： nums = [2,4]
+输出： 6
+ 示例4：  输入： nums = [8,10,2]
+输出： 10
+ 示例5：  输入： nums = [14,70,53,83,49,91,36,80,92,51,66,70]</description>
     </item>
     
     <item>
@@ -1984,19 +2011,17 @@ a 和 b 定义如下：
 每一步操作中，你可以将指针向左或向右移动 1 步，或者停在原地（指针不能被移动到数组范围外）。
 给你两个整数 steps 和 arrLen ，请你计算并返回：在恰好执行 steps 次操作以后，指针仍然指向索引 0 处的方案数。
 由于答案可能会很大，请返回方案数 模 10^9 + 7 后的结果。
-示例1：  **输入：**steps = 3, arrLen = 2
-**输出：**4
-**解释：**3 步后，总共有 4 种不同的方法可以停在索引 0 处。
+示例1：  输入： steps = 3, arrLen = 2
+输出： 4
+解释： 3 步后，总共有 4 种不同的方法可以停在索引 0 处。
 向右，向左，不动
 不动，向右，向左
 向右，不动，向左
 不动，不动，不动
- 示例2：  **输入：**steps = 2, arrLen = 4
-**输出：**2
-**解释：**2 步后，总共有 2 种不同的方法可以停在索引 0 处。
-向右，向左
-不动，不动
- 示例2：  **输入：**steps = 4, arrLen = 2</description>
+ 示例2：  输入： steps = 2, arrLen = 4
+输出： 2
+解释： 2 步后，总共有 2 种不同的方法可以停在索引 0 处。
+向右，向左</description>
     </item>
     
     <item>
@@ -2010,8 +2035,8 @@ a 和 b 定义如下：
 题目描述 有一个正整数数组 arr，现给你一个对应的查询数组 queries，其中 queries[i] = [Li, Ri]。
 对于每个查询 i，请你计算从 Li 到 Ri 的 XOR 值（即 arr[Li] xor arr[Li+1] xor ... xor arr[Ri]）作为本次查询的结果。
 并返回一个包含给定查询 queries 所有结果的数组。
-示例1：  **输入：**arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
-输出：[2,7,14,8]
+示例1：  输入： arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
+输出： [2,7,14,8]
 解释：
 数组中元素的二进制表示形式是：
 1 = 0001
@@ -2034,12 +2059,10 @@ a 和 b 定义如下：
 题目描述 给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。
 它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i + 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。
 给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。
-示例1：  **输入：**encoded = [3,1]
-输出：[1,2,3]
-**解释：**如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]
- 示例2：  **输入：**encoded = [6,5,4,6]
-输出：[2,4,1,5,3]
- 提示：  3 &amp;lt;= n &amp;lt; 105 n 是奇数。 encoded.</description>
+示例1：  输入： encoded = [3,1]
+输出： [1,2,3]
+解释： 如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]
+ 示例2：  输入： encoded = [6,5,4,6]</description>
     </item>
     
     <item>
@@ -2054,15 +2077,13 @@ a 和 b 定义如下：
 举个例子，如上图所示，给定一棵叶值序列为 (6, 7, 4, 9, 8) 的树。
 如果有两棵二叉树的叶值序列是相同，那么我们就认为它们是 叶相似 的。
 如果给定的两个根结点分别为 root1 和 root2 的树是叶相似的，则返回 true；否则返回 false 。
-示例1：  **输入：**root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]
-**输出：**true
- 示例2：  **输入：**root1 = [1], root2 = [1]
-**输出：**true
- 示例3：  **输入：**root1 = [1], root2 = [2]
-**输出：**false
- 示例4：  **输入：**root1 = [1,2], root2 = [2,2]
-**输出：**true
- 示例5： &amp;lt;img src=&amp;ldquo;https://assets.leetcode.com/uploads/2020/09/03/leaf-similar-2.jpg&#34;, width=&amp;ldquo;450px&amp;rdquo;&amp;gt;</description>
+示例1：  输入： root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]
+输出： true
+ 示例2：  输入： root1 = [1], root2 = [1]
+输出： true
+ 示例3：  输入： root1 = [1], root2 = [2]
+输出： false
+ 示例4：  输入： root1 = [1,2], root2 = [2,2]</description>
     </item>
     
     <item>
@@ -2076,13 +2097,11 @@ a 和 b 定义如下：
 题目描述 给你两个整数，n 和 start 。
 数组 nums 定义为：nums[i] = start + 2*i（下标从 0 开始）且 n == nums.length 。
 请返回 nums 中所有元素按位异或（XOR）后得到的结果。
-示例1：  **输入：**n = 5, start = 0
-**输出：**8
-**解释：**数组 nums 为 [0, 2, 4, 6, 8]，其中 (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8 。
+示例1：  输入： n = 5, start = 0
+输出： 8
+解释： 数组 nums 为 [0, 2, 4, 6, 8]，其中 (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8 。
 &amp;ldquo;^&amp;rdquo; 为按位异或 XOR 运算符。
- 示例2：  **输入：**n = 4, start = 3
-**输出：**8
-**解释：**数组 nums 为 [3, 5, 7, 9]，其中 (3 ^ 5 ^ 7 ^ 9) = 8.</description>
+ 示例2：  输入： n = 4, start = 3</description>
     </item>
     
     <item>
@@ -2097,9 +2116,9 @@ a 和 b 定义如下：
 经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i + 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
 给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
 请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
-示例1：  **输入：**encoded = [1,2,3], first = 1
-输出：[1,0,2,1]
-**解释：**若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]</description>
+示例1：  输入： encoded = [1,2,3], first = 1
+输出： [1,0,2,1]
+解释： 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]</description>
     </item>
     
     <item>
@@ -2113,15 +2132,14 @@ a 和 b 定义如下：
 题目描述 给你一个整数数组 nums ，你可以对它进行一些操作。
 每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。
 开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。
-示例1：  **输入：**nums = [3,4,2]
-**输出：**6
-**解释：**删除 4 获得 4 个点数，因此 3 也被删除。
+示例1：  输入： nums = [3,4,2]
+输出： 6
+解释： 删除 4 获得 4 个点数，因此 3 也被删除。
 之后，删除 2 获得 2 个点数。总共获得 6 个点数。
- 示例2：  **输入：**nums = [2,2,3,3,3,4]
-**输出：**9
-**解释：**删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
-之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。
-总共获得 9 个点数。</description>
+ 示例2：  输入： nums = [2,2,3,3,3,4]
+输出： 9
+解释： 删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
+之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。</description>
     </item>
     
     <item>
@@ -2135,17 +2153,15 @@ a 和 b 定义如下：
 题目描述 给你一个 32 位的有符号整数 x ，返回将 x 中的数字部分反转后的结果。
 如果反转后整数超过 32 位的有符号整数的范围 [−231, 231 − 1] ，就返回 0。
 假设环境不允许存储 64 位整数（有符号或无符号）。
-示例1：  **输入：**x = 123
-**输出：**321
- 示例2：  **输入：**x = -123
-输出：-321
- 示例3：  **输入：**x = 120
-**输出：**21
- 示例4：  **输入：**x = 0
-**输出：**0
- 提示：  -231 &amp;lt;= x &amp;lt;= 231 - 14  解题思路 双指针 直接数字逐位反转，当数字为十位数时，32位整数无法存储，需要做一次溢位判断：
-可以将数字分为前9位数与第10位数进行比较，不再临界值的范围内，说明溢出。
-func reverse(x int) int { res := 0 for i := 0; x !</description>
+示例1：  输入： x = 123
+输出： 321
+ 示例2：  输入： x = -123
+输出： -321
+ 示例3：  输入： x = 120
+输出： 21
+ 示例4：  输入： x = 0
+输出： 0
+ 提示：  -231 &amp;lt;= x &amp;lt;= 231 - 14  解题思路 双指针 直接数字逐位反转，当数字为十位数时，32位整数无法存储，需要做一次溢位判断：</description>
     </item>
     
     <item>
@@ -2160,10 +2176,10 @@ func reverse(x int) int { res := 0 for i := 0; x !</description>
 你现在要画一条 自顶向下 的、穿过 最少 砖块的垂线。如果你画的线只是从砖块的边缘经过，就不算穿过这块砖。你不能沿着墙的两个垂直边缘之一画线，这样显然是没有穿过一块砖的。
 给你一个二维数组 wall ，该数组包含这堵墙的相关信息。其中，wall[i] 是一个代表从左至右每块砖的宽度的数组。你需要找出怎样画才能使这条线 穿过的砖块数量最少 ，并且返回 穿过的砖块数量 。
 示例1： &amp;lt;img src=&amp;ldquo;https://assets.leetcode.com/uploads/2021/04/24/cutwall-grid.jpg&#34;, width=&amp;ldquo;493px&amp;rdquo;&amp;gt;
- **输入：**wall = [[1,2,2,1],[3,1,2],[1,3,2],[2,4],[3,1,2],[1,3,1,1]]
-**输出：**2
- 示例2：  **输入：**wall = [[1],[1],[1]]
-**输出：**3
+ 输入： wall = [[1,2,2,1],[3,1,2],[1,3,2],[2,4],[3,1,2],[1,3,1,1]]
+输出： 2
+ 示例2：  输入： wall = [[1],[1],[1]]
+输出： 3
  提示：  n == wall.length 1 &amp;lt;= n &amp;lt;= 104 1 &amp;lt;= wall[i].length &amp;lt;= 104 1 &amp;lt;= sum(wall[i].length) &amp;lt;= 2 * 104 对于每一行 i ，sum(wall[i]) 应当是相同的 1 &amp;lt;= wall[i][j] &amp;lt;= 231 - 1  解题思路 计数 以每一行起点为 0 坐标，可以使得同一列的缝隙唯一标识，从而标记出所有缝隙的列坐标。</description>
     </item>
     
@@ -2178,7 +2194,7 @@ func reverse(x int) int { res := 0 for i := 0; x !</description>
 题目描述 给定一个保存员工信息的数据结构，它包含了员工 唯一的 id ，重要度 和 直系下属的 id 。
 比如，员工 1 是员工 2 的领导，员工 2 是员工 3 的领导。他们相应的重要度为 15 , 10 , 5 。那么员工 1 的数据结构是 [1, 15, [2]] ，员工 2的 数据结构是 [2, 10, [3]] ，员工 3 的数据结构是 [3, 5, []] 。注意虽然员工 3 也是员工 1 的一个下属，但是由于 并不是直系 下属，因此没有体现在员工 1 的数据结构中。
 现在输入一个公司的所有员工信息，以及单个员工 id ，返回这个员工和他所有下属的重要度之和。
-示例：  输入：[[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1</description>
+示例：  输入： [[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1</description>
     </item>
     
     <item>
@@ -2190,8 +2206,8 @@ func reverse(x int) int { res := 0 for i := 0; x !</description>
       <description>链接： https://leetcode-cn.com/problems/single-number-ii/
 难度： 中等
 题目描述 给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
-示例1：  **输入：**nums = [2,2,3,2] **输出：**3
- 示例2：  **输入：**nums = [0,1,0,1,0,1,99] **输出：**99
+示例1：  输入： nums = [2,2,3,2] 输出： 3
+ 示例2：  输入： nums = [0,1,0,1,0,1,99] 输出： 99
  提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次  **进阶：**你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 解题思路 哈希 统计每个数出现的次数，然后找出其中只出现一次的数
 func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ } for k, v := range cnt { if v == 1 { return k } } return 0 } 复杂度  时间复杂度：O(N) 空间复杂度：O(N)  排序 将整个数组排序，没三个一组进行首尾比较，相同继续，不同返回。</description>
@@ -2209,10 +2225,9 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 给你石子的位置列表 stones（用单元格序号 升序 表示）， 请判定青蛙能否成功过河（即能否在最后一步跳至最后一块石子上）。
 开始时， 青蛙默认已站在第一块石子上，并可以假定它第一步只能跳跃一个单位（即只能从单元格 1 跳至单元格 2 ）。
 如果青蛙上一步跳跃了 k 个单位，那么它接下来的跳跃距离只能选择为 k - 1、k 或 k + 1 个单位。 另请注意，青蛙只能向前方（终点的方向）跳跃。
-示例1：  **输入：**stones = [0,1,3,5,6,8,12,17]
-**输出：**true
-**解释：**青蛙可以成功过河，按照如下方案跳跃：跳 1 个单位到第 2 块石子, 然后跳 2 个单位到第 3 块石子, 接着 跳 2 个单位到第 4 块石子, 然后跳 3 个单位到第 6 块石子, 跳 4 个单位到第 7 块石子, 最后，跳 5 个单位到第 8 个石子（即最后一块石子）。
- 示例2：  **输入：**stones = [0,1,2,3,4,8,9,11]</description>
+示例1：  输入： stones = [0,1,3,5,6,8,12,17]
+输出： true
+解释： 青蛙可以成功过河，按照如下方案跳跃：跳 1 个单位到第 2 块石子, 然后跳 2 个单位到第 3 块石子, 接着 跳 2 个单位到第 4 块石子, 然后跳 3 个单位到第 6 块石子, 跳 4 个单位到第 7 块石子, 最后，跳 5 个单位到第 8 个石子（即最后一块石子）。</description>
     </item>
     
     <item>
@@ -2224,17 +2239,16 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
       <description>链接： https://leetcode-cn.com/problems/sum-of-square-numbers/
 难度： 中等
 题目描述 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
-示例1：  **输入：**c = 5
-**输出：**true
-**解释：**1 * 1 + 2 * 2 = 5
- 示例2：  **输入：**c = 3
-**输出：**false
- 示例3：  **输入：**c = 4
-**输出：**true
- 示例4：  **输入：**c = 2
-**输出：**true
- 示例5：  **输入：**c = 1 **输出：**true
- 提示：  0 &amp;lt;= c &amp;lt;= 231 - 1  解题思路 打表 维护一个保存所有平方数的 map，然后从0开始枚举所有可能是 a 的情况，寻找 b = c-a2 是否存在于 map 中</description>
+示例1：  输入： c = 5
+输出： true
+解释： 1 * 1 + 2 * 2 = 5
+ 示例2：  输入： c = 3
+输出： false
+ 示例3：  输入： c = 4
+输出： true
+ 示例4：  输入： c = 2
+输出： true
+ 示例5：  输入： c = 1 输出： true</description>
     </item>
     
     <item>
@@ -2246,10 +2260,10 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
       <description>链接： https://leetcode-cn.com/problems/range-sum-of-bst/
 难度： 简单
 题目描述 给定二叉搜索树的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
-示例1：  **输入：**root = [10,5,15,3,7,null,18], low = 7, high = 15
-**输出：**32
- 示例2：  **输入：**root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
-**输出：**23
+示例1：  输入： root = [10,5,15,3,7,null,18], low = 7, high = 15
+输出： 32
+ 示例2：  输入： root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+输出： 23
  提示：  树中节点数目在范围 [1, 2 * 104] 内 1 &amp;lt;= Node.val &amp;lt;= 105 1 &amp;lt;= low &amp;lt;= high &amp;lt;= 105 所有 Node.val 互不相同  解题思路 深度优先搜索 不同于一般搜索树的搜索，该搜索需要遍历整颗树，以累计求和，必要部分需要剪枝加快遍历速度。
 搜索时需要区分三种情况：
  当前结点值 val &amp;lt; low 时，左子树均不满足条件，继续搜索右子树； 当前结点值 val &amp;gt; high 时，右子树均不满足条件，继续搜索左子树； 其余情况，累加当前结点值，无法剪枝，左右子树都需要继续搜索。  func rangeSumBST(root *TreeNode, low int, high int) int { sum := 0 var search func(node *TreeNode) search = func(node *TreeNode) { if node == nil { return } if node.</description>
@@ -2266,8 +2280,8 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 题目描述 传送带上的包裹必须在 D 天内从一个港口运送到另一个港口。
 传送带上的第 i 个包裹的重量为 weights[i]。每一天，我们都会按给出重量的顺序往传送带上装载包裹。我们装载的重量不会超过船的最大运载重量。
 返回能在 D 天内将传送带上的所有包裹送达的船的最低运载能力。
-示例1：  **输入：**weights = [1,2,3,4,5,6,7,8,9,10], D = 5
-**输出：**15
+示例1：  输入： weights = [1,2,3,4,5,6,7,8,9,10], D = 5
+输出： 15
 解释：
 船舶最低载重 15 就能够在 5 天内送达所有包裹，如下所示：
 第 1 天：1, 2, 3, 4, 5
@@ -2276,7 +2290,7 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
 第 4 天：9
 第 5 天：10
 请注意，货物必须按照给定的顺序装运，因此使用载重能力为 14 的船舶并将包装分成 (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) 是不允许的。
- 示例2：  **输入：**weights = [3,2,2,4,1,4], D = 3</description>
+ 示例2：  输入： weights = [3,2,2,4,1,4], D = 3</description>
     </item>
     
     <item>
@@ -2288,12 +2302,12 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
       <description>链接： https://leetcode-cn.com/problems/increasing-order-search-tree/
 难度： 简单
 题目描述 给你一棵二叉搜索树，请你 按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。
-示例1：  **输入：**root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
-输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
- 示例2：  **输入：**root = [5,1,7]
-输出：[1,null,5,null,7]
+示例1：  输入： root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
+输出： [1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
+ 示例2：  输入： root = [5,1,7]
+输出： [1,null,5,null,7]
  提示：  树中节点数的取值范围是 [1, 100] 0 &amp;lt;= Node.val &amp;lt;= 1000  解题思路 新建树 重新构造一棵树，中序遍历原树的每个结点，将其加入到新树的右结点中。
-func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode := newRoot var InorderTraversal func(node *TreeNode) InorderTraversal = func(node *TreeNode) { if node == nil { return } InorderTraversal(node.Left) newNode.Right = &amp;amp;TreeNode{ Val: node.Val, Left: nil, Right: nil, } newNode = newNode.</description>
+func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode := newRoot var InorderTraversal func(node *TreeNode) InorderTraversal = func(node *TreeNode) { if node == nil { return } InorderTraversal(node.Left) newNode.Right = &amp;amp;TreeNode{ Val: node.</description>
     </item>
     
     <item>
@@ -2305,8 +2319,8 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
       <description>链接： https://leetcode-cn.com/problems/combination-sum-iv/ 难度： 中等
 题目描述 给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素组合的个数。
 题目数据保证答案符合 32 位整数范围。
-示例1：  **输入：**nums = [1,2,3], target = 4
-**输出：**7
+示例1：  输入： nums = [1,2,3], target = 4
+输出： 7
 解释：
 所有可能的组合为：
 (1, 1, 1, 1)
@@ -2317,8 +2331,8 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 (2, 2)
 (3, 1)
 请注意，顺序不同的序列被视作不同的组合。
- 示例2：  **输入：**nums = [9], target = 3
-**输出：**0
+ 示例2：  输入： nums = [9], target = 3
+输出： 0
  提示：  1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 1000 nums 中的所有元素 互不相同 1 &amp;lt;= target &amp;lt;= 1000  解题思路 动态规划 用 dp[i] 表示当 i 作为 target 时，排列方案的数量。当 dp[i] 不为 0 时，不妨假设排列的做后一位数字为 num，则 i-num 的排列数为 dp[i-num] ，容易得知状态转移方程：</description>
     </item>
     
@@ -2332,11 +2346,11 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 难度： 困难
 题目描述 给你一个 m x n 的矩阵 matrix 和一个整数 k ，找出并返回矩阵内部矩形区域的不超过 k 的最大数值和。
 题目数据保证总会存在一个数值和不超过 k 的矩形区域。
-示例1：  **输入：**matrix = [[1,0,1],[0,-2,3]], k = 2
-**输出：**2
-**解释：**蓝色边框圈出来的矩形区域 [[0, 1], [-2, 3]] 的数值和是 2，且 2 是不超过 k 的最大数字（k = 2）。
- 示例2：  **输入：**matrix = [[2,2,-1]], k = 3
-**输出：**3
+示例1：  输入： matrix = [[1,0,1],[0,-2,3]], k = 2
+输出： 2
+解释： 蓝色边框圈出来的矩形区域 [[0, 1], [-2, 3]] 的数值和是 2，且 2 是不超过 k 的最大数字（k = 2）。
+ 示例2：  输入： matrix = [[2,2,-1]], k = 3
+输出： 3
  提示：  m == matrix.length n == matrix[i].length -100 &amp;lt;= matrix[i][j] &amp;lt;= 100 -105 &amp;lt;= k &amp;lt;= 105  解题思路 暴力求解 以每个元素为起点，求解</description>
     </item>
     
@@ -2353,9 +2367,8 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
  &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  **输入：**s = &amp;ldquo;12&amp;rdquo;
-**输出：**2
-**解释：**它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。</description>
+示例1：  输入： s = &amp;ldquo;12&amp;rdquo;
+输出： 2</description>
     </item>
     
     <item>
@@ -2370,7 +2383,7 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 版本号由一个或多个修订号组成，各修订号由一个 &#39;.&#39; 连接。每个修订号由 多位数字 组成，可能包含 前导零 。每个版本号至少包含一个字符。修订号从左到右编号，下标从 0 开始，最左边的修订号下标为 0 ，下一个修订号下标为 1 ，以此类推。例如，2.5.33 和 0.1 都是有效的版本号。
 比较版本号时，请按从左到右的顺序依次比较它们的修订号。比较修订号时，只需比较 忽略任何前导零后的整数值 。也就是说，修订号 1 和修订号 001 相等 。如果版本号没有指定某个下标处的修订号，则该修订号视为 0 。例如，版本 1.0 小于版本 1.1 ，因为它们下标为 0 的修订号相同，而下标为 1 的修订号分别为 0 和 1 ，0 &amp;lt; 1 。
 返回规则如下：
- 如果 version1 &amp;gt; version2 返回 1， 如果 version1 &amp;lt; version2 返回 -1， 除此之外返回 0。  示例1：  **输入：**version1 = &amp;ldquo;1.</description>
+ 如果 version1 &amp;gt; version2 返回 1， 如果 version1 &amp;lt; version2 返回 -1， 除此之外返回 0。  示例1：  输入： version1 = &amp;ldquo;1.</description>
     </item>
     
     <item>
@@ -2385,13 +2398,11 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 给你两个字符串 haystack 和 needle ，请你在 haystack 字符串中找出 needle 字符串出现的第一个位置（下标从 0 开始）。如果不存在，则返回 -1 。
 说明： 当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
 对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与 C 语言的 strstr() 以及 Java 的 indexOf() 定义相符。
-示例1：  **输入：**haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
-**输出：**2
- 示例2：  **输入：**haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
-输出：-1
- 示例3：  **输入：**haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;quot;&amp;quot;
-**输出：**0
- 提示：  0 &amp;lt;= haystack.</description>
+示例1：  输入： haystack = &amp;ldquo;hello&amp;rdquo;, needle = &amp;ldquo;ll&amp;rdquo;
+输出： 2
+ 示例2：  输入： haystack = &amp;ldquo;aaaaa&amp;rdquo;, needle = &amp;ldquo;bba&amp;rdquo;
+输出： -1
+ 示例3：  输入： haystack = &amp;ldquo;&amp;rdquo;, needle = &amp;quot;&amp;quot;</description>
     </item>
     
     <item>
@@ -2408,9 +2419,9 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 说明： 为什么返回数值是整数，但输出的答案是数组呢?
 请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
 你可以想象内部操作如下:
-// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i++) { print(nums[i]); } 示例1：  **输入：**nums = [3,2,2,3], val = 3
-**输出：**2, nums = [2,2]
-**解释：**函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</description>
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i++) { print(nums[i]); } 示例1：  输入： nums = [3,2,2,3], val = 3
+输出： 2, nums = [2,2]
+解释： 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</description>
     </item>
     
     <item>
@@ -2426,10 +2437,10 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 说明： 为什么返回数值是整数，但输出的答案是数组呢?
 请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
 你可以想象内部操作如下:
-// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i++) { print(nums[i]); } 示例1：  **输入：**nums = [1,1,2]
-**输出：**2, nums = [1,2]
-**解释：**函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
- 示例2：  **输入：**nums = [0,0,1,1,1,2,2,3,3,4]</description>
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i++) { print(nums[i]); } 示例1：  输入： nums = [1,1,2]
+输出： 2, nums = [1,2]
+解释： 函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
+ 示例2：  输入： nums = [0,0,1,1,1,2,2,3,3,4]</description>
     </item>
     
     <item>
@@ -2442,13 +2453,11 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 难度： 中等
 题目描述 给你一个整数数组 nums 和两个整数 k 和 t 。请你判断是否存在 两个不同下标 i 和 j，使得 abs(nums[i] - nums[j]) &amp;lt;= t ，同时又满足 abs(i - j) &amp;lt;= k 。
 如果存在则返回 true，不存在返回 false。
-示例：  **输入：**nums = [1,2,3,1], k = 3, t = 0
-**输出：**true
- 示例：  **输入：**nums = [1,0,1,1], k = 1, t = 2
-**输出：**true
- 示例：  **输入：**nums = [1,5,9,1,5,9], k = 2, t = 3
-**输出：**false
- 提示：  0 &amp;lt;= nums.</description>
+示例：  输入： nums = [1,2,3,1], k = 3, t = 0
+输出： true
+ 示例：  输入： nums = [1,0,1,1], k = 1, t = 2
+输出： true
+ 示例：  输入： nums = [1,5,9,1,5,9], k = 2, t = 3</description>
     </item>
     
   </channel>

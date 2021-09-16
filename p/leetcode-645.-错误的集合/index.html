@@ -6,10 +6,10 @@
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  **输入：**nums = [1,2,2,4]
-输出：[2,3]
- 示例 2：  **输入：**nums = [1,1]
-输出：[1,2]
+示例 1：  输入： nums = [1,2,2,4]
+输出： [2,3]
+ 示例 2：  输入： nums = [1,1]
+输出： [1,2]
  提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !'><title>Leetcode 645. 错误的集合</title>
 
@@ -21,10 +21,10 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  **输入：**nums = [1,2,2,4]
-输出：[2,3]
- 示例 2：  **输入：**nums = [1,1]
-输出：[1,2]
+示例 1：  输入： nums = [1,2,2,4]
+输出： [2,3]
+ 示例 2：  输入： nums = [1,1]
+输出： [1,2]
  提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-645.-%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88/'>
@@ -36,10 +36,10 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  **输入：**nums = [1,2,2,4]
-输出：[2,3]
- 示例 2：  **输入：**nums = [1,1]
-输出：[1,2]
+示例 1：  输入： nums = [1,2,2,4]
+输出： [2,3]
+ 示例 2：  输入： nums = [1,1]
+输出： [1,2]
  提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !">
     </head>
@@ -244,13 +244,13 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 <p>请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。</p>
 <h5 id="示例-1">示例 1：</h5>
 <blockquote>
-<p>**输入：**nums = [1,2,2,4]<br>
-<strong>输出：</strong>[2,3]</p>
+<p><strong>输入：</strong> nums = [1,2,2,4]<br>
+<strong>输出：</strong> [2,3]</p>
 </blockquote>
 <h5 id="示例-2">示例 2：</h5>
 <blockquote>
-<p>**输入：**nums = [1,1]<br>
-<strong>输出：</strong>[1,2]</p>
+<p><strong>输入：</strong> nums = [1,1]<br>
+<strong>输出：</strong> [1,2]</p>
 </blockquote>
 <h5 id="提示">提示：</h5>
 <ul>
@@ -326,60 +326,60 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
                 
                     
 <article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 06. 从尾到头打印链表</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 04. 二维数组中的查找</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 03. 数组中重复的数字</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/leetcode-162.-%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Leetcode 162. 寻找峰值</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-524.-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 524. 通过删除字母匹配到字典里最长单词</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-447.-%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 447. 回旋镖的数量</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-678.-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 678. 有效的括号字符串</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-1894.-%E6%89%BE%E5%88%B0%E9%9C%80%E8%A6%81%E8%A1%A5%E5%85%85%E7%B2%89%E7%AC%94%E7%9A%84%E5%AD%A6%E7%94%9F%E7%BC%96%E5%8F%B7/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 1894. 找到需要补充粉笔的学生编号</h2>
         </div>
     </a>
 </article>

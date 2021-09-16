@@ -4,10 +4,10 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/range-sum-of-bst/
 难度： 简单
 题目描述 给定二叉搜索树的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
-示例1：  **输入：**root = [10,5,15,3,7,null,18], low = 7, high = 15
-**输出：**32
- 示例2：  **输入：**root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
-**输出：**23
+示例1：  输入： root = [10,5,15,3,7,null,18], low = 7, high = 15
+输出： 32
+ 示例2：  输入： root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+输出： 23
  提示：  树中节点数目在范围 [1, 2 * 104] 内 1 &amp;lt;= Node.val &amp;lt;= 105 1 &amp;lt;= low &amp;lt;= high &amp;lt;= 105 所有 Node.val 互不相同  解题思路 深度优先搜索 不同于一般搜索树的搜索，该搜索需要遍历整颗树，以累计求和，必要部分需要剪枝加快遍历速度。
 搜索时需要区分三种情况：
  当前结点值 val &amp;lt; low 时，左子树均不满足条件，继续搜索右子树； 当前结点值 val &amp;gt; high 时，右子树均不满足条件，继续搜索左子树； 其余情况，累加当前结点值，无法剪枝，左右子树都需要继续搜索。  func rangeSumBST(root *TreeNode, low int, high int) int { sum := 0 var search func(node *TreeNode) search = func(node *TreeNode) { if node == nil { return } if node.'><title>Leetcode 938. 二叉搜索树的范围和</title>
@@ -18,10 +18,10 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/range-sum-of-bst/
 难度： 简单
 题目描述 给定二叉搜索树的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
-示例1：  **输入：**root = [10,5,15,3,7,null,18], low = 7, high = 15
-**输出：**32
- 示例2：  **输入：**root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
-**输出：**23
+示例1：  输入： root = [10,5,15,3,7,null,18], low = 7, high = 15
+输出： 32
+ 示例2：  输入： root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+输出： 23
  提示：  树中节点数目在范围 [1, 2 * 104] 内 1 &amp;lt;= Node.val &amp;lt;= 105 1 &amp;lt;= low &amp;lt;= high &amp;lt;= 105 所有 Node.val 互不相同  解题思路 深度优先搜索 不同于一般搜索树的搜索，该搜索需要遍历整颗树，以累计求和，必要部分需要剪枝加快遍历速度。
 搜索时需要区分三种情况：
  当前结点值 val &amp;lt; low 时，左子树均不满足条件，继续搜索右子树； 当前结点值 val &amp;gt; high 时，右子树均不满足条件，继续搜索左子树； 其余情况，累加当前结点值，无法剪枝，左右子树都需要继续搜索。  func rangeSumBST(root *TreeNode, low int, high int) int { sum := 0 var search func(node *TreeNode) search = func(node *TreeNode) { if node == nil { return } if node.'>
@@ -32,10 +32,10 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/range-sum-of-bst/
 难度： 简单
 题目描述 给定二叉搜索树的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
-示例1：  **输入：**root = [10,5,15,3,7,null,18], low = 7, high = 15
-**输出：**32
- 示例2：  **输入：**root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
-**输出：**23
+示例1：  输入： root = [10,5,15,3,7,null,18], low = 7, high = 15
+输出： 32
+ 示例2：  输入： root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+输出： 23
  提示：  树中节点数目在范围 [1, 2 * 104] 内 1 &amp;lt;= Node.val &amp;lt;= 105 1 &amp;lt;= low &amp;lt;= high &amp;lt;= 105 所有 Node.val 互不相同  解题思路 深度优先搜索 不同于一般搜索树的搜索，该搜索需要遍历整颗树，以累计求和，必要部分需要剪枝加快遍历速度。
 搜索时需要区分三种情况：
  当前结点值 val &amp;lt; low 时，左子树均不满足条件，继续搜索右子树； 当前结点值 val &amp;gt; high 时，右子树均不满足条件，继续搜索左子树； 其余情况，累加当前结点值，无法剪枝，左右子树都需要继续搜索。  func rangeSumBST(root *TreeNode, low int, high int) int { sum := 0 var search func(node *TreeNode) search = func(node *TreeNode) { if node == nil { return } if node.">
@@ -240,14 +240,14 @@
 <h5 id="示例1">示例1：</h5>
 <img src="https://assets.leetcode.com/uploads/2020/11/05/bst1.jpg" width="400px">
 <blockquote>
-<p>**输入：**root = [10,5,15,3,7,null,18], low = 7, high = 15<br>
-**输出：**32</p>
+<p><strong>输入：</strong> root = [10,5,15,3,7,null,18], low = 7, high = 15<br>
+<strong>输出：</strong> 32</p>
 </blockquote>
 <h5 id="示例2">示例2：</h5>
 <img src="https://assets.leetcode.com/uploads/2020/11/05/bst2.jpg" width="400px">  
 <blockquote>
-<p>**输入：**root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10<br>
-**输出：**23</p>
+<p><strong>输入：</strong> root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10<br>
+<strong>输出：</strong> 23</p>
 </blockquote>
 <h5 id="提示">提示：</h5>
 <ul>
