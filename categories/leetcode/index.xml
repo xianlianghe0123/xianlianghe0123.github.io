@@ -6,7 +6,106 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 17 Sep 2021 11:22:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Sep 2021 12:56:28 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 650. 只有两个键的键盘</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-650.-%E5%8F%AA%E6%9C%89%E4%B8%A4%E4%B8%AA%E9%94%AE%E7%9A%84%E9%94%AE%E7%9B%98/</link>
+      <pubDate>Sun, 19 Sep 2021 12:56:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-650.-%E5%8F%AA%E6%9C%89%E4%B8%A4%E4%B8%AA%E9%94%AE%E7%9A%84%E9%94%AE%E7%9B%98/</guid>
+      <description>链接： https://leetcode-cn.com/problems/2-keys-keyboard/
+难度： 中等
+题目描述 最初记事本上只有一个字符 &#39;A&#39; 。你每次可以对这个记事本进行两种操作：
+ Copy All（复制全部）：复制这个记事本中的所有字符（不允许仅复制部分字符）。 Paste（粘贴）：粘贴 上一次 复制的字符。  给你一个数字 n ，你需要使用最少的操作次数，在记事本上输出 恰好 n 个 &#39;A&#39; 。返回能够打印出 n 个 &#39;A&#39; 的最少操作次数。
+示例 1：  输入： 3
+输出： 3
+解释：
+最初, 只有一个字符 &amp;lsquo;A&amp;rsquo;。
+第 1 步, 使用 Copy All 操作。
+第 2 步, 使用 Paste 操作来获得 &amp;lsquo;AA&amp;rsquo;。
+第 3 步, 使用 Paste 操作来获得 &amp;lsquo;AAA&amp;rsquo;。
+ 示例 2：  输入： n = 1
+输出： 0
+ 提示：  1 &amp;lt;= n &amp;lt;= 1000  解题思路 动态规划 为使得每次复制粘贴后的操作总次数最小，则对于复制的子字符串，也要求其操作次数最小，故可以用动态规划求解。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 12. 矩阵中的路径</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-12.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Sat, 18 Sep 2021 17:25:16 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-12.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/
+难度： 中等
+题目描述 给定一个 m x n 二维字符网格 board 和一个字符串单词 word 。如果 word 存在于网格中，返回 true ；否则，返回 false 。
+单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。
+例如，在下面的 3×4 的矩阵中包含单词 &amp;ldquo;ABCCED&amp;rdquo;（单词中的字母已标出）。
+示例 1：  输入： board = [[&amp;ldquo;A&amp;rdquo;,&amp;ldquo;B&amp;rdquo;,&amp;ldquo;C&amp;rdquo;,&amp;ldquo;E&amp;rdquo;],[&amp;ldquo;S&amp;rdquo;,&amp;ldquo;F&amp;rdquo;,&amp;ldquo;C&amp;rdquo;,&amp;ldquo;S&amp;rdquo;],[&amp;ldquo;A&amp;rdquo;,&amp;ldquo;D&amp;rdquo;,&amp;ldquo;E&amp;rdquo;,&amp;ldquo;E&amp;rdquo;]], word = &amp;ldquo;ABCCED&amp;rdquo;
+输出： true
+ 示例 2：  输入： board = [[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;],[&amp;ldquo;c&amp;rdquo;,&amp;ldquo;d&amp;rdquo;]], word = &amp;ldquo;abcd&amp;rdquo;
+输出： false
+ 提示：  1 &amp;lt;= board.length &amp;lt;= 200 1 &amp;lt;= board[i].length &amp;lt;= 200 board 和 word 仅由大小写英文字母组成  解题思路 深度优先搜索 遍历整个矩阵，从每个字符开始进行深度优先搜索，当无法找到下一个字符时，及时剪枝。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 292. Nim 游戏</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-292.-nim-%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Sat, 18 Sep 2021 16:47:38 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-292.-nim-%E6%B8%B8%E6%88%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/nim-game/
+难度： 简单
+题目描述 你和你的朋友，两个人一起玩 Nim 游戏：
+ 桌子上有一堆石头。 你们轮流进行自己的回合，你作为先手。 每一回合，轮到的人拿掉 1 - 3 块石头。 拿掉最后一块石头的人就是获胜者。  假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 n 的情况下赢得游戏。如果可以赢，返回 true；否则，返回 false 。
+示例 1：  输入： n = 4
+输出： false
+解释： 如果堆中有 4 块石头，那么你永远不会赢得比赛；
+因为无论你拿走 1 块、2 块 还是 3 块石头，最后一块石头总是会被你的朋友拿走。
+ 示例 2：  输入： n = 1
+输出： true
+ 示例 3：  输入： n = 2
+输出： true
+ 注意：  1 &amp;lt;= n &amp;lt;= 231 - 1  解题思路 推导 赢家必须要拿到最后1块石头，所以最后一次可以拿1～3块，则拿到第4块的石头的必输。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 11. 旋转数组的最小数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-11.-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Fri, 17 Sep 2021 17:37:57 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-11.-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/
+难度： 简单
+题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。 示例 1：  输入： [3,4,5,1,2]
+输出： 1
+ 示例 2：  输入： [2,2,2,0,1]
+输出： 0
+ 提示：  1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用  解题思路 遍历 顺序便利，找出最小值。
+func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numbers { if min &amp;gt; num { min = num } } return min } 复杂度  时间复杂度：$ O(N), N = len(numbers) $ 空间复杂度：$ O(1) $  二分查找 对于数组，每次选出中间元素，和区间右端点比较：</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 09. 用两个栈实现队列</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-09.-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</link>
+      <pubDate>Fri, 17 Sep 2021 16:40:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-09.-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
+难度： 简单
+题目描述 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
+示例 1：  输入：
+[&amp;ldquo;CQueue&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;]
+[[],[3],[],[]]
+输出： [null,null,3,-1]
+ 示例 2：  输入：
+[&amp;ldquo;CQueue&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;]
+[[],[],[5],[2],[],[]]
+输出： [null,-1,null,null,5,2]
+ 提示：  1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用  解题思路 出入分离 栈的特点是后进先出。想要取得头部元素，需要将整个栈中元素依次加入另一个栈中，此时，另一个栈中元素的出栈顺序即变成了先进先出。
+故使用两个栈，将入栈和出栈的操作分离，分别对应到尾部栈和头部栈：
+ 当一个元素要入栈时，压入尾部栈； 当要出栈时，从头部栈弹出，若头部栈为空，则将尾部栈所有元素加入到头部栈。  type CQueue struct { frontStack *list.List backStack *list.List } func Constructor() CQueue { return CQueue{ frontStack: list.New(), backStack: list.</description>
+    </item>
+    
     <item>
       <title>Leetcode 36. 有效的数独</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-36.-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</link>

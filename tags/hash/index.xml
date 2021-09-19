@@ -6,7 +6,25 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 16 Sep 2021 19:19:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Sep 2021 11:22:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 36. 有效的数独</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-36.-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</link>
+      <pubDate>Fri, 17 Sep 2021 11:22:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-36.-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/valid-sudoku/
+难度： 中等
+题目描述 请你判断一个 9x9 的数独是否有效。只需要 根据以下规则 ，验证已经填入的数字是否有效即可。
+ 数字 1-9 在每一行只能出现一次。 数字 1-9 在每一列只能出现一次。 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。（请参考示例图）  数独部分空格内已填入了数字，空白格用 &#39;.&#39; 表示。
+注意： 一个有效的数独（部分已被填充）不一定是可解的。 只需要根据以上规则，验证已经填入的数字是否有效即可。
+示例 1：  输入： board =
+[[&amp;quot;5&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;], ,[&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;], ,[&amp;quot;.&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;], ,[&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;], ,[&amp;quot;4&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;], ,[&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;], ,[&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;], ,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;4&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;5&amp;quot;], ,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;9&amp;quot;]] 输出： true
+ 示例 2：  输入： board =
+[[&amp;quot;8&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;] ,[&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;] ,[&amp;quot;.&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;] ,[&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;] ,[&amp;quot;4&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;] ,[&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;] ,[&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;] ,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;4&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;5&amp;quot;] ,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;9&amp;quot;]] 输出： false
+解释： 除了第一行的第一个数字从 5 改为 8 以外，空格内其他数字均与 示例1 相同。 但由于位于左上角的 3x3 宫内有两个 8 存在, 因此这个数独是无效的。</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 03. 数组中重复的数字</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-03.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
