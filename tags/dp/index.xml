@@ -6,7 +6,23 @@
     <description>Recent content in dp on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 28 Aug 2021 11:05:35 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 20:51:55 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 46. 把数字翻译成字符串</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-46.-%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Mon, 20 Sep 2021 20:51:55 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-46.-%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/
+难度： 中等
+题目描述 给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 “a” ，1 翻译成 “b”，……，11 翻译成 “l”，……，25 翻译成 “z”。一个数字可能有多个翻译。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。
+示例：  输入: 12258
+输出: 5
+解释: 12258有5种不同的翻译，分别是&amp;quot;bccfi&amp;quot;, &amp;ldquo;bwfi&amp;rdquo;, &amp;ldquo;bczi&amp;rdquo;, &amp;ldquo;mcfi&amp;quot;和&amp;quot;mzi&amp;rdquo;
+ 提示：  0 &amp;lt;= num &amp;lt; 231  解题思路 动态规划 使用 dp[i] 记录前缀数组可以表示方案的最大值。状态转移方程为：
+ 初始，dp[0] = 1； 如果，nums[i]nums[i+1] 可以翻译，则 dp[i+1] = dp[i] + dp[i-1]； 否则，dp[i+1] = dp[i]。  func translateNum(num int) int { s := strconv.FormatInt(int64(num), 10) dp := make([]int, len(s)) dp[0] = 1 for i := 0; i &amp;lt; len(s)-1; i++ { dp[i+1] = dp[i] if s[i] !</description>
+    </item>
+    
     <item>
       <title>Leetcode 1480. 一维数组的动态和</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1480.-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/</link>

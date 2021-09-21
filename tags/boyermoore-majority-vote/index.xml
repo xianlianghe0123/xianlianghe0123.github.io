@@ -6,7 +6,23 @@
     <description>Recent content in Boyer–Moore majority vote on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 09 Jul 2021 10:46:07 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/boyermoore-majority-vote/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 16:00:42 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/boyermoore-majority-vote/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 39. 数组中出现次数超过一半的数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-39.-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Mon, 20 Sep 2021 16:00:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-39.-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/
+难度： 简单
+题目描述 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+示例：  输入: [1, 2, 3, 2, 2, 2, 5, 4, 2]
+输出: 2
+ 提示：  1 &amp;lt;= 数组长度 &amp;lt;= 50000  解题思路 哈希 遍历数组，用哈希表记录每个元素的出现次数，当超过半数时返回。
+func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return 0 } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  排序 对数组排序，位于中间位置对必为多数元素。</description>
+    </item>
+    
     <item>
       <title>面试题 17.10. 主要元素</title>
       <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.10.-%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/</link>

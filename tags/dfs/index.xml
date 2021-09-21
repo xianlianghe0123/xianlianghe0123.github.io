@@ -6,7 +6,77 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 18 Sep 2021 17:25:16 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 17:20:45 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 36. 二叉搜索树与双向链表</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-36.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Mon, 20 Sep 2021 17:20:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-36.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/
+难度： 中等
+题目描述 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只能调整树中节点指针的指向。
+为了让您更好地理解问题，以下面的二叉搜索树为例：
+我们希望将这个二叉搜索树转化为双向循环链表。链表中的每个节点都有一个前驱和后继指针。对于双向循环链表，第一个节点的前驱是最后一个节点，最后一个节点的后继是第一个节点。
+下图展示了上面的二叉搜索树转化成的链表。“head” 表示指向链表中有最小元素的节点。
+特别地，我们希望可以就地完成转换操作。当转化完成以后，树中节点的左指针需要指向前驱，树中节点的右指针需要指向后继。还需要返回链表中的第一个节点的指针。
+解题思路 深度优先搜索 二叉搜索树中序遍历后的结果即为有序的，采用中序遍历的方式搜索二叉树。
+维护两个指针 head 和 tail ，分别指向当前遍历到的链表的头和尾。对于当前遍历到的结点，将其 left 指向 tail，同时 tail 的 right 指向当前结点，后 tail 变更为指向当前结点。
+完成遍历后，修改头尾指针，使其构成环。
+class Solution { public: Node *treeToDoublyList(Node *root) { if (root == nullptr) { return nullptr; } dfs(root); head-&amp;gt;left = tail; tail-&amp;gt;right = head; return head; } private: Node *head, *tail; void dfs(Node *node) { if(node == nullptr) { return; } dfs(node-&amp;gt;left); if (head == nullptr) { head = node; } if (tail == nullptr) { tail = node; } else { tail-&amp;gt;right = node; node-&amp;gt;left = tail; tail = node; } dfs(node-&amp;gt;right); } }; 复杂度  时间复杂度：$ O(N), N = size(Tree) $ 空间复杂度：$ O(\log{N}) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 34. 二叉树中和为某一值的路径</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-34.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Mon, 20 Sep 2021 14:55:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-34.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/
+难度： 中等
+题目描述 输入一棵二叉树和一个整数，打印出二叉树中节点值的和为输入整数的所有路径。从树的根节点开始往下一直到叶节点所经过的节点形成一条路径。
+示例： 给定如下二叉树，以及目标和 target = 22，
+ 5 / \ 4 8 / / \ 11 13 4 / \ / \ 7 2 5 1 返回:
+[ [5,4,11,2], [5,8,4,5] ] 提示：  节点总数 &amp;lt;= 10000  解题思路 深度优先搜索 从根节点开始进行深度优先搜索，当整条路径上的结点值之和为 target 时，将其拷贝到结果队列中。
+func pathSum(root *TreeNode, target int) [][]int { ans := make([][]int, 0) var dfs func(node *TreeNode, path []int, sum int) dfs = func(node *TreeNode, path []int, sum int) { if node == nil { return } path = append(path, node.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 26. 树的子结构</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-26.-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 19 Sep 2021 19:37:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-26.-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/
+难度： 中等
+题目描述 输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)
+B是A的子结构， 即 A中有出现和B相同的结构和节点值。
+例如: 给定的树 A:
+ 3 / \ 4 5 / \ 1 2 给定的树 B：
+ 4 / 1 返回 true，因为 B 与 A 的一个子树拥有相同的结构和节点值。
+示例 1：  输入： A = [1,2,3], B = [3,1]
+输出： false
+ 示例 2：  输入： A = [3,4,5,1,2], B = [4,1]
+输出： true
+ 限制：  0 &amp;lt;= 节点个数 &amp;lt;= 10000  解题思路 深度优先搜索 在树 A 上进行 深度优先搜索（先序遍历），当子树根结点与 B 相同时，仍采用 深度优先搜索 的方式比较结构是否相同。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 13. 机器人的运动范围</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-13.-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/</link>
+      <pubDate>Sun, 19 Sep 2021 14:29:35 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-13.-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/
+难度： 中等
+题目描述 地上有一个 m 行 n 列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0,0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于 k 的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
+示例 1：  输入： m = 2, n = 3, k = 1
+输出： 3
+ 示例 2：  输入： m = 3, n = 1, k = 0
+输出： 1
+ 提示：  1 &amp;lt;= n,m &amp;lt;= 100 0 &amp;lt;= k &amp;lt;= 20  解题思路 深度优先搜索 从 [0,0] 开始进行深度优先搜索，当针对 k 进行剪枝时，整个矩阵是关于 (i,i) 对称的，所以可以限制搜索方向为右和下。</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 12. 矩阵中的路径</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-12.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</link>

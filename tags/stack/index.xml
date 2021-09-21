@@ -6,7 +6,48 @@
     <description>Recent content in stack on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 16 Sep 2021 22:20:54 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 13:01:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 31. 栈的压入、弹出序列</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-31.-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Mon, 20 Sep 2021 13:01:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-31.-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
+难度： 中等
+题目描述 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字 均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
+示例 1：  输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+输出： true
+解释： 我们可以按以下顺序执行：
+push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
+push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
+ 示例 2：  输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+输出： false
+解释： 1 不能在 2 之前弹出。
+ 提示：  0 &amp;lt;= pushed.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 30. 包含min函数的栈</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-30.-%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</link>
+      <pubDate>Mon, 20 Sep 2021 12:29:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-30.-%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
+难度： 简单
+题目描述 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 $O(1)$。
+示例：  MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.min(); &amp;ndash;&amp;gt; 返回 -3.
+minStack.pop();
+minStack.top(); &amp;ndash;&amp;gt; 返回 0.
+minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
+ 提示：  各函数的调用总次数不超过 20000 次  解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
+ 当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。  type MinStack struct { stack *list.</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 06. 从尾到头打印链表</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-06.-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</link>

@@ -6,7 +6,57 @@
     <description>Recent content in sort on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 03 Sep 2021 11:30:22 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 19:50:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 45. 把数组排成最小的数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-45.-%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/</link>
+      <pubDate>Mon, 20 Sep 2021 19:50:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-45.-%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/
+难度： 中等
+题目描述 输入一个非负整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+示例 1：  输入: [10,2]
+输出: &amp;ldquo;102&amp;rdquo;
+ 示例 2：  输入: [3,30,34,5,9]
+输出: &amp;ldquo;3033459&amp;rdquo;
+ 提示：  0 &amp;lt; nums.length &amp;lt;= 100  说明：  输出结果可能非常大，所以你需要返回一个字符串而不是整数 拼接起来的数字可能会有前导 0，最后结果不需要去掉前导 0  解题思路 排序 对于两个数 x、y，若 xy &amp;lt; yx，则 x 必然在 y 的前面，证明如下：
+ 当这两个数相邻，则成立 两数不相邻，不妨设 xzy，则有 xz &amp;lt; zx，zy &amp;lt; yz，需要证明 xzy &amp;lt; yzx  xz &amp;lt; zx =&amp;gt; x * 10^len(x) + z &amp;lt; z * 10^len(z) + x zy &amp;lt; yz =&amp;gt; z * 10^len(z) + y &amp;lt; y * 10^len(y) + z 相加得到 x * 10^len(x) + y &amp;lt; y * 10^len(y) + z，即 xy &amp;lt; yx，所以 xzy &amp;lt; yzx成立。    按照上述方案自定义排序规则排序，之后按顺序拼接起来返回。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 40. 最小的k个数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-40.-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Mon, 20 Sep 2021 16:17:39 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-40.-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
+难度： 简单
+题目描述 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
+示例 1：  输入： arr = [3,2,1], k = 2
+输出： [1,2] 或者 [2,1]
+ 示例 2：  输入： arr = [0,1,2,1], k = 1
+输出： [0]
+ 限制：  0 &amp;lt;= k &amp;lt;= arr.length &amp;lt;= 10000 0 &amp;lt;= arr[i] &amp;lt;= 10000  解题思路 排序 对数组进行排序，返回前 k 个数。
+func getLeastNumbers(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂度  时间复杂度：$ O(N\log{N}), N = len(arr) $ 空间复杂度：$ O(\log{N}) $  堆 使用大顶堆维护最小的 k 个数。遍历数组，当堆不满 k 时，入堆；否则，当前元素小于堆顶元素时，弹出最大元素，当前元素入堆。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 39. 数组中出现次数超过一半的数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-39.-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Mon, 20 Sep 2021 16:00:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-39.-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/
+难度： 简单
+题目描述 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+示例：  输入: [1, 2, 3, 2, 2, 2, 5, 4, 2]
+输出: 2
+ 提示：  1 &amp;lt;= 数组长度 &amp;lt;= 50000  解题思路 哈希 遍历数组，用哈希表记录每个元素的出现次数，当超过半数时返回。
+func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return 0 } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  排序 对数组排序，位于中间位置对必为多数元素。</description>
+    </item>
+    
     <item>
       <title>面试题 17.14. 最小K个数</title>
       <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.14.-%E6%9C%80%E5%B0%8Fk%E4%B8%AA%E6%95%B0/</link>

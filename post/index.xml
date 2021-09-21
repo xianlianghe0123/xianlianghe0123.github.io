@@ -6,7 +6,507 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 19 Sep 2021 12:56:28 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Sep 2021 23:36:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 50. 第一个只出现一次的字符</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-50.-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/</link>
+      <pubDate>Tue, 21 Sep 2021 23:36:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-50.-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/
+难度： 简单
+题目描述 在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。
+示例 1：  输入： s = &amp;ldquo;abaccdeff&amp;rdquo;
+输出： &amp;lsquo;b&amp;rsquo;
+ 示例 2：  输入： s = &amp;quot;&amp;quot;
+输出： &#39; &#39;
+ 限制：  0 &amp;lt;= s 的长度 &amp;lt;= 50000  解题思路 哈希 + 两次遍历 第一次遍历，使用哈希表记录每个字符是否重复出现；第二次遍历，返回找到的第一个不重复的字符，找不到返回 &#39; &#39;。
+func firstUniqChar(s string) byte { repeat := make(map[byte]bool) for i := range s { _, ok := repeat[s[i]] if !ok { repeat[s[i]] = false } else { repeat[s[i]] = true } } for i := range s { if !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 58. 最后一个单词的长度</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-58.-%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/</link>
+      <pubDate>Tue, 21 Sep 2021 22:30:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-58.-%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/length-of-last-word/
+难度： 简单
+题目描述 给你一个字符串 s，由若干单词组成，单词前后用一些空格字符隔开。返回字符串中最后一个单词的长度。
+单词 是指仅由字母组成、不包含任何空格字符的最大子字符串。
+示例 1：  输入： s = &amp;ldquo;Hello World&amp;rdquo;
+输出： 5
+ 示例 2：  输入： s = &amp;quot; fly me to the moon &amp;quot;
+输出： 4
+ 示例 3：  输入： s = &amp;ldquo;luffy is still joyboy&amp;rdquo;
+输出： 6
+ 提示：  1 &amp;lt;= s.length &amp;lt;= 104 s 仅有英文字母和空格 &#39; &#39; 组成 s 中至少存在一个单词  解题思路 倒序遍历 从尾到头倒序遍历，当字符为 &#39; &#39; 时，若长度为 0 ，说明是尾部空格，继续遍历；否则说明尾部单词遍历完毕，返回长度。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 49. 丑数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-49.-%E4%B8%91%E6%95%B0/</link>
+      <pubDate>Tue, 21 Sep 2021 17:50:14 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-49.-%E4%B8%91%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/chou-shu-lcof/
+难度： 中等
+题目描述 我们把只包含质因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
+示例：  输入: n = 10
+输出: 12
+解释: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 是前 10 个丑数。
+ 说明：  1 是丑数。 n 不超过 1690。  解题思路 堆 + 哈希 维护一个小顶堆和哈希表，初始堆中元素为 1，每次弹出堆顶最小元素，然后将其分别乘以 2、3、5加入堆中，此处需要使用哈希表去重。
+弹出的第 n 个数即为第 n 个丑数。
+type MinHeap struct { sort.IntSlice } func (this *MinHeap) Push(x interface{}) { this.IntSlice = append(this.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 48. 最长不含重复字符的子字符串</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-48.-%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Tue, 21 Sep 2021 16:18:26 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-48.-%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/
+难度： 中等
+题目描述 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
+示例 1：  输入: &amp;ldquo;abcabcbb&amp;rdquo;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;ldquo;abc&amp;rdquo;，所以其长度为 3。
+ 示例 2：  输入: &amp;ldquo;bbbbb&amp;rdquo;
+输出: 1
+解释: 因为无重复字符的最长子串是 &amp;ldquo;b&amp;rdquo;，所以其长度为 1。
+ 示例 3：  输入: &amp;ldquo;pwwkew&amp;rdquo;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;ldquo;wke&amp;rdquo;，所以其长度为 3。
+请注意，你的答案必须是 子串 的长度，&amp;ldquo;pwke&amp;rdquo; 是一个子序列，不是子串。
+ 提示：  s.length &amp;lt;= 40000  解题思路 哈希 + 双指针 使用哈希表记录每个字符出现过下标，并记录有效数组开始的下标 start：当出现重复字符时，将 start 修正为重复字符出现的下一个下标。
+func lengthOfLongestSubstring(s string) int { ans := 0 pos := make(map[byte]int) start := 0 for i := 0; i &amp;lt; len(s); i++ { p, ok := pos[s[i]] if ok &amp;amp;&amp;amp; start &amp;lt;= p { start = p + 1 } pos[s[i]] = i if ans &amp;lt; i-start+1 { ans = i - start + 1 } } return ans } 复杂度  时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 47. 礼物的最大价值</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-47.-%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/</link>
+      <pubDate>Tue, 21 Sep 2021 15:11:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-47.-%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/li-wu-de-zui-da-jie-zhi-lcof/
+难度： 中等
+题目描述 在一个 m*n 的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于 0）。你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到到达棋盘的右下角。给定一个棋盘及其上面的礼物的价值，请计算你最多能拿到多少价值的礼物？
+示例：  输入:
+[ [1,3,1], [1,5,1], [4,2,1] ] 输出: 12
+解释: 路径 1→3→5→2→1 可以拿到最多价值的礼物
+ 提示：  0 &amp;lt; grid.length &amp;lt;= 200 0 &amp;lt; grid[0].length &amp;lt;= 200  解题思路 动态规划 使用 dp[i][j] 记录到达位置 (i,j) 的最大值，则其只能从上边或者左边移动到当前位置，故状态转移方程为：
+ dp[0][0] = grid[0][0] dp[i][j] = max(dp[i-1][j], dp[i, j-1]) + grid[i][j]  func maxValue(grid [][]int) int { dp := make([][]int, len(grid)) for i := 0; i &amp;lt; len(grid); i++ { dp[i] = make([]int, len(grid[0])) for j := 0; j &amp;lt; len(grid[0]); j++ { if i-1 &amp;gt;= 0 { dp[i][j] = dp[i-1][j] } if j-1 &amp;gt;= 0 &amp;amp;&amp;amp; dp[i][j] &amp;lt; dp[i][j-1] { dp[i][j] = dp[i][j-1] } dp[i][j] += grid[i][j] } } return dp[len(dp)-1][len(dp[0])-1] } 复杂度  时间复杂度：$ O(mn) $ 空间复杂度：$ O(mn) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 46. 把数字翻译成字符串</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-46.-%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Mon, 20 Sep 2021 20:51:55 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-46.-%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/
+难度： 中等
+题目描述 给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 “a” ，1 翻译成 “b”，……，11 翻译成 “l”，……，25 翻译成 “z”。一个数字可能有多个翻译。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。
+示例：  输入: 12258
+输出: 5
+解释: 12258有5种不同的翻译，分别是&amp;quot;bccfi&amp;quot;, &amp;ldquo;bwfi&amp;rdquo;, &amp;ldquo;bczi&amp;rdquo;, &amp;ldquo;mcfi&amp;quot;和&amp;quot;mzi&amp;rdquo;
+ 提示：  0 &amp;lt;= num &amp;lt; 231  解题思路 动态规划 使用 dp[i] 记录前缀数组可以表示方案的最大值。状态转移方程为：
+ 初始，dp[0] = 1； 如果，nums[i]nums[i+1] 可以翻译，则 dp[i+1] = dp[i] + dp[i-1]； 否则，dp[i+1] = dp[i]。  func translateNum(num int) int { s := strconv.FormatInt(int64(num), 10) dp := make([]int, len(s)) dp[0] = 1 for i := 0; i &amp;lt; len(s)-1; i++ { dp[i+1] = dp[i] if s[i] !</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 45. 把数组排成最小的数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-45.-%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/</link>
+      <pubDate>Mon, 20 Sep 2021 19:50:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-45.-%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/
+难度： 中等
+题目描述 输入一个非负整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+示例 1：  输入: [10,2]
+输出: &amp;ldquo;102&amp;rdquo;
+ 示例 2：  输入: [3,30,34,5,9]
+输出: &amp;ldquo;3033459&amp;rdquo;
+ 提示：  0 &amp;lt; nums.length &amp;lt;= 100  说明：  输出结果可能非常大，所以你需要返回一个字符串而不是整数 拼接起来的数字可能会有前导 0，最后结果不需要去掉前导 0  解题思路 排序 对于两个数 x、y，若 xy &amp;lt; yx，则 x 必然在 y 的前面，证明如下：
+ 当这两个数相邻，则成立 两数不相邻，不妨设 xzy，则有 xz &amp;lt; zx，zy &amp;lt; yz，需要证明 xzy &amp;lt; yzx  xz &amp;lt; zx =&amp;gt; x * 10^len(x) + z &amp;lt; z * 10^len(z) + x zy &amp;lt; yz =&amp;gt; z * 10^len(z) + y &amp;lt; y * 10^len(y) + z 相加得到 x * 10^len(x) + y &amp;lt; y * 10^len(y) + z，即 xy &amp;lt; yx，所以 xzy &amp;lt; yzx成立。    按照上述方案自定义排序规则排序，之后按顺序拼接起来返回。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 44. 数字序列中某一位的数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-44.-%E6%95%B0%E5%AD%97%E5%BA%8F%E5%88%97%E4%B8%AD%E6%9F%90%E4%B8%80%E4%BD%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Mon, 20 Sep 2021 18:23:10 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-44.-%E6%95%B0%E5%AD%97%E5%BA%8F%E5%88%97%E4%B8%AD%E6%9F%90%E4%B8%80%E4%BD%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi-lcof/
+难度： 中等
+题目描述 数字以0123456789101112131415…的格式序列化到一个字符序列中。在这个序列中，第5位（从下标0开始计数）是5，第13位是1，第19位是4，等等。
+请写一个函数，求任意第n位对应的数字。
+示例 1：  输入： n = 3
+输出： 3
+ 示例 2：  输入： n = 11
+输出： 0
+ 限制：  0 &amp;lt;= n &amp;lt; 231  解题思路 模拟 字符串按照数字顺序排列，其按照数字长度为 1、2、3、... 进行排列，可以利用这个规则求得 n 所在的那个数，进而求的该位对应的数字。
+排除 0，则相同长度的数字所占的字符串长度为 9*基数*数字长度，（即9=9*1*1、90=9*10*2、900=9*100*3、...），通过覆盖范围的查找确定到 n 对应的数字长度和基数。
+之后获取到 n 所在数字的偏移量，并求得该数，之后返回 n 对应位的数字即可。对输入 0 需要验证。
+func findNthDigit(n int) int { base := 1 // 基数 10^N 	digit := 1 // 位数 10进制 	// 确定位数 	for ; n &amp;gt; base*9*digit; base, digit = 10*base, digit+1 { n -= base * 9 * digit } offset := (n - 1) / digit // 偏移量 	// 获取指定位数字 	ans := base + offset for i := digit - (n-1)%digit; i &amp;gt; 1; i-- { ans /= 10 } return ans % 10 } 复杂度  时间复杂度：$ O(\log{n}) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 36. 二叉搜索树与双向链表</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-36.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Mon, 20 Sep 2021 17:20:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-36.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/
+难度： 中等
+题目描述 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只能调整树中节点指针的指向。
+为了让您更好地理解问题，以下面的二叉搜索树为例：
+我们希望将这个二叉搜索树转化为双向循环链表。链表中的每个节点都有一个前驱和后继指针。对于双向循环链表，第一个节点的前驱是最后一个节点，最后一个节点的后继是第一个节点。
+下图展示了上面的二叉搜索树转化成的链表。“head” 表示指向链表中有最小元素的节点。
+特别地，我们希望可以就地完成转换操作。当转化完成以后，树中节点的左指针需要指向前驱，树中节点的右指针需要指向后继。还需要返回链表中的第一个节点的指针。
+解题思路 深度优先搜索 二叉搜索树中序遍历后的结果即为有序的，采用中序遍历的方式搜索二叉树。
+维护两个指针 head 和 tail ，分别指向当前遍历到的链表的头和尾。对于当前遍历到的结点，将其 left 指向 tail，同时 tail 的 right 指向当前结点，后 tail 变更为指向当前结点。
+完成遍历后，修改头尾指针，使其构成环。
+class Solution { public: Node *treeToDoublyList(Node *root) { if (root == nullptr) { return nullptr; } dfs(root); head-&amp;gt;left = tail; tail-&amp;gt;right = head; return head; } private: Node *head, *tail; void dfs(Node *node) { if(node == nullptr) { return; } dfs(node-&amp;gt;left); if (head == nullptr) { head = node; } if (tail == nullptr) { tail = node; } else { tail-&amp;gt;right = node; node-&amp;gt;left = tail; tail = node; } dfs(node-&amp;gt;right); } }; 复杂度  时间复杂度：$ O(N), N = size(Tree) $ 空间复杂度：$ O(\log{N}) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 40. 最小的k个数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-40.-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Mon, 20 Sep 2021 16:17:39 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-40.-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
+难度： 简单
+题目描述 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
+示例 1：  输入： arr = [3,2,1], k = 2
+输出： [1,2] 或者 [2,1]
+ 示例 2：  输入： arr = [0,1,2,1], k = 1
+输出： [0]
+ 限制：  0 &amp;lt;= k &amp;lt;= arr.length &amp;lt;= 10000 0 &amp;lt;= arr[i] &amp;lt;= 10000  解题思路 排序 对数组进行排序，返回前 k 个数。
+func getLeastNumbers(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂度  时间复杂度：$ O(N\log{N}), N = len(arr) $ 空间复杂度：$ O(\log{N}) $  堆 使用大顶堆维护最小的 k 个数。遍历数组，当堆不满 k 时，入堆；否则，当前元素小于堆顶元素时，弹出最大元素，当前元素入堆。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 39. 数组中出现次数超过一半的数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-39.-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Mon, 20 Sep 2021 16:00:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-39.-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/
+难度： 简单
+题目描述 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+示例：  输入: [1, 2, 3, 2, 2, 2, 5, 4, 2]
+输出: 2
+ 提示：  1 &amp;lt;= 数组长度 &amp;lt;= 50000  解题思路 哈希 遍历数组，用哈希表记录每个元素的出现次数，当超过半数时返回。
+func majorityElement(nums []int) int { cnt := make(map[int]int) for _, num := range nums { cnt[num]++ if cnt[num] &amp;gt; len(nums)/2 { return num } } return 0 } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  排序 对数组排序，位于中间位置对必为多数元素。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 35. 复杂链表的复制</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-35.-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</link>
+      <pubDate>Mon, 20 Sep 2021 15:16:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-35.-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/
+难度： 中等
+题目描述 请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指针指向链表中的任意节点或者 null。
+示例 1：  输入： head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+输出： [[7,null],[13,0],[11,4],[10,2],[1,0]]
+ 示例 2：  输入： head = [[1,1],[2,1]]
+输出： [[1,1],[2,1]]
+ 示例 3：  输入： head = [[3,null],[3,0],[3,null]]
+输出： [[3,null],[3,0],[3,null]]
+ 示例 4:  输入： head = []
+输出： []
+解释： 给定的链表为空（空指针），因此返回 null
+ 提示：  -10000 &amp;lt;= Node.val &amp;lt;= 10000 Node.random 为空（null）或指向链表中的节点。 节点数目不超过 1000 。  解题思路 哈希 使用哈希表维护一个旧结点到新结点的映射，依次从前向后遍历链表，并逐一的构造新链表。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 34. 二叉树中和为某一值的路径</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-34.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Mon, 20 Sep 2021 14:55:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-34.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/
+难度： 中等
+题目描述 输入一棵二叉树和一个整数，打印出二叉树中节点值的和为输入整数的所有路径。从树的根节点开始往下一直到叶节点所经过的节点形成一条路径。
+示例： 给定如下二叉树，以及目标和 target = 22，
+ 5 / \ 4 8 / / \ 11 13 4 / \ / \ 7 2 5 1 返回:
+[ [5,4,11,2], [5,8,4,5] ] 提示：  节点总数 &amp;lt;= 10000  解题思路 深度优先搜索 从根节点开始进行深度优先搜索，当整条路径上的结点值之和为 target 时，将其拷贝到结果队列中。
+func pathSum(root *TreeNode, target int) [][]int { ans := make([][]int, 0) var dfs func(node *TreeNode, path []int, sum int) dfs = func(node *TreeNode, path []int, sum int) { if node == nil { return } path = append(path, node.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 33. 二叉搜索树的后序遍历序列</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-33.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Mon, 20 Sep 2021 13:56:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-33.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/
+难度： 中等
+题目描述 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回 true，否则返回 false。假设输入的数组的任意两个数字都 互不相同。
+参考以下这颗二叉搜索树：
+ 5 / \ 2 6 / \ 1 3 示例 1：  输入： [1,6,3,2,5]
+输出： false
+ 示例 2：  输入： [1,3,2,6,5]
+输出： true
+ 提示：  数组长度 &amp;lt;= 1000  解题思路 递归 对于一棵树的后续遍历序列，最后一个元素必然是根，然后向前遍历。根据二叉搜索树的性质，其右边元素一定大于根，而左边元素一定小于根，由此找到首个小于根的元素即为左右子树分界点。
+若在左子树序列里存在一个大于根的结点，则返回 false，否则递归处理左右子树。
+func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { return true } root := postorder[len(postorder)-1] split := len(postorder) - 2 for ; split &amp;gt;= 0 &amp;amp;&amp;amp; postorder[split] &amp;gt; root; split-- { } for i := 0; i &amp;lt; split; i++ { if postorder[i] &amp;gt; root { return false } } return verifyPostorder(postorder[:split+1]) &amp;amp;&amp;amp; verifyPostorder(postorder[split+1:len(postorder)-1]) } 复杂度  时间复杂度：$ O(N\log{N}), N = len(postorder) $ 空间复杂度：$ O(\log{N}) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 31. 栈的压入、弹出序列</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-31.-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Mon, 20 Sep 2021 13:01:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-31.-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
+难度： 中等
+题目描述 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字 均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
+示例 1：  输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+输出： true
+解释： 我们可以按以下顺序执行：
+push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
+push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
+ 示例 2：  输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+输出： false
+解释： 1 不能在 2 之前弹出。
+ 提示：  0 &amp;lt;= pushed.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 30. 包含min函数的栈</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-30.-%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</link>
+      <pubDate>Mon, 20 Sep 2021 12:29:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-30.-%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
+难度： 简单
+题目描述 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 $O(1)$。
+示例：  MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.min(); &amp;ndash;&amp;gt; 返回 -3.
+minStack.pop();
+minStack.top(); &amp;ndash;&amp;gt; 返回 0.
+minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
+ 提示：  各函数的调用总次数不超过 20000 次  解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
+ 当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。  type MinStack struct { stack *list.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 29. 顺时针打印矩阵</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-29.-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Mon, 20 Sep 2021 11:07:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-29.-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/
+难度： 简单
+题目描述 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。
+示例 1：  输入： matrix = [[1,2,3],[4,5,6],[7,8,9]]
+输出： [1,2,3,6,9,8,7,4,5]
+ 示例 2：  输入： matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+输出： [1,2,3,4,8,12,11,10,9,5,6,7]
+ 限制：  0 &amp;lt;= matrix.length &amp;lt;= 100 0 &amp;lt;= matrix[i].length &amp;lt;= 100  解题思路 模拟 从 (0,0) 开始，按照 右 &amp;gt; 下 &amp;gt; 左 &amp;gt; 上 &amp;gt; 右 的顺序遍历，当下一步要超出范围时或已访问过时，变换遍历方向。
+func spiralOrder(matrix [][]int) []int { if len(matrix) == 0 { return make([]int, 0) } visit := make([][]bool, len(matrix)) for i := range matrix { visit[i] = make([]bool, len(matrix[i])) } ans := make([]int, 0, len(matrix)*len(matrix[0])) directions := [4][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}} for i, j, direction := 0, 0, 0; len(ans) &amp;lt; cap(ans); i, j = i+directions[direction][0], j+directions[direction][1] { ans = append(ans, matrix[i][j]) visit[i][j] = true // 遍历方向修正 	nextI, nextJ := i+directions[direction][0], j+directions[direction][1] if nextI &amp;lt; 0 || nextI &amp;gt;= len(matrix) || nextJ &amp;lt; 0 || nextJ &amp;gt;= len(matrix[0]) || visit[nextI][nextJ] { direction = (direction + 1) % len(directions) } } return ans } 复杂度  时间复杂度：$ O(NM), N = len(matrix), M = len(N = len(matrix[i])) $ 空间复杂度：$ O(NM) $  层序遍历 将矩阵分解为一个个的环，每次只顺时针遍历环即可。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 28. 对称的二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-28.-%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Sun, 19 Sep 2021 20:37:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-28.-%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof/
+难度： 简单
+题目描述 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
+例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+ 1 / \ 2 2 / \ / \ 3 4 4 3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+ 1 / \ 2 2 \ \ 3 3 示例 1：  输入： root = [1,2,2,3,4,4,3]
+输出： true
+ 示例 2：  输入： root = [1,2,2,null,3,null,3]
+输出： false
+ 限制：  0 &amp;lt;= 节点个数 &amp;lt;= 1000  解题思路 递归 递归遍历比较互为镜像的两个结点，不同则返回 false，相同则继续遍历比较子结点。
+因为是镜像比较，所以左子树的左结点和右子树的右结点比较，而左子树的右结点和右子树的左结点比较。
+func isSymmetric(root *TreeNode) bool { if root == nil { return true } var same func(node1, node2 *TreeNode) bool same = func(node1, node2 *TreeNode) bool { if node1 == nil &amp;amp;&amp;amp; node2 == nil { return true } if node1 == nil || node2 == nil || node1.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 27. 二叉树的镜像</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-27.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Sun, 19 Sep 2021 20:27:58 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-27.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/
+难度： 简单
+题目描述 请完成一个函数，输入一个二叉树，该函数输出它的镜像。
+例如输入：
+ 4 / \ 2 7 / \ / \ 1 3 6 9 镜像输出：
+ 4 / \ 7 2 / \ / \ 9 6 3 1 示例：  输入： root = [4,2,7,1,3,6,9]
+输出： [4,7,2,9,6,3,1]
+ 限制：  0 &amp;lt;= 节点个数 &amp;lt;= 1000  解题思路 递归 递归遍历所有的结点，交换左右子树。
+func mirrorTree(root *TreeNode) *TreeNode { if root == nil { return nil } root.Left, root.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 26. 树的子结构</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-26.-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 19 Sep 2021 19:37:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-26.-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/
+难度： 中等
+题目描述 输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)
+B是A的子结构， 即 A中有出现和B相同的结构和节点值。
+例如: 给定的树 A:
+ 3 / \ 4 5 / \ 1 2 给定的树 B：
+ 4 / 1 返回 true，因为 B 与 A 的一个子树拥有相同的结构和节点值。
+示例 1：  输入： A = [1,2,3], B = [3,1]
+输出： false
+ 示例 2：  输入： A = [3,4,5,1,2], B = [4,1]
+输出： true
+ 限制：  0 &amp;lt;= 节点个数 &amp;lt;= 10000  解题思路 深度优先搜索 在树 A 上进行 深度优先搜索（先序遍历），当子树根结点与 B 相同时，仍采用 深度优先搜索 的方式比较结构是否相同。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 25. 合并两个排序的链表</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-25.-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sun, 19 Sep 2021 19:23:38 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-25.-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/
+难度： 简单
+题目描述 输入两个递增排序的链表，合并这两个链表并使新链表中的节点仍然是递增排序的
+示例：  输入： 1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4
+输出： 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4
+ 限制：  0 &amp;lt;= 链表长度 &amp;lt;= 1000  解题思路 迭代 由于两个链表都是排好序的，所以每次只需要比较两个链表头，选择小的加入到结果队列即可。
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode { ans := new(ListNode) for node := ans; l1 != nil || l2 != nil; node = node.Next { if l1 == nil { node.Next = l2 break } if l2 == nil { node.Next = l1 break } if l1.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 24. 反转链表</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-24.-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sun, 19 Sep 2021 18:31:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-24.-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/
+难度： 简单
+题目描述 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
+示例：  输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
+输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
+ 说明：  0 &amp;lt;= nums.length &amp;lt;= 50000 1 &amp;lt;= nums[i] &amp;lt;= 10000  解题思路 递归 利用调用栈记录上一个结点的信息，每次现将后续链表反转，得到反转链表的头部，然后通过当前结点的 Next 指针将当前节点添加到反转链表的尾部，注意还需要将当前节点的 Next 指针置空。
+func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil { return head } newHead := reverseList(head.Next) head.Next.Next = head head.Next = nil return newHead } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  双指针 链表是单向的，无法访问到上一个节点，所以使用两个指针 last 和 cur 记录当前结点和上一个结点。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 21. 调整数组顺序使奇数位于偶数前面</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-21.-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2/</link>
+      <pubDate>Sun, 19 Sep 2021 18:13:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-21.-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof/
+难度： 简单
+题目描述 输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有奇数位于数组的前半部分，所有偶数位于数组的后半部分。
+示例：  输入： nums = [1,2,3,4]
+输出： [1,3,2,4]
+注： [3,1,2,4] 也是正确的答案之一。
+ 说明：  0 &amp;lt;= nums.length &amp;lt;= 50000 1 &amp;lt;= nums[i] &amp;lt;= 10000  解题思路 双指针 使用两个指针 i 和 j 分别指向下一个奇数待插入的位置和当前遍历到的位置，一次遍历，遇到奇数时，i 、 j 指向的两个元素互换。
+func exchange(nums []int) []int { for i, j := 0, 0; j &amp;lt; len(nums); j++ { if nums[j]&amp;amp;1 == 1 { nums[i], nums[j] = nums[j], nums[i] i++ } } return nums } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 20. 表示数值的字符串</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-20.-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Sun, 19 Sep 2021 16:21:04 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-20.-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/
+难度： 中等
+题目描述 请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。
+数值（按顺序）可以分成以下几个部分：
+ 若干空格 一个 小数 或者 整数 （可选）一个 &#39;e&#39; 或 &#39;E&#39; ，后面跟着一个 整数 若干空格  小数（按顺序）可以分成以下几个部分：
+ （可选）一个符号字符（&#39;+&#39; 或 &#39;-&#39;） 下述格式之一：  至少一位数字，后面跟着一个点 &#39;.&#39; 至少一位数字，后面跟着一个点 &#39;.&#39; ，后面再跟着至少一位数字 一个点 &#39;.&#39; ，后面跟着至少一位数字    整数（按顺序）可以分成以下几个部分：
+ （可选）一个符号字符（&#39;+&#39; 或 &#39;-&#39;） 至少一位数字  部分数值列举如下：
+ [&amp;quot;+100&amp;quot;, &amp;quot;5e2&amp;quot;, &amp;quot;-123&amp;quot;, &amp;quot;3.1416&amp;quot;, &amp;quot;-1E-16&amp;quot;, &amp;quot;0123&amp;quot;]  部分非数值列举如下：
+ [&amp;quot;12e&amp;quot;, &amp;quot;1a3.14&amp;quot;, &amp;quot;1.2.3&amp;quot;, &amp;quot;+-5&amp;quot;, &amp;quot;12e+5.4&amp;quot;]  示例 1：  输入： s = &amp;ldquo;0&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 18. 删除链表的节点</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-18.-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Sun, 19 Sep 2021 15:56:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-18.-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/
+难度： 简单
+题目描述 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
+返回删除后的链表的头节点。
+注意： 此题对比原题有改动
+示例 1：  输入: head = [4,5,1,9], val = 5
+输出: [4,1,9]
+解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -&amp;gt; 1 -&amp;gt; 9.
+ 示例 2：  输入: head = [4,5,1,9], val = 1
+输出: [4,5,9]
+解释: 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -&amp;gt; 5 -&amp;gt; 9.
+ 说明：  题目保证链表中节点的值互不相同 若使用 C 或 C++ 语言，你不需要 free 或 delete 被删除的节点  解题思路 顺序遍历 + 二级指针 顺序遍历该链表，当遇到目标结点时，将指向该节点的指针指向下一个结点。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 17. 打印从1到最大的n位数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-17.-%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0/</link>
+      <pubDate>Sun, 19 Sep 2021 15:44:19 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-17.-%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/da-yin-cong-1dao-zui-da-de-nwei-shu-lcof/
+难度： 简单
+题目描述 输入数字 n，按顺序打印出从 1 到最大的 n 位十进制数。比如输入 3，则打印出 1、2、3 一直到最大的 3 位数 999。
+示例：  输入: n = 1
+输出: [1,2,3,4,5,6,7,8,9]
+ 说明：  用返回一个整数列表来代替打印 n 为正整数  解题思路  求得上限 max，其值为 10n，然后将 [1,max) 之间的所有数依次按顺序添加到返回队列即可。
+func printNumbers(n int) []int { max := 1 for ; n &amp;gt; 0; n-- { max *= 10 } ans := make([]int, 0, max) for i := 1; i &amp;lt; max; i++ { ans = append(ans, i) } return ans } 复杂度  时间复杂度：$ O(10^n) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 16. 数值的整数次方</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-16.-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</link>
+      <pubDate>Sun, 19 Sep 2021 15:13:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-16.-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/
+难度： 中等
+题目描述 实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn）。不得使用库函数，同时不需要考虑大数问题。
+示例 1：  输入： x = 2.00000, n = 10
+输出： 1024.00000
+ 示例 2：  输入： x = 2.10000, n = 3
+输出： 9.26100
+ 示例 3：  输入： x = 2.00000, n = -2
+输出： 0.25000
+解释： 2-2 = 1/22 = 1/4 = 0.25
+ 提示：  -100.0 &amp;lt; x &amp;lt; 100.0 -231 &amp;lt;= n &amp;lt;= 231-1 -104 &amp;lt;= xn &amp;lt;= 104  解题思路 快速幂 $$ x^n = a_1x^1 * a_2x^2 * a_3x^4 * a_4x^8 * &amp;hellip; , 其中a_i\in(0,1) $$ 可以看出，$ a_i $ 就是 n 的二进制表示形式，而对应项的幂计算可由上一项乘自身求得，故可以依次枚举二进制的每一位，类乘求的结果。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 13. 机器人的运动范围</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-13.-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/</link>
+      <pubDate>Sun, 19 Sep 2021 14:29:35 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-13.-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/
+难度： 中等
+题目描述 地上有一个 m 行 n 列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0,0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于 k 的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
+示例 1：  输入： m = 2, n = 3, k = 1
+输出： 3
+ 示例 2：  输入： m = 3, n = 1, k = 0
+输出： 1
+ 提示：  1 &amp;lt;= n,m &amp;lt;= 100 0 &amp;lt;= k &amp;lt;= 20  解题思路 深度优先搜索 从 [0,0] 开始进行深度优先搜索，当针对 k 进行剪枝时，整个矩阵是关于 (i,i) 对称的，所以可以限制搜索方向为右和下。</description>
+    </item>
+    
     <item>
       <title>Leetcode 650. 只有两个键的键盘</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-650.-%E5%8F%AA%E6%9C%89%E4%B8%A4%E4%B8%AA%E9%94%AE%E7%9A%84%E9%94%AE%E7%9B%98/</link>
