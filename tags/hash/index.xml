@@ -6,7 +6,24 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 21 Sep 2021 23:36:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Sep 2021 19:39:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 57. 和为s的两个数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-57.-%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Wed, 22 Sep 2021 19:39:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-57.-%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof/
+难度： 简单
+题目描述 输入一个递增排序的数组和一个数字 s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。
+示例 1：  输入： nums = [2,7,11,15], target = 9
+输出： [2,7] 或者 [7,2]
+ 示例 2：  输入： nums = [10,26,30,31,47,60], target = 40
+输出： [10,30] 或者 [30,10]
+ 限制：  1 &amp;lt;= nums.length &amp;lt;= 105 1 &amp;lt;= nums[i] &amp;lt;= 106  解题思路 哈希 使用哈希表记录每个数字是否出现过，遍历数组，计算对应的另一个数，若已出现过则返回这两个数。
+func twoSum(nums []int, target int) []int { hash := make(map[int]struct{}) for _, num := range nums { if _, ok := hash[target-num]; ok { return []int{num, target - num} } hash[num] = struct{}{} } return make([]int, 0) } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  双指针 使用两个指针 i, j 从头尾分别向中间遍历：</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 50. 第一个只出现一次的字符</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-50.-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/</link>

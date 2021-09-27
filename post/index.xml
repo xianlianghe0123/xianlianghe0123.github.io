@@ -6,7 +6,166 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 21 Sep 2021 23:36:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 09:38:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 371. 两整数之和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-371.-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Sun, 26 Sep 2021 09:38:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-371.-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/sum-of-two-integers/
+难度： 中等
+题目描述  给你两个整数 a 和 b ，不使用 运算符 + 和 - ​​​​​​​，计算并返回两整数之和。  示例 1：  输入： a = 1, b = 2
+输出： 3
+ 示例 2：  输入： a = 2, b = 3
+输出： 5
+ 提示：  -1000 &amp;lt;= a, b &amp;lt;= 1000  解题思路 位运算 以二进制位为单位进行运算，从最低位开始，使用位操作符诸位运算。
+由于负数在计算机中存储的是补码，直接诸位求和即可，用 c 表示进位，利用 数字电路设计 得到计算方法如下：
+ 当前位计算结果为：$a\oplus b\oplus c$ 进位的计算结果为：$(a\oplus b)c + ab$  func getSum(a int, b int) int { c := 0 ans := 0 for bit := 1; bit !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 583. 两个字符串的删除操作</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-583.-%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Sat, 25 Sep 2021 10:46:36 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-583.-%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/delete-operation-for-two-strings/
+难度： 中等
+题目描述 给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。
+示例：  输入: &amp;ldquo;sea&amp;rdquo;, &amp;ldquo;eat&amp;rdquo;
+输出: 2
+解释: 第一步将&amp;quot;sea&amp;quot;变为&amp;quot;ea&amp;quot;，第二步将&amp;quot;eat&amp;quot;变为&amp;quot;ea&amp;quot;
+ 提示：  给定单词的长度不超过500。 给定单词中的字符只含有小写字母。  **进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
+解题思路 动态规划 最长公共子序列(LCS)的变种，求得最长公共子序列的长度，返回剩余字符的数量。
+使用 dp[i][j] 表示分别以 i 和 j 为 word1 和 word2 前缀长度的最长公共子序列，其状态转移方程如下：
+ 初始时，dp[0][j] = dp[i][0] = 0 当 word1[i] = word2[j] 时，dp[i][j] = dp[i-1][j-1] + 1；否则，dp[i][j] = max(dp[i-1][j], dp[i][j-1])  func minDistance(word1 string, word2 string) int { dp := make([][]int, len(word1)+1) dp[0] = make([]int, len(word2)+1) for i := range word1 { dp[i+1] = make([]int, len(word2)+1) for j := range word2 { if word1[i] == word2[j] { dp[i+1][j+1] = dp[i][j] + 1 continue } dp[i+1][j+1] = dp[i+1][j] if dp[i+1][j+1] &amp;lt; dp[i][j+1] { dp[i+1][j+1] = dp[i][j+1] } } } return len(word1) + len(word2) - (dp[len(word1)][len(word2)] &amp;lt;&amp;lt; 1) } 复杂度  时间复杂度：$ O(NM), N = len(word1), M = len(word2) $ 空间复杂度：$ O(NM) $  动态规划 使用 dp[i][j] 表示分别以 i 和 j 为 word1 和 word2 前缀结尾的最少删除操作次数，其状态转移方程如下：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 430. 扁平化多级双向链表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-430.-%E6%89%81%E5%B9%B3%E5%8C%96%E5%A4%9A%E7%BA%A7%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Fri, 24 Sep 2021 10:35:19 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-430.-%E6%89%81%E5%B9%B3%E5%8C%96%E5%A4%9A%E7%BA%A7%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/
+难度： 中等
+题目描述 多级双向链表中，除了指向下一个节点和前一个节点指针之外，它还有一个子链表指针，可能指向单独的双向链表。这些子列表也可能会有一个或多个自己的子项，依此类推，生成多级数据结构，如下面的示例所示。
+给你位于列表第一级的头节点，请你扁平化列表，使所有结点出现在单级双链表中。
+示例1：  输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+输出： [1,2,3,7,8,11,12,9,10,4,5,6]
+解释：
+输入的多级列表如下图所示：
+扁平化后的链表如下图：
+ 示例 2：  输入： head = [1,2,null,3]
+输出： [1,3,2]
+解释：
+输入的多级列表如下图所示：
+ 1---2---NULL | 3---NULL  示例 3：  输入： head = []
+输出： []
+ 如何表示测试用例中的多级链表？ 以 示例 1 为例：
+ 1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
+[1,2,3,4,5,6,null] [7,8,9,10,null] [11,12,null] 为了将每一级都序列化到一起，我们需要每一级中添加值为 null 的元素，以表示没有节点连接到上一级的上级节点。
+[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。
+[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12] 提示：  节点数目不超过 1000 1 &amp;lt;= Node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 326. 3的幂</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-326.-3%E7%9A%84%E5%B9%82/</link>
+      <pubDate>Thu, 23 Sep 2021 14:50:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-326.-3%E7%9A%84%E5%B9%82/</guid>
+      <description>链接： https://leetcode-cn.com/problems/power-of-three/
+难度： 简单
+题目描述 给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 true ；否则，返回 false 。
+整数 n 是 3 的幂次方需满足：存在整数 x 使得 n == 3x
+示例 1：  输入： n = 27
+输出： true
+ 示例 2：  输入： n = 0
+输出： false
+ 示例 3：  输入： n = 9
+输出： true
+ 示例 4：  输入： n = 45
+输出： false
+ 提示：  -231 &amp;lt;= n &amp;lt;= 231 - 1  解题思路 试除法 当当前数字可以被 3 的整除，则除以 3，知道不能被 3 整除为止。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 60. n个骰子的点数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-60.-n%E4%B8%AA%E9%AA%B0%E5%AD%90%E7%9A%84%E7%82%B9%E6%95%B0/</link>
+      <pubDate>Wed, 22 Sep 2021 20:29:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-60.-n%E4%B8%AA%E9%AA%B0%E5%AD%90%E7%9A%84%E7%82%B9%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof/
+难度： 中等
+题目描述 把 n 个骰子扔在地上，所有骰子朝上一面的点数之和为 s。输入 n，打印出 s 的所有可能的值出现的概率。
+你需要用一个浮点数数组返回答案，其中第 i 个元素代表这 n 个骰子所能掷出的点数集合中第 i 小的那个的概率。
+示例 1：  输入: 1
+输出: [0.16667,0.16667,0.16667,0.16667,0.16667,0.16667]
+ 示例 2：  输入: 2
+输出: [0.02778,0.05556,0.08333,0.11111,0.13889,0.16667,0.13889,0.11111,0.08333,0.05556,0.02778]
+ 限制：  1 &amp;lt;= n &amp;lt;= 11  解题思路 动态规划 由于每个骰子的掷出的点数是独立的，使用 dp[i][j] 表示掷出 i 个骰子，点数之和为 j 的概率：
+ 初始，dp[0][0] = 1 后续，dp[i][j] = d[i-1][j-1] / 6 + dp[i-1][j-2] / 6 + ... + dp[i-1][j-6] / 6  使用滚动数组的方式降低空间复杂度。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 57. 和为s的两个数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-57.-%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Wed, 22 Sep 2021 19:39:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-57.-%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof/
+难度： 简单
+题目描述 输入一个递增排序的数组和一个数字 s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。
+示例 1：  输入： nums = [2,7,11,15], target = 9
+输出： [2,7] 或者 [7,2]
+ 示例 2：  输入： nums = [10,26,30,31,47,60], target = 40
+输出： [10,30] 或者 [30,10]
+ 限制：  1 &amp;lt;= nums.length &amp;lt;= 105 1 &amp;lt;= nums[i] &amp;lt;= 106  解题思路 哈希 使用哈希表记录每个数字是否出现过，遍历数组，计算对应的另一个数，若已出现过则返回这两个数。
+func twoSum(nums []int, target int) []int { hash := make(map[int]struct{}) for _, num := range nums { if _, ok := hash[target-num]; ok { return []int{num, target - num} } hash[num] = struct{}{} } return make([]int, 0) } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  双指针 使用两个指针 i, j 从头尾分别向中间遍历：</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 54. 二叉搜索树的第k大节点</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-54.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E5%A4%A7%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Wed, 22 Sep 2021 18:54:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-54.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E5%A4%A7%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/
+难度： 简单
+题目描述 给定一棵二叉搜索树，请找出其中第k大的节点。
+示例 1：  输入: root = [3,1,4,null,2], k = 1
+ 3 / \ 1 4 \ 2 输出: 4
+ 示例 2：  输入: root = [5,3,6,2,4,null,null,1], k = 3
+ 5 / \ 3 6 / \ 2 4 / 1 输出: 4
+ 限制：  1 ≤ k ≤ 二叉搜索树元素个数  解题思路 中序遍历 二叉搜索树的中序遍历结果是有序的，可以先遍历右子树，这样遍历的结果是倒序的。
+使用 cnt 记录当前遍历到的节点数量，每次遍历到结点时，其值加一。当 cnt 等于 k 时，记录此值，并通知上方已找到，提前返回。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 725. 分隔链表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-725.-%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Wed, 22 Sep 2021 14:11:15 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-725.-%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/split-linked-list-in-parts/
+难度： 中等
+题目描述 给你一个头结点为 head 的单链表和一个整数 k ，请你设计一个算法将链表分隔为 k 个连续的部分。
+每部分的长度应该尽可能的相等：任意两部分的长度差距不能超过 1 。这可能会导致有些部分为 null 。
+这 k 个部分应该按照在链表中出现的顺序排列，并且排在前面的部分的长度应该大于或等于排在后面的长度。
+返回一个由上述 k 部分组成的数组。
+示例 1：  输入： head = [1,2,3], k = 5
+输出： [[1],[2],[3],[],[]]
+解释：
+第一个元素 output[0] 为 output[0].val = 1 ，output[0].next = null 。
+最后一个元素 output[4] 为 null ，但它作为 ListNode 的字符串表示是 [] 。
+ 示例 2：  输入： head = [1,2,3,4,5,6,7,8,9,10], k = 3
+输出： [[1,2,3,4],[5,6,7],[8,9,10]]
+解释：
+输入被分成了几个连续的部分，并且每部分的长度相差不超过 1 。前面部分的长度大于等于后面部分的长度。</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 50. 第一个只出现一次的字符</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-50.-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/</link>
