@@ -6,7 +6,59 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 20 Sep 2021 17:20:45 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Sep 2021 14:08:48 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 437. 路径总和 III</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-437.-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-iii/</link>
+      <pubDate>Tue, 28 Sep 2021 14:08:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-437.-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-iii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/path-sum-iii/
+难度： 中等
+题目描述 给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
+路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
+示例 1：  输入： root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+输出： 3
+解释： 和等于 8 的路径有 3 条，如图所示。
+ 示例 2：  输入： root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+输出： 3
+ 提示：  二叉树的节点个数的范围是 [0,1000] -109 &amp;lt;= Node.val &amp;lt;= 109 -1000 &amp;lt;= targetSum &amp;lt;= 1000  解题思路 深度优先搜索 + 前缀和 采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。
+每当到达一个新结点时，查找到该结点的前缀和减去 target 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 55 - II. 平衡二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-55-ii.-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Tue, 28 Sep 2021 13:21:08 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-55-ii.-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/
+难度： 简单
+题目描述 输入一棵二叉树的根节点，判断该树是不是平衡二叉树。如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。
+示例 1： 给定二叉树 [3,9,20,null,null,15,7]
+ 3 / \ 9 20 / \ 15 7 返回 true 。
+示例 2： 给定二叉树 [1,2,2,3,3,null,null,4,4]
+ 1 / \ 2 2 / \ 3 3 / \ 4 4 返回 false 。
+限制：  0 &amp;lt;= 树的结点个数 &amp;lt;= 10000  解题思路 深度优先搜索 递归的遍历每个结点的左右子树，当左右子树均为平衡树且左右子树的最大深度差值 ≤ 1 时，返回 true。
+func isBalanced(root *TreeNode) bool { var dfs func(root *TreeNode) (int, bool) dfs = func(root *TreeNode) (int, bool) { if root == nil { return 0, true } leftDepth, leftBalance := dfs(root.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 55 - I. 二叉树的深度</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-55-i.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</link>
+      <pubDate>Tue, 28 Sep 2021 12:16:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-55-i.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof/
+难度： 简单
+题目描述 输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。
+例如：
+给定二叉树 [3,9,20,null,null,15,7]，
+ 3 / \ 9 20 / \ 15 7 返回它的最大深度 3 。
+提示：  节点总数 &amp;lt;= 10000  解题思路 深度优先搜索 递归的遍历每个结点的左右子树，获得子树最大深度，+1 后返回，当结点不存在时，树高为空
+func maxDepth(root *TreeNode) int { if root == nil { return 0 } depth := maxDepth(root.Left) rDepth := maxDepth(root.Right) if depth &amp;lt; rDepth { depth = rDepth } return depth + 1 } 复杂度  时间复杂度：$ O(N), N = size(Tree) $ 空间复杂度：$ O(\log{N}) $  </description>
+    </item>
+    
     <item>
       <title>剑指 Offer 36. 二叉搜索树与双向链表</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-36.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</link>

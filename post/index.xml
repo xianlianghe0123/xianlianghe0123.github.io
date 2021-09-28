@@ -6,7 +6,164 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 26 Sep 2021 09:38:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Sep 2021 14:08:48 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 437. 路径总和 III</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-437.-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-iii/</link>
+      <pubDate>Tue, 28 Sep 2021 14:08:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-437.-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-iii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/path-sum-iii/
+难度： 中等
+题目描述 给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
+路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
+示例 1：  输入： root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+输出： 3
+解释： 和等于 8 的路径有 3 条，如图所示。
+ 示例 2：  输入： root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+输出： 3
+ 提示：  二叉树的节点个数的范围是 [0,1000] -109 &amp;lt;= Node.val &amp;lt;= 109 -1000 &amp;lt;= targetSum &amp;lt;= 1000  解题思路 深度优先搜索 + 前缀和 采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。
+每当到达一个新结点时，查找到该结点的前缀和减去 target 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 55 - II. 平衡二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-55-ii.-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Tue, 28 Sep 2021 13:21:08 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-55-ii.-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/
+难度： 简单
+题目描述 输入一棵二叉树的根节点，判断该树是不是平衡二叉树。如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。
+示例 1： 给定二叉树 [3,9,20,null,null,15,7]
+ 3 / \ 9 20 / \ 15 7 返回 true 。
+示例 2： 给定二叉树 [1,2,2,3,3,null,null,4,4]
+ 1 / \ 2 2 / \ 3 3 / \ 4 4 返回 false 。
+限制：  0 &amp;lt;= 树的结点个数 &amp;lt;= 10000  解题思路 深度优先搜索 递归的遍历每个结点的左右子树，当左右子树均为平衡树且左右子树的最大深度差值 ≤ 1 时，返回 true。
+func isBalanced(root *TreeNode) bool { var dfs func(root *TreeNode) (int, bool) dfs = func(root *TreeNode) (int, bool) { if root == nil { return 0, true } leftDepth, leftBalance := dfs(root.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 55 - I. 二叉树的深度</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-55-i.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</link>
+      <pubDate>Tue, 28 Sep 2021 12:16:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-55-i.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof/
+难度： 简单
+题目描述 输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。
+例如：
+给定二叉树 [3,9,20,null,null,15,7]，
+ 3 / \ 9 20 / \ 15 7 返回它的最大深度 3 。
+提示：  节点总数 &amp;lt;= 10000  解题思路 深度优先搜索 递归的遍历每个结点的左右子树，获得子树最大深度，+1 后返回，当结点不存在时，树高为空
+func maxDepth(root *TreeNode) int { if root == nil { return 0 } depth := maxDepth(root.Left) rDepth := maxDepth(root.Right) if depth &amp;lt; rDepth { depth = rDepth } return depth + 1 } 复杂度  时间复杂度：$ O(N), N = size(Tree) $ 空间复杂度：$ O(\log{N}) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 53 - II. 0～n-1中缺失的数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-53-ii.-0n-1%E4%B8%AD%E7%BC%BA%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Tue, 28 Sep 2021 11:25:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-53-ii.-0n-1%E4%B8%AD%E7%BC%BA%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/
+难度： 简单
+题目描述 一个长度为n-1的递增排序数组中的所有数字都是唯一的，并且每个数字都在范围0～n-1之内。在范围0～n-1内的n个数字中有且只有一个数字不在该数组中，请找出这个数字。
+示例 1：  输入: [0,1,3]
+输出: 2
+ 示例 2：  输入: [0,1,2,3,4,5,6,7,9]
+输出: 8
+ 提示：  1 &amp;lt;= 数组长度 &amp;lt;= 10000  解题思路 哈希 使用哈希表标识出现过数字，遍历数据，将位于数组中的数字添加到哈希表中，然后在哈希表中寻找没有出现过的数。
+func missingNumber(nums []int) int { exist := make(map[int]struct{}) for _, num := range nums { exist[num] = struct{}{} } for i := 0; i &amp;lt; len(nums); i++ { if _, ok := exist[i]; !ok { return i } } return len(nums) } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  顺序查找 由于数组递增，只需要找到与下标不相同的数，返回其下标即可。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 32 - III. 从上到下打印二叉树 III</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-32-iii.-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91-iii/</link>
+      <pubDate>Mon, 27 Sep 2021 19:19:06 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-32-iii.-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91-iii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/
+难度： 简单
+题目描述 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+例如:
+ 给定二叉树: [3,9,20,null,null,15,7],
+ 3 / \ 9 20 / \ 15 7  返回其层次遍历结果：
+ [ [3], [20,9], [15,7] ]  提示：  节点总数 &amp;lt;= 1000  解题思路 层序遍历 使用一个双端队列记录遍历到的结点，初始时根结点入队。
+奇偶分离，偶数层从头至尾遍历完当前整层的所有元素，子结点先左后右从队尾入队；奇数层从尾至头遍历整层所有元素，子结点先右后左从队头入队。
+每次遍历到的结点值加入到结果队列中，直至队列为空为止。
+func levelOrder(root *TreeNode) [][]int { ans := make([][]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { // 先偶数层 	tmp := make([]int, 0, 1) for i := q.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 32 - II. 从上到下打印二叉树 II</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-32-ii.-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91-ii/</link>
+      <pubDate>Mon, 27 Sep 2021 19:05:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-32-ii.-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/
+难度： 简单
+题目描述 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+例如:
+ 给定二叉树: [3,9,20,null,null,15,7],
+ 3 / \ 9 20 / \ 15 7  返回其层次遍历结果：
+ [ [3], [9,20], [15,7] ]  提示：  节点总数 &amp;lt;= 1000  解题思路 层序遍历 使用一个队列记录遍历到的结点，初始时根结点入队，每次从头至尾遍历完当前整层的所有元素，并加入到结果队列，按顺序依次将左右非空子结点入队，直到队列为空。
+func levelOrder(root *TreeNode) [][]int { ans := make([][]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { ans = append(ans, make([]int, 0, 1)) for i := q.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 32 - I. 从上到下打印二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-32-i.-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Mon, 27 Sep 2021 18:48:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-32-i.-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/
+难度： 中等
+题目描述 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
+例如:
+给定二叉树: [3,9,20,null,null,15,7],
+  3 / \ 9 20 / \ 15 7  返回：
+ [3,9,20,15,7]
+ 提示：  节点总数 &amp;lt;= 1000  解题思路 层序遍历 使用一个队列记录遍历到的结点，初始时根结点入队，每次从队头取出一个结点，将其值加入到结果队列，并按顺序将左右非空子结点入队，直到队列为空。
+func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { node := q.Front().Value.(*TreeNode) q.Remove(q.Front()) ans = append(ans, node.Val) if node.Left !</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 14- II. 剪绳子 II</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-14-ii.-%E5%89%AA%E7%BB%B3%E5%AD%90-ii/</link>
+      <pubDate>Mon, 27 Sep 2021 17:54:22 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-14-ii.-%E5%89%AA%E7%BB%B3%E5%AD%90-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/
+难度： 中等
+题目描述 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 k[0],k[1]...k[m - 1] 。请问 k[0]*k[1]*...*k[m - 1] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
+答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+示例 1：  输入: 2
+输出: 1
+解释: 2 = 1 + 1, 1 × 1 = 1
+ 示例 2：  输入: 10
+输出: 36
+解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36
+ 提示：  2 &amp;lt;= n &amp;lt;= 1000  解题思路 动态规划 使用 dp[i] 表示绳子长度为 i 时的最大乘积。则：</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 14- I. 剪绳子</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-14-i.-%E5%89%AA%E7%BB%B3%E5%AD%90/</link>
+      <pubDate>Mon, 27 Sep 2021 17:22:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-14-i.-%E5%89%AA%E7%BB%B3%E5%AD%90/</guid>
+      <description>链接： https://leetcode-cn.com/problems/jian-sheng-zi-lcof/
+难度： 中等
+题目描述 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 k[0],k[1]...k[m-1] 。请问 k[0]*k[1]*...*k[m-1] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
+示例 1：  输入: 2
+输出: 1
+解释: 2 = 1 + 1, 1 × 1 = 1
+ 示例 2：  输入: 10
+输出: 36
+解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36
+ 提示：  2 &amp;lt;= n &amp;lt;= 58  解题思路 动态规划 使用 dp[i] 表示绳子长度为 i 时的最大乘积。则：</description>
+    </item>
+    
     <item>
       <title>Leetcode 371. 两整数之和</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-371.-%E4%B8%A4%E6%95%B4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
