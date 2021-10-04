@@ -6,7 +6,370 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 30 Sep 2021 11:24:18 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 11:44:14 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 482. 密钥格式化</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
+      <pubDate>Mon, 04 Oct 2021 11:44:14 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
+      <description>链接： https://leetcode-cn.com/problems/license-key-formatting/
+难度： 简单
+题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&#39;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N+1 组。
+给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&#39;（破折号）隔开，并且将所有的小写字母转换为大写字母。
+给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。
+示例 1：  输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
+输出： &amp;ldquo;5F3Z-2E9W&amp;rdquo;
+解释： 字符串 S 被分成了两个部分，每部分 4 个字符；
+注意，两个额外的破折号需要删掉。
+ 示例 2：  输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
+输出： &amp;ldquo;2-5G-3J&amp;rdquo;
+解释： 字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。
+ 提示：  S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空  解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 166. 分数到小数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-166.-%E5%88%86%E6%95%B0%E5%88%B0%E5%B0%8F%E6%95%B0/</link>
+      <pubDate>Sun, 03 Oct 2021 20:06:52 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-166.-%E5%88%86%E6%95%B0%E5%88%B0%E5%B0%8F%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/fraction-to-recurring-decimal/
+难度： 中等
+题目描述 给定两个整数，分别表示分数的分子 numerator 和分母 denominator，以 字符串形式返回小数 。
+如果小数部分为循环小数，则将循环的部分括在括号内。
+如果存在多个答案，只需返回 任意一个 。
+对于所有给定的输入，保证 答案字符串的长度小于 104 。
+示例 1：  输入： numerator = 1, denominator = 2
+输出： &amp;ldquo;0.5&amp;rdquo;
+ 示例 2：  输入： numerator = 2, denominator = 1
+输出： &amp;ldquo;2&amp;rdquo;
+ 示例 3：  输入： numerator = 2, denominator = 3
+输出： &amp;ldquo;0.(6)&amp;rdquo;
+ 示例 4：  输入： numerator = 4, denominator = 333
+输出： &amp;ldquo;0.(012)&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer II 001. 整数除法</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-001.-%E6%95%B4%E6%95%B0%E9%99%A4%E6%B3%95/</link>
+      <pubDate>Sat, 02 Oct 2021 18:12:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-001.-%E6%95%B4%E6%95%B0%E9%99%A4%E6%B3%95/</guid>
+      <description>链接： https://leetcode-cn.com/problems/xoh6Oh/
+难度： 简单
+题目描述 给定两个整数 a 和 b ，求它们的除法的商 a/b ，要求不得使用乘号 &#39;*&#39;、除号 &#39;/&#39; 以及求余符号 &#39;%&#39; 。
+注意：  整数除法的结果应当截去（truncate）其小数部分，例如：truncate(8.345) = 8 以及 truncate(-2.7335) = -2 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231, 231−1]。本题中，如果除法结果溢出，则返回 231 − 1  示例 1：  输入： a = 15, b = 2
+输出： 7
+解释： 15/2 = truncate(7.5) = 7
+ 示例 2：  输入： a = 7, b = -3
+输出： -2
+解释： 7/-3 = truncate(-2.33333..) = -2</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 68 - II. 二叉树的最近公共祖先</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-68-ii.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
+      <pubDate>Sat, 02 Oct 2021 17:21:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-68-ii.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/
+难度： 简单
+题目描述 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
+百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+例如，给定如下二叉搜索树: root = [3,5,1,6,2,0,8,null,null,7,4]
+示例 1：  输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+输出: 3
+解释: 节点 5 和节点 1 的最近公共祖先是节点 3。
+ 示例 2：  输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+输出: 5
+解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。
+ 说明：  所有节点的值都是唯一的。 p、q 为不同节点且均存在于给定的二叉树中。  解题思路 深度优先搜索 + 记录路径 利用深度优先搜索找出从根结点开始分别到 p 和 q 的路径，然后找出两条路径中最后一个相同的结点并返回。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 405. 数字转换为十六进制数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-405.-%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0/</link>
+      <pubDate>Sat, 02 Oct 2021 16:16:35 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-405.-%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal/
+难度： 简单
+题目描述 给定一个整数，编写一个算法将这个数转换为十六进制数。对于负整数，我们通常使用 补码运算 方法。
+注意:  十六进制中所有字母(a-f)都必须是小写。 十六进制字符串中不能包含多余的前导零。如果要转化的数为0，那么以单个字符&#39;0&amp;rsquo;来表示；对于其他情况，十六进制字符串中的第一个字符将不会是0字符。  给定的数确保在32位有符号整数范围内。 不能使用任何由库提供的将数字直接转换或格式化为十六进制的方法。  示例 1：  输入: 26
+输出: &amp;ldquo;1a&amp;rdquo;
+ 示例 2：  输入: -1
+输出: &amp;ldquo;ffffffff&amp;rdquo;
+ 解题思路 数学 将负数补码转换为正数，使用数学方法，除16取余，逆序排列。对0进行特判。
+func toHex(num int) string { if num == 0 { return &amp;#34;0&amp;#34; } digit := []byte(&amp;#34;0123456789abcdef&amp;#34;) ans := make([]byte, 0, 8) t := uint32(num) for ; t != 0; t /= 16 { ans = append(ans, digit[t%16]) } for i := len(ans)/2 - 1; i &amp;gt;= 0; i-- { ans[i], ans[len(ans)-1-i] = ans[len(ans)-1-i], ans[i] } return string(ans) } 复杂度  时间复杂度：O(\log{num}) 空间复杂度：O(\log{num})  位运算 四个2进制位构成16进制，每次将末尾四个2进制位转换为16进制，并向右移动4位，直到 num 为0 或 转换次数到达上限。对0进行特判。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 68 - I. 二叉搜索树的最近公共祖先</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-68-i.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
+      <pubDate>Sat, 02 Oct 2021 15:05:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-68-i.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
+      <description>链接： https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/
+难度： 简单
+题目描述 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+例如，给定如下二叉搜索树: root = [6,2,8,0,4,7,9,null,null,3,5]
+示例 1：  输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+输出: 6
+解释: 节点 2 和节点 8 的最近公共祖先是 6。
+ 示例 2：  输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+输出: 2
+解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
+ 说明：  所有节点的值都是唯一的。 p、q 为不同节点且均存在于给定的二叉搜索树中。  解题思路 搜索 利用二叉树搜索数的性质：</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 67. 把字符串转换成整数</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-67.-%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0/</link>
+      <pubDate>Sat, 02 Oct 2021 13:19:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-67.-%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/
+难度： 中等
+题目描述 写一个函数 StrToInt，实现把字符串转换成整数这个功能。不能使用 atoi 或者其他类似的库函数。
+首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。
+当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。
+该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。
+注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。
+在任何情况下，若函数不能进行有效的转换时，请返回 0。
+说明： 假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为 [−231, 231 − 1]。如果数值超过这个范围，请返回 INT_MAX (231 − 1) 或 INT_MIN (−231) 。
+示例 1：  输入: &amp;ldquo;42&amp;rdquo;
+输出: 42
+ 示例 2：  输入: &amp;quot; -42&amp;quot;
+输出: -42
+解释: 第一个非空白字符为 &amp;lsquo;-&amp;rsquo;, 它是一个负号。
+我们尽可能将负号与后面所有连续出现的数字组合起来，最后得到 -42 。
+ 示例 3：  输入: &amp;ldquo;4193 with words&amp;rdquo;
+输出: 4193
+解释: 转换截止于数字 &amp;lsquo;3&amp;rsquo; ，因为它的下一个字符不为数字。
+ 示例 4：  输入: &amp;ldquo;words and 987&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 66. 构建乘积数组</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-66.-%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Fri, 01 Oct 2021 22:53:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-66.-%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/gou-jian-cheng-ji-shu-zu-lcof/
+难度： 中等
+题目描述 给定一个数组 A[0,1,…,n-1]，请构建一个数组 B[0,1,…,n-1]，其中 B[i] 的值是数组 A 中除了下标 i 以外的元素的积, 即 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1]。不能使用除法。
+示例：  输入: [1,2,3,4,5]
+输出: [120,60,40,30,24]
+ 限制：  所有元素乘积之和不会溢出 32 位整数 a.length &amp;lt;= 100000  解题思路 前后缀积 计算前缀积 prefixProduct 和后缀积 suffixProduct，然后求得 B[i] = prefixProduct[i-1] * suffixProduct[i+1]。
+func constructArr(a []int) []int { if len(a) == 0 { return make([]int, 0) } ans := make([]int, len(a)) ans[0] = 1 for i, prefixProduct := 1, 1; i &amp;lt; len(a); i++ { prefixProduct *= a[i-1] ans[i] = prefixProduct } for i, suffixProduct := len(a)-2, 1; i &amp;gt;= 0; i-- { suffixProduct *= a[i+1] ans[i] *= suffixProduct } return ans } 复杂度  时间复杂度：$ O(N), N = len(a) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 65. 不用加减乘除做加法</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-65.-%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/</link>
+      <pubDate>Fri, 01 Oct 2021 22:35:56 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-65.-%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/
+难度： 简单
+题目描述 写一个函数，求两个整数之和，要求在函数体内不得使用 “+”、“-”、“*”、“/” 四则运算符号。
+示例：  输入: a = 1, b = 1
+输出: 2
+ 限制：  a, b 均可能是负数或 0 结果不会溢出 32 位整数  解题思路 位运算 以二进制位为单位进行运算，从最低位开始，使用位操作符诸位运算。
+由于负数在计算机中存储的是补码，直接诸位求和即可，用 c 表示进位，利用 数字电路设计 得到计算方法如下：
+ 当前位计算结果为：$a\oplus b\oplus c$ 进位的计算结果为：$(a\oplus b)c + ab$  func add(a int, b int) int { ans := 0 c := 0 for bit := 1; bit != 0; bit &amp;lt;&amp;lt;= 1 { ans |= (a ^ b ^ c) &amp;amp; bit c = (((a ^ b) &amp;amp; c) | (a &amp;amp; b)) &amp;amp; bit &amp;lt;&amp;lt; 1 } return ans } 复杂度  时间复杂度：$ O(\log{MaxInt32}) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 64. 求1&#43;2&#43;…&#43;n</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-64.-%E6%B1%821-2-n/</link>
+      <pubDate>Fri, 01 Oct 2021 20:44:05 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-64.-%E6%B1%821-2-n/</guid>
+      <description>链接： https://leetcode-cn.com/problems/qiu-12n-lcof/
+难度： 中等
+题目描述 求 1+2+...+n ，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
+示例 1：  输入: n = 3
+输出: 6
+ 示例 2：  输入: n = 9
+输出: 45
+ 限制：  1 &amp;lt;= n &amp;lt;= 10000  解题思路 递归 利用布尔表达式的短路返回，实现递归到终止条件。
+func sumNums(n int) int { ans := 0 var sum func(n int) bool sum = func(n int) bool { ans += n return n &amp;gt; 0 &amp;amp;&amp;amp; sum(n-1) } sum(n) return ans } 复杂度  时间复杂度：$ O(n) $ 空间复杂度：$ O(n) $  </description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 63. 股票的最大利润</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-63.-%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6/</link>
+      <pubDate>Fri, 01 Oct 2021 20:29:26 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-63.-%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/
+难度： 中等
+题目描述 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
+示例 1：  输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+ 示例 2：  输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+ 限制：  0 &amp;lt;= 数组长度 &amp;lt;= 105  解题思路 暴力求解 枚举买卖点，记录最大值。
+func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i + 1; j &amp;lt; len(prices); j++ { if ans &amp;lt; prices[j]-prices[i] { ans = prices[j] - prices[i] } } } return ans } 复杂度  时间复杂度：$ O(N^2), N = len(prices) $ 空间复杂度：$ O(1) $  遍历 使用 min 记录到目前为止股票的最小值，每次使用当前股票价格减去 min ，更新最大利润。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 62. 圆圈中最后剩下的数字</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-62.-%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Fri, 01 Oct 2021 14:38:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-62.-%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/
+难度： 简单
+题目描述 0,1,···,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字（删除后从下一个数字开始计数）。求出这个圆圈里剩下的最后一个数字。
+例如，0、1、2、3、4这5个数字组成一个圆圈，从数字0开始每次删除第3个数字，则删除的前4个数字依次是2、0、4、1，因此最后剩下的数字是3。
+示例 1：  输入: n = 5, m = 3
+输出: 3
+ 示例 2：  输入: n = 10, m = 17
+输出: 2
+ 限制：  1 &amp;lt;= n &amp;lt;= 105 1 &amp;lt;= m &amp;lt;= 106  解题思路 递归 令 f(n, m) 表示从 n 个数字中不断删除第 m 个数字后剩余的数字， 则需要删除的数字为 (m-1) % n，然后变成了从 n-1 个数字中删除第 m 个数字。
+f(n-1, m) 可以得到从第 n-1 个数字中不断删除第 m 个数字后剩余的数字，该表达式是按照从第一个数字开始计数；然而在删除一个数字后，需要从 m % n 开始计数，故需要找到两者间的映射关系，即 f(n, m) = F(f(n-1, m))。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 61. 扑克牌中的顺子</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-61.-%E6%89%91%E5%85%8B%E7%89%8C%E4%B8%AD%E7%9A%84%E9%A1%BA%E5%AD%90/</link>
+      <pubDate>Fri, 01 Oct 2021 14:17:17 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-61.-%E6%89%91%E5%85%8B%E7%89%8C%E4%B8%AD%E7%9A%84%E9%A1%BA%E5%AD%90/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/
+难度： 简单
+题目描述 从若干副扑克牌中随机抽 5 张牌，判断是不是一个顺子，即这5张牌是不是连续的。2～10为数字本身，A为1，J为11，Q为12，K为13，而大、小王为 0 ，可以看成任意数字。A 不能视为 14。
+示例 1：  输入: [1,2,3,4,5]
+输出: True
+ 示例 2：  输入: [0,0,1,2,5]
+输出: True
+ 限制：  数组长度为 5 数组的数取值为 [0, 13] .  解题思路 排序 排序，统计大小王的数量，判断其余相邻牌的差值：
+ 当差值为 0 时，不构成顺子，返回 false； 当差值不为 0 时，使用大小王去补。 最后，当大小王数量不为负时，返回 true，否则返回 false 。  func isStraight(nums []int) bool { sort.Ints(nums) cnt := 0 for i := 0; i &amp;lt; len(nums); i++ { if nums[i] == 0 { cnt++ continue } if i-1 &amp;gt;= 0 &amp;amp;&amp;amp; nums[i-1] !</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 59 - II. 队列的最大值</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-59-ii.-%E9%98%9F%E5%88%97%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</link>
+      <pubDate>Fri, 01 Oct 2021 13:26:38 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-59-ii.-%E9%98%9F%E5%88%97%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/
+难度： 中等
+题目描述 请定义一个队列并实现函数 max_value 得到队列里的最大值，要求函数max_value、push_back 和 pop_front 的均摊时间复杂度都是$O(1)$。
+若队列为空，pop_front 和 max_value 需要返回 -1 。
+示例 1：  输入:
+[&amp;ldquo;MaxQueue&amp;rdquo;,&amp;ldquo;push_back&amp;rdquo;,&amp;ldquo;push_back&amp;rdquo;,&amp;ldquo;max_value&amp;rdquo;,&amp;ldquo;pop_front&amp;rdquo;,&amp;ldquo;max_value&amp;rdquo;]
+[[],[1],[2],[],[],[]]
+输出: [null,null,null,2,1,2]
+ 示例 2：  输入:
+[&amp;ldquo;MaxQueue&amp;rdquo;,&amp;ldquo;pop_front&amp;rdquo;,&amp;ldquo;max_value&amp;rdquo;]
+[[],[],[]]
+输出: [null,-1,-1]
+ 限制：  1 &amp;lt;= push_back,pop_front,max_value的总操作数 &amp;lt;= 10000 1 &amp;lt;= value &amp;lt;= 105  解题思路 双队列 除正常存储数据的队列外，需要额外使用一个队列维护最大值信息。
+可以发现，当某一个值入队后，之前入队的所有小于该值的元素对于 max_value 均无影响；仅当该值出队后，由此值后面的次大元素接任。
+所以这个额外队列的队列头记录当前队列的最大值，后续按值非严格递减的顺序记录其他值。
+ 当入队时，需要从尾部开始将小于当前值的元素全部删除，然后该值入队； 当出队时，若队首元素是最大值，则两个队列都要出队。  type MaxQueue struct { queue *list.List maxQueue *list.List } func Constructor() MaxQueue { return MaxQueue{ queue: list.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1436. 旅行终点站</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1436.-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/</link>
+      <pubDate>Fri, 01 Oct 2021 13:11:21 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1436.-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/</guid>
+      <description>链接： https://leetcode-cn.com/problems/destination-city/
+难度： 中等
+题目描述 给你一份旅游线路图，该线路图中的旅行线路用数组 paths 表示，其中 paths[i] = [cityAi, cityBi] 表示该线路将会从 cityAi 直接前往 cityBi 。请你找出这次旅行的终点站，即没有任何可以通往其他城市的线路的城市。
+题目数据保证线路图会形成一条不存在循环的线路，因此恰有一个旅行终点站。
+示例 1：  输入： paths = [[&amp;ldquo;London&amp;rdquo;,&amp;ldquo;New York&amp;rdquo;],[&amp;ldquo;New York&amp;rdquo;,&amp;ldquo;Lima&amp;rdquo;],[&amp;ldquo;Lima&amp;rdquo;,&amp;ldquo;Sao Paulo&amp;rdquo;]]
+输出： &amp;ldquo;Sao Paulo&amp;rdquo;
+解释： 从 &amp;ldquo;London&amp;rdquo; 出发，最后抵达终点站 &amp;ldquo;Sao Paulo&amp;rdquo; 。本次旅行的路线是 &amp;ldquo;London&amp;rdquo; -&amp;gt; &amp;ldquo;New York&amp;rdquo; -&amp;gt; &amp;ldquo;Lima&amp;rdquo; -&amp;gt; &amp;ldquo;Sao Paulo&amp;rdquo; 。
+ 示例 2:  输入： paths = [[&amp;ldquo;B&amp;rdquo;,&amp;ldquo;C&amp;rdquo;],[&amp;ldquo;D&amp;rdquo;,&amp;ldquo;B&amp;rdquo;],[&amp;ldquo;C&amp;rdquo;,&amp;ldquo;A&amp;rdquo;]]
+输出： &amp;ldquo;A&amp;rdquo;
+解释： 所有可能的线路是：
+&amp;ldquo;D&amp;rdquo; -&amp;gt; &amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.
+&amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 58 - II. 左旋转字符串</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-58-ii.-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Thu, 30 Sep 2021 20:41:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-58-ii.-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/
+难度： 简单
+题目描述 字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串&amp;quot;abcdefg&amp;quot;和数字2，该函数将返回左旋转两位得到的结果&amp;quot;cdefgab&amp;quot;。
+示例 1：  输入: s = &amp;ldquo;abcdefg&amp;rdquo;, k = 2
+输出: &amp;ldquo;cdefgab&amp;rdquo;
+ 示例 2：  输入: s = &amp;ldquo;lrloseumgh&amp;rdquo;, k = 6
+输出: &amp;ldquo;umghlrlose&amp;rdquo;
+ 限制：  1 &amp;lt;= k &amp;lt; s.length &amp;lt;= 10000  解题思路 暴力求解 每次循环移动一个字符，重复 n 次。
+func reverseLeftWords(s string, n int) string { chars := []byte(s) for i := 0; i &amp;lt; n; i++ { char := s[0] for j := 0; j &amp;lt; len(s); j++ { chars[j] = chars[j+1] } chars[len(s)-1] = char } return string(chars) } 复杂度  时间复杂度：$ O(Ln), L = len(s) $ 空间复杂度：$ O(1) $  切片 移动后的结果为：前 n 个字符移动到字符串的尾部，使用切片即可。</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 58 - I. 翻转单词顺序</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-58-i.-%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F/</link>
+      <pubDate>Thu, 30 Sep 2021 20:21:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-58-i.-%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/fan-zhuan-dan-ci-shun-xu-lcof/
+难度： 简单
+题目描述 输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。为简单起见，标点符号和普通字母一样处理。例如输入字符串&amp;quot;I am a student. &amp;quot;，则输出&amp;quot;student. a am I&amp;quot;。
+示例 1：  输入: &amp;ldquo;the sky is blue&amp;rdquo;
+输出: &amp;ldquo;blue is sky the&amp;rdquo;
+ 示例 2：  输入: &amp;quot; hello world! &amp;quot;
+输出: &amp;ldquo;world! hello&amp;rdquo;
+解释: 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
+ 示例 3：  输入: &amp;ldquo;a good example&amp;rdquo;
+输出: &amp;ldquo;example good a&amp;rdquo;
+解释: 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
+ 说明：  无空格字符构成一个单词。 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。  解题思路 模拟 将整个句子识别拆分为单词数组，将整个单词数组反转，然后使用 &#39; &#39; 作为连接符将整个单词数组连接起来。
+func reverseWords(s string) string { ss := make([]string, 0, 10) start := 0 for i := range s { if s[i] == &amp;#39; &amp;#39; { if start == i { start++ continue } ss = append(ss, s[start:i]) start = i+1 } } for i := 0; i &amp;lt; len(ss)/2; i++ { ss[i], ss[len(ss)-1-i] = ss[len(ss)-1-i], ss[i] } return strings.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer 57 - II. 和为s的连续正数序列</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-57-ii.-%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Thu, 30 Sep 2021 20:04:58 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-57-ii.-%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/
+难度： 简单
+题目描述 输入一个递增排序的数组和一个数字 s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。
+示例 1：  输入： target = 9
+输出： [[2,3,4],[4,5]]
+ 示例 2：  输入： target = 15
+输出： [[1,2,3,4,5],[4,5,6],[7,8]]
+ 限制：  1 &amp;lt;= target &amp;lt;= 105  解题思路 双指针 使用两个指针 i 和 j 代表连续正整数区间的两个端点，另使用变量 sum 记录该段区间的和。
+ 当 sum 小于 target 时，j 移动； 当 sum 大于 target 时，i 移动； 当 sum 等于 target 时，将区间加入到结果队列中，i 移动。  遍历到 j 大于 target 时结束，返回
+func findContinuousSequence(target int) [][]int { ans := make([][]int, 0, 1) sum := 1 for i, j := 1, 1; j &amp;lt; target; { if sum &amp;lt; target { j++ sum += j } else if sum &amp;gt; target { sum -= i i++ } else { t := make([]int, 0, j-i+1) for k := i; k &amp;lt;= j; k++ { t = append(t, k) } ans = append(ans, t) sum -= i i++ } } return ans } 复杂度  时间复杂度：$ O(target) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 543. 二叉树的直径</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-543.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</link>
+      <pubDate>Thu, 30 Sep 2021 12:00:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-543.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/diameter-of-binary-tree/
+难度： 简单
+题目描述 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。
+示例： 给定二叉树
+ 1 / \ 2 3 / \ 4 5 返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。
+注意：  两结点之间的路径长度是以它们之间边的数目表示。  解题思路 后序遍历 某个子树的最大直径或者为左右子树的最大直径，或者为跨越当前根结点的左右子树的高度和。
+递归的遍历每棵子树，返回找到的最大直径。
+func diameterOfBinaryTree(root *TreeNode) int { var dfs func(node *TreeNode) (int, int) dfs = func(node *TreeNode) (int, int) { if node == nil { return 0, 0 } lDepth, lMax := dfs(node.Left) rDepth, rMax := dfs(node.Right) depth := lDepth if depth &amp;lt; rDepth { depth = rDepth } max := lDepth + rDepth if max &amp;lt; lMax { max = lMax } if max &amp;lt; rMax { max = rMax } return depth+1, max } _, max := dfs(root) return max } 复杂度  时间复杂度：$ O(N), N = size(Tree) $ 空间复杂度：$ O(\log{N}) $  </description>
+    </item>
+    
     <item>
       <title>Leetcode 199. 二叉树的右视图</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-199.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B3%E8%A7%86%E5%9B%BE/</link>
@@ -1304,6 +1667,15 @@ F(0) = 0, F(1) = 1 F(N) = F(N - 1) + F(N - 2), 其中 N &amp;gt; 1. 斐波那�
 输出： 5
  提示：  0 &amp;lt;= n &amp;lt;= 100  解题思路 动态规划 动态规划的状态转移方程已在题目中给出，使用三个变量降低空间复杂度。
 func fib(n int) int { const MOD = 1e9 + 7 dp := []int{0, 1, 0} if n &amp;lt; 2 { return dp[n] } for i := 2; i &amp;lt;= n; i++ { dp[2] = (dp[0] + dp[1]) % MOD dp[0], dp[1] = dp[1], dp[2] } return dp[2] } 复杂度  时间复杂度：$ O(n) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>排序</title>
+      <link>https://xianlianghe0123.github.io/p/%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Fri, 03 Sep 2021 16:15:57 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E6%8E%92%E5%BA%8F/</guid>
+      <description>冒泡排序 func BubbleSort(arr []int) { for i := 0; i &amp;lt; len(arr); i++ { for j := 0; j &amp;lt; len(arr)-1-i; j++ { if arr[j] &amp;gt; arr[j+1] { arr[j], arr[j+1] = arr[j+1], arr[j] } } } } 复杂度  时间复杂度：$ O(N^2) $ 空间复杂度：$ O(1) $  选择排序 func ChoiceSort(arr []int) { for i := 0; i &amp;lt; len(arr); i++ { minPos := i for j := i + 1; j &amp;lt; len(arr); j++ { if arr[minPos] &amp;gt; arr[j] { minPos = j } } arr[i], arr[minPos] = arr[minPos], arr[i] } } 复杂度  时间复杂度：$ O(N^2) $ 空间复杂度：$ O(1) $  插入排序 func InsertSort(arr []int) { for i := 1; i &amp;lt; len(arr); i++ { num := arr[i] j := i - 1 for ; j &amp;gt;= 0; j-- { if num &amp;lt; arr[j] { arr[j+1] = arr[j] } else { break } } arr[j+1] = num } } 复杂度  时间复杂度：$ O(N^2) $ 空间复杂度：$ O(1) $  归并排序 func MergeSort(arr []int) { var mergeSort func(l, r int) mergeSort = func(l, r int) { if r-l &amp;lt;= 1 { return } mid := (l + r) / 2 mergeSort(l, mid) mergeSort(mid, r) mergeSlice := make([]int, 0, r-l) j := mid for i := l; i &amp;lt; mid; { if j &amp;lt; r &amp;amp;&amp;amp; arr[j] &amp;lt; arr[i] { mergeSlice = append(mergeSlice, arr[j]) j++ } else { mergeSlice = append(mergeSlice, arr[i]) i++ } } for ; j &amp;lt; r; j++ { mergeSlice = append(mergeSlice, arr[j]) } copy(arr[l:], mergeSlice) } mergeSort(0, len(arr)) } 复杂度  时间复杂度：$ O(N\log N) $ 空间复杂度：$ O(N) $  堆排序 func HeapSort(arr []int) { // 建堆 	for i := len(arr)/2 - 1; i &amp;gt;= 0; i-- { for father := i; ; { greater := father&amp;lt;&amp;lt;1 + 1 if greater &amp;gt;= len(arr) { break } if greater+1 &amp;lt; len(arr) &amp;amp;&amp;amp; arr[greater+1] &amp;gt; arr[greater] { greater += 1 } if arr[father] &amp;lt; arr[greater] { arr[father], arr[greater] = arr[greater], arr[father] } father = greater } } // 排序 	for i := len(arr) - 1; i &amp;gt; 0; i-- { arr[0], arr[i] = arr[i], arr[0] for father := 0; ; { greater := father&amp;lt;&amp;lt;1 + 1 if greater &amp;gt;= i { break } if greater+1 &amp;lt; i &amp;amp;&amp;amp; arr[greater+1] &amp;gt; arr[greater] { greater += 1 } if arr[father] &amp;lt; arr[greater] { arr[father], arr[greater] = arr[greater], arr[father] } father = greater } } } 复杂度  时间复杂度：$ O(N\log N) $ 空间复杂度：$ O(1) $  快速排序 func QuickSort(arr []int) { var quickSort func(l, r int) quickSort = func(l, r int) { if l &amp;gt;= r { return } i := l for j := l; j &amp;lt; r; j++ { if arr[j] &amp;lt;= arr[r-1] { arr[i], arr[j] = arr[j], arr[i] i++ } } quickSort(l, i-1) quickSort(i, r) } quickSort(0, len(arr)) } 复杂度  时间复杂度：$ O(N\log N) $ 空间复杂度：$ O(\log N) $  </description>
     </item>
     
     <item>

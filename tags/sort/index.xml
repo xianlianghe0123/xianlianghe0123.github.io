@@ -6,7 +6,24 @@
     <description>Recent content in sort on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 20 Sep 2021 19:50:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Oct 2021 14:17:17 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 61. 扑克牌中的顺子</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-61.-%E6%89%91%E5%85%8B%E7%89%8C%E4%B8%AD%E7%9A%84%E9%A1%BA%E5%AD%90/</link>
+      <pubDate>Fri, 01 Oct 2021 14:17:17 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-61.-%E6%89%91%E5%85%8B%E7%89%8C%E4%B8%AD%E7%9A%84%E9%A1%BA%E5%AD%90/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/
+难度： 简单
+题目描述 从若干副扑克牌中随机抽 5 张牌，判断是不是一个顺子，即这5张牌是不是连续的。2～10为数字本身，A为1，J为11，Q为12，K为13，而大、小王为 0 ，可以看成任意数字。A 不能视为 14。
+示例 1：  输入: [1,2,3,4,5]
+输出: True
+ 示例 2：  输入: [0,0,1,2,5]
+输出: True
+ 限制：  数组长度为 5 数组的数取值为 [0, 13] .  解题思路 排序 排序，统计大小王的数量，判断其余相邻牌的差值：
+ 当差值为 0 时，不构成顺子，返回 false； 当差值不为 0 时，使用大小王去补。 最后，当大小王数量不为负时，返回 true，否则返回 false 。  func isStraight(nums []int) bool { sort.Ints(nums) cnt := 0 for i := 0; i &amp;lt; len(nums); i++ { if nums[i] == 0 { cnt++ continue } if i-1 &amp;gt;= 0 &amp;amp;&amp;amp; nums[i-1] !</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 45. 把数组排成最小的数</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-45.-%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/</link>

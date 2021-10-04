@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/license-key-formatting/
+难度： 简单
+题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&#39;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
+给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&#39;（破折号）隔开，并且将所有的小写字母转换为大写字母。
+给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。
+示例 1：  输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
+输出： &amp;ldquo;5F3Z-2E9W&amp;rdquo;
+解释： 字符串 S 被分成了两个部分，每部分 4 个字符；
+注意，两个额外的破折号需要删掉。
+ 示例 2：  输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
+输出： &amp;ldquo;2-5G-3J&amp;rdquo;
+解释： 字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。
+ 提示：  S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空  解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。'><title>Leetcode 482. 密钥格式化</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 482. 密钥格式化'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/license-key-formatting/
+难度： 简单
+题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&#39;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
+给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&#39;（破折号）隔开，并且将所有的小写字母转换为大写字母。
+给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。
+示例 1：  输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
+输出： &amp;ldquo;5F3Z-2E9W&amp;rdquo;
+解释： 字符串 S 被分成了两个部分，每部分 4 个字符；
+注意，两个额外的破折号需要删掉。
+ 示例 2：  输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
+输出： &amp;ldquo;2-5G-3J&amp;rdquo;
+解释： 字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。
+ 提示：  S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空  解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-04T11:44:14&#43;08:00'/><meta property='article:modified_time' content='2021-10-04T11:44:14&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 482. 密钥格式化">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/license-key-formatting/
+难度： 简单
+题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&#39;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
+给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&#39;（破折号）隔开，并且将所有的小写字母转换为大写字母。
+给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。
+示例 1：  输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
+输出： &amp;ldquo;5F3Z-2E9W&amp;rdquo;
+解释： 字符串 S 被分成了两个部分，每部分 4 个字符；
+注意，两个额外的破折号需要删掉。
+ 示例 2：  输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
+输出： &amp;ldquo;2-5G-3J&amp;rdquo;
+解释： 字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。
+ 提示：  S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空  解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/">Leetcode 482. 密钥格式化</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 04, 2021</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/license-key-formatting/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/license-key-formatting/</a><br>
+<strong>难度：</strong> <font color="green">简单</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>有一个密钥字符串 S ，只包含字母，数字以及 &lsquo;-'（破折号）。其中， N 个 &lsquo;-&rsquo; 将字符串分成了 N+1 组。</p>
+<p>给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &lsquo;-'（破折号）隔开，并且将所有的小写字母转换为大写字母。</p>
+<p>给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入：</strong> S = &ldquo;5F3Z-2e-9-w&rdquo;, K = 4<br>
+<strong>输出：</strong> &ldquo;5F3Z-2E9W&rdquo;<br>
+<strong>解释：</strong> 字符串 S 被分成了两个部分，每部分 4 个字符；<br>
+     注意，两个额外的破折号需要删掉。</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> S = &ldquo;2-5g-3-J&rdquo;, K = 2<br>
+<strong>输出：</strong> &ldquo;2-5G-3J&rdquo;<br>
+<strong>解释：</strong> 字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li>S 的长度可能很长，请按需分配大小。K 为正整数。</li>
+<li>S 只包含字母数字（a-z，A-Z，0-9）以及破折号&rsquo;-&rsquo;</li>
+<li>S 非空</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="计数">计数</h4>
+<p>遍历一遍列表，统计所有字母的数量，若首个分组不足 <code>k</code> 个，需要额外处理，之后按 <code>k</code> 个一组进行分组。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">licenseKeyFormatting</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+	<span style="color:#75715e">// 计数
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+		}
+	}
+	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">cnt</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cnt</span><span style="color:#f92672">/</span><span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#75715e">// 首个分组 处理
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span><span style="color:#f92672">%</span><span style="color:#a6e22e">k</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">cnt</span><span style="color:#f92672">%</span><span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+				<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
+				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
+					<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
+				}
+				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+				<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>
+			}
+		}
+		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">k</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
+			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
+		}
+	}
+	<span style="color:#75715e">// 剩余分组处理
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+				<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
+				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
+					<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
+				}
+				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+				<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>
+			}
+		}
+		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">k</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
+			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
+		}
+	}
+	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">ans</span>)
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N), N = len(s) $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+<h4 id="倒序遍历">倒序遍历</h4>
+<p>从尾至头遍历，<code>k</code> 个一组，最后剩余的不足 <code>k</code> 个字符也构成一组，然后反转整个字符串即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">licenseKeyFormatting</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">1</span>)
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+			<span style="color:#66d9ef">continue</span>
+		}
+		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
+		<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
+			<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
+		}
+		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">k</span> {
+			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
+			<span style="color:#a6e22e">cnt</span> = <span style="color:#ae81ff">0</span>
+		}
+	}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>]
+	}
+	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">ans</span>) &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ans</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+		<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span>[<span style="color:#ae81ff">1</span>:]
+	}
+	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">ans</span>)
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N), N = len(s) $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-166.-%E5%88%86%E6%95%B0%E5%88%B0%E5%B0%8F%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 166. 分数到小数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-ii-001.-%E6%95%B4%E6%95%B0%E9%99%A4%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer II 001. 整数除法</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-68-ii.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 68 - II. 二叉树的最近公共祖先</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-405.-%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 405. 数字转换为十六进制数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-68-i.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 68 - I. 二叉搜索树的最近公共祖先</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
