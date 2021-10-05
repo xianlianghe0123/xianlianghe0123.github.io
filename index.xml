@@ -6,7 +6,103 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Mon, 04 Oct 2021 11:44:14 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 05 Oct 2021 13:38:07 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 284. 顶端迭代器</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
+        <pubDate>Tue, 05 Oct 2021 13:38:07 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/peeking-iterator/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/peeking-iterator/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
+&lt;p&gt;请你设计一个迭代器，除了支持 &lt;code&gt;hasNext&lt;/code&gt; 和 &lt;code&gt;next&lt;/code&gt; 操作外，还支持 &lt;code&gt;peek&lt;/code&gt; 操作。&lt;/p&gt;
+&lt;p&gt;实现 &lt;code&gt;PeekingIterator&lt;/code&gt; 类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PeekingIterator(int[] nums)&lt;/code&gt; 使用指定整数数组 &lt;code&gt;nums&lt;/code&gt; 初始化迭代器。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int next()&lt;/code&gt; 返回数组中的下一个元素，并将指针移动到下个元素处。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bool hasNext()&lt;/code&gt; 如果数组中存在下一个元素，返回 &lt;code&gt;true&lt;/code&gt; ；否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int peek()&lt;/code&gt; 返回数组中的下一个元素，但 &lt;strong&gt;不&lt;/strong&gt; 移动指针。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;示例&#34;&gt;示例：&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br&gt;
+[&amp;ldquo;PeekingIterator&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;peek&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;hasNext&amp;rdquo;]&lt;br&gt;
+[[[1, 2, 3]], [], [], [], [], []]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;&lt;br&gt;
+[null, 1, 2, 2, 3, false]&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;
+PeekingIterator peekingIterator = new PeekingIterator([1, 2, 3]); // [&lt;strong&gt;1&lt;/strong&gt;,2,3]&lt;br&gt;
+peekingIterator.next();    // 返回 1 ，指针移动到下一个元素 [1,&lt;strong&gt;2&lt;/strong&gt;,3]&lt;br&gt;
+peekingIterator.peek();    // 返回 2 ，指针未发生移动 [1,&lt;strong&gt;2&lt;/strong&gt;,3]&lt;br&gt;
+peekingIterator.next();    // 返回 2 ，指针移动到下一个元素 [1,2,&lt;strong&gt;3&lt;/strong&gt;]&lt;br&gt;
+peekingIterator.next();    // 返回 3 ，指针移动到下一个元素 [1,2,3]&lt;br&gt;
+peekingIterator.hasNext(); // 返回 False&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums[i] &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对 &lt;code&gt;next&lt;/code&gt; 和 &lt;code&gt;peek&lt;/code&gt; 的调用均有效&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;next&lt;/code&gt;、&lt;code&gt;hasNext&lt;/code&gt; 和 &lt;code&gt;peek&lt;/code&gt; 最多调用 &lt;code&gt;1000&lt;/code&gt; 次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 你将如何拓展你的设计？使之变得通用化，从而适应所有的类型，而不只是整数型？&lt;/p&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;动态规划&#34;&gt;动态规划&lt;/h4&gt;
+&lt;p&gt;使用一个变量 &lt;code&gt;current&lt;/code&gt; 记录顶端元素，原始迭代器的指针是指向下一个元素的，故另外需要使用一个 &lt;code&gt;_hasNext&lt;/code&gt; 记录当前 &lt;code&gt;current&lt;/code&gt; 是否存有有效值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;peek&lt;/code&gt; 和 &lt;code&gt;hasNext&lt;/code&gt; 操作，返回 &lt;code&gt;current&lt;/code&gt; 和 &lt;code&gt;_hasNext&lt;/code&gt; 即可；&lt;/li&gt;
+&lt;li&gt;初始化时，原始迭代器的实际指向的是下一个元素，将当前元素存入 &lt;code&gt;current&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;next&lt;/code&gt; 操作，返回的是 &lt;code&gt;current&lt;/code&gt;，并将下一个元素存入 &lt;code&gt;current&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PeekingIterator&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt;     &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Iterator&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;_hasNext&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constructor&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Iterator&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;PeekingIterator&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;PeekingIterator&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt;:     &lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt;,
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;:  &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;_hasNext&lt;/span&gt;: &lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;hasNext&lt;/span&gt;(),
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;hasNext&lt;/span&gt;() {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;()
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;PeekingIterator&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;hasNext&lt;/span&gt;() &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;_hasNext&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;PeekingIterator&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;() &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;_hasNext&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;hasNext&lt;/span&gt;()
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;_hasNext&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;iter&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;()
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;PeekingIterator&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;() &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hasNext&lt;/code&gt;：$ O(1) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;next&lt;/code&gt;：$ O(1) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;peek&lt;/code&gt;：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 482. 密钥格式化</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
         <pubDate>Mon, 04 Oct 2021 11:44:14 +0800</pubDate>

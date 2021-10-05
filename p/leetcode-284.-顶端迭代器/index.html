@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/cousins-in-binary-tree/
-难度： 简单
-题目描述 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k&#43;1 处。
-如果二叉树的两个节点深度相同，但 父节点不同 ，则它们是一对堂兄弟节点。
-我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
-只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
-示例1： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-01.png&#34;, width=&amp;ldquo;180px&amp;rdquo;&amp;gt;
- 输入： root = [1,2,3,4], x = 4, y = 3
-输出： false
- 示例2： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-02.png&#34;, width=&amp;ldquo;201px&amp;rdquo;&amp;gt;
- 输入： root = [1,2,3,null,4,null,5], x = 5, y = 4
-输出： true
- 示例3： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-03.png&#34;, width=&amp;ldquo;156px&amp;rdquo;&amp;gt;'><title>Leetcode 993. 二叉树的堂兄弟节点</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/peeking-iterator/
+难度： 中等
+题目描述 请你设计一个迭代器，除了支持 hasNext 和 next 操作外，还支持 peek 操作。
+实现 PeekingIterator 类：
+ PeekingIterator(int[] nums) 使用指定整数数组 nums 初始化迭代器。 int next() 返回数组中的下一个元素，并将指针移动到下个元素处。 bool hasNext() 如果数组中存在下一个元素，返回 true ；否则，返回 false 。 int peek() 返回数组中的下一个元素，但 不 移动指针。  示例：  输入：
+[&amp;ldquo;PeekingIterator&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;peek&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;hasNext&amp;rdquo;]
+[[[1, 2, 3]], [], [], [], [], []]
+输出：
+[null, 1, 2, 2, 3, false]
+解释：
+PeekingIterator peekingIterator = new PeekingIterator([1, 2, 3]); // [1,2,3]'><title>Leetcode 284. 顶端迭代器</title>
 
-<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-993.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9/'>
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 993. 二叉树的堂兄弟节点'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/cousins-in-binary-tree/
-难度： 简单
-题目描述 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k&#43;1 处。
-如果二叉树的两个节点深度相同，但 父节点不同 ，则它们是一对堂兄弟节点。
-我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
-只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
-示例1： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-01.png&#34;, width=&amp;ldquo;180px&amp;rdquo;&amp;gt;
- 输入： root = [1,2,3,4], x = 4, y = 3
-输出： false
- 示例2： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-02.png&#34;, width=&amp;ldquo;201px&amp;rdquo;&amp;gt;
- 输入： root = [1,2,3,null,4,null,5], x = 5, y = 4
-输出： true
- 示例3： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-03.png&#34;, width=&amp;ldquo;156px&amp;rdquo;&amp;gt;'>
-<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-993.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 284. 顶端迭代器'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/peeking-iterator/
+难度： 中等
+题目描述 请你设计一个迭代器，除了支持 hasNext 和 next 操作外，还支持 peek 操作。
+实现 PeekingIterator 类：
+ PeekingIterator(int[] nums) 使用指定整数数组 nums 初始化迭代器。 int next() 返回数组中的下一个元素，并将指针移动到下个元素处。 bool hasNext() 如果数组中存在下一个元素，返回 true ；否则，返回 false 。 int peek() 返回数组中的下一个元素，但 不 移动指针。  示例：  输入：
+[&amp;ldquo;PeekingIterator&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;peek&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;hasNext&amp;rdquo;]
+[[[1, 2, 3]], [], [], [], [], []]
+输出：
+[null, 1, 2, 2, 3, false]
+解释：
+PeekingIterator peekingIterator = new PeekingIterator([1, 2, 3]); // [1,2,3]'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/'>
 <meta property='og:site_name' content='贺贤良'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-05-17T09:29:10&#43;08:00'/><meta property='article:modified_time' content='2021-05-17T09:29:10&#43;08:00'/>
-<meta name="twitter:title" content="Leetcode 993. 二叉树的堂兄弟节点">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/cousins-in-binary-tree/
-难度： 简单
-题目描述 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k&#43;1 处。
-如果二叉树的两个节点深度相同，但 父节点不同 ，则它们是一对堂兄弟节点。
-我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
-只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
-示例1： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-01.png&#34;, width=&amp;ldquo;180px&amp;rdquo;&amp;gt;
- 输入： root = [1,2,3,4], x = 4, y = 3
-输出： false
- 示例2： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-02.png&#34;, width=&amp;ldquo;201px&amp;rdquo;&amp;gt;
- 输入： root = [1,2,3,null,4,null,5], x = 5, y = 4
-输出： true
- 示例3： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-03.png&#34;, width=&amp;ldquo;156px&amp;rdquo;&amp;gt;">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-05T13:38:07&#43;08:00'/><meta property='article:modified_time' content='2021-10-05T13:38:07&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 284. 顶端迭代器">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/peeking-iterator/
+难度： 中等
+题目描述 请你设计一个迭代器，除了支持 hasNext 和 next 操作外，还支持 peek 操作。
+实现 PeekingIterator 类：
+ PeekingIterator(int[] nums) 使用指定整数数组 nums 初始化迭代器。 int next() 返回数组中的下一个元素，并将指针移动到下个元素处。 bool hasNext() 如果数组中存在下一个元素，返回 true ；否则，返回 false 。 int peek() 返回数组中的下一个元素，但 不 移动指针。  示例：  输入：
+[&amp;ldquo;PeekingIterator&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;peek&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;hasNext&amp;rdquo;]
+[[[1, 2, 3]], [], [], [], [], []]
+输出：
+[null, 1, 2, 2, 3, false]
+解释：
+PeekingIterator peekingIterator = new PeekingIterator([1, 2, 3]); // [1,2,3]">
     </head>
     <body class="
     article-page 
@@ -212,7 +206,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/leetcode-993.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9/">Leetcode 993. 二叉树的堂兄弟节点</a>
+        <a href="/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/">Leetcode 284. 顶端迭代器</a>
     </h2>
 
     
@@ -230,7 +224,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 17, 2021</time>
+                <time class="article-time--published">Oct 05, 2021</time>
             </div>
         
 
@@ -241,68 +235,93 @@
 </header>
 
     <section class="article-content">
-    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/cousins-in-binary-tree/"  target="_blank" rel="noopener"
-    >https://leetcode-cn.com/problems/cousins-in-binary-tree/</a><br>
-<strong>难度：</strong> <font color="green">简单</font></p>
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/peeking-iterator/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/peeking-iterator/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
 <h4 id="题目描述">题目描述</h4>
-<p>在二叉树中，根节点位于深度 <code>0</code> 处，每个深度为 <code>k</code> 的节点的子节点位于深度 <code>k+1</code> 处。</p>
-<p>如果二叉树的两个节点深度相同，但 <strong>父节点不同</strong> ，则它们是一对堂兄弟节点。</p>
-<p>我们给出了具有唯一值的二叉树的根节点 <code>root</code> ，以及树中两个不同节点的值 <code>x</code> 和 <code>y</code> 。</p>
-<p>只有与值 <code>x</code> 和 <code>y</code> 对应的节点是堂兄弟节点时，才返回 <code>true</code> 。否则，返回 <code>false。</code></p>
-<h5 id="示例1">示例1：</h5>
-<p>&lt;img src=&ldquo;<a class="link" href="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-01.png%22,"  target="_blank" rel="noopener"
-    >https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-01.png",</a> width=&ldquo;180px&rdquo;&gt;</p>
+<p>请你设计一个迭代器，除了支持 <code>hasNext</code> 和 <code>next</code> 操作外，还支持 <code>peek</code> 操作。</p>
+<p>实现 <code>PeekingIterator</code> 类：</p>
+<ul>
+<li><code>PeekingIterator(int[] nums)</code> 使用指定整数数组 <code>nums</code> 初始化迭代器。</li>
+<li><code>int next()</code> 返回数组中的下一个元素，并将指针移动到下个元素处。</li>
+<li><code>bool hasNext()</code> 如果数组中存在下一个元素，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li>
+<li><code>int peek()</code> 返回数组中的下一个元素，但 <strong>不</strong> 移动指针。</li>
+</ul>
+<h5 id="示例">示例：</h5>
 <blockquote>
-<p><strong>输入：</strong> root = [1,2,3,4], x = 4, y = 3<br>
-<strong>输出：</strong> false</p>
-</blockquote>
-<h5 id="示例2">示例2：</h5>
-<p>&lt;img src=&ldquo;<a class="link" href="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-02.png%22,"  target="_blank" rel="noopener"
-    >https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-02.png",</a> width=&ldquo;201px&rdquo;&gt;</p>
-<blockquote>
-<p><strong>输入：</strong> root = [1,2,3,null,4,null,5], x = 5, y = 4<br>
-<strong>输出：</strong> true</p>
-</blockquote>
-<h5 id="示例3">示例3：</h5>
-<p>&lt;img src=&ldquo;<a class="link" href="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-03.png%22,"  target="_blank" rel="noopener"
-    >https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-03.png",</a> width=&ldquo;156px&rdquo;&gt;</p>
-<blockquote>
-<p><strong>输入：</strong> root = [1,2,3,null,4], x = 2, y = 3<br>
-<strong>输出：</strong> false</p>
+<p><strong>输入：</strong><br>
+[&ldquo;PeekingIterator&rdquo;, &ldquo;next&rdquo;, &ldquo;peek&rdquo;, &ldquo;next&rdquo;, &ldquo;next&rdquo;, &ldquo;hasNext&rdquo;]<br>
+[[[1, 2, 3]], [], [], [], [], []]<br>
+<strong>输出：</strong><br>
+[null, 1, 2, 2, 3, false]<br>
+<strong>解释：</strong><br>
+PeekingIterator peekingIterator = new PeekingIterator([1, 2, 3]); // [<strong>1</strong>,2,3]<br>
+peekingIterator.next();    // 返回 1 ，指针移动到下一个元素 [1,<strong>2</strong>,3]<br>
+peekingIterator.peek();    // 返回 2 ，指针未发生移动 [1,<strong>2</strong>,3]<br>
+peekingIterator.next();    // 返回 2 ，指针移动到下一个元素 [1,2,<strong>3</strong>]<br>
+peekingIterator.next();    // 返回 3 ，指针移动到下一个元素 [1,2,3]<br>
+peekingIterator.hasNext(); // 返回 False</p>
 </blockquote>
 <h5 id="提示">提示：</h5>
 <ul>
-<li>二叉树的节点数介于 <code>2</code> 到 <code>100</code> 之间。</li>
-<li>每个节点的值都是唯一的、范围为 <code>1</code> 到 <code>100</code> 的整数。</li>
+<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 1000</code></li>
+<li>对 <code>next</code> 和 <code>peek</code> 的调用均有效</li>
+<li><code>next</code>、<code>hasNext</code> 和 <code>peek</code> 最多调用 <code>1000</code> 次</li>
 </ul>
+<p><strong>进阶：</strong> 你将如何拓展你的设计？使之变得通用化，从而适应所有的类型，而不只是整数型？</p>
 <h3 id="解题思路">解题思路</h3>
-<h4 id="搜索">搜索</h4>
-<p>记录两个结点的父节点和高度，然后比较即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isCousins</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">parents</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)
-	<span style="color:#a6e22e">heights</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">height</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">y</span> {
-			<span style="color:#a6e22e">heights</span> = append(<span style="color:#a6e22e">heights</span>, <span style="color:#a6e22e">height</span>)
-			<span style="color:#a6e22e">parents</span> = append(<span style="color:#a6e22e">parents</span>, <span style="color:#a6e22e">parent</span>)
-		}
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+<h4 id="动态规划">动态规划</h4>
+<p>使用一个变量 <code>current</code> 记录顶端元素，原始迭代器的指针是指向下一个元素的，故另外需要使用一个 <code>_hasNext</code> 记录当前 <code>current</code> 是否存有有效值。</p>
+<ul>
+<li><code>peek</code> 和 <code>hasNext</code> 操作，返回 <code>current</code> 和 <code>_hasNext</code> 即可；</li>
+<li>初始化时，原始迭代器的实际指向的是下一个元素，将当前元素存入 <code>current</code>；</li>
+<li><code>next</code> 操作，返回的是 <code>current</code>，并将下一个元素存入 <code>current</code>。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PeekingIterator</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">iter</span>     <span style="color:#f92672">*</span><span style="color:#a6e22e">Iterator</span>
+	<span style="color:#a6e22e">current</span>  <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">_hasNext</span> <span style="color:#66d9ef">bool</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">iter</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Iterator</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">PeekingIterator</span> {
+	<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">PeekingIterator</span>{
+		<span style="color:#a6e22e">iter</span>:     <span style="color:#a6e22e">iter</span>,
+		<span style="color:#a6e22e">current</span>:  <span style="color:#ae81ff">0</span>,
+		<span style="color:#a6e22e">_hasNext</span>: <span style="color:#a6e22e">iter</span>.<span style="color:#a6e22e">hasNext</span>(),
 	}
-	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">parents</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">parents</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">heights</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">heights</span>[<span style="color:#ae81ff">1</span>] {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">iter</span>.<span style="color:#a6e22e">hasNext</span>() {
+		<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">current</span> = <span style="color:#a6e22e">iter</span>.<span style="color:#a6e22e">next</span>()
 	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">p</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">PeekingIterator</span>) <span style="color:#a6e22e">hasNext</span>() <span style="color:#66d9ef">bool</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">_hasNext</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">PeekingIterator</span>) <span style="color:#a6e22e">next</span>() <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">current</span>
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">_hasNext</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">iter</span>.<span style="color:#a6e22e">hasNext</span>()
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">_hasNext</span> {
+		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">current</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">iter</span>.<span style="color:#a6e22e">next</span>()
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">PeekingIterator</span>) <span style="color:#a6e22e">peek</span>() <span style="color:#66d9ef">int</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">current</span>
 }
 </code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(N)</li>
+<li>时间复杂度：
+<ul>
+<li><code>hasNext</code>：$ O(1) $</li>
+<li><code>next</code>：$ O(1) $</li>
+<li><code>peek</code>：$ O(1) $</li>
+</ul>
+</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
 </section>
@@ -349,18 +368,6 @@
                 
                     
 <article class="">
-    <a href="/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 284. 顶端迭代器</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/">
         
         
@@ -403,6 +410,18 @@
 
         <div class="article-details">
             <h2 class="article-title">剑指 Offer 68 - II. 二叉树的最近公共祖先</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-405.-%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 405. 数字转换为十六进制数</h2>
         </div>
     </a>
 </article>

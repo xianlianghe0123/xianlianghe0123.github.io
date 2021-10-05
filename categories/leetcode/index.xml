@@ -6,7 +6,26 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 04 Oct 2021 11:44:14 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2021 13:38:07 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 284. 顶端迭代器</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
+      <pubDate>Tue, 05 Oct 2021 13:38:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/peeking-iterator/
+难度： 中等
+题目描述 请你设计一个迭代器，除了支持 hasNext 和 next 操作外，还支持 peek 操作。
+实现 PeekingIterator 类：
+ PeekingIterator(int[] nums) 使用指定整数数组 nums 初始化迭代器。 int next() 返回数组中的下一个元素，并将指针移动到下个元素处。 bool hasNext() 如果数组中存在下一个元素，返回 true ；否则，返回 false 。 int peek() 返回数组中的下一个元素，但 不 移动指针。  示例：  输入：
+[&amp;ldquo;PeekingIterator&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;peek&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;hasNext&amp;rdquo;]
+[[[1, 2, 3]], [], [], [], [], []]
+输出：
+[null, 1, 2, 2, 3, false]
+解释：
+PeekingIterator peekingIterator = new PeekingIterator([1, 2, 3]); // [1,2,3]</description>
+    </item>
+    
     <item>
       <title>Leetcode 482. 密钥格式化</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
