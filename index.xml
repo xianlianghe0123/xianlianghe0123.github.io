@@ -6,7 +6,414 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Tue, 05 Oct 2021 13:38:07 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Oct 2021 14:16:55 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 414. 第三大的数</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-414.-%E7%AC%AC%E4%B8%89%E5%A4%A7%E7%9A%84%E6%95%B0/</link>
+        <pubDate>Wed, 06 Oct 2021 14:16:55 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-414.-%E7%AC%AC%E4%B8%89%E5%A4%A7%E7%9A%84%E6%95%B0/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/third-maximum-number/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/third-maximum-number/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个非空数组，返回此数组中 &lt;strong&gt;第三大的数&lt;/strong&gt; 。如果不存在，则返回数组中最大的数。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; [3, 2, 1]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 1&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 第三大的数是 1 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; [1, 2]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 2&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 第三大的数不存在, 所以返回最大的数 2 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; [2, 2, 3, 1]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 1&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 注意，要求返回第三大的数，是指在所有不同数字中排第三大的数。&lt;br&gt;
+此例中存在两个值为 2 的数，它们都排第二。在所有不同数字中排第三大的数为 1 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-2&lt;sup&gt;31&lt;/sup&gt; &amp;lt;= nums[i] &amp;lt;= 2&lt;sup&gt;31&lt;/sup&gt; - 1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 你能设计一个时间复杂度 O(n) 的解决方案吗？&lt;/p&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;排序&#34;&gt;排序&lt;/h4&gt;
+&lt;p&gt;对数组进行一轮排序，尝试从最大值开始寻找第三大的值，找到则返回；否则返回最大值。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;thirdMax&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Ints&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;rank&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;rank&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rank&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N\log{N}), N = len(nums) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(\log{N}) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;递减序列&#34;&gt;递减序列&lt;/h4&gt;
+&lt;p&gt;使用三个变量记录遍历过的元素中最大的三个值，每遍历到一个元素时更新，若最后找到了第三大的值则返回，否则返回最大值。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;thirdMax&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Rank&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;Rank&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;{}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;Rank&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;{}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt;
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+			}
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt;
+			} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[len(&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;[len(&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(nums) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>剑指 Offer 41. 数据流中的中位数</title>
+        <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-41.-%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/</link>
+        <pubDate>Tue, 05 Oct 2021 20:42:26 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-41.-%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;red&#34;&gt;困难&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。&lt;/p&gt;
+&lt;p&gt;例如，&lt;br&gt;
+[2,3,4] 的中位数是 3&lt;br&gt;
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5&lt;/p&gt;
+&lt;p&gt;设计一个支持以下两种操作的数据结构：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;void addNum(int num)&lt;/code&gt; - 从数据流中添加一个整数到数据结构中。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;double findMedian()&lt;/code&gt; - 返回目前所有元素的中位数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br&gt;
+[&amp;ldquo;MedianFinder&amp;rdquo;,&amp;ldquo;addNum&amp;rdquo;,&amp;ldquo;addNum&amp;rdquo;,&amp;ldquo;findMedian&amp;rdquo;,&amp;ldquo;addNum&amp;rdquo;,&amp;ldquo;findMedian&amp;rdquo;]&lt;br&gt;
+[[],[1],[2],[],[3],[]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [null,null,null,1.50000,null,2.00000]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br&gt;
+[&amp;ldquo;MedianFinder&amp;rdquo;,&amp;ldquo;addNum&amp;rdquo;,&amp;ldquo;findMedian&amp;rdquo;,&amp;ldquo;addNum&amp;rdquo;,&amp;ldquo;findMedian&amp;rdquo;]&lt;br&gt;
+[[],[2],[],[3],[]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [null,null,2.00000,null,2.50000]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;限制&#34;&gt;限制：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;最多会对 &lt;code&gt;addNum&lt;/code&gt;、&lt;code&gt;findMedian&lt;/code&gt; 进行 &lt;code&gt;50000&lt;/code&gt; 次调用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;双堆&#34;&gt;双堆&lt;/h4&gt;
+&lt;p&gt;分别使用大顶堆和小顶堆记录排序后的前半部分元素和后半部分元素，若元素数量不为偶数时，多余的一个元素记录到小顶堆中。&lt;/p&gt;
+&lt;p&gt;则对于 &lt;code&gt;findMedian&lt;/code&gt; 操作，当元素数量为奇数时，即两个堆元素数量不同时，返回小顶堆堆顶元素；为偶数时，即两个堆元素数量相同时，返回两个堆堆顶元素的平均值。&lt;/p&gt;
+&lt;p&gt;对于 &lt;code&gt;addNum&lt;/code&gt; 操作，需要修正两个堆的元素数量，保证小顶堆的元素数量不小于大顶堆，且差 &lt;code&gt;≤ 1&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当两个堆的元素数量相同时，将该元素加入大顶堆中，并将大顶堆堆顶元素移动到小顶堆中；&lt;/li&gt;
+&lt;li&gt;当两个堆的元素数量不同时，将该元素加入小顶堆中，并将小顶堆堆顶元素移动到大顶堆中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Heap&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;reverse&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Heap&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Less&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;reverse&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Less&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Less&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;)
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Heap&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;elem&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;interface&lt;/span&gt;{}) {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;elem&lt;/span&gt;.(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;))
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Heap&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Pop&lt;/span&gt;() &lt;span style=&#34;color:#66d9ef&#34;&gt;interface&lt;/span&gt;{} {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;elem&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[:&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;elem&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MedianFinder&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Heap&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;maxHeap&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Heap&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constructor&lt;/span&gt;() &lt;span style=&#34;color:#a6e22e&#34;&gt;MedianFinder&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MedianFinder&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Heap&lt;/span&gt;{
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;: make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;),
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;reverse&lt;/span&gt;:  &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+		},
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;maxHeap&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Heap&lt;/span&gt;{
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;: make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;),
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;reverse&lt;/span&gt;:  &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+		},
+	}
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MedianFinder&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;AddNum&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;maxHeap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;() {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;maxHeap&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt;)
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pop&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;maxHeap&lt;/span&gt;))
+	} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt;)
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;maxHeap&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pop&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt;))
+	}
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MedianFinder&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;FindMedian&lt;/span&gt;() &lt;span style=&#34;color:#66d9ef&#34;&gt;float64&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;maxHeap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;() {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; float64(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;maxHeap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; float64(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;minHeap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AddNum&lt;/code&gt;：$ O(\log{N}) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FindMedian&lt;/code&gt;：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>剑指 Offer 43. 1～n 整数中 1 出现的次数</title>
+        <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-43.-1n-%E6%95%B4%E6%95%B0%E4%B8%AD-1-%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/</link>
+        <pubDate>Tue, 05 Oct 2021 20:16:53 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-43.-1n-%E6%95%B4%E6%95%B0%E4%B8%AD-1-%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;red&#34;&gt;困难&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;输入一个整数 &lt;code&gt;n&lt;/code&gt; ，求1～n这n个整数的十进制表示中1出现的次数。&lt;/p&gt;
+&lt;p&gt;例如，输入12，1～12这些整数中包含1 的数字有1、10、11和12，1一共出现了5次。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 12&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 13&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 6&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;限制&#34;&gt;限制：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt; 2&lt;sup&gt;31&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;逐位计数&#34;&gt;逐位计数&lt;/h4&gt;
+&lt;p&gt;按照个、十、百&amp;hellip;的顺序逐位统计。&lt;/p&gt;
+&lt;p&gt;不妨设当前位的基数为 &lt;code&gt;i&lt;/code&gt;，则对于前缀 &lt;code&gt;0 ~ n/i-1&lt;/code&gt;，其必然可以取到 &lt;code&gt;1&lt;/code&gt;，其后缀为 &lt;code&gt;0 ~ i-1&lt;/code&gt;，故累加 &lt;code&gt;n/i * i&lt;/code&gt; 次。&lt;/p&gt;
+&lt;p&gt;对于前缀为 &lt;code&gt;n/i&lt;/code&gt; 的部分，需要判别当前位：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若当前位 &lt;code&gt;&amp;gt; 1&lt;/code&gt;，则还可以取得后缀 &lt;code&gt;0 ~ i-1&lt;/code&gt;，累加 &lt;code&gt;i&lt;/code&gt; 次；&lt;/li&gt;
+&lt;li&gt;若当前位 &lt;code&gt;= 1&lt;/code&gt;，则后缀可以取得 &lt;code&gt;0 ~ n%i&lt;/code&gt;，累加 &lt;code&gt;n%i + 1&lt;/code&gt; 次；&lt;/li&gt;
+&lt;li&gt;若当前位为 &lt;code&gt;0&lt;/code&gt;，则无法取到。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;countDigitOne&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;:
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(\log{n}) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>剑指 Offer 59 - I. 滑动窗口的最大值</title>
+        <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-59-i.-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</link>
+        <pubDate>Tue, 05 Oct 2021 18:12:15 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-59-i.-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;red&#34;&gt;困难&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给定一个数组 &lt;code&gt;nums&lt;/code&gt; 和滑动窗口的大小 &lt;code&gt;k&lt;/code&gt;，请找出所有滑动窗口里的最大值。&lt;/p&gt;
+&lt;h4 id=&#34;示例&#34;&gt;示例：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; nums = [1,3,-1,-3,5,3,6,7], 和 k = 3&lt;br&gt;
+&lt;strong&gt;输出:&lt;/strong&gt; [3,3,5,5,6,7]&lt;br&gt;
+&lt;strong&gt;解释:&lt;/strong&gt;&lt;br&gt;
+滑动窗口的位置                最大值&lt;br&gt;
+[1  3  -1] -3  5  3  6  7       3&lt;br&gt;
+1 [3  -1  -3] 5  3  6  7       3&lt;br&gt;
+1  3 [-1  -3  5] 3  6  7       5&lt;br&gt;
+1  3  -1 [-3  5  3] 6  7       5&lt;br&gt;
+1  3  -1  -3 [5  3  6] 7       6&lt;br&gt;
+1  3  -1  -3  5 [3  6  7]      7&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;你可以假设 &lt;code&gt;k&lt;/code&gt; 总是有效的，在输入数组不为空的情况下，&lt;code&gt;1 ≤ k ≤ 输入数组的大小&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;暴力求解&#34;&gt;暴力求解&lt;/h4&gt;
+&lt;p&gt;对于每个窗口，遍历其中的元素，找到最大值。空数组需要特判。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxSlidingWindow&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;MinInt32&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]
+			}
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(Nk), N = len(nums) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;双端队列&#34;&gt;双端队列&lt;/h4&gt;
+&lt;p&gt;使用一个队列维护窗口的最大值信息。&lt;/p&gt;
+&lt;p&gt;可以发现，当窗口滑动后，在该值之前的位于窗口内的所有小于该值的元素对于最大值均无影响；仅当该值从窗口移出后，由此值后面的次大元素接任。&lt;/p&gt;
+&lt;p&gt;所以这个队列的队列头记录当前队列的最大值，后续按值非严格递减的顺序记录其他值。当窗口移动时：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于新进入窗口的元素，需要从尾部开始将小于当前值的元素全部删除，然后该值入队；&lt;/li&gt;
+&lt;li&gt;对于离开窗口的元素，若队首元素是与其相等，则该值出队。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;空数组需要特判。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxSlidingWindow&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 初始化
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;()
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;() &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Back&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;Value&lt;/span&gt;.(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Remove&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Back&lt;/span&gt;())
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PushBack&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;])
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Front&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;Value&lt;/span&gt;.(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 出队判定
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Front&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;Value&lt;/span&gt;.(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Remove&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Front&lt;/span&gt;())
+		}
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 新元素入队
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;() &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Back&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;Value&lt;/span&gt;.(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Remove&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Back&lt;/span&gt;())
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PushBack&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;])
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;deque&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Front&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;Value&lt;/span&gt;.(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;))
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(nums) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(k) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;堆--哈希&#34;&gt;堆 + 哈希&lt;/h4&gt;
+&lt;p&gt;使用大顶堆维护遍历到的最大值，当窗口滑动时，需要将新元素入堆，然后取出最大元素。&lt;/p&gt;
+&lt;p&gt;为判定最大元素位于堆中，还需要记录元素的下标，可以使用哈希表，尝试不断的取出堆顶元素直到其位于滑动窗口中。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MaxHeap&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MaxHeap&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Less&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Less&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;)
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MaxHeap&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;elem&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;interface&lt;/span&gt;{}) {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;elem&lt;/span&gt;.(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;))
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MaxHeap&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Pop&lt;/span&gt;() &lt;span style=&#34;color:#66d9ef&#34;&gt;interface&lt;/span&gt;{} {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;elem&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[:&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;elem&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxSlidingWindow&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 初始化
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MaxHeap&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;: make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)),
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;pos&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;pos&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]] = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;])
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;pos&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]] = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 入堆
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;])
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pos&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;heap&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pop&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;)
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IntSlice&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N\log{N}), N = len(nums)$&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 284. 顶端迭代器</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
         <pubDate>Tue, 05 Oct 2021 13:38:07 +0800</pubDate>
@@ -2420,41 +2827,53 @@ peekingIterator.hasNext(); // 返回 False&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;2 &amp;lt;= n &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
-&lt;h4 id=&#34;动态规划&#34;&gt;动态规划&lt;/h4&gt;
-&lt;p&gt;使用 &lt;code&gt;dp[i]&lt;/code&gt; 表示绳子长度为 &lt;code&gt;i&lt;/code&gt; 时的最大乘积。则：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;初始，&lt;code&gt;dp[1] = 0&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dp[i] = max(dp[j], j) * (dp[i-j], i-j), 1 ≤ j &amp;lt; i&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&#34;数学--贪心--快速幂&#34;&gt;数学 + 贪心 + 快速幂&lt;/h4&gt;
+&lt;p&gt;根据几何均值不等式:
+$$ a_1a_2&amp;hellip;a_m \leq (\frac{a_1+a_2+&amp;hellip;+a_m}{m})，当且仅当 a_1=a_2=&amp;hellip;=a_m 时，等式成立 $$
+可以得知，当将绳子等分时，可以获得最大值。&lt;/p&gt;
+&lt;p&gt;不妨设每段的长度为 $x$，则共可以分为 $\frac{n}{x}$ 段，得到乘积的最大值为 $x^\frac{n}{x} = (x^\frac{1}{x})^n$。现在需要求此最大值，也即求 $ y=x^\frac{1}{x} $的最大值。
+对 $ y=x^\frac{1}{x} $ 求导：
+$$
+\begin{aligned}
+\ln{y} &amp;amp;= \frac{1}{x}\ln{x}\\
+\frac{1}{y}\frac{\mathrm{d}y}{\mathrm{d}x} &amp;amp;= -\frac{1}{x^2}\ln{x} + \frac{1}{x^2}\\
+\frac{\mathrm{d}y}{\mathrm{d}x} &amp;amp;= \frac{1-\ln{x}}{x^2}y\\
+&amp;amp;= \frac{1-\ln{x}}{x^2}x^{\frac{1}{x}}
+\end{aligned}
+$$
+令 $\frac{\mathrm{d}y}{\mathrm{d}x} = 0$，求得 $x=e$，则在此点处取得最大值。
+将最接近的点 $2$ 和 $3$ 代入，得到 $3^\frac{1}{3} &amp;gt; 2^\frac{1}{2}$，说明将绳子优先分为长度为 $3$ 的段可以得到乘积的最大值。&lt;/p&gt;
+&lt;p&gt;当绳子不能等分为长度为 $3$ 的段时，若最后剩余长度为 $2$，则最后一段为 $2$，若为 $1$，则尝试与上一段长度为 $3$ 的 部分构成 2 个 $2$。&lt;/p&gt;
+&lt;p&gt;对于长度为 $3$ 的段，使用快速幂求解；剩余部分如上述策略处理。对于无法分为两段的绳子长度需要特判。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cuttingRope&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;1e9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;factor1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;factor1&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; {
-				&lt;span style=&#34;color:#a6e22e&#34;&gt;factor1&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;
-			}
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;factor2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;factor2&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; {
-				&lt;span style=&#34;color:#a6e22e&#34;&gt;factor2&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;
-			}
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;factor1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;factor2&lt;/span&gt; {
-				&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;factor1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;factor2&lt;/span&gt;
-                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt; {
-
-                }
-			}
-		}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
 	}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;]
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt; = int(&lt;span style=&#34;color:#ae81ff&#34;&gt;1e9&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;fastPower&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;power&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; ; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;power&lt;/span&gt; = (&lt;span style=&#34;color:#a6e22e&#34;&gt;power&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt;
+			}
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; = (&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;power&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;threes&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;remain&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;remain&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fastPower&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;threes&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;fastPower&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;threes&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;:
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;fastPower&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;threes&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
 &lt;ul&gt;
-&lt;li&gt;时间复杂度：$ O(n^2) $&lt;/li&gt;
-&lt;li&gt;空间复杂度：$ O(n) $&lt;/li&gt;
+&lt;li&gt;时间复杂度：$ O(\log{n}) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -2592,7 +3011,7 @@ peekingIterator.hasNext(); // 返回 False&lt;/p&gt;
 &lt;li&gt;给定单词的长度不超过500。&lt;/li&gt;
 &lt;li&gt;给定单词中的字符只含有小写字母。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;**进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？&lt;/p&gt;
 &lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
 &lt;h4 id=&#34;动态规划&#34;&gt;动态规划&lt;/h4&gt;
 &lt;p&gt;最长公共子序列(LCS)的变种，求得最长公共子序列的长度，返回剩余字符的数量。&lt;/p&gt;
@@ -8700,7 +9119,7 @@ T_4 = 1 + 1 + 2 = 4&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-10&lt;sup&gt;5&lt;/sup&gt; &amp;lt;= nums[i] &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;**进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？&lt;/p&gt;
 &lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
 &lt;h4 id=&#34;排序&#34;&gt;排序&lt;/h4&gt;
 &lt;p&gt;对于连续子数组以外的元素，其在排序前后位置不会改变，故可以将整个数组排序后，从头和尾开始，依次找到不变的元素加以排除，剩余元素就是 &lt;strong&gt;最短&lt;/strong&gt; &lt;strong&gt;连续子数组&lt;/strong&gt;。&lt;/p&gt;
@@ -9974,10 +10393,10 @@ AB -&amp;gt; 28&lt;br&gt;
         <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/&lt;/a&gt;&lt;br&gt;
 &lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
-&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
 &lt;p&gt;输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。&lt;/p&gt;
 &lt;p&gt;要求时间复杂度为$O(n)$。&lt;/p&gt;
-&lt;h5 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h5&gt;
+&lt;h4 id=&#34;示例&#34;&gt;示例：&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; nums = [-2,1,-3,4,-1,2,1,-5,4]&lt;br&gt;
 &lt;strong&gt;输出:&lt;/strong&gt; 6&lt;br&gt;
@@ -12772,7 +13191,7 @@ t.getInheritanceOrder(); // 返回 [&amp;ldquo;king&amp;rdquo;, &amp;ldquo;andy&
 &lt;li&gt;如果 &lt;code&gt;listA&lt;/code&gt; 和 &lt;code&gt;listB&lt;/code&gt; 没有交点，&lt;code&gt;intersectVal&lt;/code&gt; 为 &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;如果 &lt;code&gt;listA&lt;/code&gt; 和 &lt;code&gt;listB&lt;/code&gt; 有交点，&lt;code&gt;intersectVal == listA[skipA + 1] == listB[skipB + 1]&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;**进阶：**你能否设计一个时间复杂度 O(n) 、仅用 O(1) 内存的解决方案？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 你能否设计一个时间复杂度 O(n) 、仅用 O(1) 内存的解决方案？&lt;/p&gt;
 &lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
 &lt;h4 id=&#34;哈希&#34;&gt;哈希&lt;/h4&gt;
 &lt;p&gt;使用哈希表记录其中的一个链表结点，遍历另一个结点，在哈希表中查找该结点是否出现。&lt;/p&gt;
@@ -13630,76 +14049,6 @@ HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 
 </description>
         </item>
         <item>
-        <title>Leetcode 1738. 找出第 K 大的异或坐标值</title>
-        <link>https://xianlianghe0123.github.io/p/leetcode-1738.-%E6%89%BE%E5%87%BA%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E5%BC%82%E6%88%96%E5%9D%90%E6%A0%87%E5%80%BC/</link>
-        <pubDate>Wed, 19 May 2021 22:46:08 +0800</pubDate>
-        
-        <guid>https://xianlianghe0123.github.io/p/leetcode-1738.-%E6%89%BE%E5%87%BA%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E5%BC%82%E6%88%96%E5%9D%90%E6%A0%87%E5%80%BC/</guid>
-        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/find-kth-largest-xor-coordinate-value/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://leetcode-cn.com/problems/find-kth-largest-xor-coordinate-value/&lt;/a&gt;&lt;br&gt;
-&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
-&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
-&lt;p&gt;给你一个二维矩阵 &lt;code&gt;matrix&lt;/code&gt; 和一个整数 &lt;code&gt;k&lt;/code&gt; ，矩阵大小为 &lt;code&gt;m x n&lt;/code&gt; 由非负整数组成。&lt;/p&gt;
-&lt;p&gt;矩阵中坐标 &lt;code&gt;(a, b)&lt;/code&gt; 的 &lt;strong&gt;值&lt;/strong&gt; 可由对所有满足 &lt;code&gt;0 &amp;lt;= i &amp;lt;= a &amp;lt; m&lt;/code&gt; 且 &lt;code&gt;0 &amp;lt;= j &amp;lt;= b &amp;lt; n&lt;/code&gt; 的元素 &lt;code&gt;matrix[i][j]&lt;/code&gt;（&lt;strong&gt;下标从 0 开始计数&lt;/strong&gt;）执行异或运算得到。&lt;/p&gt;
-&lt;p&gt;请你找出 &lt;code&gt;matrix&lt;/code&gt; 的所有坐标中第 &lt;code&gt;k&lt;/code&gt; 大的值（&lt;code&gt;k&lt;/code&gt; &lt;strong&gt;的值从 1 开始计数&lt;/strong&gt;）。&lt;/p&gt;
-&lt;h5 id=&#34;示例1&#34;&gt;示例1：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; matrix = [[5,2],[1,6]], k = 1&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; 7&lt;br&gt;
-&lt;strong&gt;解释：&lt;/strong&gt; 坐标 (0,1) 的值是 5 XOR 2 = 7 ，为最大的值。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例2&#34;&gt;示例2：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; matrix = [[5,2],[1,6]], k = 2&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; 5&lt;br&gt;
-&lt;strong&gt;解释：&lt;/strong&gt; 坐标 (0,0) 的值是 5 = 5 ，为第 2 大的值。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例3&#34;&gt;示例3：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; matrix = [[5,2],[1,6]], k = 3&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; 4&lt;br&gt;
-&lt;strong&gt;解释：&lt;/strong&gt; 坐标 (1,0) 的值是 5 XOR 1 = 4 ，为第 3 大的值。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例4&#34;&gt;示例4：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; matrix = [[5,2],[1,6]], k = 4&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; 0&lt;br&gt;
-&lt;strong&gt;解释：&lt;/strong&gt; 坐标 (1,1) 的值是 5 XOR 2 XOR 1 XOR 6 = 0 ，为第 4 大的值。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;m == matrix.length&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;n == matrix[i].length&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;1 &amp;lt;= m, n &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0 &amp;lt;= matrix[i][j] &amp;lt;= 10&lt;sup&gt;6&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;1 &amp;lt;= k &amp;lt;= m * n&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
-&lt;h4 id=&#34;前缀&#34;&gt;前缀&lt;/h4&gt;
-&lt;p&gt;枚举所有的 &lt;code&gt;a&lt;/code&gt; 和 &lt;code&gt;b&lt;/code&gt;，求得子矩阵异或值记录下来，经排序即可找到第 &lt;code&gt;k&lt;/code&gt; 大的那一个。&lt;/p&gt;
-&lt;p&gt;进行计算时，可以利用之前计算的子矩阵，即每次使用上一行的计算结果计算下一行，以进一步降低时间复杂度。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;kthLargestValue&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;matrix&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;vals&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;matrix&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;len(&lt;span style=&#34;color:#a6e22e&#34;&gt;matrix&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]))
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;matrix&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]))
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;matrix&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-		&lt;span style=&#34;color:#a6e22e&#34;&gt;xor&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;matrix&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]); &lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;xor&lt;/span&gt; ^= &lt;span style=&#34;color:#a6e22e&#34;&gt;matrix&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;]
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;] ^= &lt;span style=&#34;color:#a6e22e&#34;&gt;xor&lt;/span&gt;
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;vals&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;vals&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;])
-		}
-	}
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Ints&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;vals&lt;/span&gt;)
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vals&lt;/span&gt;[len(&lt;span style=&#34;color:#a6e22e&#34;&gt;vals&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;]
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;时间复杂度：O(NMlog(NM))&lt;/li&gt;
-&lt;li&gt;空间复杂度：O(NM)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>Leetcode 1442. 形成两个异或相等数组的三元组数目</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-1442.-%E5%BD%A2%E6%88%90%E4%B8%A4%E4%B8%AA%E5%BC%82%E6%88%96%E7%9B%B8%E7%AD%89%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/</link>
         <pubDate>Tue, 18 May 2021 22:40:57 +0800</pubDate>
@@ -13880,7 +14229,7 @@ HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 
 &lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
 &lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
 &lt;p&gt;给你一个整数数组 &lt;code&gt;nums&lt;/code&gt; ，返回 &lt;code&gt;nums[i] XOR nums[j]&lt;/code&gt; 的最大运算结果，其中 &lt;code&gt;0 ≤ i ≤ j &amp;lt; n&lt;/code&gt; 。&lt;/p&gt;
-&lt;p&gt;**进阶：**你可以在 &lt;code&gt;O(n)&lt;/code&gt; 的时间解决这个问题吗？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 你可以在 &lt;code&gt;O(n)&lt;/code&gt; 的时间解决这个问题吗？&lt;/p&gt;
 &lt;h5 id=&#34;示例1&#34;&gt;示例1：&lt;/h5&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; nums = [3,10,5,25,2,8]&lt;br&gt;
@@ -13988,138 +14337,6 @@ HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 
 &lt;ul&gt;
 &lt;li&gt;时间复杂度：O(N*logB)&lt;/li&gt;
 &lt;li&gt;空间复杂度：O(N*logB)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Leetcode 12. 整数转罗马数字</title>
-        <link>https://xianlianghe0123.github.io/p/leetcode-12.-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</link>
-        <pubDate>Fri, 14 May 2021 17:30:13 +0800</pubDate>
-        
-        <guid>https://xianlianghe0123.github.io/p/leetcode-12.-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</guid>
-        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/integer-to-roman/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://leetcode-cn.com/problems/integer-to-roman/&lt;/a&gt;&lt;br&gt;
-&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
-&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
-&lt;p&gt;罗马数字包含以下七种字符： &lt;code&gt;I&lt;/code&gt;， &lt;code&gt;V&lt;/code&gt;， &lt;code&gt;X&lt;/code&gt;， &lt;code&gt;L&lt;/code&gt;，&lt;code&gt;C&lt;/code&gt;，&lt;code&gt;D&lt;/code&gt; 和 &lt;code&gt;M&lt;/code&gt;。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;字符          数值  
-I             1  
-V             5  
-X             10  
-L             50  
-C             100  
-D             500  
-M             1000
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;例如， 罗马数字 2 写做 &lt;code&gt;II&lt;/code&gt; ，即为两个并列的 1。12 写做 &lt;code&gt;XII&lt;/code&gt; ，即为 &lt;code&gt;X&lt;/code&gt; + &lt;code&gt;II&lt;/code&gt; 。 27 写做  &lt;code&gt;XXVII&lt;/code&gt;, 即为 &lt;code&gt;XX&lt;/code&gt; + &lt;code&gt;V&lt;/code&gt; + &lt;code&gt;II&lt;/code&gt; 。&lt;/p&gt;
-&lt;p&gt;通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 &lt;code&gt;IIII&lt;/code&gt;，而是 &lt;code&gt;IV&lt;/code&gt;。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 &lt;code&gt;IX&lt;/code&gt;。这个特殊的规则只适用于以下六种情况：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;I&lt;/code&gt; 可以放在 &lt;code&gt;V&lt;/code&gt; (5) 和 &lt;code&gt;X&lt;/code&gt; (10) 的左边，来表示 4 和 9。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;X&lt;/code&gt; 可以放在 &lt;code&gt;L&lt;/code&gt; (50) 和 &lt;code&gt;C&lt;/code&gt; (100) 的左边，来表示 40 和 90。 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;C&lt;/code&gt; 可以放在 &lt;code&gt;D&lt;/code&gt; (500) 和 &lt;code&gt;M&lt;/code&gt; (1000) 的左边，来表示 400 和 900。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;给你一个整数，将其转为罗马数字。&lt;/p&gt;
-&lt;h5 id=&#34;示例1&#34;&gt;示例1：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; num = 3&lt;br&gt;
-&lt;strong&gt;输出:&lt;/strong&gt; &amp;ldquo;III&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例2&#34;&gt;示例2：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; num = 4&lt;br&gt;
-&lt;strong&gt;输出:&lt;/strong&gt; &amp;ldquo;IV&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例3&#34;&gt;示例3：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; num = 9&lt;br&gt;
-&lt;strong&gt;输出:&lt;/strong&gt; &amp;ldquo;IX&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例4&#34;&gt;示例4:&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; num = 58&lt;br&gt;
-&lt;strong&gt;输出:&lt;/strong&gt; &amp;ldquo;LVIII&amp;rdquo;&lt;br&gt;
-&lt;strong&gt;解释:&lt;/strong&gt; L = 50, V = 5, III = 3.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例5&#34;&gt;示例5:&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; num = 1994&lt;br&gt;
-&lt;strong&gt;输出:&lt;/strong&gt; &amp;ldquo;MCMXCIV&amp;rdquo;&lt;br&gt;
-&lt;strong&gt;解释:&lt;/strong&gt; M = 1000, CM = 900, XC = 90, IV = 4.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;1 &amp;lt;= num &amp;lt;= 3999&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
-&lt;h4 id=&#34;模拟&#34;&gt;模拟&lt;/h4&gt;
-&lt;p&gt;使用数组 &lt;code&gt;dp&lt;/code&gt; 保存解码的总数， &lt;code&gt;dp[i]&lt;/code&gt; 表示截止到长度为 &lt;code&gt;i&lt;/code&gt; 的字串可以解码的总数，转移时有两种情况需要考虑：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;第一种情况，对 &lt;code&gt;s[i]&lt;/code&gt; 进行解码，要求 &lt;code&gt;s[i] != 0&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;第二种情况，对 &lt;code&gt;s[i-1]s[i]&lt;/code&gt; 解码, 要求 &lt;code&gt;&amp;quot;00&amp;quot; &amp;lt; s[i-1]s[i] &amp;lt;= &amp;quot;26&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;然后就可以推导出状态转移方程：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;初始时，&lt;code&gt;dp[0] = 0&lt;/code&gt;, 表示空字符串有一种解法 - 空串&lt;/li&gt;
-&lt;li&gt;仅满足情况一， &lt;code&gt;dp[i+1] = dp[i]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;经满足情况二， &lt;code&gt;dp[i+1] = dp[i-1]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;同时满足情况一和二， &lt;code&gt;dp[i+1] = dp[i] + dp[i-1]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;情况一和二均不满足，说明该字符串不能解码&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;求解到 &lt;code&gt;s&lt;/code&gt; 尾，即可求解得所有解码总数 &lt;code&gt;dp[len(s)]&lt;/code&gt;。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numDecodings&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-		&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 标记是否可以解码
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;// 情况一
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &amp;gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-		}
-		&lt;span style=&#34;color:#75715e&#34;&gt;// 情况二
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;int(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; int(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;)
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt; {
-				&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
-				&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-			}
-		}
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; {
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
-		}
-	}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[len(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;)]
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;优化&#34;&gt;优化&lt;/h5&gt;
-&lt;p&gt;每次迭代只涉及到三个变量，故可以用三个变量代替数组，进一步降低空间复杂度&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numDecodings&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;{&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-		&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 标记是否可以解码
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-		&lt;span style=&#34;color:#75715e&#34;&gt;// 情况一
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &amp;gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-		}
-		&lt;span style=&#34;color:#75715e&#34;&gt;// 情况二
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;int(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; int(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;)
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt; {
-				&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
-				&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-			}
-		}
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; {
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
-		}
-		&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]
-	}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;时间复杂度：O(N)&lt;/li&gt;
-&lt;li&gt;空间复杂度：优化前：O(N)，优化后O(1)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -14894,7 +15111,7 @@ M             1000
 &lt;li&gt;&lt;code&gt;-2&lt;sup&gt;31&lt;/sup&gt; &amp;lt;= nums[i] &amp;lt;= 2&lt;sup&gt;31&lt;/sup&gt; - 1&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;nums&lt;/code&gt; 中，除某个元素仅出现 &lt;strong&gt;一次&lt;/strong&gt; 外，其余每个元素都恰出现 &lt;strong&gt;三次&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;**进阶：**你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？&lt;/p&gt;
 &lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
 &lt;h4 id=&#34;哈希&#34;&gt;哈希&lt;/h4&gt;
 &lt;p&gt;统计每个数出现的次数，然后找出其中只出现一次的数&lt;/p&gt;
@@ -15625,101 +15842,6 @@ M             1000
 </description>
         </item>
         <item>
-        <title>Leetcode 363. 矩形区域不超过 K 的最大数值和</title>
-        <link>https://xianlianghe0123.github.io/p/leetcode-363.-%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87-k-%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/</link>
-        <pubDate>Thu, 22 Apr 2021 10:41:53 +0800</pubDate>
-        
-        <guid>https://xianlianghe0123.github.io/p/leetcode-363.-%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87-k-%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/</guid>
-        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/&lt;/a&gt;&lt;br&gt;
-&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;red&#34;&gt;困难&lt;/font&gt;&lt;/p&gt;
-&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
-&lt;p&gt;给你一个 &lt;code&gt;m x n&lt;/code&gt; 的矩阵 &lt;code&gt;matrix&lt;/code&gt; 和一个整数 &lt;code&gt;k&lt;/code&gt; ，找出并返回矩阵内部矩形区域的不超过 &lt;code&gt;k&lt;/code&gt; 的最大数值和。&lt;br&gt;
-题目数据保证总会存在一个数值和不超过 &lt;code&gt;k&lt;/code&gt; 的矩形区域。&lt;/p&gt;
-&lt;h5 id=&#34;示例1&#34;&gt;示例1：&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://assets.leetcode.com/uploads/2021/03/18/sum-grid.jpg&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; matrix = [[1,0,1],[0,-2,3]], k = 2&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; 2&lt;br&gt;
-&lt;strong&gt;解释：&lt;/strong&gt; 蓝色边框圈出来的矩形区域 [[0, 1], [-2, 3]] 的数值和是 2，且 2 是不超过 k 的最大数字（k = 2）。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例2&#34;&gt;示例2：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; matrix = [[2,2,-1]], k = 3&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;m == matrix.length&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;n == matrix[i].length&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-100 &amp;lt;= matrix[i][j] &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-10&lt;sup&gt;5&lt;/sup&gt; &amp;lt;= k &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
-&lt;h4 id=&#34;暴力求解&#34;&gt;暴力求解&lt;/h4&gt;
-&lt;p&gt;以每个元素为起点，求解&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;compareVersion&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;version1&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;version2&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Split&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;version1&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;)
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Split&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;version2&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;)
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;q&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int64&lt;/span&gt;
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt;) {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;strconv&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ParseInt&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;)
-		}
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt;) {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;q&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;strconv&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ParseInt&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;)
-		}
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;q&lt;/span&gt; {
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;q&lt;/span&gt; {
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-		}
-	}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;时间复杂度：O(N+N+max(N, M))&lt;/li&gt;
-&lt;li&gt;空间复杂度：O(N+M)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;双指针&#34;&gt;双指针&lt;/h4&gt;
-&lt;p&gt;指针 &lt;code&gt;i&lt;/code&gt; , &lt;code&gt;j&lt;/code&gt; 分别指向 &lt;code&gt;version1&lt;/code&gt; 和 &lt;code&gt;version2&lt;/code&gt; , 每次分别从两个版本号中获取一个有效数字进行比较：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;i&lt;/code&gt; 指向的数字大，返回 &lt;code&gt;1&lt;/code&gt;；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;j&lt;/code&gt; 指向的数字大，返回 &lt;code&gt;-1&lt;/code&gt;；&lt;/li&gt;
-&lt;li&gt;两个数字相同，继续向后遍历。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;遍历结束，仍未比较得出大小，说明两个版本号相同，返回 &lt;code&gt;0&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;compareVersion&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;version1&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;version2&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
-	&lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;version1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;version2&lt;/span&gt;); {
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; ; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;version1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;version1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; int(&lt;span style=&#34;color:#a6e22e&#34;&gt;version1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;)
-		}
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; ; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;version2&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;version2&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; int(&lt;span style=&#34;color:#a6e22e&#34;&gt;version2&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;)
-		}
-		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;)
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt; {
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt; {
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
-			&lt;span style=&#34;color:#a6e22e&#34;&gt;num1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;num2&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-		}
-	}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;时间复杂度：O(N+M)&lt;/li&gt;
-&lt;li&gt;空间复杂度：O(1)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>Leetcode 91. 解码方式</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/</link>
         <pubDate>Wed, 21 Apr 2021 10:35:45 +0800</pubDate>
@@ -16208,86 +16330,6 @@ M             1000
 &lt;li&gt;空间复杂度：O(1)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        </item>
-        <item>
-        <title>Leetcode 220. 存在重复元素 III</title>
-        <link>https://xianlianghe0123.github.io/p/leetcode-220.-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-iii/</link>
-        <pubDate>Sat, 17 Apr 2021 20:58:46 +0800</pubDate>
-        
-        <guid>https://xianlianghe0123.github.io/p/leetcode-220.-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-iii/</guid>
-        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/contains-duplicate-iii/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://leetcode-cn.com/problems/contains-duplicate-iii/&lt;/a&gt;&lt;br&gt;
-&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
-&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
-&lt;p&gt;给你一个整数数组 &lt;code&gt;nums&lt;/code&gt; 和两个整数 &lt;code&gt;k&lt;/code&gt; 和 &lt;code&gt;t&lt;/code&gt; 。请你判断是否存在 两个不同下标 &lt;code&gt;i&lt;/code&gt; 和 &lt;code&gt;j&lt;/code&gt;，使得 &lt;code&gt;abs(nums[i] - nums[j]) &amp;lt;= t&lt;/code&gt; ，同时又满足 &lt;code&gt;abs(i - j) &amp;lt;= k&lt;/code&gt; 。&lt;br&gt;
-如果存在则返回 &lt;code&gt;true&lt;/code&gt;，不存在返回 &lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
-&lt;h5 id=&#34;示例&#34;&gt;示例：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; nums = [1,2,3,1], k = 3, t = 0&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; true&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例-1&#34;&gt;示例：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; nums = [1,0,1,1], k = 1, t = 2&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; true&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;示例-2&#34;&gt;示例：&lt;/h5&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; nums = [1,5,9,1,5,9], k = 2, t = 3&lt;br&gt;
-&lt;strong&gt;输出：&lt;/strong&gt; false&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums.length &amp;lt;= 2 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-2&lt;sup&gt;31&lt;/sup&gt; &amp;lt;= nums[i] &amp;lt;= 2&lt;sup&gt;31&lt;/sup&gt; - 1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0 &amp;lt;= k &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0 &amp;lt;= t &amp;lt;= 2&lt;sup&gt;31&lt;/sup&gt; - 1&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
-&lt;h4 id=&#34;暴力求解&#34;&gt;暴力求解&lt;/h4&gt;
-&lt;p&gt;枚举所有差不大于 &lt;code&gt;k&lt;/code&gt; 的下标 &lt;code&gt;i&lt;/code&gt; 和 &lt;code&gt;j&lt;/code&gt;，逐一判断是否符合条件&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;abs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;
-	}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;
-}
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;containsNearbyAlmostDuplicate&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; {
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;) {
-				&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
-			}
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;abs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; {
-				&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-			}
-		}
-	}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;时间复杂度：O(N*k)&lt;/li&gt;
-&lt;li&gt;空间复杂度：O(1)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;滑动窗口&#34;&gt;滑动窗口&lt;/h4&gt;
-&lt;p&gt;在解法暴力求解的基础上，对于相邻的两个下标，符合要求的下标范围中有 &lt;code&gt;k-1&lt;/code&gt; 个是重复出现的，可以利用这些已知信息，构造一个滑动窗口，来进一步降低时间复杂度。&lt;br&gt;
-对于下标 &lt;code&gt;i&lt;/code&gt;，其前面的符合条件的下标为 &lt;code&gt;i-t&lt;/code&gt;、&amp;hellip;、&lt;code&gt;i-1&lt;/code&gt;(&lt;code&gt;i-t &amp;gt;= 0&lt;/code&gt;)，每次只需要判断其中的最大值是否满足条件，当不满足条件时，将 &lt;code&gt;nums[i]&lt;/code&gt; 加入，排除掉下标 &lt;code&gt;nums[i-t-1]&lt;/code&gt;的值。&lt;br&gt;
-要满足上述条件，就要求添加、查找和删除一个元素的时间复杂度均 &lt;code&gt;&amp;lt; O(k)&lt;/code&gt;，满足该条件的数据结构是平衡树。&lt;/p&gt;
-&lt;h5 id=&#34;时间复杂度onlogsubksub-空间复杂度ok&#34;&gt;时间复杂度：O(N*log&lt;sub&gt;k&lt;/sub&gt;) 空间复杂度：O(k)&lt;/h5&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;containsNearbyAlmostDuplicate&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;I&lt;/span&gt;
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; {
-		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
-			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;abs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; {
-				&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-			}
-		}
-	}
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         
     </channel>

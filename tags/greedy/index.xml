@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>greedy on 贺贤良</title>
+    <link>https://xianlianghe0123.github.io/tags/greedy/</link>
+    <description>Recent content in greedy on 贺贤良</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Mon, 27 Sep 2021 17:54:22 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer 14- II. 剪绳子 II</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-14-ii.-%E5%89%AA%E7%BB%B3%E5%AD%90-ii/</link>
+      <pubDate>Mon, 27 Sep 2021 17:54:22 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-14-ii.-%E5%89%AA%E7%BB%B3%E5%AD%90-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/
+难度： 中等
+题目描述 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 k[0],k[1]...k[m - 1] 。请问 k[0]*k[1]*...*k[m - 1] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
+答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+示例 1：  输入: 2
+输出: 1
+解释: 2 = 1 + 1, 1 × 1 = 1
+ 示例 2：  输入: 10
+输出: 36
+解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36
+ 提示：  2 &amp;lt;= n &amp;lt;= 1000  解题思路 数学 + 贪心 + 快速幂 根据几何均值不等式: $$ a_1a_2&amp;hellip;a_m \leq (\frac{a_1+a_2+&amp;hellip;+a_m}{m})，当且仅当 a_1=a_2=&amp;hellip;=a_m 时，等式成立 $$ 可以得知，当将绳子等分时，可以获得最大值。</description>
+    </item>
+    
+  </channel>
+</rss>

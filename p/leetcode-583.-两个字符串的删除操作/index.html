@@ -7,7 +7,7 @@
 示例：  输入: &amp;ldquo;sea&amp;rdquo;, &amp;ldquo;eat&amp;rdquo;
 输出: 2
 解释: 第一步将&amp;quot;sea&amp;quot;变为&amp;quot;ea&amp;quot;，第二步将&amp;quot;eat&amp;quot;变为&amp;quot;ea&amp;quot;
- 提示：  给定单词的长度不超过500。 给定单词中的字符只含有小写字母。  **进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
+ 提示：  给定单词的长度不超过500。 给定单词中的字符只含有小写字母。  进阶： 你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
 解题思路 动态规划 最长公共子序列(LCS)的变种，求得最长公共子序列的长度，返回剩余字符的数量。
 使用 dp[i][j] 表示分别以 i 和 j 为 word1 和 word2 前缀长度的最长公共子序列，其状态转移方程如下：
  初始时，dp[0][j] = dp[i][0] = 0 当 word1[i] = word2[j] 时，dp[i][j] = dp[i-1][j-1] &#43; 1；否则，dp[i][j] = max(dp[i-1][j], dp[i][j-1])  func minDistance(word1 string, word2 string) int { dp := make([][]int, len(word1)&#43;1) dp[0] = make([]int, len(word2)&#43;1) for i := range word1 { dp[i&#43;1] = make([]int, len(word2)&#43;1) for j := range word2 { if word1[i] == word2[j] { dp[i&#43;1][j&#43;1] = dp[i][j] &#43; 1 continue } dp[i&#43;1][j&#43;1] = dp[i&#43;1][j] if dp[i&#43;1][j&#43;1] &amp;lt; dp[i][j&#43;1] { dp[i&#43;1][j&#43;1] = dp[i][j&#43;1] } } } return len(word1) &#43; len(word2) - (dp[len(word1)][len(word2)] &amp;lt;&amp;lt; 1) } 复杂度  时间复杂度：$ O(NM), N = len(word1), M = len(word2) $ 空间复杂度：$ O(NM) $  动态规划 使用 dp[i][j] 表示分别以 i 和 j 为 word1 和 word2 前缀结尾的最少删除操作次数，其状态转移方程如下：'><title>Leetcode 583. 两个字符串的删除操作</title>
@@ -21,7 +21,7 @@
 示例：  输入: &amp;ldquo;sea&amp;rdquo;, &amp;ldquo;eat&amp;rdquo;
 输出: 2
 解释: 第一步将&amp;quot;sea&amp;quot;变为&amp;quot;ea&amp;quot;，第二步将&amp;quot;eat&amp;quot;变为&amp;quot;ea&amp;quot;
- 提示：  给定单词的长度不超过500。 给定单词中的字符只含有小写字母。  **进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
+ 提示：  给定单词的长度不超过500。 给定单词中的字符只含有小写字母。  进阶： 你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
 解题思路 动态规划 最长公共子序列(LCS)的变种，求得最长公共子序列的长度，返回剩余字符的数量。
 使用 dp[i][j] 表示分别以 i 和 j 为 word1 和 word2 前缀长度的最长公共子序列，其状态转移方程如下：
  初始时，dp[0][j] = dp[i][0] = 0 当 word1[i] = word2[j] 时，dp[i][j] = dp[i-1][j-1] &#43; 1；否则，dp[i][j] = max(dp[i-1][j], dp[i][j-1])  func minDistance(word1 string, word2 string) int { dp := make([][]int, len(word1)&#43;1) dp[0] = make([]int, len(word2)&#43;1) for i := range word1 { dp[i&#43;1] = make([]int, len(word2)&#43;1) for j := range word2 { if word1[i] == word2[j] { dp[i&#43;1][j&#43;1] = dp[i][j] &#43; 1 continue } dp[i&#43;1][j&#43;1] = dp[i&#43;1][j] if dp[i&#43;1][j&#43;1] &amp;lt; dp[i][j&#43;1] { dp[i&#43;1][j&#43;1] = dp[i][j&#43;1] } } } return len(word1) &#43; len(word2) - (dp[len(word1)][len(word2)] &amp;lt;&amp;lt; 1) } 复杂度  时间复杂度：$ O(NM), N = len(word1), M = len(word2) $ 空间复杂度：$ O(NM) $  动态规划 使用 dp[i][j] 表示分别以 i 和 j 为 word1 和 word2 前缀结尾的最少删除操作次数，其状态转移方程如下：'>
@@ -35,7 +35,7 @@
 示例：  输入: &amp;ldquo;sea&amp;rdquo;, &amp;ldquo;eat&amp;rdquo;
 输出: 2
 解释: 第一步将&amp;quot;sea&amp;quot;变为&amp;quot;ea&amp;quot;，第二步将&amp;quot;eat&amp;quot;变为&amp;quot;ea&amp;quot;
- 提示：  给定单词的长度不超过500。 给定单词中的字符只含有小写字母。  **进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
+ 提示：  给定单词的长度不超过500。 给定单词中的字符只含有小写字母。  进阶： 你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？
 解题思路 动态规划 最长公共子序列(LCS)的变种，求得最长公共子序列的长度，返回剩余字符的数量。
 使用 dp[i][j] 表示分别以 i 和 j 为 word1 和 word2 前缀长度的最长公共子序列，其状态转移方程如下：
  初始时，dp[0][j] = dp[i][0] = 0 当 word1[i] = word2[j] 时，dp[i][j] = dp[i-1][j-1] &#43; 1；否则，dp[i][j] = max(dp[i-1][j], dp[i][j-1])  func minDistance(word1 string, word2 string) int { dp := make([][]int, len(word1)&#43;1) dp[0] = make([]int, len(word2)&#43;1) for i := range word1 { dp[i&#43;1] = make([]int, len(word2)&#43;1) for j := range word2 { if word1[i] == word2[j] { dp[i&#43;1][j&#43;1] = dp[i][j] &#43; 1 continue } dp[i&#43;1][j&#43;1] = dp[i&#43;1][j] if dp[i&#43;1][j&#43;1] &amp;lt; dp[i][j&#43;1] { dp[i&#43;1][j&#43;1] = dp[i][j&#43;1] } } } return len(word1) &#43; len(word2) - (dp[len(word1)][len(word2)] &amp;lt;&amp;lt; 1) } 复杂度  时间复杂度：$ O(NM), N = len(word1), M = len(word2) $ 空间复杂度：$ O(NM) $  动态规划 使用 dp[i][j] 表示分别以 i 和 j 为 word1 和 word2 前缀结尾的最少删除操作次数，其状态转移方程如下：">
@@ -226,6 +226,20 @@
         
 
         
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 min read
+                </time>
+            </div>
+        
     </footer>
     
 </div>
@@ -248,7 +262,7 @@
 <li>给定单词的长度不超过500。</li>
 <li>给定单词中的字符只含有小写字母。</li>
 </ul>
-<p>**进阶：**你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？</p>
+<p><strong>进阶：</strong> 你可以设计一个时间复杂度为 $O(n)$ 的解决方案吗？</p>
 <h3 id="解题思路">解题思路</h3>
 <h4 id="动态规划">动态规划</h4>
 <p>最长公共子序列(LCS)的变种，求得最长公共子序列的长度，返回剩余字符的数量。</p>
@@ -352,73 +366,6 @@
 
     <aside class="related-contents--wrapper">
     
-    
-        <h2 class="section-title">Related contents</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
-                
-                    
-<article class="">
-    <a href="/p/leetcode-284.-%E9%A1%B6%E7%AB%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 284. 顶端迭代器</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 482. 密钥格式化</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/leetcode-166.-%E5%88%86%E6%95%B0%E5%88%B0%E5%B0%8F%E6%95%B0/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Leetcode 166. 分数到小数</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/%E5%89%91%E6%8C%87-offer-ii-001.-%E6%95%B4%E6%95%B0%E9%99%A4%E6%B3%95/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">剑指 Offer II 001. 整数除法</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/%E5%89%91%E6%8C%87-offer-68-ii.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">剑指 Offer 68 - II. 二叉树的最近公共祖先</h2>
-        </div>
-    </a>
-</article>
-                
-            </div>
-        </div>
     
 </aside>
 
