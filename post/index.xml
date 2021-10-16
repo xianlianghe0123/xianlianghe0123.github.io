@@ -3924,6 +3924,23 @@ func hammingDistance(x int, y int) int { distance := 0 for xor := x ^ y; xor != 
     </item>
     
     <item>
+      <title>Leetcode 1738. 找出第 K 大的异或坐标值</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1738.-%E6%89%BE%E5%87%BA%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E5%BC%82%E6%88%96%E5%9D%90%E6%A0%87%E5%80%BC/</link>
+      <pubDate>Wed, 19 May 2021 22:46:08 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1738.-%E6%89%BE%E5%87%BA%E7%AC%AC-k-%E5%A4%A7%E7%9A%84%E5%BC%82%E6%88%96%E5%9D%90%E6%A0%87%E5%80%BC/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-kth-largest-xor-coordinate-value/
+难度： 中等
+题目描述 给你一个二维矩阵 matrix 和一个整数 k ，矩阵大小为 m x n 由非负整数组成。
+矩阵中坐标 (a, b) 的 值 可由对所有满足 0 &amp;lt;= i &amp;lt;= a &amp;lt; m 且 0 &amp;lt;= j &amp;lt;= b &amp;lt; n 的元素 matrix[i][j]（下标从 0 开始计数）执行异或运算得到。
+请你找出 matrix 的所有坐标中第 k 大的值（k 的值从 1 开始计数）。
+示例1：  输入： matrix = [[5,2],[1,6]], k = 1
+输出： 7
+解释： 坐标 (0,1) 的值是 5 XOR 2 = 7 ，为最大的值。
+ 示例2：  输入： matrix = [[5,2],[1,6]], k = 2</description>
+    </item>
+    
+    <item>
       <title>Leetcode 1442. 形成两个异或相等数组的三元组数目</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1442.-%E5%BD%A2%E6%88%90%E4%B8%A4%E4%B8%AA%E5%BC%82%E6%88%96%E7%9B%B8%E7%AD%89%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/</link>
       <pubDate>Tue, 18 May 2021 22:40:57 +0800</pubDate>
@@ -3979,6 +3996,19 @@ a 和 b 定义如下：
  示例4：  输入： nums = [8,10,2]
 输出： 10
  示例5：  输入： nums = [14,70,53,83,49,91,36,80,92,51,66,70]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 12. 整数转罗马数字</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-12.-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Fri, 14 May 2021 17:30:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-12.-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/integer-to-roman/
+难度： 中等
+题目描述 罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
+字符 数值 I 1 V 5 X 10 L 50 C 100 D 500 M 1000 例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做 XXVII, 即为 XX + V + II 。
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</description>
     </item>
     
     <item>
@@ -4319,6 +4349,24 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
     </item>
     
     <item>
+      <title>Leetcode 363. 矩形区域不超过 K 的最大数值和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-363.-%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87-k-%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/</link>
+      <pubDate>Thu, 22 Apr 2021 10:41:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-363.-%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87-k-%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/
+难度： 困难
+题目描述 给你一个 m x n 的矩阵 matrix 和一个整数 k ，找出并返回矩阵内部矩形区域的不超过 k 的最大数值和。
+题目数据保证总会存在一个数值和不超过 k 的矩形区域。
+示例1：  输入： matrix = [[1,0,1],[0,-2,3]], k = 2
+输出： 2
+解释： 蓝色边框圈出来的矩形区域 [[0, 1], [-2, 3]] 的数值和是 2，且 2 是不超过 k 的最大数字（k = 2）。
+ 示例2：  输入： matrix = [[2,2,-1]], k = 3
+输出： 3
+ 提示：  m == matrix.length n == matrix[i].length -100 &amp;lt;= matrix[i][j] &amp;lt;= 100 -105 &amp;lt;= k &amp;lt;= 105  解题思路 暴力求解 以每个元素为起点，求解</description>
+    </item>
+    
+    <item>
       <title>Leetcode 91. 解码方式</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Wed, 21 Apr 2021 10:35:45 +0800</pubDate>
@@ -4405,6 +4453,23 @@ func increasingBST(root *TreeNode) *TreeNode { newRoot := new(TreeNode) newNode 
 输出： 2, nums = [1,2]
 解释： 函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
  示例2：  输入： nums = [0,0,1,1,1,2,2,3,3,4]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 220. 存在重复元素 III</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-220.-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-iii/</link>
+      <pubDate>Sat, 17 Apr 2021 20:58:46 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-220.-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-iii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/contains-duplicate-iii/
+难度： 中等
+题目描述 给你一个整数数组 nums 和两个整数 k 和 t 。请你判断是否存在 两个不同下标 i 和 j，使得 abs(nums[i] - nums[j]) &amp;lt;= t ，同时又满足 abs(i - j) &amp;lt;= k 。
+如果存在则返回 true，不存在返回 false。
+示例：  输入： nums = [1,2,3,1], k = 3, t = 0
+输出： true
+ 示例：  输入： nums = [1,0,1,1], k = 1, t = 2
+输出： true
+ 示例：  输入： nums = [1,5,9,1,5,9], k = 2, t = 3</description>
     </item>
     
   </channel>
