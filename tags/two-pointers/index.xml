@@ -6,7 +6,31 @@
     <description>Recent content in two pointers on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 30 Sep 2021 20:04:58 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/two-pointers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Oct 2021 22:51:34 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/two-pointers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 3. 无重复字符的最长子串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</link>
+      <pubDate>Wed, 06 Oct 2021 22:51:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+难度： 中等
+题目描述 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+示例 1：  输入: &amp;ldquo;abcabcbb&amp;rdquo;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;ldquo;abc&amp;rdquo;，所以其长度为 3。
+ 示例 2：  输入: &amp;ldquo;bbbbb&amp;rdquo;
+输出: 1
+解释: 因为无重复字符的最长子串是 &amp;ldquo;b&amp;rdquo;，所以其长度为 1。
+ 示例 3：  输入: &amp;ldquo;pwwkew&amp;rdquo;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;ldquo;wke&amp;rdquo;，所以其长度为 3。
+请注意，你的答案必须是 子串 的长度，&amp;ldquo;pwke&amp;rdquo; 是一个子序列，不是子串。
+ 示例 4：  输入: s = &amp;quot;&amp;quot;
+输出: 0
+ 提示：  0 &amp;lt;= s.length &amp;lt;= 5 * 104 s 由英文字母、数字、符号和空格组成  解题思路 哈希 + 双指针 使用哈希表记录每个字符出现的下标，并记录有效字串开始的下标 start：当出现重复字符时，将 start 修正为重复字符出现的下一个位置。</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 57 - II. 和为s的连续正数序列</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-57-ii.-%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/</link>

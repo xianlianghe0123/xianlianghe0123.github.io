@@ -6,7 +6,24 @@
     <description>Recent content in bfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 30 Sep 2021 11:24:18 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Oct 2021 13:08:58 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 103. 二叉树的锯齿形层序遍历</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-103.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E5%BD%A2%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Tue, 12 Oct 2021 13:08:58 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-103.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E5%BD%A2%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <description>链接： https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+难度： 中等
+题目描述 给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
+例如： 给定二叉树 [3,9,20,null,null,15,7],
+ 3 / \ 9 20 / \ 15 7 返回锯齿形层序遍历如下：
+[ [3], [20,9], [15,7] ] 解题思路 层序遍历 使用一个双端队列记录遍历到的结点，初始时根结点入队。
+奇偶分离，偶数层从头至尾遍历完当前整层的所有元素，子结点先左后右从队尾入队；奇数层从尾至头遍历整层所有元素，子结点先右后左从队头入队。
+每次遍历到的结点值加入到结果队列中，直至队列为空为止。
+func zigzagLevelOrder(root *TreeNode) [][]int { if root == nil { return make([][]int, 0) } ans := make([][]int, 0, 1) deque := list.New() deque.PushBack(root) for deque.Len() &amp;gt; 0 { t := make([]int, 0, deque.Len()) for i := deque.Len(); i &amp;gt; 0; i-- { node := deque.</description>
+    </item>
+    
     <item>
       <title>Leetcode 199. 二叉树的右视图</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-199.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B3%E8%A7%86%E5%9B%BE/</link>

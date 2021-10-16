@@ -286,7 +286,7 @@
 </ul>
 <p>然后就可以推导出状态转移方程：</p>
 <ul>
-<li>初始时，<code>dp[0] = 0</code>, 表示空字符串有一种解法 - 空串</li>
+<li>初始时，<code>dp[0] = 1</code>, 表示空字符串有一种解法 - 空串</li>
 <li>仅满足情况一， <code>dp[i+1] = dp[i]</code></li>
 <li>经满足情况二， <code>dp[i+1] = dp[i-1]</code></li>
 <li>同时满足情况一和二， <code>dp[i+1] = dp[i] + dp[i-1]</code></li>

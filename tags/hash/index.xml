@@ -6,7 +6,49 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 05 Oct 2021 18:12:15 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 10:51:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 187. 重复的DNA序列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-187.-%E9%87%8D%E5%A4%8D%E7%9A%84dna%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Fri, 08 Oct 2021 10:51:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-187.-%E9%87%8D%E5%A4%8D%E7%9A%84dna%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/repeated-dna-sequences/
+难度： 中等
+题目描述 所有 DNA 都由一系列缩写为 &#39;A&#39;，&#39;C&#39;，&#39;G&#39; 和 &#39;T&#39; 的核苷酸组成，例如：&amp;quot;ACGAATTCCG&amp;quot;。在研究 DNA 时，识别 DNA 中的重复序列有时会对研究非常有帮助。
+编写一个函数来找出所有目标子串，目标子串的长度为 10，且在 DNA 字符串 s 中出现次数超过一次。
+示例 1：  输入： s = &amp;ldquo;AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT&amp;rdquo;
+输出： [&amp;ldquo;AAAAACCCCC&amp;rdquo;,&amp;ldquo;CCCCCAAAAA&amp;rdquo;]
+ 示例 2：  输入： s = &amp;ldquo;AAAAAAAAAAAAA&amp;rdquo;
+输出： [&amp;ldquo;AAAAAAAAAA&amp;rdquo;]
+ 提示：  0 &amp;lt;= s.length &amp;lt;= 105 s[i] 为 &amp;lsquo;A&amp;rsquo;、&amp;lsquo;C&amp;rsquo;、&amp;lsquo;G&amp;rsquo; 或 &amp;lsquo;T&amp;rsquo;  解题思路 哈希 使用哈希表记录每个长度为 10 的字串的出现次数，出现次数大于 1 时，添加到结果队列中。
+func findRepeatedDnaSequences(s string) []string { ans := make([]string, 0) cnt := make(map[string]int) for i := 10; i &amp;lt;= len(s); i++ { cnt[s[i-10:i]]++ if cnt[s[i-10:i]] == 2 { ans = append(ans, s[i-10:i]) } } return ans } 复杂度  时间复杂度：$ O(N) , N = len(s) $ 空间复杂度：$ O(N) $  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 3. 无重复字符的最长子串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</link>
+      <pubDate>Wed, 06 Oct 2021 22:51:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+难度： 中等
+题目描述 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+示例 1：  输入: &amp;ldquo;abcabcbb&amp;rdquo;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;ldquo;abc&amp;rdquo;，所以其长度为 3。
+ 示例 2：  输入: &amp;ldquo;bbbbb&amp;rdquo;
+输出: 1
+解释: 因为无重复字符的最长子串是 &amp;ldquo;b&amp;rdquo;，所以其长度为 1。
+ 示例 3：  输入: &amp;ldquo;pwwkew&amp;rdquo;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;ldquo;wke&amp;rdquo;，所以其长度为 3。
+请注意，你的答案必须是 子串 的长度，&amp;ldquo;pwke&amp;rdquo; 是一个子序列，不是子串。
+ 示例 4：  输入: s = &amp;quot;&amp;quot;
+输出: 0
+ 提示：  0 &amp;lt;= s.length &amp;lt;= 5 * 104 s 由英文字母、数字、符号和空格组成  解题思路 哈希 + 双指针 使用哈希表记录每个字符出现的下标，并记录有效字串开始的下标 start：当出现重复字符时，将 start 修正为重复字符出现的下一个位置。</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 59 - I. 滑动窗口的最大值</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-59-i.-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</link>

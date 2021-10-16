@@ -6,7 +6,481 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Wed, 06 Oct 2021 14:16:55 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Oct 2021 12:14:42 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 282. 给表达式添加运算符</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-282.-%E7%BB%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B7%BB%E5%8A%A0%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+      <pubDate>Sat, 16 Oct 2021 12:14:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-282.-%E7%BB%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B7%BB%E5%8A%A0%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/expression-add-operators/
+难度： 中等
+题目描述 给定一个仅包含数字 0-9 的字符串 num 和一个目标值整数 target ，在 num 的数字之间添加 二元 运算符（不是一元）+、- 或 * ，返回所有能够得到目标值的表达式。
+示例 1：  输入: num = &amp;ldquo;123&amp;rdquo;, target = 6
+输出: [&amp;ldquo;1+2+3&amp;rdquo;, &amp;ldquo;123&amp;rdquo;]
+ 示例 2：  输入: num = &amp;ldquo;232&amp;rdquo;, target = 8
+输出: [&amp;ldquo;23+2&amp;rdquo;, &amp;ldquo;2+32&amp;rdquo;]
+ 示例 3：  输入: num = &amp;ldquo;105&amp;rdquo;, target = 5
+输出: [&amp;ldquo;1*0+5&amp;rdquo;,&amp;ldquo;10-5&amp;rdquo;]
+ 示例 4：  输入: num = &amp;ldquo;00&amp;rdquo;, target = 0</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 38. 外观数列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-38.-%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/</link>
+      <pubDate>Fri, 15 Oct 2021 14:55:19 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-38.-%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-and-say/
+难度： 中等
+题目描述 给定一个正整数 n ，输出外观数列的第 n 项。
+「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。
+你可以将其视作是由递归公式定义的数字字符串序列：
+ countAndSay(1) = &amp;quot;1&amp;quot; countAndSay(n) 是对 countAndSay(n-1) 的描述，然后转换成另一个数字字符串。 前五项如下：  1. 1 2. 11 3. 21 4. 1211 5. 111221 第一项是数字 1 描述前一项，这个数是 1 即 “ 一 个 1 ”，记作 &amp;quot;11&amp;quot; 描述前一项，这个数是 11 即 “ 二 个 1 ” ，记作 &amp;quot;21&amp;quot; 描述前一项，这个数是 21 即 “ 一 个 2 + 一 个 1 ” ，记作 &amp;quot;1211&amp;quot; 描述前一项，这个数是 1211 即 “ 一 个 1 + 一 个 2 + 二 个 1 ” ，记作 &amp;quot;111221&amp;quot; 要 描述 一个数字字符串，首先要将字符串分割为 最小 数量的组，每个组都由连续的最多 相同字符 组成。然后对于每个组，先描述字符的数量，然后描述字符，形成一个描述组。要将描述转换为数字字符串，先将每组中的字符数量用数字替换，再将所有描述组连接起来。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 94. 二叉树的中序遍历</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-94.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Thu, 14 Oct 2021 14:53:52 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-94.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <description>链接： https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+难度： 简单
+题目描述 给定一个二叉树的根节点 root ，返回它的 中序 遍历。
+示例 1：  输入： root = [1,null,2,3]
+输出： [1,3,2]
+ 示例 2：  输入： root = []
+输出： []
+ 示例 3：  输入： root = [1]
+输出： [1]
+ 示例 4：  输入： root = [1,2]
+输出： [2,1]
+ 示例 5：  输入： root = [1,null,2]
+输出： [1,2]
+ 提示：  树中节点数目在范围 [0, 100] 内 100 &amp;lt;= Node.val &amp;lt;= 100  **进阶: ** 递归算法很简单，你可以通过迭代算法完成吗？</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 53. 最大子序和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-53.-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</link>
+      <pubDate>Thu, 14 Oct 2021 13:28:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-53.-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-subarray/
+难度： 简单
+题目描述 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+示例 1：  输入： nums = [-2,1,-3,4,-1,2,1,-5,4]
+输出： 6
+解释： 连续子数组 [4,-1,2,1] 的和最大，为 6 。
+ 示例 2：  输入： nums = [1]
+输出： 1
+ 示例 3：  输入： nums = [0]
+输出： 0
+ 示例 4：  输入： nums = [-1]
+输出： -1
+ 示例 5：  输入： nums = [-100000]
+输出： -100000
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 -104 &amp;lt;= nums[i] &amp;lt;= 104  进阶： 如果你已经实现复杂度为 $O(n)$ 的解法，尝试使用更为精妙的 分治法 求解。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 234. 回文链表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-234.-%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 14 Oct 2021 12:56:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-234.-%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/palindrome-linked-list/
+难度： 简单
+题目描述 给你一个单链表的头节点 head ，请你判断该链表是否为回文链表。如果是，返回 true ；否则，返回 false 。
+示例 1：  输入： head = [1,2,2,1]
+输出： true
+ 示例 2：  输入： head = [1,2]
+输出： false
+ 提示：  链表中节点数目在范围 [1, 105] 内 0 &amp;lt;= Node.val &amp;lt;= 9  进阶： 你能否用 $O(n)$ 时间复杂度和 $O(1)$ 空间复杂度解决此题？
+解题思路 顺序表 将链表中的元素记录到数组中，判定其是否回文。
+func isPalindrome(head *ListNode) bool { str := make([]int, 0, 1e5) for ; head != nil; head = head.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer II 069. 山峰数组的顶部</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-069.-%E5%B1%B1%E5%B3%B0%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%B6%E9%83%A8/</link>
+      <pubDate>Thu, 14 Oct 2021 10:43:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-069.-%E5%B1%B1%E5%B3%B0%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%B6%E9%83%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/B1IidL/
+难度： 简单
+题目描述 符合下列属性的数组 arr 称为 山峰数组（山脉数组） ：
+ arr.length &amp;gt;= 3 存在 i（0 &amp;lt; i &amp;lt; arr.length - 1）使得：  arr[0] &amp;lt; arr[1] &amp;lt; ... arr[i-1] &amp;lt; arr[i] arr[i] &amp;gt; arr[i+1] &amp;gt; ... &amp;gt; arr[arr.length - 1]    给定由整数组成的山峰数组 arr ，返回任何满足 arr[0] &amp;lt; arr[1] &amp;lt; ... arr[i - 1] &amp;lt; arr[i] &amp;gt; arr[i + 1] &amp;gt; ... &amp;gt; arr[arr.length - 1] 的下标 i ，即山峰顶部。
+示例 1：  输入： arr = [0,1,0]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 412. Fizz Buzz</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-412.-fizz-buzz/</link>
+      <pubDate>Wed, 13 Oct 2021 10:46:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-412.-fizz-buzz/</guid>
+      <description>链接： https://leetcode-cn.com/problems/fizz-buzz/
+难度： 简单
+题目描述 写一个程序，输出从 1 到 n 数字的字符串表示。
+ 如果 n 是3的倍数，输出“Fizz”； 如果 n 是5的倍数，输出“Buzz”； 如果 n 同时是3和5的倍数，输出 “FizzBuzz”。  示例： n = 15, 返回: [ &amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;4&amp;quot;, &amp;quot;Buzz&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;7&amp;quot;, &amp;quot;8&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;Buzz&amp;quot;, &amp;quot;11&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;13&amp;quot;, &amp;quot;14&amp;quot;, &amp;quot;FizzBuzz&amp;quot; ] 解题思路 模拟 从 1 到 n 对每个数进行判定，将其转换为正确的字符串添加进结果中。
+func fizzBuzz(n int) []string { ans := make([]string, 0, n) for i := 1; i &amp;lt;= n; i++ { if i % 3 == 0 &amp;amp;&amp;amp; i % 5 == 0 { ans = append(ans, &amp;#34;FizzBuzz&amp;#34;) } else if i % 3 == 0 { ans = append(ans, &amp;#34;Fizz&amp;#34;) } else if i % 5 == 0 { ans = append(ans, &amp;#34;Buzz&amp;#34;) } else { ans = append(ans, strconv.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 124. 二叉树中的最大路径和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-124.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/</link>
+      <pubDate>Tue, 12 Oct 2021 18:59:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-124.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
+难度： 困难
+题目描述 路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。
+路径和 是路径中各节点值的总和。
+给你一个二叉树的根节点 root ，返回其 最大路径和 。
+示例 1：  输入： root = [1,2,3]
+输出： 6
+解释： 最优路径是 2 -&amp;gt; 1 -&amp;gt; 3 ，路径和为 2 + 1 + 3 = 6
+ 示例 2：  输入： root = [-10,9,20,null,null,15,7]
+输出： 42
+解释： 最优路径是 15 -&amp;gt; 20 -&amp;gt; 7 ，路径和为 15 + 20 + 7 = 42
+ 提示：  树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 114. 二叉树展开为链表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-114.-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Tue, 12 Oct 2021 18:29:58 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-114.-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
+难度： 中等
+题目描述 给你二叉树的根结点 root ，请你将它展开为一个单链表：
+ 展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。 展开后的单链表应该与二叉树 先序遍历 顺序相同。  示例 1：  输入： root = [1,2,5,3,4,null,6]
+输出： [1,null,2,null,3,null,4,null,5,null,6]
+ 示例 2：  输入： root = []
+输出： []
+ 示例 3：  输入： root = [0]
+输出： [0]
+ 提示：  树中结点数在范围 [0, 2000] 内 -100 &amp;lt;= Node.val &amp;lt;= 100  进阶： 你可以使用原地算法（$O(1)$ 额外空间）展开这棵树吗？
+解题思路 先序遍历 使用一个记录目前展开链表的尾部，先序遍历二叉树，每遇到一个新结点，将其加入到尾部。
+func flatten(root *TreeNode) { head := new(TreeNode) tail := head var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } left := node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 92. 反转链表 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-92.-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8-ii/</link>
+      <pubDate>Tue, 12 Oct 2021 16:28:21 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-92.-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reverse-linked-list-ii/
+难度： 中等
+题目描述 给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &amp;lt;= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
+示例 1：  输入： head = [1,2,3,4,5], left = 2, right = 4
+输出： [1,4,3,2,5]
+ 示例 2：  输入： head = [5], left = 1, right = 1
+输出： [5]
+ 提示：  链表中节点数目为 n 1 &amp;lt;= n &amp;lt;= 500 -500 &amp;lt;= Node.val &amp;lt;= 500 1 &amp;lt;= left &amp;lt;= right &amp;lt;= n  进阶： 你可以使用一趟扫描完成反转吗？</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 146. LRU 缓存机制</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-146.-lru-%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Tue, 12 Oct 2021 14:06:10 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-146.-lru-%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/lru-cache/
+难度： 中等
+题目描述 运用你所掌握的数据结构，设计和实现一个 LRU (最近最少使用) 缓存机制 。
+实现 LRUCache 类：
+ LRUCache(int capacity) 以正整数作为容量 capacity 初始化 LRU 缓存 int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。 void put(int key, int value) 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字-值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。  进阶： 你是否可以在 O(1) 时间复杂度内完成这两种操作？
+示例：  输入:
+[&amp;ldquo;LRUCache&amp;rdquo;, &amp;ldquo;put&amp;rdquo;, &amp;ldquo;put&amp;rdquo;, &amp;ldquo;get&amp;rdquo;, &amp;ldquo;put&amp;rdquo;, &amp;ldquo;get&amp;rdquo;, &amp;ldquo;put&amp;rdquo;, &amp;ldquo;get&amp;rdquo;, &amp;ldquo;get&amp;rdquo;, &amp;ldquo;get&amp;rdquo;]
+[[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+输出:
+[null, null, null, 1, null, -1, null, -1, 3, 4]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 122. 买卖股票的最佳时机 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-122.-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-ii/</link>
+      <pubDate>Tue, 12 Oct 2021 13:45:49 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-122.-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/
+难度： 中等
+题目描述 给定一个数组 prices ，其中 prices[i] 是一支给定股票第 i 天的价格。
+设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
+注意： 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+示例 1：  输入: prices = [7,1,5,3,6,4]
+输出: 7
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。 随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。
+ 示例 2：  输入: prices = [1,2,3,4,5]
+输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。 注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 121. 买卖股票的最佳时机</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-121.-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</link>
+      <pubDate>Tue, 12 Oct 2021 13:34:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-121.-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</guid>
+      <description>链接： https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+难度： 简单
+题目描述 给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
+返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
+示例 1：  输入： [7,1,5,3,6,4]
+输出： 5
+解释： 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。 注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。
+ 示例 2：  输入： prices = [7,6,4,3,1]
+输出： 0
+解释： 在这种情况下, 没有交易完成, 所以最大利润为 0。
+ 提示：  1 &amp;lt;= prices.length &amp;lt;= 105 0 &amp;lt;= prices[i] &amp;lt;= 104  解题思路 遍历 使用 min 记录到目前为止股票的最小值，每次使用当前股票价格减去 min ，更新最大利润。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 103. 二叉树的锯齿形层序遍历</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-103.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E5%BD%A2%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Tue, 12 Oct 2021 13:08:58 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-103.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E5%BD%A2%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <description>链接： https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+难度： 中等
+题目描述 给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
+例如： 给定二叉树 [3,9,20,null,null,15,7],
+ 3 / \ 9 20 / \ 15 7 返回锯齿形层序遍历如下：
+[ [3], [20,9], [15,7] ] 解题思路 层序遍历 使用一个双端队列记录遍历到的结点，初始时根结点入队。
+奇偶分离，偶数层从头至尾遍历完当前整层的所有元素，子结点先左后右从队尾入队；奇数层从尾至头遍历整层所有元素，子结点先右后左从队头入队。
+每次遍历到的结点值加入到结果队列中，直至队列为空为止。
+func zigzagLevelOrder(root *TreeNode) [][]int { if root == nil { return make([][]int, 0) } ans := make([][]int, 0, 1) deque := list.New() deque.PushBack(root) for deque.Len() &amp;gt; 0 { t := make([]int, 0, deque.Len()) for i := deque.Len(); i &amp;gt; 0; i-- { node := deque.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 29. 两数相除</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-29.-%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4/</link>
+      <pubDate>Tue, 12 Oct 2021 11:13:55 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-29.-%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4/</guid>
+      <description>链接： https://leetcode-cn.com/problems/divide-two-integers/
+难度： 中等
+题目描述 给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。
+返回被除数 dividend 除以除数 divisor 得到的商。
+整数除法的结果应当截去（truncate）其小数部分，例如：truncate(8.345) = 8 以及 truncate(-2.7335) = -2
+示例1：  输入: dividend = 10, divisor = 3
+输出: 3
+解释: 10/3 = truncate(3.33333..) = truncate(3) = 3
+ 示例2：  输入: dividend = 7, divisor = -3
+输出: -2
+解释: 7/-3 = truncate(-2.33333..) = -2
+ 提示：  被除数和除数均为 32 位有符号整数。 除数不为 0。 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231, 231 − 1]。本题中，如果除法结果溢出，则返回 231 − 1  解题思路 减法模拟 + 位运算 使用多次的减法来计算，由于负数的取值范围更大，将正数变换为负数求解。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 273. 整数转换英文表示</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-273.-%E6%95%B4%E6%95%B0%E8%BD%AC%E6%8D%A2%E8%8B%B1%E6%96%87%E8%A1%A8%E7%A4%BA/</link>
+      <pubDate>Mon, 11 Oct 2021 21:29:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-273.-%E6%95%B4%E6%95%B0%E8%BD%AC%E6%8D%A2%E8%8B%B1%E6%96%87%E8%A1%A8%E7%A4%BA/</guid>
+      <description>链接： https://leetcode-cn.com/problems/integer-to-english-words/
+难度： 困难
+题目描述 将非负整数 num 转换为其对应的英文表示。
+示例 1：  输入： num = 123
+输出： &amp;ldquo;One Hundred Twenty Three&amp;rdquo;
+ 示例 2：  输入： num = 12345
+输出： &amp;ldquo;Twelve Thousand Three Hundred Forty Five&amp;rdquo;
+ 示例 3：  输入： num = 1234567
+输出： &amp;ldquo;One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven&amp;rdquo;
+ 示例 4：  输入： num = 1234567891
+输出： &amp;ldquo;One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 441. 排列硬币</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-441.-%E6%8E%92%E5%88%97%E7%A1%AC%E5%B8%81/</link>
+      <pubDate>Sun, 10 Oct 2021 13:25:15 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-441.-%E6%8E%92%E5%88%97%E7%A1%AC%E5%B8%81/</guid>
+      <description>链接： https://leetcode-cn.com/problems/arranging-coins/
+难度： 简单
+题目描述 你总共有 n 枚硬币，并计划将它们按阶梯状排列。对于一个由 k 行组成的阶梯，其第 i 行必须正好有 i 枚硬币。阶梯的最后一行 可能 是不完整的。
+给你一个数字 n ，计算并返回可形成 完整阶梯行 的总行数。
+示例 1：  输入： n = 5
+输出： 2
+解释： 因为第三行不完整，所以返回 2 。
+ 示例 2：  输入： n = 8
+输出： 3
+解释： 因为第四行不完整，所以返回 3 。
+ 提示：  1 &amp;lt;= n &amp;lt;= 231 - 1  解题思路 模拟 按照题设排列，直到不够排成一行为止，返回排列完成的行数。
+func arrangeCoins(n int) int { ans := 0 for i := 1; n &amp;gt;= i; i++ { ans++ n -= i } return ans } 复杂度  时间复杂度：$ O(\sqrt{n}) $ 空间复杂度：$ O(1) $  数学 每一行到排列构成等差数列，根据等差数列求和公式可得： $$ \begin{aligned} \frac{x(x+1)}{2} &amp;amp;= n \\ x^2 + x - 2n &amp;amp;= 0 \end{aligned} $$ 求得： $$ x = \frac{-1\pm\sqrt{1+8n}}{2} $$ 得到排列完成的行数为：$\lfloor\frac{\sqrt{8n+1}-1}{2}\rfloor$</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 187. 重复的DNA序列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-187.-%E9%87%8D%E5%A4%8D%E7%9A%84dna%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Fri, 08 Oct 2021 10:51:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-187.-%E9%87%8D%E5%A4%8D%E7%9A%84dna%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/repeated-dna-sequences/
+难度： 中等
+题目描述 所有 DNA 都由一系列缩写为 &#39;A&#39;，&#39;C&#39;，&#39;G&#39; 和 &#39;T&#39; 的核苷酸组成，例如：&amp;quot;ACGAATTCCG&amp;quot;。在研究 DNA 时，识别 DNA 中的重复序列有时会对研究非常有帮助。
+编写一个函数来找出所有目标子串，目标子串的长度为 10，且在 DNA 字符串 s 中出现次数超过一次。
+示例 1：  输入： s = &amp;ldquo;AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT&amp;rdquo;
+输出： [&amp;ldquo;AAAAACCCCC&amp;rdquo;,&amp;ldquo;CCCCCAAAAA&amp;rdquo;]
+ 示例 2：  输入： s = &amp;ldquo;AAAAAAAAAAAAA&amp;rdquo;
+输出： [&amp;ldquo;AAAAAAAAAA&amp;rdquo;]
+ 提示：  0 &amp;lt;= s.length &amp;lt;= 105 s[i] 为 &amp;lsquo;A&amp;rsquo;、&amp;lsquo;C&amp;rsquo;、&amp;lsquo;G&amp;rsquo; 或 &amp;lsquo;T&amp;rsquo;  解题思路 哈希 使用哈希表记录每个长度为 10 的字串的出现次数，出现次数大于 1 时，添加到结果队列中。
+func findRepeatedDnaSequences(s string) []string { ans := make([]string, 0) cnt := make(map[string]int) for i := 10; i &amp;lt;= len(s); i++ { cnt[s[i-10:i]]++ if cnt[s[i-10:i]] == 2 { ans = append(ans, s[i-10:i]) } } return ans } 复杂度  时间复杂度：$ O(N) , N = len(s) $ 空间复杂度：$ O(N) $  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 31. 下一个排列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-31.-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/</link>
+      <pubDate>Thu, 07 Oct 2021 16:16:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-31.-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/next-permutation/
+难度： 中等
+题目描述 实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列（即，组合出下一个更大的整数）。
+如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
+必须 原地 修改，只允许使用额外常数空间。
+示例 1：  输入： nums = [1,2,3]
+输出： [1,3,2]
+ 示例 2：  输入： nums = [3,2,1]
+输出： [1,2,3]
+ 示例 3：  输入： nums = [1,1,5]
+输出： [1,5,1]
+ 示例 4：  输入： nums = [1]
+输出： [1]
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 100 0 &amp;lt;= nums[i] &amp;lt;= 100  解题思路 模拟 寻找下一个排列，其必然比当前排列要大，需要改变部分元素的顺序来获得。则其中一个较小的元素必然被其他更大的元素所替换，且其应该尽量的靠右。
+为找到这个元素 i ，从尾部开始遍历，找到其后存在比当前元素大的元素，即找到使得后半部分不满足非严格降序的首个元素，则该元素需要被比他大的元素替换。当找不到时，说明这是最大排列，反转后变为最小排列。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 148. 排序链表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-148.-%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 07 Oct 2021 14:36:29 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-148.-%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/sort-list/
+难度： 中等
+题目描述 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
+进阶：
+你可以在 $O(n\log{n})$ 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+示例 1：  输入： head = [4,2,1,3]
+输出： [1,2,3,4]
+ 示例 2：  输入： head = [-1,5,3,4,0]
+输出： [-1,0,3,4,5]
+ 示例 3：  输入： head = []
+输出： []
+ 提示：  链表的长度范围为 [1, 5 * 104] 1 &amp;lt;= node.val &amp;lt;= 1000  解题思路 归并排序 从 i = 1 开始，每相邻的 2i个链表进行归并排序，直到 2i ≥ len(List) 为止。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 143. 重排链表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-143.-%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 07 Oct 2021 13:23:22 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-143.-%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reorder-list/
+难度： 中等
+题目描述 给定一个单链表 L 的头节点 head ，单链表 L 表示为：
+L0 → L1 → … → Ln-1 → Ln
+请将其重新排列后变为：
+L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → …
+不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+示例 1：  输入: head = [1,2,3,4]
+输出: [1,4,2,3]
+ 示例 2：  输入: head = [1,2,3,4,5]
+输出: [1,5,2,4,3]
+ 提示：  链表的长度范围为 [1, 5 * 104] 1 &amp;lt;= node.val &amp;lt;= 1000  解题思路 顺序表 使用一个数组记录链表中的所有结点，按照顺序选出结点组成新的链表。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 434. 字符串中的单词数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-434.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0/</link>
+      <pubDate>Thu, 07 Oct 2021 13:05:49 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-434.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-of-segments-in-a-string/
+难度： 简单
+题目描述 统计字符串中的单词个数，这里的单词指的是连续的不是空格的字符。
+请注意，你可以假定字符串里不包括任何不可打印的字符。
+示例：  输入: &amp;ldquo;Hello, my name is John&amp;rdquo;
+输出: 5
+解释: 这里的单词是指连续的不是空格的字符，所以 &amp;ldquo;Hello,&amp;rdquo; 算作 1 个单词。
+ 解题思路 遍历计数 遍历字符串，使用一个 hasWord 布尔值记录是否有单词：
+ 当遇到空格时，可能是单词结尾，若 hasWord = true ，单词数量加一，hasWord 置为 false； 当遇到非空格时，表示有新单词，hasWord 置为 true。  func countSegments(s string) int { ans := 0 hasWord := false for i := range s { if s[i] == &amp;#39; &amp;#39; { if hasWord { ans++ hasWord = false } } else { hasWord = true } } if hasWord { ans++ } return ans } 复杂度  时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 25. K 个一组翻转链表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-25.-k-%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 07 Oct 2021 11:51:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-25.-k-%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reverse-nodes-in-k-group/
+难度： 困难
+题目描述 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
+k 是一个正整数，它的值小于或等于链表的长度。
+如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+进阶：
+ 你可以设计一个只使用常数额外空间的算法来解决此问题吗？ 你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。  示例 1：  输入： head = [1,2,3,4,5], k = 2
+输出： [2,1,4,3,5]
+ 示例 2：  输入： head = [1,2,3,4,5], k = 3
+输出： [3,2,1,4,5]
+ 示例 3：  输入： head = [1,2,3,4,5], k = 1
+输出： [1,2,3,4,5]
+ 示例 4：  输入： head = [1], k = 1
+输出： [1]
+ 提示：  列表中节点的数量在范围 sz 内 1 &amp;lt;= sz &amp;lt;= 5000 0 &amp;lt;= Node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 69. Sqrt(x)</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-69.-sqrtx/</link>
+      <pubDate>Wed, 06 Oct 2021 23:00:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-69.-sqrtx/</guid>
+      <description>链接： https://leetcode-cn.com/problems/sqrtx/
+难度： 简单
+题目描述 给你一个非负整数 x ，计算并返回 x 的 算术平方根 。
+由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去 。
+注意： 不允许使用任何内置指数函数和算符，例如 pow(x, 0.5) 或者 x ** 0.5 。
+示例 1：  输入： x = 4
+输出： 2
+ 示例 2：  输入： x = 8
+输出： 2
+解释： 8 的算术平方根是 2.82842&amp;hellip;, 由于返回类型是整数，小数部分将被舍去。
+ 提示：  00 &amp;lt;= x &amp;lt;= 231 - 1  解题思路 枚举 从零开始枚举平方根 i ，直到 i*i &amp;gt; x 为止，返回最大的有效值 i-1。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 3. 无重复字符的最长子串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</link>
+      <pubDate>Wed, 06 Oct 2021 22:51:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-3.-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+难度： 中等
+题目描述 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+示例 1：  输入: &amp;ldquo;abcabcbb&amp;rdquo;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;ldquo;abc&amp;rdquo;，所以其长度为 3。
+ 示例 2：  输入: &amp;ldquo;bbbbb&amp;rdquo;
+输出: 1
+解释: 因为无重复字符的最长子串是 &amp;ldquo;b&amp;rdquo;，所以其长度为 1。
+ 示例 3：  输入: &amp;ldquo;pwwkew&amp;rdquo;
+输出: 3
+解释: 因为无重复字符的最长子串是 &amp;ldquo;wke&amp;rdquo;，所以其长度为 3。
+请注意，你的答案必须是 子串 的长度，&amp;ldquo;pwke&amp;rdquo; 是一个子序列，不是子串。
+ 示例 4：  输入: s = &amp;quot;&amp;quot;
+输出: 0
+ 提示：  0 &amp;lt;= s.length &amp;lt;= 5 * 104 s 由英文字母、数字、符号和空格组成  解题思路 哈希 + 双指针 使用哈希表记录每个字符出现的下标，并记录有效字串开始的下标 start：当出现重复字符时，将 start 修正为重复字符出现的下一个位置。</description>
+    </item>
+    
     <item>
       <title>Leetcode 414. 第三大的数</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-414.-%E7%AC%AC%E4%B8%89%E5%A4%A7%E7%9A%84%E6%95%B0/</link>
@@ -787,7 +1261,7 @@ func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { r
 难度： 中等
 题目描述 多级双向链表中，除了指向下一个节点和前一个节点指针之外，它还有一个子链表指针，可能指向单独的双向链表。这些子列表也可能会有一个或多个自己的子项，依此类推，生成多级数据结构，如下面的示例所示。
 给你位于列表第一级的头节点，请你扁平化列表，使所有结点出现在单级双链表中。
-示例1：  输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+示例 1：  输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
 输出： [1,2,3,7,8,11,12,9,10,4,5,6]
 解释：
 输入的多级列表如下图所示：
@@ -801,8 +1275,7 @@ func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { r
  如何表示测试用例中的多级链表？ 以 示例 1 为例：
  1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
 [1,2,3,4,5,6,null] [7,8,9,10,null] [11,12,null] 为了将每一级都序列化到一起，我们需要每一级中添加值为 null 的元素，以表示没有节点连接到上一级的上级节点。
-[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。
-[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12] 提示：  节点数目不超过 1000 1 &amp;lt;= Node.</description>
+[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。</description>
     </item>
     
     <item>
@@ -3220,8 +3693,7 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 解释： 相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。
 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
- 示例2： &amp;lt;img src=&amp;ldquo;https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_2.png&#34;, width=&amp;ldquo;350px&amp;rdquo;&amp;gt;
- 输入： intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
+ 示例2：  输入： intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1</description>
     </item>
     
     <item>
