@@ -6,7 +6,24 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 14 Oct 2021 14:53:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Oct 2021 10:43:50 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 230. 二叉搜索树中第K小的元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-230.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACk%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Sun, 17 Oct 2021 10:43:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-230.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACk%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/
+难度： 中等
+题目描述 给定一个二叉搜索树的根节点 root ，和一个整数 k ，请你设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。
+示例 1：  输入： root = [3,1,4,null,2], k = 1
+输出： 1
+ 示例 2：  输入： root = [5,3,6,2,4,null,null,1], k = 3
+输出： 3
+ 提示：  树中的节点数为 n 。 1 &amp;lt;= k &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= Node.val &amp;lt;= 104  进阶： 如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化算法？
+解题思路 中序遍历 中序遍历，每遇到一个结点， k = k - 1，当 k 减为 0 时，返回当前结点的值。</description>
+    </item>
+    
     <item>
       <title>Leetcode 94. 二叉树的中序遍历</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-94.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/</link>

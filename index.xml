@@ -6,7 +6,285 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Sat, 16 Oct 2021 12:14:42 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 19 Oct 2021 12:58:00 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 211. 添加与搜索单词 - 数据结构设计</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
+        <pubDate>Tue, 19 Oct 2021 12:58:00 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。&lt;/p&gt;
+&lt;p&gt;实现词典类 &lt;code&gt;WordDictionary&lt;/code&gt; ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;WordDictionary()&lt;/code&gt; 初始化词典对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;void addWord(word)&lt;/code&gt; 将 &lt;code&gt;word&lt;/code&gt; 添加到数据结构中，之后可以对它进行匹配&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bool search(word)&lt;/code&gt; 如果数据结构中存在字符串与 &lt;code&gt;word&lt;/code&gt; 匹配，则返回 &lt;code&gt;true&lt;/code&gt; ；否则，返回  &lt;code&gt;false&lt;/code&gt; 。&lt;code&gt;word&lt;/code&gt; 中可能包含一些 &lt;code&gt;&#39;.&#39;&lt;/code&gt; ，每个 &lt;code&gt;.&lt;/code&gt; 都可以表示任何一个字母。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;示例&#34;&gt;示例：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br&gt;
+[&amp;ldquo;WordDictionary&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;]&lt;br&gt;
+[[],[&amp;ldquo;bad&amp;rdquo;],[&amp;ldquo;dad&amp;rdquo;],[&amp;ldquo;mad&amp;rdquo;],[&amp;ldquo;pad&amp;rdquo;],[&amp;ldquo;bad&amp;rdquo;],[&amp;quot;.ad&amp;quot;],[&amp;ldquo;b..&amp;quot;]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;&lt;br&gt;
+[null,null,null,null,false,true,true,true]&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;
+WordDictionary wordDictionary = new WordDictionary();&lt;br&gt;
+wordDictionary.addWord(&amp;ldquo;bad&amp;rdquo;);&lt;br&gt;
+wordDictionary.addWord(&amp;ldquo;dad&amp;rdquo;);&lt;br&gt;
+wordDictionary.addWord(&amp;ldquo;mad&amp;rdquo;);&lt;br&gt;
+wordDictionary.search(&amp;ldquo;pad&amp;rdquo;); // return False&lt;br&gt;
+wordDictionary.search(&amp;ldquo;bad&amp;rdquo;); // return True&lt;br&gt;
+wordDictionary.search(&amp;quot;.ad&amp;rdquo;); // return True&lt;br&gt;
+wordDictionary.search(&amp;ldquo;b..&amp;quot;); // return True&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= word.length &amp;lt;= 500&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;addWord&lt;/code&gt; 中的 &lt;code&gt;word&lt;/code&gt; 由小写英文字母组成&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;search&lt;/code&gt; 中的 &lt;code&gt;word&lt;/code&gt; 由 &lt;code&gt;&#39;.&#39;&lt;/code&gt; 或小写英文字母组成&lt;/li&gt;
+&lt;li&gt;最多调用 &lt;code&gt;50000&lt;/code&gt; 次 &lt;code&gt;addWord&lt;/code&gt; 和 &lt;code&gt;search&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;trie树&#34;&gt;Trie树&lt;/h4&gt;
+&lt;p&gt;使用 Trie树 来存储单词。&lt;/p&gt;
+&lt;p&gt;当查找的时候，因为存在的 &lt;code&gt;&#39;.&#39;&lt;/code&gt; 可以匹配任意字符，故所有的情况都需要判断。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;end&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;WordDictionary&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constructor&lt;/span&gt;() &lt;span style=&#34;color:#a6e22e&#34;&gt;WordDictionary&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;WordDictionary&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;{
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;end&lt;/span&gt;:  &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt;: make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;),
+		},
+	}
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;WordDictionary&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;AddWord&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]]; !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]] = &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;{
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;end&lt;/span&gt;:  &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt;: make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;),
+			}
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]]
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;end&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;WordDictionary&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Search&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;search&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;suffix&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;search&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Node&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;suffix&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;suffix&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt; {
+                &lt;span style=&#34;color:#75715e&#34;&gt;// 尝试递归匹配所有项
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt; {
+					&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;search&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;suffix&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:]) {
+						&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+					}
+				}
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+			}
+            &lt;span style=&#34;color:#75715e&#34;&gt;// 继续匹配下一项
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nextNode&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;]; !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+			} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;nextNode&lt;/span&gt;
+			}
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;end&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;search&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;, []byte(&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AddWord&lt;/code&gt;：$ O(N), N = len(word) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Search&lt;/code&gt;：$ O(\Sigma^N), \Sigma表示字符集字符总数量 $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(\Sigma*\sum{len(word_i)}) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 476. 数字的补数</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-476.-%E6%95%B0%E5%AD%97%E7%9A%84%E8%A1%A5%E6%95%B0/</link>
+        <pubDate>Mon, 18 Oct 2021 09:44:53 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-476.-%E6%95%B0%E5%AD%97%E7%9A%84%E8%A1%A5%E6%95%B0/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/number-complement/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/number-complement/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个 &lt;strong&gt;正&lt;/strong&gt; 整数 &lt;code&gt;num&lt;/code&gt; ，输出它的补数。补数是对该数的二进制表示取反。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; num = 5&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 2&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 5 的二进制表示为 101（没有前导零位），其补数为 010。所以你需要输出 2 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; num = 1&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 0&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 1 的二进制表示为 1（没有前导零位），其补数为 0。所以你需要输出 0 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;给定的整数 &lt;code&gt;num&lt;/code&gt; 保证在 32 位带符号整数的范围内。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;num &amp;gt;= 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;你可以假定二进制数不包含前导零位。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;位运算&#34;&gt;位运算&lt;/h4&gt;
+&lt;p&gt;从二进制的最后一位开始，直到首个 &lt;code&gt;1&lt;/code&gt; 为止，当遇到 &lt;code&gt;0&lt;/code&gt; 时，将结果对应位置为 &lt;code&gt;1&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;findComplement&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;bit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;bit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;num&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bit&lt;/span&gt;
+        }
+    }
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(\log{num}) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 230. 二叉搜索树中第K小的元素</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-230.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACk%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/</link>
+        <pubDate>Sun, 17 Oct 2021 10:43:50 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-230.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACk%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给定一个二叉搜索树的根节点 &lt;code&gt;root&lt;/code&gt; ，和一个整数 &lt;code&gt;k&lt;/code&gt; ，请你设计一个算法查找其中第 &lt;code&gt;k&lt;/code&gt; 个最小元素（从 1 开始计数）。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/230.kthtree1.jpg&#34; width=&#34;212px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; root = [3,1,4,null,2], k = 1&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/230.kthtree2.jpg&#34; width=&#34;382px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; root = [5,3,6,2,4,null,null,1], k = 3&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;树中的节点数为 &lt;code&gt;n&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= k &amp;lt;= n &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= Node.val &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化算法？&lt;/p&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;中序遍历&#34;&gt;中序遍历&lt;/h4&gt;
+&lt;p&gt;中序遍历，每遇到一个结点， &lt;code&gt;k = k - 1&lt;/code&gt;，当 &lt;code&gt;k&lt;/code&gt; 减为 &lt;code&gt;0&lt;/code&gt; 时，返回当前结点的值。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;kthSmallest&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Left&lt;/span&gt;)
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Right&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(\log{N} + k), N = size(Tree) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(\log{N}) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;哈希--中序遍历&#34;&gt;哈希 + 中序遍历&lt;/h4&gt;
+&lt;p&gt;遍历二叉树，使用哈希表记录每个结点左子树中的结点数量，这样每次查找时就可以判断从哪个子树中去寻找了，时间复杂度降低。从根结点开始遍历：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若当前结点左子树结点数量 &lt;code&gt;&amp;gt; k-1&lt;/code&gt;，则从左子树中寻找第 &lt;code&gt;k&lt;/code&gt; 小结点；&lt;/li&gt;
+&lt;li&gt;若当前结点左子树结点数量 &lt;code&gt;= k-1&lt;/code&gt;，则当前结点即为第 &lt;code&gt;k&lt;/code&gt; 小结点，返回；&lt;/li&gt;
+&lt;li&gt;若当前结点左子树结点数量 &lt;code&gt;cnt &amp;lt; k-1&lt;/code&gt;，则从右子树中寻找第 &lt;code&gt;k - cnt - 1&lt;/code&gt; 小结点；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Tree&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;leftCnt&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Tree&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;build&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;build&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Left&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;leftCnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;build&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Right&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constractor&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Tree&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;tree&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Tree&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;:    &lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;,
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;leftCnt&lt;/span&gt;: make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;),
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;tree&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;build&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tree&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Tree&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;kthSmallest&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;leftCnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;] &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Left&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;leftCnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;:
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;leftCnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Right&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;kthSmallest&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constractor&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;kthSmallest&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;build&lt;/code&gt;：$ O(N), N = size(Tree) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;kthSmallest&lt;/code&gt;：$ O(\log{N}) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(\log{N}) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 282. 给表达式添加运算符</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-282.-%E7%BB%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B7%BB%E5%8A%A0%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
         <pubDate>Sat, 16 Oct 2021 12:14:42 +0800</pubDate>

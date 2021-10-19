@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>trie on 贺贤良</title>
+    <link>https://xianlianghe0123.github.io/tags/trie/</link>
+    <description>Recent content in trie on 贺贤良</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Tue, 19 Oct 2021 12:58:00 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/trie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 211. 添加与搜索单词 - 数据结构设计</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Tue, 19 Oct 2021 12:58:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/</guid>
+      <description>链接： https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/
+难度： 中等
+题目描述 请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。
+实现词典类 WordDictionary ：
+ WordDictionary() 初始化词典对象 void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配 bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 &#39;.&#39; ，每个 . 都可以表示任何一个字母。  示例：  输入：
+[&amp;ldquo;WordDictionary&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;]
+[[],[&amp;ldquo;bad&amp;rdquo;],[&amp;ldquo;dad&amp;rdquo;],[&amp;ldquo;mad&amp;rdquo;],[&amp;ldquo;pad&amp;rdquo;],[&amp;ldquo;bad&amp;rdquo;],[&amp;quot;.ad&amp;quot;],[&amp;ldquo;b..&amp;quot;]]
+输出：
+[null,null,null,null,false,true,true,true]
+解释：
+WordDictionary wordDictionary = new WordDictionary();
+wordDictionary.addWord(&amp;ldquo;bad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;dad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;mad&amp;rdquo;);
+wordDictionary.search(&amp;ldquo;pad&amp;rdquo;); // return False
+wordDictionary.search(&amp;ldquo;bad&amp;rdquo;); // return True
+wordDictionary.search(&amp;quot;.ad&amp;rdquo;); // return True
+wordDictionary.search(&amp;ldquo;b..&amp;quot;); // return True
+ 提示：  1 &amp;lt;= word.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,70 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 16 Oct 2021 12:14:42 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Oct 2021 12:58:00 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 211. 添加与搜索单词 - 数据结构设计</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Tue, 19 Oct 2021 12:58:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/</guid>
+      <description>链接： https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/
+难度： 中等
+题目描述 请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。
+实现词典类 WordDictionary ：
+ WordDictionary() 初始化词典对象 void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配 bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 &#39;.&#39; ，每个 . 都可以表示任何一个字母。  示例：  输入：
+[&amp;ldquo;WordDictionary&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;]
+[[],[&amp;ldquo;bad&amp;rdquo;],[&amp;ldquo;dad&amp;rdquo;],[&amp;ldquo;mad&amp;rdquo;],[&amp;ldquo;pad&amp;rdquo;],[&amp;ldquo;bad&amp;rdquo;],[&amp;quot;.ad&amp;quot;],[&amp;ldquo;b..&amp;quot;]]
+输出：
+[null,null,null,null,false,true,true,true]
+解释：
+WordDictionary wordDictionary = new WordDictionary();
+wordDictionary.addWord(&amp;ldquo;bad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;dad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;mad&amp;rdquo;);
+wordDictionary.search(&amp;ldquo;pad&amp;rdquo;); // return False
+wordDictionary.search(&amp;ldquo;bad&amp;rdquo;); // return True
+wordDictionary.search(&amp;quot;.ad&amp;rdquo;); // return True
+wordDictionary.search(&amp;ldquo;b..&amp;quot;); // return True
+ 提示：  1 &amp;lt;= word.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 476. 数字的补数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-476.-%E6%95%B0%E5%AD%97%E7%9A%84%E8%A1%A5%E6%95%B0/</link>
+      <pubDate>Mon, 18 Oct 2021 09:44:53 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-476.-%E6%95%B0%E5%AD%97%E7%9A%84%E8%A1%A5%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-complement/
+难度： 简单
+题目描述 给你一个 正 整数 num ，输出它的补数。补数是对该数的二进制表示取反。
+示例 1：  输入： num = 5
+输出： 2
+解释： 5 的二进制表示为 101（没有前导零位），其补数为 010。所以你需要输出 2 。
+ 示例 2：  输入： num = 1
+输出： 0
+解释： 1 的二进制表示为 1（没有前导零位），其补数为 0。所以你需要输出 0 。
+ 提示：  给定的整数 num 保证在 32 位带符号整数的范围内。 num &amp;gt;= 1 你可以假定二进制数不包含前导零位。  解题思路 位运算 从二进制的最后一位开始，直到首个 1 为止，当遇到 0 时，将结果对应位置为 1。
+func findComplement(num int) int { ans := 0 for bit := 1; bit &amp;lt;= num; bit &amp;lt;&amp;lt;= 1 { if num &amp;amp; bit == 0 { ans |= bit } } return ans } 复杂度  时间复杂度：$ O(\log{num}) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 230. 二叉搜索树中第K小的元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-230.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACk%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Sun, 17 Oct 2021 10:43:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-230.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACk%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/
+难度： 中等
+题目描述 给定一个二叉搜索树的根节点 root ，和一个整数 k ，请你设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。
+示例 1：  输入： root = [3,1,4,null,2], k = 1
+输出： 1
+ 示例 2：  输入： root = [5,3,6,2,4,null,null,1], k = 3
+输出： 3
+ 提示：  树中的节点数为 n 。 1 &amp;lt;= k &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= Node.val &amp;lt;= 104  进阶： 如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化算法？
+解题思路 中序遍历 中序遍历，每遇到一个结点， k = k - 1，当 k 减为 0 时，返回当前结点的值。</description>
+    </item>
+    
     <item>
       <title>Leetcode 282. 给表达式添加运算符</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-282.-%E7%BB%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B7%BB%E5%8A%A0%E8%BF%90%E7%AE%97%E7%AC%A6/</link>

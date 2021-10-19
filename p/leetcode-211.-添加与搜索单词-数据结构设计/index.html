@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/
+难度： 中等
+题目描述 请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。
+实现词典类 WordDictionary ：
+ WordDictionary() 初始化词典对象 void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配 bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 &#39;.&#39; ，每个 . 都可以表示任何一个字母。  示例：  输入：
+[&amp;ldquo;WordDictionary&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;]
+[[],[&amp;ldquo;bad&amp;rdquo;],[&amp;ldquo;dad&amp;rdquo;],[&amp;ldquo;mad&amp;rdquo;],[&amp;ldquo;pad&amp;rdquo;],[&amp;ldquo;bad&amp;rdquo;],[&amp;quot;.ad&amp;quot;],[&amp;ldquo;b..&amp;quot;]]
+输出：
+[null,null,null,null,false,true,true,true]
+解释：
+WordDictionary wordDictionary = new WordDictionary();
+wordDictionary.addWord(&amp;ldquo;bad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;dad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;mad&amp;rdquo;);
+wordDictionary.search(&amp;ldquo;pad&amp;rdquo;); // return False
+wordDictionary.search(&amp;ldquo;bad&amp;rdquo;); // return True
+wordDictionary.search(&amp;quot;.ad&amp;rdquo;); // return True
+wordDictionary.search(&amp;ldquo;b..&amp;quot;); // return True
+ 提示：  1 &amp;lt;= word.'><title>Leetcode 211. 添加与搜索单词 - 数据结构设计</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 211. 添加与搜索单词 - 数据结构设计'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/
+难度： 中等
+题目描述 请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。
+实现词典类 WordDictionary ：
+ WordDictionary() 初始化词典对象 void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配 bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 &#39;.&#39; ，每个 . 都可以表示任何一个字母。  示例：  输入：
+[&amp;ldquo;WordDictionary&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;]
+[[],[&amp;ldquo;bad&amp;rdquo;],[&amp;ldquo;dad&amp;rdquo;],[&amp;ldquo;mad&amp;rdquo;],[&amp;ldquo;pad&amp;rdquo;],[&amp;ldquo;bad&amp;rdquo;],[&amp;quot;.ad&amp;quot;],[&amp;ldquo;b..&amp;quot;]]
+输出：
+[null,null,null,null,false,true,true,true]
+解释：
+WordDictionary wordDictionary = new WordDictionary();
+wordDictionary.addWord(&amp;ldquo;bad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;dad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;mad&amp;rdquo;);
+wordDictionary.search(&amp;ldquo;pad&amp;rdquo;); // return False
+wordDictionary.search(&amp;ldquo;bad&amp;rdquo;); // return True
+wordDictionary.search(&amp;quot;.ad&amp;rdquo;); // return True
+wordDictionary.search(&amp;ldquo;b..&amp;quot;); // return True
+ 提示：  1 &amp;lt;= word.'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='trie' /><meta property='article:published_time' content='2021-10-19T12:58:00&#43;08:00'/><meta property='article:modified_time' content='2021-10-19T12:58:00&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 211. 添加与搜索单词 - 数据结构设计">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/
+难度： 中等
+题目描述 请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。
+实现词典类 WordDictionary ：
+ WordDictionary() 初始化词典对象 void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配 bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 &#39;.&#39; ，每个 . 都可以表示任何一个字母。  示例：  输入：
+[&amp;ldquo;WordDictionary&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;]
+[[],[&amp;ldquo;bad&amp;rdquo;],[&amp;ldquo;dad&amp;rdquo;],[&amp;ldquo;mad&amp;rdquo;],[&amp;ldquo;pad&amp;rdquo;],[&amp;ldquo;bad&amp;rdquo;],[&amp;quot;.ad&amp;quot;],[&amp;ldquo;b..&amp;quot;]]
+输出：
+[null,null,null,null,false,true,true,true]
+解释：
+WordDictionary wordDictionary = new WordDictionary();
+wordDictionary.addWord(&amp;ldquo;bad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;dad&amp;rdquo;);
+wordDictionary.addWord(&amp;ldquo;mad&amp;rdquo;);
+wordDictionary.search(&amp;ldquo;pad&amp;rdquo;); // return False
+wordDictionary.search(&amp;ldquo;bad&amp;rdquo;); // return True
+wordDictionary.search(&amp;quot;.ad&amp;rdquo;); // return True
+wordDictionary.search(&amp;ldquo;b..&amp;quot;); // return True
+ 提示：  1 &amp;lt;= word.">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-211.-%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%90%9C%E7%B4%A2%E5%8D%95%E8%AF%8D-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">Leetcode 211. 添加与搜索单词 - 数据结构设计</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 19, 2021</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。</p>
+<p>实现词典类 <code>WordDictionary</code> ：</p>
+<ul>
+<li><code>WordDictionary()</code> 初始化词典对象</li>
+<li><code>void addWord(word)</code> 将 <code>word</code> 添加到数据结构中，之后可以对它进行匹配</li>
+<li><code>bool search(word)</code> 如果数据结构中存在字符串与 <code>word</code> 匹配，则返回 <code>true</code> ；否则，返回  <code>false</code> 。<code>word</code> 中可能包含一些 <code>'.'</code> ，每个 <code>.</code> 都可以表示任何一个字母。</li>
+</ul>
+<h4 id="示例">示例：</h4>
+<blockquote>
+<p><strong>输入：</strong><br>
+[&ldquo;WordDictionary&rdquo;,&ldquo;addWord&rdquo;,&ldquo;addWord&rdquo;,&ldquo;addWord&rdquo;,&ldquo;search&rdquo;,&ldquo;search&rdquo;,&ldquo;search&rdquo;,&ldquo;search&rdquo;]<br>
+[[],[&ldquo;bad&rdquo;],[&ldquo;dad&rdquo;],[&ldquo;mad&rdquo;],[&ldquo;pad&rdquo;],[&ldquo;bad&rdquo;],[&quot;.ad&quot;],[&ldquo;b..&quot;]]<br>
+<strong>输出：</strong><br>
+[null,null,null,null,false,true,true,true]<br>
+<strong>解释：</strong><br>
+WordDictionary wordDictionary = new WordDictionary();<br>
+wordDictionary.addWord(&ldquo;bad&rdquo;);<br>
+wordDictionary.addWord(&ldquo;dad&rdquo;);<br>
+wordDictionary.addWord(&ldquo;mad&rdquo;);<br>
+wordDictionary.search(&ldquo;pad&rdquo;); // return False<br>
+wordDictionary.search(&ldquo;bad&rdquo;); // return True<br>
+wordDictionary.search(&quot;.ad&rdquo;); // return True<br>
+wordDictionary.search(&ldquo;b..&quot;); // return True</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= word.length &lt;= 500</code></li>
+<li><code>addWord</code> 中的 <code>word</code> 由小写英文字母组成</li>
+<li><code>search</code> 中的 <code>word</code> 由 <code>'.'</code> 或小写英文字母组成</li>
+<li>最多调用 <code>50000</code> 次 <code>addWord</code> 和 <code>search</code></li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="trie树">Trie树</h4>
+<p>使用 Trie树 来存储单词。</p>
+<p>当查找的时候，因为存在的 <code>'.'</code> 可以匹配任意字符，故所有的情况都需要判断。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">end</span>  <span style="color:#66d9ef">bool</span>
+	<span style="color:#a6e22e">char</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">WordDictionary</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">WordDictionary</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">WordDictionary</span>{
+		<span style="color:#a6e22e">head</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+			<span style="color:#a6e22e">end</span>:  <span style="color:#66d9ef">false</span>,
+			<span style="color:#a6e22e">char</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
+		},
+	}
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">WordDictionary</span>) <span style="color:#a6e22e">AddWord</span>(<span style="color:#a6e22e">word</span> <span style="color:#66d9ef">string</span>) {
+	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">char</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]]; !<span style="color:#a6e22e">ok</span> {
+			<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">char</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+				<span style="color:#a6e22e">end</span>:  <span style="color:#66d9ef">false</span>,
+				<span style="color:#a6e22e">char</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
+			}
+		}
+		<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">char</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]]
+	}
+	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">end</span> = <span style="color:#66d9ef">true</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">WordDictionary</span>) <span style="color:#a6e22e">Search</span>(<span style="color:#a6e22e">word</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">search</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#a6e22e">suffix</span> []<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">bool</span>
+	<span style="color:#a6e22e">search</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#a6e22e">suffix</span> []<span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">bool</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">suffix</span> {
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> {
+                <span style="color:#75715e">// 尝试递归匹配所有项
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">char</span> {
+					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">search</span>(<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">suffix</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:]) {
+						<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+					}
+				}
+				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+			}
+            <span style="color:#75715e">// 继续匹配下一项
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nextNode</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">char</span>[<span style="color:#a6e22e">c</span>]; !<span style="color:#a6e22e">ok</span> {
+				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+			} <span style="color:#66d9ef">else</span> {
+				<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">nextNode</span>
+			}
+		}
+		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">end</span>
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">search</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>, []byte(<span style="color:#a6e22e">word</span>))
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：
+<ul>
+<li><code>AddWord</code>：$ O(N), N = len(word) $</li>
+<li><code>Search</code>：$ O(\Sigma^N), \Sigma表示字符集字符总数量 $</li>
+</ul>
+</li>
+<li>空间复杂度：$ O(\Sigma*\sum{len(word_i)}) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/trie/">trie</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
