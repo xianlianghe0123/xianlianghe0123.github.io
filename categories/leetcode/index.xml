@@ -6,7 +6,115 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 02 Nov 2021 22:55:00 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Nov 2021 22:46:13 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 299. 猜数字游戏</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-299.-%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Mon, 08 Nov 2021 22:46:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-299.-%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bulls-and-cows/
+难度： 中等
+题目描述 你在和朋友一起玩 猜数字（Bulls and Cows）游戏，该游戏规则如下：
+写出一个秘密数字，并请朋友猜这个数字是多少。朋友每猜测一次，你就会给他一个包含下述信息的提示：
+ 猜测数字中有多少位属于数字和确切位置都猜对了（称为 &amp;ldquo;Bulls&amp;rdquo;, 公牛）， 有多少位属于数字猜对了但是位置不对（称为 &amp;ldquo;Cows&amp;rdquo;, 奶牛）。也就是说，这次猜测中有多少位非公牛数字可以通过重新排列转换成公牛数字。  给你一个秘密数字 secret 和朋友猜测的数字 guess ，请你返回对朋友这次猜测的提示。
+提示的格式为 &amp;quot;xAyB&amp;quot; ，x 是公牛个数， y 是奶牛个数，A 表示公牛，B 表示奶牛。
+请注意秘密数字和朋友猜测的数字都可能含有重复数字。
+示例 1：  输入: secret = &amp;ldquo;1807&amp;rdquo;, guess = &amp;ldquo;7810&amp;rdquo;
+输出: &amp;ldquo;1A3B&amp;rdquo;
+解释: 数字和位置都对（公牛）用 &amp;lsquo;|&amp;rsquo; 连接，数字猜对位置不对（奶牛）的采用斜体加粗标识。
+&amp;ldquo;1807&amp;rdquo;
+|
+&amp;ldquo;7810&amp;rdquo;
+ 示例 2：  输入: secret = &amp;ldquo;1123&amp;rdquo;, guess = &amp;ldquo;0111&amp;rdquo;
+输出: &amp;ldquo;1A1B&amp;rdquo;
+解释: 数字和位置都对（公牛）用 &amp;lsquo;|&amp;rsquo; 连接，数字猜对位置不对（奶牛）的采用斜体加粗标识。
+&amp;ldquo;1123&amp;rdquo; &amp;ldquo;1123&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 598. 范围求和 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-598.-%E8%8C%83%E5%9B%B4%E6%B1%82%E5%92%8C-ii/</link>
+      <pubDate>Sun, 07 Nov 2021 10:14:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-598.-%E8%8C%83%E5%9B%B4%E6%B1%82%E5%92%8C-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/range-addition-ii/
+难度： 简单
+题目描述 给定一个初始元素全部为 0，大小为 m*n 的矩阵 M 以及在 M 上的一系列更新操作。
+操作用二维数组表示，其中的每个操作用一个含有两个正整数 a 和 b 的数组表示，含义是将所有符合 0 &amp;lt;= i &amp;lt; a 以及 0 &amp;lt;= j &amp;lt; b 的元素 M[i][j] 的值都增加 1。
+在执行给定的一系列操作后，你需要返回矩阵中含有最大整数的元素个数。
+示例：  输入:
+m = 3, n = 3 operations = [[2,2],[3,3]] 输出: 4
+解释:
+初始状态, M =
+[[0, 0, 0],
+[0, 0, 0],
+[0, 0, 0]]
+执行完操作 [2,2] 后, M =
+[[1, 1, 0],
+[1, 1, 0],</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 268. 丢失的数字</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-268.-%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Sat, 06 Nov 2021 12:14:29 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-268.-%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/missing-number/
+难度： 简单
+题目描述 给定一个包含 [0, n] 中 n 个数的数组 nums ，找出 [0, n] 这个范围内没有出现在数组中的那个数。
+示例 1：  输入： nums = [3,0,1]
+输出： 2
+解释： n = 3，因为有 3 个数字，所以所有的数字都在范围 [0,3] 内。2 是丢失的数字，因为它没有出现在 nums 中。
+ 示例 2：  输入： nums = [0,1]
+输出： 2
+解释： n = 2，因为有 2 个数字，所以所有的数字都在范围 [0,2] 内。2 是丢失的数字，因为它没有出现在 nums 中。
+ 示例 3：  输入： nums = [9,6,4,2,3,5,7,0,1]
+输出： 8
+解释： n = 9，因为有 9 个数字，所以所有的数字都在范围 [0,9] 内。8 是丢失的数字，因为它没有出现在 nums 中。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1218. 最长定差子序列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1218.-%E6%9C%80%E9%95%BF%E5%AE%9A%E5%B7%AE%E5%AD%90%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Fri, 05 Nov 2021 22:33:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1218.-%E6%9C%80%E9%95%BF%E5%AE%9A%E5%B7%AE%E5%AD%90%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/longest-arithmetic-subsequence-of-given-difference/
+难度： 中等
+题目描述 给你一个整数数组 arr 和一个整数 difference，请你找出并返回 arr 中最长等差子序列的长度，该子序列中相邻元素之间的差等于 difference 。
+子序列 是指在不改变其余元素顺序的情况下，通过删除一些元素或不删除任何元素而从 arr 派生出来的序列。
+示例1：  输入： arr = [1,2,3,4], difference = 1
+输出： 4
+解释： 最长的等差子序列是 [1,2,3,4]。
+ 示例 2：  输入： arr = [1,3,5,7], difference = 1
+输出： 1
+解释： 最长的等差子序列是任意单个元素。
+ 示例 3：  输入： arr = [1,5,7,8,5,3,4,2,1], difference = -2
+输出： 4
+解释： 最长的等差子序列是 [7,5,3,1]。
+ 提示：  1 &amp;lt;= arr.length &amp;lt;= 105 -104 &amp;lt;= arr[i], difference &amp;lt;= 104  解题思路 动态规划 对于 arr 中的某个元素 num ，其能否和之前的元素构成等差数列，取决于在其前面是否出现了 num - difference 这个元素，并可以不断向前追溯从而求得队列长度。所以要记录当前出现过的元素，同时为优化追溯过程，需要记录数列长度，故可以使用动态规划求解。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 367. 有效的完全平方数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-367.-%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/</link>
+      <pubDate>Thu, 04 Nov 2021 21:44:09 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-367.-%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/valid-perfect-square/
+难度： 简单
+题目描述 给定一个 正整数 num ，编写一个函数，如果 num 是一个完全平方数，则返回 true ，否则返回 false 。
+进阶： 不要 使用任何内置的库函数，如 sqrt 。
+示例 1：  输入： num = 16
+输出： true
+ 示例 2：  输入： num = 14
+输出： false
+ 提示：  1 &amp;lt;= num &amp;lt;= 231 - 1  解题思路 暴力求解 从 i = 1 开始每次累加 1，直到 i * i &amp;gt;= num 时为止。
+若此时 i * i = num ，则返回 true；否则，返回 false 。</description>
+    </item>
+    
     <item>
       <title>Leetcode 237. 删除链表中的节点</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-237.-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/</link>

@@ -6,7 +6,27 @@
     <description>Recent content in sort on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 01 Oct 2021 14:17:17 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Nov 2021 12:14:29 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 268. 丢失的数字</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-268.-%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Sat, 06 Nov 2021 12:14:29 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-268.-%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/missing-number/
+难度： 简单
+题目描述 给定一个包含 [0, n] 中 n 个数的数组 nums ，找出 [0, n] 这个范围内没有出现在数组中的那个数。
+示例 1：  输入： nums = [3,0,1]
+输出： 2
+解释： n = 3，因为有 3 个数字，所以所有的数字都在范围 [0,3] 内。2 是丢失的数字，因为它没有出现在 nums 中。
+ 示例 2：  输入： nums = [0,1]
+输出： 2
+解释： n = 2，因为有 2 个数字，所以所有的数字都在范围 [0,2] 内。2 是丢失的数字，因为它没有出现在 nums 中。
+ 示例 3：  输入： nums = [9,6,4,2,3,5,7,0,1]
+输出： 8
+解释： n = 9，因为有 9 个数字，所以所有的数字都在范围 [0,9] 内。8 是丢失的数字，因为它没有出现在 nums 中。</description>
+    </item>
+    
     <item>
       <title>剑指 Offer 61. 扑克牌中的顺子</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-61.-%E6%89%91%E5%85%8B%E7%89%8C%E4%B8%AD%E7%9A%84%E9%A1%BA%E5%AD%90/</link>
