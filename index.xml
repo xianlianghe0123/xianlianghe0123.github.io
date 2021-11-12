@@ -6,7 +6,369 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Mon, 08 Nov 2021 22:46:13 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 12 Nov 2021 11:30:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 375. 猜数字大小 II</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-375.-%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F-ii/</link>
+        <pubDate>Fri, 12 Nov 2021 11:30:47 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-375.-%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F-ii/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;我们正在玩一个猜数游戏，游戏规则如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我从 &lt;code&gt;1&lt;/code&gt; 到 &lt;code&gt;n&lt;/code&gt; 之间选择一个数字。&lt;/li&gt;
+&lt;li&gt;你来猜我选了哪个数字。&lt;/li&gt;
+&lt;li&gt;如果你猜到正确的数字，就会 &lt;strong&gt;赢得游戏&lt;/strong&gt; 。&lt;/li&gt;
+&lt;li&gt;如果你猜错了，那么我会告诉你，我选的数字比你的 &lt;strong&gt;更大或者更小&lt;/strong&gt; ，并且你需要继续猜数。&lt;/li&gt;
+&lt;li&gt;每当你猜了数字 &lt;code&gt;x&lt;/code&gt; 并且猜错了的时候，你需要支付金额为 &lt;code&gt;x&lt;/code&gt; 的现金。如果你花光了钱，就会 &lt;strong&gt;输掉游戏&lt;/strong&gt; 。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;给你一个特定的数字 &lt;code&gt;n&lt;/code&gt; ，返回能够 &lt;strong&gt;确保你获胜&lt;/strong&gt; 的最小现金数，&lt;strong&gt;不管我选择那个数字&lt;/strong&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/375.graph.png&#34; width=&#34;505px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 10&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 16&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 制胜策略如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数字范围是 [1,10] 。你先猜测数字为 7 。
+&lt;ul&gt;
+&lt;li&gt;如果这是我选中的数字，你的总费用为 $0 。否则，你需要支付 $7 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更大，则下一步需要猜测的数字范围是 [8,10] 。你可以猜测数字为 9 。
+&lt;ul&gt;
+&lt;li&gt;如果这是我选中的数字，你的总费用为 $7 。否则，你需要支付 $9 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更大，那么这个数字一定是 10 。你猜测数字为 10 并赢得游戏，总费用为 $7 + $9 = $16 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更小，那么这个数字一定是 8 。你猜测数字为 8 并赢得游戏，总费用为 $7 + $9 = $16 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;如果我的数字更小，则下一步需要猜测的数字范围是 [1,6] 。你可以猜测数字为 3 。
+&lt;ul&gt;
+&lt;li&gt;如果这是我选中的数字，你的总费用为 $7 。否则，你需要支付 $3 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更大，则下一步需要猜测的数字范围是 [4,6] 。你可以猜测数字为 5 。
+&lt;ul&gt;
+&lt;li&gt;如果这是我选中的数字，你的总费用为 $7 + $3 = $10 。否则，你需要支付 $5 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更大，那么这个数字一定是 6 。你猜测数字为 6 并赢得游戏，总费用为 $7 + $3 + $5 = $15 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更小，那么这个数字一定是 4 。你猜测数字为 4 并赢得游戏，总费用为 $7 + $3 + $5 = $15 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更小，则下一步需要猜测的数字范围是 [1,2] 。你可以猜测数字为 1 。
+&lt;ul&gt;
+&lt;li&gt;如果这是我选中的数字，你的总费用为 $7 + $3 = $10 。否则，你需要支付 $1 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更大，那么这个数字一定是 2 。你猜测数字为 2 并赢得游戏，总费用为 $7 + $3 + $1 = $11 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在最糟糕的情况下，你需要支付 $16 。因此，你只需要 $16 就可以确保自己赢得游戏。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 1&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 0&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 只有一个可能的数字，所以你可以直接猜 1 并赢得游戏，无需支付任何费用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 2&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 1&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 有两个可能的数字 1 和 2 。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;你可以先猜 1 。
+&lt;ul&gt;
+&lt;li&gt;如果这是我选中的数字，你的总费用为 $0 。否则，你需要支付 $1 。&lt;/li&gt;
+&lt;li&gt;如果我的数字更大，那么这个数字一定是 2 。你猜测数字为 2 并赢得游戏，总费用为 $1 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最糟糕的情况下，你需要支付 $1 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;coed&gt;1 &amp;lt;= n &amp;lt;= 200&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;动态规划&#34;&gt;动态规划&lt;/h4&gt;
+&lt;p&gt;由于无法得知每一步要选择哪个数字，故需要递归的寻找最优选择，但这样会产生很多重复的子问题，考虑转换为动态规划进行优化。&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;dp[i][j]&lt;/code&gt; 表示在连续区间 &lt;code&gt;[i, j]&lt;/code&gt; 中猜数能获胜的最小现金数，则可以得到状态转移方程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dp[i][i] = 0&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dp[i][j] = min(k + max(dp[i][k-1], dp[k+1][j])), k ∈ [i, j]&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最终结果为 &lt;code&gt;dp[1][n]&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getMoneyAmount&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;, make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;))
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 求解区间长度
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 区间开始下标
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;MaxInt32&lt;/span&gt;
+			&lt;span style=&#34;color:#75715e&#34;&gt;// 遍历可能选择
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;pay&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 下标从零开始，转换为 [1,n]
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#75715e&#34;&gt;// 两端判定
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;pay&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+				} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;pay&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+				} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+					&lt;span style=&#34;color:#75715e&#34;&gt;// 中间取大值
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;					&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] {
+						&lt;span style=&#34;color:#a6e22e&#34;&gt;pay&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+					} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+						&lt;span style=&#34;color:#a6e22e&#34;&gt;pay&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+					}
+				}
+				&lt;span style=&#34;color:#75715e&#34;&gt;// 取最小选择点
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pay&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;pay&lt;/span&gt;
+				}
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(n^3) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(n^2) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 629. K个逆序对数组</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-629.-k%E4%B8%AA%E9%80%86%E5%BA%8F%E5%AF%B9%E6%95%B0%E7%BB%84/</link>
+        <pubDate>Thu, 11 Nov 2021 10:32:02 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-629.-k%E4%B8%AA%E9%80%86%E5%BA%8F%E5%AF%B9%E6%95%B0%E7%BB%84/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/valid-triangle-number/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/valid-triangle-number/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;red&#34;&gt;困难&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给出两个整数 &lt;code&gt;n&lt;/code&gt; 和 &lt;code&gt;k&lt;/code&gt;，找出所有包含从 &lt;code&gt;1&lt;/code&gt; 到 &lt;code&gt;n&lt;/code&gt; 的数字，且恰好拥有 &lt;code&gt;k&lt;/code&gt; 个逆序对的不同的数组的个数。&lt;/p&gt;
+&lt;p&gt;逆序对的定义如下：对于数组的第 &lt;code&gt;i&lt;/code&gt; 个和第 &lt;code&gt;j&lt;/code&gt; 个元素，如果满足 &lt;code&gt;i &amp;lt; j&lt;/code&gt; 且 &lt;code&gt;a[i] &amp;gt; a[j]&lt;/code&gt;，则其为一个逆序对；否则不是。&lt;/p&gt;
+&lt;p&gt;由于答案可能很大，只需要返回 答案 mod 10&lt;sup&gt;9&lt;/sup&gt; + 7 的值。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; n = 3, k = 0&lt;br&gt;
+&lt;strong&gt;输出:&lt;/strong&gt; 1&lt;br&gt;
+&lt;strong&gt;解释:&lt;/strong&gt; 只有数组 [1,2,3] 包含了从1到3的整数并且正好拥有 0 个逆序对。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入:&lt;/strong&gt; n = 3, k = 1&lt;br&gt;
+&lt;strong&gt;输出:&lt;/strong&gt; 2&lt;br&gt;
+&lt;strong&gt;解释:&lt;/strong&gt; 数组 [1,3,2] 和 [2,1,3] 都有 1 个逆序对。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;说明&#34;&gt;说明：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt; 的范围是 &lt;code&gt;[1, 1000]&lt;/code&gt; 并且 &lt;code&gt;k&lt;/code&gt; 的范围是 &lt;code&gt;[0, 1000]&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;动态规划&#34;&gt;动态规划&lt;/h4&gt;
+&lt;p&gt;对于由前 &lt;code&gt;i&lt;/code&gt; 个自然数构成的任意排列，不妨假设逆序对个数为 &lt;code&gt;x&lt;/code&gt; ，则将 &lt;code&gt;i + 1&lt;/code&gt; 加入到排列中，由于 &lt;code&gt;i + 1&lt;/code&gt; 是最大值，则其加入后对应逆序对的个数区间为 &lt;code&gt;[x, x + i]&lt;/code&gt;，故可以用动态规划求解。&lt;/p&gt;
+&lt;p&gt;用 &lt;code&gt;dp[i][j]&lt;/code&gt; 表示前 &lt;code&gt;i&lt;/code&gt; 个自然数的排列中，逆序对的个数为 &lt;code&gt;j&lt;/code&gt; 的排列个数。则容易得到状态转移方程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;初始时，&lt;code&gt;dp[1][0] = 1, dp[1][...] = 0&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;之后，&lt;code&gt;dp[i][j] = dp[i-1][j-i+1] + dp[i-1][j-i+2] + ... + dp[i-1][j]&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后的结果即为 &lt;code&gt;dp[n][k]&lt;/code&gt; ，选择使用滚动数组降低空间复杂度。&lt;/p&gt;
+&lt;p&gt;可以看到上述每次转移时，时间复杂度为 &lt;code&gt;i&lt;/code&gt;，需要优化。注意到：&lt;br&gt;
+&lt;code&gt;dp[i][j-1] = dp[i-1][j-i] + dp[i-1][j-i+1] + ... + dp[i-1][j-1]&lt;/code&gt;,&lt;br&gt;
+则 &lt;code&gt;dp[i][j] = dp[i-1][j-i+1] + dp[i-1][j-i+2] + ... + dp[i-1][j] = dp[i][j-1] + dp[i-1][j] - dp[i-1][j-i]&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;kInversePairs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;1e9&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+			&lt;span style=&#34;color:#75715e&#34;&gt;// 越界检查
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] = (&lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt;
+			} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] = (&lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt;
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MOD&lt;/span&gt;
+				}
+			}
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;dp1&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dp0&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(nk) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(k) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 495. 提莫攻击</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-495.-%E6%8F%90%E8%8E%AB%E6%94%BB%E5%87%BB/</link>
+        <pubDate>Wed, 10 Nov 2021 10:21:09 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-495.-%E6%8F%90%E8%8E%AB%E6%94%BB%E5%87%BB/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/teemo-attacking/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/teemo-attacking/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;在《英雄联盟》的世界中，有一个叫 “提莫” 的英雄。他的攻击可以让敌方英雄艾希（编者注：寒冰射手）进入中毒状态。&lt;/p&gt;
+&lt;p&gt;当提莫攻击艾希，艾希的中毒状态正好持续 &lt;code&gt;duration&lt;/code&gt; 秒。&lt;/p&gt;
+&lt;p&gt;正式地讲，提莫在 &lt;code&gt;t&lt;/code&gt; 发起发起攻击意味着艾希在时间区间 &lt;code&gt;[t, t + duration - 1]&lt;/code&gt;（含 &lt;code&gt;t&lt;/code&gt; 和 &lt;code&gt;t + duration - 1&lt;/code&gt;）处于中毒状态。如果提莫在中毒影响结束 &lt;code&gt;前&lt;/code&gt; 再次攻击，中毒状态计时器将会 &lt;strong&gt;重置&lt;/strong&gt; ，在新的攻击之后，中毒影响将会在 &lt;code&gt;duration&lt;/code&gt; 秒后结束。&lt;/p&gt;
+&lt;p&gt;给你一个 &lt;strong&gt;非递减&lt;/strong&gt; 的整数数组 &lt;code&gt;timeSeries&lt;/code&gt; ，其中 &lt;code&gt;timeSeries[i]&lt;/code&gt; 表示提莫在 &lt;code&gt;timeSeries[i]&lt;/code&gt; 秒时对艾希发起攻击，以及一个表示中毒持续时间的整数 &lt;code&gt;duration&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;返回艾希处于中毒状态的 &lt;strong&gt;总&lt;/strong&gt; 秒数。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; timeSeries = [1,4], duration = 2&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 4&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 提莫攻击对艾希的影响如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第 1 秒，提莫攻击艾希并使其立即中毒。中毒状态会维持 2 秒，即第 1 秒和第 2 秒。&lt;/li&gt;
+&lt;li&gt;第 4 秒，提莫再次攻击艾希，艾希中毒状态又持续 2 秒，即第 4 秒和第 5 秒。&lt;br&gt;
+艾希在第 1、2、4、5 秒处于中毒状态，所以总中毒秒数是 4 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; timeSeries = [1,2], duration = 2&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 提莫攻击对艾希的影响如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第 1 秒，提莫攻击艾希并使其立即中毒。中毒状态会维持 2 秒，即第 1 秒和第 2 秒。&lt;/li&gt;
+&lt;li&gt;第 2 秒，提莫再次攻击艾希，并重置中毒计时器，艾希中毒状态需要持续 2 秒，即第 2 秒和第 3 秒。&lt;br&gt;
+艾希在第 1、2、3 秒处于中毒状态，所以总中毒秒数是 3 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= timeSeries.length &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= timeSeries[i], duration &amp;lt;= 10&lt;sup&gt;7&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeSeries&lt;/code&gt; 按 &lt;strong&gt;非递减&lt;/strong&gt; 顺序排列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;模拟&#34;&gt;模拟&lt;/h4&gt;
+&lt;p&gt;对于每次攻击 &lt;code&gt;timeSeries[i]&lt;/code&gt; ，判定与下一次攻击 &lt;code&gt;timeSeries[i+1]&lt;/code&gt; 之间的时间间隔：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当距离下一次攻击的时间间隔 &lt;code&gt;≥ duration&lt;/code&gt; 时，中毒计数器不会重置，中毒时间为 &lt;code&gt;duration&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;否则，说明中毒计数器重置了，中毒时间为 &lt;code&gt;timeSeries[i+1] - timeSeries[i]&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;最后一次攻击后，其中毒时间为 &lt;code&gt;duration&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;将每次计算的中毒时间累加即可。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;findPoisonedDuration&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;timeSeries&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;timeSeries&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;timeSeries&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;timeSeries&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt;
+		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;timeSeries&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;timeSeries&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(timeSeries) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 859. 亲密字符串</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-859.-%E4%BA%B2%E5%AF%86%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+        <pubDate>Tue, 09 Nov 2021 10:50:05 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-859.-%E4%BA%B2%E5%AF%86%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/buddy-strings/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/buddy-strings/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你两个字符串 &lt;code&gt;s&lt;/code&gt; 和 &lt;code&gt;goal&lt;/code&gt; ，只要我们可以通过交换 &lt;code&gt;s&lt;/code&gt; 中的两个字母得到与 &lt;code&gt;goal&lt;/code&gt; 相等的结果，就返回 &lt;code&gt;true&lt;/code&gt; ；否则返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;交换字母的定义是：取两个下标 &lt;code&gt;i&lt;/code&gt; 和 &lt;code&gt;j&lt;/code&gt; （下标从 &lt;code&gt;0&lt;/code&gt; 开始）且满足 &lt;code&gt;i != j&lt;/code&gt; ，接着交换 &lt;code&gt;s[i]&lt;/code&gt; 和 &lt;code&gt;s[j]&lt;/code&gt; 处的字符。&lt;/p&gt;
+&lt;p&gt;例如，在 &lt;code&gt;&amp;quot;abcd&amp;quot;&lt;/code&gt; 中交换下标 &lt;code&gt;0&lt;/code&gt; 和下标 &lt;code&gt;2&lt;/code&gt; 的元素可以生成 &lt;code&gt;&amp;quot;cbad&amp;quot;&lt;/code&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;ab&amp;rdquo;, goal = &amp;ldquo;ba&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; true&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 你可以交换 s[0] = &amp;lsquo;a&amp;rsquo; 和 s[1] = &amp;lsquo;b&amp;rsquo; 生成 &amp;ldquo;ba&amp;rdquo;，此时 s 和 goal 相等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;ab&amp;rdquo;, goal = &amp;ldquo;ab&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; false&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 你只能交换 s[0] = &amp;lsquo;a&amp;rsquo; 和 s[1] = &amp;lsquo;b&amp;rsquo; 生成 &amp;ldquo;ba&amp;rdquo;，此时 s 和 goal 不相等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;aa&amp;rdquo;, goal = &amp;ldquo;aa&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; true&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 你可以交换 s[0] = &amp;lsquo;a&amp;rsquo; 和 s[1] = &amp;lsquo;a&amp;rsquo; 生成 &amp;ldquo;aa&amp;rdquo;，此时 s 和 goal 相等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-4&#34;&gt;示例 4：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;aaaaaaabc&amp;rdquo;, goal = &amp;ldquo;aaaaaaacb&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; true&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= s.length, goal.length &amp;lt;= 2 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; 和 &lt;code&gt;goal&lt;/code&gt; 由小写英文字母组成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;暴力求解&#34;&gt;暴力求解&lt;/h4&gt;
+&lt;p&gt;满足条件的字符串有两种情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;字符串 &lt;code&gt;s&lt;/code&gt; 和 &lt;code&gt;goal&lt;/code&gt; 有且仅有两个下标处的字符不同，并且这两个下标处的字符位置相反的；&lt;/li&gt;
+&lt;li&gt;字符串 &lt;code&gt;s&lt;/code&gt; 和 &lt;code&gt;goal&lt;/code&gt; 完全相同，而且 &lt;code&gt;s&lt;/code&gt; 中至少有一个字符出现两次。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其余情况均不满足条件。&lt;/p&gt;
+&lt;p&gt;针对上述情况，首先比较字符串长度，不相同直接返回 &lt;code&gt;false&lt;/code&gt; 。相同则逐一地遍历比较每个字符，记录不同字符的下标位置，对于相同的字符，使用哈希表来判断是否有出现相同的字符。当仅有两个字符不相同时，返回是否位置相反；当全部都相同时，返回是否有重复字符；其余返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;buddyStrings&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;goal&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;goal&lt;/span&gt;) {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;repeat&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt;{})
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;goal&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;repeat&lt;/span&gt; {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]]; &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;repeat&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+				}
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]] = &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt;{}{}
+			}
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt;) {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;repeat&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;:
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;goal&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;goal&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;diff&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]]
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(s) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(\Sigma), \Sigma表示字符集字符总数量，本题为26$&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 299. 猜数字游戏</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-299.-%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/</link>
         <pubDate>Mon, 08 Nov 2021 22:46:13 +0800</pubDate>

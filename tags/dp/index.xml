@@ -6,7 +6,42 @@
     <description>Recent content in dp on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 05 Nov 2021 22:33:00 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Nov 2021 11:30:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 375. 猜数字大小 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-375.-%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F-ii/</link>
+      <pubDate>Fri, 12 Nov 2021 11:30:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-375.-%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F-ii/</guid>
+      <description>链接： https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/
+难度： 中等
+题目描述 我们正在玩一个猜数游戏，游戏规则如下：
+ 我从 1 到 n 之间选择一个数字。 你来猜我选了哪个数字。 如果你猜到正确的数字，就会 赢得游戏 。 如果你猜错了，那么我会告诉你，我选的数字比你的 更大或者更小 ，并且你需要继续猜数。 每当你猜了数字 x 并且猜错了的时候，你需要支付金额为 x 的现金。如果你花光了钱，就会 输掉游戏 。  给你一个特定的数字 n ，返回能够 确保你获胜 的最小现金数，不管我选择那个数字 。
+示例 1：  输入： n = 10
+输出： 16
+解释： 制胜策略如下：
+ 数字范围是 [1,10] 。你先猜测数字为 7 。  如果这是我选中的数字，你的总费用为 $0 。否则，你需要支付 $7 。 如果我的数字更大，则下一步需要猜测的数字范围是 [8,10] 。你可以猜测数字为 9 。  如果这是我选中的数字，你的总费用为 $7 。否则，你需要支付 $9 。 如果我的数字更大，那么这个数字一定是 10 。你猜测数字为 10 并赢得游戏，总费用为 $7 + $9 = $16 。 如果我的数字更小，那么这个数字一定是 8 。你猜测数字为 8 并赢得游戏，总费用为 $7 + $9 = $16 。   如果我的数字更小，则下一步需要猜测的数字范围是 [1,6] 。你可以猜测数字为 3 。  如果这是我选中的数字，你的总费用为 $7 。否则，你需要支付 $3 。 如果我的数字更大，则下一步需要猜测的数字范围是 [4,6] 。你可以猜测数字为 5 。  如果这是我选中的数字，你的总费用为 $7 + $3 = $10 。否则，你需要支付 $5 。 如果我的数字更大，那么这个数字一定是 6 。你猜测数字为 6 并赢得游戏，总费用为 $7 + $3 + $5 = $15 。 如果我的数字更小，那么这个数字一定是 4 。你猜测数字为 4 并赢得游戏，总费用为 $7 + $3 + $5 = $15 。 如果我的数字更小，则下一步需要猜测的数字范围是 [1,2] 。你可以猜测数字为 1 。  如果这是我选中的数字，你的总费用为 $7 + $3 = $10 。否则，你需要支付 $1 。 如果我的数字更大，那么这个数字一定是 2 。你猜测数字为 2 并赢得游戏，总费用为 $7 + $3 + $1 = $11 。          在最糟糕的情况下，你需要支付 $16 。因此，你只需要 $16 就可以确保自己赢得游戏。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 629. K个逆序对数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-629.-k%E4%B8%AA%E9%80%86%E5%BA%8F%E5%AF%B9%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 11 Nov 2021 10:32:02 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-629.-k%E4%B8%AA%E9%80%86%E5%BA%8F%E5%AF%B9%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/valid-triangle-number/
+难度： 困难
+题目描述 给出两个整数 n 和 k，找出所有包含从 1 到 n 的数字，且恰好拥有 k 个逆序对的不同的数组的个数。
+逆序对的定义如下：对于数组的第 i 个和第 j 个元素，如果满足 i &amp;lt; j 且 a[i] &amp;gt; a[j]，则其为一个逆序对；否则不是。
+由于答案可能很大，只需要返回 答案 mod 109 + 7 的值。
+示例 1：  输入: n = 3, k = 0
+输出: 1
+解释: 只有数组 [1,2,3] 包含了从1到3的整数并且正好拥有 0 个逆序对。
+ 示例 2：  输入: n = 3, k = 1
+输出: 2
+解释: 数组 [1,3,2] 和 [2,1,3] 都有 1 个逆序对。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1218. 最长定差子序列</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1218.-%E6%9C%80%E9%95%BF%E5%AE%9A%E5%B7%AE%E5%AD%90%E5%BA%8F%E5%88%97/</link>
