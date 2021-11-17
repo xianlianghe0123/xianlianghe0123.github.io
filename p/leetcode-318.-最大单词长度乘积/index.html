@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
+难度： 中等
+题目描述 给定一个字符串数组 words，找到 length(word[i]) * length(word[j]) 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 0。
+示例 1：  输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
+输出: 16
+解释: 这两个单词为 &amp;ldquo;abcw&amp;rdquo;, &amp;ldquo;xtfn&amp;rdquo;。
+ 示例 2：  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
+输出: 4
+解释: 这两个单词为 &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;cd&amp;rdquo;。
+ 示例 3:  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
+输出: 0
+解释: 不存在这样的两个单词。
+ 提示：  2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母  解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
+func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度  时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $  排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。'><title>Leetcode 318. 最大单词长度乘积</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-318.-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 318. 最大单词长度乘积'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
+难度： 中等
+题目描述 给定一个字符串数组 words，找到 length(word[i]) * length(word[j]) 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 0。
+示例 1：  输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
+输出: 16
+解释: 这两个单词为 &amp;ldquo;abcw&amp;rdquo;, &amp;ldquo;xtfn&amp;rdquo;。
+ 示例 2：  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
+输出: 4
+解释: 这两个单词为 &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;cd&amp;rdquo;。
+ 示例 3:  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
+输出: 0
+解释: 不存在这样的两个单词。
+ 提示：  2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母  解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
+func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度  时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $  排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-318.-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-11-17T10:19:33&#43;08:00'/><meta property='article:modified_time' content='2021-11-17T10:19:33&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 318. 最大单词长度乘积">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
+难度： 中等
+题目描述 给定一个字符串数组 words，找到 length(word[i]) * length(word[j]) 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 0。
+示例 1：  输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
+输出: 16
+解释: 这两个单词为 &amp;ldquo;abcw&amp;rdquo;, &amp;ldquo;xtfn&amp;rdquo;。
+ 示例 2：  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
+输出: 4
+解释: 这两个单词为 &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;cd&amp;rdquo;。
+ 示例 3:  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
+输出: 0
+解释: 不存在这样的两个单词。
+ 提示：  2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母  解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
+func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度  时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $  排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-318.-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/">Leetcode 318. 最大单词长度乘积</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 17, 2021</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/maximum-product-of-word-lengths/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/maximum-product-of-word-lengths/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个字符串数组 <code>words</code>，找到 <code>length(word[i]) * length(word[j])</code> 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 <code>0</code>。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入:</strong> [&ldquo;abcw&rdquo;,&ldquo;baz&rdquo;,&ldquo;foo&rdquo;,&ldquo;bar&rdquo;,&ldquo;xtfn&rdquo;,&ldquo;abcdef&rdquo;]<br>
+<strong>输出:</strong> 16<br>
+<strong>解释:</strong> 这两个单词为 &ldquo;abcw&rdquo;, &ldquo;xtfn&rdquo;。</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入:</strong> [&ldquo;a&rdquo;,&ldquo;ab&rdquo;,&ldquo;abc&rdquo;,&ldquo;d&rdquo;,&ldquo;cd&rdquo;,&ldquo;bcd&rdquo;,&ldquo;abcd&rdquo;]<br>
+<strong>输出:</strong> 4<br>
+<strong>解释:</strong> 这两个单词为 &ldquo;ab&rdquo;, &ldquo;cd&rdquo;。</p>
+</blockquote>
+<h4 id="示例-3">示例 3:</h4>
+<blockquote>
+<p><strong>输入:</strong> [&ldquo;a&rdquo;,&ldquo;aa&rdquo;,&ldquo;aaa&rdquo;,&ldquo;aaaa&rdquo;]<br>
+<strong>输出:</strong> 0<br>
+<strong>解释:</strong> 不存在这样的两个单词。</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>2 &lt;= words.length &lt;= 1000</code></li>
+<li><code>1 &lt;= words[i].length &lt;= 1000</code></li>
+<li><code>words[i]</code> 仅包含小写字母</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="暴力求解">暴力求解</h4>
+<p>将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, <span style="color:#ae81ff">26</span>)
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] {
+			<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] = <span style="color:#66d9ef">true</span>
+		}
+	<span style="color:#a6e22e">Other</span>:
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>] {
+				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] {
+					<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Other</span>
+				}
+			}
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
+				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+			}
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $</li>
+<li>空间复杂度：$ O(L) $</li>
+</ul>
+<h4 id="排序">排序</h4>
+<p>在暴力的基础上优化，将 <code>words</code> 按照长度排序，从最长的字符串 <code>word[i]</code> 开始遍历，寻找下一个与 <code>words[i]</code> 没有公共字符的字符串 <code>word[j]</code>，找到即求得 <code>word[i]</code> 关联的最大值，无需继续遍历；当 <code>len(word[i]) * len(word[j])</code> 小于最大值的时候，也无需继续遍历。</p>
+<p>当 <code>len(word[i])</code> 的平方小于最长单词的时候，即完成遍历。</p>
+<p>比较两个单词是否有公共字符时，使用哈希表，将 <code>word[i]</code> 以字符的维度记录到哈希表中，遍历 <code>word[j]</code> ，确认其字符是否在哈希表中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">words</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+	})
+	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &lt; len(<span style="color:#a6e22e">words</span>[len(<span style="color:#a6e22e">words</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) {
+			<span style="color:#66d9ef">break</span>
+		}
+		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, <span style="color:#ae81ff">26</span>)
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] {
+			<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] = <span style="color:#66d9ef">true</span>
+		}
+	<span style="color:#a6e22e">Other</span>:
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) &lt; <span style="color:#a6e22e">max</span> {
+				<span style="color:#66d9ef">break</span>
+			}
+			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>] {
+				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] {
+					<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Other</span>
+				}
+			}
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
+				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+				<span style="color:#66d9ef">break</span>
+			}
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $</li>
+<li>空间复杂度：$ O(\log{N}+L) $</li>
+</ul>
+<h4 id="位运算">位运算</h4>
+<p>当使用哈希表确定是否有公共字符时，需要进行遍历，效率比较低。而因为字符空间为小写字母集合，可以用整数中的位代替哈希表的作用，这样可以使用与运算 $O(1)$ 的计算出是否有公共字符。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">chars</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int32</span>, len(<span style="color:#a6e22e">words</span>))
+	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
+			<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">|=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span>)
+		}
+	}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
+				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+			}
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+}
+</code></pre></div><h5 id="复杂度-2">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N^2+NL), N = len(words), L = len(words[i]) $</li>
+<li>空间复杂度：$ O(N) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

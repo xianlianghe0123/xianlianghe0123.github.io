@@ -6,7 +6,92 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 12 Nov 2021 11:30:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 10:19:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 318. 最大单词长度乘积</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-318.-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/</link>
+      <pubDate>Wed, 17 Nov 2021 10:19:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-318.-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
+难度： 中等
+题目描述 给定一个字符串数组 words，找到 length(word[i]) * length(word[j]) 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 0。
+示例 1：  输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
+输出: 16
+解释: 这两个单词为 &amp;ldquo;abcw&amp;rdquo;, &amp;ldquo;xtfn&amp;rdquo;。
+ 示例 2：  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
+输出: 4
+解释: 这两个单词为 &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;cd&amp;rdquo;。
+ 示例 3:  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
+输出: 0
+解释: 不存在这样的两个单词。
+ 提示：  2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母  解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
+func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度  时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $  排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 319. 灯泡开关</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-319.-%E7%81%AF%E6%B3%A1%E5%BC%80%E5%85%B3/</link>
+      <pubDate>Mon, 15 Nov 2021 10:15:49 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-319.-%E7%81%AF%E6%B3%A1%E5%BC%80%E5%85%B3/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bulb-switcher/
+难度： 中等
+题目描述 初始时有 n 个灯泡处于关闭状态。第一轮，你将会打开所有灯泡。接下来的第二轮，你将会每两个灯泡关闭一个。
+第三轮，你每三个灯泡就切换一个灯泡的开关（即，打开变关闭，关闭变打开）。第 i 轮，你每 i 个灯泡就切换一个灯泡的开关。直到第 n 轮，你只需要切换最后一个灯泡的开关。
+找出并返回 n 轮后有多少个亮着的灯泡。
+示例 1：  输入： n = 3
+输出： 1
+解释：
+初始时, 灯泡状态 [关闭, 关闭, 关闭].
+第一轮后, 灯泡状态 [开启, 开启, 开启].
+第二轮后, 灯泡状态 [开启, 关闭, 开启].
+第三轮后, 灯泡状态 [开启, 关闭, 关闭].
+你应该返回 1，因为只有一个灯泡还亮着。
+ 示例 2：  输入： n = 0
+输出： 0
+ 示例 3：  输入： n = 1
+输出： 1</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 677. 键值映射</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-677.-%E9%94%AE%E5%80%BC%E6%98%A0%E5%B0%84/</link>
+      <pubDate>Sun, 14 Nov 2021 10:55:35 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-677.-%E9%94%AE%E5%80%BC%E6%98%A0%E5%B0%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/map-sum-pairs/
+难度： 中等
+题目描述 实现一个 MapSum 类，支持两个方法，insert 和 sum：
+ MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。  示例：  输入：
+[&amp;ldquo;MapSum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;]
+[[], [&amp;ldquo;apple&amp;rdquo;, 3], [&amp;ldquo;ap&amp;rdquo;], [&amp;ldquo;app&amp;rdquo;, 2], [&amp;ldquo;ap&amp;rdquo;]]
+输出：
+[null, null, 3, null, 5]
+解释：
+MapSum mapSum = new MapSum();
+mapSum.insert(&amp;ldquo;apple&amp;rdquo;, 3);
+mapSum.sum(&amp;ldquo;ap&amp;rdquo;); // return 3 (apple = 3)</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 520. 检测大写字母</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-520.-%E6%A3%80%E6%B5%8B%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D/</link>
+      <pubDate>Sat, 13 Nov 2021 20:49:36 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-520.-%E6%A3%80%E6%B5%8B%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/detect-capital/
+难度： 简单
+题目描述 我们定义，在以下情况时，单词的大写用法是正确的：
+ 全部字母都是大写，比如 &amp;quot;USA&amp;quot; 。 单词中所有字母都不是大写，比如 &amp;quot;leetcode&amp;quot; 。 如果单词不只含有一个字母，只有首字母大写， 比如 &amp;quot;Google&amp;quot; 。  给你一个字符串 word 。如果大写用法正确，返回 true ；否则，返回 false 。
+示例 1：  输入： word = &amp;ldquo;USA&amp;rdquo;
+输出： true
+ 示例 2：  输入： word = &amp;ldquo;FlaG&amp;rdquo;
+输出： false
+ 提示：  1 &amp;lt;= word.length &amp;lt;= 100 word 由小写和大写英文字母组成  解题思路 分类讨论 满足条件的字符串或者全部为小写字母，或者首字母为大写字母，其余字母的大小写一致。根据这个进行分类讨论：
+ 当 word 长度小于 2 时，返回 true； 当首字母为小写字母时，需要判定后续字母必须全部小写； 当首字母是大写时，后续的字母均需要和第二个字母大小写相同。  func detectCapitalUse(word string) bool { if len(word) &amp;lt;= 1 { return true } i := 1 isCapital := false // 剩余字母的大小写 	if word[0] &amp;gt;= &amp;#39;A&amp;#39; &amp;amp;&amp;amp; word[0] &amp;lt;= &amp;#39;Z&amp;#39; { // 当首字母是大写时，确定第二个字母的大小写，并从第三个字母开始判断 	if word[1] &amp;gt;= &amp;#39;A&amp;#39; &amp;amp;&amp;amp; word[1] &amp;lt;= &amp;#39;Z&amp;#39; { isCapital = true } i = 2 } // 判断后续字母的大小写 	for ; i &amp;lt; len(word); i++ { if (word[i] &amp;gt;= &amp;#39;A&amp;#39; &amp;amp;&amp;amp; word[i] &amp;lt;= &amp;#39;Z&amp;#39;) !</description>
+    </item>
+    
     <item>
       <title>Leetcode 375. 猜数字大小 II</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-375.-%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F-ii/</link>
