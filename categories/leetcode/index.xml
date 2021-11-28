@@ -6,7 +6,107 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 21 Nov 2021 10:32:51 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 10:03:54 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 438. 找到字符串中所有字母异位词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-438.-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/</link>
+      <pubDate>Sun, 28 Nov 2021 10:03:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-438.-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/
+难度： 中等
+题目描述 给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。
+异位词 指由相同字母重排列形成的字符串（包括相同的字符串）。
+示例 1：  输入： s = &amp;ldquo;cbaebabacd&amp;rdquo;, p = &amp;ldquo;abc&amp;rdquo;
+输出： [0,6]
+解释：
+起始索引等于 0 的子串是 &amp;ldquo;cba&amp;rdquo;, 它是 &amp;ldquo;abc&amp;rdquo; 的异位词。
+起始索引等于 6 的子串是 &amp;ldquo;bac&amp;rdquo;, 它是 &amp;ldquo;abc&amp;rdquo; 的异位词。
+ 示例 2：  输入： s = &amp;ldquo;abab&amp;rdquo;, p = &amp;ldquo;ab&amp;rdquo;
+输出： [0,1,2]
+解释：
+起始索引等于 0 的子串是 &amp;ldquo;ab&amp;rdquo;, 它是 &amp;ldquo;ab&amp;rdquo; 的异位词。
+起始索引等于 1 的子串是 &amp;ldquo;ba&amp;rdquo;, 它是 &amp;ldquo;ab&amp;rdquo; 的异位词。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 519. 随机翻转矩阵</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-519.-%E9%9A%8F%E6%9C%BA%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Sat, 27 Nov 2021 13:18:35 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-519.-%E9%9A%8F%E6%9C%BA%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/</guid>
+      <description>链接： https://leetcode-cn.com/problems/random-flip-matrix/
+难度： 中等
+题目描述 给你一个 m x n 的二元矩阵 matrix ，且所有值被初始化为 0 。请你设计一个算法，随机选取一个满足 matrix[i][j] == 0 的下标 (i, j) ，并将它的值变为 1 。所有满足 matrix[i][j] == 0 的下标 (i, j) 被选取的概率应当均等。
+尽量最少调用内置的随机函数，并且优化时间和空间复杂度。
+实现 Solution 类：
+ Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0  示例：  输入：
+[&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;reset&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;]
+[[3, 1], [], [], [], [], []]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 700. 二叉搜索树中的搜索</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-700.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Fri, 26 Nov 2021 10:15:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-700.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E6%90%9C%E7%B4%A2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/search-in-a-binary-search-tree/
+难度： 简单
+题目描述 给定二叉搜索树（BST）的根节点和一个值。 你需要在BST中找到节点值等于给定值的节点。 返回以该节点为根的子树。 如果节点不存在，则返回 NULL 。
+例如，
+给定二叉搜索树:
+ 4 / \ 2 7 / \ 1 3 和值: 2 你应该返回如下子树:
+ 2 / \ 1 3 在上述示例中，如果要找的值是 5 ，但因为没有节点值为 5 ，我们应该返回 NULL 。
+解题思路 二分查找 题设中给出的树是一颗二叉搜索树，则对于其中任意一个结点，其左子树所有结点值均小于当前结点，右子树所有结点值均大于当前结点，故采用二分查找的方式：
+ 当当前结点值  = val 时，直接返回该结点； 当当前结点值  &amp;lt; val 时，去做左子树中查找； 当当前结点值  &amp;gt; val 时，去做右子树中查找； 当当前结点为空时，说明找不到，直接返回 NULL 。  func searchBST(root *TreeNode, val int) *TreeNode { for node := root; node !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 423. 从英文中重建数字</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-423.-%E4%BB%8E%E8%8B%B1%E6%96%87%E4%B8%AD%E9%87%8D%E5%BB%BA%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Wed, 24 Nov 2021 10:12:51 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-423.-%E4%BB%8E%E8%8B%B1%E6%96%87%E4%B8%AD%E9%87%8D%E5%BB%BA%E6%95%B0%E5%AD%97/</guid>
+      <description>title: &amp;ldquo;Leetcode 421. 数组中两个数的最大异或值&amp;rdquo; date: 2021-05-16T22:31:57+08:00 链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
+难度： 中等
+题目描述 给你一个字符串 s ，其中包含字母顺序打乱的用英文单词表示的若干数字（0-9）。按 升序 返回原始的数字。
+示例 1：  输入： s = &amp;ldquo;owoztneoer&amp;rdquo;
+输出： &amp;ldquo;012&amp;rdquo;
+ 示例 2：  输入： s = &amp;ldquo;fviefuro&amp;rdquo;
+输出： &amp;ldquo;45&amp;rdquo;
+ 提示：   1 &amp;lt;= s.length &amp;lt;= 105
+  s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一
+  s 保证是一个符合题目要求的字符串
+  zero
+  one
+  two
+  three
+  four
+  five</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 384. 打乱数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-384.-%E6%89%93%E4%B9%B1%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 22 Nov 2021 10:15:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-384.-%E6%89%93%E4%B9%B1%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shuffle-an-array/
+难度： 中等
+题目描述 给你一个整数数组 nums ，设计算法来打乱一个没有重复元素的数组。
+实现 Solution class:
+ Solution(int[] nums) 使用整数数组 nums 初始化对象 int[] reset() 重设数组到它的初始状态并返回 int[] shuffle() 返回数组随机打乱后的结果  示例 1：  输入：
+[&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;shuffle&amp;rdquo;, &amp;ldquo;reset&amp;rdquo;, &amp;ldquo;shuffle&amp;rdquo;]
+[[[1, 2, 3]], [], [], []]
+输出：
+[null, [3, 1, 2], [1, 2, 3], [1, 3, 2]]
+解释：
+Solution solution = new Solution([1, 2, 3]);
+solution.shuffle(); // 打乱数组 [1,2,3] 并返回结果。任何 [1,2,3]的排列返回的概率应该相同。例如，返回 [3, 1, 2]
+solution.reset(); // 重设数组到它的初始状态 [1, 2, 3] 。返回 [1, 2, 3]</description>
+    </item>
+    
     <item>
       <title>Leetcode 559. N 叉树的最大深度</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-559.-n-%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/</link>

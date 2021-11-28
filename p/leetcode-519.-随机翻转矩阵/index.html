@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/random-flip-matrix/
+难度： 中等
+题目描述 给你一个 m x n 的二元矩阵 matrix ，且所有值被初始化为 0 。请你设计一个算法，随机选取一个满足 matrix[i][j] == 0 的下标 (i, j) ，并将它的值变为 1 。所有满足 matrix[i][j] == 0 的下标 (i, j) 被选取的概率应当均等。
+尽量最少调用内置的随机函数，并且优化时间和空间复杂度。
+实现 Solution 类：
+ Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0  示例：  输入：
+[&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;reset&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;]
+[[3, 1], [], [], [], [], []]'><title>Leetcode 519. 随机翻转矩阵</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-519.-%E9%9A%8F%E6%9C%BA%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 519. 随机翻转矩阵'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/random-flip-matrix/
+难度： 中等
+题目描述 给你一个 m x n 的二元矩阵 matrix ，且所有值被初始化为 0 。请你设计一个算法，随机选取一个满足 matrix[i][j] == 0 的下标 (i, j) ，并将它的值变为 1 。所有满足 matrix[i][j] == 0 的下标 (i, j) 被选取的概率应当均等。
+尽量最少调用内置的随机函数，并且优化时间和空间复杂度。
+实现 Solution 类：
+ Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0  示例：  输入：
+[&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;reset&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;]
+[[3, 1], [], [], [], [], []]'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-519.-%E9%9A%8F%E6%9C%BA%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:published_time' content='2021-11-27T13:18:35&#43;08:00'/><meta property='article:modified_time' content='2021-11-27T13:18:35&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 519. 随机翻转矩阵">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/random-flip-matrix/
+难度： 中等
+题目描述 给你一个 m x n 的二元矩阵 matrix ，且所有值被初始化为 0 。请你设计一个算法，随机选取一个满足 matrix[i][j] == 0 的下标 (i, j) ，并将它的值变为 1 。所有满足 matrix[i][j] == 0 的下标 (i, j) 被选取的概率应当均等。
+尽量最少调用内置的随机函数，并且优化时间和空间复杂度。
+实现 Solution 类：
+ Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0  示例：  输入：
+[&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;reset&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;]
+[[3, 1], [], [], [], [], []]">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-519.-%E9%9A%8F%E6%9C%BA%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/">Leetcode 519. 随机翻转矩阵</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 27, 2021</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/random-flip-matrix/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/random-flip-matrix/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>给你一个 <code>m x n</code> 的二元矩阵 <code>matrix</code> ，且所有值被初始化为 <code>0</code> 。请你设计一个算法，随机选取一个满足 <code>matrix[i][j] == 0</code> 的下标 <code>(i, j)</code> ，并将它的值变为 <code>1</code> 。所有满足 <code>matrix[i][j] == 0</code> 的下标 <code>(i, j)</code> 被选取的概率应当均等。</p>
+<p>尽量最少调用内置的随机函数，并且优化时间和空间复杂度。</p>
+<p>实现 <code>Solution</code> 类：</p>
+<ul>
+<li><code>Solution(int m, int n)</code> 使用二元矩阵的大小 <code>m</code> 和 <code>n</code> 初始化该对象</li>
+<li><code>int[] flip()</code> 返回一个满足 <code>matrix[i][j] == 0</code> 的随机下标 <code>[i, j]</code> ，并将其对应格子中的值变为 <code>1</code></li>
+<li><code>void reset()</code> 将矩阵中所有的值重置为 <code>0</code></li>
+</ul>
+<h4 id="示例">示例：</h4>
+<blockquote>
+<p><strong>输入：</strong><br>
+[&ldquo;Solution&rdquo;, &ldquo;flip&rdquo;, &ldquo;flip&rdquo;, &ldquo;flip&rdquo;, &ldquo;reset&rdquo;, &ldquo;flip&rdquo;]<br>
+[[3, 1], [], [], [], [], []]<br>
+<strong>输出：</strong><br>
+[null, [1, 0], [2, 0], [0, 0], null, [2, 0]]<br>
+<strong>解释：</strong><br>
+Solution solution = new Solution(3, 1);<br>
+solution.flip();  // 返回 [1, 0]，此时返回 [0,0]、[1,0] 和 [2,0] 的概率应当相同<br>
+solution.flip();  // 返回 [2, 0]，因为 [1,0] 已经返回过了，此时返回 [2,0] 和 [0,0] 的概率应当相同<br>
+solution.flip();  // 返回 [0, 0]，根据前面已经返回过的下标，此时只能返回 [0,0]<br>
+solution.reset(); // 所有值都重置为 0 ，并可以再次选择下标返回<br>
+solution.flip();  // 返回 [2, 0]，此时返回 [0,0]、[1,0] 和 [2,0] 的概率应当相同</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= m, n &lt;= 10<sup>4</sup></code></li>
+<li>每次调用 <code>flip</code> 时，矩阵中至少存在一个值为 0 的格子。</li>
+<li>最多调用 <code>1000</code> 次 <code>flip</code> 和 <code>reset</code> 方法。</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="哈希">哈希</h4>
+<p>对于已经变为 <code>1</code> 的格子，需要在随机选择时候将其排除在外，故需要维护一个池子，该池子中的元素均为当前可选的格子坐标，每次从中随机选取一个即可。</p>
+<p>随机函数生成的数字是连续整数，可以采用数组维护这个池子，随机的生成一个下标。之后需要将该元素从池子中排除，可以将此处的格子与最后一个交换，则以最后一个格子为分界线，前面的元素可用，此后的被排除。之后选出的元素依次与倒数第 <code>2、3、4</code> 个元素交换，即以较低的复杂度实现了排除操作。</p>
+<p>每个格子的坐标按照逐行的顺序编号，则有映射关系：编号 = 行号 * 列数 + 列号，并且可以通过编号反推得出坐标：</p>
+<ul>
+<li>行号 = 编号 / 列数</li>
+<li>列号 = 编号 % 列数</li>
+</ul>
+<p>在数组中，初始数组下标和数组中保存的编号是一致的。当执行交换后，才会有两个元素下标和编号不一致。而操作次数远小于矩阵元素数量，故使用哈希表记录不一致的这些元素即可。</p>
+<p>对于 <code>flip</code> 操作，从可用区间内随机选取一个下标，将其置到可用区间尾部，可用区间缩短 <code>1</code>。每次的交换操作均需要去哈希表中查找确认操作数，若不存在则操作数即和下标相同，否则操作数为哈希表中的数。</p>
+<p>对于 <code>reset</code> 操作，直接将可用区间扩展为整个数组即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">hash</span>   <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">valid</span>  <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">rows</span>   <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">cols</span>   <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">random</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">Solution</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
+		<span style="color:#a6e22e">hash</span>:   make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>),
+		<span style="color:#a6e22e">valid</span>:  <span style="color:#a6e22e">m</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">n</span>,
+		<span style="color:#a6e22e">rows</span>:   <span style="color:#a6e22e">m</span>,
+		<span style="color:#a6e22e">cols</span>:   <span style="color:#a6e22e">n</span>,
+		<span style="color:#a6e22e">random</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
+	}
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">Flip</span>() []<span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">random</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>)
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span><span style="color:#f92672">--</span>
+	<span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">idx</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>]; <span style="color:#a6e22e">ok</span> {
+		<span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>]
+	}
+	<span style="color:#a6e22e">swapNum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>]; <span style="color:#a6e22e">ok</span> {
+		<span style="color:#a6e22e">swapNum</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>]
+	}
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>] = <span style="color:#a6e22e">swapNum</span>, <span style="color:#a6e22e">num</span>
+	<span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">num</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>}
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">Reset</span>() {
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rows</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：
+<ul>
+<li><code>flip</code>：$ O(1) $</li>
+<li><code>reset</code>：$ O(1) $</li>
+</ul>
+</li>
+<li>空间复杂度：$ O(operations) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hash/">hash</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-594.-%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 594. 最长和谐子序列</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-268.-%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 268. 丢失的数字</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-575.-%E5%88%86%E7%B3%96%E6%9E%9C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 575. 分糖果</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-500.-%E9%94%AE%E7%9B%98%E8%A1%8C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 500. 键盘行</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-260.-%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97-iii/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 260. 只出现一次的数字 III</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
