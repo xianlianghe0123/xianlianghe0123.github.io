@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/ransom-note/
+难度： 简单
+题目描述 为了不在赎金信中暴露字迹，从杂志上搜索各个需要的字母，组成单词来表达意思。
+给你一个赎金信 (ransomNote) 字符串和一个杂志(magazine)字符串，判断 ransomNote 能不能由 magazines 里面的字符构成。
+如果可以构成，返回 true ；否则返回 false 。
+magazine 中的每个字符只能在 ransomNote 中使用一次。
+示例 1：  输入： ransomNote = &amp;ldquo;a&amp;rdquo;, magazine = &amp;ldquo;b&amp;rdquo;
+输出： false
+ 示例 2：  输入： ransomNote = &amp;ldquo;aa&amp;rdquo;, magazine = &amp;ldquo;ab&amp;rdquo;
+输出：false
+ 示例 3：  输入： ransomNote = &amp;ldquo;aa&amp;rdquo;, magazine = &amp;ldquo;aab&amp;rdquo;
+输出： true
+ 提示：  1 &amp;lt;= ransomNote.length, magazine.length &amp;lt;= 105 ransomNote 和 magazine 由小写英文字母组成  解题思路 哈希 遍历 magazine 字符串，使用哈希表统计每个字符出现的次数，然后尝试将 ransomNote 中的每个字符从哈希表中删除：'><title>Leetcode 383. 赎金信</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-383.-%E8%B5%8E%E9%87%91%E4%BF%A1/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 383. 赎金信'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/ransom-note/
+难度： 简单
+题目描述 为了不在赎金信中暴露字迹，从杂志上搜索各个需要的字母，组成单词来表达意思。
+给你一个赎金信 (ransomNote) 字符串和一个杂志(magazine)字符串，判断 ransomNote 能不能由 magazines 里面的字符构成。
+如果可以构成，返回 true ；否则返回 false 。
+magazine 中的每个字符只能在 ransomNote 中使用一次。
+示例 1：  输入： ransomNote = &amp;ldquo;a&amp;rdquo;, magazine = &amp;ldquo;b&amp;rdquo;
+输出： false
+ 示例 2：  输入： ransomNote = &amp;ldquo;aa&amp;rdquo;, magazine = &amp;ldquo;ab&amp;rdquo;
+输出：false
+ 示例 3：  输入： ransomNote = &amp;ldquo;aa&amp;rdquo;, magazine = &amp;ldquo;aab&amp;rdquo;
+输出： true
+ 提示：  1 &amp;lt;= ransomNote.length, magazine.length &amp;lt;= 105 ransomNote 和 magazine 由小写英文字母组成  解题思路 哈希 遍历 magazine 字符串，使用哈希表统计每个字符出现的次数，然后尝试将 ransomNote 中的每个字符从哈希表中删除：'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-383.-%E8%B5%8E%E9%87%91%E4%BF%A1/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:published_time' content='2021-12-04T19:28:15&#43;08:00'/><meta property='article:modified_time' content='2021-12-04T19:28:15&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 383. 赎金信">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/ransom-note/
+难度： 简单
+题目描述 为了不在赎金信中暴露字迹，从杂志上搜索各个需要的字母，组成单词来表达意思。
+给你一个赎金信 (ransomNote) 字符串和一个杂志(magazine)字符串，判断 ransomNote 能不能由 magazines 里面的字符构成。
+如果可以构成，返回 true ；否则返回 false 。
+magazine 中的每个字符只能在 ransomNote 中使用一次。
+示例 1：  输入： ransomNote = &amp;ldquo;a&amp;rdquo;, magazine = &amp;ldquo;b&amp;rdquo;
+输出： false
+ 示例 2：  输入： ransomNote = &amp;ldquo;aa&amp;rdquo;, magazine = &amp;ldquo;ab&amp;rdquo;
+输出：false
+ 示例 3：  输入： ransomNote = &amp;ldquo;aa&amp;rdquo;, magazine = &amp;ldquo;aab&amp;rdquo;
+输出： true
+ 提示：  1 &amp;lt;= ransomNote.length, magazine.length &amp;lt;= 105 ransomNote 和 magazine 由小写英文字母组成  解题思路 哈希 遍历 magazine 字符串，使用哈希表统计每个字符出现的次数，然后尝试将 ransomNote 中的每个字符从哈希表中删除：">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-383.-%E8%B5%8E%E9%87%91%E4%BF%A1/">Leetcode 383. 赎金信</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 04, 2021</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/ransom-note/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/ransom-note/</a><br>
+<strong>难度：</strong> <font color="green">简单</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>为了不在赎金信中暴露字迹，从杂志上搜索各个需要的字母，组成单词来表达意思。</p>
+<p>给你一个赎金信 (<code>ransomNote</code>) 字符串和一个杂志(<code>magazine</code>)字符串，判断 <code>ransomNote</code> 能不能由 <code>magazines</code> 里面的字符构成。</p>
+<p>如果可以构成，返回 <code>true</code> ；否则返回 <code>false</code> 。</p>
+<p><code>magazine</code> 中的每个字符只能在 <code>ransomNote</code> 中使用一次。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入：</strong> ransomNote = &ldquo;a&rdquo;, magazine = &ldquo;b&rdquo;<br>
+<strong>输出：</strong> false</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> ransomNote = &ldquo;aa&rdquo;, magazine = &ldquo;ab&rdquo;<br>
+输出：false</p>
+</blockquote>
+<h4 id="示例-3">示例 3：</h4>
+<blockquote>
+<p><strong>输入：</strong> ransomNote = &ldquo;aa&rdquo;, magazine = &ldquo;aab&rdquo;<br>
+<strong>输出：</strong> true</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= ransomNote.length, magazine.length &lt;= 10<sup>5</sup></code></li>
+<li><code>ransomNote</code> 和 <code>magazine</code> 由小写英文字母组成</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="哈希">哈希</h4>
+<p>遍历 <code>magazine</code> 字符串，使用哈希表统计每个字符出现的次数，然后尝试将 <code>ransomNote</code> 中的每个字符从哈希表中删除：</p>
+<ul>
+<li>当任意一个字符数量不足时，返回 <code>false</code>；</li>
+<li>否则，返回 <code>true</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">canConstruct</span>(<span style="color:#a6e22e">ransomNote</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">magazine</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">26</span>]<span style="color:#66d9ef">int</span>{}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">magazine</span> {
+		<span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">magazine</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>]<span style="color:#f92672">++</span>
+	}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ransomNote</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">ransomNote</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+		}
+		<span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">ransomNote</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>]<span style="color:#f92672">--</span>
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+}
+
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N+M), N = len(ransomNote), M = len(maganize) $</li>
+<li>空间复杂度：$ O(\Sigma), \Sigma表示字符集，本题中为26 $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hash/">hash</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-506.-%E7%9B%B8%E5%AF%B9%E5%90%8D%E6%AC%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 506. 相对名次</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-438.-%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 438. 找到字符串中所有字母异位词</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-519.-%E9%9A%8F%E6%9C%BA%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 519. 随机翻转矩阵</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-594.-%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 594. 最长和谐子序列</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-268.-%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 268. 丢失的数字</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
