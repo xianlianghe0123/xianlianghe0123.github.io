@@ -6,7 +6,24 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 04 Dec 2021 19:28:15 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Dec 2021 09:52:59 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 911. 在线选举</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-911.-%E5%9C%A8%E7%BA%BF%E9%80%89%E4%B8%BE/</link>
+      <pubDate>Sat, 11 Dec 2021 09:52:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-911.-%E5%9C%A8%E7%BA%BF%E9%80%89%E4%B8%BE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/online-election/
+难度： 中等
+题目描述 给你两个整数数组 persons 和 times 。在选举中，第 i 张票是在时刻为 times[i] 时投给候选人 persons[i] 的。
+对于发生在时刻 t 的每个查询，需要找出在 t 时刻在选举中领先的候选人的编号。
+在 t 时刻投出的选票也将被计入我们的查询之中。在平局的情况下，最近获得投票的候选人将会获胜。
+实现 TopVotedCandidate 类：
+ TopVotedCandidate(int[] persons, int[] times) 使用 persons 和 times 数组初始化对象。 int q(int t) 根据前面描述的规则，返回在时刻 t 在选举中领先的候选人的编号。  示例：  输入：
+[&amp;ldquo;TopVotedCandidate&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;]
+[[[0, 1, 1, 0, 0, 1, 0], [0, 5, 10, 15, 20, 25, 30]], [3], [12], [25], [15], [24], [8]]</description>
+    </item>
+    
     <item>
       <title>Leetcode 383. 赎金信</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-383.-%E8%B5%8E%E9%87%91%E4%BF%A1/</link>

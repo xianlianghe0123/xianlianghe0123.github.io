@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/shortest-completing-word/
+难度： 简单
+题目描述 给你一个字符串 licensePlate 和一个字符串数组 words ，请你找出并返回 words 中的 最短补全词 。
+补全词 是一个包含 licensePlate 中所有的字母的单词。在所有补全词中，最短的那个就是 最短补全词 。
+在匹配 licensePlate 中的字母时：
+ 忽略 licensePlate 中的 数字和空格 。 不区分大小写 。 如果某个字母在 licensePlate 中出现不止一次，那么该字母在补全词中的出现次数应当一致或者更多。  例如：licensePlate = &amp;quot;aBc 12c&amp;quot;，那么它的补全词应当包含字母 &#39;a&#39;、&#39;b&#39; （忽略大写）和两个 &#39;c&#39; 。可能的 补全词 有 &amp;quot;abccdef&amp;quot;、&amp;quot;caaacab&amp;quot; 以及 &amp;quot;cbca&amp;quot; 。
+请你找出并返回 words 中的 最短补全词 。题目数据保证一定存在一个最短补全词。当有多个单词都符合最短补全词的匹配条件时取 words 中 最靠前的 那个。
+示例 1：  输入： licensePlate = &amp;ldquo;1s3 PSt&amp;rdquo;, words = [&amp;ldquo;step&amp;rdquo;, &amp;ldquo;steps&amp;rdquo;, &amp;ldquo;stripe&amp;rdquo;, &amp;ldquo;stepple&amp;rdquo;]'><title>Leetcode 748. 最短补全词</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-748.-%E6%9C%80%E7%9F%AD%E8%A1%A5%E5%85%A8%E8%AF%8D/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 748. 最短补全词'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/shortest-completing-word/
+难度： 简单
+题目描述 给你一个字符串 licensePlate 和一个字符串数组 words ，请你找出并返回 words 中的 最短补全词 。
+补全词 是一个包含 licensePlate 中所有的字母的单词。在所有补全词中，最短的那个就是 最短补全词 。
+在匹配 licensePlate 中的字母时：
+ 忽略 licensePlate 中的 数字和空格 。 不区分大小写 。 如果某个字母在 licensePlate 中出现不止一次，那么该字母在补全词中的出现次数应当一致或者更多。  例如：licensePlate = &amp;quot;aBc 12c&amp;quot;，那么它的补全词应当包含字母 &#39;a&#39;、&#39;b&#39; （忽略大写）和两个 &#39;c&#39; 。可能的 补全词 有 &amp;quot;abccdef&amp;quot;、&amp;quot;caaacab&amp;quot; 以及 &amp;quot;cbca&amp;quot; 。
+请你找出并返回 words 中的 最短补全词 。题目数据保证一定存在一个最短补全词。当有多个单词都符合最短补全词的匹配条件时取 words 中 最靠前的 那个。
+示例 1：  输入： licensePlate = &amp;ldquo;1s3 PSt&amp;rdquo;, words = [&amp;ldquo;step&amp;rdquo;, &amp;ldquo;steps&amp;rdquo;, &amp;ldquo;stripe&amp;rdquo;, &amp;ldquo;stepple&amp;rdquo;]'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-748.-%E6%9C%80%E7%9F%AD%E8%A1%A5%E5%85%A8%E8%AF%8D/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-12-10T17:25:57&#43;08:00'/><meta property='article:modified_time' content='2021-12-10T17:25:57&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 748. 最短补全词">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/shortest-completing-word/
+难度： 简单
+题目描述 给你一个字符串 licensePlate 和一个字符串数组 words ，请你找出并返回 words 中的 最短补全词 。
+补全词 是一个包含 licensePlate 中所有的字母的单词。在所有补全词中，最短的那个就是 最短补全词 。
+在匹配 licensePlate 中的字母时：
+ 忽略 licensePlate 中的 数字和空格 。 不区分大小写 。 如果某个字母在 licensePlate 中出现不止一次，那么该字母在补全词中的出现次数应当一致或者更多。  例如：licensePlate = &amp;quot;aBc 12c&amp;quot;，那么它的补全词应当包含字母 &#39;a&#39;、&#39;b&#39; （忽略大写）和两个 &#39;c&#39; 。可能的 补全词 有 &amp;quot;abccdef&amp;quot;、&amp;quot;caaacab&amp;quot; 以及 &amp;quot;cbca&amp;quot; 。
+请你找出并返回 words 中的 最短补全词 。题目数据保证一定存在一个最短补全词。当有多个单词都符合最短补全词的匹配条件时取 words 中 最靠前的 那个。
+示例 1：  输入： licensePlate = &amp;ldquo;1s3 PSt&amp;rdquo;, words = [&amp;ldquo;step&amp;rdquo;, &amp;ldquo;steps&amp;rdquo;, &amp;ldquo;stripe&amp;rdquo;, &amp;ldquo;stepple&amp;rdquo;]">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-748.-%E6%9C%80%E7%9F%AD%E8%A1%A5%E5%85%A8%E8%AF%8D/">Leetcode 748. 最短补全词</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 10, 2021</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/shortest-completing-word/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/shortest-completing-word/</a><br>
+<strong>难度：</strong> <font color="green">简单</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>给你一个字符串 <code>licensePlate</code> 和一个字符串数组 <code>words</code> ，请你找出并返回 <code>words</code> 中的 <strong>最短补全词</strong> 。</p>
+<p><strong>补全词</strong> 是一个包含 <code>licensePlate</code> 中所有的字母的单词。在所有补全词中，最短的那个就是 <strong>最短补全词</strong> 。</p>
+<p>在匹配 <code>licensePlate</code> 中的字母时：</p>
+<ul>
+<li><strong>忽略</strong> <code>licensePlate</code> 中的 <strong>数字和空格</strong> 。</li>
+<li><strong>不区分大小写</strong> 。</li>
+<li>如果某个字母在 <code>licensePlate</code> 中出现不止一次，那么该字母在补全词中的出现次数应当一致或者更多。</li>
+</ul>
+<p>例如：<code>licensePlate = &quot;aBc 12c&quot;</code>，那么它的补全词应当包含字母 <code>'a'</code>、<code>'b'</code> （忽略大写）和两个 <code>'c'</code> 。可能的 <strong>补全词</strong> 有 <code>&quot;abccdef&quot;</code>、<code>&quot;caaacab&quot;</code> 以及 <code>&quot;cbca&quot;</code> 。</p>
+<p>请你找出并返回 <code>words</code> 中的 <strong>最短补全词</strong> 。题目数据保证一定存在一个最短补全词。当有多个单词都符合最短补全词的匹配条件时取 <code>words</code> 中 <strong>最靠前的</strong> 那个。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入：</strong> licensePlate = &ldquo;1s3 PSt&rdquo;, words = [&ldquo;step&rdquo;, &ldquo;steps&rdquo;, &ldquo;stripe&rdquo;, &ldquo;stepple&rdquo;]<br>
+<strong>输出：</strong> &ldquo;steps&rdquo;<br>
+<strong>解释：</strong> 最短补全词应该包括 &ldquo;s&rdquo;、&ldquo;p&rdquo;、&ldquo;s&rdquo;（忽略大小写） 以及 &ldquo;t&rdquo;。<br>
+&ldquo;step&rdquo; 包含 &ldquo;t&rdquo;、&ldquo;p&rdquo;，但只包含一个 &ldquo;s&rdquo;，所以它不符合条件。<br>
+&ldquo;steps&rdquo; 包含 &ldquo;t&rdquo;、&ldquo;p&rdquo; 和两个 &ldquo;s&rdquo;。<br>
+&ldquo;stripe&rdquo; 缺一个 &ldquo;s&rdquo;。<br>
+&ldquo;stepple&rdquo; 缺一个 &ldquo;s&rdquo;。<br>
+因此，&ldquo;steps&rdquo; 是唯一一个包含所有字母的单词，也是本例的答案。</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> licensePlate = &ldquo;1s3 456&rdquo;, words = [&ldquo;looks&rdquo;, &ldquo;pest&rdquo;, &ldquo;stew&rdquo;, &ldquo;show&rdquo;]<br>
+<strong>输出：</strong> &ldquo;pest&rdquo;<br>
+<strong>解释：</strong> licensePlate 只包含字母 &ldquo;s&rdquo; 。所有的单词都包含字母 &ldquo;s&rdquo; ，其中 &ldquo;pest&rdquo;、&ldquo;stew&rdquo;、和 &ldquo;show&rdquo; 三者最短。答案是 &ldquo;pest&rdquo; ，因为它是三个单词中在 words 里最靠前的那个。</p>
+</blockquote>
+<h4 id="示例-3">示例 3：</h4>
+<blockquote>
+<p><strong>输入：</strong> licensePlate = &ldquo;Ah71752&rdquo;, words = [&ldquo;suggest&rdquo;,&ldquo;letter&rdquo;,&ldquo;of&rdquo;,&ldquo;husband&rdquo;,&ldquo;easy&rdquo;,&ldquo;education&rdquo;,&ldquo;drug&rdquo;,&ldquo;prevent&rdquo;,&ldquo;writer&rdquo;,&ldquo;old&rdquo;]<br>
+<strong>输出：</strong> &ldquo;husband&rdquo;</p>
+</blockquote>
+<h4 id="示例-4">示例 4：</h4>
+<blockquote>
+<p><strong>输入：</strong> licensePlate = &ldquo;OgEu755&rdquo;, words = [&ldquo;enough&rdquo;,&ldquo;these&rdquo;,&ldquo;play&rdquo;,&ldquo;wide&rdquo;,&ldquo;wonder&rdquo;,&ldquo;box&rdquo;,&ldquo;arrive&rdquo;,&ldquo;money&rdquo;,&ldquo;tax&rdquo;,&ldquo;thus&rdquo;]<br>
+<strong>输出：</strong> &ldquo;enough&rdquo;</p>
+</blockquote>
+<h4 id="示例-5">示例 5：</h4>
+<blockquote>
+<p><strong>输入：</strong> licensePlate = &ldquo;iMSlpe4&rdquo;, words = [&ldquo;claim&rdquo;,&ldquo;consumer&rdquo;,&ldquo;student&rdquo;,&ldquo;camera&rdquo;,&ldquo;public&rdquo;,&ldquo;never&rdquo;,&ldquo;wonder&rdquo;,&ldquo;simple&rdquo;,&ldquo;thought&rdquo;,&ldquo;use&rdquo;]<br>
+<strong>输出：</strong> &ldquo;simple&rdquo;</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= licensePlate.length &lt;= 7</code></li>
+<li><code>licensePlate</code> 由数字、大小写字母或空格 <code>' '</code> 组成</li>
+<li><code>1 &lt;= words.length &lt;= 1000</code></li>
+<li><code>1 &lt;= words[i].length &lt;= 15</code></li>
+<li><code>words[i]</code> 由小写英文字母组成</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="哈希">哈希</h4>
+<p>使用哈希表记录 <code>licensePlate</code> 中字母的数量（存在大写字母则修改为对应小写字母），之后逐一的和 <code>words</code> 中每一个单词字母数量的哈希表比较，找出首个符合条件的单词并返回。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">shortestCompletingWord</span>(<span style="color:#a6e22e">licensePlate</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+	<span style="color:#a6e22e">charCnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">licensePlate</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;A&#39;</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">licensePlate</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">licensePlate</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;Z&#39;</span> {
+			<span style="color:#a6e22e">charCnt</span>[<span style="color:#a6e22e">licensePlate</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;A&#39;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;a&#39;</span>]<span style="color:#f92672">++</span>
+		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">licensePlate</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">licensePlate</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
+			<span style="color:#a6e22e">charCnt</span>[<span style="color:#a6e22e">licensePlate</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
+		}
+	}
+	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#a6e22e">Outer</span>:
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
+		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
+			<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
+		}
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">charCnt</span> {
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">k</span>] &lt; <span style="color:#a6e22e">v</span> {
+				<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Outer</span>
+			}
+		}
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ans</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">||</span> len(<span style="color:#a6e22e">ans</span>) &gt; len(<span style="color:#a6e22e">word</span>) {
+			<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">word</span>
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(L_1N\bar{L}), L_1 = len(licensePlate), N = len(words), \bar{L} = avg(len(words[i])) $</li>
+<li>空间复杂度：$ O(max(L, len(words[i])) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

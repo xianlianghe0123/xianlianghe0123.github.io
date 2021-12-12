@@ -6,7 +6,111 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 05 Dec 2021 11:48:08 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 10:17:23 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 709. 转换成小写字母</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-709.-%E8%BD%AC%E6%8D%A2%E6%88%90%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D/</link>
+      <pubDate>Sun, 12 Dec 2021 10:17:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-709.-%E8%BD%AC%E6%8D%A2%E6%88%90%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/to-lower-case/
+难度： 简单
+题目描述 给你一个字符串 s ，将该字符串中的大写字母转换成相同的小写字母，返回新的字符串。
+示例 1：  输入： s = &amp;ldquo;Hello&amp;rdquo; 输出： &amp;ldquo;hello&amp;rdquo;
+ 示例 2：  输入： s = &amp;ldquo;here&amp;rdquo; 输出： &amp;ldquo;here&amp;rdquo;
+ 示例 3：  输入： s = &amp;ldquo;LOVELY&amp;rdquo;
+输出： &amp;ldquo;lovely&amp;rdquo;
+ 提示：  1 &amp;lt;= s.length &amp;lt;= 100 s 由 ASCII 字符集中的可打印字符组成  解题思路 模拟 扫描字符串，将大写字母变为小写字母。
+func toLowerCase(s string) string { ans := make([]byte, 0, len(s)) for i := range s { if &amp;#39;A&amp;#39; &amp;lt;= s[i] &amp;amp;&amp;amp; s[i] &amp;lt;= &amp;#39;Z&amp;#39; { ans = append(ans, s[i]-&amp;#39;A&amp;#39;+&amp;#39;a&amp;#39;) } else { ans = append(ans, s[i]) } } return string(ans) } 复杂度  时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 911. 在线选举</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-911.-%E5%9C%A8%E7%BA%BF%E9%80%89%E4%B8%BE/</link>
+      <pubDate>Sat, 11 Dec 2021 09:52:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-911.-%E5%9C%A8%E7%BA%BF%E9%80%89%E4%B8%BE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/online-election/
+难度： 中等
+题目描述 给你两个整数数组 persons 和 times 。在选举中，第 i 张票是在时刻为 times[i] 时投给候选人 persons[i] 的。
+对于发生在时刻 t 的每个查询，需要找出在 t 时刻在选举中领先的候选人的编号。
+在 t 时刻投出的选票也将被计入我们的查询之中。在平局的情况下，最近获得投票的候选人将会获胜。
+实现 TopVotedCandidate 类：
+ TopVotedCandidate(int[] persons, int[] times) 使用 persons 和 times 数组初始化对象。 int q(int t) 根据前面描述的规则，返回在时刻 t 在选举中领先的候选人的编号。  示例：  输入：
+[&amp;ldquo;TopVotedCandidate&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;]
+[[[0, 1, 1, 0, 0, 1, 0], [0, 5, 10, 15, 20, 25, 30]], [3], [12], [25], [15], [24], [8]]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 748. 最短补全词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-748.-%E6%9C%80%E7%9F%AD%E8%A1%A5%E5%85%A8%E8%AF%8D/</link>
+      <pubDate>Fri, 10 Dec 2021 17:25:57 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-748.-%E6%9C%80%E7%9F%AD%E8%A1%A5%E5%85%A8%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shortest-completing-word/
+难度： 简单
+题目描述 给你一个字符串 licensePlate 和一个字符串数组 words ，请你找出并返回 words 中的 最短补全词 。
+补全词 是一个包含 licensePlate 中所有的字母的单词。在所有补全词中，最短的那个就是 最短补全词 。
+在匹配 licensePlate 中的字母时：
+ 忽略 licensePlate 中的 数字和空格 。 不区分大小写 。 如果某个字母在 licensePlate 中出现不止一次，那么该字母在补全词中的出现次数应当一致或者更多。  例如：licensePlate = &amp;quot;aBc 12c&amp;quot;，那么它的补全词应当包含字母 &#39;a&#39;、&#39;b&#39; （忽略大写）和两个 &#39;c&#39; 。可能的 补全词 有 &amp;quot;abccdef&amp;quot;、&amp;quot;caaacab&amp;quot; 以及 &amp;quot;cbca&amp;quot; 。
+请你找出并返回 words 中的 最短补全词 。题目数据保证一定存在一个最短补全词。当有多个单词都符合最短补全词的匹配条件时取 words 中 最靠前的 那个。
+示例 1：  输入： licensePlate = &amp;ldquo;1s3 PSt&amp;rdquo;, words = [&amp;ldquo;step&amp;rdquo;, &amp;ldquo;steps&amp;rdquo;, &amp;ldquo;stripe&amp;rdquo;, &amp;ldquo;stepple&amp;rdquo;]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 794. 有效的井字游戏</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-794.-%E6%9C%89%E6%95%88%E7%9A%84%E4%BA%95%E5%AD%97%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Thu, 09 Dec 2021 10:16:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-794.-%E6%9C%89%E6%95%88%E7%9A%84%E4%BA%95%E5%AD%97%E6%B8%B8%E6%88%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/valid-tic-tac-toe-state/
+难度： 中等
+题目描述 给你一个字符串数组 board 表示井字游戏的棋盘。当且仅当在井字游戏过程中，棋盘有可能达到 board 所显示的状态时，才返回 true 。
+井字游戏的棋盘是一个 3 x 3 数组，由字符 &#39; &#39;，&#39;X&#39; 和 &#39;O&#39; 组成。字符 &#39; &#39; 代表一个空位。
+以下是井字游戏的规则：
+ 玩家轮流将字符放入空位（&#39; &#39;）中。 玩家 1 总是放字符 &#39;X&#39; ，而玩家 2 总是放字符 &#39;O&#39; 。 &#39;X&#39; 和 &#39;O&#39; 只允许放置在空位中，不允许对已放有字符的位置进行填充。 当有 3 个相同（且非空）的字符填充任何行、列或对角线时，游戏结束。 当所有位置非空时，也算为游戏结束。 如果游戏结束，玩家不允许再放置字符。  示例 1：  输入： board = [&amp;ldquo;O &amp;ldquo;,&amp;rdquo; &amp;ldquo;,&amp;rdquo; &amp;ldquo;]
+输出： false
+解释： 玩家 1 总是放字符 &amp;ldquo;X&amp;rdquo; 。
+ 示例 2：  输入： board = [&amp;ldquo;XOX&amp;rdquo;,&amp;rdquo; X &amp;ldquo;,&amp;rdquo; &amp;ldquo;]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1034. 边界着色</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1034.-%E8%BE%B9%E7%95%8C%E7%9D%80%E8%89%B2/</link>
+      <pubDate>Tue, 07 Dec 2021 10:14:52 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1034.-%E8%BE%B9%E7%95%8C%E7%9D%80%E8%89%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/coloring-a-border/
+难度： 中等
+题目描述 给你一个大小为 m x n 的整数矩阵 grid ，表示一个网格。另给你三个整数 row、col 和 color 。网格中的每个值表示该位置处的网格块的颜色。
+当两个网格块的颜色相同，而且在四个方向中任意一个方向上相邻时，它们属于同一 连通分量 。
+连通分量的边界 是指连通分量中的所有与不在分量中的网格块相邻（四个方向上）的所有网格块，或者在网格的边界上（第一行/列或最后一行/列）的所有网格块。
+请你使用指定颜色 color 为所有包含网格块 grid[row][col] 的 连通分量的边界 进行着色，并返回最终的网格 grid 。
+示例 1：  输入： grid = [[1,1],[1,2]], row = 0, col = 0, color = 3
+输出： [[3,3],[3,2]]
+ 示例 2：  输入： grid = [[1,2,2],[2,3,2]], row = 0, col = 1, color = 3
+输出： [[1,3,3],[2,3,3]]
+ 示例 3：  输入： grid = [[1,1,1],[1,1,1],[1,1,1]], row = 1, col = 1, color = 2</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1816. 截断句子</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1816.-%E6%88%AA%E6%96%AD%E5%8F%A5%E5%AD%90/</link>
+      <pubDate>Mon, 06 Dec 2021 10:21:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1816.-%E6%88%AA%E6%96%AD%E5%8F%A5%E5%AD%90/</guid>
+      <description>链接： https://leetcode-cn.com/problems/truncate-sentence/
+难度： 简单
+题目描述 句子 是一个单词列表，列表中的单词之间用单个空格隔开，且不存在前导或尾随空格。每个单词仅由大小写英文字母组成（不含标点符号）。
+ 例如，&amp;quot;Hello World&amp;quot;、&amp;quot;HELLO&amp;quot; 和 &amp;quot;hello world hello world&amp;quot; 都是句子。  给你一个句子 s​​​​​​ 和一个整数 k​​​​​​ ，请你将 s​​ 截断 ​，​​​使截断后的句子仅含 前 k​​​​​​ 个单词。返回 截断 s​​​​​​ 后得到的句子。
+示例 1：  输入： s = &amp;ldquo;Hello how are you Contestant&amp;rdquo;, k = 4
+输出： &amp;ldquo;Hello how are you&amp;rdquo;
+解释：
+s 中的单词为 [&amp;ldquo;Hello&amp;rdquo;, &amp;ldquo;how&amp;rdquo; &amp;ldquo;are&amp;rdquo;, &amp;ldquo;you&amp;rdquo;, &amp;ldquo;Contestant&amp;rdquo;]
+前 4 个单词为 [&amp;ldquo;Hello&amp;rdquo;, &amp;ldquo;how&amp;rdquo;, &amp;ldquo;are&amp;rdquo;, &amp;ldquo;you&amp;rdquo;]
+因此，应当返回 &amp;ldquo;Hello how are you&amp;rdquo;</description>
+    </item>
+    
     <item>
       <title>Leetcode 372. 超级次方</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-372.-%E8%B6%85%E7%BA%A7%E6%AC%A1%E6%96%B9/</link>
