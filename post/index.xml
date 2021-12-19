@@ -6,7 +6,100 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 12 Dec 2021 10:17:23 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Dec 2021 20:21:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 997. 找到小镇的法官</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-997.-%E6%89%BE%E5%88%B0%E5%B0%8F%E9%95%87%E7%9A%84%E6%B3%95%E5%AE%98/</link>
+      <pubDate>Sun, 19 Dec 2021 20:21:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-997.-%E6%89%BE%E5%88%B0%E5%B0%8F%E9%95%87%E7%9A%84%E6%B3%95%E5%AE%98/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-the-town-judge/
+难度： 简单
+题目描述 在一个小镇里，按从 1 到 n 为 n 个人进行编号。传言称，这些人中有一个是小镇上的秘密法官。
+如果小镇的法官真的存在，那么：
+ 小镇的法官不相信任何人。 每个人（除了小镇法官外）都信任小镇的法官。 只有一个人同时满足条件 1 和条件 2 。  给定数组 trust，该数组由信任对 trust[i] = [a, b] 组成，表示编号为 a 的人信任编号为 b 的人。
+如果小镇存在秘密法官并且可以确定他的身份，请返回该法官的编号。否则，返回 -1。
+示例 1：  输入： n = 2, trust = [[1,2]]
+输出： 2
+ 示例 2：  输入： n = 3, trust = [[1,3],[2,3]]
+输出： 3
+ 示例 3：  输入： n = 3, trust = [[1,3],[2,3],[3,1]]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 419. 甲板上的战舰</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-419.-%E7%94%B2%E6%9D%BF%E4%B8%8A%E7%9A%84%E6%88%98%E8%88%B0/</link>
+      <pubDate>Sat, 18 Dec 2021 11:06:52 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-419.-%E7%94%B2%E6%9D%BF%E4%B8%8A%E7%9A%84%E6%88%98%E8%88%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/battleships-in-a-board/
+难度： 中等
+题目描述 给你一个大小为 m x n 的矩阵 board 表示甲板，其中，每个单元格可以是一艘战舰 &#39;X&#39; 或者是一个空位 &#39;.&#39; ，返回在甲板 board 上放置的 战舰 的数量。
+战舰 只能水平或者垂直放置在 board 上。换句话说，战舰只能按 1 x k（1 行，k 列）或 k x 1（k 行，1 列）的形状建造，其中 k 可以是任意大小。两艘战舰之间至少有一个水平或垂直的空位分隔 （即没有相邻的战舰）。
+示例 1：  输入： board = [[&amp;ldquo;X&amp;rdquo;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;ldquo;X&amp;rdquo;],[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;ldquo;X&amp;rdquo;],[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;ldquo;X&amp;rdquo;]]
+输出： 2
+ 示例 2：  输入： board = [[&amp;quot;.&amp;quot;]]
+输出： 0
+ 提示：  m == board.length n == board[i].length 1 &amp;lt;= m, n &amp;lt;= 200 board[i][j] 是 &#39;.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1518. 换酒问题</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1518.-%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 17 Dec 2021 10:14:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1518.-%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/</guid>
+      <description>链接： https://leetcode-cn.com/problems/water-bottles/
+难度： 简单
+题目描述 小区便利店正在促销，用 numExchange 个空酒瓶可以兑换一瓶新酒。你购入了 numBottles 瓶酒。
+如果喝掉了酒瓶中的酒，那么酒瓶就会变成空的。
+请你计算 最多 能喝到多少瓶酒。
+示例 1：  输入： numBottles = 9, numExchange = 3
+输出： 13
+解释： 你可以用 3 个空酒瓶兑换 1 瓶酒。
+所以最多能喝到 9 + 3 + 1 = 13 瓶酒。
+ 示例 2：  输入： numBottles = 15, numExchange = 4
+输出： 19
+解释： 你可以用 4 个空酒瓶兑换 1 瓶酒。
+所以最多能喝到 15 + 3 + 1 = 19 瓶酒。
+ 示例 3：  输入： numBottles = 5, numExchange = 5</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 851. 喧闹和富有</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-851.-%E5%96%A7%E9%97%B9%E5%92%8C%E5%AF%8C%E6%9C%89/</link>
+      <pubDate>Wed, 15 Dec 2021 10:17:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-851.-%E5%96%A7%E9%97%B9%E5%92%8C%E5%AF%8C%E6%9C%89/</guid>
+      <description>链接： https://leetcode-cn.com/problems/loud-and-rich/
+难度： 中等
+题目描述 有一组 n 个人作为实验对象，从 0 到 n - 1 编号，其中每个人都有不同数目的钱，以及不同程度的安静值（quietness）。为了方便起见，我们将编号为 x 的人简称为 &amp;ldquo;person x &amp;ldquo;。
+给你一个数组 richer ，其中 richer[i] = [ai, bi] 表示 person ai 比 person bi 更有钱。另给你一个整数数组 quiet ，其中 quiet[i] 是 person i 的安静值。richer 中所给出的数据 逻辑自恰（也就是说，在 person x 比 person y 更有钱的同时，不会出现 person y 比 person x 更有钱的情况 ）。
+现在，返回一个整数数组 answer 作为答案，其中 answer[x] = y 的前提是，在所有拥有的钱肯定不少于 person x 的人中，person y 是最安静的人（也就是安静值 quiet[y] 最小的人）。
+示例 1：  输入： richer = [[1,0],[2,1],[3,1],[3,7],[4,3],[5,3],[6,3]], quiet = [3,2,5,4,6,1,7,0]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 807. 保持城市天际线</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-807.-%E4%BF%9D%E6%8C%81%E5%9F%8E%E5%B8%82%E5%A4%A9%E9%99%85%E7%BA%BF/</link>
+      <pubDate>Mon, 13 Dec 2021 11:03:06 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-807.-%E4%BF%9D%E6%8C%81%E5%9F%8E%E5%B8%82%E5%A4%A9%E9%99%85%E7%BA%BF/</guid>
+      <description>链接： https://leetcode-cn.com/problems/max-increase-to-keep-city-skyline/
+难度： 中等
+题目描述 在二维数组 grid 中，grid[i][j] 代表位于某处的建筑物的高度。 我们被允许增加任何数量（不同建筑物的数量可能不同）的建筑物的高度。 高度 0 也被认为是建筑物。
+最后，从新数组的所有四个方向（即顶部，底部，左侧和右侧）观看的“天际线”必须与原始数组的天际线相同。 城市的天际线是从远处观看时，由所有建筑物形成的矩形的外部轮廓。 请看下面的例子。
+建筑物高度可以增加的最大总和是多少？
+ 例子：
+输入： grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
+输出： 35
+解释：
+The grid is: [ [3, 0, 8, 4], [2, 4, 5, 7], [9, 2, 6, 3], [0, 3, 1, 0] ] 从数组竖直方向（即顶部，底部）看“天际线”是：[9, 4, 8, 7]
+从水平水平方向（即左侧，右侧）看“天际线”是：[8, 7, 9, 3]
+在不影响天际线的情况下对建筑物进行增高后，新数组如下：
+gridNew = [ [8, 4, 8, 7], [7, 4, 7, 7], [9, 4, 8, 7], [3, 3, 3, 3] ]  说明：  1 &amp;lt; grid.</description>
+    </item>
+    
     <item>
       <title>Leetcode 709. 转换成小写字母</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-709.-%E8%BD%AC%E6%8D%A2%E6%88%90%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D/</link>

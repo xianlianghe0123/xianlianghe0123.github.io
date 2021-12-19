@@ -6,7 +6,21 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 07 Dec 2021 10:14:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Dec 2021 10:17:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 851. 喧闹和富有</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-851.-%E5%96%A7%E9%97%B9%E5%92%8C%E5%AF%8C%E6%9C%89/</link>
+      <pubDate>Wed, 15 Dec 2021 10:17:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-851.-%E5%96%A7%E9%97%B9%E5%92%8C%E5%AF%8C%E6%9C%89/</guid>
+      <description>链接： https://leetcode-cn.com/problems/loud-and-rich/
+难度： 中等
+题目描述 有一组 n 个人作为实验对象，从 0 到 n - 1 编号，其中每个人都有不同数目的钱，以及不同程度的安静值（quietness）。为了方便起见，我们将编号为 x 的人简称为 &amp;ldquo;person x &amp;ldquo;。
+给你一个数组 richer ，其中 richer[i] = [ai, bi] 表示 person ai 比 person bi 更有钱。另给你一个整数数组 quiet ，其中 quiet[i] 是 person i 的安静值。richer 中所给出的数据 逻辑自恰（也就是说，在 person x 比 person y 更有钱的同时，不会出现 person y 比 person x 更有钱的情况 ）。
+现在，返回一个整数数组 answer 作为答案，其中 answer[x] = y 的前提是，在所有拥有的钱肯定不少于 person x 的人中，person y 是最安静的人（也就是安静值 quiet[y] 最小的人）。
+示例 1：  输入： richer = [[1,0],[2,1],[3,1],[3,7],[4,3],[5,3],[6,3]], quiet = [3,2,5,4,6,1,7,0]</description>
+    </item>
+    
     <item>
       <title>Leetcode 1034. 边界着色</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1034.-%E8%BE%B9%E7%95%8C%E7%9D%80%E8%89%B2/</link>

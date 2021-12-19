@@ -6,7 +6,457 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Sun, 12 Dec 2021 10:17:23 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 19 Dec 2021 20:21:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 997. 找到小镇的法官</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-997.-%E6%89%BE%E5%88%B0%E5%B0%8F%E9%95%87%E7%9A%84%E6%B3%95%E5%AE%98/</link>
+        <pubDate>Sun, 19 Dec 2021 20:21:03 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-997.-%E6%89%BE%E5%88%B0%E5%B0%8F%E9%95%87%E7%9A%84%E6%B3%95%E5%AE%98/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/find-the-town-judge/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/find-the-town-judge/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;在一个小镇里，按从 &lt;code&gt;1&lt;/code&gt; 到 &lt;code&gt;n&lt;/code&gt; 为 &lt;code&gt;n&lt;/code&gt; 个人进行编号。传言称，这些人中有一个是小镇上的秘密法官。&lt;/p&gt;
+&lt;p&gt;如果小镇的法官真的存在，那么：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;小镇的法官不相信任何人。&lt;/li&gt;
+&lt;li&gt;每个人（除了小镇法官外）都信任小镇的法官。&lt;/li&gt;
+&lt;li&gt;只有一个人同时满足条件 &lt;code&gt;1&lt;/code&gt; 和条件 &lt;code&gt;2&lt;/code&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;给定数组 &lt;code&gt;trust&lt;/code&gt;，该数组由信任对 &lt;code&gt;trust[i] = [a, b]&lt;/code&gt; 组成，表示编号为 &lt;code&gt;a&lt;/code&gt; 的人信任编号为 &lt;code&gt;b&lt;/code&gt; 的人。&lt;/p&gt;
+&lt;p&gt;如果小镇存在秘密法官并且可以确定他的身份，请返回该法官的编号。否则，返回 &lt;code&gt;-1&lt;/code&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 2, trust = [[1,2]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 3, trust = [[1,3],[2,3]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 3, trust = [[1,3],[2,3],[3,1]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; -1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-4&#34;&gt;示例 4：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 3, trust = [[1,2],[2,3]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; -1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-5&#34;&gt;示例 5：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 4, trust = [[1,3],[1,4],[2,3],[2,4],[4,3]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= trust.length &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trust[i].length == 2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trust[i]&lt;/code&gt; &lt;strong&gt;互不相同&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trust[i][0] != trust[i][1]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= trust[i][0], trust[i][1] &amp;lt;= n&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;哈希&#34;&gt;哈希&lt;/h4&gt;
+&lt;p&gt;当存在法官时，除了法官本身外，其余所有人都要相信他，使用哈希表记录每个人的被多少个人信任，要保证其严格等于 &lt;code&gt;n-1&lt;/code&gt;；&lt;/p&gt;
+&lt;p&gt;另外，法官不能信任任何人，需要使用另一个哈希表，记录每个人是否信任其他人。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;findJudge&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;trust&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;beTrusted&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;trustOthers&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;trust&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;beTrusted&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;trustOthers&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;beTrusted&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;trustOthers&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(n * L), L = len(trust) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$O(n) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 419. 甲板上的战舰</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-419.-%E7%94%B2%E6%9D%BF%E4%B8%8A%E7%9A%84%E6%88%98%E8%88%B0/</link>
+        <pubDate>Sat, 18 Dec 2021 11:06:52 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-419.-%E7%94%B2%E6%9D%BF%E4%B8%8A%E7%9A%84%E6%88%98%E8%88%B0/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/battleships-in-a-board/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/battleships-in-a-board/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个大小为 &lt;code&gt;m x n&lt;/code&gt; 的矩阵 &lt;code&gt;board&lt;/code&gt; 表示甲板，其中，每个单元格可以是一艘战舰 &lt;code&gt;&#39;X&#39;&lt;/code&gt; 或者是一个空位 &lt;code&gt;&#39;.&#39;&lt;/code&gt; ，返回在甲板 &lt;code&gt;board&lt;/code&gt; 上放置的 &lt;strong&gt;战舰&lt;/strong&gt; 的数量。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;战舰&lt;/strong&gt; 只能水平或者垂直放置在 &lt;code&gt;board&lt;/code&gt; 上。换句话说，战舰只能按 &lt;code&gt;1 x k&lt;/code&gt;（&lt;code&gt;1&lt;/code&gt; 行，&lt;code&gt;k&lt;/code&gt; 列）或 &lt;code&gt;k x 1&lt;/code&gt;（&lt;code&gt;k&lt;/code&gt; 行，&lt;code&gt;1&lt;/code&gt; 列）的形状建造，其中 &lt;code&gt;k&lt;/code&gt; 可以是任意大小。两艘战舰之间至少有一个水平或垂直的空位分隔 （即没有相邻的战舰）。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/419.battelship-grid.jpg&#34; width=&#34;333px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; board = [[&amp;ldquo;X&amp;rdquo;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;ldquo;X&amp;rdquo;],[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;ldquo;X&amp;rdquo;],[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;ldquo;X&amp;rdquo;]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; board = [[&amp;quot;.&amp;quot;]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;m == board.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n == board[i].length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= m, n &amp;lt;= 200&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;board[i][j]&lt;/code&gt; 是 &lt;code&gt;&#39;.&#39;&lt;/code&gt; 或 &lt;code&gt;&#39;X&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;进阶：&lt;/strong&gt; 你可以实现一次扫描算法，并只使用 $O(1)$ 额外空间，并且不修改 &lt;code&gt;board&lt;/code&gt; 的值来解决这个问题吗？&lt;/p&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;标记计数&#34;&gt;标记计数&lt;/h4&gt;
+&lt;p&gt;遍历整个 &lt;code&gt;board&lt;/code&gt;，当遇到 &lt;code&gt;&amp;quot;X&amp;quot;&lt;/code&gt; 时，战舰数量 &lt;code&gt;+1&lt;/code&gt;，找到与之构成一艘战舰的所有 &lt;code&gt;&amp;quot;X&amp;quot;&lt;/code&gt; 将其标记为 &lt;code&gt;&amp;quot;.&amp;quot;&lt;/code&gt; 以达到去重目的。&lt;/p&gt;
+&lt;p&gt;由于战舰只能水平或者垂直排列，题设保证不同战舰不能相邻，故向右和向下寻找即可。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;countBattleships&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;X&amp;#39;&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;
+				&lt;span style=&#34;color:#75715e&#34;&gt;// 向下找
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;X&amp;#39;&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;
+				}
+				&lt;span style=&#34;color:#75715e&#34;&gt;// 向右找
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;X&amp;#39;&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;k&lt;/span&gt;] = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;
+				}
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(m*n *max(m,n)) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;优化&#34;&gt;优化&lt;/h4&gt;
+&lt;p&gt;当一个 &lt;code&gt;&amp;quot;X&amp;quot;&lt;/code&gt;的左侧和上方出现 &lt;code&gt;&amp;quot;X&amp;quot;&lt;/code&gt; 时，说明这个战舰已经被统计过了，可以利用这个方法作为去重的一种手段。&lt;/p&gt;
+&lt;p&gt;遍历整个 &lt;code&gt;board&lt;/code&gt;，当其左侧和上方均没有 &lt;code&gt;&amp;quot;X&amp;quot;&lt;/code&gt;，说明找到了新的一艘战舰。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;countBattleships&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;X&amp;#39;&lt;/span&gt; {
+                &lt;span style=&#34;color:#75715e&#34;&gt;// 左侧和上方均没有 X
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !((&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;X&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;board&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;X&amp;#39;&lt;/span&gt;)) {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+				}
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(m*n) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 1518. 换酒问题</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-1518.-%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Fri, 17 Dec 2021 10:14:30 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-1518.-%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/water-bottles/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/water-bottles/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;小区便利店正在促销，用 &lt;code&gt;numExchange&lt;/code&gt; 个空酒瓶可以兑换一瓶新酒。你购入了 &lt;code&gt;numBottles&lt;/code&gt; 瓶酒。&lt;/p&gt;
+&lt;p&gt;如果喝掉了酒瓶中的酒，那么酒瓶就会变成空的。&lt;/p&gt;
+&lt;p&gt;请你计算 &lt;strong&gt;最多&lt;/strong&gt; 能喝到多少瓶酒。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/1518.sample_1_1875.png&#34; width=&#34;480px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; numBottles = 9, numExchange = 3&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 13&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 你可以用 3 个空酒瓶兑换 1 瓶酒。&lt;br&gt;
+所以最多能喝到 9 + 3 + 1 = 13 瓶酒。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/1518.sample_2_1875.png&#34; width=&#34;790px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; numBottles = 15, numExchange = 4&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 19&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 你可以用 4 个空酒瓶兑换 1 瓶酒。&lt;br&gt;
+所以最多能喝到 15 + 3 + 1 = 19 瓶酒。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; numBottles = 5, numExchange = 5&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 6&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-4&#34;&gt;示例 4：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; numBottles = 2, numExchange = 3&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= numBottles &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2 &amp;lt;= numExchange &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;模拟&#34;&gt;模拟&lt;/h4&gt;
+&lt;p&gt;每次将所有的空酒瓶换为酒，不断进行，直到不可换为止，统计在此过程中的酒的数量。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numWaterBottles&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 该开始的酒全部喝下
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 兑换的酒数量
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 兑换一次后的酒瓶数
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(\log_E{B}), E = numExchange, B = numBottles $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;数学&#34;&gt;数学&lt;/h4&gt;
+&lt;p&gt;每次兑换就瓶子数量将会减少 &lt;code&gt;numExchange - 1&lt;/code&gt; 个，设兑换 &lt;code&gt;n&lt;/code&gt; 次后，无法继续兑换，则有不等式：&lt;/p&gt;
+&lt;p&gt;$$ numBottles - n * (numExchange - 1) &amp;lt; numExchange且 numBottles - (n-1) * (numExchange - 1) ≥ numExchange $$&lt;/p&gt;
+&lt;p&gt;得到 $$ n = \lfloor\frac{numBottles - numExchange}{numExchange - 1}\rfloor + 1 $$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numWaterBottles&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 不能兑换
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;numBottles&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;numExchange&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(1), E = numExchange, B = numBottles $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 851. 喧闹和富有</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-851.-%E5%96%A7%E9%97%B9%E5%92%8C%E5%AF%8C%E6%9C%89/</link>
+        <pubDate>Wed, 15 Dec 2021 10:17:33 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-851.-%E5%96%A7%E9%97%B9%E5%92%8C%E5%AF%8C%E6%9C%89/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/loud-and-rich/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/loud-and-rich/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;有一组 &lt;code&gt;n&lt;/code&gt; 个人作为实验对象，从 &lt;code&gt;0&lt;/code&gt; 到 &lt;code&gt;n - 1&lt;/code&gt; 编号，其中每个人都有不同数目的钱，以及不同程度的安静值（quietness）。为了方便起见，我们将编号为 &lt;code&gt;x&lt;/code&gt; 的人简称为 &amp;ldquo;person &lt;code&gt;x&lt;/code&gt; &amp;ldquo;。&lt;/p&gt;
+&lt;p&gt;给你一个数组 &lt;code&gt;richer&lt;/code&gt; ，其中 &lt;code&gt;richer[i] = [a&lt;sub&gt;i&lt;/sub&gt;, b&lt;sub&gt;i&lt;/sub&gt;]&lt;/code&gt; 表示 person &lt;code&gt;a&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 比 person &lt;code&gt;b&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 更有钱。另给你一个整数数组 &lt;code&gt;quiet&lt;/code&gt; ，其中 &lt;code&gt;quiet[i]&lt;/code&gt; 是 person &lt;code&gt;i&lt;/code&gt; 的安静值。&lt;code&gt;richer&lt;/code&gt; 中所给出的数据 &lt;strong&gt;逻辑自恰&lt;/strong&gt;（也就是说，在 person &lt;code&gt;x&lt;/code&gt; 比 person &lt;code&gt;y&lt;/code&gt; 更有钱的同时，不会出现 person &lt;code&gt;y&lt;/code&gt; 比 person &lt;code&gt;x&lt;/code&gt; 更有钱的情况 ）。&lt;/p&gt;
+&lt;p&gt;现在，返回一个整数数组 &lt;code&gt;answer&lt;/code&gt; 作为答案，其中 &lt;code&gt;answer[x] = y&lt;/code&gt; 的前提是，在所有拥有的钱肯定不少于 person &lt;code&gt;x&lt;/code&gt; 的人中，person &lt;code&gt;y&lt;/code&gt; 是最安静的人（也就是安静值 &lt;code&gt;quiet[y]&lt;/code&gt; 最小的人）。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; richer = [[1,0],[2,1],[3,1],[3,7],[4,3],[5,3],[6,3]], quiet = [3,2,5,4,6,1,7,0]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [5,5,2,5,4,5,6,7]&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;
+answer[0] = 5，&lt;br&gt;
+person 5 比 person 3 有更多的钱，person 3 比 person 1 有更多的钱，person 1 比 person 0 有更多的钱。&lt;br&gt;
+唯一较为安静（有较低的安静值 quiet[x]）的人是 person 7，&lt;br&gt;
+但是目前还不清楚他是否比 person 0 更有钱。&lt;br&gt;
+answer[7] = 7，&lt;br&gt;
+在所有拥有的钱肯定不少于 person 7 的人中（这可能包括 person 3，4，5，6 以及 7），&lt;br&gt;
+最安静（有较低安静值 quiet[x]）的人是 person 7。&lt;br&gt;
+其他的答案也可以用类似的推理来解释。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;  richer = [], quiet = [0]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;  [0]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;提示&#34;&gt;提示：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n == quiet.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 500&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= quiet[i] &amp;lt; n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;quiet&lt;/code&gt; 的所有值 &lt;strong&gt;互不相同&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= richer.length &amp;lt;= n * (n - 1) / 2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= a&lt;sub&gt;i&lt;/sub&gt;, b&lt;sub&gt;i&lt;/sub&gt; &amp;lt; n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a&lt;sub&gt;i&lt;/sub&gt; != b&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;richer&lt;/code&gt; 中的所有数对 &lt;strong&gt;互不相同&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;对 &lt;code&gt;richer&lt;/code&gt; 的观察在逻辑上是一致的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;深度优先搜索带备忘&#34;&gt;深度优先搜索（带备忘）&lt;/h4&gt;
+&lt;p&gt;将存在 &lt;code&gt;richer&lt;/code&gt; 关系的人维护到一个有向图中，边的方向表示富有程度增加。&lt;/p&gt;
+&lt;p&gt;之后对于每个人，搜索比他富有的所有人，找到最安静的那个人。&lt;/p&gt;
+&lt;p&gt;当找到 &lt;code&gt;answer[x] = y&lt;/code&gt;，则对于后续当搜索到 person &lt;code&gt;x&lt;/code&gt; 时，最安静的那个人为 person &lt;code&gt;y&lt;/code&gt; ，可以使用备忘进行剪枝，降低时间复杂度。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;loudAndRich&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;richer&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 初始化图
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;graph&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt;))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;richer&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;graph&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;graph&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]], &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 结果.同时当备忘使用
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt;))
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 初始化为 -1 ,表示需要查找
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+	}
+
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 去备忘查找
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 找到最安静的
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;graph&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;)
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]] &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;]] {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;]
+			}
+		}
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 遍历图
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(n+E), E = len(richer) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(n+E) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;拓扑排序&#34;&gt;拓扑排序&lt;/h4&gt;
+&lt;p&gt;在一条按照富有程度降序的链中，当某一个 person &lt;code&gt;x&lt;/code&gt; 对应的 &lt;code&gt;answer[x]&lt;/code&gt; 找到后，后续的一个结点 person &lt;code&gt;y&lt;/code&gt; 其 &lt;code&gt;person[y]&lt;/code&gt; 等于 &lt;code&gt;min(y, answer[x])&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;基于以上原理，进行拓扑排序，对于每个选出来的结点，依次不断地更新后续结点，最终得到答案。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;loudAndRich&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;richer&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;graph&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt;))
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;inDegrees&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt;))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;inDegrees&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;//  初始化入度
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;       &lt;span style=&#34;color:#75715e&#34;&gt;// 初始化结果
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 初始化图
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;richer&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;graph&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]] = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;graph&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]], &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;])
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;inDegrees&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 所有结点都被遍历
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;inDegrees&lt;/span&gt;) &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 寻找入度为 0 的结点
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;inDegree&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;inDegrees&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;inDegree&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+			}
+			delete(&lt;span style=&#34;color:#a6e22e&#34;&gt;inDegrees&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;// 删除结点
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;graph&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+				&lt;span style=&#34;color:#75715e&#34;&gt;// 更新后续结点
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;]] &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;quiet&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]] {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+				}
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;inDegrees&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 删除出度
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			}
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(n+E), E = len(richer) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(n+E) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 807. 保持城市天际线</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-807.-%E4%BF%9D%E6%8C%81%E5%9F%8E%E5%B8%82%E5%A4%A9%E9%99%85%E7%BA%BF/</link>
+        <pubDate>Mon, 13 Dec 2021 11:03:06 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-807.-%E4%BF%9D%E6%8C%81%E5%9F%8E%E5%B8%82%E5%A4%A9%E9%99%85%E7%BA%BF/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/max-increase-to-keep-city-skyline/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/max-increase-to-keep-city-skyline/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;在二维数组 &lt;code&gt;grid&lt;/code&gt; 中，&lt;code&gt;grid[i][j]&lt;/code&gt; 代表位于某处的建筑物的高度。 我们被允许增加任何数量（不同建筑物的数量可能不同）的建筑物的高度。 高度 0 也被认为是建筑物。&lt;/p&gt;
+&lt;p&gt;最后，从新数组的所有四个方向（即顶部，底部，左侧和右侧）观看的“天际线”必须与原始数组的天际线相同。 城市的天际线是从远处观看时，由所有建筑物形成的矩形的外部轮廓。 请看下面的例子。&lt;/p&gt;
+&lt;p&gt;建筑物高度可以增加的最大总和是多少？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;例子：&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;输入：&lt;/strong&gt; grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 35&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;The grid is:
+[ [3, 0, 8, 4], 
+  [2, 4, 5, 7],
+  [9, 2, 6, 3],
+  [0, 3, 1, 0] ]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;从数组竖直方向（即顶部，底部）看“天际线”是：[9, 4, 8, 7]&lt;br&gt;
+从水平水平方向（即左侧，右侧）看“天际线”是：[8, 7, 9, 3]&lt;/p&gt;
+&lt;p&gt;在不影响天际线的情况下对建筑物进行增高后，新数组如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gridNew = [ [8, 4, 8, 7],
+            [7, 4, 7, 7],
+            [9, 4, 8, 7],
+            [3, 3, 3, 3] ]
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h5 id=&#34;说明&#34;&gt;说明：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt; grid.length = grid[0].length &amp;lt;= 50&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;grid[i][j]&lt;/code&gt; 的高度范围是： &lt;code&gt;[0, 100]&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;一座建筑物占据一个 &lt;code&gt;grid[i][j]&lt;/code&gt; ：换言之，它们是 &lt;code&gt;1 x 1 x grid[i][j]&lt;/code&gt; 的长方体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;贪心&#34;&gt;贪心&lt;/h4&gt;
+&lt;p&gt;每一行/列的天际线是该行/列的建筑物高度的最大值，故每个建筑物可以增加的高度由其所在位置的 &lt;strong&gt;行中建筑物最大值&lt;/strong&gt; 和 &lt;strong&gt;列中建筑物的最大值&lt;/strong&gt; 这两个值当中 &lt;strong&gt;较小&lt;/strong&gt; 的那一个确定。&lt;/p&gt;
+&lt;p&gt;依次求得每行和列的最大值，计算每个建筑物的可以增加的高度。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxIncreaseKeepingSkyline&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;rowMax&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt;))
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;colMax&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;row&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;cell&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;row&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;rowMax&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;Max&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;rowMax&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;cell&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;// 第 i 行最大值
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#a6e22e&#34;&gt;colMax&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;Max&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;colMax&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;cell&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;// 第 j 列最大值
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		}
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;row&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;cell&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;row&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Min&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;rowMax&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;colMax&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cell&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 计算可以增加的高度
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Max&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Min&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(MN), M = len(grid), N = len(grid[0]) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(M+N) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 709. 转换成小写字母</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-709.-%E8%BD%AC%E6%8D%A2%E6%88%90%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D/</link>
         <pubDate>Sun, 12 Dec 2021 10:17:23 +0800</pubDate>
