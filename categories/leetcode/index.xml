@@ -6,7 +6,123 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 19 Dec 2021 20:21:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 11:02:37 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1078. Bigram 分词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1078.-bigram-%E5%88%86%E8%AF%8D/</link>
+      <pubDate>Sun, 26 Dec 2021 11:02:37 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1078.-bigram-%E5%88%86%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/occurrences-after-bigram/
+难度： 简单
+题目描述 给出第一个词 first 和第二个词 second，考虑在某些文本 text 中可能以 &amp;quot;first second third&amp;quot; 形式出现的情况，其中 second 紧随 first 出现，third 紧随 second 出现。
+对于每种这样的情况，将第三个词 &amp;quot;third&amp;quot; 添加到答案中，并返回答案。
+示例 1：  输入： text = &amp;ldquo;alice is a good girl she is a good student&amp;rdquo;, first = &amp;ldquo;a&amp;rdquo;, second = &amp;ldquo;good&amp;rdquo;
+输出： [&amp;ldquo;girl&amp;rdquo;,&amp;ldquo;student&amp;rdquo;]
+ 示例 2：  输入： text = &amp;ldquo;we will we will rock you&amp;rdquo;, first = &amp;ldquo;we&amp;rdquo;, second = &amp;ldquo;will&amp;rdquo;
+输出： [&amp;ldquo;we&amp;rdquo;,&amp;ldquo;rock&amp;rdquo;]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1609. 奇偶树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1609.-%E5%A5%87%E5%81%B6%E6%A0%91/</link>
+      <pubDate>Sat, 25 Dec 2021 20:01:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1609.-%E5%A5%87%E5%81%B6%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/even-odd-tree/
+难度： 中等
+题目描述 如果一棵二叉树满足下述几个条件，则可以称为 奇偶树 ：
+二叉树根节点所在层下标为 0 ，根的子节点所在层下标为 1 ，根的孙节点所在层下标为 2 ，依此类推。
+ 偶数下标 层上的所有节点的值都是 奇 整数，从左到右按顺序 严格递增 奇数下标 层上的所有节点的值都是 偶 整数，从左到右按顺序 严格递减 给你二叉树的根节点，如果二叉树为 奇偶树 ，则返回 true ，否则返回 false 。  示例 1：  输入： root = [1,10,4,3,null,7,9,12,8,6,null,null,2]
+输出： true
+解释： 每一层的节点值分别是：
+0 层：[1]
+1 层：[10,4]
+2 层：[3,7,9]
+3 层：[12,8,6,2]
+由于 0 层和 2 层上的节点值都是奇数且严格递增，而 1 层和 3 层上的节点值都是偶数且严格递减，因此这是一棵奇偶树。
+ 示例 2：  输入： root = [5,4,2,3,3,7]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1705. 吃苹果的最大数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1705.-%E5%90%83%E8%8B%B9%E6%9E%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Fri, 24 Dec 2021 10:36:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1705.-%E5%90%83%E8%8B%B9%E6%9E%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-number-of-eaten-apples/
+难度： 中等
+题目描述 有一棵特殊的苹果树，一连 n 天，每天都可以长出若干个苹果。在第 i 天，树上会长出 apples[i] 个苹果，这些苹果将会在 days[i] 天后（也就是说，第 i + days[i] 天时）腐烂，变得无法食用。也可能有那么几天，树上不会长出新的苹果，此时用 apples[i] == 0 且 days[i] == 0 表示。
+你打算每天 最多 吃一个苹果来保证营养均衡。注意，你可以在这 n 天之后继续吃苹果。
+给你两个长度为 n 的整数数组 days 和 apples ，返回你可以吃掉的苹果的最大数目。
+示例 1：  输入： apples = [1,2,3,5,2], days = [3,2,1,4,2]
+输出： 7
+解释： 你可以吃掉 7 个苹果：
+ 第一天，你吃掉第一天长出来的苹果。 第二天，你吃掉一个第二天长出来的苹果。 第三天，你吃掉一个第二天长出来的苹果。过了这一天，第三天长出来的苹果就已经腐烂了。 第四天到第七天，你吃的都是第四天长出来的苹果。   示例 2：  输入： apples = [3,0,0,0,0,2], days = [3,0,0,0,0,2]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 686. 重复叠加字符串匹配</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-686.-%E9%87%8D%E5%A4%8D%E5%8F%A0%E5%8A%A0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</link>
+      <pubDate>Wed, 22 Dec 2021 10:15:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-686.-%E9%87%8D%E5%A4%8D%E5%8F%A0%E5%8A%A0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/repeated-string-match/
+难度： 中等
+题目描述 给定两个字符串 a 和 b，寻找重复叠加字符串 a 的最小次数，使得字符串 b 成为叠加后的字符串 a 的子串，如果不存在则返回 -1。
+注意：字符串 &amp;quot;abc&amp;quot; 重复叠加 0 次是 &amp;quot;&amp;quot;，重复叠加 1 次是 &amp;quot;abc&amp;quot;，重复叠加 2 次是 &amp;quot;abcabc&amp;quot;。
+示例 1：  输入： a = &amp;ldquo;abcd&amp;rdquo;, b = &amp;ldquo;cdabcdab&amp;rdquo;
+输出： 3
+解释： a 重复叠加三遍后为 &amp;ldquo;abcdabcdabcd&amp;rdquo;, 此时 b 是其子串。
+ 示例 2：  输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;aa&amp;rdquo;
+输出： 2
+ 示例 3：  输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;a&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1154. 一年中的第几天</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1154.-%E4%B8%80%E5%B9%B4%E4%B8%AD%E7%9A%84%E7%AC%AC%E5%87%A0%E5%A4%A9/</link>
+      <pubDate>Tue, 21 Dec 2021 10:12:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1154.-%E4%B8%80%E5%B9%B4%E4%B8%AD%E7%9A%84%E7%AC%AC%E5%87%A0%E5%A4%A9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/day-of-the-year/
+难度： 简单
+题目描述 给你一个字符串 date ，按 YYYY-MM-DD 格式表示一个 现行公元纪年法 日期。请你计算并返回该日期是当年的第几天。
+通常情况下，我们认为 1 月 1 日是每年的第 1 天，1 月 2 日是每年的第 2 天，依此类推。每个月的天数与现行公元纪年法（格里高利历）一致。
+示例 1：  输入： date = &amp;ldquo;2019-01-09&amp;rdquo;
+输出： 9
+ 示例 2：  输入： date = &amp;ldquo;2019-02-10&amp;rdquo;
+输出： 41
+ 示例 3：  输入： date = &amp;ldquo;2003-03-01&amp;rdquo;
+输出： 60
+ 示例 4：  输入： date = &amp;ldquo;2004-03-01&amp;rdquo;
+输出： 61
+ 提示：  date.length == 10 date[4] == date[7] == &#39;-&#39;，其他的 date[i] 都是数字 date 表示的范围从 1900 年 1 月 1 日至 2019 年 12 月 31 日  解题思路 模拟 按照每月天数累加到前一个月，然后加上本月的天数。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 475. 供暖器</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-475.-%E4%BE%9B%E6%9A%96%E5%99%A8/</link>
+      <pubDate>Mon, 20 Dec 2021 10:17:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-475.-%E4%BE%9B%E6%9A%96%E5%99%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/heaters/
+难度： 中等
+题目描述 冬季已经来临。 你的任务是设计一个有固定加热半径的供暖器向所有房屋供暖。
+在加热器的加热半径范围内的每个房屋都可以获得供暖。
+现在，给出位于一条水平线上的房屋 houses 和供暖器 heaters 的位置，请你找出并返回可以覆盖所有房屋的最小加热半径。
+说明： 所有供暖器都遵循你的半径标准，加热的半径也一样。
+示例 1：  输入: houses = [1,2,3], heaters = [2]
+输出: 1
+解释: 仅在位置2上有一个供暖器。如果我们将加热半径设为1，那么所有房屋就都能得到供暖。
+ 示例 2：  输入: houses = [1,2,3,4], heaters = [1,4]
+输出: 1
+解释: 在位置1, 4上有两个供暖器。我们需要将加热半径设为1，这样所有房屋就都能得到供暖。
+ 示例 3：  输入： houses = [1,5], heaters = [2]
+输出： 3
+ 提示：  1 &amp;lt;= houses.length, heaters.length &amp;lt;= 3 * 104 1 &amp;lt;= houses[i], heaters[i] &amp;lt;= 109  解题思路 暴力求解 每个房子的加热由距离最近的那个加热器保障。</description>
+    </item>
+    
     <item>
       <title>Leetcode 997. 找到小镇的法官</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-997.-%E6%89%BE%E5%88%B0%E5%B0%8F%E9%95%87%E7%9A%84%E6%B3%95%E5%AE%98/</link>
