@@ -6,7 +6,27 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Wed, 15 Dec 2021 10:17:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 11:53:28 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 472. 连接词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-472.-%E8%BF%9E%E6%8E%A5%E8%AF%8D/</link>
+      <pubDate>Tue, 28 Dec 2021 11:53:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-472.-%E8%BF%9E%E6%8E%A5%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/concatenated-words/
+难度： 困难
+题目描述 给你一个 不含重复 单词的字符串数组 words ，请你找出并返回 words 中的所有 连接词 。
+连接词 定义为：一个完全由给定数组中的至少两个较短单词组成的字符串。
+示例 1：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
+输出： [&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
+解释： &amp;ldquo;catsdogcats&amp;rdquo; 由 &amp;ldquo;cats&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cats&amp;rdquo; 组成;
+&amp;ldquo;dogcatsdog&amp;rdquo; 由 &amp;ldquo;dog&amp;rdquo;, &amp;ldquo;cats&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo; 组成;
+&amp;ldquo;ratcatdogcat&amp;rdquo; 由 &amp;ldquo;rat&amp;rdquo;, &amp;ldquo;cat&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cat&amp;rdquo; 组成。
+ 示例 2：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
+输出： [&amp;ldquo;catdog&amp;rdquo;]
+ 提示：  1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].</description>
+    </item>
+    
     <item>
       <title>Leetcode 851. 喧闹和富有</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-851.-%E5%96%A7%E9%97%B9%E5%92%8C%E5%AF%8C%E6%9C%89/</link>

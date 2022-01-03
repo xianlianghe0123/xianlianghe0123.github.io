@@ -6,7 +6,120 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 26 Dec 2021 11:02:37 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jan 2022 11:18:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1185. 一周中的第几天</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1185.-%E4%B8%80%E5%91%A8%E4%B8%AD%E7%9A%84%E7%AC%AC%E5%87%A0%E5%A4%A9/</link>
+      <pubDate>Mon, 03 Jan 2022 11:18:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1185.-%E4%B8%80%E5%91%A8%E4%B8%AD%E7%9A%84%E7%AC%AC%E5%87%A0%E5%A4%A9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/day-of-the-week/
+难度： 简单
+题目描述 给你一个日期，请你设计一个算法来判断它是对应一周中的哪一天。
+输入为三个整数：day、month 和 year，分别表示日、月、年。
+您返回的结果必须是这几个值中的一个 {&amp;quot;Sunday&amp;quot;, &amp;quot;Monday&amp;quot;, &amp;quot;Tuesday&amp;quot;, &amp;quot;Wednesday&amp;quot;, &amp;quot;Thursday&amp;quot;, &amp;quot;Friday&amp;quot;, &amp;quot;Saturday&amp;quot;}。
+示例 1：  输入： day = 31, month = 8, year = 2019
+输出： &amp;ldquo;Saturday&amp;rdquo;
+ 示例 2：  输入： day = 18, month = 7, year = 1999
+输出： &amp;ldquo;Sunday&amp;rdquo;
+ 示例 3：  输入： day = 15, month = 8, year = 1993
+输出： &amp;ldquo;Sunday&amp;rdquo;
+ 提示：  给出的日期一定是在 1971 到 2100 年之间的有效日期。  解题思路 模拟 根据给定年的范围，求得从 1970 年 12 月 31 日 （星期四）开始到给定日期经过的天数，进而推导得出。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 2022. 将一维数组转变成二维数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2022.-%E5%B0%86%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BD%AC%E5%8F%98%E6%88%90%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sat, 01 Jan 2022 23:01:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2022.-%E5%B0%86%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BD%AC%E5%8F%98%E6%88%90%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/
+难度： 简单
+题目描述 给你一个下标从 0 开始的一维整数数组 original 和两个整数 m 和 n 。你需要使用 original 中 所有 元素创建一个 m 行 n 列的二维数组。
+original 中下标从 0 到 n - 1 （都 包含 ）的元素构成二维数组的第一行，下标从 n 到 2 * n - 1 （都 包含 ）的元素构成二维数组的第二行，依此类推。
+请你根据上述过程返回一个 m x n 的二维数组。如果无法构成这样的二维数组，请你返回一个空的二维数组。
+示例 1：  输入： original = [1,2,3,4], m = 2, n = 2
+输出： [[1,2],[3,4]]
+解释：
+构造出的二维数组应该包含 2 行 2 列。
+original 中第一个 n=2 的部分为 [1,2] ，构成二维数组的第一行。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 507. 完美数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-507.-%E5%AE%8C%E7%BE%8E%E6%95%B0/</link>
+      <pubDate>Fri, 31 Dec 2021 10:19:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-507.-%E5%AE%8C%E7%BE%8E%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/perfect-number/
+难度： 简单
+题目描述 对于一个 正整数，如果它和除了它自身以外的所有 正因子 之和相等，我们称它为 「完美数」。
+给定一个 整数 n， 如果是完美数，返回 true，否则返回 false
+示例 1：  输入： num = 28
+输出： true
+解释： 28 = 1 + 2 + 4 + 7 + 14
+1, 2, 4, 7, 和 14 是 28 的所有正因子。
+ 示例 2：  输入： num = 6
+输出： true
+ 示例 3：  输入： num = 496
+输出： true
+ 示例 4：  输入： num = 8128</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1995. 统计特殊四元组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1995.-%E7%BB%9F%E8%AE%A1%E7%89%B9%E6%AE%8A%E5%9B%9B%E5%85%83%E7%BB%84/</link>
+      <pubDate>Wed, 29 Dec 2021 10:23:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1995.-%E7%BB%9F%E8%AE%A1%E7%89%B9%E6%AE%8A%E5%9B%9B%E5%85%83%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-special-quadruplets/
+难度： 简单
+题目描述 给你一个 下标从 0 开始 的整数数组 nums ，返回满足下述条件的 不同 四元组 (a, b, c, d) 的 数目 ：
+ nums[a] + nums[b] + nums[c] == nums[d] ，且 a &amp;lt; b &amp;lt; c &amp;lt; d  示例 1：  输入： nums = [1,2,3,6]
+输出： 1
+解释： 满足要求的唯一一个四元组是 (0, 1, 2, 3) 因为 1 + 2 + 3 == 6 。
+ 示例 2：  输入： nums = [3,3,6,4,5]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 472. 连接词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-472.-%E8%BF%9E%E6%8E%A5%E8%AF%8D/</link>
+      <pubDate>Tue, 28 Dec 2021 11:53:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-472.-%E8%BF%9E%E6%8E%A5%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/concatenated-words/
+难度： 困难
+题目描述 给你一个 不含重复 单词的字符串数组 words ，请你找出并返回 words 中的所有 连接词 。
+连接词 定义为：一个完全由给定数组中的至少两个较短单词组成的字符串。
+示例 1：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
+输出： [&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
+解释： &amp;ldquo;catsdogcats&amp;rdquo; 由 &amp;ldquo;cats&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cats&amp;rdquo; 组成;
+&amp;ldquo;dogcatsdog&amp;rdquo; 由 &amp;ldquo;dog&amp;rdquo;, &amp;ldquo;cats&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo; 组成;
+&amp;ldquo;ratcatdogcat&amp;rdquo; 由 &amp;ldquo;rat&amp;rdquo;, &amp;ldquo;cat&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cat&amp;rdquo; 组成。
+ 示例 2：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
+输出： [&amp;ldquo;catdog&amp;rdquo;]
+ 提示：  1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 825. 适龄的朋友</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-825.-%E9%80%82%E9%BE%84%E7%9A%84%E6%9C%8B%E5%8F%8B/</link>
+      <pubDate>Mon, 27 Dec 2021 10:14:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-825.-%E9%80%82%E9%BE%84%E7%9A%84%E6%9C%8B%E5%8F%8B/</guid>
+      <description>链接： https://leetcode-cn.com/problems/friends-of-appropriate-ages/
+难度： 中等
+题目描述 在社交媒体网站上有 n 个用户。给你一个整数数组 ages ，其中 ages[i] 是第 i 个用户的年龄。
+如果下述任意一个条件为真，那么用户 x 将不会向用户 y（x != y）发送好友请求：
+ age[y] &amp;lt;= 0.5 * age[x] + 7 age[y] &amp;gt; age[x] age[y] &amp;gt; 100 &amp;amp;&amp;amp; age[x] &amp;lt; 100  否则，x 将会向 y 发送一条好友请求。
+注意，如果 x 向 y 发送一条好友请求，y 不必也向 x 发送一条好友请求。另外，用户不会向自己发送好友请求。
+返回在该社交媒体网站上产生的好友请求总数。
+示例 1：  输入： ages = [16,16]
+输出： 2
+解释： 2 人互发好友请求。
+ 示例 2：  输入： ages = [16,17,18]</description>
+    </item>
+    
     <item>
       <title>Leetcode 1078. Bigram 分词</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1078.-bigram-%E5%88%86%E8%AF%8D/</link>
