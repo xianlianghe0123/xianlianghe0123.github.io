@@ -6,7 +6,431 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Mon, 03 Jan 2022 11:18:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 09 Jan 2022 10:12:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 1629. 按键持续时间最长的键</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-1629.-%E6%8C%89%E9%94%AE%E6%8C%81%E7%BB%AD%E6%97%B6%E9%97%B4%E6%9C%80%E9%95%BF%E7%9A%84%E9%94%AE/</link>
+        <pubDate>Sun, 09 Jan 2022 10:12:25 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-1629.-%E6%8C%89%E9%94%AE%E6%8C%81%E7%BB%AD%E6%97%B6%E9%97%B4%E6%9C%80%E9%95%BF%E7%9A%84%E9%94%AE/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/slowest-key/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/slowest-key/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;LeetCode 设计了一款新式键盘，正在测试其可用性。测试人员将会点击一系列键（总计 &lt;code&gt;n&lt;/code&gt; 个），每次一个。&lt;/p&gt;
+&lt;p&gt;给你一个长度为 &lt;code&gt;n&lt;/code&gt; 的字符串 &lt;code&gt;keysPressed&lt;/code&gt; ，其中 &lt;code&gt;keysPressed[i]&lt;/code&gt; 表示测试序列中第 &lt;code&gt;i&lt;/code&gt; 个被按下的键。&lt;code&gt;releaseTimes&lt;/code&gt; 是一个升序排列的列表，其中 &lt;code&gt;releaseTimes[i]&lt;/code&gt; 表示松开第 &lt;code&gt;i&lt;/code&gt; 个键的时间。字符串和数组的 &lt;strong&gt;下标都从 0 开始&lt;/strong&gt; 。第 &lt;code&gt;0&lt;/code&gt; 个键在时间为 &lt;code&gt;0&lt;/code&gt; 时被按下，接下来每个键都 &lt;strong&gt;恰好&lt;/strong&gt; 在前一个键松开时被按下。&lt;/p&gt;
+&lt;p&gt;测试人员想要找出按键 &lt;strong&gt;持续时间最长&lt;/strong&gt; 的键。第 &lt;code&gt;i&lt;/code&gt; 次按键的持续时间为 &lt;code&gt;releaseTimes[i] - releaseTimes[i - 1]&lt;/code&gt; ，第 &lt;code&gt;0&lt;/code&gt; 次按键的持续时间为 &lt;code&gt;releaseTimes[0]&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。&lt;/p&gt;
+&lt;p&gt;请返回按键 &lt;strong&gt;持续时间最长&lt;/strong&gt; 的键，如果有多个这样的键，则返回 &lt;strong&gt;按字母顺序排列最大&lt;/strong&gt; 的那个键。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; releaseTimes = [9,29,49,50], keysPressed = &amp;ldquo;cbcd&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;c&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 按键顺序和持续时间如下：&lt;br&gt;
+按下 &amp;lsquo;c&amp;rsquo; ，持续时间 9（时间 0 按下，时间 9 松开）&lt;br&gt;
+按下 &amp;lsquo;b&amp;rsquo; ，持续时间 29 - 9 = 20（松开上一个键的时间 9 按下，时间 29 松开）&lt;br&gt;
+按下 &amp;lsquo;c&amp;rsquo; ，持续时间 49 - 29 = 20（松开上一个键的时间 29 按下，时间 49 松开）&lt;br&gt;
+按下 &amp;rsquo;d&#39; ，持续时间 50 - 49 = 1（松开上一个键的时间 49 按下，时间 50 松开）&lt;br&gt;
+按键持续时间最长的键是 &amp;lsquo;b&amp;rsquo; 和 &amp;lsquo;c&amp;rsquo;（第二次按下时），持续时间都是 20&lt;br&gt;
+&amp;lsquo;c&amp;rsquo; 按字母顺序排列比 &amp;lsquo;b&amp;rsquo; 大，所以答案是 &amp;lsquo;c&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; releaseTimes = [12,23,36,46,62], keysPressed = &amp;ldquo;spuda&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;a&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 按键顺序和持续时间如下：&lt;br&gt;
+按下 &amp;rsquo;s&#39; ，持续时间 12&lt;br&gt;
+按下 &amp;lsquo;p&amp;rsquo; ，持续时间 23 - 12 = 11&lt;br&gt;
+按下 &amp;lsquo;u&amp;rsquo; ，持续时间 36 - 23 = 13&lt;br&gt;
+按下 &amp;rsquo;d&#39; ，持续时间 46 - 36 = 10&lt;br&gt;
+按下 &amp;lsquo;a&amp;rsquo; ，持续时间 62 - 46 = 16&lt;br&gt;
+按键持续时间最长的键是 &amp;lsquo;a&amp;rsquo; ，持续时间 16&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;releaseTimes.length == n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;keysPressed.length == n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2 &amp;lt;= n &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= releaseTimes[i] &amp;lt;= 10&lt;sup&gt;9&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;releaseTimes[i] &amp;lt; releaseTimes[i+1]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;keysPressed&lt;/code&gt; 仅由小写英文字母组成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;顺序&#34;&gt;顺序&lt;/h4&gt;
+&lt;p&gt;计算每个按键的持续时长，找出持续时长最长的那个按键。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;slowestKey&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;releaseTimes&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;keysPressed&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;keysPressed&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;releaseTimes&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;keysPressed&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+        &lt;span style=&#34;color:#75715e&#34;&gt;// 持续时间长 或 持续时间相相等但字典序更大
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;releaseTimes&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;releaseTimes&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;releaseTimes&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;releaseTimes&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;keysPressed&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]) {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;releaseTimes&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;releaseTimes&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;keysPressed&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(releaseTimes) = len(keysPressed) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 89. 格雷编码</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-89.-%E6%A0%BC%E9%9B%B7%E7%BC%96%E7%A0%81/</link>
+        <pubDate>Sat, 08 Jan 2022 12:11:16 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-89.-%E6%A0%BC%E9%9B%B7%E7%BC%96%E7%A0%81/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/gray-code/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/gray-code/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;n&lt;/code&gt; 位格雷码序列 是一个由 &lt;code&gt;2n&lt;/code&gt; 个整数组成的序列，其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每个整数都在范围 &lt;code&gt;[0, 2&lt;sup&gt;n&lt;/sup&gt; - 1]&lt;/code&gt; 内（含 &lt;code&gt;0&lt;/code&gt; 和 &lt;code&gt;2&lt;sup&gt;n&lt;/sup&gt; - 1&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;第一个整数是 &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;一个整数在序列中出现 &lt;strong&gt;不超过一次&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;每对 &lt;strong&gt;相邻&lt;/strong&gt; 整数的二进制表示 &lt;strong&gt;恰好一位不同&lt;/strong&gt; ，且&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第一个&lt;/strong&gt; 和 &lt;strong&gt;最后一个&lt;/strong&gt; 整数的二进制表示 &lt;strong&gt;恰好一位不同&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;给你一个整数 &lt;code&gt;n&lt;/code&gt; ，返回任一有效的 &lt;strong&gt;n 位格雷码序列&lt;/strong&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 2&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [0,1,3,2]&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;
+[0,1,3,2] 的二进制表示是 [00,01,11,10] 。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;00 和 01 有一位不同&lt;/li&gt;
+&lt;li&gt;01 和 11 有一位不同&lt;/li&gt;
+&lt;li&gt;11 和 10 有一位不同&lt;/li&gt;
+&lt;li&gt;10 和 00 有一位不同&lt;br&gt;
+[0,2,3,1] 也是一个有效的格雷码序列，其二进制表示是 [00,10,11,01] 。&lt;/li&gt;
+&lt;li&gt;00 和 10 有一位不同&lt;/li&gt;
+&lt;li&gt;10 和 11 有一位不同&lt;/li&gt;
+&lt;li&gt;11 和 01 有一位不同&lt;/li&gt;
+&lt;li&gt;01 和 00 有一位不同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 1&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [0,1]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 16&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;对称性&#34;&gt;对称性&lt;/h4&gt;
+&lt;p&gt;存在这样的一种格雷编码顺序，其二进制表示形式除最高位外，以对称的形式分布，并且对称的这两部分每一部分仍满足前述对称分布规律。例如：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;格雷码&lt;/th&gt;
+&lt;th&gt;二进制表示&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;011&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;010&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;110&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;111&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;101&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;依照此规律生成格雷码。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;grayCode&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;greyCode&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;greyCode&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;greyCode&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;digit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 最高位
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;// 倒序遍历，最高位置1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;greyCode&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;greyCode&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;greyCode&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;digit&lt;/span&gt;|&lt;span style=&#34;color:#a6e22e&#34;&gt;greyCode&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;])
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greyCode&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(2^n) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 1614. 括号的最大嵌套深度</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-1614.-%E6%8B%AC%E5%8F%B7%E7%9A%84%E6%9C%80%E5%A4%A7%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6/</link>
+        <pubDate>Fri, 07 Jan 2022 10:22:28 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-1614.-%E6%8B%AC%E5%8F%B7%E7%9A%84%E6%9C%80%E5%A4%A7%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;如果字符串满足以下条件之一，则可以称之为 &lt;strong&gt;有效括号字符串&lt;/strong&gt;（&lt;strong&gt;valid parentheses string&lt;/strong&gt;，可以简写为 &lt;strong&gt;VPS&lt;/strong&gt;）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;字符串是一个空字符串 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;，或者是一个不为 &lt;code&gt;&amp;quot;(&amp;quot;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;)&amp;quot;&lt;/code&gt; 的单字符。&lt;/li&gt;
+&lt;li&gt;字符串可以写为 &lt;code&gt;AB&lt;/code&gt;（&lt;code&gt;A&lt;/code&gt; 与 &lt;code&gt;B&lt;/code&gt; 字符串连接），其中 &lt;code&gt;A&lt;/code&gt; 和 &lt;code&gt;B&lt;/code&gt; 都是 &lt;strong&gt;有效括号字符串&lt;/strong&gt; 。&lt;/li&gt;
+&lt;li&gt;字符串可以写为 &lt;code&gt;(A)&lt;/code&gt;，其中 &lt;code&gt;A&lt;/code&gt; 是一个 &lt;strong&gt;有效括号字符串&lt;/strong&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;类似地，可以定义任何有效括号字符串 &lt;code&gt;S&lt;/code&gt; 的 &lt;strong&gt;嵌套深度&lt;/strong&gt; &lt;code&gt;depth(S)&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;depth(&amp;quot;&amp;quot;) = 0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;depth(C) = 0&lt;/code&gt;，其中 &lt;code&gt;C&lt;/code&gt; 是单个字符的字符串，且该字符不是 &lt;code&gt;&amp;quot;(&amp;quot;&lt;/code&gt; 或者 &lt;code&gt;&amp;quot;)&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;depth(A + B) = max(depth(A), depth(B))&lt;/code&gt;，其中 &lt;code&gt;A&lt;/code&gt; 和 &lt;code&gt;B&lt;/code&gt; 都是 &lt;strong&gt;有效括号字符串&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;depth(&amp;quot;(&amp;quot; + A + &amp;quot;)&amp;quot;) = 1 + depth(A)&lt;/code&gt;，其中 &lt;code&gt;A&lt;/code&gt; 是一个 &lt;strong&gt;有效括号字符串&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如：&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;、&lt;code&gt;&amp;quot;()()&amp;quot;&lt;/code&gt;、&lt;code&gt;&amp;quot;()(()())&amp;quot;&lt;/code&gt; 都是 &lt;strong&gt;有效括号字符串&lt;/strong&gt;（嵌套深度分别为 0、1、2），而 &lt;code&gt;&amp;quot;)(&amp;quot;&lt;/code&gt; 、&lt;code&gt;&amp;quot;(()&amp;quot;&lt;/code&gt; 都不是 &lt;strong&gt;有效括号字符串&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;给你一个 &lt;strong&gt;有效括号字符串&lt;/strong&gt; &lt;code&gt;s&lt;/code&gt;，返回该字符串的 &lt;code&gt;s&lt;/code&gt; &lt;strong&gt;嵌套深度&lt;/strong&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;(1+(2*3)+((8)/4))+1&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 数字 8 在嵌套的 3 层括号中。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;(1)+((2))+(((3)))&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;1+(2*3)/(2-1)&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-4&#34;&gt;示例 4：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;1&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= s.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; 由数字 &lt;code&gt;0-9&lt;/code&gt; 和字符 &lt;code&gt;&#39;+&#39;&lt;/code&gt;、&lt;code&gt;&#39;-&#39;&lt;/code&gt;、&lt;code&gt;&#39;*&#39;&lt;/code&gt;、&lt;code&gt;&#39;/&#39;&lt;/code&gt;、&lt;code&gt;&#39;(&#39;&lt;/code&gt;、&lt;code&gt;&#39;)&#39;&lt;/code&gt; 组成&lt;/li&gt;
+&lt;li&gt;题目数据保证括号表达式 &lt;code&gt;s&lt;/code&gt; 是 &lt;strong&gt;有效的括号表达式&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;栈思想&#34;&gt;栈思想&lt;/h4&gt;
+&lt;p&gt;由于给定的字符串是 &lt;strong&gt;有效括号表达式&lt;/strong&gt;，括号是成对出现的，不需要判定有效性，可省略栈空间，直接通过 &lt;code&gt;&#39;(&#39;&lt;/code&gt; 的数量判定某个字符的嵌套深度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;初始时，深度为 0 ;&lt;/li&gt;
+&lt;li&gt;每当遇到 &lt;code&gt;&#39;(&#39;&lt;/code&gt; , 深度 +1 ;&lt;/li&gt;
+&lt;li&gt;当遇到 &lt;code&gt;&#39;)&#39;&lt;/code&gt;，深度 -1 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在上述过程中记录深度的最大值。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxDepth&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;maxDepth&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;depth&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;(&amp;#39;&lt;/span&gt;:
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;depth&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxDepth&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;depth&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;maxDepth&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;depth&lt;/span&gt;
+			}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;)&amp;#39;&lt;/span&gt;:
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;depth&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxDepth&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(s) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 71. 简化路径</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-71.-%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/</link>
+        <pubDate>Thu, 06 Jan 2022 10:19:10 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-71.-%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/simplify-path/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/simplify-path/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个字符串 &lt;code&gt;path&lt;/code&gt; ，表示指向某一文件或目录的 Unix 风格 &lt;strong&gt;绝对路径&lt;/strong&gt; （以 &lt;code&gt;&#39;/&#39;&lt;/code&gt; 开头），请你将其转化为更加简洁的规范路径。&lt;/p&gt;
+&lt;p&gt;在 Unix 风格的文件系统中，一个点（&lt;code&gt;.&lt;/code&gt;）表示当前目录本身；此外，两个点 （&lt;code&gt;..&lt;/code&gt;） 表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。任意多个连续的斜杠（即，&lt;code&gt;&#39;//&#39;&lt;/code&gt;）都被视为单个斜杠 &lt;code&gt;&#39;/&#39;&lt;/code&gt; 。 对于此问题，任何其他格式的点（例如，&lt;code&gt;&#39;...&#39;&lt;/code&gt;）均被视为文件/目录名称。&lt;/p&gt;
+&lt;p&gt;请注意，返回的 &lt;strong&gt;规范路径&lt;/strong&gt; 必须遵循下述格式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;始终以斜杠 &amp;lsquo;/&amp;rsquo; 开头。&lt;/li&gt;
+&lt;li&gt;两个目录名之间必须只有一个斜杠 &amp;lsquo;/&amp;rsquo; 。&lt;/li&gt;
+&lt;li&gt;最后一个目录名（如果存在）不能 以 &amp;lsquo;/&amp;rsquo; 结尾。&lt;/li&gt;
+&lt;li&gt;此外，路径仅包含从根目录到目标文件或目录的路径上的目录（即，不含 &amp;lsquo;.&amp;rsquo; 或 &amp;lsquo;..&#39;）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;返回简化后得到的 &lt;strong&gt;规范路径&lt;/strong&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; path = &amp;ldquo;/home/&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;/home&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 注意，最后一个目录名后面没有斜杠。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; path = &amp;ldquo;/../&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;/&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 从根目录向上一级是不可行的，因为根目录是你可以到达的最高级。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; path = &amp;ldquo;/home//foo/&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;/home/foo&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 在规范路径中，多个连续斜杠需要用一个斜杠替换。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-4&#34;&gt;示例 4：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; path = &amp;ldquo;/a/./b/../../c/&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;/c&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= path.length &amp;lt;= 3000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;path&lt;/code&gt; 由英文字母，数字，&lt;code&gt;&#39;.&#39;&lt;/code&gt;，&lt;code&gt;&#39;/&#39;&lt;/code&gt; 或 &lt;code&gt;&#39;_&#39;&lt;/code&gt; 组成。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;path&lt;/code&gt; 是一个有效的 Unix 风格绝对路径。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;栈&#34;&gt;栈&lt;/h4&gt;
+&lt;p&gt;从根目录开始，按顺序识别出目录存放于栈中，&lt;code&gt;&#39;.&#39;&lt;/code&gt; 目录忽略，&lt;code&gt;&#39;..&#39;&lt;/code&gt; 目录则将上个目录弹出。最后按照入栈顺序以 &lt;code&gt;&#39;/&#39;&lt;/code&gt; 将栈中目录连接起来。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;simplifyPath&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;stack&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;begin&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 目录分隔符 或 结尾
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; {
+			&lt;span style=&#34;color:#75715e&#34;&gt;// 存在有效
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;begin&lt;/span&gt; {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;begin&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;:
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;..&amp;#34;&lt;/span&gt;:
+					&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;stack&lt;/span&gt;) &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+						&lt;span style=&#34;color:#a6e22e&#34;&gt;stack&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;stack&lt;/span&gt;[:len(&lt;span style=&#34;color:#a6e22e&#34;&gt;stack&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+					}
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;:
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;stack&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;stack&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;begin&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;])
+				}
+			}
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;begin&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Join&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;stack&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(path) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 1576. 替换所有的问号</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-1576.-%E6%9B%BF%E6%8D%A2%E6%89%80%E6%9C%89%E7%9A%84%E9%97%AE%E5%8F%B7/</link>
+        <pubDate>Wed, 05 Jan 2022 10:14:01 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-1576.-%E6%9B%BF%E6%8D%A2%E6%89%80%E6%9C%89%E7%9A%84%E9%97%AE%E5%8F%B7/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个仅包含小写英文字母和 &lt;code&gt;&#39;?&#39;&lt;/code&gt; 字符的字符串 &lt;code&gt;s&lt;/code&gt;，请你将所有的 &lt;code&gt;&#39;?&#39;&lt;/code&gt; 转换为若干小写字母，使最终的字符串不包含任何 &lt;strong&gt;连续重复&lt;/strong&gt; 的字符。&lt;/p&gt;
+&lt;p&gt;注意：你 &lt;strong&gt;不能&lt;/strong&gt; 修改非 &lt;code&gt;&#39;?&#39;&lt;/code&gt; 字符。&lt;/p&gt;
+&lt;p&gt;题目测试用例保证 &lt;strong&gt;除&lt;/strong&gt; &lt;code&gt;&#39;?&#39;&lt;/code&gt; 字符 &lt;strong&gt;之外&lt;/strong&gt;，不存在连续重复的字符。&lt;/p&gt;
+&lt;p&gt;在完成所有转换（可能无需转换）后返回最终的字符串。如果有多个解决方案，请返回其中任何一个。可以证明，在给定的约束条件下，答案总是存在的。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;?zs&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;azs&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 该示例共有 25 种解决方案，从 &amp;ldquo;azs&amp;rdquo; 到 &amp;ldquo;yzs&amp;rdquo; 都是符合题目要求的。只有 &amp;ldquo;z&amp;rdquo; 是无效的修改，因为字符串 &amp;ldquo;zzs&amp;rdquo; 中有连续重复的两个 &amp;lsquo;z&amp;rsquo; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;ubv?w&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;ubvaw&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 该示例共有 24 种解决方案，只有替换成 &amp;ldquo;v&amp;rdquo; 和 &amp;ldquo;w&amp;rdquo; 不符合题目要求。因为 &amp;ldquo;ubvvw&amp;rdquo; 和 &amp;ldquo;ubvww&amp;rdquo; 都包含连续重复的字符。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;j?qg??b&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;jaqgacb&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-4&#34;&gt;示例 4：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s = &amp;ldquo;??yw?ipkj?&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;acywaipkja&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= s.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; 仅包含小写英文字母和 &lt;code&gt;&#39;?&#39;&lt;/code&gt; 字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;模拟&#34;&gt;模拟&lt;/h4&gt;
+&lt;p&gt;按照 &lt;code&gt;&#39;a&#39;-&#39;z&#39;&lt;/code&gt; 的顺序循环尝试填入，当不满足要求时继续使用下一个字符尝试，知道全部替换完成。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;modifyString&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; []byte(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;?&amp;#39;&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 前一个字符
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;prev&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; byte(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;)
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;prev&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+		}
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 后一个字符
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;post&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; byte(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;)
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;?&amp;#39;&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;post&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+		}
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 寻找可以替换的字符
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; byte(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;z&amp;#39;&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prev&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;post&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;char&lt;/span&gt;
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; string(&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(s) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 1185. 一周中的第几天</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-1185.-%E4%B8%80%E5%91%A8%E4%B8%AD%E7%9A%84%E7%AC%AC%E5%87%A0%E5%A4%A9/</link>
         <pubDate>Mon, 03 Jan 2022 11:18:12 +0800</pubDate>

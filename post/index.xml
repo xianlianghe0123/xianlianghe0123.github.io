@@ -6,7 +6,98 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 03 Jan 2022 11:18:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jan 2022 10:12:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1629. 按键持续时间最长的键</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1629.-%E6%8C%89%E9%94%AE%E6%8C%81%E7%BB%AD%E6%97%B6%E9%97%B4%E6%9C%80%E9%95%BF%E7%9A%84%E9%94%AE/</link>
+      <pubDate>Sun, 09 Jan 2022 10:12:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1629.-%E6%8C%89%E9%94%AE%E6%8C%81%E7%BB%AD%E6%97%B6%E9%97%B4%E6%9C%80%E9%95%BF%E7%9A%84%E9%94%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/slowest-key/
+难度： 简单
+题目描述 LeetCode 设计了一款新式键盘，正在测试其可用性。测试人员将会点击一系列键（总计 n 个），每次一个。
+给你一个长度为 n 的字符串 keysPressed ，其中 keysPressed[i] 表示测试序列中第 i 个被按下的键。releaseTimes 是一个升序排列的列表，其中 releaseTimes[i] 表示松开第 i 个键的时间。字符串和数组的 下标都从 0 开始 。第 0 个键在时间为 0 时被按下，接下来每个键都 恰好 在前一个键松开时被按下。
+测试人员想要找出按键 持续时间最长 的键。第 i 次按键的持续时间为 releaseTimes[i] - releaseTimes[i - 1] ，第 0 次按键的持续时间为 releaseTimes[0] 。
+注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。
+请返回按键 持续时间最长 的键，如果有多个这样的键，则返回 按字母顺序排列最大 的那个键。
+示例 1：  输入： releaseTimes = [9,29,49,50], keysPressed = &amp;ldquo;cbcd&amp;rdquo;
+输出： &amp;ldquo;c&amp;rdquo;
+解释： 按键顺序和持续时间如下：
+按下 &amp;lsquo;c&amp;rsquo; ，持续时间 9（时间 0 按下，时间 9 松开）</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 89. 格雷编码</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-89.-%E6%A0%BC%E9%9B%B7%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Sat, 08 Jan 2022 12:11:16 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-89.-%E6%A0%BC%E9%9B%B7%E7%BC%96%E7%A0%81/</guid>
+      <description>链接： https://leetcode-cn.com/problems/gray-code/
+难度： 中等
+题目描述 n 位格雷码序列 是一个由 2n 个整数组成的序列，其中：
+ 每个整数都在范围 [0, 2n - 1] 内（含 0 和 2n - 1） 第一个整数是 0 一个整数在序列中出现 不超过一次 每对 相邻 整数的二进制表示 恰好一位不同 ，且 第一个 和 最后一个 整数的二进制表示 恰好一位不同  给你一个整数 n ，返回任一有效的 n 位格雷码序列 。
+示例 1：  输入： n = 2
+输出： [0,1,3,2]
+解释：
+[0,1,3,2] 的二进制表示是 [00,01,11,10] 。
+ 00 和 01 有一位不同 01 和 11 有一位不同 11 和 10 有一位不同 10 和 00 有一位不同</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1614. 括号的最大嵌套深度</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1614.-%E6%8B%AC%E5%8F%B7%E7%9A%84%E6%9C%80%E5%A4%A7%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6/</link>
+      <pubDate>Fri, 07 Jan 2022 10:22:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1614.-%E6%8B%AC%E5%8F%B7%E7%9A%84%E6%9C%80%E5%A4%A7%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/
+难度： 简单
+题目描述 如果字符串满足以下条件之一，则可以称之为 有效括号字符串（valid parentheses string，可以简写为 VPS）：
+ 字符串是一个空字符串 &amp;quot;&amp;quot;，或者是一个不为 &amp;quot;(&amp;quot; 或 &amp;quot;)&amp;quot; 的单字符。 字符串可以写为 AB（A 与 B 字符串连接），其中 A 和 B 都是 有效括号字符串 。 字符串可以写为 (A)，其中 A 是一个 有效括号字符串 。  类似地，可以定义任何有效括号字符串 S 的 嵌套深度 depth(S)：
+ depth(&amp;quot;&amp;quot;) = 0 depth(C) = 0，其中 C 是单个字符的字符串，且该字符不是 &amp;quot;(&amp;quot; 或者 &amp;quot;)&amp;quot; depth(A + B) = max(depth(A), depth(B))，其中 A 和 B 都是 有效括号字符串 depth(&amp;quot;(&amp;quot; + A + &amp;quot;)&amp;quot;) = 1 + depth(A)，其中 A 是一个 有效括号字符串  例如：&amp;quot;&amp;quot;、&amp;quot;()()&amp;quot;、&amp;quot;()(()())&amp;quot; 都是 有效括号字符串（嵌套深度分别为 0、1、2），而 &amp;quot;)(&amp;quot; 、&amp;quot;(()&amp;quot; 都不是 有效括号字符串 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 71. 简化路径</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-71.-%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Thu, 06 Jan 2022 10:19:10 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-71.-%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/simplify-path/
+难度： 中等
+题目描述 给你一个字符串 path ，表示指向某一文件或目录的 Unix 风格 绝对路径 （以 &#39;/&#39; 开头），请你将其转化为更加简洁的规范路径。
+在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；此外，两个点 （..） 表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。任意多个连续的斜杠（即，&#39;//&#39;）都被视为单个斜杠 &#39;/&#39; 。 对于此问题，任何其他格式的点（例如，&#39;...&#39;）均被视为文件/目录名称。
+请注意，返回的 规范路径 必须遵循下述格式：
+ 始终以斜杠 &amp;lsquo;/&amp;rsquo; 开头。 两个目录名之间必须只有一个斜杠 &amp;lsquo;/&amp;rsquo; 。 最后一个目录名（如果存在）不能 以 &amp;lsquo;/&amp;rsquo; 结尾。 此外，路径仅包含从根目录到目标文件或目录的路径上的目录（即，不含 &amp;lsquo;.&amp;rsquo; 或 &amp;lsquo;..&#39;）。  返回简化后得到的 规范路径 。
+示例 1：  输入： path = &amp;ldquo;/home/&amp;rdquo;
+输出： &amp;ldquo;/home&amp;rdquo;
+解释： 注意，最后一个目录名后面没有斜杠。
+ 示例 2：  输入： path = &amp;ldquo;/../&amp;rdquo;
+输出： &amp;ldquo;/&amp;rdquo;
+解释： 从根目录向上一级是不可行的，因为根目录是你可以到达的最高级。
+ 示例 3：  输入： path = &amp;ldquo;/home//foo/&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1576. 替换所有的问号</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1576.-%E6%9B%BF%E6%8D%A2%E6%89%80%E6%9C%89%E7%9A%84%E9%97%AE%E5%8F%B7/</link>
+      <pubDate>Wed, 05 Jan 2022 10:14:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1576.-%E6%9B%BF%E6%8D%A2%E6%89%80%E6%9C%89%E7%9A%84%E9%97%AE%E5%8F%B7/</guid>
+      <description>链接： https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/
+难度： 简单
+题目描述 给你一个仅包含小写英文字母和 &#39;?&#39; 字符的字符串 s，请你将所有的 &#39;?&#39; 转换为若干小写字母，使最终的字符串不包含任何 连续重复 的字符。
+注意：你 不能 修改非 &#39;?&#39; 字符。
+题目测试用例保证 除 &#39;?&#39; 字符 之外，不存在连续重复的字符。
+在完成所有转换（可能无需转换）后返回最终的字符串。如果有多个解决方案，请返回其中任何一个。可以证明，在给定的约束条件下，答案总是存在的。
+示例 1：  输入： s = &amp;ldquo;?zs&amp;rdquo;
+输出： &amp;ldquo;azs&amp;rdquo;
+解释： 该示例共有 25 种解决方案，从 &amp;ldquo;azs&amp;rdquo; 到 &amp;ldquo;yzs&amp;rdquo; 都是符合题目要求的。只有 &amp;ldquo;z&amp;rdquo; 是无效的修改，因为字符串 &amp;ldquo;zzs&amp;rdquo; 中有连续重复的两个 &amp;lsquo;z&amp;rsquo; 。
+ 示例 2：  输入： s = &amp;ldquo;ubv?w&amp;rdquo;
+输出： &amp;ldquo;ubvaw&amp;rdquo;
+解释： 该示例共有 24 种解决方案，只有替换成 &amp;ldquo;v&amp;rdquo; 和 &amp;ldquo;w&amp;rdquo; 不符合题目要求。因为 &amp;ldquo;ubvvw&amp;rdquo; 和 &amp;ldquo;ubvww&amp;rdquo; 都包含连续重复的字符。
+ 示例 3：  输入： s = &amp;ldquo;j?</description>
+    </item>
+    
     <item>
       <title>Leetcode 1185. 一周中的第几天</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1185.-%E4%B8%80%E5%91%A8%E4%B8%AD%E7%9A%84%E7%AC%AC%E5%87%A0%E5%A4%A9/</link>
