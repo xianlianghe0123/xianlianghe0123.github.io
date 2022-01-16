@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/combination-sum-iv/ 难度： 中等
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/combination-sum-iv/
+难度： 中等
 题目描述 给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素组合的个数。
 题目数据保证答案符合 32 位整数范围。
-示例1：  输入： nums = [1,2,3], target = 4
+示例 1：  输入： nums = [1,2,3], target = 4
 输出： 7
 解释：
 所有可能的组合为：
@@ -16,17 +17,18 @@
 (2, 2)
 (3, 1)
 请注意，顺序不同的序列被视作不同的组合。
- 示例2：  输入： nums = [9], target = 3
+ 示例 2：  输入： nums = [9], target = 3
 输出： 0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 1000 nums 中的所有元素 互不相同 1 &amp;lt;= target &amp;lt;= 1000  解题思路 动态规划 用 dp[i] 表示当 i 作为 target 时，排列方案的数量。当 dp[i] 不为 0 时，不妨假设排列的做后一位数字为 num，则 i-num 的排列数为 dp[i-num] ，容易得知状态转移方程：'><title>Leetcode 377. 组合总和 Ⅳ</title>
+ 提示：  1 &amp;lt;= nums.'><title>Leetcode 377. 组合总和 Ⅳ</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-377.-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 377. 组合总和 Ⅳ'>
-<meta property='og:description' content='链接： https://leetcode-cn.com/problems/combination-sum-iv/ 难度： 中等
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/combination-sum-iv/
+难度： 中等
 题目描述 给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素组合的个数。
 题目数据保证答案符合 32 位整数范围。
-示例1：  输入： nums = [1,2,3], target = 4
+示例 1：  输入： nums = [1,2,3], target = 4
 输出： 7
 解释：
 所有可能的组合为：
@@ -38,17 +40,18 @@
 (2, 2)
 (3, 1)
 请注意，顺序不同的序列被视作不同的组合。
- 示例2：  输入： nums = [9], target = 3
+ 示例 2：  输入： nums = [9], target = 3
 输出： 0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 1000 nums 中的所有元素 互不相同 1 &amp;lt;= target &amp;lt;= 1000  解题思路 动态规划 用 dp[i] 表示当 i 作为 target 时，排列方案的数量。当 dp[i] 不为 0 时，不妨假设排列的做后一位数字为 num，则 i-num 的排列数为 dp[i-num] ，容易得知状态转移方程：'>
+ 提示：  1 &amp;lt;= nums.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-377.-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dp' /><meta property='article:published_time' content='2021-04-24T21:50:28&#43;08:00'/><meta property='article:modified_time' content='2021-04-24T21:50:28&#43;08:00'/>
 <meta name="twitter:title" content="Leetcode 377. 组合总和 Ⅳ">
-<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/combination-sum-iv/ 难度： 中等
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/combination-sum-iv/
+难度： 中等
 题目描述 给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素组合的个数。
 题目数据保证答案符合 32 位整数范围。
-示例1：  输入： nums = [1,2,3], target = 4
+示例 1：  输入： nums = [1,2,3], target = 4
 输出： 7
 解释：
 所有可能的组合为：
@@ -60,9 +63,9 @@
 (2, 2)
 (3, 1)
 请注意，顺序不同的序列被视作不同的组合。
- 示例2：  输入： nums = [9], target = 3
+ 示例 2：  输入： nums = [9], target = 3
 输出： 0
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 1000 nums 中的所有元素 互不相同 1 &amp;lt;= target &amp;lt;= 1000  解题思路 动态规划 用 dp[i] 表示当 i 作为 target 时，排列方案的数量。当 dp[i] 不为 0 时，不妨假设排列的做后一位数字为 num，则 i-num 的排列数为 dp[i-num] ，容易得知状态转移方程：">
+ 提示：  1 &amp;lt;= nums.">
     </head>
     <body class="
     article-page 
@@ -257,12 +260,12 @@
 
     <section class="article-content">
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/combination-sum-iv/"  target="_blank" rel="noopener"
-    >https://leetcode-cn.com/problems/combination-sum-iv/</a> <br>
+    >https://leetcode-cn.com/problems/combination-sum-iv/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p>给你一个由 <strong>不同</strong> 整数组成的数组 <code>nums</code> ，和一个目标整数 <code>target</code> 。请你从 <code>nums</code> 中找出并返回总和为 <code>target</code> 的元素组合的个数。<br>
 题目数据保证答案符合 32 位整数范围。</p>
-<h5 id="示例1">示例1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 <blockquote>
 <p><strong>输入：</strong> nums = [1,2,3], target = 4<br>
 <strong>输出：</strong> 7<br>
@@ -277,7 +280,7 @@
 (3, 1)<br>
 请注意，顺序不同的序列被视作不同的组合。</p>
 </blockquote>
-<h5 id="示例2">示例2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 <blockquote>
 <p><strong>输入：</strong> nums = [9], target = 3<br>
 <strong>输出：</strong> 0</p>
@@ -310,8 +313,8 @@
 }
 </code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N*T)</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：$ O(N*target), N = len(nums) $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
 </section>

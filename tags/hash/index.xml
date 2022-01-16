@@ -6,7 +6,26 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 31 Dec 2021 10:19:45 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jan 2022 11:00:40 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 334. 递增的三元子序列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-334.-%E9%80%92%E5%A2%9E%E7%9A%84%E4%B8%89%E5%85%83%E5%AD%90%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Wed, 12 Jan 2022 11:00:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-334.-%E9%80%92%E5%A2%9E%E7%9A%84%E4%B8%89%E5%85%83%E5%AD%90%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode-cn.com/problems/increasing-triplet-subsequence/
+难度： 中等
+题目描述  给你一个整数数组 nums ，判断这个数组中是否存在长度为 3 的递增子序列。
+  如果存在这样的三元组下标 (i, j, k) 且满足 i &amp;lt; j &amp;lt; k ，使得 nums[i] &amp;lt; nums[j] &amp;lt; nums[k] ，返回 true ；否则，返回 false 。
+ 示例 1：  输入： nums = [1,2,3,4,5]
+输出： true
+解释： 任何 i &amp;lt; j &amp;lt; k 的三元组都满足题意
+ 示例 2：  输入： nums = [5,4,3,2,1]
+输出： false
+解释： 不存在满足题意的三元组
+ 示例 3：  输入： nums = [2,1,5,0,4,6]</description>
+    </item>
+    
     <item>
       <title>Leetcode 507. 完美数</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-507.-%E5%AE%8C%E7%BE%8E%E6%95%B0/</link>
