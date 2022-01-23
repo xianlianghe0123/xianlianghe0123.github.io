@@ -6,7 +6,23 @@
     <description>Recent content in heap on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 14 Jan 2022 10:58:34 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/heap/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 10:22:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/heap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2034. 股票价格波动</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2034.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8/</link>
+      <pubDate>Sun, 23 Jan 2022 10:22:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2034.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/stock-price-fluctuation/
+难度： 中等
+题目描述 给你一支股票价格的数据流。数据流中每一条记录包含一个 时间戳 和该时间点股票对应的 价格 。
+不巧的是，由于股票市场内在的波动性，股票价格记录可能不是按时间顺序到来的。某些情况下，有的记录可能是错的。如果两个有相同时间戳的记录出现在数据流中，前一条记录视为错误记录，后出现的记录 更正 前一条错误的记录。
+请你设计一个算法，实现：
+ 更新 股票在某一时间戳的股票价格，如果有之前同一时间戳的价格，这一操作将 更正 之前的错误价格。 找到当前记录里 最新股票价格 。最新股票价格 定义为时间戳最晚的股票价格。 找到当前记录里股票的 最高价格 。 找到当前记录里股票的 最低价格 。  请你实现 StockPrice 类：
+ StockPrice() 初始化对象，当前无股票价格记录。 void update(int timestamp, int price) 在时间点 timestamp 更新股票价格为 price 。 int current() 返回股票 最新价格 。 int maximum() 返回股票 最高价格 。 int minimum() 返回股票 最低价格 。  示例：  输入：
+[&amp;ldquo;StockPrice&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;current&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;minimum&amp;rdquo;]</description>
+    </item>
+    
     <item>
       <title>Leetcode 373. 查找和最小的K对数字</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-373.-%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9C%80%E5%B0%8F%E7%9A%84k%E5%AF%B9%E6%95%B0%E5%AD%97/</link>

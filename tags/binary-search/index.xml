@@ -6,7 +6,43 @@
     <description>Recent content in binary search on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 01 Jan 2022 23:01:45 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jan 2022 10:10:35 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2029. 石子游戏 IX</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2029.-%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F-ix/</link>
+      <pubDate>Thu, 20 Jan 2022 10:10:35 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2029.-%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F-ix/</guid>
+      <description>链接： https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/
+难度： 简单
+题目描述 Alice 和 Bob 再次设计了一款新的石子游戏。现有一行 n 个石子，每个石子都有一个关联的数字表示它的价值。给你一个整数数组 stones ，其中 stones[i] 是第 i 个石子的价值。
+Alice 和 Bob 轮流进行自己的回合，Alice 先手。每一回合，玩家需要从 stones 中移除任一石子。
+ 如果玩家移除石子后，导致 所有已移除石子 的价值 总和 可以被 3 整除，那么该玩家就 输掉游戏 。 如果不满足上一条，且移除后没有任何剩余的石子，那么 Bob 将会直接获胜（即便是在 Alice 的回合）。  假设两位玩家均采用 最佳 决策。如果 Alice 获胜，返回 true ；如果 Bob 获胜，返回 false 。
+示例 1：  输入： stones = [2,1]
+输出： true
+解释： 游戏进行如下：
+ 回合 1：Alice 可以移除任意一个石子。 回合 2：Bob 移除剩下的石子。  已移除的石子的值总和为 1 + 2 = 3 且可以被 3 整除。因此，Bob 输，Alice 获胜。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 539. 最小时间差</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-539.-%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E5%B7%AE/</link>
+      <pubDate>Tue, 18 Jan 2022 09:41:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-539.-%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E5%B7%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/random-pick-with-weight/
+难度： 中等
+题目描述 给定一个 24 小时制（小时:分钟 &amp;ldquo;HH:MM&amp;rdquo;）的时间列表，找出列表中任意两个时间的最小时间差并以分钟数表示。
+示例 1：  输入： timePoints = [&amp;ldquo;23:59&amp;rdquo;,&amp;ldquo;00:00&amp;rdquo;]
+输出： 1
+ 示例 2：  输入： timePoints = [&amp;ldquo;00:00&amp;rdquo;,&amp;ldquo;23:59&amp;rdquo;,&amp;ldquo;00:00&amp;rdquo;]
+输出： 0
+ 提示：  2 &amp;lt;= timePoints &amp;lt;= 2 * 104 timePoints[i] 格式为 &amp;ldquo;HH:MM&amp;rdquo;  解题思路 排序 根据时间的先后顺序排序，最小的差必定在相邻的两个时间中产生。
+通过一次遍历，找出最小时间差。
+注意： 首尾也构成一对相邻时间。
+func findMinDifference(timePoints []string) int { sort.Strings(timePoints) calcInternal := func(timePoints1, timePoints2 string) int { internal := int(timePoints1[4]) - int(timePoints2[4]) internal += (int(timePoints1[3]) - int(timePoints2[3])) * 10 internal += (int(timePoints1[1]) - int(timePoints2[1])) * 60 internal += (int(timePoints1[0]) - int(timePoints2[0])) * 600 if internal &amp;lt; 0 { internal = -internal } return internal } minInternal := 24*60 - calcInternal(timePoints[0], timePoints[len(timePoints)-1]) for i := 1; i &amp;lt; len(timePoints); i++ { internal := calcInternal(timePoints[i-1], timePoints[i]) if minInternal &amp;gt; internal { minInternal = internal } } return minInternal } 复杂度  时间复杂度：$ O(N\log{N}), N = len(timePoints) $ 空间复杂度：$ O(\log{N}) $  </description>
+    </item>
+    
     <item>
       <title>Leetcode 2022. 将一维数组转变成二维数组</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-2022.-%E5%B0%86%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BD%AC%E5%8F%98%E6%88%90%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/</link>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/stock-price-fluctuation/
+难度： 中等
+题目描述 给你一支股票价格的数据流。数据流中每一条记录包含一个 时间戳 和该时间点股票对应的 价格 。
+不巧的是，由于股票市场内在的波动性，股票价格记录可能不是按时间顺序到来的。某些情况下，有的记录可能是错的。如果两个有相同时间戳的记录出现在数据流中，前一条记录视为错误记录，后出现的记录 更正 前一条错误的记录。
+请你设计一个算法，实现：
+ 更新 股票在某一时间戳的股票价格，如果有之前同一时间戳的价格，这一操作将 更正 之前的错误价格。 找到当前记录里 最新股票价格 。最新股票价格 定义为时间戳最晚的股票价格。 找到当前记录里股票的 最高价格 。 找到当前记录里股票的 最低价格 。  请你实现 StockPrice 类：
+ StockPrice() 初始化对象，当前无股票价格记录。 void update(int timestamp, int price) 在时间点 timestamp 更新股票价格为 price 。 int current() 返回股票 最新价格 。 int maximum() 返回股票 最高价格 。 int minimum() 返回股票 最低价格 。  示例：  输入：
+[&amp;ldquo;StockPrice&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;current&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;minimum&amp;rdquo;]'><title>Leetcode 2034. 股票价格波动</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-2034.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 2034. 股票价格波动'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/stock-price-fluctuation/
+难度： 中等
+题目描述 给你一支股票价格的数据流。数据流中每一条记录包含一个 时间戳 和该时间点股票对应的 价格 。
+不巧的是，由于股票市场内在的波动性，股票价格记录可能不是按时间顺序到来的。某些情况下，有的记录可能是错的。如果两个有相同时间戳的记录出现在数据流中，前一条记录视为错误记录，后出现的记录 更正 前一条错误的记录。
+请你设计一个算法，实现：
+ 更新 股票在某一时间戳的股票价格，如果有之前同一时间戳的价格，这一操作将 更正 之前的错误价格。 找到当前记录里 最新股票价格 。最新股票价格 定义为时间戳最晚的股票价格。 找到当前记录里股票的 最高价格 。 找到当前记录里股票的 最低价格 。  请你实现 StockPrice 类：
+ StockPrice() 初始化对象，当前无股票价格记录。 void update(int timestamp, int price) 在时间点 timestamp 更新股票价格为 price 。 int current() 返回股票 最新价格 。 int maximum() 返回股票 最高价格 。 int minimum() 返回股票 最低价格 。  示例：  输入：
+[&amp;ldquo;StockPrice&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;current&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;minimum&amp;rdquo;]'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-2034.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:tag' content='heap' /><meta property='article:published_time' content='2022-01-23T10:22:12&#43;08:00'/><meta property='article:modified_time' content='2022-01-23T10:22:12&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 2034. 股票价格波动">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/stock-price-fluctuation/
+难度： 中等
+题目描述 给你一支股票价格的数据流。数据流中每一条记录包含一个 时间戳 和该时间点股票对应的 价格 。
+不巧的是，由于股票市场内在的波动性，股票价格记录可能不是按时间顺序到来的。某些情况下，有的记录可能是错的。如果两个有相同时间戳的记录出现在数据流中，前一条记录视为错误记录，后出现的记录 更正 前一条错误的记录。
+请你设计一个算法，实现：
+ 更新 股票在某一时间戳的股票价格，如果有之前同一时间戳的价格，这一操作将 更正 之前的错误价格。 找到当前记录里 最新股票价格 。最新股票价格 定义为时间戳最晚的股票价格。 找到当前记录里股票的 最高价格 。 找到当前记录里股票的 最低价格 。  请你实现 StockPrice 类：
+ StockPrice() 初始化对象，当前无股票价格记录。 void update(int timestamp, int price) 在时间点 timestamp 更新股票价格为 price 。 int current() 返回股票 最新价格 。 int maximum() 返回股票 最高价格 。 int minimum() 返回股票 最低价格 。  示例：  输入：
+[&amp;ldquo;StockPrice&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;current&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;minimum&amp;rdquo;]">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-2034.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8/">Leetcode 2034. 股票价格波动</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 23, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/stock-price-fluctuation/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/stock-price-fluctuation/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>给你一支股票价格的数据流。数据流中每一条记录包含一个 <strong>时间戳</strong> 和该时间点股票对应的 <strong>价格</strong> 。</p>
+<p>不巧的是，由于股票市场内在的波动性，股票价格记录可能不是按时间顺序到来的。某些情况下，有的记录可能是错的。如果两个有相同时间戳的记录出现在数据流中，前一条记录视为错误记录，后出现的记录 <strong>更正</strong> 前一条错误的记录。</p>
+<p>请你设计一个算法，实现：</p>
+<ul>
+<li><strong>更新</strong> 股票在某一时间戳的股票价格，如果有之前同一时间戳的价格，这一操作将 <strong>更正</strong> 之前的错误价格。</li>
+<li>找到当前记录里 <strong>最新股票价格</strong> 。<strong>最新股票价格</strong> 定义为时间戳最晚的股票价格。</li>
+<li>找到当前记录里股票的 <strong>最高价格</strong> 。</li>
+<li>找到当前记录里股票的 <strong>最低价格</strong> 。</li>
+</ul>
+<p>请你实现 <code>StockPrice</code> 类：</p>
+<ul>
+<li><code>StockPrice()</code> 初始化对象，当前无股票价格记录。</li>
+<li><code>void update(int timestamp, int price)</code> 在时间点 <code>timestamp</code> 更新股票价格为 <code>price</code> 。</li>
+<li><code>int current()</code> 返回股票 <strong>最新价格</strong> 。</li>
+<li><code>int maximum()</code> 返回股票 <strong>最高价格</strong> 。</li>
+<li><code>int minimum()</code> 返回股票 <strong>最低价格</strong> 。</li>
+</ul>
+<h4 id="示例">示例：</h4>
+<blockquote>
+<p><strong>输入：</strong><br>
+[&ldquo;StockPrice&rdquo;, &ldquo;update&rdquo;, &ldquo;update&rdquo;, &ldquo;current&rdquo;, &ldquo;maximum&rdquo;, &ldquo;update&rdquo;, &ldquo;maximum&rdquo;, &ldquo;update&rdquo;, &ldquo;minimum&rdquo;]<br>
+[[], [1, 10], [2, 5], [], [], [1, 3], [], [4, 2], []]<br>
+<strong>输出：</strong><br>
+[null, null, null, 5, 10, null, 5, null, 2]</p>
+<p><strong>解释：</strong><br>
+StockPrice stockPrice = new StockPrice();<br>
+stockPrice.update(1, 10); // 时间戳为 [1] ，对应的股票价格为 [10] 。<br>
+stockPrice.update(2, 5);  // 时间戳为 [1,2] ，对应的股票价格为 [10,5] 。<br>
+stockPrice.current();     // 返回 5 ，最新时间戳为 2 ，对应价格为 5 。<br>
+stockPrice.maximum();     // 返回 10 ，最高价格的时间戳为 1 ，价格为 10 。<br>
+stockPrice.update(1, 3);  // 之前时间戳为 1 的价格错误，价格更新为 3 。<br>
+// 时间戳为 [1,2] ，对应股票价格为 [3,5] 。<br>
+stockPrice.maximum();     // 返回 5 ，更正后最高价格为 5 。<br>
+stockPrice.update(4, 2);  // 时间戳为 [1,2,4] ，对应价格为 [3,5,2] 。<br>
+stockPrice.minimum();     // 返回 2 ，最低价格时间戳为 4 ，价格为 2 。</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= timestamp, price &lt;= 10<sup>9</sup></code></li>
+<li><code>update</code>，<code>current</code>，<code>maximum</code> 和 <code>minimum</code> <strong>总</strong> 调用次数不超过 <code>10<sup>5</sup></code> 。</li>
+<li><code>current</code>，<code>maximum</code> 和 <code>minimum</code> 被调用时，<code>update</code> 操作 <strong>至少</strong> 已经被调用过 <strong>一次</strong> 。</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="哈希表--堆">哈希表 + 堆</h4>
+<p>首先，统一时间戳可能会有多个价格，以最后到来的为准，则需要使用到哈希表，确保 <code>timestamp</code> 唯一。</p>
+<p>获取当前价格，即时间戳最晚的那个价格，使用一个变量记录时间戳的最大值，每次 <code>update</code> 时更新。</p>
+<p>对于获取最大值/最小值操作，可以各使用一个堆存储。由于存在错误的价格，在堆中不方便维护，故在每次获取最大值时判定：当堆中的价格与哈希表中的价格不一致时，说明该条记录是无效的，从堆中弹出；不断执行，直到找到与哈希表中一致的价格为止，返回该价格。</p>
+<p><strong>注意：</strong> 当某一时刻新到来的价格与之前的一致时，该条记录没有效果，便将其忽略，降低堆的无效膨胀。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Pair</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">timestamp</span> <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">price</span>     <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MinHeap</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">elems</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinHeap</span>) <span style="color:#a6e22e">Len</span>() <span style="color:#66d9ef">int</span> {
+	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>)
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinHeap</span>) <span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">price</span> &lt; <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">price</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinHeap</span>) <span style="color:#a6e22e">Swap</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>]
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinHeap</span>) <span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">interface</span>{}) {
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span> = append(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>, <span style="color:#a6e22e">elem</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>))
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinHeap</span>) <span style="color:#a6e22e">Pop</span>() <span style="color:#66d9ef">interface</span>{} {
+	<span style="color:#a6e22e">elem</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">Len</span>()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[:<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">Len</span>()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">elem</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MaxHeap</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">MinHeap</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">MinHeap</span>.<span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">i</span>)
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">StockPrice</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">price</span>   <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">maxTime</span> <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">maxHeap</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>
+	<span style="color:#a6e22e">minHeap</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinHeap</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">StockPrice</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">StockPrice</span>{
+		<span style="color:#a6e22e">price</span>:   make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>),
+		<span style="color:#a6e22e">maxTime</span>: <span style="color:#ae81ff">0</span>,
+		<span style="color:#a6e22e">maxHeap</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">MaxHeap</span>{},
+		<span style="color:#a6e22e">minHeap</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">MinHeap</span>{},
+	}
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">StockPrice</span>) <span style="color:#a6e22e">Update</span>(<span style="color:#a6e22e">timestamp</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">price</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">price</span>[<span style="color:#a6e22e">timestamp</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">price</span> {
+		<span style="color:#66d9ef">return</span>
+	}
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">price</span>[<span style="color:#a6e22e">timestamp</span>] = <span style="color:#a6e22e">price</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">maxTime</span> &lt; <span style="color:#a6e22e">timestamp</span> {
+		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">maxTime</span> = <span style="color:#a6e22e">timestamp</span>
+	}
+	<span style="color:#a6e22e">pair</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
+		<span style="color:#a6e22e">timestamp</span>: <span style="color:#a6e22e">timestamp</span>,
+		<span style="color:#a6e22e">price</span>:     <span style="color:#a6e22e">price</span>,
+	}
+	<span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">maxHeap</span>, <span style="color:#a6e22e">pair</span>)
+	<span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minHeap</span>, <span style="color:#a6e22e">pair</span>)
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">StockPrice</span>) <span style="color:#a6e22e">Current</span>() <span style="color:#66d9ef">int</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">price</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">maxTime</span>]
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">StockPrice</span>) <span style="color:#a6e22e">Maximum</span>() <span style="color:#66d9ef">int</span> {
+	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">price</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">maxHeap</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">timestamp</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">maxHeap</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">price</span>; <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Pop</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">maxHeap</span>) {
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">maxHeap</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">price</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">StockPrice</span>) <span style="color:#a6e22e">Minimum</span>() <span style="color:#66d9ef">int</span> {
+	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">price</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minHeap</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">timestamp</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minHeap</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">price</span>; <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Pop</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minHeap</span>) {
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minHeap</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">price</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：
+<ul>
+<li><code>update</code>：$ O(\log{N}), N = size(heap) $</li>
+<li><code>current</code>：$ O(1) $</li>
+<li><code>maximum</code>：$ O(\log{N}) $</li>
+<li><code>minumux</code>：$ O(\log{N}) $</li>
+</ul>
+</li>
+<li>空间复杂度：$ O(N) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hash/">hash</a>
+        
+            <a href="/tags/heap/">heap</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1705.-%E5%90%83%E8%8B%B9%E6%9E%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E7%9B%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1705. 吃苹果的最大数目</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-59-i.-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 59 - I. 滑动窗口的最大值</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-49.-%E4%B8%91%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 49. 丑数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-313.-%E8%B6%85%E7%BA%A7%E4%B8%91%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 313. 超级丑数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-219.-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-ii/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 219. 存在重复元素 II</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

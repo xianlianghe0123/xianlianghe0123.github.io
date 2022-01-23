@@ -6,7 +6,7 @@
 题目描述 有一个正整数数组 arr，现给你一个对应的查询数组 queries，其中 queries[i] = [Li, Ri]。
 对于每个查询 i，请你计算从 Li 到 Ri 的 XOR 值（即 arr[Li] xor arr[Li&#43;1] xor ... xor arr[Ri]）作为本次查询的结果。
 并返回一个包含给定查询 queries 所有结果的数组。
-示例1：  输入： arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
+示例 1：  输入： arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
 输出： [2,7,14,8]
 解释：
 数组中元素的二进制表示形式是：
@@ -26,7 +26,7 @@
 题目描述 有一个正整数数组 arr，现给你一个对应的查询数组 queries，其中 queries[i] = [Li, Ri]。
 对于每个查询 i，请你计算从 Li 到 Ri 的 XOR 值（即 arr[Li] xor arr[Li&#43;1] xor ... xor arr[Ri]）作为本次查询的结果。
 并返回一个包含给定查询 queries 所有结果的数组。
-示例1：  输入： arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
+示例 1：  输入： arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
 输出： [2,7,14,8]
 解释：
 数组中元素的二进制表示形式是：
@@ -46,7 +46,7 @@
 题目描述 有一个正整数数组 arr，现给你一个对应的查询数组 queries，其中 queries[i] = [Li, Ri]。
 对于每个查询 i，请你计算从 Li 到 Ri 的 XOR 值（即 arr[Li] xor arr[Li&#43;1] xor ... xor arr[Ri]）作为本次查询的结果。
 并返回一个包含给定查询 queries 所有结果的数组。
-示例1：  输入： arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
+示例 1：  输入： arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
 输出： [2,7,14,8]
 解释：
 数组中元素的二进制表示形式是：
@@ -253,11 +253,11 @@
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/xor-queries-of-a-subarray/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/xor-queries-of-a-subarray/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p>有一个正整数数组 <code>arr</code>，现给你一个对应的查询数组 <code>queries</code>，其中 <code>queries[i] = [Li, Ri]</code>。</p>
 <p>对于每个查询 <code>i</code>，请你计算从 <code>Li</code> 到 <code>Ri</code> 的 <strong>XOR</strong> 值（即 <code>arr[Li] xor arr[Li+1] xor ... xor arr[Ri]</code>）作为本次查询的结果。</p>
 <p>并返回一个包含给定查询 <code>queries</code> 所有结果的数组。</p>
-<h5 id="示例1">示例1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 <blockquote>
 <p><strong>输入：</strong> arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]<br>
 <strong>输出：</strong> [2,7,14,8]<br>
@@ -273,7 +273,7 @@
 [0,3] = 1 xor 3 xor 4 xor 8 = 14<br>
 [3,3] = 8</p>
 </blockquote>
-<h5 id="示例2">示例2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 <blockquote>
 <p><strong>输入：</strong> arr = [4,8,2,10], queries = [[2,3],[1,3],[0,0],[0,3]]<br>
 <strong>输出：</strong> [8,0,4,4]</p>
@@ -302,8 +302,8 @@
 }
 </code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N*M)</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：$ O(N_1*N_2), N_1 = len(arr), N_2 = len $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="消除">消除</h4>
 <p>利用异或运算的 <strong>自反性</strong>，记录前缀数组的异或值，然后通过异或操作对前缀数组的值进行消除，即可以 <strong>O(1)</strong> 的时间求得结果。</p>
@@ -321,8 +321,8 @@
 }
 </code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N+M)</li>
-<li>空间复杂度：O(N)</li>
+<li>时间复杂度：$ O(N_1*N_2), N_1 = len(arr), N_2 = len(queries) $</li>
+<li>空间复杂度：$ O(N_1) $</li>
 </ul>
 
 </section>
