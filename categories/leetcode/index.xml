@@ -6,7 +6,89 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 23 Jan 2022 10:22:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 09:10:05 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 884. 两句话中的不常见单词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-884.-%E4%B8%A4%E5%8F%A5%E8%AF%9D%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%8D%95%E8%AF%8D/</link>
+      <pubDate>Sun, 30 Jan 2022 09:10:05 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-884.-%E4%B8%A4%E5%8F%A5%E8%AF%9D%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%8D%95%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/uncommon-words-from-two-sentences/
+难度： 简单
+题目描述 句子 是一串由空格分隔的单词。每个 单词 仅由小写字母组成。
+如果某个单词在其中一个句子中恰好出现一次，在另一个句子中却 没有出现 ，那么这个单词就是 不常见的 。
+给你两个 句子 s1 和 s2 ，返回所有 不常用单词 的列表。返回列表中单词可以按 任意顺序 组织。
+示例 1：  输入： s1 = &amp;ldquo;this apple is sweet&amp;rdquo;, s2 = &amp;ldquo;this apple is sour&amp;rdquo;
+输出： [&amp;ldquo;sweet&amp;rdquo;,&amp;ldquo;sour&amp;rdquo;]
+ 示例 2：  输入： s1 = &amp;ldquo;apple apple&amp;rdquo;, s2 = &amp;ldquo;banana&amp;rdquo;
+输出： [&amp;ldquo;banana&amp;rdquo;]
+ 提示：  1 &amp;lt;= s1.length, s2.length &amp;lt;= 200 s1 和 s2 由小写英文字母和空格组成 s1 和 s2 都不含前导或尾随空格 s1 和 s2 中的所有单词间均由单个空格分隔  解题思路 哈希 使用哈希表记录两个句子中出现的每个单词的数量，将出现次数为 1 的取出并返回。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1765. 地图中的最高点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1765.-%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%9C%80%E9%AB%98%E7%82%B9/</link>
+      <pubDate>Sat, 29 Jan 2022 09:42:05 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1765.-%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%9C%80%E9%AB%98%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/map-of-highest-peak/
+难度： 中等
+题目描述 给你一个大小为 m x n 的整数矩阵 isWater ，它代表了一个由 陆地 和 水域 单元格组成的地图。
+ 如果 isWater[i][j] == 0 ，格子 (i, j) 是一个 陆地 格子。 如果 isWater[i][j] == 1 ，格子 (i, j) 是一个 水域 格子。  你需要按照如下规则给每个单元格安排高度：
+ 每个格子的高度都必须是非负的。 如果一个格子是是 水域 ，那么它的高度必须为 0 。 任意相邻的格子高度差 至多 为 1 。当两个格子在正东、南、西、北方向上相互紧挨着，就称它们为相邻的格子。（也就是说它们有一条公共边）  找到一种安排高度的方案，使得矩阵中的最高高度值 最大 。
+请你返回一个大小为 m x n 的整数矩阵 height ，其中 height[i][j] 是格子 (i, j) 的高度。如果有多种解法，请返回 任意一个 。
+示例 1：  输入： isWater = [[0,1],[0,0]]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 2047. 句子中的有效单词数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2047.-%E5%8F%A5%E5%AD%90%E4%B8%AD%E7%9A%84%E6%9C%89%E6%95%88%E5%8D%95%E8%AF%8D%E6%95%B0/</link>
+      <pubDate>Thu, 27 Jan 2022 09:58:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2047.-%E5%8F%A5%E5%AD%90%E4%B8%AD%E7%9A%84%E6%9C%89%E6%95%88%E5%8D%95%E8%AF%8D%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-of-valid-words-in-a-sentence/
+难度： 简单
+题目描述 句子仅由小写字母（&#39;a&#39; 到 &#39;z&#39;）、数字（&#39;0&#39; 到 &#39;9&#39;）、连字符（&#39;-&#39;）、标点符号（&#39;!&#39;、&#39;.&#39; 和 &#39;,&#39;）以及空格（&#39; &#39;）组成。每个句子可以根据空格分解成 一个或者多个 token ，这些 token 之间由一个或者多个空格 &#39; &#39; 分隔。
+如果一个 token 同时满足下述条件，则认为这个 token 是一个有效单词：
+ 仅由小写字母、连字符和/或标点（不含数字）。 至多一个 连字符 &#39;-&#39; 。如果存在，连字符两侧应当都存在小写字母（&amp;quot;a-b&amp;quot; 是一个有效单词，但 &amp;quot;-ab&amp;quot; 和 &amp;quot;ab-&amp;quot; 不是有效单词）。 至多一个 标点符号。如果存在，标点符号应当位于 token 的 末尾 。  这里给出几个有效单词的例子：&amp;quot;a-b.&amp;quot;、&amp;quot;afad&amp;quot;、&amp;quot;ba-c&amp;quot;、&amp;quot;a!&amp;quot; 和 &amp;quot;!&amp;quot; 。
+给你一个字符串 sentence ，请你找出并返回 sentence 中 有效单词的数目 。
+示例 1：  输入： sentence = &amp;ldquo;cat and dog&amp;rdquo;
+输出： 3
+解释： 句子中的有效单词是 &amp;ldquo;cat&amp;rdquo;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 2013. 检测正方形</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2013.-%E6%A3%80%E6%B5%8B%E6%AD%A3%E6%96%B9%E5%BD%A2/</link>
+      <pubDate>Wed, 26 Jan 2022 09:32:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2013.-%E6%A3%80%E6%B5%8B%E6%AD%A3%E6%96%B9%E5%BD%A2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/detect-squares/
+难度： 中等
+题目描述 给你一个在 X-Y 平面上的点构成的数据流。设计一个满足下述要求的算法：
+ 添加 一个在数据流中的新点到某个数据结构中。可以添加 重复 的点，并会视作不同的点进行处理。 给你一个查询点，请你从数据结构中选出三个点，使这三个点和查询点一同构成一个 面积为正 的 轴对齐正方形 ，统计 满足该要求的方案数目。  轴对齐正方形 是一个正方形，除四条边长度相同外，还满足每条边都与 x-轴 或 y-轴 平行或垂直。
+实现 DetectSquares 类：
+ DetectSquares() 使用空数据结构初始化对象 void add(int[] point) 向数据结构添加一个新的点 point = [x, y] int count(int[] point) 统计按上述方式与点 point = [x, y] 共同构造 轴对齐正方形 的方案数。  示例：  输入：
+[&amp;ldquo;DetectSquares&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;count&amp;rdquo;, &amp;ldquo;count&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;count&amp;rdquo;]
+[[], [[3, 10]], [[11, 2]], [[3, 2]], [[11, 10]], [[14, 8]], [[11, 2]], [[11, 10]]]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1688. 比赛中的配对次数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1688.-%E6%AF%94%E8%B5%9B%E4%B8%AD%E7%9A%84%E9%85%8D%E5%AF%B9%E6%AC%A1%E6%95%B0/</link>
+      <pubDate>Tue, 25 Jan 2022 09:27:56 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1688.-%E6%AF%94%E8%B5%9B%E4%B8%AD%E7%9A%84%E9%85%8D%E5%AF%B9%E6%AC%A1%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-of-matches-in-tournament/
+难度： 简单
+题目描述 给你一个整数 n ，表示比赛中的队伍数。比赛遵循一种独特的赛制：
+ 如果当前队伍数是 偶数 ，那么每支队伍都会与另一支队伍配对。总共进行 n / 2 场比赛，且产生 n / 2 支队伍进入下一轮。 如果当前队伍数为 奇数 ，那么将会随机轮空并晋级一支队伍，其余的队伍配对。总共进行 (n - 1) / 2 场比赛，且产生 (n - 1) / 2 + 1 支队伍进入下一轮。  返回在比赛中进行的配对次数，直到决出获胜队伍为止。
+示例 1：  输入： n = 7
+输出： 6
+解释： 比赛详情：
+ 第 1 轮：队伍数 = 7 ，配对次数 = 3 ，4 支队伍晋级。 第 2 轮：队伍数 = 4 ，配对次数 = 2 ，2 支队伍晋级。 第 3 轮：队伍数 = 2 ，配对次数 = 1 ，决出 1 支获胜队伍。</description>
+    </item>
+    
     <item>
       <title>Leetcode 2034. 股票价格波动</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-2034.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8/</link>
@@ -5375,7 +5457,7 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 你按照如下规则进行一场游戏：
  你从第 0 天开始吃糖果。 你在吃完 所有 第 i - 1 类糖果之前，不能 吃任何一颗第 i 类糖果。 在吃完所有糖果之前，你必须每天 至少 吃 一颗 糖果。  请你构建一个布尔型数组 answer ，满足 answer.length == queries.length 。answer[i] 为 true 的条件是：在每天吃 不超过 dailyCapi 颗糖果的前提下，你可以在第 favoriteDayi 天吃到第 favoriteTypei 类糖果；否则 answer[i] 为 false 。注意，只要满足上面 3 条规则中的第二条规则，你就可以在同一天吃不同类型的糖果。
 请你返回得到的数组 answer 。
-示例1：  输入： candiesCount = [7,4,5,3,8], queries = [[0,2,2],[4,2,4],[2,13,1000000000]]</description>
+示例 1：  输入： candiesCount = [7,4,5,3,8], queries = [[0,2,2],[4,2,4],[2,13,1000000000]]</description>
     </item>
     
     <item>

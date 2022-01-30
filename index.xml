@@ -6,7 +6,433 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Sun, 23 Jan 2022 10:22:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 30 Jan 2022 09:10:05 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 884. 两句话中的不常见单词</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-884.-%E4%B8%A4%E5%8F%A5%E8%AF%9D%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%8D%95%E8%AF%8D/</link>
+        <pubDate>Sun, 30 Jan 2022 09:10:05 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-884.-%E4%B8%A4%E5%8F%A5%E8%AF%9D%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%8D%95%E8%AF%8D/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/uncommon-words-from-two-sentences/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/uncommon-words-from-two-sentences/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;句子&lt;/strong&gt; 是一串由空格分隔的单词。每个 &lt;strong&gt;单词&lt;/strong&gt; 仅由小写字母组成。&lt;/p&gt;
+&lt;p&gt;如果某个单词在其中一个句子中恰好出现一次，在另一个句子中却 &lt;strong&gt;没有出现&lt;/strong&gt; ，那么这个单词就是 &lt;strong&gt;不常见的&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;给你两个 &lt;strong&gt;句子&lt;/strong&gt; &lt;code&gt;s1&lt;/code&gt; 和 &lt;code&gt;s2&lt;/code&gt; ，返回所有 &lt;strong&gt;不常用单词&lt;/strong&gt; 的列表。返回列表中单词可以按 &lt;strong&gt;任意顺序&lt;/strong&gt; 组织。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s1 = &amp;ldquo;this apple is sweet&amp;rdquo;, s2 = &amp;ldquo;this apple is sour&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [&amp;ldquo;sweet&amp;rdquo;,&amp;ldquo;sour&amp;rdquo;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; s1 = &amp;ldquo;apple apple&amp;rdquo;, s2 = &amp;ldquo;banana&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [&amp;ldquo;banana&amp;rdquo;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= s1.length, s2.length &amp;lt;= 200&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s1&lt;/code&gt; 和 &lt;code&gt;s2&lt;/code&gt; 由小写英文字母和空格组成&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s1&lt;/code&gt; 和 &lt;code&gt;s2&lt;/code&gt; 都不含前导或尾随空格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s1&lt;/code&gt; 和 &lt;code&gt;s2&lt;/code&gt; 中的所有单词间均由单个空格分隔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;哈希&#34;&gt;哈希&lt;/h4&gt;
+&lt;p&gt;使用哈希表记录两个句子中出现的每个单词的数量，将出现次数为 1 的取出并返回。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;uncommonFromSentences&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s1&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;s2&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fields&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s1&lt;/span&gt;) {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fields&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s2&lt;/span&gt;) {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;)
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N_1+N_2), N_1 = len(s1), N_2 = len(s2) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N_1+N_2) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 1765. 地图中的最高点</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-1765.-%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%9C%80%E9%AB%98%E7%82%B9/</link>
+        <pubDate>Sat, 29 Jan 2022 09:42:05 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-1765.-%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%9C%80%E9%AB%98%E7%82%B9/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/map-of-highest-peak/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/map-of-highest-peak/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个大小为 &lt;code&gt;m x n&lt;/code&gt; 的整数矩阵 &lt;code&gt;isWater&lt;/code&gt; ，它代表了一个由 &lt;strong&gt;陆地&lt;/strong&gt; 和 &lt;strong&gt;水域&lt;/strong&gt; 单元格组成的地图。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果 &lt;code&gt;isWater[i][j] == 0&lt;/code&gt; ，格子 &lt;code&gt;(i, j)&lt;/code&gt; 是一个 &lt;strong&gt;陆地&lt;/strong&gt; 格子。&lt;/li&gt;
+&lt;li&gt;如果 &lt;code&gt;isWater[i][j] == 1&lt;/code&gt; ，格子 &lt;code&gt;(i, j)&lt;/code&gt; 是一个 &lt;strong&gt;水域&lt;/strong&gt; 格子。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你需要按照如下规则给每个单元格安排高度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每个格子的高度都必须是非负的。&lt;/li&gt;
+&lt;li&gt;如果一个格子是是 &lt;strong&gt;水域&lt;/strong&gt; ，那么它的高度必须为 &lt;code&gt;0&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;任意相邻的格子高度差 &lt;strong&gt;至多&lt;/strong&gt; 为 &lt;code&gt;1&lt;/code&gt; 。当两个格子在正东、南、西、北方向上相互紧挨着，就称它们为相邻的格子。（也就是说它们有一条公共边）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;找到一种安排高度的方案，使得矩阵中的最高高度值 &lt;strong&gt;最大&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;请你返回一个大小为 &lt;code&gt;m x n&lt;/code&gt; 的整数矩阵 &lt;code&gt;height&lt;/code&gt; ，其中 &lt;code&gt;height[i][j]&lt;/code&gt; 是格子 &lt;code&gt;(i, j)&lt;/code&gt; 的高度。如果有多种解法，请返回 &lt;strong&gt;任意一个&lt;/strong&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/1765.screenshot-2021-01-11-at-82050-am.png&#34; width=&#34;330px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; isWater = [[0,1],[0,0]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [[1,0],[2,1]]&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 上图展示了给各个格子安排的高度。&lt;br&gt;
+蓝色格子是水域格，绿色格子是陆地格。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/1765.screenshot-2021-01-11-at-82045-am.png&#34; width=&#34;220px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; isWater = [[0,0,1],[1,0,0],[0,0,0]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [[1,1,0],[0,1,1],[1,2,2]]&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 所有安排方案中，最高可行高度为 2 。&lt;br&gt;
+任意安排方案中，只要最高高度为 2 且符合上述规则的，都为可行方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;m == isWater.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n == isWater[i].length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= m, n &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isWater[i][j]&lt;/code&gt; 要么是 &lt;code&gt;0&lt;/code&gt; ，要么是 &lt;code&gt;1&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;至少有 &lt;strong&gt;1&lt;/strong&gt; 个水域格子。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;广度优先搜索&#34;&gt;广度优先搜索&lt;/h4&gt;
+&lt;p&gt;从水域开始进行广度优先搜索，每向外扩散一步，则高度 &lt;code&gt;+ 1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;每个单元格的最高高度由距离最近的水域确定，初始时，所有水域入队，按照等高线扩散，既满足题目要求。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;highestPeak&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;isWater&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;isWater&lt;/span&gt;))
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;()
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([][]&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;isWater&lt;/span&gt;))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;isWater&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;))
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] = make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;))
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;cell&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cell&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PushBack&lt;/span&gt;([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;})
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+			}
+		}
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;directions&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; [][&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;{{&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}, {&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}, {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;}, {&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;}}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;() &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 等高部分
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;(); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Remove&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Front&lt;/span&gt;()).([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]][&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] = &lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;d&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;directions&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;d&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;], &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;d&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]}
+				&lt;span style=&#34;color:#75715e&#34;&gt;// 越界判断
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;isWater&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;isWater&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]) {
+					&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+				}
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]][&lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PushBack&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;)
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]][&lt;span style=&#34;color:#a6e22e&#34;&gt;nextPos&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+				}
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(m*n) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(m*n) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 2047. 句子中的有效单词数</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-2047.-%E5%8F%A5%E5%AD%90%E4%B8%AD%E7%9A%84%E6%9C%89%E6%95%88%E5%8D%95%E8%AF%8D%E6%95%B0/</link>
+        <pubDate>Thu, 27 Jan 2022 09:58:43 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-2047.-%E5%8F%A5%E5%AD%90%E4%B8%AD%E7%9A%84%E6%9C%89%E6%95%88%E5%8D%95%E8%AF%8D%E6%95%B0/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/number-of-valid-words-in-a-sentence/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/number-of-valid-words-in-a-sentence/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;句子仅由小写字母（&lt;code&gt;&#39;a&#39;&lt;/code&gt; 到 &lt;code&gt;&#39;z&#39;&lt;/code&gt;）、数字（&lt;code&gt;&#39;0&#39;&lt;/code&gt; 到 &lt;code&gt;&#39;9&#39;&lt;/code&gt;）、连字符（&lt;code&gt;&#39;-&#39;&lt;/code&gt;）、标点符号（&lt;code&gt;&#39;!&#39;&lt;/code&gt;、&lt;code&gt;&#39;.&#39;&lt;/code&gt; 和 &lt;code&gt;&#39;,&#39;&lt;/code&gt;）以及空格（&lt;code&gt;&#39; &#39;&lt;/code&gt;）组成。每个句子可以根据空格分解成 &lt;strong&gt;一个或者多个 token&lt;/strong&gt; ，这些 token 之间由一个或者多个空格 &lt;code&gt;&#39; &#39;&lt;/code&gt; 分隔。&lt;/p&gt;
+&lt;p&gt;如果一个 token 同时满足下述条件，则认为这个 token 是一个有效单词：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;仅由小写字母、连字符和/或标点（不含数字）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;至多一个&lt;/strong&gt; 连字符 &lt;code&gt;&#39;-&#39;&lt;/code&gt; 。如果存在，连字符两侧应当都存在小写字母（&lt;code&gt;&amp;quot;a-b&amp;quot;&lt;/code&gt; 是一个有效单词，但 &lt;code&gt;&amp;quot;-ab&amp;quot;&lt;/code&gt; 和 &lt;code&gt;&amp;quot;ab-&amp;quot;&lt;/code&gt; 不是有效单词）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;至多一个&lt;/strong&gt; 标点符号。如果存在，标点符号应当位于 token 的 &lt;strong&gt;末尾&lt;/strong&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里给出几个有效单词的例子：&lt;code&gt;&amp;quot;a-b.&amp;quot;&lt;/code&gt;、&lt;code&gt;&amp;quot;afad&amp;quot;&lt;/code&gt;、&lt;code&gt;&amp;quot;ba-c&amp;quot;&lt;/code&gt;、&lt;code&gt;&amp;quot;a!&amp;quot;&lt;/code&gt; 和 &lt;code&gt;&amp;quot;!&amp;quot;&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;给你一个字符串 &lt;code&gt;sentence&lt;/code&gt; ，请你找出并返回 &lt;code&gt;sentence&lt;/code&gt; 中 &lt;strong&gt;有效单词的数目&lt;/strong&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; sentence = &amp;ldquo;&lt;strong&gt;cat and  dog&lt;/strong&gt;&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 句子中的有效单词是 &amp;ldquo;cat&amp;rdquo;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; sentence = &amp;ldquo;!this  1-s b8d!&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 0&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 句子中没有有效单词&lt;br&gt;
+&amp;ldquo;!this&amp;rdquo; 不是有效单词，因为它以一个标点开头&lt;br&gt;
+&amp;ldquo;1-s&amp;rdquo; 和 &amp;ldquo;b8d&amp;rdquo; 也不是有效单词，因为它们都包含数字&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; sentence = &amp;ldquo;&lt;strong&gt;alice and  bob are playing&lt;/strong&gt; stone-game10&amp;rdquo; &lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 5 &lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 句子中的有效单词是 &amp;ldquo;alice&amp;rdquo;、&amp;ldquo;and&amp;rdquo;、&amp;ldquo;bob&amp;rdquo;、&amp;ldquo;are&amp;rdquo; 和 &amp;ldquo;playing&amp;rdquo; &lt;br&gt;
+&amp;ldquo;stone-game10&amp;rdquo; 不是有效单词，因为它含有数字&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-4&#34;&gt;示例 4：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; sentence = &amp;ldquo;&lt;strong&gt;he bought&lt;/strong&gt; 2 &lt;strong&gt;pencils&lt;/strong&gt;, 3 &lt;strong&gt;erasers&lt;/strong&gt;, &lt;strong&gt;and&lt;/strong&gt; 1  &lt;strong&gt;pencil-sharpener.&lt;/strong&gt;&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 6&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 句子中的有效单词是 &amp;ldquo;he&amp;rdquo;、&amp;ldquo;bought&amp;rdquo;、&amp;ldquo;pencils,&amp;quot;、&amp;ldquo;erasers,&amp;quot;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;pencil-sharpener.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= sentence.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sentence&lt;/code&gt; 由小写英文字母、数字（&lt;code&gt;0-9&lt;/code&gt;）、以及字符（&lt;code&gt;&#39; &#39;&lt;/code&gt;、&lt;code&gt;&#39;-&#39;&lt;/code&gt;、&lt;code&gt;&#39;!&#39;&lt;/code&gt;、&lt;code&gt;&#39;.&#39;&lt;/code&gt; 和 &lt;code&gt;&#39;,&#39;&lt;/code&gt;）组成&lt;/li&gt;
+&lt;li&gt;句子中至少有 &lt;code&gt;1&lt;/code&gt; 个 token&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;模拟&#34;&gt;模拟&lt;/h4&gt;
+&lt;p&gt;遍历字符串，首先以空格为单位分割出 token， 然后判断 token 是否为有效的单词。&lt;/p&gt;
+&lt;p&gt;遍历 token ，当存在一下情况时，不构成有效单词：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;存在数字；&lt;/li&gt;
+&lt;li&gt;标点符号不在末尾；&lt;/li&gt;
+&lt;li&gt;连字符数量超过1 或者 连字符后面不是小写字母&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当存在上述情况之一时，便可跳过此次遍历，继续找寻下一个 token。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;countValidWords&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;start&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; {
+			&lt;span style=&#34;color:#75715e&#34;&gt;// 存在有效 token
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;start&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;hasHyphen&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;start&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+					&lt;span style=&#34;color:#75715e&#34;&gt;// 存在数字，不是有效单词
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;					&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;9&amp;#39;&lt;/span&gt; {
+						&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;
+						&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+					}
+					&lt;span style=&#34;color:#75715e&#34;&gt;// 标点符号不在末尾，不是有效单词
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;					&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;!&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+						&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;
+						&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+					}
+					&lt;span style=&#34;color:#75715e&#34;&gt;//
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;					&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;-&amp;#39;&lt;/span&gt; {
+						&lt;span style=&#34;color:#75715e&#34;&gt;// 连字符在头尾 或 后面是标点 或 数量超过1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;						&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;start&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentence&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;!&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hasHyphen&lt;/span&gt; {
+							&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;
+							&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+						}
+						&lt;span style=&#34;color:#a6e22e&#34;&gt;hasHyphen&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+					}
+				}
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+			}
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;start&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = len(sentence) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 2013. 检测正方形</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-2013.-%E6%A3%80%E6%B5%8B%E6%AD%A3%E6%96%B9%E5%BD%A2/</link>
+        <pubDate>Wed, 26 Jan 2022 09:32:13 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-2013.-%E6%A3%80%E6%B5%8B%E6%AD%A3%E6%96%B9%E5%BD%A2/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/detect-squares/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/detect-squares/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个在 X-Y 平面上的点构成的数据流。设计一个满足下述要求的算法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;添加&lt;/strong&gt; 一个在数据流中的新点到某个数据结构中。可以添加 &lt;strong&gt;重复&lt;/strong&gt; 的点，并会视作不同的点进行处理。&lt;/li&gt;
+&lt;li&gt;给你一个查询点，请你从数据结构中选出三个点，使这三个点和查询点一同构成一个 &lt;strong&gt;面积为正&lt;/strong&gt; 的 &lt;strong&gt;轴对齐正方形&lt;/strong&gt; ，&lt;strong&gt;统计&lt;/strong&gt; 满足该要求的方案数目。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;轴对齐正方形&lt;/strong&gt; 是一个正方形，除四条边长度相同外，还满足每条边都与 &lt;strong&gt;x-轴&lt;/strong&gt; 或 &lt;strong&gt;y-轴&lt;/strong&gt; 平行或垂直。&lt;/p&gt;
+&lt;p&gt;实现 &lt;code&gt;DetectSquares&lt;/code&gt; 类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DetectSquares()&lt;/code&gt; 使用空数据结构初始化对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;void add(int[] point)&lt;/code&gt; 向数据结构添加一个新的点 &lt;code&gt;point = [x, y]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int count(int[] point)&lt;/code&gt; 统计按上述方式与点 &lt;code&gt;point = [x, y]&lt;/code&gt; 共同构造 &lt;strong&gt;轴对齐正方形&lt;/strong&gt; 的方案数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;示例&#34;&gt;示例：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/2013.image.png&#34; width=&#34;869px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br&gt;
+[&amp;ldquo;DetectSquares&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;count&amp;rdquo;, &amp;ldquo;count&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;count&amp;rdquo;]&lt;br&gt;
+[[], [[3, 10]], [[11, 2]], [[3, 2]], [[11, 10]], [[14, 8]], [[11, 2]], [[11, 10]]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;&lt;br&gt;
+[null, null, null, null, 1, 0, null, 2]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;
+DetectSquares detectSquares = new DetectSquares();&lt;br&gt;
+detectSquares.add([3, 10]);&lt;br&gt;
+detectSquares.add([11, 2]);&lt;br&gt;
+detectSquares.add([3, 2]);&lt;br&gt;
+detectSquares.count([11, 10]); // 返回 1 。你可以选择：&lt;br&gt;
+//   - 第一个，第二个，和第三个点&lt;br&gt;
+detectSquares.count([14, 8]);  // 返回 0 。查询点无法与数据结构中的这些点构成正方形。&lt;br&gt;
+detectSquares.add([11, 2]);    // 允许添加重复的点。&lt;br&gt;
+detectSquares.count([11, 10]); // 返回 2 。你可以选择：&lt;br&gt;
+//   - 第一个，第二个，和第三个点&lt;br&gt;
+//   - 第一个，第三个，和第四个点&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;point.length == 2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= x, y &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;调用 &lt;code&gt;add&lt;/code&gt; 和 &lt;code&gt;count&lt;/code&gt; 的 &lt;strong&gt;总次数&lt;/strong&gt; 最多为 &lt;code&gt;5000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;哈希&#34;&gt;哈希&lt;/h4&gt;
+&lt;p&gt;使用哈希表记录相同横坐标点的纵坐标及数量。&lt;/p&gt;
+&lt;p&gt;统计构成正方形的数量时，首先找出所有与输入点横坐标相同的点。当这一对点确定后，则剩余两个点的坐标也可以计算得出，存在左右两种情况，分别进行计算求和。每个正方形的数量为与该点构成正方形的其余三个点的数量的乘积。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DetectSquares&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constructor&lt;/span&gt;() &lt;span style=&#34;color:#a6e22e&#34;&gt;DetectSquares&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DetectSquares&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;: make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;),
+	}
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;DetectSquares&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Add&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]] = make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]][&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;DetectSquares&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Count&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]] {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 边长
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;// 面积为 0，跳过
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]][&lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;] &lt;span style=&#34;color:#75715e&#34;&gt;// 一侧
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]][&lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;point&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;] &lt;span style=&#34;color:#75715e&#34;&gt;// 另一侧
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：
+&lt;ul&gt;
+&lt;li&gt;add：$ O(1) $&lt;/li&gt;
+&lt;li&gt;count：$ O(N), N = len(points) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 1688. 比赛中的配对次数</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-1688.-%E6%AF%94%E8%B5%9B%E4%B8%AD%E7%9A%84%E9%85%8D%E5%AF%B9%E6%AC%A1%E6%95%B0/</link>
+        <pubDate>Tue, 25 Jan 2022 09:27:56 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-1688.-%E6%AF%94%E8%B5%9B%E4%B8%AD%E7%9A%84%E9%85%8D%E5%AF%B9%E6%AC%A1%E6%95%B0/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/count-of-matches-in-tournament/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/count-of-matches-in-tournament/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个整数 &lt;code&gt;n&lt;/code&gt; ，表示比赛中的队伍数。比赛遵循一种独特的赛制：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果当前队伍数是 &lt;strong&gt;偶数&lt;/strong&gt; ，那么每支队伍都会与另一支队伍配对。总共进行 &lt;code&gt;n / 2&lt;/code&gt; 场比赛，且产生 &lt;code&gt;n / 2&lt;/code&gt; 支队伍进入下一轮。&lt;/li&gt;
+&lt;li&gt;如果当前队伍数为 &lt;strong&gt;奇数&lt;/strong&gt; ，那么将会随机轮空并晋级一支队伍，其余的队伍配对。总共进行 &lt;code&gt;(n - 1) / 2&lt;/code&gt; 场比赛，且产生 &lt;code&gt;(n - 1) / 2 + 1&lt;/code&gt; 支队伍进入下一轮。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;返回在比赛中进行的配对次数，直到决出获胜队伍为止。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 7&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 6&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 比赛详情：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第 1 轮：队伍数 = 7 ，配对次数 = 3 ，4 支队伍晋级。&lt;/li&gt;
+&lt;li&gt;第 2 轮：队伍数 = 4 ，配对次数 = 2 ，2 支队伍晋级。&lt;/li&gt;
+&lt;li&gt;第 3 轮：队伍数 = 2 ，配对次数 = 1 ，决出 1 支获胜队伍。&lt;br&gt;
+总配对次数 = 3 + 2 + 1 = 6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; n = 14&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 13&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 比赛详情：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第 1 轮：队伍数 = 14 ，配对次数 = 7 ，7 支队伍晋级。&lt;/li&gt;
+&lt;li&gt;第 2 轮：队伍数 = 7 ，配对次数 = 3 ，4 支队伍晋级。&lt;/li&gt;
+&lt;li&gt;第 3 轮：队伍数 = 4 ，配对次数 = 2 ，2 支队伍晋级。&lt;/li&gt;
+&lt;li&gt;第 4 轮：队伍数 = 2 ，配对次数 = 1 ，决出 1 支获胜队伍。&lt;br&gt;
+总配对次数 = 7 + 3 + 2 + 1 = 13&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 200&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;模拟&#34;&gt;模拟&lt;/h4&gt;
+&lt;p&gt;按照题设方案，求得每一轮配对次数并求和，直到剩余队伍数量为 1 为止。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numberOfMatches&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(\log{n}) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;数学&#34;&gt;数学&lt;/h4&gt;
+&lt;p&gt;每次配对均会淘汰一支队伍，最后仅有一支队伍获胜，所以共淘汰了 &lt;code&gt;n-1&lt;/code&gt; 支队伍，即完成了 &lt;code&gt;n-1&lt;/code&gt; 次配对。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;numberOfMatches&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(1) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 2034. 股票价格波动</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-2034.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8/</link>
         <pubDate>Sun, 23 Jan 2022 10:22:12 +0800</pubDate>
@@ -22986,7 +23412,7 @@ t.getInheritanceOrder(); // 返回 [&amp;ldquo;king&amp;rdquo;, &amp;ldquo;andy&
         <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/&lt;/a&gt;&lt;br&gt;
 &lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
-&lt;h4 id=&#34;题目描述&#34;&gt;题目描述&lt;/h4&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
 &lt;p&gt;给你一个下标从 &lt;strong&gt;0&lt;/strong&gt; 开始的正整数数组 &lt;code&gt;candiesCount&lt;/code&gt; ，其中 &lt;code&gt;candiesCount[i]&lt;/code&gt; 表示你拥有的第 &lt;code&gt;i&lt;/code&gt; 类糖果的数目。同时给你一个二维数组 &lt;code&gt;queries&lt;/code&gt; ，其中 &lt;code&gt;queries[i] = [favoriteType&lt;sub&gt;i&lt;/sub&gt;, favoriteDay&lt;sub&gt;i&lt;/sub&gt;, dailyCap&lt;sub&gt;i&lt;/sub&gt;]&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;你按照如下规则进行一场游戏：&lt;/p&gt;
 &lt;ul&gt;
@@ -22996,7 +23422,7 @@ t.getInheritanceOrder(); // 返回 [&amp;ldquo;king&amp;rdquo;, &amp;ldquo;andy&
 &lt;/ul&gt;
 &lt;p&gt;请你构建一个布尔型数组 &lt;code&gt;answer&lt;/code&gt; ，满足 &lt;code&gt;answer.length == queries.length&lt;/code&gt; 。&lt;code&gt;answer[i]&lt;/code&gt; 为 &lt;code&gt;true&lt;/code&gt; 的条件是：在每天吃 &lt;strong&gt;不超过&lt;/strong&gt; &lt;code&gt;dailyCap&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 颗糖果的前提下，你可以在第 &lt;code&gt;favoriteDay&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 天吃到第 &lt;code&gt;favoriteType&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 类糖果；否则 &lt;code&gt;answer[i]&lt;/code&gt; 为 &lt;code&gt;false&lt;/code&gt; 。注意，只要满足上面 3 条规则中的第二条规则，你就可以在同一天吃不同类型的糖果。&lt;/p&gt;
 &lt;p&gt;请你返回得到的数组 &lt;code&gt;answer&lt;/code&gt; 。&lt;/p&gt;
-&lt;h5 id=&#34;示例1&#34;&gt;示例1：&lt;/h5&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; candiesCount = [7,4,5,3,8], queries = [[0,2,2],[4,2,4],[2,13,1000000000]]&lt;br&gt;
 &lt;strong&gt;输出：&lt;/strong&gt; [true,false,true]&lt;br&gt;
@@ -23005,7 +23431,7 @@ t.getInheritanceOrder(); // 返回 [&amp;ldquo;king&amp;rdquo;, &amp;ldquo;andy&
 2- 每天你最多吃 4 颗糖果。即使第 0 天吃 4 颗糖果（类型 0），第 1 天吃 4 颗糖果（类型 0 和类型 1），你也没办法在第 2 天吃到类型 4 的糖果。换言之，你没法在每天吃 4 颗糖果的限制下在第 2 天吃到第 4 类糖果。&lt;br&gt;
 3- 如果你每天吃 1 颗糖果，你可以在第 13 天吃到类型 2 的糖果。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h5 id=&#34;示例2&#34;&gt;示例2：&lt;/h5&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; candiesCount = [5,2,6,4,1], queries = [[3,1,2],[4,10,3],[3,10,100],[4,100,30],[1,3,1]]&lt;br&gt;
 &lt;strong&gt;输出：&lt;/strong&gt; [false,true,true,false,false]&lt;/p&gt;
@@ -23046,8 +23472,8 @@ t.getInheritanceOrder(); // 返回 [&amp;ldquo;king&amp;rdquo;, &amp;ldquo;andy&
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
 &lt;ul&gt;
-&lt;li&gt;时间复杂度：O(N+Q)&lt;/li&gt;
-&lt;li&gt;空间复杂度：O(N)&lt;/li&gt;
+&lt;li&gt;时间复杂度：$ O(N+Q), N = len(candiesCount), Q = len(queries) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
