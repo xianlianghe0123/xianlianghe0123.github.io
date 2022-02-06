@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/path-with-maximum-gold/
+难度： 中等
+题目描述 你要开发一座金矿，地质勘测学家已经探明了这座金矿中的资源分布，并用大小为 m * n 的网格 grid 进行了标注。每个单元格中的整数就表示这一单元格中的黄金数量；如果该单元格是空的，那么就是 0。
+为了使收益最大化，矿工需要按以下规则来开采黄金：
+ 每当矿工进入一个单元，就会收集该单元格中的所有黄金。 矿工每次可以从当前位置向上下左右四个方向走。 每个单元格只能被开采（进入）一次。 不得开采（进入）黄金数目为 0 的单元格。 矿工可以从网格中 任意一个 有黄金的单元格出发或者是停止。  示例1：  输入： grid = [[0,6,0],[5,8,7],[0,9,0]]
+输出： 24
+解释：
+[[0,6,0],
+[5,8,7],
+[0,9,0]]
+一种收集最多黄金的路线是：9 -&amp;gt; 8 -&amp;gt; 7。
+ 示例 2：  输入： grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]
+输出： 28
+解释：
+[[1,0,7],
+[2,0,6],
+[3,4,5],
+[0,3,0],
+[9,0,20]]
+一种收集最多黄金的路线是：1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6 -&amp;gt; 7。'><title>Leetcode 1219. 黄金矿工</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1219.-%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1219. 黄金矿工'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/path-with-maximum-gold/
+难度： 中等
+题目描述 你要开发一座金矿，地质勘测学家已经探明了这座金矿中的资源分布，并用大小为 m * n 的网格 grid 进行了标注。每个单元格中的整数就表示这一单元格中的黄金数量；如果该单元格是空的，那么就是 0。
+为了使收益最大化，矿工需要按以下规则来开采黄金：
+ 每当矿工进入一个单元，就会收集该单元格中的所有黄金。 矿工每次可以从当前位置向上下左右四个方向走。 每个单元格只能被开采（进入）一次。 不得开采（进入）黄金数目为 0 的单元格。 矿工可以从网格中 任意一个 有黄金的单元格出发或者是停止。  示例1：  输入： grid = [[0,6,0],[5,8,7],[0,9,0]]
+输出： 24
+解释：
+[[0,6,0],
+[5,8,7],
+[0,9,0]]
+一种收集最多黄金的路线是：9 -&amp;gt; 8 -&amp;gt; 7。
+ 示例 2：  输入： grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]
+输出： 28
+解释：
+[[1,0,7],
+[2,0,6],
+[3,4,5],
+[0,3,0],
+[9,0,20]]
+一种收集最多黄金的路线是：1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6 -&amp;gt; 7。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1219.-%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='backtracking' /><meta property='article:published_time' content='2022-02-05T10:32:25&#43;08:00'/><meta property='article:modified_time' content='2022-02-05T10:32:25&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1219. 黄金矿工">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/path-with-maximum-gold/
+难度： 中等
+题目描述 你要开发一座金矿，地质勘测学家已经探明了这座金矿中的资源分布，并用大小为 m * n 的网格 grid 进行了标注。每个单元格中的整数就表示这一单元格中的黄金数量；如果该单元格是空的，那么就是 0。
+为了使收益最大化，矿工需要按以下规则来开采黄金：
+ 每当矿工进入一个单元，就会收集该单元格中的所有黄金。 矿工每次可以从当前位置向上下左右四个方向走。 每个单元格只能被开采（进入）一次。 不得开采（进入）黄金数目为 0 的单元格。 矿工可以从网格中 任意一个 有黄金的单元格出发或者是停止。  示例1：  输入： grid = [[0,6,0],[5,8,7],[0,9,0]]
+输出： 24
+解释：
+[[0,6,0],
+[5,8,7],
+[0,9,0]]
+一种收集最多黄金的路线是：9 -&amp;gt; 8 -&amp;gt; 7。
+ 示例 2：  输入： grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]
+输出： 28
+解释：
+[[1,0,7],
+[2,0,6],
+[3,4,5],
+[0,3,0],
+[9,0,20]]
+一种收集最多黄金的路线是：1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6 -&amp;gt; 7。">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-1219.-%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5/">Leetcode 1219. 黄金矿工</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 05, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/path-with-maximum-gold/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/path-with-maximum-gold/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>你要开发一座金矿，地质勘测学家已经探明了这座金矿中的资源分布，并用大小为 <code>m * n</code> 的网格 <code>grid</code> 进行了标注。每个单元格中的整数就表示这一单元格中的黄金数量；如果该单元格是空的，那么就是 <code>0</code>。</p>
+<p>为了使收益最大化，矿工需要按以下规则来开采黄金：</p>
+<ul>
+<li>每当矿工进入一个单元，就会收集该单元格中的所有黄金。</li>
+<li>矿工每次可以从当前位置向上下左右四个方向走。</li>
+<li>每个单元格只能被开采（进入）一次。</li>
+<li><strong>不得开采</strong>（进入）黄金数目为 <code>0</code> 的单元格。</li>
+<li>矿工可以从网格中 <strong>任意一个</strong> 有黄金的单元格出发或者是停止。</li>
+</ul>
+<h4 id="示例1">示例1：</h4>
+<blockquote>
+<p><strong>输入：</strong> grid = [[0,6,0],[5,8,7],[0,9,0]]<br>
+<strong>输出：</strong> 24<br>
+<strong>解释：</strong><br>
+[[0,6,0],<br>
+[5,8,7],<br>
+[0,9,0]]<br>
+一种收集最多黄金的路线是：9 -&gt; 8 -&gt; 7。</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]<br>
+<strong>输出：</strong> 28<br>
+<strong>解释：</strong><br>
+[[1,0,7],<br>
+[2,0,6],<br>
+[3,4,5],<br>
+[0,3,0],<br>
+[9,0,20]]<br>
+一种收集最多黄金的路线是：1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6 -&gt; 7。</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= grid.length, grid[i].length &lt;= 15</code></li>
+<li><code>0 &lt;= grid[i][j] &lt;= 100</code></li>
+<li>最多 <code>25</code> 个单元格中有黄金。</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="回溯">回溯</h4>
+<p>以每个单元为起始结点，通过回溯找到路径的最大值，然后从中找出最大的那一个。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getMaximumGold</span>(<span style="color:#a6e22e">grid</span> [][]<span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">maxGold</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">rows</span>, <span style="color:#a6e22e">cols</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">grid</span>), len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>])
+	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>, <span style="color:#a6e22e">gold</span> <span style="color:#66d9ef">int</span>)
+	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>, <span style="color:#a6e22e">gold</span> <span style="color:#66d9ef">int</span>) {
+		<span style="color:#75715e">// 越界判断
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">rows</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">cols</span> {
+			<span style="color:#66d9ef">return</span>
+		}
+		<span style="color:#75715e">// 不可进入
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+			<span style="color:#66d9ef">return</span>
+		}
+		<span style="color:#a6e22e">dup</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>]
+		<span style="color:#a6e22e">gold</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dup</span> <span style="color:#75715e">// 开采
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 记录最大值
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxGold</span> &lt; <span style="color:#a6e22e">gold</span> {
+			<span style="color:#a6e22e">maxGold</span> = <span style="color:#a6e22e">gold</span>
+		}
+		<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 标记已开采
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 寻找后续路径
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
+			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">row</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">col</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">gold</span>)
+		}
+		<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#a6e22e">dup</span> <span style="color:#75715e">// 回溯
+</span><span style="color:#75715e"></span>
+	}
+	<span style="color:#75715e">// 以每个单元为起始，回溯查找
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">grid</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">col</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> &gt; <span style="color:#ae81ff">0</span> {
+				<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>, <span style="color:#ae81ff">0</span>)
+			}
+		}
+	}
+	<span style="color:#66d9ef">return</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(m*n + G * 3^G), G 表示有黄金的单元格数量 $</li>
+<li>空间复杂度：$ O(G)$</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/backtracking/">backtracking</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-282.-%E7%BB%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B7%BB%E5%8A%A0%E8%BF%90%E7%AE%97%E7%AC%A6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 282. 给表达式添加运算符</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-46.-%E5%85%A8%E6%8E%92%E5%88%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 46. 全排列</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-526.-%E4%BC%98%E7%BE%8E%E7%9A%84%E6%8E%92%E5%88%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 526. 优美的排列</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%89%91%E6%8C%87-offer-38.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">剑指 Offer 38. 字符串的排列</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

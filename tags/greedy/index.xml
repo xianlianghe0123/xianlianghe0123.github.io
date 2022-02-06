@@ -6,7 +6,27 @@
     <description>Recent content in greedy on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 24 Dec 2021 10:36:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Feb 2022 11:11:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1414. 和为 K 的最少斐波那契数字数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1414.-%E5%92%8C%E4%B8%BA-k-%E7%9A%84%E6%9C%80%E5%B0%91%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%AD%97%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Thu, 03 Feb 2022 11:11:52 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1414.-%E5%92%8C%E4%B8%BA-k-%E7%9A%84%E6%9C%80%E5%B0%91%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%AD%97%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k/
+难度： 中等
+题目描述 给你数字 k ，请你返回和为 k 的斐波那契数字的最少数目，其中，每个斐波那契数字都可以被使用多次。
+斐波那契数字定义为：
+ F1 = 1 F2 = 1 Fn = Fn-1 + Fn-2 ， 其中 n &amp;gt; 2 。  数据保证对于给定的 k ，一定能找到可行解。
+示例 1：  输入： k = 7
+输出： 2
+解释： 斐波那契数字为：1，1，2，3，5，8，13，……
+对于 k = 7 ，我们可以得到 2 + 5 = 7 。
+ 示例 2：  输入： k = 10
+输出： 2
+解释： 对于 k = 10 ，我们可以得到 2 + 8 = 10 。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1705. 吃苹果的最大数目</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1705.-%E5%90%83%E8%8B%B9%E6%9E%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E7%9B%AE/</link>

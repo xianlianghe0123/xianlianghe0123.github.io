@@ -6,7 +6,22 @@
     <description>Recent content in bfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 21 Jan 2022 10:32:55 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jan 2022 09:42:05 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1765. 地图中的最高点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1765.-%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%9C%80%E9%AB%98%E7%82%B9/</link>
+      <pubDate>Sat, 29 Jan 2022 09:42:05 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1765.-%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E6%9C%80%E9%AB%98%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/map-of-highest-peak/
+难度： 中等
+题目描述 给你一个大小为 m x n 的整数矩阵 isWater ，它代表了一个由 陆地 和 水域 单元格组成的地图。
+ 如果 isWater[i][j] == 0 ，格子 (i, j) 是一个 陆地 格子。 如果 isWater[i][j] == 1 ，格子 (i, j) 是一个 水域 格子。  你需要按照如下规则给每个单元格安排高度：
+ 每个格子的高度都必须是非负的。 如果一个格子是是 水域 ，那么它的高度必须为 0 。 任意相邻的格子高度差 至多 为 1 。当两个格子在正东、南、西、北方向上相互紧挨着，就称它们为相邻的格子。（也就是说它们有一条公共边）  找到一种安排高度的方案，使得矩阵中的最高高度值 最大 。
+请你返回一个大小为 m x n 的整数矩阵 height ，其中 height[i][j] 是格子 (i, j) 的高度。如果有多种解法，请返回 任意一个 。
+示例 1：  输入： isWater = [[0,1],[0,0]]</description>
+    </item>
+    
     <item>
       <title>Leetcode 1345. 跳跃游戏 IV</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1345.-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F-iv/</link>

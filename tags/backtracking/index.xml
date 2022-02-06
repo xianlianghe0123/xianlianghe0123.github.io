@@ -6,7 +6,35 @@
     <description>Recent content in backtracking on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 16 Oct 2021 12:14:42 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/backtracking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Feb 2022 10:32:25 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/backtracking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1219. 黄金矿工</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1219.-%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5/</link>
+      <pubDate>Sat, 05 Feb 2022 10:32:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1219.-%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5/</guid>
+      <description>链接： https://leetcode-cn.com/problems/path-with-maximum-gold/
+难度： 中等
+题目描述 你要开发一座金矿，地质勘测学家已经探明了这座金矿中的资源分布，并用大小为 m * n 的网格 grid 进行了标注。每个单元格中的整数就表示这一单元格中的黄金数量；如果该单元格是空的，那么就是 0。
+为了使收益最大化，矿工需要按以下规则来开采黄金：
+ 每当矿工进入一个单元，就会收集该单元格中的所有黄金。 矿工每次可以从当前位置向上下左右四个方向走。 每个单元格只能被开采（进入）一次。 不得开采（进入）黄金数目为 0 的单元格。 矿工可以从网格中 任意一个 有黄金的单元格出发或者是停止。  示例1：  输入： grid = [[0,6,0],[5,8,7],[0,9,0]]
+输出： 24
+解释：
+[[0,6,0],
+[5,8,7],
+[0,9,0]]
+一种收集最多黄金的路线是：9 -&amp;gt; 8 -&amp;gt; 7。
+ 示例 2：  输入： grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]
+输出： 28
+解释：
+[[1,0,7],
+[2,0,6],
+[3,4,5],
+[0,3,0],
+[9,0,20]]
+一种收集最多黄金的路线是：1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6 -&amp;gt; 7。</description>
+    </item>
+    
     <item>
       <title>Leetcode 282. 给表达式添加运算符</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-282.-%E7%BB%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B7%BB%E5%8A%A0%E8%BF%90%E7%AE%97%E7%AC%A6/</link>

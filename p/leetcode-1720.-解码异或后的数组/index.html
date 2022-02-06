@@ -7,7 +7,7 @@
 经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i &#43; 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
 给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
 请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
-示例1：  输入： encoded = [1,2,3], first = 1
+示例 1：  输入： encoded = [1,2,3], first = 1
 输出： [1,0,2,1]
 解释： 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]'><title>Leetcode 1720. 解码异或后的数组</title>
 
@@ -20,7 +20,7 @@
 经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i &#43; 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
 给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
 请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
-示例1：  输入： encoded = [1,2,3], first = 1
+示例 1：  输入： encoded = [1,2,3], first = 1
 输出： [1,0,2,1]
 解释： 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1720.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/'>
@@ -33,7 +33,7 @@
 经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i &#43; 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
 给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
 请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
-示例1：  输入： encoded = [1,2,3], first = 1
+示例 1：  输入： encoded = [1,2,3], first = 1
 输出： [1,0,2,1]
 解释： 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]">
     </head>
@@ -232,18 +232,18 @@
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/decode-xored-array/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/decode-xored-array/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p><strong>未知</strong> 整数数组 <code>arr</code> 由 <code>n</code> 个非负整数组成。</p>
 <p>经编码后变为长度为 <code>n - 1</code> 的另一个整数数组 e<code>ncoded</code> ，其中 <code>encoded[i] = arr[i] XOR arr[i + 1]</code> 。例如，<code>arr = [1,0,2,1]</code> 经编码后得到 <code>encoded = [1,2,3]</code> 。</p>
 <p>给你编码后的数组 <code>encoded</code> 和原数组 <code>arr</code> 的第一个元素 <code>first</code>（<code>arr[0]</code>）。</p>
 <p>请解码返回原数组 <code>arr</code> 。可以证明答案存在并且是唯一的。</p>
-<h5 id="示例1">示例1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 <blockquote>
 <p><strong>输入：</strong> encoded = [1,2,3], first = 1<br>
 <strong>输出：</strong> [1,0,2,1]<br>
 <strong>解释：</strong> 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]</p>
 </blockquote>
-<h5 id="示例2">示例2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 <blockquote>
 <p><strong>输入：</strong> encoded = [6,2,7,3], first = 4<br>
 <strong>输出：</strong> [4,2,0,7,4]</p>
@@ -303,8 +303,8 @@
 }
 </code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：$ O(N), N = len(encoded) $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
 </section>

@@ -6,7 +6,151 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 30 Jan 2022 09:10:05 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Feb 2022 10:47:39 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1748. 唯一元素的和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1748.-%E5%94%AF%E4%B8%80%E5%85%83%E7%B4%A0%E7%9A%84%E5%92%8C/</link>
+      <pubDate>Sun, 06 Feb 2022 10:47:39 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1748.-%E5%94%AF%E4%B8%80%E5%85%83%E7%B4%A0%E7%9A%84%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/sum-of-unique-elements/
+难度： 简单
+题目描述 给你一个整数数组 nums 。数组中唯一元素是那些只出现 恰好一次 的元素。
+请你返回 nums 中唯一元素的 和 。
+示例 1：  输入： nums = [1,2,3,2]
+输出： 4
+解释： 唯一元素为 [1,3] ，和为 4 。
+ 示例 2：  输入： nums = [1,1,1,1,1]
+输出： 0
+解释： 没有唯一元素，和为 0 。
+ 示例 3：  输入： nums = [1,2,3,4,5]
+输出： 15
+解释： 唯一元素为 [1,2,3,4,5] ，和为 15 。
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 100 1 &amp;lt;= nums[i] &amp;lt;= 100  解题思路 哈希 使用哈希表统计每个数出现的次数，找出只出现一次的数，求和即可。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1219. 黄金矿工</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1219.-%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5/</link>
+      <pubDate>Sat, 05 Feb 2022 10:32:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1219.-%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5/</guid>
+      <description>链接： https://leetcode-cn.com/problems/path-with-maximum-gold/
+难度： 中等
+题目描述 你要开发一座金矿，地质勘测学家已经探明了这座金矿中的资源分布，并用大小为 m * n 的网格 grid 进行了标注。每个单元格中的整数就表示这一单元格中的黄金数量；如果该单元格是空的，那么就是 0。
+为了使收益最大化，矿工需要按以下规则来开采黄金：
+ 每当矿工进入一个单元，就会收集该单元格中的所有黄金。 矿工每次可以从当前位置向上下左右四个方向走。 每个单元格只能被开采（进入）一次。 不得开采（进入）黄金数目为 0 的单元格。 矿工可以从网格中 任意一个 有黄金的单元格出发或者是停止。  示例1：  输入： grid = [[0,6,0],[5,8,7],[0,9,0]]
+输出： 24
+解释：
+[[0,6,0],
+[5,8,7],
+[0,9,0]]
+一种收集最多黄金的路线是：9 -&amp;gt; 8 -&amp;gt; 7。
+ 示例 2：  输入： grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]
+输出： 28
+解释：
+[[1,0,7],
+[2,0,6],
+[3,4,5],
+[0,3,0],
+[9,0,20]]
+一种收集最多黄金的路线是：1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6 -&amp;gt; 7。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1725. 可以形成最大正方形的矩形数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1725.-%E5%8F%AF%E4%BB%A5%E5%BD%A2%E6%88%90%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E7%9F%A9%E5%BD%A2%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Fri, 04 Feb 2022 10:42:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1725.-%E5%8F%AF%E4%BB%A5%E5%BD%A2%E6%88%90%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E7%9F%A9%E5%BD%A2%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-of-rectangles-that-can-form-the-largest-square/
+难度： 简单
+题目描述 给你一个数组 rectangles ，其中 rectangles[i] = [li, wi] 表示第 i 个矩形的长度为 li 、宽度为 wi 。
+如果存在 k 同时满足 k &amp;lt;= li 和 k &amp;lt;= wi ，就可以将第 i 个矩形切成边长为 k 的正方形。例如，矩形 [4,6] 可以切成边长最大为 4 的正方形。
+设 maxLen 为可以从矩形数组 rectangles 切分得到的 最大正方形 的边长。
+请你统计有多少个矩形能够切出边长为 maxLen 的正方形，并返回矩形 数目 。
+示例 1：  输入： rectangles = [[5,8],[3,9],[5,12],[16,5]]
+输出： 3
+解释： 能从每个矩形中切出的最大正方形边长分别是 [5,3,5,5] 。
+最大正方形的边长为 5 ，可以由 3 个矩形切分得到。
+ 示例 2：  输入： rectangles = [[2,3],[3,7],[4,3],[3,7]]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1414. 和为 K 的最少斐波那契数字数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1414.-%E5%92%8C%E4%B8%BA-k-%E7%9A%84%E6%9C%80%E5%B0%91%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%AD%97%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Thu, 03 Feb 2022 11:11:52 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1414.-%E5%92%8C%E4%B8%BA-k-%E7%9A%84%E6%9C%80%E5%B0%91%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%AD%97%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k/
+难度： 中等
+题目描述 给你数字 k ，请你返回和为 k 的斐波那契数字的最少数目，其中，每个斐波那契数字都可以被使用多次。
+斐波那契数字定义为：
+ F1 = 1 F2 = 1 Fn = Fn-1 + Fn-2 ， 其中 n &amp;gt; 2 。  数据保证对于给定的 k ，一定能找到可行解。
+示例 1：  输入： k = 7
+输出： 2
+解释： 斐波那契数字为：1，1，2，3，5，8，13，……
+对于 k = 7 ，我们可以得到 2 + 5 = 7 。
+ 示例 2：  输入： k = 10
+输出： 2
+解释： 对于 k = 10 ，我们可以得到 2 + 8 = 10 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 2000. 反转单词前缀</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2000.-%E5%8F%8D%E8%BD%AC%E5%8D%95%E8%AF%8D%E5%89%8D%E7%BC%80/</link>
+      <pubDate>Wed, 02 Feb 2022 09:46:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2000.-%E5%8F%8D%E8%BD%AC%E5%8D%95%E8%AF%8D%E5%89%8D%E7%BC%80/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reverse-prefix-of-word/
+难度： 简单
+题目描述 给你一个下标从 0 开始的字符串 word 和一个字符 ch 。找出 ch 第一次出现的下标 i ，反转 word 中从下标 0 开始、直到下标 i 结束（含下标 i ）的那段字符。如果 word 中不存在字符 ch ，则无需进行任何操作。
+ 例如，如果 word = &amp;quot;abcdefd&amp;quot; 且 ch = &amp;quot;d&amp;quot; ，那么你应该 反转 从下标 0 开始、直到下标 3 结束（含下标 3 ）。结果字符串将会是 &amp;quot;dcbaefd&amp;quot; 。  返回 结果字符串 。
+示例 1：  输入： word = &amp;ldquo;abcdefd&amp;rdquo;, ch = &amp;ldquo;d&amp;rdquo;
+输出： &amp;ldquo;dcbaefd&amp;rdquo;
+解释： &amp;ldquo;d&amp;rdquo; 第一次出现在下标 3 。
+反转从下标 0 到下标 3（含下标 3）的这段字符，结果字符串是 &amp;ldquo;dcbaefd&amp;rdquo; 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1763. 最长的美好子字符串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1763.-%E6%9C%80%E9%95%BF%E7%9A%84%E7%BE%8E%E5%A5%BD%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Tue, 01 Feb 2022 09:45:38 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1763.-%E6%9C%80%E9%95%BF%E7%9A%84%E7%BE%8E%E5%A5%BD%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/longest-nice-substring/
+难度： 简单
+题目描述 当一个字符串 s 包含的每一种字母的大写和小写形式 同时 出现在 s 中，就称这个字符串 s 是 美好 字符串。比方说，&amp;quot;abABB&amp;quot; 是美好字符串，因为 &#39;A&#39; 和 &#39;a&#39; 同时出现了，且 &#39;B&#39; 和 &#39;b&#39; 也同时出现了。然而，&amp;quot;abA&amp;quot; 不是美好字符串因为 &#39;b&#39; 出现了，而 &#39;B&#39; 没有出现。
+给你一个字符串 s ，请你返回 s 最长的 美好子字符串 。如果有多个答案，请你返回 最早 出现的一个。如果不存在美好子字符串，请你返回一个空字符串。
+示例 1：  输入： s = &amp;ldquo;YazaAay&amp;rdquo;
+输出： &amp;ldquo;aAa&amp;rdquo;
+解释： &amp;ldquo;aAa&amp;rdquo; 是一个美好字符串，因为这个子串中仅含一种字母，其小写形式 &amp;lsquo;a&amp;rsquo; 和大写形式 &amp;lsquo;A&amp;rsquo; 也同时出现了。
+&amp;ldquo;aAa&amp;rdquo; 是最长的美好子字符串。
+ 示例 2：  输入： s = &amp;ldquo;Bb&amp;rdquo;
+输出： &amp;ldquo;Bb&amp;rdquo;
+解释： &amp;ldquo;Bb&amp;rdquo; 是美好字符串，因为 &amp;lsquo;B&amp;rsquo; 和 &amp;lsquo;b&amp;rsquo; 都出现了。整个字符串也是原字符串的子字符串。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1342. 将数字变成 0 的操作次数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1342.-%E5%B0%86%E6%95%B0%E5%AD%97%E5%8F%98%E6%88%90-0-%E7%9A%84%E6%93%8D%E4%BD%9C%E6%AC%A1%E6%95%B0/</link>
+      <pubDate>Mon, 31 Jan 2022 09:45:19 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1342.-%E5%B0%86%E6%95%B0%E5%AD%97%E5%8F%98%E6%88%90-0-%E7%9A%84%E6%93%8D%E4%BD%9C%E6%AC%A1%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+难度： 简单
+题目描述 给你一个非负整数 num ，请你返回将它变成 0 所需要的步数。 如果当前数字是偶数，你需要把它除以 2 ；否则，减去 1 。
+示例 1：  输入： num = 14
+输出： 6
+解释：
+步骤 1) 14 是偶数，除以 2 得到 7 。
+步骤 2） 7 是奇数，减 1 得到 6 。
+步骤 3） 6 是偶数，除以 2 得到 3 。
+步骤 4） 3 是奇数，减 1 得到 2 。
+步骤 5） 2 是偶数，除以 2 得到 1 。
+步骤 6） 1 是奇数，减 1 得到 0 。</description>
+    </item>
+    
     <item>
       <title>Leetcode 884. 两句话中的不常见单词</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-884.-%E4%B8%A4%E5%8F%A5%E8%AF%9D%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%8D%95%E8%AF%8D/</link>
@@ -5807,7 +5951,7 @@ a 和 b 定义如下：
 经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i + 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
 给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
 请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
-示例1：  输入： encoded = [1,2,3], first = 1
+示例 1：  输入： encoded = [1,2,3], first = 1
 输出： [1,0,2,1]
 解释： 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]</description>
     </item>
