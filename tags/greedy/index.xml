@@ -6,7 +6,24 @@
     <description>Recent content in greedy on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 03 Feb 2022 11:11:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Feb 2022 09:38:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1405. 最长快乐字符串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1405.-%E6%9C%80%E9%95%BF%E5%BF%AB%E4%B9%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Mon, 07 Feb 2022 09:38:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1405.-%E6%9C%80%E9%95%BF%E5%BF%AB%E4%B9%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/longest-happy-string/
+难度： 中等
+题目描述 如果字符串中不含有任何 &#39;aaa&#39;，&#39;bbb&#39; 或 &#39;ccc&#39; 这样的字符串作为子串，那么该字符串就是一个「快乐字符串」。
+给你三个整数 a，b ，c，请你返回 任意一个 满足下列全部条件的字符串 s：
+ s 是一个尽可能长的快乐字符串。 s 中 最多 有 a 个字母 &#39;a&#39;、b 个字母 &#39;b&#39;、c 个字母 &#39;c&#39; 。 s 中只含有 &#39;a&#39;、&#39;b&#39; 、&#39;c&#39; 三种字母。  如果不存在这样的字符串 s ，请返回一个空字符串&amp;quot;&amp;quot;。
+示例 1：  输入： a = 1, b = 1, c = 7
+输出： &amp;ldquo;ccaccbcc&amp;rdquo;
+解释： &amp;ldquo;ccbccacc&amp;rdquo; 也是一种正确答案。
+ 示例 2：  输入： a = 2, b = 2, c = 1</description>
+    </item>
+    
     <item>
       <title>Leetcode 1414. 和为 K 的最少斐波那契数字数目</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1414.-%E5%92%8C%E4%B8%BA-k-%E7%9A%84%E6%9C%80%E5%B0%91%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%AD%97%E6%95%B0%E7%9B%AE/</link>

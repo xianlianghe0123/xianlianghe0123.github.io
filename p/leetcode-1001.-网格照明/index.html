@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/grid-illumination/
+难度： 困难
+题目描述 在大小为 n x n 的网格 grid 上，每个单元格都有一盏灯，最初灯都处于 关闭 状态。
+给你一个由灯的位置组成的二维数组 lamps ，其中 lamps[i] = [rowi, coli] 表示 打开 位于 grid[rowi][coli] 的灯。即便同一盏灯可能在 lamps 中多次列出，不会影响这盏灯处于 打开 状态。
+当一盏灯处于打开状态，它将会照亮 自身所在单元格 以及同一 行 、同一 列 和两条 对角线 上的 所有其他单元格 。
+另给你一个二维数组 queries ，其中 queries[j] = [rowj, colj] 。对于第 j 个查询，如果单元格 [rowj, colj] 是被照亮的，则查询结果为 1 ，否则为 0 。在第 j 次查询之后 [按照查询的顺序] ，关闭 位于单元格 grid[rowj][colj] 上及相邻 8 个方向上（与单元格 grid[rowi][coli] 共享角或边）的任何灯。
+返回一个整数数组 ans 作为答案， ans[j] 应等于第 j 次查询 queries[j] 的结果，1 表示照亮，0 表示未照亮。'><title>Leetcode 1001. 网格照明</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1001.-%E7%BD%91%E6%A0%BC%E7%85%A7%E6%98%8E/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1001. 网格照明'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/grid-illumination/
+难度： 困难
+题目描述 在大小为 n x n 的网格 grid 上，每个单元格都有一盏灯，最初灯都处于 关闭 状态。
+给你一个由灯的位置组成的二维数组 lamps ，其中 lamps[i] = [rowi, coli] 表示 打开 位于 grid[rowi][coli] 的灯。即便同一盏灯可能在 lamps 中多次列出，不会影响这盏灯处于 打开 状态。
+当一盏灯处于打开状态，它将会照亮 自身所在单元格 以及同一 行 、同一 列 和两条 对角线 上的 所有其他单元格 。
+另给你一个二维数组 queries ，其中 queries[j] = [rowj, colj] 。对于第 j 个查询，如果单元格 [rowj, colj] 是被照亮的，则查询结果为 1 ，否则为 0 。在第 j 次查询之后 [按照查询的顺序] ，关闭 位于单元格 grid[rowj][colj] 上及相邻 8 个方向上（与单元格 grid[rowi][coli] 共享角或边）的任何灯。
+返回一个整数数组 ans 作为答案， ans[j] 应等于第 j 次查询 queries[j] 的结果，1 表示照亮，0 表示未照亮。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1001.-%E7%BD%91%E6%A0%BC%E7%85%A7%E6%98%8E/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:published_time' content='2022-02-08T10:42:54&#43;08:00'/><meta property='article:modified_time' content='2022-02-08T10:42:54&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1001. 网格照明">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/grid-illumination/
+难度： 困难
+题目描述 在大小为 n x n 的网格 grid 上，每个单元格都有一盏灯，最初灯都处于 关闭 状态。
+给你一个由灯的位置组成的二维数组 lamps ，其中 lamps[i] = [rowi, coli] 表示 打开 位于 grid[rowi][coli] 的灯。即便同一盏灯可能在 lamps 中多次列出，不会影响这盏灯处于 打开 状态。
+当一盏灯处于打开状态，它将会照亮 自身所在单元格 以及同一 行 、同一 列 和两条 对角线 上的 所有其他单元格 。
+另给你一个二维数组 queries ，其中 queries[j] = [rowj, colj] 。对于第 j 个查询，如果单元格 [rowj, colj] 是被照亮的，则查询结果为 1 ，否则为 0 。在第 j 次查询之后 [按照查询的顺序] ，关闭 位于单元格 grid[rowj][colj] 上及相邻 8 个方向上（与单元格 grid[rowi][coli] 共享角或边）的任何灯。
+返回一个整数数组 ans 作为答案， ans[j] 应等于第 j 次查询 queries[j] 的结果，1 表示照亮，0 表示未照亮。">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-1001.-%E7%BD%91%E6%A0%BC%E7%85%A7%E6%98%8E/">Leetcode 1001. 网格照明</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 08, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/grid-illumination/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/grid-illumination/</a><br>
+<strong>难度：</strong> <font color="red">困难</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>在大小为 <code>n x n</code> 的网格 <code>grid</code> 上，每个单元格都有一盏灯，最初灯都处于 <strong>关闭</strong> 状态。</p>
+<p>给你一个由灯的位置组成的二维数组 <code>lamps</code> ，其中 <code>lamps[i] = [row<sub>i</sub>, col<sub>i</sub>]</code> 表示 <strong>打开</strong> 位于 <code>grid[row<sub>i</sub>][col<sub>i</sub>]</code> 的灯。即便同一盏灯可能在 <code>lamps</code> 中多次列出，不会影响这盏灯处于 <strong>打开</strong> 状态。</p>
+<p>当一盏灯处于打开状态，它将会照亮 <strong>自身所在单元格</strong> 以及同一 <strong>行</strong> 、同一 <strong>列</strong> 和两条 <strong>对角线</strong> 上的 <strong>所有其他单元格</strong> 。</p>
+<p>另给你一个二维数组 <code>queries</code> ，其中 <code>queries[j] = [row<sub>j</sub>, col<sub>j</sub>]</code> 。对于第 j 个查询，如果单元格 <code>[row<sub>j</sub>, col<sub>j</sub>]</code> 是被照亮的，则查询结果为 <code>1</code> ，否则为 <code>0</code> 。在第 <code>j</code> 次查询之后 [按照查询的顺序] ，<strong>关闭</strong> 位于单元格 <code>grid[row<sub>j</sub>][col<sub>j</sub>]</code> 上及相邻 8 个方向上（与单元格 <code>grid[row<sub>i</sub>][col<sub>i</sub>]</code> 共享角或边）的任何灯。</p>
+<p>返回一个整数数组 <code>ans</code> 作为答案， <code>ans[j]</code> 应等于第 <code>j</code> 次查询 <code>queries[j]</code> 的结果，<code>1</code> 表示照亮，<code>0</code> 表示未照亮。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<img src="/img/1001.illu_1.jpg" width="750px">
+<p><strong>输入：</strong> n = 5, lamps = [[0,0],[4,4]], queries = [[1,1],[1,0]]<br>
+<strong>输出：</strong> [1,0]<br>
+<strong>解释：</strong> 最初所有灯都是关闭的。在执行查询之前，打开位于 [0, 0] 和 [4, 4] 的灯。第 0 次查询检查 grid[1][1] 是否被照亮（蓝色方框）。该单元格被照亮，所以 ans[0] = 1 。然后，关闭红色方框中的所有灯。</p>
+<img src="/img/1001.illu_step1.jpg" width="500px">
+<p>第 1 次查询检查 grid[1][0] 是否被照亮（蓝色方框）。该单元格没有被照亮，所以 ans[1] = 0 。然后，关闭红色矩形中的所有灯。</p>
+<img src="/img/1001.illu_step2.jpg" width="500px">
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> n = 5, lamps = [[0,0],[4,4]], queries = [[1,1],[1,1]]<br>
+<strong>输出：</strong> [1,1]</p>
+</blockquote>
+<h4 id="示例-3">示例 3：</h4>
+<blockquote>
+<p><strong>输入：</strong> n = 5, lamps = [[0,0],[0,4]], queries = [[0,4],[0,1],[1,4]]<br>
+<strong>输出：</strong> [1,1,0]</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= n &lt;= 10<sup>9</sup></code></li>
+<li><code>0 &lt;= lamps.length &lt;= 20000</code></li>
+<li><code>0 &lt;= queries.length &lt;= 20000</code></li>
+<li><code>lamps[i].length == 2</code></li>
+<li><code>0 &lt;= row<sub>i</sub>, col<sub>i</sub> &lt; n</code></li>
+<li><code>queries[j].length == 2</code></li>
+<li><code>0 &lt;= row<sub>j</sub>, col<sub>j</sub> &lt; n</code></li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="哈希">哈希</h4>
+<p>使用哈希表记录出现的每盏灯，以及照亮的每行、列、对角线的灯的数量。</p>
+<p>行和列直接用使用灯所在位置的行列，对角线由于其斜率是固定的，可以使用一个点坐标代表，统一使用 <code>0</code> 行的列进行表示，有：</p>
+<ul>
+<li>对于正对角线：其斜率为 <code>1</code>， 使用 列-行 求得 列坐标；</li>
+<li>对于反对角线：其斜率为 <code>-1</code>， 使用 列+行 求得 列坐标。</li>
+</ul>
+<p>当判定某个单元格是否被照亮，判定其是否位于上述哈希表中记录的行、列、对角线其中一条上。</p>
+<p>灭灯时，当九宫格存在灯时，将其熄灭，其所在行、列、对角线的灯数量 <code>-1</code>。</p>
+<p>同一单元格中的灯按照一盏灯进行处理。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">gridIllumination</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">lamps</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">queries</span> [][]<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">lampCoord</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[[<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">struct</span>{})
+	<span style="color:#a6e22e">rows</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)         <span style="color:#75715e">// 行
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">cols</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)         <span style="color:#75715e">// 列
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">diagonal</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)     <span style="color:#75715e">// 对角线
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">backDiagonal</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>) <span style="color:#75715e">// 反对角线
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">lamp</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">lamps</span> {
+		<span style="color:#75715e">// 同一个单元格里的灯当作一盏灯处理
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">lampCoord</span>[[<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">1</span>]}]; <span style="color:#a6e22e">ok</span> {
+			<span style="color:#66d9ef">continue</span>
+		}
+		<span style="color:#a6e22e">lampCoord</span>[[<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">1</span>]}] = <span style="color:#66d9ef">struct</span>{}{}
+		<span style="color:#a6e22e">rows</span>[<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">++</span>
+		<span style="color:#a6e22e">cols</span>[<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">++</span>
+		<span style="color:#a6e22e">diagonal</span>[<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">++</span>
+		<span style="color:#a6e22e">backDiagonal</span>[<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">++</span>
+	}
+	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">queries</span>))
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">query</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">queries</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rows</span>[<span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">0</span>]] &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">cols</span>[<span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">1</span>]] &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">diagonal</span>[<span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">0</span>]] &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">backDiagonal</span>[<span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">0</span>]] &gt; <span style="color:#ae81ff">0</span> {
+			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#ae81ff">1</span>)
+		} <span style="color:#66d9ef">else</span> {
+			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#ae81ff">0</span>)
+		}
+		<span style="color:#75715e">// 关闭九宫格里的灯
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">query</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">n</span> {
+					<span style="color:#66d9ef">continue</span>
+				}
+				<span style="color:#a6e22e">lamp</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>}
+				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">lampCoord</span>[<span style="color:#a6e22e">lamp</span>]; !<span style="color:#a6e22e">ok</span> {
+					<span style="color:#66d9ef">continue</span>
+				}
+				delete(<span style="color:#a6e22e">lampCoord</span>, <span style="color:#a6e22e">lamp</span>)
+				<span style="color:#a6e22e">rows</span>[<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">--</span>
+				<span style="color:#a6e22e">cols</span>[<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">--</span>
+				<span style="color:#a6e22e">diagonal</span>[<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">--</span>
+				<span style="color:#a6e22e">backDiagonal</span>[<span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">lamp</span>[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">--</span>
+			}
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N + L), N = len(lamps), Q = len(queries)  $</li>
+<li>空间复杂度：$O(N) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hash/">hash</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1748.-%E5%94%AF%E4%B8%80%E5%85%83%E7%B4%A0%E7%9A%84%E5%92%8C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1748. 唯一元素的和</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1763.-%E6%9C%80%E9%95%BF%E7%9A%84%E7%BE%8E%E5%A5%BD%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1763. 最长的美好子字符串</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-2034.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 2034. 股票价格波动</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-219.-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-ii/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 219. 存在重复元素 II</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-334.-%E9%80%92%E5%A2%9E%E7%9A%84%E4%B8%89%E5%85%83%E5%AD%90%E5%BA%8F%E5%88%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 334. 递增的三元子序列</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

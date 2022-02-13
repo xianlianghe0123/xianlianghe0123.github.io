@@ -6,7 +6,38 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 06 Feb 2022 10:47:39 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Feb 2022 10:28:57 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2006. 差的绝对值为 K 的数对数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2006.-%E5%B7%AE%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%80%BC%E4%B8%BA-k-%E7%9A%84%E6%95%B0%E5%AF%B9%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Wed, 09 Feb 2022 10:28:57 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2006.-%E5%B7%AE%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%80%BC%E4%B8%BA-k-%E7%9A%84%E6%95%B0%E5%AF%B9%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k/
+难度： 简单
+题目描述 给你一个整数数组 nums 和一个整数 k ，请你返回数对 (i, j) 的数目，满足 i &amp;lt; j 且 |nums[i] - nums[j]| == k 。
+|x| 的值定义为：
+ 如果 x &amp;gt;= 0 ，那么值为 x 。 如果 x &amp;lt; 0 ，那么值为 -x 。  示例 1：  输入： nums = [1,2,2,1], k = 1
+输出： 4
+解释： 差的绝对值为 1 的数对为：
+ [1,2,2,1] [1,2,2,1] [1,2,2,1] [1,2,2,1]   示例 2：  输入：nums = [1,3], k = 3 输出：0 解释：没有任何数对差的绝对值为 3 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1001. 网格照明</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1001.-%E7%BD%91%E6%A0%BC%E7%85%A7%E6%98%8E/</link>
+      <pubDate>Tue, 08 Feb 2022 10:42:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1001.-%E7%BD%91%E6%A0%BC%E7%85%A7%E6%98%8E/</guid>
+      <description>链接： https://leetcode-cn.com/problems/grid-illumination/
+难度： 困难
+题目描述 在大小为 n x n 的网格 grid 上，每个单元格都有一盏灯，最初灯都处于 关闭 状态。
+给你一个由灯的位置组成的二维数组 lamps ，其中 lamps[i] = [rowi, coli] 表示 打开 位于 grid[rowi][coli] 的灯。即便同一盏灯可能在 lamps 中多次列出，不会影响这盏灯处于 打开 状态。
+当一盏灯处于打开状态，它将会照亮 自身所在单元格 以及同一 行 、同一 列 和两条 对角线 上的 所有其他单元格 。
+另给你一个二维数组 queries ，其中 queries[j] = [rowj, colj] 。对于第 j 个查询，如果单元格 [rowj, colj] 是被照亮的，则查询结果为 1 ，否则为 0 。在第 j 次查询之后 [按照查询的顺序] ，关闭 位于单元格 grid[rowj][colj] 上及相邻 8 个方向上（与单元格 grid[rowi][coli] 共享角或边）的任何灯。
+返回一个整数数组 ans 作为答案， ans[j] 应等于第 j 次查询 queries[j] 的结果，1 表示照亮，0 表示未照亮。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1748. 唯一元素的和</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1748.-%E5%94%AF%E4%B8%80%E5%85%83%E7%B4%A0%E7%9A%84%E5%92%8C/</link>
@@ -134,6 +165,25 @@
 输出： 7
 解释： 你可以吃掉 7 个苹果：
  第一天，你吃掉第一天长出来的苹果。 第二天，你吃掉一个第二天长出来的苹果。 第三天，你吃掉一个第二天长出来的苹果。过了这一天，第三天长出来的苹果就已经腐烂了。 第四天到第七天，你吃的都是第四天长出来的苹果。   示例 2：  输入： apples = [3,0,0,0,0,2], days = [3,0,0,0,0,2]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 997. 找到小镇的法官</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-997.-%E6%89%BE%E5%88%B0%E5%B0%8F%E9%95%87%E7%9A%84%E6%B3%95%E5%AE%98/</link>
+      <pubDate>Sun, 19 Dec 2021 20:21:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-997.-%E6%89%BE%E5%88%B0%E5%B0%8F%E9%95%87%E7%9A%84%E6%B3%95%E5%AE%98/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-the-town-judge/
+难度： 简单
+题目描述 在一个小镇里，按从 1 到 n 为 n 个人进行编号。传言称，这些人中有一个是小镇上的秘密法官。
+如果小镇的法官真的存在，那么：
+ 小镇的法官不相信任何人。 每个人（除了小镇法官外）都信任小镇的法官。 只有一个人同时满足条件 1 和条件 2 。  给定数组 trust，该数组由信任对 trust[i] = [a, b] 组成，表示编号为 a 的人信任编号为 b 的人。
+如果小镇存在秘密法官并且可以确定他的身份，请返回该法官的编号。否则，返回 -1。
+示例 1：  输入： n = 2, trust = [[1,2]]
+输出： 2
+ 示例 2：  输入： n = 3, trust = [[1,3],[2,3]]
+输出： 3
+ 示例 3：  输入： n = 3, trust = [[1,3],[2,3],[3,1]]</description>
     </item>
     
     <item>
