@@ -6,7 +6,129 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 13 Feb 2022 09:38:39 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Feb 2022 11:06:27 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 717. 1比特与2比特字符</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-717.-1%E6%AF%94%E7%89%B9%E4%B8%8E2%E6%AF%94%E7%89%B9%E5%AD%97%E7%AC%A6/</link>
+      <pubDate>Sun, 20 Feb 2022 11:06:27 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-717.-1%E6%AF%94%E7%89%B9%E4%B8%8E2%E6%AF%94%E7%89%B9%E5%AD%97%E7%AC%A6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/
+难度： 简单
+题目描述 有两种特殊字符：
+ 第一种字符可以用一个比特 0 来表示 第二种字符可以用两个比特(10 或 11)来表示、  给定一个以 0 结尾的二进制数组 bits ，如果最后一个字符必须是一位字符，则返回 true 。
+示例 1：  输入： bits = [1, 0, 0]
+输出： true
+解释： 唯一的编码方式是一个两比特字符和一个一比特字符。
+所以最后一个字符是一比特字符。
+ 示例 2：  输入： bits = [1, 1, 1, 0]
+输出： false
+解释： 唯一的编码方式是两比特字符和两比特字符。
+所以最后一个字符不是一比特字符。
+ 提示：  1 &amp;lt;= bits.length &amp;lt;= 1000 bits[i] == 0 or 1  解题思路 模拟 根据题意不难发现，排列的字符的表示方式没有歧义：
+ 当比特位为 0 时，其为第一种字符； 当比特位为 1 时，其余其后一个比特位构成第二种字符。  利用该特点进行遍历，不断识别并标记是第几种字符。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 969. 煎饼排序</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-969.-%E7%85%8E%E9%A5%BC%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 19 Feb 2022 10:07:04 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-969.-%E7%85%8E%E9%A5%BC%E6%8E%92%E5%BA%8F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/pancake-sorting/
+难度： 中等
+题目描述 给你一个整数数组 arr ，请使用 煎饼翻转 完成对数组的排序。
+一次煎饼翻转的执行过程如下：
+选择一个整数 k ，1 &amp;lt;= k &amp;lt;= arr.length 反转子数组 arr[0...k-1]（下标从 0 开始） 例如，arr = [3,2,1,4] ，选择 k = 3 进行一次煎饼翻转，反转子数组 [3,2,1] ，得到 arr = [1,2,3,4] 。
+以数组形式返回能使 arr 有序的煎饼翻转操作所对应的 k 值序列。任何将数组排序且翻转次数在 10 * arr.length 范围内的有效答案都将被判断为正确。
+示例 1：  输入： [3,2,4,1]
+输出： [4,2,4,3]
+解释：
+我们执行 4 次煎饼翻转，k 值分别为 4，2，4，和 3。
+初始状态 arr = [3, 2, 4, 1]
+第一次翻转后（k = 4）：arr = [1, 4, 2, 3]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1791. 找出星型图的中心节点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1791.-%E6%89%BE%E5%87%BA%E6%98%9F%E5%9E%8B%E5%9B%BE%E7%9A%84%E4%B8%AD%E5%BF%83%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Fri, 18 Feb 2022 09:34:18 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1791.-%E6%89%BE%E5%87%BA%E6%98%9F%E5%9E%8B%E5%9B%BE%E7%9A%84%E4%B8%AD%E5%BF%83%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-center-of-star-graph/
+难度： 简单
+题目描述 有一个无向的 星型 图，由 n 个编号从 1 到 n 的节点组成。星型图有一个 中心 节点，并且恰有 n - 1 条边将中心节点与其他每个节点连接起来。
+给你一个二维整数数组 edges ，其中 edges[i] = [ui, vi] 表示在节点 ui 和 vi 之间存在一条边。请你找出并返回 edges 所表示星型图的中心节点。
+示例 1：  输入： edges = [[1,2],[2,3],[4,2]]
+输出： 2
+解释： 如上图所示，节点 2 与其他每个节点都相连，所以节点 2 是中心节点。
+ 示例 2：  输入： edges = [[1,2],[5,1],[1,3],[1,4]]
+输出： 1
+ 提示：  3 &amp;lt;= n &amp;lt;= 105 edges.length == n - 1 edges[i].</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 688. 骑士在棋盘上的概率</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-688.-%E9%AA%91%E5%A3%AB%E5%9C%A8%E6%A3%8B%E7%9B%98%E4%B8%8A%E7%9A%84%E6%A6%82%E7%8E%87/</link>
+      <pubDate>Thu, 17 Feb 2022 09:25:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-688.-%E9%AA%91%E5%A3%AB%E5%9C%A8%E6%A3%8B%E7%9B%98%E4%B8%8A%E7%9A%84%E6%A6%82%E7%8E%87/</guid>
+      <description>链接： https://leetcode-cn.com/problems/knight-probability-in-chessboard/
+难度： 中等
+题目描述 在一个 n x n 的国际象棋棋盘上，一个骑士从单元格 (row, column) 开始，并尝试进行 k 次移动。行和列是 从 0 开始 的，所以左上单元格是 (0,0) ，右下单元格是 (n - 1, n - 1) 。
+象棋骑士有8种可能的走法，如下图所示。每次移动在基本方向上是两个单元格，然后在正交方向上是一个单元格。
+每次骑士要移动时，它都会随机从8种可能的移动中选择一种(即使棋子会离开棋盘)，然后移动到那里。
+骑士继续移动，直到它走了 k 步或离开了棋盘。
+返回 骑士在棋盘停止移动后仍留在棋盘上的概率 。
+示例 1：  输入： n = 3, k = 2, row = 0, column = 0
+输出： 0.0625
+解释： 有两步(到(1,2)，(2,1))可以让骑士留在棋盘上。
+在每一个位置上，也有两种移动可以让骑士留在棋盘上。
+骑士留在棋盘上的总概率是0.0625。
+ 示例 2：  输入： n = 1, k = 0, row = 0, column = 0</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1380. 矩阵中的幸运数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1380.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E5%B9%B8%E8%BF%90%E6%95%B0/</link>
+      <pubDate>Tue, 15 Feb 2022 09:30:05 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1380.-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E5%B9%B8%E8%BF%90%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/lucky-numbers-in-a-matrix/
+难度： 简单
+题目描述 给你一个 m * n 的矩阵，矩阵中的数字 各不相同 。请你按 任意 顺序返回矩阵中的所有幸运数。
+幸运数是指矩阵中满足同时下列两个条件的元素：
+ 在同一行的所有元素中最小 在同一列的所有元素中最大  示例 1：  输入： matrix = [[3,7,8],[9,11,13],[15,16,17]]
+输出： [15]
+解释： 15 是唯一的幸运数，因为它是其所在行中的最小值，也是所在列中的最大值。
+ 示例 2：  输入： matrix = [[1,10,4,2],[9,3,8,7],[15,16,17,12]]
+输出： [12]
+解释： 12 是唯一的幸运数，因为它是其所在行中的最小值，也是所在列中的最大值。
+ 示例 3：  输入： matrix = [[7,8],[1,2]]
+输出： [7]
+ 提示：  m == mat.length n == mat[i].length 1 &amp;lt;= n, m &amp;lt;= 50 1 &amp;lt;= matrix[i][j] &amp;lt;= 105 矩阵中的所有元素都是不同的  解题思路 暴力求解 遍历整个矩阵，依次判断每个数是否同时满足题设条件。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 540. 有序数组中的单一元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-540.-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Mon, 14 Feb 2022 09:33:11 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-540.-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/single-element-in-a-sorted-array/
+难度： 中等
+题目描述 给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。
+请你找出并返回只出现一次的那个数。
+你设计的解决方案必须满足 $ O(\log{n}) $ 时间复杂度和 $ O(1) $ 空间复杂度。
+示例 1：  输入： nums = [1,1,2,3,3,4,4,8,8]
+输出： 2
+ 示例 2：  输入： nums = [3,3,7,7,10,11,11]
+输出： 10
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 0 &amp;lt;= nums[i] &amp;lt;= 105  解题思路 二分查找 由于数组有序，则成对的元素必然是相邻的，并且元素数量为奇数。当某一对数与左或右边的所有数字总数量为偶数时，目标数必然不在其中，而在另一边，可以使用二分查找。
+每次选取中间的数字，并与左右两边相邻的数字比较：
+ 若和其中一边的数字相同，将与该数对构成的偶数个元素的那一边排除，在另一边继续查找； 若与两边数字均不相同或者仅剩一个数，则返回该值。  func singleNonDuplicate(nums []int) int { for i, j := 0, len(nums)-1; i &amp;lt;= j; { if i == j { return nums[i] } mid := (i + j) / 2 if nums[mid] == nums[mid-1] { if (j-mid)&amp;amp;1 == 0 { // 右侧成对，向左寻找 	j = mid - 2 } else { // 左侧成对，向右寻找 	i = mid + 1 } } else if nums[mid] == nums[mid+1] { if (j-mid)&amp;amp;1 == 0 { // 左侧成对，向右寻找 	i = mid + 2 } else { // 右侧成对，向做寻找 	j = mid - 1 } } else { return nums[mid] } } return 0 } 复杂度  时间复杂度：$ O(\log{N}) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
     <item>
       <title>Leetcode 1189. “气球” 的最大数量</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1189.-%E6%B0%94%E7%90%83-%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F/</link>
@@ -6213,13 +6335,12 @@ func singleNumber(nums []int) int { cnt := make(map[int]int) for _, num := range
       <description>链接： https://leetcode-cn.com/problems/range-sum-of-bst/
 难度： 简单
 题目描述 给定二叉搜索树的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
-示例1：  输入： root = [10,5,15,3,7,null,18], low = 7, high = 15
+示例 1：  输入： root = [10,5,15,3,7,null,18], low = 7, high = 15
 输出： 32
- 示例2：  输入： root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+ 示例 2：  输入： root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
 输出： 23
  提示：  树中节点数目在范围 [1, 2 * 104] 内 1 &amp;lt;= Node.val &amp;lt;= 105 1 &amp;lt;= low &amp;lt;= high &amp;lt;= 105 所有 Node.val 互不相同  解题思路 深度优先搜索 不同于一般搜索树的搜索，该搜索需要遍历整颗树，以累计求和，必要部分需要剪枝加快遍历速度。
-搜索时需要区分三种情况：
- 当前结点值 val &amp;lt; low 时，左子树均不满足条件，继续搜索右子树； 当前结点值 val &amp;gt; high 时，右子树均不满足条件，继续搜索左子树； 其余情况，累加当前结点值，无法剪枝，左右子树都需要继续搜索。  func rangeSumBST(root *TreeNode, low int, high int) int { sum := 0 var search func(node *TreeNode) search = func(node *TreeNode) { if node == nil { return } if node.</description>
+搜索时需要区分三种情况：</description>
     </item>
     
     <item>

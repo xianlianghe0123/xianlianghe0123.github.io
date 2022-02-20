@@ -6,7 +6,27 @@
     <description>Recent content in binary search on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Wed, 26 Jan 2022 09:32:13 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Feb 2022 09:33:11 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 540. 有序数组中的单一元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-540.-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Mon, 14 Feb 2022 09:33:11 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-540.-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/single-element-in-a-sorted-array/
+难度： 中等
+题目描述 给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。
+请你找出并返回只出现一次的那个数。
+你设计的解决方案必须满足 $ O(\log{n}) $ 时间复杂度和 $ O(1) $ 空间复杂度。
+示例 1：  输入： nums = [1,1,2,3,3,4,4,8,8]
+输出： 2
+ 示例 2：  输入： nums = [3,3,7,7,10,11,11]
+输出： 10
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 0 &amp;lt;= nums[i] &amp;lt;= 105  解题思路 二分查找 由于数组有序，则成对的元素必然是相邻的，并且元素数量为奇数。当某一对数与左或右边的所有数字总数量为偶数时，目标数必然不在其中，而在另一边，可以使用二分查找。
+每次选取中间的数字，并与左右两边相邻的数字比较：
+ 若和其中一边的数字相同，将与该数对构成的偶数个元素的那一边排除，在另一边继续查找； 若与两边数字均不相同或者仅剩一个数，则返回该值。  func singleNonDuplicate(nums []int) int { for i, j := 0, len(nums)-1; i &amp;lt;= j; { if i == j { return nums[i] } mid := (i + j) / 2 if nums[mid] == nums[mid-1] { if (j-mid)&amp;amp;1 == 0 { // 右侧成对，向左寻找 	j = mid - 2 } else { // 左侧成对，向右寻找 	i = mid + 1 } } else if nums[mid] == nums[mid+1] { if (j-mid)&amp;amp;1 == 0 { // 左侧成对，向右寻找 	i = mid + 2 } else { // 右侧成对，向做寻找 	j = mid - 1 } } else { return nums[mid] } } return 0 } 复杂度  时间复杂度：$ O(\log{N}) $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
     <item>
       <title>Leetcode 2013. 检测正方形</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-2013.-%E6%A3%80%E6%B5%8B%E6%AD%A3%E6%96%B9%E5%BD%A2/</link>

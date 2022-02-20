@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/single-element-in-a-sorted-array/
+难度： 中等
+题目描述 给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。
+请你找出并返回只出现一次的那个数。
+你设计的解决方案必须满足 $ O(\log{n}) $ 时间复杂度和 $ O(1) $ 空间复杂度。
+示例 1：  输入： nums = [1,1,2,3,3,4,4,8,8]
+输出： 2
+ 示例 2：  输入： nums = [3,3,7,7,10,11,11]
+输出： 10
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 0 &amp;lt;= nums[i] &amp;lt;= 105  解题思路 二分查找 由于数组有序，则成对的元素必然是相邻的，并且元素数量为奇数。当某一对数与左或右边的所有数字总数量为偶数时，目标数必然不在其中，而在另一边，可以使用二分查找。
+每次选取中间的数字，并与左右两边相邻的数字比较：
+ 若和其中一边的数字相同，将与该数对构成的偶数个元素的那一边排除，在另一边继续查找； 若与两边数字均不相同或者仅剩一个数，则返回该值。  func singleNonDuplicate(nums []int) int { for i, j := 0, len(nums)-1; i &amp;lt;= j; { if i == j { return nums[i] } mid := (i &#43; j) / 2 if nums[mid] == nums[mid-1] { if (j-mid)&amp;amp;1 == 0 { // 右侧成对，向左寻找 	j = mid - 2 } else { // 左侧成对，向右寻找 	i = mid &#43; 1 } } else if nums[mid] == nums[mid&#43;1] { if (j-mid)&amp;amp;1 == 0 { // 左侧成对，向右寻找 	i = mid &#43; 2 } else { // 右侧成对，向做寻找 	j = mid - 1 } } else { return nums[mid] } } return 0 } 复杂度  时间复杂度：$ O(\log{N}) $ 空间复杂度：$ O(1) $  '><title>Leetcode 540. 有序数组中的单一元素</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-540.-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 540. 有序数组中的单一元素'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/single-element-in-a-sorted-array/
+难度： 中等
+题目描述 给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。
+请你找出并返回只出现一次的那个数。
+你设计的解决方案必须满足 $ O(\log{n}) $ 时间复杂度和 $ O(1) $ 空间复杂度。
+示例 1：  输入： nums = [1,1,2,3,3,4,4,8,8]
+输出： 2
+ 示例 2：  输入： nums = [3,3,7,7,10,11,11]
+输出： 10
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 0 &amp;lt;= nums[i] &amp;lt;= 105  解题思路 二分查找 由于数组有序，则成对的元素必然是相邻的，并且元素数量为奇数。当某一对数与左或右边的所有数字总数量为偶数时，目标数必然不在其中，而在另一边，可以使用二分查找。
+每次选取中间的数字，并与左右两边相邻的数字比较：
+ 若和其中一边的数字相同，将与该数对构成的偶数个元素的那一边排除，在另一边继续查找； 若与两边数字均不相同或者仅剩一个数，则返回该值。  func singleNonDuplicate(nums []int) int { for i, j := 0, len(nums)-1; i &amp;lt;= j; { if i == j { return nums[i] } mid := (i &#43; j) / 2 if nums[mid] == nums[mid-1] { if (j-mid)&amp;amp;1 == 0 { // 右侧成对，向左寻找 	j = mid - 2 } else { // 左侧成对，向右寻找 	i = mid &#43; 1 } } else if nums[mid] == nums[mid&#43;1] { if (j-mid)&amp;amp;1 == 0 { // 左侧成对，向右寻找 	i = mid &#43; 2 } else { // 右侧成对，向做寻找 	j = mid - 1 } } else { return nums[mid] } } return 0 } 复杂度  时间复杂度：$ O(\log{N}) $ 空间复杂度：$ O(1) $  '>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-540.-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='binary search' /><meta property='article:published_time' content='2022-02-14T09:33:11&#43;08:00'/><meta property='article:modified_time' content='2022-02-14T09:33:11&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 540. 有序数组中的单一元素">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/single-element-in-a-sorted-array/
+难度： 中等
+题目描述 给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。
+请你找出并返回只出现一次的那个数。
+你设计的解决方案必须满足 $ O(\log{n}) $ 时间复杂度和 $ O(1) $ 空间复杂度。
+示例 1：  输入： nums = [1,1,2,3,3,4,4,8,8]
+输出： 2
+ 示例 2：  输入： nums = [3,3,7,7,10,11,11]
+输出： 10
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 0 &amp;lt;= nums[i] &amp;lt;= 105  解题思路 二分查找 由于数组有序，则成对的元素必然是相邻的，并且元素数量为奇数。当某一对数与左或右边的所有数字总数量为偶数时，目标数必然不在其中，而在另一边，可以使用二分查找。
+每次选取中间的数字，并与左右两边相邻的数字比较：
+ 若和其中一边的数字相同，将与该数对构成的偶数个元素的那一边排除，在另一边继续查找； 若与两边数字均不相同或者仅剩一个数，则返回该值。  func singleNonDuplicate(nums []int) int { for i, j := 0, len(nums)-1; i &amp;lt;= j; { if i == j { return nums[i] } mid := (i &#43; j) / 2 if nums[mid] == nums[mid-1] { if (j-mid)&amp;amp;1 == 0 { // 右侧成对，向左寻找 	j = mid - 2 } else { // 左侧成对，向右寻找 	i = mid &#43; 1 } } else if nums[mid] == nums[mid&#43;1] { if (j-mid)&amp;amp;1 == 0 { // 左侧成对，向右寻找 	i = mid &#43; 2 } else { // 右侧成对，向做寻找 	j = mid - 1 } } else { return nums[mid] } } return 0 } 复杂度  时间复杂度：$ O(\log{N}) $ 空间复杂度：$ O(1) $  ">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-540.-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/">Leetcode 540. 有序数组中的单一元素</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 14, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/single-element-in-a-sorted-array/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。</p>
+<p>请你找出并返回只出现一次的那个数。</p>
+<p>你设计的解决方案必须满足 $ O(\log{n}) $ 时间复杂度和 $ O(1) $ 空间复杂度。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入：</strong> nums = [1,1,2,3,3,4,4,8,8]<br>
+<strong>输出：</strong> 2</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> nums =  [3,3,7,7,10,11,11]<br>
+<strong>输出：</strong> 10</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="二分查找">二分查找</h4>
+<p>由于数组有序，则成对的元素必然是相邻的，并且元素数量为奇数。当某一对数与左或右边的所有数字总数量为偶数时，目标数必然不在其中，而在另一边，可以使用二分查找。</p>
+<p>每次选取中间的数字，并与左右两边相邻的数字比较：</p>
+<ul>
+<li>若和其中一边的数字相同，将与该数对构成的偶数个元素的那一边排除，在另一边继续查找；</li>
+<li>若与两边数字均不相同或者仅剩一个数，则返回该值。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">singleNonDuplicate</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">j</span>; {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">j</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+		}
+		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
+			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">mid</span>)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 右侧成对，向左寻找
+</span><span style="color:#75715e"></span>				<span style="color:#a6e22e">j</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>
+			} <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 左侧成对，向右寻找
+</span><span style="color:#75715e"></span>				<span style="color:#a6e22e">i</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+			}
+		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] {
+			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">mid</span>)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 左侧成对，向右寻找
+</span><span style="color:#75715e"></span>				<span style="color:#a6e22e">i</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+			} <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 右侧成对，向做寻找
+</span><span style="color:#75715e"></span>				<span style="color:#a6e22e">j</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+			}
+		} <span style="color:#66d9ef">else</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>]
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(\log{N}) $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/binary-search/">binary search</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-2013.-%E6%A3%80%E6%B5%8B%E6%AD%A3%E6%96%B9%E5%BD%A2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 2013. 检测正方形</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-2029.-%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F-ix/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 2029. 石子游戏 IX</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-539.-%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E5%B7%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 539. 最小时间差</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-2022.-%E5%B0%86%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BD%AC%E5%8F%98%E6%88%90%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 2022. 将一维数组转变成二维数组</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1995.-%E7%BB%9F%E8%AE%A1%E7%89%B9%E6%AE%8A%E5%9B%9B%E5%85%83%E7%BB%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1995. 统计特殊四元组</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
