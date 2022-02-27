@@ -6,7 +6,48 @@
     <description>Recent content in two pointers on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 27 Dec 2021 10:14:24 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/two-pointers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Feb 2022 09:33:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/two-pointers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 917. 仅仅反转字母</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-917.-%E4%BB%85%E4%BB%85%E5%8F%8D%E8%BD%AC%E5%AD%97%E6%AF%8D/</link>
+      <pubDate>Wed, 23 Feb 2022 09:33:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-917.-%E4%BB%85%E4%BB%85%E5%8F%8D%E8%BD%AC%E5%AD%97%E6%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reverse-only-letters/
+难度： 简单
+题目描述 给你一个字符串 s ，根据下述规则反转字符串：
+ 所有非英文字母保留在原有位置。 所有英文字母（小写或大写）位置反转。  返回反转后的 s 。
+示例 1： 输入：s = &amp;ldquo;ab-cd&amp;rdquo; 输出：&amp;ldquo;dc-ba&amp;rdquo;
+示例 2： 输入：s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo; 输出：&amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
+示例 3： 输入：s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo; 输出：&amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
+提示：  1 &amp;lt;= s.length &amp;lt;= 100 s 仅由 ASCII 值在范围 [33, 122] 的字符组成 s 不含 &#39;\&amp;quot;&#39; 或 &#39;\\&#39;  解题思路 双指针 使用两个指针分别从两端开始，向中间遍历。
+当任一指针指向字符不为字母时，向中间寻找下一个字母；当两个指针指向的字符均为字母时，交换并继续遍历；最终直到两个指针相遇。
+func reverseOnlyLetters(s string) string { t := []byte(s) for i, j := 0, len(t)-1; i &amp;lt; j; { if !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 838. 推多米诺</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-838.-%E6%8E%A8%E5%A4%9A%E7%B1%B3%E8%AF%BA/</link>
+      <pubDate>Mon, 21 Feb 2022 09:45:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-838.-%E6%8E%A8%E5%A4%9A%E7%B1%B3%E8%AF%BA/</guid>
+      <description>链接： https://leetcode-cn.com/problems/push-dominoes/
+难度： 中等
+题目描述 n 张多米诺骨牌排成一行，将每张多米诺骨牌垂直竖立。在开始时，同时把一些多米诺骨牌向左或向右推。
+每过一秒，倒向左边的多米诺骨牌会推动其左侧相邻的多米诺骨牌。同样地，倒向右边的多米诺骨牌也会推动竖立在其右侧的相邻多米诺骨牌。
+如果一张垂直竖立的多米诺骨牌的两侧同时有多米诺骨牌倒下时，由于受力平衡， 该骨牌仍然保持不变。
+就这个问题而言，我们会认为一张正在倒下的多米诺骨牌不会对其它正在倒下或已经倒下的多米诺骨牌施加额外的力。
+给你一个字符串 dominoes 表示这一行多米诺骨牌的初始状态，其中：
+ dominoes[i] = &#39;L&#39;，表示第 i 张多米诺骨牌被推向左侧， dominoes[i] = &#39;R&#39;，表示第 i 张多米诺骨牌被推向右侧， dominoes[i] = &#39;.&#39;，表示没有推动第 i 张多米诺骨牌。  返回表示最终状态的字符串。
+示例 1：  输入： dominoes = &amp;ldquo;RR.L&amp;rdquo;
+输出： &amp;ldquo;RR.L&amp;rdquo;
+解释： 第一张多米诺骨牌没有给第二张施加额外的力。
+ 示例 2：  输入： dominoes = &amp;ldquo;.L.R&amp;hellip;LR..L..&amp;rdquo;
+输出： &amp;ldquo;LL.RR.LLRRLL..&amp;rdquo;
+ 提示： -n == dominoes.length -1 &amp;lt;= n &amp;lt;= 105
+ dominoes[i] 为 &#39;L&#39;、&#39;R&#39; 或 &#39;.&#39;  解题思路 广度优先搜索 所有一开始被推的骨牌为起始状态，进行广度优先搜索，判定倒向一侧的下一个多米诺骨牌的状态：</description>
+    </item>
+    
     <item>
       <title>Leetcode 825. 适龄的朋友</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-825.-%E9%80%82%E9%BE%84%E7%9A%84%E6%9C%8B%E5%8F%8B/</link>

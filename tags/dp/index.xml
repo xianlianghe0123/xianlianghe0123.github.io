@@ -6,7 +6,33 @@
     <description>Recent content in dp on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 17 Feb 2022 09:25:59 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Feb 2022 09:54:09 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 553. 最优除法</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-553.-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/</link>
+      <pubDate>Sun, 27 Feb 2022 09:54:09 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-553.-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/</guid>
+      <description>链接： https://leetcode-cn.com/problems/optimal-division/
+难度： 中等
+题目描述 给定一组 正整数，相邻的整数之间将会进行浮点除法操作。例如， [2,3,4] -&amp;gt; 2 / 3 / 4 。
+但是，你可以在任意位置添加任意数目的括号，来改变算数的优先级。你需要找出怎么添加括号，才能得到 最大的 结果，并且返回相应的字符串格式的表达式。你的表达式不应该含有冗余的括号。
+示例：  输入： [1000,100,10,2]
+输出： &amp;ldquo;1000/(100/10/2)&amp;rdquo;
+解释：
+1000/(100/10/2) = 1000/((100/10)/2) = 200
+但是，以下加粗的括号 &amp;ldquo;1000/((100/10)/2)&amp;rdquo; 是冗余的，
+因为他们并不影响操作的优先级，所以你需要返回 &amp;ldquo;1000/(100/10/2)&amp;quot;。
+其他用例:
+1000/(100/10)/2 = 50
+1000/(100/(10/2)) = 50
+1000/100/10/2 = 0.5
+1000/100/(10/2) = 2
+ 说明：  输入数组的长度在 [1, 10] 之间。 数组中每个元素的大小都在 [2, 1000] 之间。 每个测试用例只有一个最优除法解。  解题思路 动态规划 对于一个除式而言，为使得其值最大，则要被除数尽量大，而除数尽量小。
+需要从原式中找出使得值最大的分割点，则前半部分结果最大，后半部分结果最小，两部分是原问题的子问题，用动态规划求解。
+使用 dp[i][j].max 和 dp[i][j].min 记录下标区间 [i, j] 的最大值和最小值，则有状态转移方程：</description>
+    </item>
+    
     <item>
       <title>Leetcode 688. 骑士在棋盘上的概率</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-688.-%E9%AA%91%E5%A3%AB%E5%9C%A8%E6%A3%8B%E7%9B%98%E4%B8%8A%E7%9A%84%E6%A6%82%E7%8E%87/</link>
