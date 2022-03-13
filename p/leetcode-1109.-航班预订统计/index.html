@@ -290,7 +290,7 @@
 <li>时间复杂度：$ O(Mn), M = len(bookings) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
-<h4 id="查分数组">查分数组</h4>
+<h4 id="差分数组">差分数组</h4>
 <p>使用差分数组，<code>ans[i]</code> 保存与 <code>ans[i-1]</code> 的差值，每次即可进行区间操作：</p>
 <p>对 <code>first<sub>i</sub></code> 加上 <code>seats<sub>i</sub></code>，然后对 <code>last<sub>i</sub>+1</code> 减去 <code>seats<sub>i</sub></code>，表示对区间 <code>[first<sub>i</sub>, last<sub>i</sub>]</code> 加上<code>seats<sub>i</sub></code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
