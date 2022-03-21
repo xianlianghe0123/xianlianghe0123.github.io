@@ -6,7 +6,39 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 11 Mar 2022 10:21:02 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Mar 2022 10:59:32 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 606. 根据二叉树创建字符串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-606.-%E6%A0%B9%E6%8D%AE%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Sat, 19 Mar 2022 10:59:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-606.-%E6%A0%B9%E6%8D%AE%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/construct-string-from-binary-tree/
+难度： 简单
+题目描述 你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。
+空节点则用一对空括号 &amp;ldquo;()&amp;rdquo; 表示。而且你需要省略所有不影响字符串与原始二叉树之间的一对一映射关系的空括号对。
+示例 1：  输入： 二叉树: [1,2,3,4]
+1
+/ \
+2 3
+/ 4
+输出： &amp;ldquo;1(2(4))(3)&amp;rdquo;
+解释： 原本将是“1(2(4)())(3())”，
+在你省略所有不必要的空括号对之后，
+它将是“1(2(4))(3)”。
+ 示例 2：  输入： 二叉树: [1,2,3,null,4]
+1
+/ \
+2 3
+\
+4
+输出： &amp;ldquo;1(2()(4))(3)&amp;rdquo;
+解释： 和第一个示例相似，
+除了我们不能省略第一个对括号来中断输入和输出之间的一对一映射关系。
+ 解题思路 先序遍历 采用先序遍历遍历整棵树。对于遍历到的结点而言，当遍历子树时，需要在两侧加上括号，有如下两种情况：
+ 当任意子树不为空时，左子树遍历结果必然需要加上括号； 仅当右子树不为空时，右子树需要加括号，否则会产生无效的空括号对。  func tree2str(root *TreeNode) string { ans := make([]byte, 0, 10) var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } ans = append(ans, strconv.</description>
+    </item>
+    
     <item>
       <title>Leetcode 2049. 统计最高分的节点数目</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-2049.-%E7%BB%9F%E8%AE%A1%E6%9C%80%E9%AB%98%E5%88%86%E7%9A%84%E8%8A%82%E7%82%B9%E6%95%B0%E7%9B%AE/</link>

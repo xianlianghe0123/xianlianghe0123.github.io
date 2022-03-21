@@ -6,7 +6,123 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 13 Mar 2022 09:56:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 10:47:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2039. 网络空闲的时刻</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2039.-%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B2%E7%9A%84%E6%97%B6%E5%88%BB/</link>
+      <pubDate>Sun, 20 Mar 2022 10:47:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2039.-%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B2%E7%9A%84%E6%97%B6%E5%88%BB/</guid>
+      <description>链接： https://leetcode-cn.com/problems/stock-price-fluctuation/
+难度： 中等
+题目描述 给你一个有 n 个服务器的计算机网络，服务器编号为 0 到 n - 1 。同时给你一个二维整数数组 edges ，其中 edges[i] = [ui, vi] 表示服务器 ui 和 vi 之间有一条信息线路，在 一秒 内它们之间可以传输 任意 数目的信息。再给你一个长度为 n 且下标从 0 开始的整数数组 patience 。
+题目保证所有服务器都是 相通 的，也就是说一个信息从任意服务器出发，都可以通过这些信息线路直接或间接地到达任何其他服务器。
+编号为 0 的服务器是 主 服务器，其他服务器为 数据 服务器。每个数据服务器都要向主服务器发送信息，并等待回复。信息在服务器之间按 最优 线路传输，也就是说每个信息都会以 最少时间 到达主服务器。主服务器会处理 所有 新到达的信息并 立即 按照每条信息来时的路线 反方向 发送回复信息。
+在 0 秒的开始，所有数据服务器都会发送各自需要处理的信息。从第 1 秒开始，每 一秒最 开始 时，每个数据服务器都会检查它是否收到了主服务器的回复信息（包括新发出信息的回复信息）：
+ 如果还没收到任何回复信息，那么该服务器会周期性 重发 信息。数据服务器 i 每 patience[i] 秒都会重发一条信息，也就是说，数据服务器 i 在上一次发送信息给主服务器后的 patience[i] 秒 后 会重发一条信息给主服务器。 否则，该数据服务器 不会重发 信息。  当没有任何信息在线路上传输或者到达某服务器时，该计算机网络变为 空闲 状态。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 606. 根据二叉树创建字符串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-606.-%E6%A0%B9%E6%8D%AE%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Sat, 19 Mar 2022 10:59:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-606.-%E6%A0%B9%E6%8D%AE%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/construct-string-from-binary-tree/
+难度： 简单
+题目描述 你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。
+空节点则用一对空括号 &amp;ldquo;()&amp;rdquo; 表示。而且你需要省略所有不影响字符串与原始二叉树之间的一对一映射关系的空括号对。
+示例 1：  输入： 二叉树: [1,2,3,4]
+1
+/ \
+2 3
+/ 4
+输出： &amp;ldquo;1(2(4))(3)&amp;rdquo;
+解释： 原本将是“1(2(4)())(3())”，
+在你省略所有不必要的空括号对之后，
+它将是“1(2(4))(3)”。
+ 示例 2：  输入： 二叉树: [1,2,3,null,4]
+1
+/ \
+2 3
+\
+4
+输出： &amp;ldquo;1(2()(4))(3)&amp;rdquo;
+解释： 和第一个示例相似，
+除了我们不能省略第一个对括号来中断输入和输出之间的一对一映射关系。
+ 解题思路 先序遍历 采用先序遍历遍历整棵树。对于遍历到的结点而言，当遍历子树时，需要在两侧加上括号，有如下两种情况：
+ 当任意子树不为空时，左子树遍历结果必然需要加上括号； 仅当右子树不为空时，右子树需要加括号，否则会产生无效的空括号对。  func tree2str(root *TreeNode) string { ans := make([]byte, 0, 10) var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } ans = append(ans, strconv.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 2043. 简易银行系统</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2043.-%E7%AE%80%E6%98%93%E9%93%B6%E8%A1%8C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Fri, 18 Mar 2022 10:31:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2043.-%E7%AE%80%E6%98%93%E9%93%B6%E8%A1%8C%E7%B3%BB%E7%BB%9F/</guid>
+      <description>链接： https://leetcode-cn.com/problems/simple-bank-system/
+难度： 中等
+题目描述 你的任务是为一个很受欢迎的银行设计一款程序，以自动化执行所有传入的交易（转账，存款和取款）。银行共有 n 个账户，编号从 1 到 n 。每个账号的初始余额存储在一个下标从 0 开始的整数数组 balance 中，其中第 (i + 1) 个账户的初始余额是 balance[i] 。
+请你执行所有 有效的 交易。如果满足下面全部条件，则交易 有效 ：
+ 指定的账户数量在 1 和 n 之间，且 取款或者转账需要的钱的总数 小于或者等于 账户余额。  实现 Bank 类：
+ Bank(long[] balance) 使用下标从 0 开始的整数数组 balance 初始化该对象。 boolean transfer(int account1, int account2, long money) 从编号为 account1 的账户向编号为 account2 的账户转帐 money 美元。如果交易成功，返回 true ，否则，返回 false 。 boolean deposit(int account, long money) 向编号为 account 的账户存款 money 美元。如果交易成功，返回 true ；否则，返回 false 。 boolean withdraw(int account, long money) 从编号为 account 的账户取款 money 美元。如果交易成功，返回 true ；否则，返回 false 。  示例：  输入：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 720. 词典中最长的单词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-720.-%E8%AF%8D%E5%85%B8%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E5%8D%95%E8%AF%8D/</link>
+      <pubDate>Thu, 17 Mar 2022 09:59:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-720.-%E8%AF%8D%E5%85%B8%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E5%8D%95%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/
+难度： 简单
+题目描述 给出一个字符串数组 words 组成的一本英语词典。返回 words 中最长的一个单词，该单词是由 words 词典中其他单词逐步添加一个字母组成。
+若其中有多个可行的答案，则返回答案中字典序最小的单词。若无答案，则返回空字符串。
+示例 1：  输入： words = [&amp;ldquo;w&amp;rdquo;,&amp;ldquo;wo&amp;rdquo;,&amp;ldquo;wor&amp;rdquo;,&amp;ldquo;worl&amp;rdquo;, &amp;ldquo;world&amp;rdquo;]
+输出： &amp;ldquo;world&amp;rdquo;
+解释： 单词&amp;quot;world&amp;quot;可由&amp;quot;w&amp;quot;, &amp;ldquo;wo&amp;rdquo;, &amp;ldquo;wor&amp;rdquo;, 和 &amp;ldquo;worl&amp;quot;逐步添加一个字母组成。
+ 示例 2：  输入： words = [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;banana&amp;rdquo;, &amp;ldquo;app&amp;rdquo;, &amp;ldquo;appl&amp;rdquo;, &amp;ldquo;ap&amp;rdquo;, &amp;ldquo;apply&amp;rdquo;, &amp;ldquo;apple&amp;rdquo;]
+输出： &amp;ldquo;apple&amp;rdquo;
+解释： &amp;ldquo;apply&amp;rdquo; 和 &amp;ldquo;apple&amp;rdquo; 都能由词典中的单词组成。但是 &amp;ldquo;apple&amp;rdquo; 的字典序小于 &amp;ldquo;apply&amp;rdquo;
+ 提示：  1 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 30 所有输入的字符串 words[i] 都只包含小写字母。  解题思路 排序+哈希 对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 2044. 统计按位或能得到最大值的子集数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2044.-%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Tue, 15 Mar 2022 10:55:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2044.-%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-number-of-maximum-bitwise-or-subsets/
+难度： 中等
+题目描述 给你一个整数数组 nums ，请你找出 nums 子集 按位或 可能得到的 最大值 ，并返回按位或能得到最大值的 不同非空子集的数目 。
+如果数组 a 可以由数组 b 删除一些元素（或不删除）得到，则认为数组 a 是数组 b 的一个 子集 。如果选中的元素下标位置不一样，则认为两个子集 不同 。
+对数组 a 执行 按位或 ，结果等于 a[0] OR a[1] OR &amp;hellip; OR a[a.length - 1]（下标从 0 开始）。
+示例 1：  输入： nums = [3,1]
+输出： 2
+解释： 子集按位或能得到的最大值是 3 。有 2 个子集按位或可以得到 3 ：
+ [3] [3,1]   示例 2：  输入： nums = [2,2,2]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 599. 两个列表的最小索引总和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-599.-%E4%B8%A4%E4%B8%AA%E5%88%97%E8%A1%A8%E7%9A%84%E6%9C%80%E5%B0%8F%E7%B4%A2%E5%BC%95%E6%80%BB%E5%92%8C/</link>
+      <pubDate>Mon, 14 Mar 2022 10:36:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-599.-%E4%B8%A4%E4%B8%AA%E5%88%97%E8%A1%A8%E7%9A%84%E6%9C%80%E5%B0%8F%E7%B4%A2%E5%BC%95%E6%80%BB%E5%92%8C/</guid>
+      <description>链接： https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists/
+难度： 简单
+题目描述 假设 Andy 和 Doris 想在晚餐时选择一家餐厅，并且他们都有一个表示最喜爱餐厅的列表，每个餐厅的名字用字符串表示。
+你需要帮助他们用最少的索引和找出他们共同喜爱的餐厅。 如果答案不止一个，则输出所有答案并且不考虑顺序。 你可以假设答案总是存在。
+示例 1：  输入： list1 = [&amp;ldquo;Shogun&amp;rdquo;, &amp;ldquo;Tapioca Express&amp;rdquo;, &amp;ldquo;Burger King&amp;rdquo;, &amp;ldquo;KFC&amp;rdquo;]，list2 = [&amp;ldquo;Piatti&amp;rdquo;, &amp;ldquo;The Grill at Torrey Pines&amp;rdquo;, &amp;ldquo;Hungry Hunter Steakhouse&amp;rdquo;, &amp;ldquo;Shogun&amp;rdquo;]
+输出： [&amp;ldquo;Shogun&amp;rdquo;]
+解释： 他们唯一共同喜爱的餐厅是“Shogun”。
+ 示例 2：  输入： list1 = [&amp;ldquo;Shogun&amp;rdquo;, &amp;ldquo;Tapioca Express&amp;rdquo;, &amp;ldquo;Burger King&amp;rdquo;, &amp;ldquo;KFC&amp;rdquo;]，list2 = [&amp;ldquo;KFC&amp;rdquo;, &amp;ldquo;Shogun&amp;rdquo;, &amp;ldquo;Burger King&amp;rdquo;]
+输出： [&amp;ldquo;Shogun&amp;rdquo;]
+解释： 他们共同喜爱且具有最小索引和的餐厅是“Shogun”，它有最小的索引和1(0+1)。
+ 注意：  1 &amp;lt;= list1.length, list2.length &amp;lt;= 1000 1 &amp;lt;= list1[i].</description>
+    </item>
+    
     <item>
       <title>Leetcode 393. UTF-8 编码验证</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-393.-utf-8-%E7%BC%96%E7%A0%81%E9%AA%8C%E8%AF%81/</link>

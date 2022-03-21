@@ -6,7 +6,22 @@
     <description>Recent content in bfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 21 Feb 2022 09:45:54 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 10:47:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2039. 网络空闲的时刻</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2039.-%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B2%E7%9A%84%E6%97%B6%E5%88%BB/</link>
+      <pubDate>Sun, 20 Mar 2022 10:47:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2039.-%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B2%E7%9A%84%E6%97%B6%E5%88%BB/</guid>
+      <description>链接： https://leetcode-cn.com/problems/stock-price-fluctuation/
+难度： 中等
+题目描述 给你一个有 n 个服务器的计算机网络，服务器编号为 0 到 n - 1 。同时给你一个二维整数数组 edges ，其中 edges[i] = [ui, vi] 表示服务器 ui 和 vi 之间有一条信息线路，在 一秒 内它们之间可以传输 任意 数目的信息。再给你一个长度为 n 且下标从 0 开始的整数数组 patience 。
+题目保证所有服务器都是 相通 的，也就是说一个信息从任意服务器出发，都可以通过这些信息线路直接或间接地到达任何其他服务器。
+编号为 0 的服务器是 主 服务器，其他服务器为 数据 服务器。每个数据服务器都要向主服务器发送信息，并等待回复。信息在服务器之间按 最优 线路传输，也就是说每个信息都会以 最少时间 到达主服务器。主服务器会处理 所有 新到达的信息并 立即 按照每条信息来时的路线 反方向 发送回复信息。
+在 0 秒的开始，所有数据服务器都会发送各自需要处理的信息。从第 1 秒开始，每 一秒最 开始 时，每个数据服务器都会检查它是否收到了主服务器的回复信息（包括新发出信息的回复信息）：
+ 如果还没收到任何回复信息，那么该服务器会周期性 重发 信息。数据服务器 i 每 patience[i] 秒都会重发一条信息，也就是说，数据服务器 i 在上一次发送信息给主服务器后的 patience[i] 秒 后 会重发一条信息给主服务器。 否则，该数据服务器 不会重发 信息。  当没有任何信息在线路上传输或者到达某服务器时，该计算机网络变为 空闲 状态。</description>
+    </item>
+    
     <item>
       <title>Leetcode 838. 推多米诺</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-838.-%E6%8E%A8%E5%A4%9A%E7%B1%B3%E8%AF%BA/</link>

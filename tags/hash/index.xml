@@ -6,7 +6,24 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 06 Mar 2022 08:59:19 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 10:55:01 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2044. 统计按位或能得到最大值的子集数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-2044.-%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Tue, 15 Mar 2022 10:55:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-2044.-%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/count-number-of-maximum-bitwise-or-subsets/
+难度： 中等
+题目描述 给你一个整数数组 nums ，请你找出 nums 子集 按位或 可能得到的 最大值 ，并返回按位或能得到最大值的 不同非空子集的数目 。
+如果数组 a 可以由数组 b 删除一些元素（或不删除）得到，则认为数组 a 是数组 b 的一个 子集 。如果选中的元素下标位置不一样，则认为两个子集 不同 。
+对数组 a 执行 按位或 ，结果等于 a[0] OR a[1] OR &amp;hellip; OR a[a.length - 1]（下标从 0 开始）。
+示例 1：  输入： nums = [3,1]
+输出： 2
+解释： 子集按位或能得到的最大值是 3 。有 2 个子集按位或可以得到 3 ：
+ [3] [3,1]   示例 2：  输入： nums = [2,2,2]</description>
+    </item>
+    
     <item>
       <title>Leetcode 2100. 适合打劫银行的日子</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-2100.-%E9%80%82%E5%90%88%E6%89%93%E5%8A%AB%E9%93%B6%E8%A1%8C%E7%9A%84%E6%97%A5%E5%AD%90/</link>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/simple-bank-system/
+难度： 中等
+题目描述 你的任务是为一个很受欢迎的银行设计一款程序，以自动化执行所有传入的交易（转账，存款和取款）。银行共有 n 个账户，编号从 1 到 n 。每个账号的初始余额存储在一个下标从 0 开始的整数数组 balance 中，其中第 (i &#43; 1) 个账户的初始余额是 balance[i] 。
+请你执行所有 有效的 交易。如果满足下面全部条件，则交易 有效 ：
+ 指定的账户数量在 1 和 n 之间，且 取款或者转账需要的钱的总数 小于或者等于 账户余额。  实现 Bank 类：
+ Bank(long[] balance) 使用下标从 0 开始的整数数组 balance 初始化该对象。 boolean transfer(int account1, int account2, long money) 从编号为 account1 的账户向编号为 account2 的账户转帐 money 美元。如果交易成功，返回 true ，否则，返回 false 。 boolean deposit(int account, long money) 向编号为 account 的账户存款 money 美元。如果交易成功，返回 true ；否则，返回 false 。 boolean withdraw(int account, long money) 从编号为 account 的账户取款 money 美元。如果交易成功，返回 true ；否则，返回 false 。  示例：  输入：'><title>Leetcode 2043. 简易银行系统</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-2043.-%E7%AE%80%E6%98%93%E9%93%B6%E8%A1%8C%E7%B3%BB%E7%BB%9F/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 2043. 简易银行系统'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/simple-bank-system/
+难度： 中等
+题目描述 你的任务是为一个很受欢迎的银行设计一款程序，以自动化执行所有传入的交易（转账，存款和取款）。银行共有 n 个账户，编号从 1 到 n 。每个账号的初始余额存储在一个下标从 0 开始的整数数组 balance 中，其中第 (i &#43; 1) 个账户的初始余额是 balance[i] 。
+请你执行所有 有效的 交易。如果满足下面全部条件，则交易 有效 ：
+ 指定的账户数量在 1 和 n 之间，且 取款或者转账需要的钱的总数 小于或者等于 账户余额。  实现 Bank 类：
+ Bank(long[] balance) 使用下标从 0 开始的整数数组 balance 初始化该对象。 boolean transfer(int account1, int account2, long money) 从编号为 account1 的账户向编号为 account2 的账户转帐 money 美元。如果交易成功，返回 true ，否则，返回 false 。 boolean deposit(int account, long money) 向编号为 account 的账户存款 money 美元。如果交易成功，返回 true ；否则，返回 false 。 boolean withdraw(int account, long money) 从编号为 account 的账户取款 money 美元。如果交易成功，返回 true ；否则，返回 false 。  示例：  输入：'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-2043.-%E7%AE%80%E6%98%93%E9%93%B6%E8%A1%8C%E7%B3%BB%E7%BB%9F/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-03-18T10:31:34&#43;08:00'/><meta property='article:modified_time' content='2022-03-18T10:31:34&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 2043. 简易银行系统">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/simple-bank-system/
+难度： 中等
+题目描述 你的任务是为一个很受欢迎的银行设计一款程序，以自动化执行所有传入的交易（转账，存款和取款）。银行共有 n 个账户，编号从 1 到 n 。每个账号的初始余额存储在一个下标从 0 开始的整数数组 balance 中，其中第 (i &#43; 1) 个账户的初始余额是 balance[i] 。
+请你执行所有 有效的 交易。如果满足下面全部条件，则交易 有效 ：
+ 指定的账户数量在 1 和 n 之间，且 取款或者转账需要的钱的总数 小于或者等于 账户余额。  实现 Bank 类：
+ Bank(long[] balance) 使用下标从 0 开始的整数数组 balance 初始化该对象。 boolean transfer(int account1, int account2, long money) 从编号为 account1 的账户向编号为 account2 的账户转帐 money 美元。如果交易成功，返回 true ，否则，返回 false 。 boolean deposit(int account, long money) 向编号为 account 的账户存款 money 美元。如果交易成功，返回 true ；否则，返回 false 。 boolean withdraw(int account, long money) 从编号为 account 的账户取款 money 美元。如果交易成功，返回 true ；否则，返回 false 。  示例：  输入：">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-2043.-%E7%AE%80%E6%98%93%E9%93%B6%E8%A1%8C%E7%B3%BB%E7%BB%9F/">Leetcode 2043. 简易银行系统</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 18, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/simple-bank-system/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/simple-bank-system/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>你的任务是为一个很受欢迎的银行设计一款程序，以自动化执行所有传入的交易（转账，存款和取款）。银行共有 <code>n</code> 个账户，编号从 <code>1</code> 到 <code>n</code> 。每个账号的初始余额存储在一个下标从 <strong>0</strong> 开始的整数数组 <code>balance</code> 中，其中第 <code>(i + 1)</code> 个账户的初始余额是 <code>balance[i]</code> 。</p>
+<p>请你执行所有 <strong>有效的</strong> 交易。如果满足下面全部条件，则交易 <strong>有效</strong> ：</p>
+<ul>
+<li>指定的账户数量在 <code>1</code> 和 <code>n</code> 之间，且</li>
+<li>取款或者转账需要的钱的总数 <strong>小于或者等于</strong> 账户余额。</li>
+</ul>
+<p>实现 <code>Bank</code> 类：</p>
+<ul>
+<li><code>Bank(long[] balance)</code> 使用下标从 <strong>0</strong> 开始的整数数组 <code>balance</code> 初始化该对象。</li>
+<li><code>boolean transfer(int account1, int account2, long money)</code> 从编号为 <code>account1</code> 的账户向编号为 <code>account2</code> 的账户转帐 <code>money</code> 美元。如果交易成功，返回 <code>true</code> ，否则，返回 <code>false</code> 。</li>
+<li><code>boolean deposit(int account, long money)</code> 向编号为 <code>account</code> 的账户存款 <code>money</code> 美元。如果交易成功，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li>
+<li><code>boolean withdraw(int account, long money)</code> 从编号为 <code>account</code> 的账户取款 <code>money</code> 美元。如果交易成功，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li>
+</ul>
+<h4 id="示例">示例：</h4>
+<blockquote>
+<p><strong>输入：</strong><br>
+[&ldquo;Bank&rdquo;, &ldquo;withdraw&rdquo;, &ldquo;transfer&rdquo;, &ldquo;deposit&rdquo;, &ldquo;transfer&rdquo;, &ldquo;withdraw&rdquo;]<br>
+[[[10, 100, 20, 50, 30]], [3, 10], [5, 1, 20], [5, 20], [3, 4, 15], [10, 50]]<br>
+<strong>输出：</strong><br>
+[null, true, true, true, false, false]</p>
+<p><strong>解释：</strong><br>
+Bank bank = new Bank([10, 100, 20, 50, 30]);<br>
+bank.withdraw(3, 10);    // 返回 true ，账户 3 的余额是 $20 ，所以可以取款 $10 。<br>
+            // 账户 3 余额为 $20 - $10 = $10 。<br>
+bank.transfer(5, 1, 20); // 返回 true ，账户 5 的余额是 $30 ，所以可以转账 $20 。<br>
+          // 账户 5 的余额为 $30 - $20 = $10 ，账户 1 的余额为 $10 + $20 = $30 。<br>
+bank.deposit(5, 20);     // 返回 true ，可以向账户 5 存款 $20 。<br>
+            // 账户 5 的余额为 $10 + $20 = $30 。<br>
+bank.transfer(3, 4, 15); // 返回 false ，账户 3 的当前余额是 $10 。<br>
+          // 所以无法转账 $15 。<br>
+bank.withdraw(10, 50);   // 返回 false ，交易无效，因为账户 10 并不存在。</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>n == balance.length</code></li>
+<li><code>1 &lt;= n, account, account1, account2 &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= balance[i], money &lt;= 10<sup>1</sup>2</code></li>
+<li><code>transfer</code>, <code>deposit</code>, <code>withdraw</code> 三个函数，<strong>每个</strong> 最多调用 <code>10<sup>4</sup></code> 次</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="模拟">模拟</h4>
+<p>按照题设要求，模拟实现即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Bank</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">balance</span> []<span style="color:#66d9ef">int64</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">balance</span> []<span style="color:#66d9ef">int64</span>) <span style="color:#a6e22e">Bank</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Bank</span>{
+		<span style="color:#a6e22e">balance</span>: <span style="color:#a6e22e">balance</span>,
+	}
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Bank</span>) <span style="color:#a6e22e">Transfer</span>(<span style="color:#a6e22e">account1</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">account2</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">money</span> <span style="color:#66d9ef">int64</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#75715e">// 账户不存在或余额不足，返回失败
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">account1</span> &gt; len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">account2</span> &gt; len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>[<span style="color:#a6e22e">account1</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">money</span> {
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+	}
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>[<span style="color:#a6e22e">account1</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">-=</span> <span style="color:#a6e22e">money</span>
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>[<span style="color:#a6e22e">account2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">money</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Bank</span>) <span style="color:#a6e22e">Deposit</span>(<span style="color:#a6e22e">account</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">money</span> <span style="color:#66d9ef">int64</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#75715e">// 账户不存在，返回失败
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">account</span> &gt; len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>) {
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+	}
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>[<span style="color:#a6e22e">account</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">money</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Bank</span>) <span style="color:#a6e22e">Withdraw</span>(<span style="color:#a6e22e">account</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">money</span> <span style="color:#66d9ef">int64</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#75715e">// 账户不存在或余额不足，返回失败
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">account</span> &gt; len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>[<span style="color:#a6e22e">account</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">money</span> {
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+	}
+	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">balance</span>[<span style="color:#a6e22e">account</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">-=</span> <span style="color:#a6e22e">money</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：
+<ul>
+<li><code>constructor</code>：$ O(1) $</li>
+<li><code>transfer</code>：$ O(1) $</li>
+<li><code>deposit</code>：$ O(1) $</li>
+<li><code>withdraw</code>：$ O(1) $</li>
+</ul>
+</li>
+<li>空间复杂度：$ O(N), N = len(balance) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

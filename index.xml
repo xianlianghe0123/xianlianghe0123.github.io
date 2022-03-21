@@ -6,7 +6,560 @@
         <description>Recent content on 贺贤良</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>cn-zh</language>
-        <lastBuildDate>Sun, 13 Mar 2022 09:56:52 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Mar 2022 10:47:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Leetcode 2039. 网络空闲的时刻</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-2039.-%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B2%E7%9A%84%E6%97%B6%E5%88%BB/</link>
+        <pubDate>Sun, 20 Mar 2022 10:47:12 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-2039.-%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B2%E7%9A%84%E6%97%B6%E5%88%BB/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/stock-price-fluctuation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/stock-price-fluctuation/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个有 &lt;code&gt;n&lt;/code&gt; 个服务器的计算机网络，服务器编号为 &lt;code&gt;0&lt;/code&gt; 到 &lt;code&gt;n - 1&lt;/code&gt; 。同时给你一个二维整数数组 &lt;code&gt;edges&lt;/code&gt; ，其中 &lt;code&gt;edges[i] = [u&lt;sub&gt;i&lt;/sub&gt;, v&lt;sub&gt;i&lt;/sub&gt;]&lt;/code&gt; 表示服务器 &lt;code&gt;u&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 和 &lt;code&gt;v&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt; 之间有一条信息线路，在 &lt;strong&gt;一秒&lt;/strong&gt; 内它们之间可以传输 &lt;strong&gt;任意&lt;/strong&gt; 数目的信息。再给你一个长度为 &lt;code&gt;n&lt;/code&gt; 且下标从 &lt;strong&gt;0&lt;/strong&gt; 开始的整数数组 &lt;code&gt;patience&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;题目保证所有服务器都是 &lt;strong&gt;相通&lt;/strong&gt; 的，也就是说一个信息从任意服务器出发，都可以通过这些信息线路直接或间接地到达任何其他服务器。&lt;/p&gt;
+&lt;p&gt;编号为 &lt;code&gt;0&lt;/code&gt; 的服务器是 &lt;strong&gt;主&lt;/strong&gt; 服务器，其他服务器为 &lt;strong&gt;数据&lt;/strong&gt; 服务器。每个数据服务器都要向主服务器发送信息，并等待回复。信息在服务器之间按 &lt;strong&gt;最优&lt;/strong&gt; 线路传输，也就是说每个信息都会以 &lt;strong&gt;最少时间&lt;/strong&gt; 到达主服务器。主服务器会处理 &lt;strong&gt;所有&lt;/strong&gt; 新到达的信息并 &lt;strong&gt;立即&lt;/strong&gt; 按照每条信息来时的路线 &lt;strong&gt;反方向&lt;/strong&gt; 发送回复信息。&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;0&lt;/code&gt; 秒的开始，所有数据服务器都会发送各自需要处理的信息。从第 &lt;code&gt;1&lt;/code&gt; 秒开始，&lt;strong&gt;每&lt;/strong&gt; 一秒最 &lt;strong&gt;开始&lt;/strong&gt; 时，每个数据服务器都会检查它是否收到了主服务器的回复信息（包括新发出信息的回复信息）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果还没收到任何回复信息，那么该服务器会周期性 &lt;strong&gt;重发&lt;/strong&gt; 信息。数据服务器 &lt;code&gt;i&lt;/code&gt; 每 &lt;code&gt;patience[i]&lt;/code&gt; 秒都会重发一条信息，也就是说，数据服务器 &lt;code&gt;i&lt;/code&gt; 在上一次发送信息给主服务器后的 &lt;code&gt;patience[i]&lt;/code&gt; 秒 &lt;strong&gt;后&lt;/strong&gt; 会重发一条信息给主服务器。&lt;/li&gt;
+&lt;li&gt;否则，该数据服务器 &lt;strong&gt;不会重发&lt;/strong&gt; 信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当没有任何信息在线路上传输或者到达某服务器时，该计算机网络变为 &lt;strong&gt;空闲&lt;/strong&gt; 状态。&lt;/p&gt;
+&lt;p&gt;请返回计算机网络变为 &lt;strong&gt;空闲&lt;/strong&gt; 状态的 &lt;strong&gt;最早秒数&lt;/strong&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;示例&#34;&gt;示例：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/2039.quiet-place-example1.png&#34; width=&#34;750px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;**输入：**edges = [[0,1],[1,2]], patience = [0,2,1]&lt;br&gt;
+**输出：**8&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;
+0 秒最开始时，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据服务器 1 给主服务器发出信息（用 1A 表示）。&lt;/li&gt;
+&lt;li&gt;数据服务器 2 给主服务器发出信息（用 2A 表示）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1 秒时，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;信息 1A 到达主服务器，主服务器立刻处理信息 1A 并发出 1A 的回复信息。&lt;/li&gt;
+&lt;li&gt;数据服务器 1 还没收到任何回复。距离上次发出信息过去了 1 秒（1 &amp;lt; patience[1] = 2），所以不会重发信息。&lt;/li&gt;
+&lt;li&gt;数据服务器 2 还没收到任何回复。距离上次发出信息过去了 1 秒（1 == patience[2] = 1），所以它重发一条信息（用 2B 表示）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2 秒时，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;回复信息 1A 到达服务器 1 ，服务器 1 不会再重发信息。&lt;/li&gt;
+&lt;li&gt;信息 2A 到达主服务器，主服务器立刻处理信息 2A 并发出 2A 的回复信息。&lt;/li&gt;
+&lt;li&gt;服务器 2 重发一条信息（用 2C 表示）。&lt;br&gt;
+&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4 秒时，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;回复信息 2A 到达服务器 2 ，服务器 2 不会再重发信息。&lt;br&gt;
+&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;7 秒时，回复信息 2D 到达服务器 2 。&lt;/p&gt;
+&lt;p&gt;从第 8 秒开始，不再有任何信息在服务器之间传输，也不再有信息到达服务器。&lt;br&gt;
+所以第 8 秒是网络变空闲的最早时刻。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;img src=&#34;https://xianlianghe0123.github.io/img/2039.network_a_quiet_place_2.png&#34; width=&#34;100px&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; edges = [[0,1],[0,2],[1,2]], patience = [0,10,10]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 3&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 数据服务器 1 和 2 第 2 秒初收到回复信息。&lt;br&gt;
+从第 3 秒开始，网络变空闲。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n == patience.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2 &amp;lt;= n &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;patience[0] == 0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对于 &lt;code&gt;1 &amp;lt;= i &amp;lt; n&lt;/code&gt; ，满足 &lt;code&gt;1 &amp;lt;= patience[i] &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= edges.length &amp;lt;= min(10&lt;sup&gt;5&lt;/sup&gt;, n * (n - 1) / 2)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;edges[i].length == 2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= u&lt;sub&gt;i&lt;/sub&gt;, v&lt;sub&gt;i&lt;/sub&gt; &amp;lt; n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;u&lt;sub&gt;i&lt;/sub&gt; != v&lt;sub&gt;i&lt;/sub&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;不会有重边。&lt;/li&gt;
+&lt;li&gt;每个服务器都直接或间接与别的服务器相连。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;广度优先搜索&#34;&gt;广度优先搜索&lt;/h4&gt;
+&lt;p&gt;由于是等权图，可使用广度优先算法求的 &lt;strong&gt;数据&lt;/strong&gt; 服务器到 &lt;strong&gt;主&lt;/strong&gt; 服务器到最短路径。&lt;/p&gt;
+&lt;p&gt;路径长度的两倍即为当前 &lt;strong&gt;数据&lt;/strong&gt; 服务器接收到回复的时间。在此期间若有重发消息，则以最后一次重发并接受的恢复的时间修正。这样求得当前 &lt;strong&gt;数据&lt;/strong&gt; 服务器空闲的时间。&lt;/p&gt;
+&lt;p&gt;找出所有 &lt;strong&gt;数据&lt;/strong&gt; 服务器均空闲的最大时间，再过一秒网络到变为 &lt;strong&gt;空闲&lt;/strong&gt; 状态。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;networkBecomesIdle&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;edges&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;patience&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 构造邻接链表
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;patience&lt;/span&gt;))
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;edge&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;edges&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;edge&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]] = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;edge&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]], &lt;span style=&#34;color:#a6e22e&#34;&gt;edge&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;])
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;edge&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]] = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;edge&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]], &lt;span style=&#34;color:#a6e22e&#34;&gt;edge&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;minTime&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;patience&lt;/span&gt;)) &lt;span style=&#34;color:#75715e&#34;&gt;// 记录最短时间
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;patience&lt;/span&gt;))
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;()
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PushBack&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;() &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 同一时间到达
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Len&lt;/span&gt;(); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;cur&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Remove&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Front&lt;/span&gt;()).(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;minTime&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;cur&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 记录最短时间
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#75715e&#34;&gt;// 遍历下个结点
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;cur&lt;/span&gt;] {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;] {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PushBack&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;visit&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;] = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+				}
+			}
+		}
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;minTime&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 有重发消息，接收到最后一次消息后空闲
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;patience&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &amp;lt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; = (&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;patience&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;patience&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(n+E), E = len(edges) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(n+E) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 606. 根据二叉树创建字符串</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-606.-%E6%A0%B9%E6%8D%AE%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+        <pubDate>Sat, 19 Mar 2022 10:59:32 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-606.-%E6%A0%B9%E6%8D%AE%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/construct-string-from-binary-tree/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/construct-string-from-binary-tree/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。&lt;/p&gt;
+&lt;p&gt;空节点则用一对空括号 &amp;ldquo;()&amp;rdquo; 表示。而且你需要省略所有不影响字符串与原始二叉树之间的一对一映射关系的空括号对。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; 二叉树: [1,2,3,4]&lt;br&gt;
+    1&lt;br&gt;
+   /  \&lt;br&gt;
+  2   3&lt;br&gt;
+ / &lt;br&gt;
+4&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;1(2(4))(3)&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解释：&lt;/strong&gt; 原本将是“1(2(4)())(3())”，&lt;br&gt;
+在你省略所有不必要的空括号对之后，&lt;br&gt;
+它将是“1(2(4))(3)”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; 二叉树: [1,2,3,null,4]&lt;br&gt;
+   1&lt;br&gt;
+  /  \&lt;br&gt;
+ 2   3&lt;br&gt;
+  \&lt;br&gt;
+   4&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;1(2()(4))(3)&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解释：&lt;/strong&gt; 和第一个示例相似，&lt;br&gt;
+除了我们不能省略第一个对括号来中断输入和输出之间的一对一映射关系。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;先序遍历&#34;&gt;先序遍历&lt;/h4&gt;
+&lt;p&gt;采用先序遍历遍历整棵树。对于遍历到的结点而言，当遍历子树时，需要在两侧加上括号，有如下两种情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当任意子树不为空时，左子树遍历结果必然需要加上括号；&lt;/li&gt;
+&lt;li&gt;仅当右子树不为空时，右子树需要加括号，否则会产生无效的空括号对。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tree2str&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;TreeNode&lt;/span&gt;) {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;strconv&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Itoa&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Val&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;)
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Left&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Right&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;(&amp;#39;&lt;/span&gt;)
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Left&lt;/span&gt;)
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;)&amp;#39;&lt;/span&gt;)
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Right&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;(&amp;#39;&lt;/span&gt;)
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;node&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Right&lt;/span&gt;)
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;)&amp;#39;&lt;/span&gt;)
+		}
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; string(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N), N = size(Tree) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(\log{N}) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 2043. 简易银行系统</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-2043.-%E7%AE%80%E6%98%93%E9%93%B6%E8%A1%8C%E7%B3%BB%E7%BB%9F/</link>
+        <pubDate>Fri, 18 Mar 2022 10:31:34 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-2043.-%E7%AE%80%E6%98%93%E9%93%B6%E8%A1%8C%E7%B3%BB%E7%BB%9F/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/simple-bank-system/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/simple-bank-system/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;你的任务是为一个很受欢迎的银行设计一款程序，以自动化执行所有传入的交易（转账，存款和取款）。银行共有 &lt;code&gt;n&lt;/code&gt; 个账户，编号从 &lt;code&gt;1&lt;/code&gt; 到 &lt;code&gt;n&lt;/code&gt; 。每个账号的初始余额存储在一个下标从 &lt;strong&gt;0&lt;/strong&gt; 开始的整数数组 &lt;code&gt;balance&lt;/code&gt; 中，其中第 &lt;code&gt;(i + 1)&lt;/code&gt; 个账户的初始余额是 &lt;code&gt;balance[i]&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;请你执行所有 &lt;strong&gt;有效的&lt;/strong&gt; 交易。如果满足下面全部条件，则交易 &lt;strong&gt;有效&lt;/strong&gt; ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;指定的账户数量在 &lt;code&gt;1&lt;/code&gt; 和 &lt;code&gt;n&lt;/code&gt; 之间，且&lt;/li&gt;
+&lt;li&gt;取款或者转账需要的钱的总数 &lt;strong&gt;小于或者等于&lt;/strong&gt; 账户余额。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实现 &lt;code&gt;Bank&lt;/code&gt; 类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Bank(long[] balance)&lt;/code&gt; 使用下标从 &lt;strong&gt;0&lt;/strong&gt; 开始的整数数组 &lt;code&gt;balance&lt;/code&gt; 初始化该对象。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;boolean transfer(int account1, int account2, long money)&lt;/code&gt; 从编号为 &lt;code&gt;account1&lt;/code&gt; 的账户向编号为 &lt;code&gt;account2&lt;/code&gt; 的账户转帐 &lt;code&gt;money&lt;/code&gt; 美元。如果交易成功，返回 &lt;code&gt;true&lt;/code&gt; ，否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;boolean deposit(int account, long money)&lt;/code&gt; 向编号为 &lt;code&gt;account&lt;/code&gt; 的账户存款 &lt;code&gt;money&lt;/code&gt; 美元。如果交易成功，返回 &lt;code&gt;true&lt;/code&gt; ；否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;boolean withdraw(int account, long money)&lt;/code&gt; 从编号为 &lt;code&gt;account&lt;/code&gt; 的账户取款 &lt;code&gt;money&lt;/code&gt; 美元。如果交易成功，返回 &lt;code&gt;true&lt;/code&gt; ；否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;示例&#34;&gt;示例：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br&gt;
+[&amp;ldquo;Bank&amp;rdquo;, &amp;ldquo;withdraw&amp;rdquo;, &amp;ldquo;transfer&amp;rdquo;, &amp;ldquo;deposit&amp;rdquo;, &amp;ldquo;transfer&amp;rdquo;, &amp;ldquo;withdraw&amp;rdquo;]&lt;br&gt;
+[[[10, 100, 20, 50, 30]], [3, 10], [5, 1, 20], [5, 20], [3, 4, 15], [10, 50]]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt;&lt;br&gt;
+[null, true, true, true, false, false]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;
+Bank bank = new Bank([10, 100, 20, 50, 30]);&lt;br&gt;
+bank.withdraw(3, 10);    // 返回 true ，账户 3 的余额是 $20 ，所以可以取款 $10 。&lt;br&gt;
+            // 账户 3 余额为 $20 - $10 = $10 。&lt;br&gt;
+bank.transfer(5, 1, 20); // 返回 true ，账户 5 的余额是 $30 ，所以可以转账 $20 。&lt;br&gt;
+          // 账户 5 的余额为 $30 - $20 = $10 ，账户 1 的余额为 $10 + $20 = $30 。&lt;br&gt;
+bank.deposit(5, 20);     // 返回 true ，可以向账户 5 存款 $20 。&lt;br&gt;
+            // 账户 5 的余额为 $10 + $20 = $30 。&lt;br&gt;
+bank.transfer(3, 4, 15); // 返回 false ，账户 3 的当前余额是 $10 。&lt;br&gt;
+          // 所以无法转账 $15 。&lt;br&gt;
+bank.withdraw(10, 50);   // 返回 false ，交易无效，因为账户 10 并不存在。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n == balance.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= n, account, account1, account2 &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= balance[i], money &amp;lt;= 10&lt;sup&gt;1&lt;/sup&gt;2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;transfer&lt;/code&gt;, &lt;code&gt;deposit&lt;/code&gt;, &lt;code&gt;withdraw&lt;/code&gt; 三个函数，&lt;strong&gt;每个&lt;/strong&gt; 最多调用 &lt;code&gt;10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt; 次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;模拟&#34;&gt;模拟&lt;/h4&gt;
+&lt;p&gt;按照题设要求，模拟实现即可。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Bank&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int64&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Constructor&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int64&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Bank&lt;/span&gt; {
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Bank&lt;/span&gt;{
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;: &lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;,
+	}
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Bank&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Transfer&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;account1&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;account2&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int64&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 账户不存在或余额不足，返回失败
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;account1&lt;/span&gt; &amp;gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;account2&lt;/span&gt; &amp;gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;account1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;account1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;account2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Bank&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Deposit&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int64&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 账户不存在，返回失败
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt; &amp;gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;) {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Bank&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Withdraw&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int64&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#75715e&#34;&gt;// 账户不存在或余额不足，返回失败
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt; &amp;gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balance&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;money&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;constructor&lt;/code&gt;：$ O(1) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;transfer&lt;/code&gt;：$ O(1) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;deposit&lt;/code&gt;：$ O(1) $&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;withdraw&lt;/code&gt;：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N), N = len(balance) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 720. 词典中最长的单词</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-720.-%E8%AF%8D%E5%85%B8%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E5%8D%95%E8%AF%8D/</link>
+        <pubDate>Thu, 17 Mar 2022 09:59:59 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-720.-%E8%AF%8D%E5%85%B8%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E5%8D%95%E8%AF%8D/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给出一个字符串数组 &lt;code&gt;words&lt;/code&gt; 组成的一本英语词典。返回 &lt;code&gt;words&lt;/code&gt; 中最长的一个单词，该单词是由 &lt;code&gt;words&lt;/code&gt; 词典中其他单词逐步添加一个字母组成。&lt;/p&gt;
+&lt;p&gt;若其中有多个可行的答案，则返回答案中字典序最小的单词。若无答案，则返回空字符串。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; words = [&amp;ldquo;w&amp;rdquo;,&amp;ldquo;wo&amp;rdquo;,&amp;ldquo;wor&amp;rdquo;,&amp;ldquo;worl&amp;rdquo;, &amp;ldquo;world&amp;rdquo;]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;world&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt;  单词&amp;quot;world&amp;quot;可由&amp;quot;w&amp;quot;, &amp;ldquo;wo&amp;rdquo;, &amp;ldquo;wor&amp;rdquo;, 和 &amp;ldquo;worl&amp;quot;逐步添加一个字母组成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; words = [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;banana&amp;rdquo;, &amp;ldquo;app&amp;rdquo;, &amp;ldquo;appl&amp;rdquo;, &amp;ldquo;ap&amp;rdquo;, &amp;ldquo;apply&amp;rdquo;, &amp;ldquo;apple&amp;rdquo;]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; &amp;ldquo;apple&amp;rdquo;&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; &amp;ldquo;apply&amp;rdquo; 和 &amp;ldquo;apple&amp;rdquo; 都能由词典中的单词组成。但是 &amp;ldquo;apple&amp;rdquo; 的字典序小于 &amp;ldquo;apply&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= words.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= words[i].length &amp;lt;= 30&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;所有输入的字符串 &lt;code&gt;words[i]&lt;/code&gt; 都只包含小写字母。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;排序哈希&#34;&gt;排序+哈希&lt;/h4&gt;
+&lt;p&gt;对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。&lt;/p&gt;
+&lt;p&gt;将遍历过的满足条件的字符串加入到哈希表中，每次遍历查看前缀是否在哈希表中，若满足条件也将起加入到哈希表中。&lt;/p&gt;
+&lt;p&gt;遍历过程中维护最长且字典序最小的字符串。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;longestWord&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sort&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Slice&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;]
+	})
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt;{}{
+		&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;: {},
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;[:len(&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]]; !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;) &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; (len(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;) {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;exist&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;word&lt;/span&gt;] = &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt;{}{}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N\log{N}), N = len(words[i]) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 2044. 统计按位或能得到最大值的子集数目</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-2044.-%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/</link>
+        <pubDate>Tue, 15 Mar 2022 10:55:01 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-2044.-%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/count-number-of-maximum-bitwise-or-subsets/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/count-number-of-maximum-bitwise-or-subsets/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;orange&#34;&gt;中等&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;给你一个整数数组 &lt;code&gt;nums&lt;/code&gt; ，请你找出 &lt;code&gt;nums&lt;/code&gt; 子集 &lt;strong&gt;按位或&lt;/strong&gt; 可能得到的 &lt;strong&gt;最大值&lt;/strong&gt; ，并返回按位或能得到最大值的 &lt;strong&gt;不同非空子集的数目&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;如果数组 &lt;code&gt;a&lt;/code&gt; 可以由数组 &lt;code&gt;b&lt;/code&gt; 删除一些元素（或不删除）得到，则认为数组 &lt;code&gt;a&lt;/code&gt; 是数组 &lt;code&gt;b&lt;/code&gt; 的一个 &lt;strong&gt;子集&lt;/strong&gt; 。如果选中的元素下标位置不一样，则认为两个子集 &lt;strong&gt;不同&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;对数组 &lt;code&gt;a&lt;/code&gt; 执行 &lt;strong&gt;按位或&lt;/strong&gt; ，结果等于 &lt;code&gt;a[0] &lt;strong&gt;OR&lt;/strong&gt; a[1] &lt;strong&gt;OR&lt;/strong&gt; &amp;hellip; &lt;strong&gt;OR&lt;/strong&gt; a[a.length - 1]&lt;/code&gt;（下标从 &lt;strong&gt;0&lt;/strong&gt; 开始）。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; nums = [3,1]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 2&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 子集按位或能得到的最大值是 3 。有 2 个子集按位或可以得到 3 ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[3]&lt;/li&gt;
+&lt;li&gt;[3,1]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; nums = [2,2,2]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 7&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; [2,2,2] 的所有非空子集的按位或都可以得到 2 。总共有 23 - 1 = 7 个子集。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-3&#34;&gt;示例 3：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; nums = [3,2,1,5]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; 6&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 子集按位或可能的最大值是 7 。有 6 个子集按位或可以得到 7 ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[3,5]&lt;/li&gt;
+&lt;li&gt;[3,1,5]&lt;/li&gt;
+&lt;li&gt;[3,2,5]&lt;/li&gt;
+&lt;li&gt;[3,2,1,5]&lt;/li&gt;
+&lt;li&gt;[2,5]&lt;/li&gt;
+&lt;li&gt;[2,1,5]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;提示&#34;&gt;提示：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 16&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums[i] &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;枚举&#34;&gt;枚举&lt;/h4&gt;
+&lt;p&gt;利用位来枚举出所有子集，计算最大值，同时统计满足条件的子集数目。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;countMaxOrSubsets&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bits&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;)) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;bits&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;bits&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bits&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]
+			}
+		}
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt;
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt; {
+			&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(2^N*N), N = len(nums) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;回溯&#34;&gt;回溯&lt;/h4&gt;
+&lt;p&gt;对于数组的子集，每个元素都有存在和不存在两种情况，按照此方式进行回溯，找出所有可能的子集。&lt;/p&gt;
+&lt;p&gt;对于每个子集，判定其是否为最大值，同时统计满足条件的子集数目。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;countMaxOrSubsets&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) {
+		&lt;span style=&#34;color:#75715e&#34;&gt;// 子集筛选完毕，判定最大值
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; len(&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;) {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt;
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+			} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;
+			}
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+		}
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt;)         &lt;span style=&#34;color:#75715e&#34;&gt;// 当前元素不在子集中
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;or&lt;/span&gt;|&lt;span style=&#34;color:#a6e22e&#34;&gt;nums&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]) &lt;span style=&#34;color:#75715e&#34;&gt;// 当前元素位于子集中
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;dfs&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cnt&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(2^N), N = len(nums) $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(\log{N}) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Leetcode 599. 两个列表的最小索引总和</title>
+        <link>https://xianlianghe0123.github.io/p/leetcode-599.-%E4%B8%A4%E4%B8%AA%E5%88%97%E8%A1%A8%E7%9A%84%E6%9C%80%E5%B0%8F%E7%B4%A2%E5%BC%95%E6%80%BB%E5%92%8C/</link>
+        <pubDate>Mon, 14 Mar 2022 10:36:50 +0800</pubDate>
+        
+        <guid>https://xianlianghe0123.github.io/p/leetcode-599.-%E4%B8%A4%E4%B8%AA%E5%88%97%E8%A1%A8%E7%9A%84%E6%9C%80%E5%B0%8F%E7%B4%A2%E5%BC%95%E6%80%BB%E5%92%8C/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;链接：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists/&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;难度：&lt;/strong&gt; &lt;font color=&#34;green&#34;&gt;简单&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;假设 Andy 和 Doris 想在晚餐时选择一家餐厅，并且他们都有一个表示最喜爱餐厅的列表，每个餐厅的名字用字符串表示。&lt;/p&gt;
+&lt;p&gt;你需要帮助他们用&lt;strong&gt;最少的索引和&lt;/strong&gt;找出他们&lt;strong&gt;共同喜爱的餐厅&lt;/strong&gt;。 如果答案不止一个，则输出所有答案并且不考虑顺序。 你可以假设答案总是存在。&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例 1：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; list1 = [&amp;ldquo;Shogun&amp;rdquo;, &amp;ldquo;Tapioca Express&amp;rdquo;, &amp;ldquo;Burger King&amp;rdquo;, &amp;ldquo;KFC&amp;rdquo;]，list2 = [&amp;ldquo;Piatti&amp;rdquo;, &amp;ldquo;The Grill at Torrey Pines&amp;rdquo;, &amp;ldquo;Hungry Hunter Steakhouse&amp;rdquo;, &amp;ldquo;Shogun&amp;rdquo;]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [&amp;ldquo;Shogun&amp;rdquo;]&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 他们唯一共同喜爱的餐厅是“Shogun”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例 2：&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt; list1 = [&amp;ldquo;Shogun&amp;rdquo;, &amp;ldquo;Tapioca Express&amp;rdquo;, &amp;ldquo;Burger King&amp;rdquo;, &amp;ldquo;KFC&amp;rdquo;]，list2 = [&amp;ldquo;KFC&amp;rdquo;, &amp;ldquo;Shogun&amp;rdquo;, &amp;ldquo;Burger King&amp;rdquo;]&lt;br&gt;
+&lt;strong&gt;输出：&lt;/strong&gt; [&amp;ldquo;Shogun&amp;rdquo;]&lt;br&gt;
+&lt;strong&gt;解释：&lt;/strong&gt; 他们共同喜爱且具有最小索引和的餐厅是“Shogun”，它有最小的索引和1(0+1)。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;注意&#34;&gt;注意：&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= list1.length, list2.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= list1[i].length, list2[i].length &amp;lt;= 30&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list1[i]&lt;/code&gt; 和 &lt;code&gt;list2[i]&lt;/code&gt; 由空格 &lt;code&gt;&#39; &#39;&lt;/code&gt; 和英文字母组成。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list1&lt;/code&gt; 的所有字符串都是 &lt;strong&gt;唯一&lt;/strong&gt; 的。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list2&lt;/code&gt; 中的所有字符串都是 &lt;strong&gt;唯一&lt;/strong&gt; 的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
+&lt;h4 id=&#34;暴力求解&#34;&gt;暴力求解&lt;/h4&gt;
+&lt;p&gt;两层循环暴力寻找两个人都喜爱的餐厅，然后找出所有下标和最小的餐厅。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;findRestaurant&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;list1&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;list2&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;MaxInt&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;l1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list1&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;l2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list2&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;l1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;l2&lt;/span&gt; {
+				&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;l1&lt;/span&gt;}
+				} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt; {
+					&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;l1&lt;/span&gt;)
+				}
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N_1N_2), N_1 = \sum{len(list1[i])}, N_2 = \sum{len(list2[i])} $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(1) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;哈希&#34;&gt;哈希&lt;/h4&gt;
+&lt;p&gt;使用哈希表记录Andy喜爱餐厅的下标，然后遍历Doris的餐厅，寻找相同并且下标和最小的值。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;findRestaurant&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;list1&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;list2&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;idx&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;[&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list1&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;idx&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt;] = &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;
+	}
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;MaxInt&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; make([]&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list2&lt;/span&gt; {
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;idx&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt;]; &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;idx&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;idx&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt;}
+			} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;idx&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; {
+				&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;l&lt;/span&gt;)
+			}
+		}
+	}
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ans&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：$ O(N_1+N_2), N_1 = \sum{len(list1[i])}, N_2 = \sum{len(list2[i])} $&lt;/li&gt;
+&lt;li&gt;空间复杂度：$ O(N_1) $&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Leetcode 393. UTF-8 编码验证</title>
         <link>https://xianlianghe0123.github.io/p/leetcode-393.-utf-8-%E7%BC%96%E7%A0%81%E9%AA%8C%E8%AF%81/</link>
         <pubDate>Sun, 13 Mar 2022 09:56:52 +0800</pubDate>
@@ -9573,7 +10126,7 @@ operations = [[2,2],[3,3]]
 &lt;li&gt;操作数目不超过 &lt;code&gt;10000&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;解题思路&#34;&gt;解题思路&lt;/h3&gt;
-&lt;h4 id=&#34;heading&#34;&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;模拟&#34;&gt;模拟&lt;/h4&gt;
 &lt;p&gt;每次的操作都是左上角的元素增加 &lt;code&gt;1&lt;/code&gt;，所有操作的交集范围即为最大整数的元素个数，每次记录 &lt;code&gt;a&lt;/code&gt; 和 &lt;code&gt;b&lt;/code&gt; 的最小值即可。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;maxCount&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ops&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
 	&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;
