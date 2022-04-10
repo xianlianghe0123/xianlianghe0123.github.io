@@ -6,7 +6,120 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 03 Apr 2022 10:30:01 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 11:12:54 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 804. 唯一摩尔斯密码词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-804.-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/</link>
+      <pubDate>Sun, 10 Apr 2022 11:12:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-804.-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/unique-morse-code-words/
+难度： 简单
+题目描述 国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串， 比如:
+ &#39;a&#39; 对应 &amp;quot;.-&amp;quot; ， &#39;b&#39; 对应 &amp;quot;-...&amp;quot; ， &#39;c&#39; 对应 &amp;quot;-.-.&amp;quot; ，以此类推。  为了方便，所有 26 个英文字母的摩尔斯密码表如下：
+[&amp;quot;.-&amp;quot;,&amp;quot;-...&amp;quot;,&amp;quot;-.-.&amp;quot;,&amp;quot;-..&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;..-.&amp;quot;,&amp;quot;--.&amp;quot;,&amp;quot;....&amp;quot;,&amp;quot;..&amp;quot;,&amp;quot;.---&amp;quot;,&amp;quot;-.-&amp;quot;,&amp;quot;.-..&amp;quot;,&amp;quot;--&amp;quot;,&amp;quot;-.&amp;quot;,&amp;quot;---&amp;quot;,&amp;quot;.--.&amp;quot;,&amp;quot;--.-&amp;quot;,&amp;quot;.-.&amp;quot;,&amp;quot;...&amp;quot;,&amp;quot;-&amp;quot;,&amp;quot;..-&amp;quot;,&amp;quot;...-&amp;quot;,&amp;quot;.--&amp;quot;,&amp;quot;-..-&amp;quot;,&amp;quot;-.--&amp;quot;,&amp;quot;--..&amp;quot;]
+给你一个字符串数组 words ，每个单词可以写成每个字母对应摩尔斯密码的组合。
+例如，&amp;quot;cab&amp;quot; 可以写成 &amp;quot;-.-..--...&amp;quot; ，(即 &amp;quot;-.-.&amp;quot; + &amp;quot;.-&amp;quot; + &amp;quot;-...&amp;quot; 字符串的结合)。我们将这样一个连接过程称作 单词翻译 。
+对 words 中所有单词进行单词翻译，返回不同 单词翻译 的数量。
+示例 1：  输入： words = [&amp;ldquo;gin&amp;rdquo;, &amp;ldquo;zen&amp;rdquo;, &amp;ldquo;gig&amp;rdquo;, &amp;ldquo;msg&amp;rdquo;]
+输出： 2
+解释：
+各单词翻译如下:
+&amp;ldquo;gin&amp;rdquo; -&amp;gt; &amp;ldquo;&amp;ndash;&amp;hellip;-.&amp;rdquo;
+&amp;ldquo;zen&amp;rdquo; -&amp;gt; &amp;ldquo;&amp;ndash;&amp;hellip;-.&amp;rdquo;
+&amp;ldquo;gig&amp;rdquo; -&amp;gt; &amp;ldquo;&amp;ndash;&amp;hellip;&amp;ndash;.&amp;rdquo;
+&amp;ldquo;msg&amp;rdquo; -&amp;gt; &amp;ldquo;&amp;ndash;&amp;hellip;&amp;ndash;.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 780. 到达终点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-780.-%E5%88%B0%E8%BE%BE%E7%BB%88%E7%82%B9/</link>
+      <pubDate>Sat, 09 Apr 2022 11:35:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-780.-%E5%88%B0%E8%BE%BE%E7%BB%88%E7%82%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reaching-points/
+难度： 简单
+题目描述 给定四个整数 sx , sy ，tx 和 ty，如果通过一系列的 转换 可以从起点 (sx, sy) 到达终点 (tx, ty)，则返回 true，否则返回 false。
+从点 (x, y) 可以 转换 到 (x, x+y) 或者 (x+y, y)。
+示例 1：  输入： sx = 1, sy = 1, tx = 3, ty = 5
+输出： true
+解释：
+可以通过以下一系列转换从起点转换到终点：
+(1, 1) -&amp;gt; (1, 2)
+(1, 2) -&amp;gt; (3, 2)
+(3, 2) -&amp;gt; (3, 5)
+ 示例 2：  输入： sx = 1, sy = 1, tx = 2, ty = 2</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 429. N 叉树的层序遍历</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-429.-n-%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Fri, 08 Apr 2022 09:27:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-429.-n-%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <description>链接： https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/
+难度： 中等
+题目描述 给定一个 N 叉树，返回其节点值的层序遍历。（即从左到右，逐层遍历）。
+树的序列化输入是用层序遍历，每组子节点都由 null 值分隔（参见示例）。
+示例 1：  输入： root = [1,null,3,2,4,null,5,6]
+输出： [[1],[3,2,4],[5,6]]
+ 示例 2：  输入： root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
+输出： [[1],[2,3,4,5],[6,7,8,9,10],[11,12,13],[14]]
+ 提示：  树的高度不会超过 1000 树的节点总数在 [0, 104] 之间  解题思路 层序遍历 使用队列记录遍历到的结点，从左往右逐层扫描。
+func levelOrder(root *Node) [][]int { if root == nil { return nil } ans := make([][]int, 0, 1) queue := list.New() queue.PushBack(root) layerCnt := 1 // 记录下一层的结点数，提前开辟空间 	for queue.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 796. 旋转字符串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-796.-%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Thu, 07 Apr 2022 09:30:04 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-796.-%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode-cn.com/problems/rotate-string/
+难度： 简单
+题目描述 给定两个字符串, s 和 goal。如果在若干次旋转操作之后，s 能变成 goal ，那么返回 true 。
+s 的 旋转操作 就是将 s 最左边的字符移动到最右边。 例如, 若 s = &#39;abcde&#39;，在旋转一次之后结果就是 &#39;bcdea&#39; 。
+示例 1：  输入： s = &amp;ldquo;abcde&amp;rdquo;, goal = &amp;ldquo;cdeab&amp;rdquo;
+输出： true
+ 示例 2：  输入： s = &amp;ldquo;abcde&amp;rdquo;, goal = &amp;ldquo;abced&amp;rdquo;
+输出： false
+ 提示：  1 &amp;lt;= s.length, goal.length &amp;lt;= 100 s 和 goal 由小写英文字母组成  解题思路 模拟 对字符串 s 进行 n 次旋转后，其结果将是从第 n 个字符开始，循环遍历到第 n-1 个字符为止，后续坐标需要对 len(s) 取模。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 762. 二进制表示中质数个计算置位</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-762.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E4%B8%AD%E8%B4%A8%E6%95%B0%E4%B8%AA%E8%AE%A1%E7%AE%97%E7%BD%AE%E4%BD%8D/</link>
+      <pubDate>Tue, 05 Apr 2022 11:27:20 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-762.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E4%B8%AD%E8%B4%A8%E6%95%B0%E4%B8%AA%E8%AE%A1%E7%AE%97%E7%BD%AE%E4%BD%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/prime-number-of-set-bits-in-binary-representation/
+难度： 简单
+题目描述 给你两个整数 left 和 right ，在闭区间 [left, right] 范围内，统计并返回 计算置位位数为质数 的整数个数。
+计算置位位数 就是二进制表示中 1 的个数。
+ 例如， 21 的二进制表示 10101 有 3 个计算置位。  示例 1：  输入： left = 6, right = 10
+输出： 4
+解释：
+6 -&amp;gt; 110 (2 个计算置位，2 是质数)
+7 -&amp;gt; 111 (3 个计算置位，3 是质数)
+9 -&amp;gt; 1001 (2 个计算置位，2 是质数)
+10-&amp;gt; 1010 (2 个计算置位，2 是质数)
+共计 4 个计算置位为质数的数字。
+ 示例 2：  输入： left = 10, right = 15</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 307. 区域和检索 - 数组可修改</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-307.-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2-%E6%95%B0%E7%BB%84%E5%8F%AF%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Mon, 04 Apr 2022 10:35:06 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-307.-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2-%E6%95%B0%E7%BB%84%E5%8F%AF%E4%BF%AE%E6%94%B9/</guid>
+      <description>链接： https://leetcode-cn.com/problems/range-sum-query-mutable/
+难度： 中等
+题目描述 给你一个数组 nums ，请你完成两类查询。
+ 其中一类查询要求 更新 数组 nums 下标对应的值 另一类查询要求返回数组 nums 中索引 left 和索引 right 之间（ 包含 ）的nums元素的 和 ，其中 left &amp;lt;= right  实现 NumArray 类：
+ NumArray(int[] nums) 用整数数组 nums 初始化对象 void update(int index, int val) 将 nums[index] 的值 更新 为 val int sumRange(int left, int right) 返回数组 nums 中索引 left 和索引 right 之间（ 包含 ）的nums元素的 和 （即，nums[left] + nums[left + 1], ..., nums[right]）  示例：  输入：</description>
+    </item>
+    
     <item>
       <title>Leetcode 744. 寻找比目标字母大的最小字母</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-744.-%E5%AF%BB%E6%89%BE%E6%AF%94%E7%9B%AE%E6%A0%87%E5%AD%97%E6%AF%8D%E5%A4%A7%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AF%8D/</link>
@@ -2059,22 +2172,16 @@ magazine 中的每个字符只能在 ransomNote 中使用一次。
       <pubDate>Wed, 24 Nov 2021 10:12:51 +0800</pubDate>
       
       <guid>https://xianlianghe0123.github.io/p/leetcode-423.-%E4%BB%8E%E8%8B%B1%E6%96%87%E4%B8%AD%E9%87%8D%E5%BB%BA%E6%95%B0%E5%AD%97/</guid>
-      <description>title: &amp;ldquo;Leetcode 421. 数组中两个数的最大异或值&amp;rdquo; date: 2021-05-16T22:31:57+08:00 链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
+      <description>链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
 难度： 中等
 题目描述 给你一个字符串 s ，其中包含字母顺序打乱的用英文单词表示的若干数字（0-9）。按 升序 返回原始的数字。
 示例 1：  输入： s = &amp;ldquo;owoztneoer&amp;rdquo;
 输出： &amp;ldquo;012&amp;rdquo;
  示例 2：  输入： s = &amp;ldquo;fviefuro&amp;rdquo;
 输出： &amp;ldquo;45&amp;rdquo;
- 提示：   1 &amp;lt;= s.length &amp;lt;= 105
-  s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一
-  s 保证是一个符合题目要求的字符串
-  zero
-  one
-  two
-  three
-  four
-  five</description>
+ 提示：  1 &amp;lt;= s.length &amp;lt;= 105 s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一 s 保证是一个符合题目要求的字符串  解题思路 哈希 使用哈希表记录每个字母出现时次数，其中 [&amp;quot;z&amp;quot;，&amp;quot;w&amp;quot;, &amp;quot;u&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;g&amp;quot;] 可以唯一的确定包含的数字 [0, 2, 4, 6, 8]，仍然使用哈希表记录每个数字出现的次数，并将数字对应的字母从哈希表中减去。
+在剩余的字母中，[&amp;quot;o&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;f&amp;quot;, &amp;quot;s&amp;quot;] 可以唯一的确定包含的数字 [1, 3, 5, 7]，最后只剩构成 9 的字符，使用 i 代表即可。
+故按照 [&amp;quot;z&amp;quot;，&amp;quot;w&amp;quot;, &amp;quot;u&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;g&amp;quot;, &amp;quot;o&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;f&amp;quot;, &amp;quot;s&amp;quot;, &amp;quot;i&amp;quot;] 的顺序，确定数字 [0, 2, 4, 6, 8, 1, 3, 5, 7, 9] 的数量，每次将确定数字对应的字母删除掉。</description>
     </item>
     
     <item>
@@ -6139,7 +6246,7 @@ r 行 c 列的棋盘，按前述方法编号，棋盘格中可能存在 “蛇�
 锁的初始数字为 &#39;0000&#39; ，一个代表四个拨轮的数字的字符串。
 列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
 字符串 target 代表可以解锁的数字，你需要给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
-示例1：  输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
+示例 1：  输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
 输出： 6
 解释：
 可能的移动序列为 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;1000&amp;rdquo; -&amp;gt; &amp;ldquo;1100&amp;rdquo; -&amp;gt; &amp;ldquo;1200&amp;rdquo; -&amp;gt; &amp;ldquo;1201&amp;rdquo; -&amp;gt; &amp;ldquo;1202&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo;。

@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html lang="cn-zh">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='title: &amp;ldquo;Leetcode 421. 数组中两个数的最大异或值&amp;rdquo; date: 2021-05-16T22:31:57&#43;08:00 链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
 难度： 中等
 题目描述 给你一个字符串 s ，其中包含字母顺序打乱的用英文单词表示的若干数字（0-9）。按 升序 返回原始的数字。
 示例 1：  输入： s = &amp;ldquo;owoztneoer&amp;rdquo;
 输出： &amp;ldquo;012&amp;rdquo;
  示例 2：  输入： s = &amp;ldquo;fviefuro&amp;rdquo;
 输出： &amp;ldquo;45&amp;rdquo;
- 提示：   1 &amp;lt;= s.length &amp;lt;= 105
-  s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一
-  s 保证是一个符合题目要求的字符串
-  zero
-  one
-  two
-  three
-  four
-  five'><title>Leetcode 423. 从英文中重建数字</title>
+ 提示：  1 &amp;lt;= s.length &amp;lt;= 105 s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一 s 保证是一个符合题目要求的字符串  解题思路 哈希 使用哈希表记录每个字母出现时次数，其中 [&amp;quot;z&amp;quot;，&amp;quot;w&amp;quot;, &amp;quot;u&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;g&amp;quot;] 可以唯一的确定包含的数字 [0, 2, 4, 6, 8]，仍然使用哈希表记录每个数字出现的次数，并将数字对应的字母从哈希表中减去。
+在剩余的字母中，[&amp;quot;o&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;f&amp;quot;, &amp;quot;s&amp;quot;] 可以唯一的确定包含的数字 [1, 3, 5, 7]，最后只剩构成 9 的字符，使用 i 代表即可。
+故按照 [&amp;quot;z&amp;quot;，&amp;quot;w&amp;quot;, &amp;quot;u&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;g&amp;quot;, &amp;quot;o&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;f&amp;quot;, &amp;quot;s&amp;quot;, &amp;quot;i&amp;quot;] 的顺序，确定数字 [0, 2, 4, 6, 8, 1, 3, 5, 7, 9] 的数量，每次将确定数字对应的字母删除掉。'><title>Leetcode 423. 从英文中重建数字</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-423.-%E4%BB%8E%E8%8B%B1%E6%96%87%E4%B8%AD%E9%87%8D%E5%BB%BA%E6%95%B0%E5%AD%97/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 423. 从英文中重建数字'>
-<meta property='og:description' content='title: &amp;ldquo;Leetcode 421. 数组中两个数的最大异或值&amp;rdquo; date: 2021-05-16T22:31:57&#43;08:00 链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
 难度： 中等
 题目描述 给你一个字符串 s ，其中包含字母顺序打乱的用英文单词表示的若干数字（0-9）。按 升序 返回原始的数字。
 示例 1：  输入： s = &amp;ldquo;owoztneoer&amp;rdquo;
 输出： &amp;ldquo;012&amp;rdquo;
  示例 2：  输入： s = &amp;ldquo;fviefuro&amp;rdquo;
 输出： &amp;ldquo;45&amp;rdquo;
- 提示：   1 &amp;lt;= s.length &amp;lt;= 105
-  s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一
-  s 保证是一个符合题目要求的字符串
-  zero
-  one
-  two
-  three
-  four
-  five'>
+ 提示：  1 &amp;lt;= s.length &amp;lt;= 105 s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一 s 保证是一个符合题目要求的字符串  解题思路 哈希 使用哈希表记录每个字母出现时次数，其中 [&amp;quot;z&amp;quot;，&amp;quot;w&amp;quot;, &amp;quot;u&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;g&amp;quot;] 可以唯一的确定包含的数字 [0, 2, 4, 6, 8]，仍然使用哈希表记录每个数字出现的次数，并将数字对应的字母从哈希表中减去。
+在剩余的字母中，[&amp;quot;o&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;f&amp;quot;, &amp;quot;s&amp;quot;] 可以唯一的确定包含的数字 [1, 3, 5, 7]，最后只剩构成 9 的字符，使用 i 代表即可。
+故按照 [&amp;quot;z&amp;quot;，&amp;quot;w&amp;quot;, &amp;quot;u&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;g&amp;quot;, &amp;quot;o&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;f&amp;quot;, &amp;quot;s&amp;quot;, &amp;quot;i&amp;quot;] 的顺序，确定数字 [0, 2, 4, 6, 8, 1, 3, 5, 7, 9] 的数量，每次将确定数字对应的字母删除掉。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-423.-%E4%BB%8E%E8%8B%B1%E6%96%87%E4%B8%AD%E9%87%8D%E5%BB%BA%E6%95%B0%E5%AD%97/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-11-24T10:12:51&#43;08:00'/><meta property='article:modified_time' content='2021-11-24T10:12:51&#43;08:00'/>
 <meta name="twitter:title" content="Leetcode 423. 从英文中重建数字">
-<meta name="twitter:description" content="title: &amp;ldquo;Leetcode 421. 数组中两个数的最大异或值&amp;rdquo; date: 2021-05-16T22:31:57&#43;08:00 链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
 难度： 中等
 题目描述 给你一个字符串 s ，其中包含字母顺序打乱的用英文单词表示的若干数字（0-9）。按 升序 返回原始的数字。
 示例 1：  输入： s = &amp;ldquo;owoztneoer&amp;rdquo;
 输出： &amp;ldquo;012&amp;rdquo;
  示例 2：  输入： s = &amp;ldquo;fviefuro&amp;rdquo;
 输出： &amp;ldquo;45&amp;rdquo;
- 提示：   1 &amp;lt;= s.length &amp;lt;= 105
-  s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一
-  s 保证是一个符合题目要求的字符串
-  zero
-  one
-  two
-  three
-  four
-  five">
+ 提示：  1 &amp;lt;= s.length &amp;lt;= 105 s[i] 为 [&amp;quot;e&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;f&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;h&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;s&amp;quot;,&amp;quot;r&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;t&amp;quot;,&amp;quot;w&amp;quot;,&amp;quot;v&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;]这些字符之一 s 保证是一个符合题目要求的字符串  解题思路 哈希 使用哈希表记录每个字母出现时次数，其中 [&amp;quot;z&amp;quot;，&amp;quot;w&amp;quot;, &amp;quot;u&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;g&amp;quot;] 可以唯一的确定包含的数字 [0, 2, 4, 6, 8]，仍然使用哈希表记录每个数字出现的次数，并将数字对应的字母从哈希表中减去。
+在剩余的字母中，[&amp;quot;o&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;f&amp;quot;, &amp;quot;s&amp;quot;] 可以唯一的确定包含的数字 [1, 3, 5, 7]，最后只剩构成 9 的字符，使用 i 代表即可。
+故按照 [&amp;quot;z&amp;quot;，&amp;quot;w&amp;quot;, &amp;quot;u&amp;quot;, &amp;quot;x&amp;quot;, &amp;quot;g&amp;quot;, &amp;quot;o&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;f&amp;quot;, &amp;quot;s&amp;quot;, &amp;quot;i&amp;quot;] 的顺序，确定数字 [0, 2, 4, 6, 8, 1, 3, 5, 7, 9] 的数量，每次将确定数字对应的字母删除掉。">
     </head>
     <body class="
     article-page 
@@ -250,10 +232,7 @@
 </header>
 
     <section class="article-content">
-    <hr>
-<h2 id="date-2021-05-16t2231570800">title: &ldquo;Leetcode 421. 数组中两个数的最大异或值&rdquo;
-date: 2021-05-16T22:31:57+08:00</h2>
-<p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/"  target="_blank" rel="noopener"
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
 <h3 id="题目描述">题目描述</h3>
@@ -270,45 +249,9 @@ date: 2021-05-16T22:31:57+08:00</h2>
 </blockquote>
 <h5 id="提示">提示：</h5>
 <ul>
-<li>
-<p><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></p>
-</li>
-<li>
-<p><code>s[i]</code> 为 <code>[&quot;e&quot;,&quot;g&quot;,&quot;f&quot;,&quot;i&quot;,&quot;h&quot;,&quot;o&quot;,&quot;n&quot;,&quot;s&quot;,&quot;r&quot;,&quot;u&quot;,&quot;t&quot;,&quot;w&quot;,&quot;v&quot;,&quot;x&quot;,&quot;z&quot;]</code>这些字符之一</p>
-</li>
-<li>
-<p><code>s</code> 保证是一个符合题目要求的字符串</p>
-</li>
-<li>
-<p><code>z</code>ero</p>
-</li>
-<li>
-<p>one</p>
-</li>
-<li>
-<p>t<code>w</code>o</p>
-</li>
-<li>
-<p>three</p>
-</li>
-<li>
-<p>fo<code>u</code>r</p>
-</li>
-<li>
-<p>five</p>
-</li>
-<li>
-<p>si<code>x</code></p>
-</li>
-<li>
-<p>seven</p>
-</li>
-<li>
-<p>ei<code>g</code>ht</p>
-</li>
-<li>
-<p>nine</p>
-</li>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s[i]</code> 为 <code>[&quot;e&quot;,&quot;g&quot;,&quot;f&quot;,&quot;i&quot;,&quot;h&quot;,&quot;o&quot;,&quot;n&quot;,&quot;s&quot;,&quot;r&quot;,&quot;u&quot;,&quot;t&quot;,&quot;w&quot;,&quot;v&quot;,&quot;x&quot;,&quot;z&quot;]</code>这些字符之一</li>
+<li><code>s</code> 保证是一个符合题目要求的字符串</li>
 </ul>
 <h3 id="解题思路">解题思路</h3>
 <h4 id="哈希">哈希</h4>
