@@ -6,7 +6,29 @@
     <description>Recent content in stack on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 26 Mar 2022 10:48:13 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Apr 2022 09:32:19 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 385. 迷你语法分析器</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-385.-%E8%BF%B7%E4%BD%A0%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8/</link>
+      <pubDate>Fri, 15 Apr 2022 09:32:19 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-385.-%E8%BF%B7%E4%BD%A0%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/mini-parser/
+难度： 中等
+题目描述 给定一个字符串 s 表示一个整数嵌套列表，实现一个解析它的语法分析器并返回解析的结果 NestedInteger 。
+列表中的每个元素只可能是整数或整数嵌套列表
+示例 1：  输入： s = &amp;ldquo;324&amp;rdquo;,
+输出： 324
+解释： 你应该返回一个 NestedInteger 对象，其中只包含整数值 324。
+ 示例 2：  输入： s = &amp;ldquo;[123,[456,[789]]]&amp;rdquo;,
+输出： [123,[456,[789]]]
+解释： 返回一个 NestedInteger 对象包含一个有两个元素的嵌套列表：
+ 一个 integer 包含值 123 一个包含两个元素的嵌套列表：
+i. 一个 integer 包含值 456
+ii. 一个包含一个元素的嵌套列表
+a. 一个 integer 包含值 789   提示：  1 &amp;lt;= s.length &amp;lt;= 5 * 104 s 由数字、方括号 &amp;quot;[]&amp;quot;、负号 &#39;-&#39; 、逗号 &#39;,&#39; 组成 用例保证 s 是可解析的 NestedInteger 输入中的所有值的范围是 [-106, 106]  解题思路 深度优先搜索 嵌套列表只有两种情况，要么是一个值，要么是嵌套列表，在字符串中的体现是以 &#39;[&#39; 开头进行区分。</description>
+    </item>
+    
     <item>
       <title>Leetcode 682. 棒球比赛</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-682.-%E6%A3%92%E7%90%83%E6%AF%94%E8%B5%9B/</link>

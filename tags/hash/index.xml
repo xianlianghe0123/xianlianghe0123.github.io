@@ -6,7 +6,47 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 10 Apr 2022 11:12:54 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Apr 2022 09:08:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 819. 最常见的单词</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-819.-%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%95%E8%AF%8D/</link>
+      <pubDate>Sun, 17 Apr 2022 09:08:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-819.-%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%95%E8%AF%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/most-common-word/
+难度： 简单
+题目描述 给定一个段落 (paragraph) 和一个禁用单词列表 (banned)。返回出现次数最多，同时不在禁用列表中的单词。
+题目保证至少有一个词不在禁用列表中，而且答案唯一。
+禁用列表中的单词用小写字母表示，不含标点符号。段落中的单词不区分大小写。答案都是小写字母。
+示例：  输入：
+paragraph = &amp;ldquo;Bob hit a ball, the hit BALL flew far after it was hit.&amp;rdquo;
+banned = [&amp;ldquo;hit&amp;rdquo;]
+输出： &amp;ldquo;ball&amp;rdquo;
+解释：
+&amp;ldquo;hit&amp;rdquo; 出现了3次，但它是一个禁用的单词。
+&amp;ldquo;ball&amp;rdquo; 出现了2次 (同时没有其他单词出现2次)，所以它是段落里出现次数最多的，且不在禁用列表中的单词。
+注意，所有这些单词在段落里不区分大小写，标点符号需要忽略（即使是紧挨着单词也忽略， 比如 &amp;ldquo;ball,&amp;quot;），
+&amp;ldquo;hit&amp;quot;不是最终的答案，虽然它出现次数更多，但它在禁用单词列表中。
+ 提示：  1 &amp;lt;= 段落长度 &amp;lt;= 1000 0 &amp;lt;= 禁用单词个数 &amp;lt;= 100 1 &amp;lt;= 禁用单词长度 &amp;lt;= 10 答案是唯一的, 且都是小写字母 (即使在 paragraph 里是大写的，即使是一些特定的名词，答案都是小写的。) paragraph 只包含字母、空格和下列标点符号!?&#39;,;. 不存在没有连字符或者带有连字符的单词。 单词里只包含字母，不会出现省略号或者其他标点符号。  解题思路 哈希 以非字母符字符为分隔符，识别出每个单词并转换为小写，使用哈希表统计每个单词出现的次数，在此过程中找寻出现次数最多的单词。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 380. O(1) 时间插入、删除和获取随机元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-380.-o1-%E6%97%B6%E9%97%B4%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E5%92%8C%E8%8E%B7%E5%8F%96%E9%9A%8F%E6%9C%BA%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Wed, 13 Apr 2022 09:26:31 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-380.-o1-%E6%97%B6%E9%97%B4%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E5%92%8C%E8%8E%B7%E5%8F%96%E9%9A%8F%E6%9C%BA%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/insert-delete-getrandom-o1/
+难度： 中等
+题目描述 实现 RandomizedSet 类：
+ RandomizedSet() 初始化 RandomizedSet 对象 bool insert(int val) 当元素 val 不存在时，向集合中插入该项，并返回 true ；否则，返回 false 。 bool remove(int val) 当元素 val 存在时，从集合中移除该项，并返回 true ；否则，返回 false 。 int getRandom() 随机返回现有集合中的一项（测试用例保证调用此方法时集合中至少存在一个元素）。每个元素应该有 相同的概率 被返回。  你必须实现类的所有函数，并满足每个函数的 平均 时间复杂度为 $O(1)$ 。
+示例：  输入
+[&amp;ldquo;RandomizedSet&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;remove&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;remove&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;]
+[[], [1], [2], [2], [], [1], [2], []]
+输出
+[null, true, false, true, 2, true, false, 2]</description>
+    </item>
+    
     <item>
       <title>Leetcode 804. 唯一摩尔斯密码词</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-804.-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/</link>

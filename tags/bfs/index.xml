@@ -243,5 +243,21 @@ func levelOrder(root *TreeNode) [][]int { ans := make([][]int, 0) if root == nil
 func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { node := q.Front().Value.(*TreeNode) q.Remove(q.Front()) ans = append(ans, node.Val) if node.Left !</description>
     </item>
     
+    <item>
+      <title>Leetcode 815. 公交路线</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-815.-%E5%85%AC%E4%BA%A4%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Mon, 28 Jun 2021 10:54:56 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-815.-%E5%85%AC%E4%BA%A4%E8%B7%AF%E7%BA%BF/</guid>
+      <description>链接： https://leetcode-cn.com/problems/bus-routes/
+难度： 困难
+题目描述 给你一个数组 routes ，表示一系列公交线路，其中每个 routes[i] 表示一条公交线路，第 i 辆公交车将会在上面循环行驶。
+ 例如，路线 routes[0] = [1, 5, 7] 表示第 0 辆公交车会一直按序列 1 -&amp;gt; 5 -&amp;gt; 7 -&amp;gt; 1 -&amp;gt; 5 -&amp;gt; 7 -&amp;gt; 1 -&amp;gt; ... 这样的车站路线行驶。  现在从 source 车站出发（初始时不在公交车上），要前往 target 车站。 期间仅可乘坐公交车。
+求出 最少乘坐的公交车数量 。如果不可能到达终点车站，返回 -1 。
+示例 1：  输入： routes = [[1,2,7],[3,6,7]], source = 1, target = 6
+输出： 2
+解释： 最优策略是先乘坐第一辆公交车到达车站 7 , 然后换乘第二辆公交车到车站 6 。</description>
+    </item>
+    
   </channel>
 </rss>
