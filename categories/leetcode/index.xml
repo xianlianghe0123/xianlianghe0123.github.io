@@ -6,7 +6,117 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 17 Apr 2022 09:08:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 09:42:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 868. 二进制间距</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-868.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%97%B4%E8%B7%9D/</link>
+      <pubDate>Sun, 24 Apr 2022 09:42:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-868.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%97%B4%E8%B7%9D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/
+难度： 中等
+题目描述 给定一个正整数 n，找到并返回 n 的二进制表示中两个 相邻 1 之间的 最长距离 。如果不存在两个相邻的 1，返回 0 。
+如果只有 0 将两个 1 分隔开（可能不存在 0 ），则认为这两个 1 彼此 相邻 。两个 1 之间的距离是它们的二进制表示中位置的绝对差。例如，&amp;quot;1001&amp;quot; 中的两个 1 的距离为 3 。
+示例 1：  输入： n = 22
+输出： 2
+解释： 22 的二进制是 &amp;ldquo;10110&amp;rdquo; 。
+在 22 的二进制表示中，有三个 1，组成两对相邻的 1 。
+第一对相邻的 1 中，两个 1 之间的距离为 2 。
+第二对相邻的 1 中，两个 1 之间的距离为 1 。
+答案取两个距离之中最大的，也就是 2 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 396. 旋转函数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-396.-%E6%97%8B%E8%BD%AC%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 22 Apr 2022 09:32:20 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-396.-%E6%97%8B%E8%BD%AC%E5%87%BD%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/rotate-function/
+难度： 中等
+题目描述 给定一个长度为 n 的整数数组 nums 。
+假设 arrk 是数组 nums 顺时针旋转 k 个位置后的数组，我们定义 nums 的 旋转函数 F 为：
+ F(k) = 0 * arrk[0] + 1 * arrk[1] + &amp;hellip; + (n - 1) * arrk[n - 1]  返回 F(0), F(1), ..., F(n-1) 中的最大值 。
+生成的测试用例让答案符合 32 位 整数。
+示例 1：  输入： nums = [4,3,2,6]
+输出： 26
+解释：
+F(0) = (0 * 4) + (1 * 3) + (2 * 2) + (3 * 6) = 0 + 3 + 4 + 18 = 25</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 824. 山羊拉丁文</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-824.-%E5%B1%B1%E7%BE%8A%E6%8B%89%E4%B8%81%E6%96%87/</link>
+      <pubDate>Thu, 21 Apr 2022 10:21:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-824.-%E5%B1%B1%E7%BE%8A%E6%8B%89%E4%B8%81%E6%96%87/</guid>
+      <description>链接： https://leetcode-cn.com/problems/goat-latin/
+难度： 简单
+题目描述 给你一个由若干单词组成的句子 sentence ，单词间由空格分隔。每个单词仅由大写和小写英文字母组成。
+请你将句子转换为 “山羊拉丁文（Goat Latin）”（一种类似于 猪拉丁文 - Pig Latin 的虚构语言）。山羊拉丁文的规则如下：
+ 如果单词以元音开头（&#39;a&#39;, &#39;e&#39;, &#39;i&#39;, &#39;o&#39;, &#39;u&#39;），在单词后添加 &amp;quot;ma&amp;quot;。  例如，单词 &amp;quot;apple&amp;quot; 变为 &amp;quot;applema&amp;quot; 。   如果单词以辅音字母开头（即，非元音字母），移除第一个字符并将它放到末尾，之后再添加&amp;quot;ma&amp;quot;。  例如，单词 &amp;quot;goat&amp;quot; 变为 &amp;quot;oatgma&amp;quot; 。   根据单词在句子中的索引，在单词最后添加与索引相同数量的字母&#39;a&#39;，索引从 1 开始。  例如，在第一个单词后添加 &amp;quot;a&amp;quot; ，在第二个单词后添加 &amp;quot;aa&amp;quot; ，以此类推。    返回将 sentence 转换为山羊拉丁文后的句子。
+示例 1：  输入： sentence = &amp;ldquo;I speak Goat Latin&amp;rdquo;
+输出： &amp;ldquo;Imaa peaksmaaa oatGmaaaa atinLmaaaaa&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 388. 文件的最长绝对路径</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-388.-%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E9%95%BF%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Wed, 20 Apr 2022 09:34:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-388.-%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E9%95%BF%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/lexicographical-numbers/
+难度： 中等
+题目描述 假设有一个同时存储文件和目录的文件系统。下图展示了文件系统的一个示例：
+这里将 dir 作为根目录中的唯一目录。dir 包含两个子目录 subdir1 和 subdir2 。subdir1 包含文件 file1.ext 和子目录 subsubdir1；subdir2 包含子目录 subsubdir2，该子目录下包含文件 file2.ext 。
+在文本格式中，如下所示(⟶表示制表符)：
+ dir
+⟶ subdir1
+⟶ ⟶ file1.ext
+⟶ ⟶ subsubdir1
+⟶ subdir2
+⟶ ⟶ subsubdir2
+⟶ ⟶ ⟶ file2.ext
+ 如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
+文件系统中的每个文件和文件夹都有一个唯一的 绝对路径 ，即必须打开才能到达文件/目录所在位置的目录顺序，所有路径用 &#39;/&#39; 连接。上面例子中，指向 file2.ext 的 绝对路径 是 &amp;quot;dir/subdir2/subsubdir2/file2.ext&amp;quot; 。每个目录名由字母、数字和/或空格组成，每个文件名遵循 name.extension 的格式，其中 name 和 extension 由字母、数字和/或空格组成。
+给定一个以上述格式表示文件系统的字符串 input ，返回文件系统中 指向 文件 的 最长绝对路径 的长度 。 如果系统中没有文件，返回 0。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 821. 字符的最短距离</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-821.-%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/</link>
+      <pubDate>Tue, 19 Apr 2022 10:08:56 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-821.-%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shortest-distance-to-a-character/
+难度： 简单
+题目描述 给你一个字符串 s 和一个字符 c ，且 c 是 s 中出现过的字符。
+返回一个整数数组 answer ，其中 answer.length == s.length 且 answer[i] 是 s 中从下标 i 到离它 最近 的字符 c 的 距离 。
+两个下标 i 和 j 之间的 距离 为 abs(i - j) ，其中 abs 是绝对值函数。
+示例 1：  输入： s = &amp;ldquo;loveleetcode&amp;rdquo;, c = &amp;ldquo;e&amp;rdquo;
+输出： [3,2,1,0,1,0,0,1,2,2,1,0]
+解释： 字符 &amp;lsquo;e&amp;rsquo; 出现在下标 3、5、6 和 11 处（下标从 0 开始计数）。
+距下标 0 最近的 &amp;lsquo;e&amp;rsquo; 出现在下标 3 ，所以距离为 abs(0 - 3) = 3 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 386. 字典序排数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-386.-%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E6%95%B0/</link>
+      <pubDate>Mon, 18 Apr 2022 09:33:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-386.-%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/lexicographical-numbers/
+难度： 中等
+题目描述 给你一个整数 n ，按字典序返回范围 [1, n] 内所有整数。
+你必须设计一个时间复杂度为 $ O(n) $ 且使用 $ O(1) $ 额外空间的算法。
+示例 1：  输入： n = 13
+输出： [1,10,11,12,13,2,3,4,5,6,7,8,9]
+ 示例 2：  输入： n = 2
+输出： [1,2]
+ 提示：  1 &amp;lt;= n &amp;lt;= 5 * 104  解题思路 自定义排序 生成 [1, n] 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。
+func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt;= n; i++ { nums = append(nums, i) } sort.</description>
+    </item>
+    
     <item>
       <title>Leetcode 819. 最常见的单词</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-819.-%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%95%E8%AF%8D/</link>

@@ -6,7 +6,24 @@
     <description>Recent content in slide window on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 29 Mar 2022 11:40:26 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/slide-window/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Apr 2022 10:08:56 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/slide-window/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 821. 字符的最短距离</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-821.-%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/</link>
+      <pubDate>Tue, 19 Apr 2022 10:08:56 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-821.-%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/</guid>
+      <description>链接： https://leetcode-cn.com/problems/shortest-distance-to-a-character/
+难度： 简单
+题目描述 给你一个字符串 s 和一个字符 c ，且 c 是 s 中出现过的字符。
+返回一个整数数组 answer ，其中 answer.length == s.length 且 answer[i] 是 s 中从下标 i 到离它 最近 的字符 c 的 距离 。
+两个下标 i 和 j 之间的 距离 为 abs(i - j) ，其中 abs 是绝对值函数。
+示例 1：  输入： s = &amp;ldquo;loveleetcode&amp;rdquo;, c = &amp;ldquo;e&amp;rdquo;
+输出： [3,2,1,0,1,0,0,1,2,2,1,0]
+解释： 字符 &amp;lsquo;e&amp;rsquo; 出现在下标 3、5、6 和 11 处（下标从 0 开始计数）。
+距下标 0 最近的 &amp;lsquo;e&amp;rsquo; 出现在下标 3 ，所以距离为 abs(0 - 3) = 3 。</description>
+    </item>
+    
     <item>
       <title>Leetcode 2024. 考试的最大困扰度</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-2024.-%E8%80%83%E8%AF%95%E7%9A%84%E6%9C%80%E5%A4%A7%E5%9B%B0%E6%89%B0%E5%BA%A6/</link>

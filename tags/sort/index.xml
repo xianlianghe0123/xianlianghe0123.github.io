@@ -6,7 +6,25 @@
     <description>Recent content in sort on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 01 Apr 2022 10:21:31 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2022 09:33:32 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 386. 字典序排数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-386.-%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E6%95%B0/</link>
+      <pubDate>Mon, 18 Apr 2022 09:33:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-386.-%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/lexicographical-numbers/
+难度： 中等
+题目描述 给你一个整数 n ，按字典序返回范围 [1, n] 内所有整数。
+你必须设计一个时间复杂度为 $ O(n) $ 且使用 $ O(1) $ 额外空间的算法。
+示例 1：  输入： n = 13
+输出： [1,10,11,12,13,2,3,4,5,6,7,8,9]
+ 示例 2：  输入： n = 2
+输出： [1,2]
+ 提示：  1 &amp;lt;= n &amp;lt;= 5 * 104  解题思路 自定义排序 生成 [1, n] 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。
+func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt;= n; i++ { nums = append(nums, i) } sort.</description>
+    </item>
+    
     <item>
       <title>Leetcode 954. 二倍数对数组</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-954.-%E4%BA%8C%E5%80%8D%E6%95%B0%E5%AF%B9%E6%95%B0%E7%BB%84/</link>
