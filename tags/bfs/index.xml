@@ -6,7 +6,25 @@
     <description>Recent content in bfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 08 Apr 2022 09:27:41 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Apr 2022 10:34:55 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 417. 太平洋大西洋水流问题</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-417.-%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 27 Apr 2022 10:34:55 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-417.-%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/</guid>
+      <description>链接： https://leetcode-cn.com/problems/pacific-atlantic-water-flow/
+难度： 中等
+题目描述 有一个 m × n 的矩形岛屿，与 太平洋 和 大西洋 相邻。 “太平洋” 处于大陆的左边界和上边界，而 “大西洋” 处于大陆的右边界和下边界。
+这个岛被分割成一个由若干方形单元格组成的网格。给定一个 m x n 的整数矩阵 heights ， heights[r][c] 表示坐标 (r, c) 上单元格 高于海平面的高度 。
+岛上雨水较多，如果相邻单元格的高度 小于或等于 当前单元格的高度，雨水可以直接向北、南、东、西流向相邻单元格。水可以从海洋附近的任何单元格流入海洋。
+返回 网格坐标 result 的 2D列表 ，其中 result[i] = [ri, ci] 表示雨水可以从单元格 (ri, ci) 流向 太平洋和大西洋 。
+示例 1：  输入： heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+输出： [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
+ 示例 2：  输入： heights = [[2,1],[1,2]]
+输出： [[0,0],[0,1],[1,0],[1,1]]</description>
+    </item>
+    
     <item>
       <title>Leetcode 429. N 叉树的层序遍历</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-429.-n-%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
