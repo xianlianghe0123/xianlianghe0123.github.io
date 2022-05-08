@@ -6,7 +6,25 @@
     <description>Recent content in slide window on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 19 Apr 2022 10:08:56 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/slide-window/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 May 2022 10:25:13 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/slide-window/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 713. 乘积小于 K 的子数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-713.-%E4%B9%98%E7%A7%AF%E5%B0%8F%E4%BA%8E-k-%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 05 May 2022 10:25:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-713.-%E4%B9%98%E7%A7%AF%E5%B0%8F%E4%BA%8E-k-%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/subarray-product-less-than-k/
+难度： 中等
+题目描述 给你一个整数数组 nums 和一个整数 k ，请你返回子数组内所有元素的乘积严格小于 k 的连续子数组的数目。
+示例 1：  输入： nums = [10,5,2,6], k = 100
+输出： 8
+解释： 8 个乘积小于 100 的子数组分别为：[10]、[5]、[2],、[6]、[10,5]、[5,2]、[2,6]、[5,2,6]。
+需要注意的是 [10,5,2] 并不是乘积小于 100 的子数组。
+ 示例 2：  输入： nums = [1,2,3], k = 0
+输出： 0
+ 提示：  1 &amp;lt;= nums.length &amp;lt;= 3 * 104 1 &amp;lt;= nums[i] &amp;lt;= 1000 0 &amp;lt;= k &amp;lt;= 106  解题思路 枚举 枚举每个子数组的起始点，向后遍历并不断累乘。</description>
+    </item>
+    
     <item>
       <title>Leetcode 821. 字符的最短距离</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-821.-%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/</link>

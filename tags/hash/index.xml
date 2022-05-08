@@ -6,7 +6,44 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 25 Apr 2022 09:42:51 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 May 2022 10:39:10 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 442. 数组中重复的数据</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-442.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Sun, 08 May 2022 10:39:10 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-442.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
+      <description>链接： https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/
+难度： 中等
+题目描述 给你一个长度为 n 的整数数组 nums ，其中 nums 的所有整数都在范围 [1, n] 内，且每个整数出现 一次 或 两次 。请你找出所有出现 两次 的整数，并以数组形式返回。
+你必须设计并实现一个时间复杂度为 $ O(n) $ 且仅使用常量额外空间的算法解决此问题。
+示例 1：  输入： nums = [4,3,2,7,8,2,3,1]
+输出： [2,3]
+ 示例 2：  输入： nums = [1,1,2]
+输出： [1]
+ 示例 3：  输入： nums = [1]
+输出： []
+ 提示：  n == nums.length 1 &amp;lt;= n &amp;lt;= 105 1 &amp;lt;= nums[i] &amp;lt;= n nums 中的每个元素出现 一次 或 两次  解题思路 哈希 要确定 $ O(1) $ 的判断某个元素是否出现，需要使用到哈希表。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 937. 重新排列日志文件</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-937.-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 03 May 2022 11:48:49 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-937.-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/</guid>
+      <description>链接： https://leetcode-cn.com/problems/reorder-data-in-log-files/
+难度： 简单
+题目描述 给你一个日志数组 logs。每条日志都是以空格分隔的字串，其第一个字为字母与数字混合的 标识符 。
+有两种不同类型的日志：
+ 字母日志：除标识符之外，所有字均由小写字母组成 数字日志：除标识符之外，所有字均由数字组成  请按下述规则将日志重新排序：
+ 所有 字母日志 都排在 数字日志 之前。 字母日志 在内容不同时，忽略标识符后，按内容字母顺序排序；在内容相同时，按标识符排序。 数字日志 应该保留原来的相对顺序。  返回日志的最终顺序。
+示例 1：  输入： logs = [&amp;ldquo;dig1 8 1 5 1&amp;rdquo;,&amp;ldquo;let1 art can&amp;rdquo;,&amp;ldquo;dig2 3 6&amp;rdquo;,&amp;ldquo;let2 own kit dig&amp;rdquo;,&amp;ldquo;let3 art zero&amp;rdquo;]
+输出： [&amp;ldquo;let1 art can&amp;rdquo;,&amp;ldquo;let3 art zero&amp;rdquo;,&amp;ldquo;let2 own kit dig&amp;rdquo;,&amp;ldquo;dig1 8 1 5 1&amp;rdquo;,&amp;ldquo;dig2 3 6&amp;rdquo;]
+解释：
+字母日志的内容都不同，所以顺序为 &amp;ldquo;art can&amp;rdquo;, &amp;ldquo;art zero&amp;rdquo;, &amp;ldquo;own kit dig&amp;rdquo; 。</description>
+    </item>
+    
     <item>
       <title>Leetcode 398. 随机数索引</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-398.-%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%B4%A2%E5%BC%95/</link>

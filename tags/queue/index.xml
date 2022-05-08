@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>queue on 贺贤良</title>
+    <link>https://xianlianghe0123.github.io/tags/queue/</link>
+    <description>Recent content in queue on 贺贤良</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Fri, 06 May 2022 09:25:11 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/queue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 933. 最近的请求次数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-933.-%E6%9C%80%E8%BF%91%E7%9A%84%E8%AF%B7%E6%B1%82%E6%AC%A1%E6%95%B0/</link>
+      <pubDate>Fri, 06 May 2022 09:25:11 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-933.-%E6%9C%80%E8%BF%91%E7%9A%84%E8%AF%B7%E6%B1%82%E6%AC%A1%E6%95%B0/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-of-recent-calls/
+难度： 简单
+题目描述 写一个 RecentCounter 类来计算特定时间范围内最近的请求。
+请你实现 RecentCounter 类：
+ RecentCounter() 初始化计数器，请求数为 0 。 int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。  保证 每次对 ping 的调用都使用比之前更大的 t 值。
+示例：  输入：
+[&amp;ldquo;RecentCounter&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;]
+[[], [1], [100], [3001], [3002]]
+输出：
+[null, 1, 2, 3, 3]
+解释：
+RecentCounter recentCounter = new RecentCounter();
+recentCounter.ping(1); // requests = [1]，范围是 [-2999,1]，返回 1
+recentCounter.ping(100); // requests = [1, 100]，范围是 [-2900,100]，返回 2</description>
+    </item>
+    
+  </channel>
+</rss>

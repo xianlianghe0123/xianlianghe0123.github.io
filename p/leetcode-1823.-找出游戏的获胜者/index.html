@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/
+难度： 中等
+题目描述 共有 n 名小伙伴一起做游戏。小伙伴们围成一圈，按 顺时针顺序 从 1 到 n 编号。确切地说，从第 i 名小伙伴顺时针移动一位会到达第 (i&#43;1) 名小伙伴的位置，其中 1 &amp;lt;= i &amp;lt; n ，从第 n 名小伙伴顺时针移动一位会回到第 1 名小伙伴的位置。
+游戏遵循如下规则：
+ 从第 1 名小伙伴所在位置 开始 。 沿着顺时针方向数 k 名小伙伴，计数时需要 包含 起始时的那位小伙伴。逐个绕圈进行计数，一些小伙伴可能会被数过不止一次。 你数到的最后一名小伙伴需要离开圈子，并视作输掉游戏。 如果圈子中仍然有不止一名小伙伴，从刚刚输掉的小伙伴的 顺时针下一位 小伙伴 开始，回到步骤 2 继续执行。 否则，圈子中最后一名小伙伴赢得游戏。  给你参与游戏的小伙伴总数 n ，和一个整数 k ，返回游戏的获胜者。
+示例 1：  输入： n = 5, k = 2
+输出： 3
+解释： 游戏运行步骤如下：
+ 从小伙伴 1 开始。 顺时针数 2 名小伙伴，也就是小伙伴 1 和 2 。 小伙伴 2 离开圈子。下一次从小伙伴 3 开始。 顺时针数 2 名小伙伴，也就是小伙伴 3 和 4 。 小伙伴 4 离开圈子。下一次从小伙伴 5 开始。 顺时针数 2 名小伙伴，也就是小伙伴 5 和 1 。 小伙伴 1 离开圈子。下一次从小伙伴 3 开始。 顺时针数 2 名小伙伴，也就是小伙伴 3 和 5 。 小伙伴 5 离开圈子。只剩下小伙伴 3 。所以小伙伴 3 是游戏的获胜者。   示例 2：  输入： n = 6, k = 5'><title>Leetcode 1823. 找出游戏的获胜者</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1823.-%E6%89%BE%E5%87%BA%E6%B8%B8%E6%88%8F%E7%9A%84%E8%8E%B7%E8%83%9C%E8%80%85/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1823. 找出游戏的获胜者'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/
+难度： 中等
+题目描述 共有 n 名小伙伴一起做游戏。小伙伴们围成一圈，按 顺时针顺序 从 1 到 n 编号。确切地说，从第 i 名小伙伴顺时针移动一位会到达第 (i&#43;1) 名小伙伴的位置，其中 1 &amp;lt;= i &amp;lt; n ，从第 n 名小伙伴顺时针移动一位会回到第 1 名小伙伴的位置。
+游戏遵循如下规则：
+ 从第 1 名小伙伴所在位置 开始 。 沿着顺时针方向数 k 名小伙伴，计数时需要 包含 起始时的那位小伙伴。逐个绕圈进行计数，一些小伙伴可能会被数过不止一次。 你数到的最后一名小伙伴需要离开圈子，并视作输掉游戏。 如果圈子中仍然有不止一名小伙伴，从刚刚输掉的小伙伴的 顺时针下一位 小伙伴 开始，回到步骤 2 继续执行。 否则，圈子中最后一名小伙伴赢得游戏。  给你参与游戏的小伙伴总数 n ，和一个整数 k ，返回游戏的获胜者。
+示例 1：  输入： n = 5, k = 2
+输出： 3
+解释： 游戏运行步骤如下：
+ 从小伙伴 1 开始。 顺时针数 2 名小伙伴，也就是小伙伴 1 和 2 。 小伙伴 2 离开圈子。下一次从小伙伴 3 开始。 顺时针数 2 名小伙伴，也就是小伙伴 3 和 4 。 小伙伴 4 离开圈子。下一次从小伙伴 5 开始。 顺时针数 2 名小伙伴，也就是小伙伴 5 和 1 。 小伙伴 1 离开圈子。下一次从小伙伴 3 开始。 顺时针数 2 名小伙伴，也就是小伙伴 3 和 5 。 小伙伴 5 离开圈子。只剩下小伙伴 3 。所以小伙伴 3 是游戏的获胜者。   示例 2：  输入： n = 6, k = 5'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1823.-%E6%89%BE%E5%87%BA%E6%B8%B8%E6%88%8F%E7%9A%84%E8%8E%B7%E8%83%9C%E8%80%85/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-05-04T11:40:52&#43;08:00'/><meta property='article:modified_time' content='2022-05-04T11:40:52&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1823. 找出游戏的获胜者">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/
+难度： 中等
+题目描述 共有 n 名小伙伴一起做游戏。小伙伴们围成一圈，按 顺时针顺序 从 1 到 n 编号。确切地说，从第 i 名小伙伴顺时针移动一位会到达第 (i&#43;1) 名小伙伴的位置，其中 1 &amp;lt;= i &amp;lt; n ，从第 n 名小伙伴顺时针移动一位会回到第 1 名小伙伴的位置。
+游戏遵循如下规则：
+ 从第 1 名小伙伴所在位置 开始 。 沿着顺时针方向数 k 名小伙伴，计数时需要 包含 起始时的那位小伙伴。逐个绕圈进行计数，一些小伙伴可能会被数过不止一次。 你数到的最后一名小伙伴需要离开圈子，并视作输掉游戏。 如果圈子中仍然有不止一名小伙伴，从刚刚输掉的小伙伴的 顺时针下一位 小伙伴 开始，回到步骤 2 继续执行。 否则，圈子中最后一名小伙伴赢得游戏。  给你参与游戏的小伙伴总数 n ，和一个整数 k ，返回游戏的获胜者。
+示例 1：  输入： n = 5, k = 2
+输出： 3
+解释： 游戏运行步骤如下：
+ 从小伙伴 1 开始。 顺时针数 2 名小伙伴，也就是小伙伴 1 和 2 。 小伙伴 2 离开圈子。下一次从小伙伴 3 开始。 顺时针数 2 名小伙伴，也就是小伙伴 3 和 4 。 小伙伴 4 离开圈子。下一次从小伙伴 5 开始。 顺时针数 2 名小伙伴，也就是小伙伴 5 和 1 。 小伙伴 1 离开圈子。下一次从小伙伴 3 开始。 顺时针数 2 名小伙伴，也就是小伙伴 3 和 5 。 小伙伴 5 离开圈子。只剩下小伙伴 3 。所以小伙伴 3 是游戏的获胜者。   示例 2：  输入： n = 6, k = 5">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-1823.-%E6%89%BE%E5%87%BA%E6%B8%B8%E6%88%8F%E7%9A%84%E8%8E%B7%E8%83%9C%E8%80%85/">Leetcode 1823. 找出游戏的获胜者</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 04, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>共有 <code>n</code> 名小伙伴一起做游戏。小伙伴们围成一圈，按 <strong>顺时针顺序</strong> 从 <code>1</code> 到 <code>n</code> 编号。确切地说，从第 <code>i</code> 名小伙伴顺时针移动一位会到达第 <code>(i+1)</code> 名小伙伴的位置，其中 <code>1 &lt;= i &lt; n</code> ，从第 <code>n</code> 名小伙伴顺时针移动一位会回到第 <code>1</code> 名小伙伴的位置。</p>
+<p>游戏遵循如下规则：</p>
+<ol>
+<li>从第 <code>1</code> 名小伙伴所在位置 <strong>开始</strong> 。</li>
+<li>沿着顺时针方向数 <code>k</code> 名小伙伴，计数时需要 <strong>包含</strong> 起始时的那位小伙伴。逐个绕圈进行计数，一些小伙伴可能会被数过不止一次。</li>
+<li>你数到的最后一名小伙伴需要离开圈子，并视作输掉游戏。</li>
+<li>如果圈子中仍然有不止一名小伙伴，从刚刚输掉的小伙伴的 <strong>顺时针下一位</strong> 小伙伴 <strong>开始</strong>，回到步骤 <code>2</code> 继续执行。</li>
+<li>否则，圈子中最后一名小伙伴赢得游戏。</li>
+</ol>
+<p>给你参与游戏的小伙伴总数 n ，和一个整数 k ，返回游戏的获胜者。</p>
+<h4 id="示例-1">示例 1：</h4>
+<img src="/img/1823.ic234-q2-ex11.png" width="500px">
+<blockquote>
+<p><strong>输入：</strong> n = 5, k = 2<br>
+<strong>输出：</strong> 3<br>
+<strong>解释：</strong> 游戏运行步骤如下：</p>
+<ol>
+<li>从小伙伴 1 开始。</li>
+<li>顺时针数 2 名小伙伴，也就是小伙伴 1 和 2 。</li>
+<li>小伙伴 2 离开圈子。下一次从小伙伴 3 开始。</li>
+<li>顺时针数 2 名小伙伴，也就是小伙伴 3 和 4 。</li>
+<li>小伙伴 4 离开圈子。下一次从小伙伴 5 开始。</li>
+<li>顺时针数 2 名小伙伴，也就是小伙伴 5 和 1 。</li>
+<li>小伙伴 1 离开圈子。下一次从小伙伴 3 开始。</li>
+<li>顺时针数 2 名小伙伴，也就是小伙伴 3 和 5 。</li>
+<li>小伙伴 5 离开圈子。只剩下小伙伴 3 。所以小伙伴 3 是游戏的获胜者。</li>
+</ol>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> n = 6, k = 5<br>
+<strong>输出：</strong> 1<br>
+<strong>解释：</strong> 小伙伴离开圈子的顺序：5、4、6、2、3 。小伙伴 1 是游戏的获胜者。</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= k &lt;= n &lt;= 500</code></li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="模拟">模拟</h4>
+<p>使用链表模拟此过程，返回最后剩余的结点。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTheWinner</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">i</span>)
+	}
+	<span style="color:#a6e22e">ptr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Front</span>()
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">1</span> {
+		<span style="color:#75715e">// 寻找待淘汰
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+			<span style="color:#a6e22e">ptr</span> = <span style="color:#a6e22e">ptr</span>.<span style="color:#a6e22e">Next</span>()
+			<span style="color:#75715e">// 尾部的下一个重新定位到头部
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ptr</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+				<span style="color:#a6e22e">ptr</span> = <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Front</span>()
+			}
+		}
+		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ptr</span>
+		<span style="color:#a6e22e">ptr</span> = <span style="color:#a6e22e">ptr</span>.<span style="color:#a6e22e">Next</span>()
+		<span style="color:#75715e">// 尾部的下一个重新定位到头部
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ptr</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+			<span style="color:#a6e22e">ptr</span> = <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Front</span>()
+		}
+		<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">t</span>) <span style="color:#75715e">// 淘汰
+</span><span style="color:#75715e"></span>	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Front</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>)
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(n*k) $</li>
+<li>空间复杂度：$ O(n) $</li>
+</ul>
+<h4 id="递归">递归</h4>
+<p>令 <code>f(n, k)</code> 表示从 <code>n</code> 个小伙伴中不断淘汰第 <code>k</code> 个小伙伴后获胜的小伙伴， 则对应淘汰的小伙伴为 <code>(k-1) % n + 1</code>，然后转换为了从 <code>n-1</code> 个小伙伴中不断淘汰第 <code>k</code> 个小伙伴。</p>
+<p><code>f(n-1, k)</code> 从 <code>n-1</code> 个小伙伴中不断淘汰第 <code>k</code> 个小伙伴而获胜的小伙伴，是从第一位开始计数；然而在转换前，是从 <code>((k-1) % n + 1) + 1 = k%n + 1</code> 开始计数，故需要找到两者间的映射关系，即 <code>f(n, k) = F(f(n-1, k))</code>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">f(n-1, k)</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">n-1</td>
+</tr>
+<tr>
+<td style="text-align:center">f(n, k)</td>
+<td style="text-align:center">k%n+1</td>
+<td style="text-align:center">(k+1)%n+1</td>
+<td style="text-align:center">&hellip;</td>
+<td style="text-align:center">(k-1+n-1)%n+1</td>
+</tr>
+</tbody>
+</table>
+<p>通过上表得到递归公式： <code>f(n, k) = (k-1 + f(n-1, k)) % n + 1</code>；<br>
+当仅剩一个数字时，返回该数字，递归中止条件为 <code>f(1, k) = 1</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTheWinner</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+	}
+	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#a6e22e">findTheWinner</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">k</span>))<span style="color:#f92672">%</span><span style="color:#a6e22e">n</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+}
+</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(n) $</li>
+<li>空间复杂度：$ O(n) $</li>
+</ul>
+<h4 id="迭代">迭代</h4>
+<p>将上述递归修改为迭代，降低空间复杂度。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTheWinner</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">ans</span> = (<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#a6e22e">ans</span>)<span style="color:#f92672">%</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+}
+</code></pre></div><h5 id="复杂度-2">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(n) $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

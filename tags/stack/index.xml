@@ -6,7 +6,22 @@
     <description>Recent content in stack on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Wed, 20 Apr 2022 09:34:01 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 May 2022 12:14:17 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 591. 标签验证器</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-591.-%E6%A0%87%E7%AD%BE%E9%AA%8C%E8%AF%81%E5%99%A8/</link>
+      <pubDate>Mon, 02 May 2022 12:14:17 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-591.-%E6%A0%87%E7%AD%BE%E9%AA%8C%E8%AF%81%E5%99%A8/</guid>
+      <description>链接： https://leetcode-cn.com/problems/tag-validator/
+难度： 困难
+题目描述 给定一个表示代码片段的字符串，你需要实现一个验证器来解析这段代码，并返回它是否合法。合法的代码片段需要遵守以下的所有规则：
+ 代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。  合法代码的例子：  输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
+输出： True
+解释：
+代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。</description>
+    </item>
+    
     <item>
       <title>Leetcode 388. 文件的最长绝对路径</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-388.-%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E9%95%BF%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/</link>
