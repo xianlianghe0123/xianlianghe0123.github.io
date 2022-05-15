@@ -6,7 +6,108 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 08 May 2022 10:39:10 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 May 2022 11:49:45 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 812. 最大三角形面积</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-812.-%E6%9C%80%E5%A4%A7%E4%B8%89%E8%A7%92%E5%BD%A2%E9%9D%A2%E7%A7%AF/</link>
+      <pubDate>Sun, 15 May 2022 11:49:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-812.-%E6%9C%80%E5%A4%A7%E4%B8%89%E8%A7%92%E5%BD%A2%E9%9D%A2%E7%A7%AF/</guid>
+      <description>链接： https://leetcode.cn/problems/largest-triangle-area/
+难度： 简单
+题目描述 给定包含多个点的集合，从其中取三个点组成三角形，返回能组成的最大三角形的面积。
+示例：  输入： points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
+输出： 2
+解释：
+这五个点如下图所示。组成的橙色三角形是最大的，面积为2。
+ 注意：  3 &amp;lt;= points.length &amp;lt;= 50 不存在重复的点。 -50 &amp;lt;= points[i][j] &amp;lt;= 50 结果误差值在 106 以内都认为是正确答案。  解题思路 枚举 依次枚举三个顶点，计算构成三角形的面积，求得最大值。
+func largestTriangleArea(points [][]int) float64 { maxArea := 0. for i := len(points) - 3; i &amp;gt;= 0; i-- { for j := len(points) - 2; j &amp;gt; i; j-- { for k := len(points) - 1; k &amp;gt; j; k-- { area := math.</description>
+    </item>
+    
+    <item>
+      <title>面试题 01.05. 一次编辑</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-01.05.-%E4%B8%80%E6%AC%A1%E7%BC%96%E8%BE%91/</link>
+      <pubDate>Fri, 13 May 2022 10:05:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-01.05.-%E4%B8%80%E6%AC%A1%E7%BC%96%E8%BE%91/</guid>
+      <description>链接： https://leetcode.cn/problems/one-away-lcci/
+难度： 中等
+题目描述 字符串有三种编辑操作:插入一个字符、删除一个字符或者替换一个字符。 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
+示例 1：  输入：
+first = &amp;ldquo;pale&amp;rdquo;
+second = &amp;ldquo;ple&amp;rdquo;
+输出： True
+ 示例 2：  输入：
+first = &amp;ldquo;pales&amp;rdquo;
+second = &amp;ldquo;pal&amp;rdquo;
+输出： False
+ 解题思路 分类讨论 符合条件的两个字符串的长度应 ≤ 1。
+ 当两个字符串相等时，判断是否仅有 ≤ 1 个字符不同； 当两个字符串不相同时，判断较短的是否为较长字符串的子序列。  func oneEditAway(first string, second string) bool { if len(first) &amp;gt; len(second) { first, second = second, first } if len(second)-len(first) &amp;gt; 1 { return false } // 等长，统计不同字符数量，要求 ≤ 1 	if len(first) == len(second) { diff := 0 for i := range first { if first[i] !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 944. 删列造序</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-944.-%E5%88%A0%E5%88%97%E9%80%A0%E5%BA%8F/</link>
+      <pubDate>Thu, 12 May 2022 20:06:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-944.-%E5%88%A0%E5%88%97%E9%80%A0%E5%BA%8F/</guid>
+      <description>链接： https://leetcode.cn/problems/delete-columns-to-make-sorted/
+难度： 简单
+题目描述 给你由 n 个小写字母字符串组成的数组 strs，其中每个字符串长度相等。
+这些字符串可以每个一行，排成一个网格。例如，strs = [&amp;quot;abc&amp;quot;, &amp;quot;bce&amp;quot;, &amp;quot;cae&amp;quot;] 可以排列为：
+ abc
+bce
+cae
+ 你需要找出并删除 不是按字典序升序排列的 列。在上面的例子（下标从 0 开始）中，列 0（&#39;a&#39;, &#39;b&#39;, &#39;c&#39;）和列 2（&#39;c&#39;, &#39;e&#39;, &#39;e&#39;）都是按升序排列的，而列 1（&#39;b&#39;, &#39;c&#39;, &#39;a&#39;）不是，所以要删除列 1 。
+返回你需要删除的列数。
+示例 1：  输入： strs = [&amp;ldquo;cba&amp;rdquo;,&amp;ldquo;daf&amp;rdquo;,&amp;ldquo;ghi&amp;rdquo;]
+输出： 1
+解释： 网格示意如下：
+cba
+daf
+ghi
+列 0 和列 2 按升序排列，但列 1 不是，所以只需要删除列 1 。
+ 示例 2：  输入： strs = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;]
+输出： 0</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 449. 序列化和反序列化二叉搜索树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-449.-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</link>
+      <pubDate>Wed, 11 May 2022 10:35:14 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-449.-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</guid>
+      <description>链接： baileetcode.cn/problems/serialize-and-deserialize-bst/
+难度： 中等
+题目描述 序列化是将数据结构或对象转换为一系列位的过程，以便它可以存储在文件或内存缓冲区中，或通过网络连接链路传输，以便稍后在同一个或另一个计算机环境中重建。
+设计一个算法来序列化和反序列化 二叉搜索树 。 对序列化/反序列化算法的工作方式没有限制。 您只需确保二叉搜索树可以序列化为字符串，并且可以将该字符串反序列化为最初的二叉搜索树。
+编码的字符串应尽可能紧凑。
+示例 1：  输入： root = [2,1,3]
+输出： [2,1,3]
+ 示例 2：  输入： root = []
+输出： []
+ 提示：  树中节点数范围是 [0, 104] 0 &amp;lt;= Node.val &amp;lt;= 104 题目数据 保证 输入的树是一棵二叉搜索树。  解题思路 先序遍历 根据二叉搜索树的特性，对于每个结点，可以得出左右子数的数据范围。
+故序列化时，进行先序遍历存储顺序即可；反序列化时，根据确定的数据范围，递归构建即可。
+type Codec struct { } func Constructor() Codec { return Codec{} } // Serializes a tree to a single string. func (this *Codec) serialize(root *TreeNode) string { sVals := make([]string, 0, 5) var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } sVals = append(sVals, strconv.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 942. 增减字符串匹配</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-942.-%E5%A2%9E%E5%87%8F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</link>
+      <pubDate>Mon, 09 May 2022 09:59:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-942.-%E5%A2%9E%E5%87%8F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/range-sum-of-bst/
+难度： 简单
+题目描述 由范围 [0,n] 内所有整数组成的 n + 1 个整数的排列序列可以表示为长度为 n 的字符串 s ，其中:
+ 如果 perm[i] &amp;lt; perm[i + 1] ，那么 s[i] == &#39;I&#39; 如果 perm[i] &amp;gt; perm[i + 1] ，那么 s[i] == &#39;D&#39;  给定一个字符串 s ，重构排列 perm 并返回它。如果有多个有效排列 perm，则返回其中 任何一个 。
+示例 1：  输入： s = &amp;ldquo;IDID&amp;rdquo;
+输出： [0,4,1,3,2]
+ 示例 2：  输入： s = &amp;ldquo;III&amp;rdquo;
+输出： [0,1,2,3]
+ 示例 3：  输入： s = &amp;ldquo;DDI&amp;rdquo;</description>
+    </item>
+    
     <item>
       <title>Leetcode 442. 数组中重复的数据</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-442.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
@@ -6664,7 +6765,7 @@ func frequencySort(s string) string { cnt := make(map[byte]int) for i := 0; i &a
 难度： 困难
 题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
-**提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+提示： 输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
 示例1：  输入： root = [1,2,3,null,null,4,5]
 输出： [1,2,3,null,null,4,5]
  解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。

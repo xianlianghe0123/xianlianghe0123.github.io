@@ -5,7 +5,7 @@
 难度： 困难
 题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
-**提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+提示： 输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
 示例1：  输入： root = [1,2,3,null,null,4,5]
 输出： [1,2,3,null,null,4,5]
  解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。
@@ -19,7 +19,7 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
 难度： 困难
 题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
-**提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+提示： 输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
 示例1：  输入： root = [1,2,3,null,null,4,5]
 输出： [1,2,3,null,null,4,5]
  解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。
@@ -33,7 +33,7 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
 难度： 困难
 题目描述 请实现两个函数，分别用来序列化和反序列化二叉树。
 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
-**提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+提示： 输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
 示例1：  输入： root = [1,2,3,null,null,4,5]
 输出： [1,2,3,null,null,4,5]
  解题思路 先序遍历 序列化时，先序遍历整个二叉树，将遍历到的每个结点按顺序加入列表中。需要将遍历到的空结点也加入到列表中，作为分割。
@@ -235,10 +235,11 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/</a><br>
 <strong>难度：</strong> <font color="red">困难</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p>请实现两个函数，分别用来序列化和反序列化二叉树。</p>
 <p>你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。</p>
-<p>**提示：**输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 <font color="grey">LeetCode 序列化二叉树的格式</font>。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。</p>
+<h5 id="提示">提示：</h5>
+<p>输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 <font color="grey">LeetCode 序列化二叉树的格式</font>。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。</p>
 <h5 id="示例1">示例1：</h5>
 <img src="/img/serdeser.jpeg" width="324px">
 <blockquote>
@@ -294,8 +295,18 @@ class Codec: def serialize(self, root): &amp;#34;&amp;#34;&amp;#34;Encodes a tre
         <span style="color:#66d9ef">return</span> dfs()   
 </code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(N)</li>
+<li>时间复杂度：
+<ul>
+<li><code>serialize</code>：$ O(N_1), N_1 = size(Tree) $</li>
+<li><code>deserialize</code>：$ O(N_2), N_2 = len(data) $</li>
+</ul>
+</li>
+<li>空间复杂度：
+<ul>
+<li><code>serialize</code>：$ O(N_1) $</li>
+<li><code>deserialize</code>：$ O(N_2) $</li>
+</ul>
+</li>
 </ul>
 
 </section>

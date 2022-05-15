@@ -6,7 +6,24 @@
     <description>Recent content in greedy on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 07 Feb 2022 09:38:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 May 2022 09:59:48 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 942. 增减字符串匹配</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-942.-%E5%A2%9E%E5%87%8F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</link>
+      <pubDate>Mon, 09 May 2022 09:59:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-942.-%E5%A2%9E%E5%87%8F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</guid>
+      <description>链接： https://leetcode-cn.com/problems/range-sum-of-bst/
+难度： 简单
+题目描述 由范围 [0,n] 内所有整数组成的 n + 1 个整数的排列序列可以表示为长度为 n 的字符串 s ，其中:
+ 如果 perm[i] &amp;lt; perm[i + 1] ，那么 s[i] == &#39;I&#39; 如果 perm[i] &amp;gt; perm[i + 1] ，那么 s[i] == &#39;D&#39;  给定一个字符串 s ，重构排列 perm 并返回它。如果有多个有效排列 perm，则返回其中 任何一个 。
+示例 1：  输入： s = &amp;ldquo;IDID&amp;rdquo;
+输出： [0,4,1,3,2]
+ 示例 2：  输入： s = &amp;ldquo;III&amp;rdquo;
+输出： [0,1,2,3]
+ 示例 3：  输入： s = &amp;ldquo;DDI&amp;rdquo;</description>
+    </item>
+    
     <item>
       <title>Leetcode 1405. 最长快乐字符串</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1405.-%E6%9C%80%E9%95%BF%E5%BF%AB%E4%B9%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
