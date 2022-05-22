@@ -6,7 +6,27 @@
     <description>Recent content in binary search on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 03 Apr 2022 10:30:01 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 May 2022 10:31:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 436. 寻找右区间</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-436.-%E5%AF%BB%E6%89%BE%E5%8F%B3%E5%8C%BA%E9%97%B4/</link>
+      <pubDate>Fri, 20 May 2022 10:31:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-436.-%E5%AF%BB%E6%89%BE%E5%8F%B3%E5%8C%BA%E9%97%B4/</guid>
+      <description>链接： https://leetcode.cn/problems/find-right-interval/
+难度： 中等
+题目描述 给你一个区间数组 intervals ，其中 intervals[i] = [starti, endi] ，且每个 starti 都 不同 。
+区间 i 的 右侧区间 可以记作区间 j ，并满足 startj &amp;gt;= endi ，且 startj 最小化 。
+返回一个由每个区间 i 的 右侧区间 的最小起始位置组成的数组。如果某个区间 i 不存在对应的 右侧区间 ，则下标 i 处的值设为 -1 。
+示例 1：  输入： intervals = [[1,2]]
+输出： [-1]
+解释： 集合中只有一个区间，所以输出-1。
+ 示例 2：  输入： intervals = [[3,4],[2,3],[1,2]]
+输出： [-1,0,1]
+解释： 对于 [3,4] ，没有满足条件的“右侧”区间。
+对于 [2,3] ，区间[3,4]具有最小的“右”起点;</description>
+    </item>
+    
     <item>
       <title>Leetcode 744. 寻找比目标字母大的最小字母</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-744.-%E5%AF%BB%E6%89%BE%E6%AF%94%E7%9B%AE%E6%A0%87%E5%AD%97%E6%AF%8D%E5%A4%A7%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AF%8D/</link>

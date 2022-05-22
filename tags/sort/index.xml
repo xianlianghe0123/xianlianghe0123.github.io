@@ -6,7 +6,49 @@
     <description>Recent content in sort on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 01 May 2022 09:22:48 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 May 2022 10:31:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 436. 寻找右区间</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-436.-%E5%AF%BB%E6%89%BE%E5%8F%B3%E5%8C%BA%E9%97%B4/</link>
+      <pubDate>Fri, 20 May 2022 10:31:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-436.-%E5%AF%BB%E6%89%BE%E5%8F%B3%E5%8C%BA%E9%97%B4/</guid>
+      <description>链接： https://leetcode.cn/problems/find-right-interval/
+难度： 中等
+题目描述 给你一个区间数组 intervals ，其中 intervals[i] = [starti, endi] ，且每个 starti 都 不同 。
+区间 i 的 右侧区间 可以记作区间 j ，并满足 startj &amp;gt;= endi ，且 startj 最小化 。
+返回一个由每个区间 i 的 右侧区间 的最小起始位置组成的数组。如果某个区间 i 不存在对应的 右侧区间 ，则下标 i 处的值设为 -1 。
+示例 1：  输入： intervals = [[1,2]]
+输出： [-1]
+解释： 集合中只有一个区间，所以输出-1。
+ 示例 2：  输入： intervals = [[3,4],[2,3],[1,2]]
+输出： [-1,0,1]
+解释： 对于 [3,4] ，没有满足条件的“右侧”区间。
+对于 [2,3] ，区间[3,4]具有最小的“右”起点;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 462. 最少移动次数使数组元素相等 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-462.-%E6%9C%80%E5%B0%91%E7%A7%BB%E5%8A%A8%E6%AC%A1%E6%95%B0%E4%BD%BF%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9B%B8%E7%AD%89-ii/</link>
+      <pubDate>Thu, 19 May 2022 10:27:46 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-462.-%E6%9C%80%E5%B0%91%E7%A7%BB%E5%8A%A8%E6%AC%A1%E6%95%B0%E4%BD%BF%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9B%B8%E7%AD%89-ii/</guid>
+      <description>链接： https://leetcode.cn/problems/minimum-moves-to-equal-array-elements-ii/
+难度： 简单
+题目描述 给你一个长度为 n 的整数数组 nums ，返回使所有数组元素相等需要的最少移动数。
+在一步操作中，你可以使数组中的一个元素加 1 或者减 1 。
+示例 1：  输入： nums = [1,2,3]
+输出： 2
+解释：
+只需要两步操作（每步操作指南使一个元素加 1 或减 1）：
+[1,2,3] =&amp;gt; [2,2,3] =&amp;gt; [2,2,2]
+ 示例 2：  输入： nums = [1,10,2,9]
+输出： 16
+ 提示：  n == nums.length 1 &amp;lt;= nums.length &amp;lt;= 105 -109 &amp;lt;= nums[i] &amp;lt;= 109  解题思路 排序 将数组排序，首先计算出全部变换为最小数的移动次数。
+然后向后遍历，依次计算变换为每一个数的移动次数，从中找出最小值。
+设当前要变换的数下标为 i，则之前元素从 nums[i-1] 变换为 nums[i] 的变换次数 (nums[i] - nums[i-1]) * i 需要加上，之后多余计算的变换次数 (nums[i] - nums[i-1]) * (len(nums) - i) 需要减去。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1305. 两棵二叉搜索树中的所有元素</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1305.-%E4%B8%A4%E6%A3%B5%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0/</link>
