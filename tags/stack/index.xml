@@ -6,7 +6,25 @@
     <description>Recent content in stack on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 02 May 2022 12:14:17 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 May 2022 09:21:42 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1021. 删除最外层的括号</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1021.-%E5%88%A0%E9%99%A4%E6%9C%80%E5%A4%96%E5%B1%82%E7%9A%84%E6%8B%AC%E5%8F%B7/</link>
+      <pubDate>Sat, 28 May 2022 09:21:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1021.-%E5%88%A0%E9%99%A4%E6%9C%80%E5%A4%96%E5%B1%82%E7%9A%84%E6%8B%AC%E5%8F%B7/</guid>
+      <description>链接： https://leetcode.cn/problems/remove-outermost-parentheses/
+难度： 简单
+题目描述 有效括号字符串为空 &amp;quot;&amp;quot;、&amp;quot;(&amp;quot; + A + &amp;quot;)&amp;quot; 或 A + B ，其中 A 和 B 都是有效的括号字符串，+ 代表字符串的连接。
+ 例如，&amp;quot;&amp;quot;，&amp;quot;()&amp;quot;，&amp;quot;(())()&amp;quot; 和 &amp;quot;(()(()))&amp;quot; 都是有效的括号字符串。  如果有效字符串 s 非空，且不存在将其拆分为 s = A + B 的方法，我们称其为 原语（primitive），其中 A 和 B 都是非空有效括号字符串。
+给出一个非空有效字符串 s，考虑将其进行原语化分解，使得：s = P_1 + P_2 + ... + P_k，其中 P_i 是有效括号字符串原语。
+对 s 进行原语化分解，删除分解中每个原语字符串的最外层括号，返回 s 。
+示例 1：  输入： s = &amp;ldquo;(()())(())&amp;rdquo;
+输出： &amp;ldquo;()()()&amp;rdquo;
+解释：
+输入字符串为 &amp;ldquo;(()())(())&amp;quot;，原语化分解得到 &amp;ldquo;(()())&amp;rdquo; + &amp;ldquo;(())&amp;quot;，</description>
+    </item>
+    
     <item>
       <title>Leetcode 591. 标签验证器</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-591.-%E6%A0%87%E7%AD%BE%E9%AA%8C%E8%AF%81%E5%99%A8/</link>

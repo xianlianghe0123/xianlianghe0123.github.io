@@ -6,7 +6,94 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 21 May 2022 10:51:53 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 May 2022 10:38:10 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 468. 验证IP地址</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-468.-%E9%AA%8C%E8%AF%81ip%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Sun, 29 May 2022 10:38:10 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-468.-%E9%AA%8C%E8%AF%81ip%E5%9C%B0%E5%9D%80/</guid>
+      <description>链接： https://leetcode.cn/problems/validate-ip-address/
+难度： 中等
+题目描述 给定一个字符串 queryIP。如果是有效的 IPv4 地址，返回 &amp;quot;IPv4&amp;quot; ；如果是有效的 IPv6 地址，返回 &amp;quot;IPv6&amp;quot; ；如果不是上述类型的 IP 地址，返回 &amp;quot;Neither&amp;quot; 。
+有效的IPv4地址 是 “x1.x2.x3.x4” 形式的IP地址。 其中 0 &amp;lt;= xi &amp;lt;= 255 且 xi 不能包含 前导零。例如: “192.168.1.1” 、 “192.168.1.0” 为有效IPv4地址， “192.168.01.1” 为无效IPv4地址; “192.168.1.00” 、 “192.168@1.1” 为无效IPv4地址。
+一个有效的IPv6地址 是一个格式为 “x1:x2:x3:x4:x5:x6:x7:x8” 的IP地址，其中:
+ 1 &amp;lt;= xi.length &amp;lt;= 4 xi 是一个 十六进制字符串 ，可以包含数字、小写英文字母( &#39;a&#39; 到 &#39;f&#39; )和大写英文字母( &#39;A&#39; 到 &#39;F&#39; )。 在 xi 中允许前导零。  例如 &amp;quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334&amp;quot; 和 &amp;quot;2001:db8:85a3:0:0:8A2E:0370:7334&amp;quot; 是有效的 IPv6 地址，而 &amp;quot;2001:0db8:85a3::8A2E:037j:7334&amp;quot; 和 &amp;quot;02001:0db8:85a3:0000:0000:8a2e:0370:7334&amp;quot; 是无效的 IPv6 地址。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 965. 单值二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-965.-%E5%8D%95%E5%80%BC%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Sat, 28 May 2022 09:49:16 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-965.-%E5%8D%95%E5%80%BC%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode.cn/problems/univalued-binary-tree/
+难度： 简单
+题目描述 如果二叉树每个节点都具有相同的值，那么该二叉树就是单值二叉树。
+只有给定的树是单值二叉树时，才返回 true；否则返回 false。
+示例 1：  输入： [1,1,1,1,1,null,1]
+输出： true
+ 示例 2：  输入： [2,2,2,5,2]
+输出： false
+ 提示：  给定树的节点数范围是 [1, 100]。 每个节点的值都是整数，范围为 [0, 99] 。  解题思路 先序遍历 遍历整棵树，检查是否每个结点的值都与根结点相同。
+func isUnivalTree(root *TreeNode) bool { val := root.Val var dfs func(node *TreeNode) bool dfs = func(node *TreeNode) bool { if node == nil { return true } return node.Val == val &amp;amp;&amp;amp; dfs(node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1021. 删除最外层的括号</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1021.-%E5%88%A0%E9%99%A4%E6%9C%80%E5%A4%96%E5%B1%82%E7%9A%84%E6%8B%AC%E5%8F%B7/</link>
+      <pubDate>Sat, 28 May 2022 09:21:42 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1021.-%E5%88%A0%E9%99%A4%E6%9C%80%E5%A4%96%E5%B1%82%E7%9A%84%E6%8B%AC%E5%8F%B7/</guid>
+      <description>链接： https://leetcode.cn/problems/remove-outermost-parentheses/
+难度： 简单
+题目描述 有效括号字符串为空 &amp;quot;&amp;quot;、&amp;quot;(&amp;quot; + A + &amp;quot;)&amp;quot; 或 A + B ，其中 A 和 B 都是有效的括号字符串，+ 代表字符串的连接。
+ 例如，&amp;quot;&amp;quot;，&amp;quot;()&amp;quot;，&amp;quot;(())()&amp;quot; 和 &amp;quot;(()(()))&amp;quot; 都是有效的括号字符串。  如果有效字符串 s 非空，且不存在将其拆分为 s = A + B 的方法，我们称其为 原语（primitive），其中 A 和 B 都是非空有效括号字符串。
+给出一个非空有效字符串 s，考虑将其进行原语化分解，使得：s = P_1 + P_2 + ... + P_k，其中 P_i 是有效括号字符串原语。
+对 s 进行原语化分解，删除分解中每个原语字符串的最外层括号，返回 s 。
+示例 1：  输入： s = &amp;ldquo;(()())(())&amp;rdquo;
+输出： &amp;ldquo;()()()&amp;rdquo;
+解释：
+输入字符串为 &amp;ldquo;(()())(())&amp;quot;，原语化分解得到 &amp;ldquo;(()())&amp;rdquo; + &amp;ldquo;(())&amp;quot;，</description>
+    </item>
+    
+    <item>
+      <title>面试题 17.11. 单词距离</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.11.-%E5%8D%95%E8%AF%8D%E8%B7%9D%E7%A6%BB/</link>
+      <pubDate>Fri, 27 May 2022 10:08:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.11.-%E5%8D%95%E8%AF%8D%E8%B7%9D%E7%A6%BB/</guid>
+      <description>链接： https://leetcode.cn/problems/find-closest-lcci/
+难度： 中等
+题目描述 有个内含单词的超大文本文件，给定任意两个不同的单词，找出在这个文件中这两个单词的最短距离(相隔单词数)。如果寻找过程在这个文件中会重复多次，而每次寻找的单词不同，你能对此优化吗?
+示例：  输入： words = [&amp;ldquo;I&amp;rdquo;,&amp;ldquo;am&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;student&amp;rdquo;,&amp;ldquo;from&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;university&amp;rdquo;,&amp;ldquo;in&amp;rdquo;,&amp;ldquo;a&amp;rdquo;,&amp;ldquo;city&amp;rdquo;], word1 = &amp;ldquo;a&amp;rdquo;, word2 = &amp;ldquo;student&amp;rdquo;
+输出： 1
+ 提示  words.length &amp;lt;= 100000  解题思路 遍历 当找到一个单词时(不妨设为 word1)，距离最近的另一个单词 word2，或者是在其左边最右的那一个，或者在其右边最左的那一个。
+对于第二种情况，也可以理解为找到了 word2，左边最右的那一个 word1。
+这样，遍历过程中，仅记录两个数字最后的下标，即可求得最短距离。
+func findClosest(words []string, word1 string, word2 string) int { min := math.MaxInt idx1 := -1 idx2 := -1 for i, word := range words { if word == word1 { idx1 = i } if word == word2 { idx2 = i } if idx1 == -1 || idx2 == -1 { continue } d := idx1 - idx2 if d &amp;lt; 0 { d = -d } if min &amp;gt; d { min = d } } return min } 复杂度  时间复杂度：$ O(N), N = \sum{words[i]} $ 空间复杂度：$ O(1) $  </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 467. 环绕字符串中唯一的子字符串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-467.-%E7%8E%AF%E7%BB%95%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%94%AF%E4%B8%80%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Wed, 25 May 2022 19:09:27 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-467.-%E7%8E%AF%E7%BB%95%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%94%AF%E4%B8%80%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode.cn/problems/unique-substrings-in-wraparound-string/
+难度： 中等
+题目描述 把字符串 s 看作是 &amp;quot;abcdefghijklmnopqrstuvwxyz&amp;quot; 的无限环绕字符串，所以 s 看起来是这样的：
+ &amp;quot;...zabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd....&amp;quot; .   现在给定另一个字符串 p 。返回 s 中 唯一 的 p 的 非空子串 的数量 。 示例 1：  输入： p = &amp;ldquo;a&amp;rdquo;
+输出： 1
+解释： 字符串 s 中只有一个&amp;quot;a&amp;quot;子字符。
+ 示例 2：  输入： p = &amp;ldquo;cac&amp;rdquo;
+输出： 2
+解释： 字符串 s 中的字符串“cac”只有两个子串“a”、“c”。.
+ 示例 3：  输入： p = &amp;ldquo;zab&amp;rdquo;
+输出： 6
+解释： 在字符串 s 中有六个子串“z”、“a”、“b”、“za”、“ab”、“zab”。</description>
+    </item>
+    
     <item>
       <title>Leetcode 961. 在长度 2N 的数组中找出重复 N 次的元素</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-961.-%E5%9C%A8%E9%95%BF%E5%BA%A6-2n-%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%AD%E6%89%BE%E5%87%BA%E9%87%8D%E5%A4%8D-n-%E6%AC%A1%E7%9A%84%E5%85%83%E7%B4%A0/</link>

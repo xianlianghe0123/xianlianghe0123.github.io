@@ -6,7 +6,25 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 16 May 2022 10:46:10 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 May 2022 09:49:16 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 965. 单值二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-965.-%E5%8D%95%E5%80%BC%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Sat, 28 May 2022 09:49:16 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-965.-%E5%8D%95%E5%80%BC%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode.cn/problems/univalued-binary-tree/
+难度： 简单
+题目描述 如果二叉树每个节点都具有相同的值，那么该二叉树就是单值二叉树。
+只有给定的树是单值二叉树时，才返回 true；否则返回 false。
+示例 1：  输入： [1,1,1,1,1,null,1]
+输出： true
+ 示例 2：  输入： [2,2,2,5,2]
+输出： false
+ 提示：  给定树的节点数范围是 [1, 100]。 每个节点的值都是整数，范围为 [0, 99] 。  解题思路 先序遍历 遍历整棵树，检查是否每个结点的值都与根结点相同。
+func isUnivalTree(root *TreeNode) bool { val := root.Val var dfs func(node *TreeNode) bool dfs = func(node *TreeNode) bool { if node == nil { return true } return node.Val == val &amp;amp;&amp;amp; dfs(node.</description>
+    </item>
+    
     <item>
       <title>面试题 04.06. 后继者</title>
       <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-04.06.-%E5%90%8E%E7%BB%A7%E8%80%85/</link>

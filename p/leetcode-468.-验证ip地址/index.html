@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/validate-ip-address/
+难度： 中等
+题目描述 给定一个字符串 queryIP。如果是有效的 IPv4 地址，返回 &amp;quot;IPv4&amp;quot; ；如果是有效的 IPv6 地址，返回 &amp;quot;IPv6&amp;quot; ；如果不是上述类型的 IP 地址，返回 &amp;quot;Neither&amp;quot; 。
+有效的IPv4地址 是 “x1.x2.x3.x4” 形式的IP地址。 其中 0 &amp;lt;= xi &amp;lt;= 255 且 xi 不能包含 前导零。例如: “192.168.1.1” 、 “192.168.1.0” 为有效IPv4地址， “192.168.01.1” 为无效IPv4地址; “192.168.1.00” 、 “192.168@1.1” 为无效IPv4地址。
+一个有效的IPv6地址 是一个格式为 “x1:x2:x3:x4:x5:x6:x7:x8” 的IP地址，其中:
+ 1 &amp;lt;= xi.length &amp;lt;= 4 xi 是一个 十六进制字符串 ，可以包含数字、小写英文字母( &#39;a&#39; 到 &#39;f&#39; )和大写英文字母( &#39;A&#39; 到 &#39;F&#39; )。 在 xi 中允许前导零。  例如 &amp;quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334&amp;quot; 和 &amp;quot;2001:db8:85a3:0:0:8A2E:0370:7334&amp;quot; 是有效的 IPv6 地址，而 &amp;quot;2001:0db8:85a3::8A2E:037j:7334&amp;quot; 和 &amp;quot;02001:0db8:85a3:0000:0000:8a2e:0370:7334&amp;quot; 是无效的 IPv6 地址。'><title>Leetcode 468. 验证IP地址</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-468.-%E9%AA%8C%E8%AF%81ip%E5%9C%B0%E5%9D%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 468. 验证IP地址'>
+<meta property='og:description' content='链接： https://leetcode.cn/problems/validate-ip-address/
+难度： 中等
+题目描述 给定一个字符串 queryIP。如果是有效的 IPv4 地址，返回 &amp;quot;IPv4&amp;quot; ；如果是有效的 IPv6 地址，返回 &amp;quot;IPv6&amp;quot; ；如果不是上述类型的 IP 地址，返回 &amp;quot;Neither&amp;quot; 。
+有效的IPv4地址 是 “x1.x2.x3.x4” 形式的IP地址。 其中 0 &amp;lt;= xi &amp;lt;= 255 且 xi 不能包含 前导零。例如: “192.168.1.1” 、 “192.168.1.0” 为有效IPv4地址， “192.168.01.1” 为无效IPv4地址; “192.168.1.00” 、 “192.168@1.1” 为无效IPv4地址。
+一个有效的IPv6地址 是一个格式为 “x1:x2:x3:x4:x5:x6:x7:x8” 的IP地址，其中:
+ 1 &amp;lt;= xi.length &amp;lt;= 4 xi 是一个 十六进制字符串 ，可以包含数字、小写英文字母( &#39;a&#39; 到 &#39;f&#39; )和大写英文字母( &#39;A&#39; 到 &#39;F&#39; )。 在 xi 中允许前导零。  例如 &amp;quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334&amp;quot; 和 &amp;quot;2001:db8:85a3:0:0:8A2E:0370:7334&amp;quot; 是有效的 IPv6 地址，而 &amp;quot;2001:0db8:85a3::8A2E:037j:7334&amp;quot; 和 &amp;quot;02001:0db8:85a3:0000:0000:8a2e:0370:7334&amp;quot; 是无效的 IPv6 地址。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-468.-%E9%AA%8C%E8%AF%81ip%E5%9C%B0%E5%9D%80/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-05-29T10:38:10&#43;08:00'/><meta property='article:modified_time' content='2022-05-29T10:38:10&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 468. 验证IP地址">
+<meta name="twitter:description" content="链接： https://leetcode.cn/problems/validate-ip-address/
+难度： 中等
+题目描述 给定一个字符串 queryIP。如果是有效的 IPv4 地址，返回 &amp;quot;IPv4&amp;quot; ；如果是有效的 IPv6 地址，返回 &amp;quot;IPv6&amp;quot; ；如果不是上述类型的 IP 地址，返回 &amp;quot;Neither&amp;quot; 。
+有效的IPv4地址 是 “x1.x2.x3.x4” 形式的IP地址。 其中 0 &amp;lt;= xi &amp;lt;= 255 且 xi 不能包含 前导零。例如: “192.168.1.1” 、 “192.168.1.0” 为有效IPv4地址， “192.168.01.1” 为无效IPv4地址; “192.168.1.00” 、 “192.168@1.1” 为无效IPv4地址。
+一个有效的IPv6地址 是一个格式为 “x1:x2:x3:x4:x5:x6:x7:x8” 的IP地址，其中:
+ 1 &amp;lt;= xi.length &amp;lt;= 4 xi 是一个 十六进制字符串 ，可以包含数字、小写英文字母( &#39;a&#39; 到 &#39;f&#39; )和大写英文字母( &#39;A&#39; 到 &#39;F&#39; )。 在 xi 中允许前导零。  例如 &amp;quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334&amp;quot; 和 &amp;quot;2001:db8:85a3:0:0:8A2E:0370:7334&amp;quot; 是有效的 IPv6 地址，而 &amp;quot;2001:0db8:85a3::8A2E:037j:7334&amp;quot; 和 &amp;quot;02001:0db8:85a3:0000:0000:8a2e:0370:7334&amp;quot; 是无效的 IPv6 地址。">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-468.-%E9%AA%8C%E8%AF%81ip%E5%9C%B0%E5%9D%80/">Leetcode 468. 验证IP地址</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">May 29, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode.cn/problems/validate-ip-address/"  target="_blank" rel="noopener"
+    >https://leetcode.cn/problems/validate-ip-address/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个字符串 <code>queryIP</code>。如果是有效的 IPv4 地址，返回 <code>&quot;IPv4&quot;</code> ；如果是有效的 IPv6 地址，返回 <code>&quot;IPv6&quot;</code> ；如果不是上述类型的 IP 地址，返回 <code>&quot;Neither&quot;</code> 。</p>
+<p><strong>有效的IPv4地址</strong> 是 <code>“x1.x2.x3.x4”</code> 形式的IP地址。 其中 <code>0 &lt;= x<sub>i</sub> &lt;= 255</code> 且 <code>x<sub>i</sub></code> <strong>不能包含</strong> 前导零。例如: <code>“192.168.1.1”</code> 、 <code>“192.168.1.0”</code> 为有效IPv4地址， <code>“192.168.01.1”</code> 为无效IPv4地址; <code>“192.168.1.00”</code> 、 <code>“192.168@1.1”</code> 为无效IPv4地址。</p>
+<p><strong>一个有效的IPv6地址</strong> 是一个格式为 <code>“x1:x2:x3:x4:x5:x6:x7:x8”</code> 的IP地址，其中:</p>
+<ul>
+<li><code>1 &lt;= x<sub>i</sub>.length &lt;= 4</code></li>
+<li><code>x<sub>i</sub></code> 是一个 <strong>十六进制字符串</strong> ，可以包含数字、小写英文字母( <code>'a'</code> 到 <code>'f'</code> )和大写英文字母( <code>'A'</code> 到 <code>'F'</code> )。</li>
+<li>在 <code>x<sub>i</sub></code> 中允许前导零。</li>
+</ul>
+<p>例如 <code>&quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334&quot;</code> 和 <code>&quot;2001:db8:85a3:0:0:8A2E:0370:7334&quot;</code> 是有效的 IPv6 地址，而 <code>&quot;2001:0db8:85a3::8A2E:037j:7334&quot;</code> 和 <code>&quot;02001:0db8:85a3:0000:0000:8a2e:0370:7334&quot;</code> 是无效的 IPv6 地址。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入：</strong> queryIP = &ldquo;172.16.254.1&rdquo;<br>
+<strong>输出：</strong> &ldquo;IPv4&rdquo;<br>
+<strong>解释：</strong> 有效的 IPv4 地址，返回 &ldquo;IPv4&rdquo;</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> queryIP = &ldquo;2001:0db8:85a3:0:0:8A2E:0370:7334&rdquo;<br>
+<strong>输出：</strong> &ldquo;IPv6&rdquo;<br>
+<strong>解释：</strong> 有效的 IPv6 地址，返回 &ldquo;IPv6&rdquo;</p>
+</blockquote>
+<h4 id="示例-3">示例 3：</h4>
+<blockquote>
+<p><strong>输入：</strong> queryIP = &ldquo;256.256.256.256&rdquo;<br>
+<strong>输出：</strong> &ldquo;Neither&rdquo;<br>
+<strong>解释：</strong> 既不是 IPv4 地址，又不是 IPv6 地址</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>queryIP</code> 仅由英文字母，数字，字符 <code>'.'</code> 和 <code>':'</code> 组成。</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="分类讨论">分类讨论</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">validIPAddress</span>(<span style="color:#a6e22e">queryIP</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#a6e22e">queryIP</span>, <span style="color:#e6db74">&#34;.&#34;</span>) { <span style="color:#75715e">// 判定是否为IPV4
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">items</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">queryIP</span>, <span style="color:#e6db74">&#34;.&#34;</span>)
+		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">items</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Neither&#34;</span>
+		}
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">item</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">items</span> {
+			<span style="color:#75715e">// 不是有效整数
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">item</span>)
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+				<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Neither&#34;</span>
+			}
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">t</span> &gt; <span style="color:#ae81ff">255</span> {
+				<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Neither&#34;</span>
+			}
+			<span style="color:#75715e">// 包含前导0
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">item</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">&amp;&amp;</span> len(<span style="color:#a6e22e">item</span>) &gt; <span style="color:#ae81ff">1</span> {
+				<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Neither&#34;</span>
+			}
+		}
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;IPv4&#34;</span>
+	} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#a6e22e">queryIP</span>, <span style="color:#e6db74">&#34;:&#34;</span>) { <span style="color:#75715e">// 判断是否为 IPV6
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">items</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">queryIP</span>, <span style="color:#e6db74">&#34;:&#34;</span>)
+		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">items</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">8</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Neither&#34;</span>
+		}
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">item</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">items</span> {
+			<span style="color:#75715e">// 不是有效长度
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">item</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> len(<span style="color:#a6e22e">item</span>) &gt; <span style="color:#ae81ff">4</span> {
+				<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Neither&#34;</span>
+			}
+			<span style="color:#75715e">// 包含无效字符
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">item</span> {
+				<span style="color:#66d9ef">if</span> !((<span style="color:#a6e22e">item</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;9&#39;</span>) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">item</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;f&#39;</span>) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">item</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;A&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;F&#39;</span>)) {
+					<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Neither&#34;</span>
+				}
+			}
+		}
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;IPv6&#34;</span>
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Neither&#34;</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N), N = len(queryIP) $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
