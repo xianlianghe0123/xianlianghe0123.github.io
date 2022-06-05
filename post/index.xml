@@ -6,7 +6,68 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 29 May 2022 10:38:10 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Jun 2022 19:28:22 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 450. 删除二叉搜索树中的节点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-450.-%E5%88%A0%E9%99%A4%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Thu, 02 Jun 2022 19:28:22 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-450.-%E5%88%A0%E9%99%A4%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode.cn/problems/delete-node-in-a-bst/
+难度： 中等
+题目描述 给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。
+一般来说，删除节点可分为两个步骤：
+ 首先找到需要删除的节点； 如果找到了，删除它。  示例 1：  输入： root = [5,3,6,2,4,null,7], key = 3
+输出： [5,4,6,2,null,null,7]
+解释： 给定需要删除的节点值是 3，所以我们首先找到 3 这个节点，然后删除它。
+一个正确的答案是 [5,4,6,2,null,null,7], 如下图所示。
+另一个正确答案是 [5,2,6,null,4,null,7]。
+ 示例 2：  输入： root = [5,3,6,2,4,null,7], key = 0
+输出： [5,3,6,2,4,null,7]
+解释： 二叉树不包含值为 0 的节点
+ 示例 3：  输入： root = [], key = 0
+输出： []
+ 提示：  节点数的范围 [0, 104].</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 473. 火柴拼正方形</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-473.-%E7%81%AB%E6%9F%B4%E6%8B%BC%E6%AD%A3%E6%96%B9%E5%BD%A2/</link>
+      <pubDate>Wed, 01 Jun 2022 10:00:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-473.-%E7%81%AB%E6%9F%B4%E6%8B%BC%E6%AD%A3%E6%96%B9%E5%BD%A2/</guid>
+      <description>链接： https://leetcode.cn/problems/matchsticks-to-square/
+难度： 中等
+题目描述 你将得到一个整数数组 matchsticks ，其中 matchsticks[i] 是第 i 个火柴棒的长度。你要用 所有的火柴棍 拼成一个正方形。你 不能折断 任何一根火柴棒，但你可以把它们连在一起，而且每根火柴棒必须 使用一次 。
+如果你能使这个正方形，则返回 true ，否则返回 false 。
+示例 1：  输入： matchsticks = [1,1,2,2,2]
+输出： true
+解释： 能拼成一个边长为2的正方形，每边两根火柴。
+ 示例 2：  输入： matchsticks = [3,3,3,3,4]
+输出： false
+解释： 不能用所有火柴拼成一个正方形。
+ 提示：  1 &amp;lt;= matchsticks.length &amp;lt;= 15 1 &amp;lt;= matchsticks[i] &amp;lt;= 108  解题思路  type Node struct { End bool Children [26]*Node } func findAllConcatenatedWordsInADict(words []string) []string { sort.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1022. 从根到叶的二进制数之和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1022.-%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Mon, 30 May 2022 10:52:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1022.-%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/sum-of-root-to-leaf-binary-numbers/
+难度： 简单
+题目描述 给出一棵二叉树，其上每个结点的值都是 0 或 1 。每一条从根到叶的路径都代表一个从最高有效位开始的二进制数。
+ 例如，如果路径为 0 -&amp;gt; 1 -&amp;gt; 1 -&amp;gt; 0 -&amp;gt; 1，那么它表示二进制数 01101，也就是 13 。  对树上的每一片叶子，我们都要找出从根到该叶子的路径所表示的数字。
+返回这些数字之和。题目数据保证答案是一个 32 位 整数。
+示例 1：  输入： root = [1,0,1,0,1,0,1]
+输出： 22
+解释： (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
+ 示例 2：  输入： root = [0]
+输出： 0
+ 提示：  树中的节点数在 [1, 1000] 范围内 Node.</description>
+    </item>
+    
     <item>
       <title>Leetcode 468. 验证IP地址</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-468.-%E9%AA%8C%E8%AF%81ip%E5%9C%B0%E5%9D%80/</link>
@@ -264,7 +325,7 @@ ghi
       <pubDate>Wed, 11 May 2022 10:35:14 +0800</pubDate>
       
       <guid>https://xianlianghe0123.github.io/p/leetcode-449.-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</guid>
-      <description>链接： baileetcode.cn/problems/serialize-and-deserialize-bst/
+      <description>链接： https://leetcode.cn/problems/serialize-and-deserialize-bst/
 难度： 中等
 题目描述 序列化是将数据结构或对象转换为一系列位的过程，以便它可以存储在文件或内存缓冲区中，或通过网络连接链路传输，以便稍后在同一个或另一个计算机环境中重建。
 设计一个算法来序列化和反序列化 二叉搜索树 。 对序列化/反序列化算法的工作方式没有限制。 您只需确保二叉搜索树可以序列化为字符串，并且可以将该字符串反序列化为最初的二叉搜索树。

@@ -6,7 +6,26 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 28 May 2022 09:49:16 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 May 2022 10:52:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1022. 从根到叶的二进制数之和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1022.-%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Mon, 30 May 2022 10:52:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1022.-%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/sum-of-root-to-leaf-binary-numbers/
+难度： 简单
+题目描述 给出一棵二叉树，其上每个结点的值都是 0 或 1 。每一条从根到叶的路径都代表一个从最高有效位开始的二进制数。
+ 例如，如果路径为 0 -&amp;gt; 1 -&amp;gt; 1 -&amp;gt; 0 -&amp;gt; 1，那么它表示二进制数 01101，也就是 13 。  对树上的每一片叶子，我们都要找出从根到该叶子的路径所表示的数字。
+返回这些数字之和。题目数据保证答案是一个 32 位 整数。
+示例 1：  输入： root = [1,0,1,0,1,0,1]
+输出： 22
+解释： (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
+ 示例 2：  输入： root = [0]
+输出： 0
+ 提示：  树中的节点数在 [1, 1000] 范围内 Node.</description>
+    </item>
+    
     <item>
       <title>Leetcode 965. 单值二叉树</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-965.-%E5%8D%95%E5%80%BC%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
@@ -49,7 +68,7 @@ func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode { exist := false va
       <pubDate>Wed, 11 May 2022 10:35:14 +0800</pubDate>
       
       <guid>https://xianlianghe0123.github.io/p/leetcode-449.-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</guid>
-      <description>链接： baileetcode.cn/problems/serialize-and-deserialize-bst/
+      <description>链接： https://leetcode.cn/problems/serialize-and-deserialize-bst/
 难度： 中等
 题目描述 序列化是将数据结构或对象转换为一系列位的过程，以便它可以存储在文件或内存缓冲区中，或通过网络连接链路传输，以便稍后在同一个或另一个计算机环境中重建。
 设计一个算法来序列化和反序列化 二叉搜索树 。 对序列化/反序列化算法的工作方式没有限制。 您只需确保二叉搜索树可以序列化为字符串，并且可以将该字符串反序列化为最初的二叉搜索树。
