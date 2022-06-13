@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/valid-boomerang/
+难度： 简单
+题目描述 给定一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，如果这些点构成一个 回旋镖 则返回 true 。
+回旋镖 定义为一组三个点，这些点 各不相同 且 不在一条直线上 。
+示例 1：  输入： points = [[1,1],[2,3],[3,2]]
+输出： true
+ 示例 2：  输入： points = [[1,1],[2,2],[3,3]]
+输出： false
+ 提示：  points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100  解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
+$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$'><title>Leetcode 1037. 有效的回旋镖</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1037.-%E6%9C%89%E6%95%88%E7%9A%84%E5%9B%9E%E6%97%8B%E9%95%96/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1037. 有效的回旋镖'>
+<meta property='og:description' content='链接： https://leetcode.cn/problems/valid-boomerang/
+难度： 简单
+题目描述 给定一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，如果这些点构成一个 回旋镖 则返回 true 。
+回旋镖 定义为一组三个点，这些点 各不相同 且 不在一条直线上 。
+示例 1：  输入： points = [[1,1],[2,3],[3,2]]
+输出： true
+ 示例 2：  输入： points = [[1,1],[2,2],[3,3]]
+输出： false
+ 提示：  points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100  解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
+$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1037.-%E6%9C%89%E6%95%88%E7%9A%84%E5%9B%9E%E6%97%8B%E9%95%96/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dp' /><meta property='article:published_time' content='2022-06-09T10:04:08&#43;08:00'/><meta property='article:modified_time' content='2022-06-09T10:04:08&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1037. 有效的回旋镖">
+<meta name="twitter:description" content="链接： https://leetcode.cn/problems/valid-boomerang/
+难度： 简单
+题目描述 给定一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，如果这些点构成一个 回旋镖 则返回 true 。
+回旋镖 定义为一组三个点，这些点 各不相同 且 不在一条直线上 。
+示例 1：  输入： points = [[1,1],[2,3],[3,2]]
+输出： true
+ 示例 2：  输入： points = [[1,1],[2,2],[3,3]]
+输出： false
+ 提示：  points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100  解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
+$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-1037.-%E6%9C%89%E6%95%88%E7%9A%84%E5%9B%9E%E6%97%8B%E9%95%96/">Leetcode 1037. 有效的回旋镖</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jun 09, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode.cn/problems/valid-boomerang/"  target="_blank" rel="noopener"
+    >https://leetcode.cn/problems/valid-boomerang/</a><br>
+<strong>难度：</strong> <font color="orange">简单</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个数组 <code>points</code> ，其中 <code>points[i] = [x<sup>i</sup>, y<sup>i</sup>]</code> 表示 <strong>X-Y</strong> 平面上的一个点，如果这些点构成一个 <strong>回旋镖</strong> 则返回 <code>true</code> 。</p>
+<p><strong>回旋镖</strong> 定义为一组三个点，这些点 <strong>各不相同</strong> 且 <strong>不在一条直线上</strong> 。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入：</strong> points = [[1,1],[2,3],[3,2]]<br>
+<strong>输出：</strong> true</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> points = [[1,1],[2,2],[3,3]]<br>
+<strong>输出：</strong> false</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>points.length == 3</code></li>
+<li><code>points[i].length == 2</code></li>
+<li><code>0 &lt;= x<sup>i</sup>, y<sup>i</sup> &lt;= 100</code></li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="数学">数学</h4>
+<p>不妨设三个点为 <strong>A</strong>、<strong>B</strong>、<strong>C</strong>，分别求出直线 <strong>AB</strong> 和 <strong>AC</strong> 的斜率，若两条直线斜率相同，又因为有公共点 <strong>A</strong>，此时三个点在同一条直线上。如下公式：</p>
+<p>$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$</p>
+<p><strong>注意：</strong> 需要处理斜率为 <strong>∞</strong> 的情况，可以将上式进行交叉变换：$ (y_1-y_0)(x_2-x_0) = (y_2-y_0)(x_1-x_0) $</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isBoomerang</span>(<span style="color:#a6e22e">points</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])<span style="color:#f92672">*</span>(<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">==</span> (<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])<span style="color:#f92672">*</span>(<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]) {
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(1) $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/dp/">dp</a>
+        
+    </section>
+
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-553.-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 553. 最优除法</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-688.-%E9%AA%91%E5%A3%AB%E5%9C%A8%E6%A3%8B%E7%9B%98%E4%B8%8A%E7%9A%84%E6%A6%82%E7%8E%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 688. 骑士在棋盘上的概率</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1220.-%E7%BB%9F%E8%AE%A1%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D%E5%BA%8F%E5%88%97%E7%9A%84%E6%95%B0%E7%9B%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1220. 统计元音字母序列的数目</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1078.-bigram-%E5%88%86%E8%AF%8D/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1078. Bigram 分词</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-375.-%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F-ii/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 375. 猜数字大小 II</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

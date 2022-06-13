@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/reverse-only-letters/
+难度： 简单
+题目描述 每个 有效电子邮件地址 都由一个 本地名 和一个 域名 组成，以 &#39;@&#39; 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 &#39;.&#39; 或 &#39;&#43;&#39; 。
+ 例如，在 alice@leetcode.com 中， alice 是 本地名 ，而 leetcode.com 是 域名 。  如果在电子邮件地址的 本地名 部分中的某些字符之间添加句点（&#39;.&#39;），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 不适用于域名 。
+ 例如，&amp;quot;alice.z@leetcode.com” 和 “alicez@leetcode.com” 会转发到同一电子邮件地址。  如果在 本地名 中添加加号（&#39;&#43;&#39;），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 不适用于域名 。
+ 例如 m.y&#43;name@email.com 将转发到 my@email.com。  可以同时使用这两个规则。
+给你一个字符串数组 emails，我们会向每个 emails[i] 发送一封电子邮件。返回实际收到邮件的不同地址数目。
+示例 1：  输入： emails = [&amp;ldquo;test.email&#43;alex@leetcode.com&amp;rdquo;,&amp;ldquo;test.e.mail&#43;bob.cathy@leetcode.com&amp;rdquo;,&amp;ldquo;testemail&#43;david@lee.tcode.com&amp;rdquo;]
+输出： 2
+解释： 实际收到邮件的是 &amp;ldquo;testemail@leetcode.com&amp;rdquo; 和 &amp;ldquo;testemail@lee.'><title>Leetcode 929. 独特的电子邮件地址</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-929.-%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 929. 独特的电子邮件地址'>
+<meta property='og:description' content='链接： https://leetcode-cn.com/problems/reverse-only-letters/
+难度： 简单
+题目描述 每个 有效电子邮件地址 都由一个 本地名 和一个 域名 组成，以 &#39;@&#39; 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 &#39;.&#39; 或 &#39;&#43;&#39; 。
+ 例如，在 alice@leetcode.com 中， alice 是 本地名 ，而 leetcode.com 是 域名 。  如果在电子邮件地址的 本地名 部分中的某些字符之间添加句点（&#39;.&#39;），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 不适用于域名 。
+ 例如，&amp;quot;alice.z@leetcode.com” 和 “alicez@leetcode.com” 会转发到同一电子邮件地址。  如果在 本地名 中添加加号（&#39;&#43;&#39;），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 不适用于域名 。
+ 例如 m.y&#43;name@email.com 将转发到 my@email.com。  可以同时使用这两个规则。
+给你一个字符串数组 emails，我们会向每个 emails[i] 发送一封电子邮件。返回实际收到邮件的不同地址数目。
+示例 1：  输入： emails = [&amp;ldquo;test.email&#43;alex@leetcode.com&amp;rdquo;,&amp;ldquo;test.e.mail&#43;bob.cathy@leetcode.com&amp;rdquo;,&amp;ldquo;testemail&#43;david@lee.tcode.com&amp;rdquo;]
+输出： 2
+解释： 实际收到邮件的是 &amp;ldquo;testemail@leetcode.com&amp;rdquo; 和 &amp;ldquo;testemail@lee.'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-929.-%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:published_time' content='2022-06-06T20:05:45&#43;08:00'/><meta property='article:modified_time' content='2022-06-06T20:05:45&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 929. 独特的电子邮件地址">
+<meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/reverse-only-letters/
+难度： 简单
+题目描述 每个 有效电子邮件地址 都由一个 本地名 和一个 域名 组成，以 &#39;@&#39; 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 &#39;.&#39; 或 &#39;&#43;&#39; 。
+ 例如，在 alice@leetcode.com 中， alice 是 本地名 ，而 leetcode.com 是 域名 。  如果在电子邮件地址的 本地名 部分中的某些字符之间添加句点（&#39;.&#39;），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 不适用于域名 。
+ 例如，&amp;quot;alice.z@leetcode.com” 和 “alicez@leetcode.com” 会转发到同一电子邮件地址。  如果在 本地名 中添加加号（&#39;&#43;&#39;），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 不适用于域名 。
+ 例如 m.y&#43;name@email.com 将转发到 my@email.com。  可以同时使用这两个规则。
+给你一个字符串数组 emails，我们会向每个 emails[i] 发送一封电子邮件。返回实际收到邮件的不同地址数目。
+示例 1：  输入： emails = [&amp;ldquo;test.email&#43;alex@leetcode.com&amp;rdquo;,&amp;ldquo;test.e.mail&#43;bob.cathy@leetcode.com&amp;rdquo;,&amp;ldquo;testemail&#43;david@lee.tcode.com&amp;rdquo;]
+输出： 2
+解释： 实际收到邮件的是 &amp;ldquo;testemail@leetcode.com&amp;rdquo; 和 &amp;ldquo;testemail@lee.">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-929.-%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/">Leetcode 929. 独特的电子邮件地址</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jun 06, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/reverse-only-letters/"  target="_blank" rel="noopener"
+    >https://leetcode-cn.com/problems/reverse-only-letters/</a><br>
+<strong>难度：</strong> <font color="green">简单</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>每个 <strong>有效电子邮件地址</strong> 都由一个 <strong>本地名</strong> 和一个 <strong>域名</strong> 组成，以 <code>'@'</code> 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 <code>'.'</code> 或 <code>'+'</code> 。</p>
+<ul>
+<li>例如，在 <code>alice@leetcode.com</code> 中， <code>alice</code> 是 <strong>本地名</strong> ，而 <code>leetcode.com</code> 是 <strong>域名</strong> 。</li>
+</ul>
+<p>如果在电子邮件地址的 <strong>本地名</strong> 部分中的某些字符之间添加句点（<code>'.'</code>），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 <strong>不适用于域名</strong> 。</p>
+<ul>
+<li>例如，<code>&quot;alice.z@leetcode.com”</code> 和 <code>“alicez@leetcode.com”</code> 会转发到同一电子邮件地址。</li>
+</ul>
+<p>如果在 <strong>本地名</strong> 中添加加号（<code>'+'</code>），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 <strong>不适用于域名</strong> 。</p>
+<ul>
+<li>例如 <code>m.y+name@email.com</code> 将转发到 <code>my@email.com</code>。</li>
+</ul>
+<p>可以同时使用这两个规则。</p>
+<p>给你一个字符串数组 <code>emails</code>，我们会向每个 <code>emails[i]</code> 发送一封电子邮件。返回实际收到邮件的不同地址数目。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入：</strong> emails = [&ldquo;test.email+alex@leetcode.com&rdquo;,&ldquo;test.e.mail+bob.cathy@leetcode.com&rdquo;,&ldquo;testemail+david@lee.tcode.com&rdquo;]<br>
+<strong>输出：</strong> 2<br>
+<strong>解释：</strong> 实际收到邮件的是 &ldquo;<a class="link" href="mailto:testemail@leetcode.com" >testemail@leetcode.com</a>&rdquo; 和 &ldquo;<a class="link" href="mailto:testemail@lee.tcode.com" >testemail@lee.tcode.com</a>&rdquo;。</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> emails = [&ldquo;a@leetcode.com&rdquo;,&ldquo;b@leetcode.com&rdquo;,&ldquo;c@leetcode.com&rdquo;]<br>
+<strong>输出：</strong> 3</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>1 &lt;= emails.length &lt;= 100</code></li>
+<li><code>1 &lt;= emails[i].length &lt;= 100</code></li>
+<li><code>emails[i]</code> 由小写英文字母、<code>'+'</code>、<code>'.'</code> 和 <code>'@'</code> 组成</li>
+<li>每个 <code>emails[i]</code> 都包含有且仅有一个 <code>'@'</code> 字符</li>
+<li>所有本地名和域名都不为空</li>
+<li>本地名不会以 <code>'+'</code> 字符作为开头</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="哈希">哈希</h4>
+<p>根据题设求得每个邮箱实际接受邮件的地址，使用哈希表去重，返回哈希表的大小。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numUniqueEmails</span>(<span style="color:#a6e22e">emails</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">struct</span>{})
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">email</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">emails</span> {
+		<span style="color:#a6e22e">real</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">email</span>))
+		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">email</span>, <span style="color:#e6db74">&#34;@&#34;</span>)
+	<span style="color:#a6e22e">Outer</span>:
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">char</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">t</span>[<span style="color:#ae81ff">0</span>] {
+			<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">char</span> {
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;.&#39;</span>:
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;+&#39;</span>:
+				<span style="color:#66d9ef">break</span> <span style="color:#a6e22e">Outer</span>
+			<span style="color:#66d9ef">default</span>:
+				<span style="color:#a6e22e">real</span> = append(<span style="color:#a6e22e">real</span>, byte(<span style="color:#a6e22e">char</span>))
+			}
+		}
+		<span style="color:#a6e22e">real</span> = append(<span style="color:#a6e22e">real</span>, <span style="color:#e6db74">&#39;@&#39;</span>)
+		<span style="color:#a6e22e">real</span> = append(<span style="color:#a6e22e">real</span>, <span style="color:#a6e22e">t</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">...</span>)
+		<span style="color:#a6e22e">exist</span>[string(<span style="color:#a6e22e">real</span>)] = <span style="color:#66d9ef">struct</span>{}{}
+	}
+	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">exist</span>)
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N), N = \sum{len(emails[i])} $</li>
+<li>空间复杂度：$ O(N) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hash/">hash</a>
+        
+    </section>
+
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-961.-%E5%9C%A8%E9%95%BF%E5%BA%A6-2n-%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%AD%E6%89%BE%E5%87%BA%E9%87%8D%E5%A4%8D-n-%E6%AC%A1%E7%9A%84%E5%85%83%E7%B4%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 961. 在长度 2N 的数组中找出重复 N 次的元素</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-436.-%E5%AF%BB%E6%89%BE%E5%8F%B3%E5%8C%BA%E9%97%B4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 436. 寻找右区间</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-442.-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 442. 数组中重复的数据</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-937.-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 937. 重新排列日志文件</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-398.-%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%B4%A2%E5%BC%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 398. 随机数索引</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

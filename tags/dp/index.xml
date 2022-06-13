@@ -6,7 +6,48 @@
     <description>Recent content in dp on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 27 Feb 2022 09:54:09 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jun 2022 09:38:44 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 926. 将字符串翻转到单调递增</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-926.-%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BF%BB%E8%BD%AC%E5%88%B0%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E/</link>
+      <pubDate>Sat, 11 Jun 2022 09:38:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-926.-%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BF%BB%E8%BD%AC%E5%88%B0%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E/</guid>
+      <description>链接： https://leetcode.cn/problems/flip-string-to-monotone-increasing/
+难度： 中等
+题目描述 如果一个二进制字符串，是以一些 0（可能没有 0）后面跟着一些 1（也可能没有 1）的形式组成的，那么该字符串是 单调递增 的。
+给你一个二进制字符串 s，你可以将任何 0 翻转为 1 或者将 1 翻转为 0 。
+返回使 s 单调递增的最小翻转次数。
+示例 1：  输入： s = &amp;ldquo;00110&amp;rdquo;
+输出： 1
+解释： 翻转最后一位得到 00111.
+ 示例 2：  输入： s = &amp;ldquo;010110&amp;rdquo;
+输出： 2
+解释： 翻转得到 011111，或者是 000111。
+ 示例 3：  输入： s = &amp;ldquo;00011000&amp;rdquo;
+输出： 2
+解释： 翻转得到 00000000。
+ 提示：  1 &amp;lt;= s.length &amp;lt;= 105 s[i] 为 &#39;0&#39; 或 &#39;1&#39;  解题思路 动态规划 每个字符有 0 和 1 两种情况，若已知反转后的一个 单调递增 字符串分别以 0 和 1 结尾的最小翻转次数，则容易求得在末尾新添一个子串的最小翻转次数。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1037. 有效的回旋镖</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1037.-%E6%9C%89%E6%95%88%E7%9A%84%E5%9B%9E%E6%97%8B%E9%95%96/</link>
+      <pubDate>Thu, 09 Jun 2022 10:04:08 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1037.-%E6%9C%89%E6%95%88%E7%9A%84%E5%9B%9E%E6%97%8B%E9%95%96/</guid>
+      <description>链接： https://leetcode.cn/problems/valid-boomerang/
+难度： 简单
+题目描述 给定一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，如果这些点构成一个 回旋镖 则返回 true 。
+回旋镖 定义为一组三个点，这些点 各不相同 且 不在一条直线上 。
+示例 1：  输入： points = [[1,1],[2,3],[3,2]]
+输出： true
+ 示例 2：  输入： points = [[1,1],[2,2],[3,3]]
+输出： false
+ 提示：  points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100  解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
+$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$</description>
+    </item>
+    
     <item>
       <title>Leetcode 553. 最优除法</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-553.-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/</link>
