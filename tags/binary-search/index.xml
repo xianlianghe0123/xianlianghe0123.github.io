@@ -6,7 +6,42 @@
     <description>Recent content in binary search on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 09 Jun 2022 10:55:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jun 2022 11:08:20 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 532. 数组中的 k-diff 数对</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-532.-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84-k-diff-%E6%95%B0%E5%AF%B9/</link>
+      <pubDate>Thu, 16 Jun 2022 11:08:20 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-532.-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84-k-diff-%E6%95%B0%E5%AF%B9/</guid>
+      <description>链接： https://leetcode.cn/problems/k-diff-pairs-in-an-array/
+难度： 中等
+题目描述 给定一个整数数组和一个整数 k，你需要在数组里找到 不同的 k-diff 数对，并返回不同的 k-diff 数对 的数目。
+这里将 k-diff 数对定义为一个整数对 (nums[i], nums[j])，并满足下述全部条件：
+ 0 &amp;lt;= i &amp;lt; j &amp;lt; nums.length |nums[i] - nums[j]| == k  注意，|val| 表示 val 的绝对值。
+示例 1：  输入： nums = [3, 1, 4, 1, 5], k = 2
+输出： 2
+解释： 数组中有两个 2-diff 数对, (1, 3) 和 (3, 5)。
+尽管数组中有两个1，但我们只应返回不同的数对的数量。
+ 示例 2：  输入： nums = [1, 2, 3, 4, 5], k = 1</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 498. 对角线遍历</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-498.-%E5%AF%B9%E8%A7%92%E7%BA%BF%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Tue, 14 Jun 2022 10:15:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-498.-%E5%AF%B9%E8%A7%92%E7%BA%BF%E9%81%8D%E5%8E%86/</guid>
+      <description>链接： https://leetcode.cn/problems/diagonal-traverse/
+难度： 中等
+题目描述 给你一个大小为 m x n 的矩阵 mat ，请以对角线遍历的顺序，用一个数组返回这个矩阵中的所有元素。
+示例 1：  输入： mat = [[1,2,3],[4,5,6],[7,8,9]]
+输出： [1,2,4,7,5,3,6,8,9]
+ 示例 2：  输入： mat = [[1,2],[3,4]]
+输出： [1,2,3,4]
+ 提示：  m == mat.length n == mat[i].length 1 &amp;lt;= m, n &amp;lt;= 104 1 &amp;lt;= m * n &amp;lt;= 104 -105 &amp;lt;= mat[i][j] &amp;lt;= 105  解题思路 模拟 遍历方向有两个，右上 和 左下，初始从左上角首个元素开始，向 右上 方遍历，当到达矩阵边界时，变换遍历方向。
+func findDiagonalOrder(mat [][]int) []int { rows, cols := len(mat), len(mat[0]) // 判断是否在矩阵内 	var valid = func(row int, col int) bool { if row &amp;lt; 0 || row &amp;gt;= rows || col &amp;lt; 0 || col &amp;gt;= cols { return false } return true } ans := make([]int, 0, rows*cols) rightUp := true for row, col := 0, 0; ; { // 发生越界 	if !</description>
+    </item>
+    
     <item>
       <title>Leetcode 497. 非重叠矩形中的随机点</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-497.-%E9%9D%9E%E9%87%8D%E5%8F%A0%E7%9F%A9%E5%BD%A2%E4%B8%AD%E7%9A%84%E9%9A%8F%E6%9C%BA%E7%82%B9/</link>

@@ -6,7 +6,26 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 30 May 2022 10:52:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Jun 2022 09:55:23 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 508. 出现次数最多的子树元素和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-508.-%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%90%E6%A0%91%E5%85%83%E7%B4%A0%E5%92%8C/</link>
+      <pubDate>Sun, 19 Jun 2022 09:55:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-508.-%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%90%E6%A0%91%E5%85%83%E7%B4%A0%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/most-frequent-subtree-sum/
+难度： 中等
+题目描述 给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。
+一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。
+示例 1：  输入： root = [5,2,-3]
+输出： [2,-3,4]
+ 示例 2：  输入： root = [5,2,-5]
+输出： [2]
+ 提示：  节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105  解题思路 深度优先搜索 + 哈希 遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。
+遍历哈希表，找出最大次数的和返回。
+func findFrequentTreeSum(root *TreeNode) []int { sum2Cnt := make(map[int]int) maxCnt := 0 var dfs func(node *TreeNode) int dfs = func(node *TreeNode) int { if node == nil { return 0 } sum := node.</description>
+    </item>
+    
     <item>
       <title>Leetcode 1022. 从根到叶的二进制数之和</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1022.-%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B9%8B%E5%92%8C/</link>

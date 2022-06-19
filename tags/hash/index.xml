@@ -6,7 +6,46 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 06 Jun 2022 20:05:45 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Jun 2022 09:55:23 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 508. 出现次数最多的子树元素和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-508.-%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%90%E6%A0%91%E5%85%83%E7%B4%A0%E5%92%8C/</link>
+      <pubDate>Sun, 19 Jun 2022 09:55:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-508.-%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%90%E6%A0%91%E5%85%83%E7%B4%A0%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/most-frequent-subtree-sum/
+难度： 中等
+题目描述 给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。
+一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。
+示例 1：  输入： root = [5,2,-3]
+输出： [2,-3,4]
+ 示例 2：  输入： root = [5,2,-5]
+输出： [2]
+ 提示：  节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105  解题思路 深度优先搜索 + 哈希 遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。
+遍历哈希表，找出最大次数的和返回。
+func findFrequentTreeSum(root *TreeNode) []int { sum2Cnt := make(map[int]int) maxCnt := 0 var dfs func(node *TreeNode) int dfs = func(node *TreeNode) int { if node == nil { return 0 } sum := node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 890. 查找和替换模式</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-890.-%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9B%BF%E6%8D%A2%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 13 Jun 2022 09:57:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-890.-%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9B%BF%E6%8D%A2%E6%A8%A1%E5%BC%8F/</guid>
+      <description>链接： https://leetcode.cn/problems/find-and-replace-pattern/
+难度： 中等
+题目描述 你有一个单词列表 words 和一个模式 pattern，你想知道 words 中的哪些单词与模式匹配。
+如果存在字母的排列 p ，使得将模式中的每个字母 x 替换为 p(x) 之后，我们就得到了所需的单词，那么单词与模式是匹配的。
+（回想一下，字母的排列是从字母到字母的双射：每个字母映射到另一个字母，没有两个字母映射到同一个字母。）
+返回 words 中与给定模式匹配的单词列表。
+你可以按任何顺序返回答案。
+示例 1：  输入： s1 = &amp;ldquo;this apple is sweet&amp;rdquo;, s2 = &amp;ldquo;this apple is sour&amp;rdquo;
+输出： [&amp;ldquo;sweet&amp;rdquo;,&amp;ldquo;sour&amp;rdquo;]
+ 示例 2：  输入： s1 = &amp;ldquo;apple apple&amp;rdquo;, s2 = &amp;ldquo;banana&amp;rdquo;
+输出： [&amp;ldquo;banana&amp;rdquo;]
+ 提示：  1 &amp;lt;= s1.length, s2.length &amp;lt;= 200 s1 和 s2 由小写英文字母和空格组成 s1 和 s2 都不含前导或尾随空格 s1 和 s2 中的所有单词间均由单个空格分隔  解题思路 哈希 使用哈希表记录映射关系，当不存在冲突时，满足条件。</description>
+    </item>
+    
     <item>
       <title>Leetcode 929. 独特的电子邮件地址</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-929.-%E7%8B%AC%E7%89%B9%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80/</link>

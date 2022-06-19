@@ -227,7 +227,7 @@
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/last-stone-weight-ii/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/last-stone-weight-ii/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p>有一堆石头，用整数数组 <code>stones</code> 表示。其中 <code>stones[i]</code> 表示第 <code>i</code> 块石头的重量。</p>
 <p>每一回合，从中选出 <strong>任意两块石头</strong>，然后将它们一起粉碎。假设石头的重量分别为 <code>x</code> 和 <code>y</code>，且 <code>x &lt;= y</code>。那么粉碎的可能结果如下：</p>
 <ul>
@@ -235,7 +235,7 @@
 <li>如果 <code>x != y</code>，那么重量为 <code>x</code> 的石头将会完全粉碎，而重量为 <code>y</code> 的石头新重量为 <code>y-x</code>。</li>
 </ul>
 <p>最后，<strong>最多只会剩下一块</strong> 石头。返回此石头 <strong>最小的可能重量</strong> 。如果没有石头剩下，就返回 <code>0</code>。</p>
-<h5 id="示例-1">示例 1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 <blockquote>
 <p><strong>输入：</strong> stones = [2,7,4,1,8,1]<br>
 <strong>输出：</strong> 1<br>
@@ -245,12 +245,12 @@
 组合 2 和 1，得到 1，所以数组转化为 [1,1,1]，<br>
 组合 1 和 1，得到 0，所以数组转化为 [1]，这就是最优值。</p>
 </blockquote>
-<h5 id="示例-2">示例 2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 <blockquote>
 <p><strong>输入：</strong> stones = [31,26,33,21,40]<br>
 <strong>输出：</strong> 5</p>
 </blockquote>
-<h5 id="示例-3">示例 3：</h5>
+<h4 id="示例-3">示例 3：</h4>
 <blockquote>
 <p><strong>输入：</strong> stones = [1,2]<br>
 <strong>输出：</strong> 1</p>
@@ -285,8 +285,8 @@
 }
 </code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N*sum(stones))</li>
-<li>空间复杂度：O(sum(stones))</li>
+<li>时间复杂度：$ O(N*sum(stones)) $</li>
+<li>空间复杂度：$ O(sum(stones)) $</li>
 </ul>
 
 </section>
