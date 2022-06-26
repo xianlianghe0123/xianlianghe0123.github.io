@@ -6,7 +6,28 @@
     <description>Recent content in dp on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 11 Jun 2022 09:38:44 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Jun 2022 09:08:16 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer II 091. 粉刷房子</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-091.-%E7%B2%89%E5%88%B7%E6%88%BF%E5%AD%90/</link>
+      <pubDate>Sat, 25 Jun 2022 09:08:16 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-091.-%E7%B2%89%E5%88%B7%E6%88%BF%E5%AD%90/</guid>
+      <description>链接： https://leetcode.cn/problems/JEj789/
+难度： 中等
+题目描述 假如有一排房子，共 n 个，每个房子可以被粉刷成红色、蓝色或者绿色这三种颜色中的一种，你需要粉刷所有的房子并且使其相邻的两个房子颜色不能相同。
+当然，因为市场上不同颜色油漆的价格不同，所以房子粉刷成不同颜色的花费成本也是不同的。每个房子粉刷成不同颜色的花费是以一个 n x 3 的正整数矩阵 costs 来表示的。
+例如，costs[0][0] 表示第 0 号房子粉刷成红色的成本花费；costs[1][2] 表示第 1 号房子粉刷成绿色的花费，以此类推。
+请计算出粉刷完所有房子最少的花费成本。
+示例 1：  输入： costs = [[17,2,17],[16,16,5],[14,3,19]]
+输出： 10
+解释： 将 0 号房子粉刷成蓝色，1 号房子粉刷成绿色，2 号房子粉刷成蓝色。
+最少花费: 2 + 5 + 3 = 10。
+ 示例 2：  输入： costs = [[7,6,2]]
+输出： 2
+ 提示  costs.length == n costs[i].length == 3 1 &amp;lt;= n &amp;lt;= 100 1 &amp;lt;= costs[i][j] &amp;lt;= 20  解题思路 动态规划 如果按照顺序从头至尾粉刷所有的房子，则每一个房子可以被粉刷的颜色受到上一个房子粉刷的颜色约束。</description>
+    </item>
+    
     <item>
       <title>Leetcode 926. 将字符串翻转到单调递增</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-926.-%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BF%BB%E8%BD%AC%E5%88%B0%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E/</link>
