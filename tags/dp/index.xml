@@ -6,7 +6,33 @@
     <description>Recent content in dp on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 25 Jun 2022 09:08:16 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jul 2022 10:16:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 241. 为运算表达式设计优先级</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-241.-%E4%B8%BA%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%85%88%E7%BA%A7/</link>
+      <pubDate>Fri, 01 Jul 2022 10:16:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-241.-%E4%B8%BA%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%85%88%E7%BA%A7/</guid>
+      <description>链接： https://leetcode.cn/problems/different-ways-to-add-parentheses/
+难度： 中等
+题目描述 给你一个由数字和运算符组成的字符串 expression ，按不同优先级组合数字和运算符，计算并返回所有可能组合的结果。你可以 按任意顺序 返回答案。
+生成的测试用例满足其对应输出值符合 32 位整数范围，不同结果的数量不超过 104 。
+示例 1：  输入： expression = &amp;ldquo;2-1-1&amp;rdquo;
+输出： [0,2]
+解释：
+((2-1)-1) = 0
+(2-(1-1)) = 2
+ 示例 2：  输入： expression = &amp;ldquo;2*3-4*5&amp;rdquo;
+输出： [-34,-14,-10,-10,10]
+解释：
+(2*(3-(45))) = -34
+((23)-(45)) = -14
+((2(3-4))5) = -10
+(2((3-4)5)) = -10
+(((23)-4)*5) = 10
+ 提示：  1 &amp;lt;= expression.length &amp;lt;= 20 expression 由数字和算符 &#39;+&#39;、&#39;-&#39; 和 &#39;*&#39; 组成。 输入表达式中的所有整数值在范围 [0, 99]   解题思路 分治 两个表达式进行运算，若其计算结果分别有 x 和 y 种，则最终的计算结果将 x 和 y 中所有结果的两两组合进行运算即可。</description>
+    </item>
+    
     <item>
       <title>剑指 Offer II 091. 粉刷房子</title>
       <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-091.-%E7%B2%89%E5%88%B7%E6%88%BF%E5%AD%90/</link>
