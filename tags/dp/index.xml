@@ -6,7 +6,24 @@
     <description>Recent content in dp on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 01 Jul 2022 10:16:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 09:42:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 873. 最长的斐波那契子序列的长度</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-873.-%E6%9C%80%E9%95%BF%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6/</link>
+      <pubDate>Sat, 09 Jul 2022 09:42:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-873.-%E6%9C%80%E9%95%BF%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6/</guid>
+      <description>链接： https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/
+难度： 中等
+题目描述 如果序列 X_1, X_2, ..., X_n 满足下列条件，就说它是 斐波那契式 的：
+ n &amp;gt;= 3 对于所有 i + 2 &amp;lt;= n，都有 X_i + X_{i+1} = X_{i+2}  给定一个 严格递增 的正整数数组形成序列 arr ，找到 arr 中最长的斐波那契式的子序列的长度。如果一个不存在，返回 0 。
+（回想一下，子序列是从原序列 arr 中派生出来的，它从 arr 中删掉任意数量的元素（也可以不删），而不改变其余元素的顺序。例如， [3, 5, 8] 是 [3, 4, 5, 6, 7, 8] 的一个子序列）
+示例 1：  输入： arr = [1,2,3,4,5,6,7,8]
+输出： 5
+解释： 最长的斐波那契式子序列为 [1,2,3,5,8] 。
+ 示例 2：  输入： arr = [1,3,7,11,12,14,18]</description>
+    </item>
+    
     <item>
       <title>Leetcode 241. 为运算表达式设计优先级</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-241.-%E4%B8%BA%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%85%88%E7%BA%A7/</link>

@@ -6,7 +6,25 @@
     <description>Recent content in trie on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Tue, 28 Dec 2021 11:53:28 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/trie/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jul 2022 10:14:37 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/trie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 648. 单词替换</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-648.-%E5%8D%95%E8%AF%8D%E6%9B%BF%E6%8D%A2/</link>
+      <pubDate>Thu, 07 Jul 2022 10:14:37 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-648.-%E5%8D%95%E8%AF%8D%E6%9B%BF%E6%8D%A2/</guid>
+      <description>链接： https://leetcode.cn/problems/replace-words/
+难度： 中等
+题目描述 在英语中，我们有一个叫做 词根(root) 的概念，可以词根后面添加其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。例如，词根 an，跟随着单词 other (其他)，可以形成新的单词 another (另一个)。
+现在，给定一个由许多词根组成的词典 dictionary 和一个用空格分隔单词形成的句子 sentence。你需要将句子中的所有继承词用词根替换掉。如果继承词有许多可以形成它的词根，则用最短的词根替换它。
+你需要输出替换之后的句子。
+示例 1：  输入： dictionary = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;bat&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;], sentence = &amp;ldquo;the cattle was rattled by the battery&amp;rdquo;
+输出： &amp;ldquo;the cat was rat by the bat&amp;rdquo;
+ 示例 2：  输入： dictionary = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;], sentence = &amp;ldquo;aadsfasf absbs bbab cadsfafs&amp;rdquo;
+输出： &amp;ldquo;a a b c&amp;rdquo;
+ 提示：  1 &amp;lt;= dictionary.length &amp;lt;= 1000 1 &amp;lt;= dictionary[i].</description>
+    </item>
+    
     <item>
       <title>Leetcode 472. 连接词</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-472.-%E8%BF%9E%E6%8E%A5%E8%AF%8D/</link>

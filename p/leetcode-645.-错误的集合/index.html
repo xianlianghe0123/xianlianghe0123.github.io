@@ -224,21 +224,21 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/set-mismatch/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/set-mismatch/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p>集合 <code>s</code> 包含从 <code>1</code> 到 <code>n</code> 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 <strong>丢失了一个数字</strong> 并且 <strong>有一个数字重复</strong> 。</p>
 <p>给定一个数组 <code>nums</code> 代表了集合 <code>S</code> 发生错误后的结果。</p>
 <p>请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。</p>
-<h5 id="示例-1">示例 1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 <blockquote>
 <p><strong>输入：</strong> nums = [1,2,2,4]<br>
 <strong>输出：</strong> [2,3]</p>
 </blockquote>
-<h5 id="示例-2">示例 2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 <blockquote>
 <p><strong>输入：</strong> nums = [1,1]<br>
 <strong>输出：</strong> [1,2]</p>
 </blockquote>
-<h5 id="提示">提示：</h5>
+<h4 id="提示">提示：</h4>
 <ul>
 <li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
 <li><code>1 &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
@@ -264,8 +264,8 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 }
 </code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N), N = len(nums)</li>
-<li>空间复杂度：O(N)</li>
+<li>时间复杂度：$ O(N), N = len(nums) $</li>
+<li>空间复杂度：$ O(N) $</li>
 </ul>
 
 </section>

@@ -6,7 +6,7 @@
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+示例 1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
 输出： &amp;ldquo;dcba&amp;rdquo;
  示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
 输出： &amp;ldquo;iloveu&amp;rdquo;
@@ -25,7 +25,7 @@
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+示例 1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
 输出： &amp;ldquo;dcba&amp;rdquo;
  示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
 输出： &amp;ldquo;iloveu&amp;rdquo;
@@ -44,7 +44,7 @@
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+示例 1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
 输出： &amp;ldquo;dcba&amp;rdquo;
  示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
 输出： &amp;ldquo;iloveu&amp;rdquo;
@@ -236,26 +236,26 @@
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p>给出一个字符串 <code>s</code>（仅含有小写英文字母和括号）。</p>
 <p>请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。</p>
 <p>注意，您的结果中 <strong>不应</strong> 包含任何括号。</p>
-<h5 id="示例1">示例1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 <blockquote>
 <p><strong>输入：</strong> s = &ldquo;(abcd)&rdquo;<br>
 <strong>输出：</strong> &ldquo;dcba&rdquo;</p>
 </blockquote>
-<h5 id="示例-2">示例 2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 <blockquote>
 <p><strong>输入：</strong> s = &ldquo;(u(love)i)&rdquo;<br>
 <strong>输出：</strong> &ldquo;iloveu&rdquo;</p>
 </blockquote>
-<h5 id="示例-3">示例 3：</h5>
+<h4 id="示例-3">示例 3：</h4>
 <blockquote>
 <p><strong>输入：</strong> s = &ldquo;(ed(et(oc))el)&rdquo;<br>
 <strong>输出：</strong> &ldquo;leetcode&rdquo;</p>
 </blockquote>
-<h5 id="示例-4">示例 4：</h5>
+<h4 id="示例-4">示例 4：</h4>
 <blockquote>
 <p><strong>输入：</strong> s = &ldquo;a(bcdefghijkl(mno)p)q&rdquo;<br>
 <strong>输出：</strong> &ldquo;apmnolkjihgfedcbq&rdquo;</p>
@@ -294,8 +294,8 @@
 }
 </code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(N<sup>2</sup>)</li>
+<li>时间复杂度：$ O(N), N = len(s) $</li>
+<li>空间复杂度：$ O(N^2) $</li>
 </ul>
 <h5 id="跳跃">跳跃</h5>
 <p>通过模拟可以发现，每次奇数层的括号内元素需要反转，而偶数内不需要。</p>
@@ -327,8 +327,8 @@
 }
 </code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(N)</li>
+<li>时间复杂度：$ O(N), N = len(s) $</li>
+<li>空间复杂度：$ O(N) $</li>
 </ul>
 
 </section>

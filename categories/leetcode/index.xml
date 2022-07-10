@@ -6,7 +6,117 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 01 Jul 2022 10:16:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 09:42:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 873. 最长的斐波那契子序列的长度</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-873.-%E6%9C%80%E9%95%BF%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6/</link>
+      <pubDate>Sat, 09 Jul 2022 09:42:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-873.-%E6%9C%80%E9%95%BF%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6/</guid>
+      <description>链接： https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/
+难度： 中等
+题目描述 如果序列 X_1, X_2, ..., X_n 满足下列条件，就说它是 斐波那契式 的：
+ n &amp;gt;= 3 对于所有 i + 2 &amp;lt;= n，都有 X_i + X_{i+1} = X_{i+2}  给定一个 严格递增 的正整数数组形成序列 arr ，找到 arr 中最长的斐波那契式的子序列的长度。如果一个不存在，返回 0 。
+（回想一下，子序列是从原序列 arr 中派生出来的，它从 arr 中删掉任意数量的元素（也可以不删），而不改变其余元素的顺序。例如， [3, 5, 8] 是 [3, 4, 5, 6, 7, 8] 的一个子序列）
+示例 1：  输入： arr = [1,2,3,4,5,6,7,8]
+输出： 5
+解释： 最长的斐波那契式子序列为 [1,2,3,5,8] 。
+ 示例 2：  输入： arr = [1,3,7,11,12,14,18]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1217. 玩筹码</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1217.-%E7%8E%A9%E7%AD%B9%E7%A0%81/</link>
+      <pubDate>Fri, 08 Jul 2022 10:33:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1217.-%E7%8E%A9%E7%AD%B9%E7%A0%81/</guid>
+      <description>链接： https://leetcode.cn/problems/minimum-absolute-difference/
+难度： 简单
+题目描述 有 n 个筹码。第 i 个筹码的位置是 position[i] 。
+我们需要把所有筹码移到同一个位置。在一步中，我们可以将第 i 个筹码的位置从 position[i] 改变为:
+ position[i] + 2 或 position[i] - 2 ，此时 cost = 0 position[i] + 1 或 position[i] - 1 ，此时 cost = 1  返回将所有筹码移动到同一位置上所需要的 最小代价 。
+示例 1：  输入： position = [1,2,3]
+输出： 1
+解释： 第一步:将位置3的筹码移动到位置1，成本为0。
+第二步:将位置2的筹码移动到位置1，成本= 1。
+总成本是1。
+ 示例 2：  输入： position = [2,2,2,3,3]
+输出： 2
+解释： 我们可以把位置3的两个筹码移到位置2。每一步的成本为1。总成本= 2。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 648. 单词替换</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-648.-%E5%8D%95%E8%AF%8D%E6%9B%BF%E6%8D%A2/</link>
+      <pubDate>Thu, 07 Jul 2022 10:14:37 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-648.-%E5%8D%95%E8%AF%8D%E6%9B%BF%E6%8D%A2/</guid>
+      <description>链接： https://leetcode.cn/problems/replace-words/
+难度： 中等
+题目描述 在英语中，我们有一个叫做 词根(root) 的概念，可以词根后面添加其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。例如，词根 an，跟随着单词 other (其他)，可以形成新的单词 another (另一个)。
+现在，给定一个由许多词根组成的词典 dictionary 和一个用空格分隔单词形成的句子 sentence。你需要将句子中的所有继承词用词根替换掉。如果继承词有许多可以形成它的词根，则用最短的词根替换它。
+你需要输出替换之后的句子。
+示例 1：  输入： dictionary = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;bat&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;], sentence = &amp;ldquo;the cattle was rattled by the battery&amp;rdquo;
+输出： &amp;ldquo;the cat was rat by the bat&amp;rdquo;
+ 示例 2：  输入： dictionary = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;], sentence = &amp;ldquo;aadsfasf absbs bbab cadsfafs&amp;rdquo;
+输出： &amp;ldquo;a a b c&amp;rdquo;
+ 提示：  1 &amp;lt;= dictionary.length &amp;lt;= 1000 1 &amp;lt;= dictionary[i].</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 736. Lisp 语法解析</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-736.-lisp-%E8%AF%AD%E6%B3%95%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Wed, 06 Jul 2022 19:31:29 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-736.-lisp-%E8%AF%AD%E6%B3%95%E8%A7%A3%E6%9E%90/</guid>
+      <description>链接： https://leetcode.cn/problems/parse-lisp-expression/
+难度： 困难
+题目描述 给你一个类似 Lisp 语句的字符串表达式 expression，求出其计算结果。
+表达式语法如下所示:
+ 表达式可以为整数，let 表达式，add 表达式，mult 表达式，或赋值的变量。表达式的结果总是一个整数。 (整数可以是正整数、负整数、0) let 表达式采用 &amp;quot;(let v1 e1 v2 e2 ... vn en expr)&amp;quot; 的形式，其中 let 总是以字符串 &amp;quot;let&amp;quot; 来表示，接下来会跟随一对或多对交替的变量和表达式，也就是说，第一个变量 v1 被分配为表达式 e1 的值，第二个变量 v2 被分配为表达式 e2 的值，依次类推；最终 let 表达式的值为 expr 表达式的值。 add 表达式表示为 &amp;quot;(add e1 e2)&amp;quot; ，其中 add 总是以字符串 &amp;quot;add&amp;quot; 来表示，该表达式总是包含两个表达式 e1、e2 ，最终结果是 e1 表达式的值与 e2 表达式的值之 和 。 mult 表达式表示为 &amp;quot;(mult e1 e2)&amp;quot; ，其中 mult 总是以字符串 &amp;quot;mult&amp;quot; 表示，该表达式总是包含两个表达式 e1、e2，最终结果是 e1 表达式的值与 e2 表达式的值之 积 。 在该题目中，变量名以小写字符开始，之后跟随 0 个或多个小写字符或数字。为了方便，&amp;quot;add&amp;quot; ，&amp;quot;let&amp;quot; ，&amp;quot;mult&amp;quot; 会被定义为 &amp;ldquo;关键字&amp;rdquo; ，不会用作变量名。 最后，要说一下作用域的概念。计算变量名所对应的表达式时，在计算上下文中，首先检查最内层作用域（按括号计），然后按顺序依次检查外部作用域。测试用例中每一个表达式都是合法的。有关作用域的更多详细信息，请参阅示例。  示例 1：  输入： expression = &amp;ldquo;(let x 2 (mult x (let x 3 y 4 (add x y))))&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 729. 我的日程安排表 I</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-729.-%E6%88%91%E7%9A%84%E6%97%A5%E7%A8%8B%E5%AE%89%E6%8E%92%E8%A1%A8-i/</link>
+      <pubDate>Tue, 05 Jul 2022 14:25:31 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-729.-%E6%88%91%E7%9A%84%E6%97%A5%E7%A8%8B%E5%AE%89%E6%8E%92%E8%A1%A8-i/</guid>
+      <description>链接： https://leetcode.cn/problems/my-calendar-i/
+难度： 中等
+题目描述 实现一个 MyCalendar 类来存放你的日程安排。如果要添加的日程安排不会造成 重复预订 ，则可以存储这个新的日程安排。
+当两个日程安排有一些时间上的交叉时（例如两个日程安排都在同一时间内），就会产生 重复预订 。
+日程可以用一对整数 start 和 end 表示，这里的时间是半开区间，即 [start, end), 实数 x 的范围为， start &amp;lt;= x &amp;lt; end 。
+实现 MyCalendar 类：
+ MyCalendar() 初始化日历对象。 boolean book(int start, int end) 如果可以将日程安排成功添加到日历中而不会导致重复预订，返回 true 。否则，返回 false 并且不要将该日程安排添加到日历中。  示例：  输入：
+[&amp;ldquo;MyCalendar&amp;rdquo;, &amp;ldquo;book&amp;rdquo;, &amp;ldquo;book&amp;rdquo;, &amp;ldquo;book&amp;rdquo;]
+[[], [10, 20], [15, 25], [20, 30]]
+输出：
+[null, true, false, true]
+解释：
+MyCalendar myCalendar = new MyCalendar();</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1200. 最小绝对差</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1200.-%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE/</link>
+      <pubDate>Mon, 04 Jul 2022 10:17:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1200.-%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE/</guid>
+      <description>链接： https://leetcode.cn/problems/minimum-absolute-difference/
+难度： 简单
+题目描述 给你个整数数组 arr，其中每个元素都 不相同。
+请你找到所有具有最小绝对差的元素对，并且按升序的顺序返回。
+示例 1：  输入： arr = [4,2,1,3]
+输出： [[1,2],[2,3],[3,4]]
+ 示例 2：  输入： arr = [1,3,6,10,15]
+输出： [[1,3]]
+ 示例 3：  输入： arr = [3,8,-10,23,19,-4,-14,27]
+输出： [[-14,-10],[19,23],[23,27]]
+ 提示：  2 &amp;lt;= arr.length &amp;lt;= 105 -106 &amp;lt;= arr[i] &amp;lt;= 106  解题思路 排序 将原数组从小到大排序，则最小差值一定出现在两个相邻的元素之间，依次遍历判断寻找：
+ 当当前差值大于最小差值时，忽略； 当当前差值等于最小差值时，加入到结果数组中； 当当前差值小于最小差值时，之前保留的结果无效，进行清空，并将当前元素对加入到结果数组中；  func minimumAbsDifference(arr []int) [][]int { sort.Ints(arr) ans := make([][]int, 0, len(arr)) minDiff := math.</description>
+    </item>
+    
     <item>
       <title>Leetcode 241. 为运算表达式设计优先级</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-241.-%E4%B8%BA%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%85%88%E7%BA%A7/</link>
@@ -7901,7 +8011,7 @@ func hammingDistance(x int, y int) int { distance := 0 for xor := x ^ y; xor != 
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+示例 1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
 输出： &amp;ldquo;dcba&amp;rdquo;
  示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
 输出： &amp;ldquo;iloveu&amp;rdquo;
@@ -8107,13 +8217,13 @@ a 和 b 定义如下：
 举个例子，如上图所示，给定一棵叶值序列为 (6, 7, 4, 9, 8) 的树。
 如果有两棵二叉树的叶值序列是相同，那么我们就认为它们是 叶相似 的。
 如果给定的两个根结点分别为 root1 和 root2 的树是叶相似的，则返回 true；否则返回 false 。
-示例1：  输入： root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]
+示例 1：  输入： root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]
 输出： true
- 示例2：  输入： root1 = [1], root2 = [1]
+ 示例 2：  输入： root1 = [1], root2 = [1]
 输出： true
- 示例3：  输入： root1 = [1], root2 = [2]
+ 示例 3：  输入： root1 = [1], root2 = [2]
 输出： false
- 示例4：  输入： root1 = [1,2], root2 = [2,2]</description>
+ 示例 4：  输入： root1 = [1,2], root2 = [2,2]</description>
     </item>
     
     <item>
