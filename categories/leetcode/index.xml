@@ -6,7 +6,144 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 09 Jul 2022 09:42:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 09:17:02 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 565. 数组嵌套</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-565.-%E6%95%B0%E7%BB%84%E5%B5%8C%E5%A5%97/</link>
+      <pubDate>Sun, 17 Jul 2022 09:17:02 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-565.-%E6%95%B0%E7%BB%84%E5%B5%8C%E5%A5%97/</guid>
+      <description>链接： https://leetcode.cn/problems/array-nesting/
+难度： 简单
+题目描述 索引从 0 开始长度为 N 的数组 A，包含 0 到 N - 1 的所有整数。找到最大的集合 S 并返回其大小，其中 S[i] = {A[i], A[A[i]], A[A[A[i]]], ... } 且遵守以下的规则。
+假设选择索引为 i 的元素 A[i] 为 S 的第一个元素，S 的下一个元素应该是 A[A[i]]，之后是 A[A[A[i]]]... 以此类推，不断添加直到 S 出现重复的元素。
+示例：  输入： A = [5,4,0,3,1,6,2]
+输出： 4
+解释：
+A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.</description>
+    </item>
+    
+    <item>
+      <title>剑指 Offer II 041. 滑动窗口的平均值</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-041.-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC/</link>
+      <pubDate>Sat, 16 Jul 2022 10:23:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-041.-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC/</guid>
+      <description>链接： https://leetcode.cn/problems/qIsx9U/
+难度： 简单
+题目描述 给定一个整数数据流和一个窗口大小，根据该滑动窗口的大小，计算滑动窗口里所有数字的平均值。
+实现 MovingAverage 类：
+ MovingAverage(int size) 用窗口大小 size 初始化对象。 double next(int val) 成员函数 next 每次调用的时候都会往滑动窗口增加一个整数，请计算并返回数据流中最后 size 个值的移动平均值，即滑动窗口里所有数字的平均值。  示例：  输入：
+inputs = [&amp;ldquo;MovingAverage&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;]
+inputs = [[3], [1], [10], [3], [5]]
+输出：
+[null, 1.0, 5.5, 4.66667, 6.0]
+解释：
+MovingAverage movingAverage = new MovingAverage(3);
+movingAverage.next(1); // 返回 1.0 = 1 / 1
+movingAverage.next(10); // 返回 5.5 = (1 + 10) / 2</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 558. 四叉树交集</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-558.-%E5%9B%9B%E5%8F%89%E6%A0%91%E4%BA%A4%E9%9B%86/</link>
+      <pubDate>Fri, 15 Jul 2022 10:17:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-558.-%E5%9B%9B%E5%8F%89%E6%A0%91%E4%BA%A4%E9%9B%86/</guid>
+      <description>链接： https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/
+难度： 中等
+题目描述 二进制矩阵中的所有元素不是 0 就是 1 。
+给你两个四叉树，quadTree1 和 quadTree2。其中 quadTree1 表示一个 n * n 二进制矩阵，而 quadTree2 表示另一个 n * n 二进制矩阵。
+请你返回一个表示 n * n 二进制矩阵的四叉树，它是 quadTree1 和 quadTree2 所表示的两个二进制矩阵进行 按位逻辑或运算 的结果。
+注意，当 isLeaf 为 False 时，你可以把 True 或者 False 赋值给节点，两种值都会被判题机制 接受 。
+四叉树数据结构中，每个内部节点只有四个子节点。此外，每个节点都有两个属性：
+ val：储存叶子结点所代表的区域的值。1 对应 True，0 对应 False； isLeaf: 当这个节点是一个叶子结点时为 True，如果它有 4 个子节点则为 False 。  class Node { public boolean val; public boolean isLeaf; public Node topLeft; public Node topRight; public Node bottomLeft; public Node bottomRight; } 我们可以按以下步骤为二维区域构建四叉树：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 745. 前缀和后缀搜索</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-745.-%E5%89%8D%E7%BC%80%E5%92%8C%E5%90%8E%E7%BC%80%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Thu, 14 Jul 2022 10:11:46 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-745.-%E5%89%8D%E7%BC%80%E5%92%8C%E5%90%8E%E7%BC%80%E6%90%9C%E7%B4%A2/</guid>
+      <description>链接： https://leetcode.cn/problems/prefix-and-suffix-search/
+难度： 困难
+题目描述 设计一个包含一些单词的特殊词典，并能够通过前缀和后缀来检索单词。
+ 实现 WordFilter 类： WordFilter(string[] words) 使用词典中的单词 words 初始化对象。 f(string pref, string suff) 返回词典中具有前缀 prefix 和后缀 suff 的单词的下标。如果存在不止一个满足要求的下标，返回其中 最大的下标 。如果不存在这样的单词，返回 -1 。  示例 1：  输入：
+[&amp;ldquo;WordFilter&amp;rdquo;, &amp;ldquo;f&amp;rdquo;]
+[[[&amp;ldquo;apple&amp;rdquo;]], [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;e&amp;rdquo;]]
+输出：
+[null, 0]
+解释：
+WordFilter wordFilter = new WordFilter([&amp;ldquo;apple&amp;rdquo;]);
+wordFilter.f(&amp;ldquo;a&amp;rdquo;, &amp;ldquo;e&amp;rdquo;); // 返回 0 ，因为下标为 0 的单词：前缀 prefix = &amp;ldquo;a&amp;rdquo; 且 后缀 suff = &amp;ldquo;e&amp;rdquo; 。
+ 提示：  2 &amp;lt;= letters.length &amp;lt;= 104 letters[i] 是一个小写字母 letters 按非递减顺序排序 letters 最少包含两个不同的字母 target 是一个小写字母  解题思路 哈希 由于字符串的长度很小，可以解析出所有能与之匹配的前后缀模式串，并记录该模式串对应的下标最大值到哈希表中。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 735. 行星碰撞</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-735.-%E8%A1%8C%E6%98%9F%E7%A2%B0%E6%92%9E/</link>
+      <pubDate>Wed, 13 Jul 2022 21:10:28 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-735.-%E8%A1%8C%E6%98%9F%E7%A2%B0%E6%92%9E/</guid>
+      <description>链接： https://leetcode.cn/problems/asteroid-collision/
+难度： 中等
+题目描述 给定一个整数数组 asteroids，表示在同一行的行星。
+对于数组中的每一个元素，其绝对值表示行星的大小，正负表示行星的移动方向（正表示向右移动，负表示向左移动）。每一颗行星以相同的速度移动。
+找出碰撞后剩下的所有行星。碰撞规则：两个行星相互碰撞，较小的行星会爆炸。如果两颗行星大小相同，则两颗行星都会爆炸。两颗移动方向相同的行星，永远不会发生碰撞。
+示例 1：  输入： asteroids = [5,10,-5]
+输出： [5,10]
+解释： 10 和 -5 碰撞后只剩下 10 。 5 和 10 永远不会发生碰撞。
+ 示例 2：  输入： asteroids = [8,-8]
+输出： []
+解释： 8 和 -8 碰撞后，两者都发生爆炸。
+ 示例 3：  输入： asteroids = [10,2,-5]
+输出： [10]
+解释： 2 和 -5 发生碰撞后剩下 -5 。10 和 -5 发生碰撞后剩下 10 。
+ 提示：  2 &amp;lt;= asteroids.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1252. 奇数值单元格的数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1252.-%E5%A5%87%E6%95%B0%E5%80%BC%E5%8D%95%E5%85%83%E6%A0%BC%E7%9A%84%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Tue, 12 Jul 2022 20:58:51 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1252.-%E5%A5%87%E6%95%B0%E5%80%BC%E5%8D%95%E5%85%83%E6%A0%BC%E7%9A%84%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode.cn/problems/cells-with-odd-values-in-a-matrix/
+难度： 简单
+题目描述 给你一个 m x n 的矩阵，最开始的时候，每个单元格中的值都是 0。
+另有一个二维索引数组 indices，indices[i] = [ri, ci] 指向矩阵中的某个位置，其中 ri 和 ci 分别表示指定的行和列（从 0 开始编号）。
+对 indices[i] 所指向的每个位置，应同时执行下述增量操作：
+ ri 行上的所有单元格，加 1 。 ci 列上的所有单元格，加 1 。  给你 m、n 和 indices 。请你在执行完所有 indices 指定的增量操作后，返回矩阵中 奇数值单元格 的数目。
+示例 1：  输入： m = 2, n = 3, indices = [[0,1],[1,1]]
+输出： 6
+解释： 最开始的矩阵是 [[0,0,0],[0,0,0]]。
+第一次增量操作后得到 [[1,2,1],[0,1,0]]。
+最后的矩阵是 [[1,3,1],[1,3,1]]，里面有 6 个奇数。
+ 示例 2：  输入： m = 2, n = 2, indices = [[1,1],[0,0]]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 676. 实现一个魔法字典</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-676.-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/</link>
+      <pubDate>Mon, 11 Jul 2022 10:03:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-676.-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/</guid>
+      <description>链接： https://leetcode.cn/problems/implement-magic-dictionary/
+难度： 中等
+题目描述 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
+实现 MagicDictionary 类：
+ MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。  示例：  输入：
+[&amp;ldquo;MagicDictionary&amp;rdquo;, &amp;ldquo;buildDict&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]
+[[], [[&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]], [&amp;ldquo;hello&amp;rdquo;], [&amp;ldquo;hhllo&amp;rdquo;], [&amp;ldquo;hell&amp;rdquo;], [&amp;ldquo;leetcoded&amp;rdquo;]]
+输出：
+[null, null, false, true, false, false]
+解释：
+MagicDictionary magicDictionary = new MagicDictionary();
+magicDictionary.buildDict([&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]);
+magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False</description>
+    </item>
+    
     <item>
       <title>Leetcode 873. 最长的斐波那契子序列的长度</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-873.-%E6%9C%80%E9%95%BF%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6/</link>

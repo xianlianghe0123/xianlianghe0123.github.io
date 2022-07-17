@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/
+难度： 中等
+题目描述 二进制矩阵中的所有元素不是 0 就是 1 。
+给你两个四叉树，quadTree1 和 quadTree2。其中 quadTree1 表示一个 n * n 二进制矩阵，而 quadTree2 表示另一个 n * n 二进制矩阵。
+请你返回一个表示 n * n 二进制矩阵的四叉树，它是 quadTree1 和 quadTree2 所表示的两个二进制矩阵进行 按位逻辑或运算 的结果。
+注意，当 isLeaf 为 False 时，你可以把 True 或者 False 赋值给节点，两种值都会被判题机制 接受 。
+四叉树数据结构中，每个内部节点只有四个子节点。此外，每个节点都有两个属性：
+ val：储存叶子结点所代表的区域的值。1 对应 True，0 对应 False； isLeaf: 当这个节点是一个叶子结点时为 True，如果它有 4 个子节点则为 False 。  class Node { public boolean val; public boolean isLeaf; public Node topLeft; public Node topRight; public Node bottomLeft; public Node bottomRight; } 我们可以按以下步骤为二维区域构建四叉树：'><title>Leetcode 558. 四叉树交集</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-558.-%E5%9B%9B%E5%8F%89%E6%A0%91%E4%BA%A4%E9%9B%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 558. 四叉树交集'>
+<meta property='og:description' content='链接： https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/
+难度： 中等
+题目描述 二进制矩阵中的所有元素不是 0 就是 1 。
+给你两个四叉树，quadTree1 和 quadTree2。其中 quadTree1 表示一个 n * n 二进制矩阵，而 quadTree2 表示另一个 n * n 二进制矩阵。
+请你返回一个表示 n * n 二进制矩阵的四叉树，它是 quadTree1 和 quadTree2 所表示的两个二进制矩阵进行 按位逻辑或运算 的结果。
+注意，当 isLeaf 为 False 时，你可以把 True 或者 False 赋值给节点，两种值都会被判题机制 接受 。
+四叉树数据结构中，每个内部节点只有四个子节点。此外，每个节点都有两个属性：
+ val：储存叶子结点所代表的区域的值。1 对应 True，0 对应 False； isLeaf: 当这个节点是一个叶子结点时为 True，如果它有 4 个子节点则为 False 。  class Node { public boolean val; public boolean isLeaf; public Node topLeft; public Node topRight; public Node bottomLeft; public Node bottomRight; } 我们可以按以下步骤为二维区域构建四叉树：'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-558.-%E5%9B%9B%E5%8F%89%E6%A0%91%E4%BA%A4%E9%9B%86/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='divide and conquer' /><meta property='article:published_time' content='2022-07-15T10:17:00&#43;08:00'/><meta property='article:modified_time' content='2022-07-15T10:17:00&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 558. 四叉树交集">
+<meta name="twitter:description" content="链接： https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/
+难度： 中等
+题目描述 二进制矩阵中的所有元素不是 0 就是 1 。
+给你两个四叉树，quadTree1 和 quadTree2。其中 quadTree1 表示一个 n * n 二进制矩阵，而 quadTree2 表示另一个 n * n 二进制矩阵。
+请你返回一个表示 n * n 二进制矩阵的四叉树，它是 quadTree1 和 quadTree2 所表示的两个二进制矩阵进行 按位逻辑或运算 的结果。
+注意，当 isLeaf 为 False 时，你可以把 True 或者 False 赋值给节点，两种值都会被判题机制 接受 。
+四叉树数据结构中，每个内部节点只有四个子节点。此外，每个节点都有两个属性：
+ val：储存叶子结点所代表的区域的值。1 对应 True，0 对应 False； isLeaf: 当这个节点是一个叶子结点时为 True，如果它有 4 个子节点则为 False 。  class Node { public boolean val; public boolean isLeaf; public Node topLeft; public Node topRight; public Node bottomLeft; public Node bottomRight; } 我们可以按以下步骤为二维区域构建四叉树：">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-558.-%E5%9B%9B%E5%8F%89%E6%A0%91%E4%BA%A4%E9%9B%86/">Leetcode 558. 四叉树交集</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jul 15, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/"  target="_blank" rel="noopener"
+    >https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>二进制矩阵中的所有元素不是 <code>0</code> 就是 <code>1</code> 。</p>
+<p>给你两个四叉树，<code>quadTree1</code> 和 <code>quadTree2</code>。其中 <code>quadTree1</code> 表示一个 <code>n * n</code> 二进制矩阵，而 <code>quadTree2</code> 表示另一个 <code>n * n</code> 二进制矩阵。</p>
+<p>请你返回一个表示 <code>n * n</code> 二进制矩阵的四叉树，它是 <code>quadTree1</code> 和 <code>quadTree2</code> 所表示的两个二进制矩阵进行 <strong>按位逻辑或运算</strong> 的结果。</p>
+<p>注意，当 <code>isLeaf</code> 为 <code>False</code> 时，你可以把 <code>True</code> 或者 <code>False</code> 赋值给节点，两种值都会被判题机制 <strong>接受</strong> 。</p>
+<p>四叉树数据结构中，每个内部节点只有四个子节点。此外，每个节点都有两个属性：</p>
+<ul>
+<li><code>val</code>：储存叶子结点所代表的区域的值。<code>1</code> 对应 <code>True</code>，<code>0</code> 对应 <code>False</code>；</li>
+<li><code>isLeaf</code>: 当这个节点是一个叶子结点时为 <code>True</code>，如果它有 <code>4</code> 个子节点则为 <code>False</code> 。</li>
+</ul>
+<pre tabindex="0"><code>class Node {
+    public boolean val;
+    public boolean isLeaf;
+    public Node topLeft;
+    public Node topRight;
+    public Node bottomLeft;
+    public Node bottomRight;
+}
+</code></pre><p>我们可以按以下步骤为二维区域构建四叉树：</p>
+<ol>
+<li>如果当前网格的值相同（即，全为 <code>0</code> 或者全为 <code>1</code>），将 <code>isLeaf</code> 设为 <code>True</code> ，将 <code>val</code> 设为网格相应的值，并将四个子节点都设为 <code>Null</code> 然后停止。</li>
+<li>如果当前网格的值不同，将 <code>isLeaf</code> 设为 <code>False</code>， 将 <code>val</code> 设为任意值，然后如下图所示，将当前网格划分为四个子网格。</li>
+<li>使用适当的子网格递归每个子节点。</li>
+</ol>
+<img src="/img/558.new_top.png" width="777px">
+<p>如果你想了解更多关于四叉树的内容，可以参考 <a class="link" href="https://en.wikipedia.org/wiki/Quadtree"  target="_blank" rel="noopener"
+    >wiki</a> 。</p>
+<p><strong>四叉树格式：</strong></p>
+<p>输出为使用层序遍历后四叉树的序列化形式，其中 <code>null</code> 表示路径终止符，其下面不存在节点。</p>
+<p>它与二叉树的序列化非常相似。唯一的区别是节点以列表形式表示 <code>[isLeaf, val]</code> 。</p>
+<p>如果 <code>isLeaf</code> 或者 <code>val</code> 的值为 <code>True</code> ，则表示它在列表 <code>[isLeaf, val]</code> 中的值为 <code>1</code> ；如果 <code>isLeaf</code> 或者 <code>val</code> 的值为 <code>False</code> ，则表示值为 <code>0</code> 。</p>
+<h4 id="示例-1">示例 1：</h4>
+<img src="/img/558.qt1.png" width="550px">  
+<img src="/img/558.qt2.png" width="550px">
+<blockquote>
+<p><strong>输入：</strong> quadTree1 = [[0,1],[1,1],[1,1],[1,0],[1,0]],<br>
+quadTree2 = [[0,1],[1,1],[0,1],[1,1],[1,0],null,null,null,null,[1,0],[1,0],[1,1],[1,1]]<br>
+<strong>输出：</strong> [[0,0],[1,1],[1,1],[1,1],[1,0]]<br>
+<strong>解释：</strong> quadTree1 和 quadTree2 如上所示。由四叉树所表示的二进制矩阵也已经给出。<br>
+如果我们对这两个矩阵进行按位逻辑或运算，则可以得到下面的二进制矩阵，由一个作为结果的四叉树表示。<br>
+注意，我们展示的二进制矩阵仅仅是为了更好地说明题意，你无需构造二进制矩阵来获得结果四叉树。
+<img src="/img/558.qtr.png" width="777px"></p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> quadTree1 = [[1,0]],<br>
+quadTree2 = [[1,0]]<br>
+<strong>输出：</strong> [[1,0]]<br>
+<strong>解释：</strong> 两个数所表示的矩阵大小都为 1<em>1，值全为 0<br>
+结果矩阵大小为 1</em>1，值全为 0 。</p>
+</blockquote>
+<h4 id="示例-3">示例 3：</h4>
+<blockquote>
+<p><strong>输入：</strong> quadTree1 = [[0,0],[1,0],[1,0],[1,1],[1,1]],<br>
+quadTree2 = [[0,0],[1,1],[1,1],[1,0],[1,1]]<br>
+<strong>输出：</strong> [[1,1]]</p>
+</blockquote>
+<h4 id="示例-4">示例 4：</h4>
+<blockquote>
+<p>输入：quadTree1 = [[0,0],[1,1],[1,0],[1,1],[1,1]],<br>
+quadTree2 = [[0,0],[1,1],[0,1],[1,1],[1,1],null,null,null,null,[1,1],[1,0],[1,0],[1,1]]<br>
+输出：[[0,0],[1,1],[0,1],[1,1],[1,1],null,null,null,null,[1,1],[1,0],[1,0],[1,1]]</p>
+</blockquote>
+<h4 id="示例-5">示例 5：</h4>
+<blockquote>
+<p>输入：quadTree1 = [[0,1],[1,0],[0,1],[1,1],[1,0],null,null,null,null,[1,0],[1,0],[1,1],[1,1]],<br>
+quadTree2 = [[0,1],[0,1],[1,0],[1,1],[1,0],[1,0],[1,0],[1,1],[1,1]]<br>
+输出：[[0,0],[0,1],[0,1],[1,1],[1,0],[1,0],[1,0],[1,1],[1,1],[1,0],[1,0],[1,1],[1,1]]</p>
+</blockquote>
+<h5 id="说明">说明：</h5>
+<ul>
+<li><code>quadTree1</code> 和 <code>quadTree2</code> 都是符合题目要求的四叉树，每个都代表一个 <code>n * n</code> 的矩阵。</li>
+<li><code>n == 2<sup>x</sup> ，其中 0 &lt;= x &lt;= 9.</code></li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="分治">分治</h4>
+<p>根据题意，需要将对应的结点进行或运算，必要时进行合并。</p>
+<p>递归从顶部向下查找叶节点，并逐层向上处理：</p>
+<ul>
+<li>若两个都不是叶节点，继续查找；</li>
+<li>若其中仅有一个叶节点，并且其值为 1，则与对应另一个运算结果必然为 1，直接返回；否则，对其进行拆分，继续查找；</li>
+<li>若两个都是叶节点，返回或运算的值；</li>
+</ul>
+<p>当处理完一个节点的四个子树后，可能出现合并的情况，若四个子节点都是叶节点，并且值相同，则进行聚合。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">intersect</span>(<span style="color:#a6e22e">quadTree1</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#a6e22e">quadTree2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">n1</span>, <span style="color:#a6e22e">n2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#a6e22e">v1</span>, <span style="color:#a6e22e">v2</span> <span style="color:#66d9ef">bool</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">n1</span>, <span style="color:#a6e22e">n2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#a6e22e">v1</span>, <span style="color:#a6e22e">v2</span> <span style="color:#66d9ef">bool</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
+        <span style="color:#75715e">// 空节点，继承父节点的值
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+			<span style="color:#a6e22e">n1</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+				<span style="color:#a6e22e">Val</span>:    <span style="color:#a6e22e">v1</span>,
+				<span style="color:#a6e22e">IsLeaf</span>: <span style="color:#66d9ef">true</span>,
+			}
+		}
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n2</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+			<span style="color:#a6e22e">n2</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+				<span style="color:#a6e22e">Val</span>:    <span style="color:#a6e22e">v2</span>,
+				<span style="color:#a6e22e">IsLeaf</span>: <span style="color:#66d9ef">true</span>,
+			}
+		}
+        <span style="color:#75715e">// 当其中一个为叶节点，并且 val 为 true 时，按位或最终结果必然为 true
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">IsLeaf</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">||</span>
+			<span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">IsLeaf</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">Val</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+				<span style="color:#a6e22e">Val</span>:    <span style="color:#66d9ef">true</span>,
+				<span style="color:#a6e22e">IsLeaf</span>: <span style="color:#66d9ef">true</span>,
+			}
+		}
+        <span style="color:#75715e">// 两个都是叶节点，或运算
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">IsLeaf</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">IsLeaf</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+				<span style="color:#a6e22e">IsLeaf</span>: <span style="color:#66d9ef">true</span>,
+				<span style="color:#a6e22e">Val</span>:    <span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">Val</span>,
+			}
+		}
+        <span style="color:#75715e">// 递归构建
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+			<span style="color:#a6e22e">Val</span>:         <span style="color:#66d9ef">false</span>,
+			<span style="color:#a6e22e">IsLeaf</span>:      <span style="color:#66d9ef">false</span>,
+			<span style="color:#a6e22e">TopLeft</span>:     <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">TopLeft</span>, <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">TopLeft</span>, <span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">Val</span>),
+			<span style="color:#a6e22e">TopRight</span>:    <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">TopRight</span>, <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">TopRight</span>, <span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">Val</span>),
+			<span style="color:#a6e22e">BottomLeft</span>:  <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">BottomLeft</span>, <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">BottomLeft</span>, <span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">Val</span>),
+			<span style="color:#a6e22e">BottomRight</span>: <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">BottomRight</span>, <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">BottomRight</span>, <span style="color:#a6e22e">n1</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">n2</span>.<span style="color:#a6e22e">Val</span>),
+		}
+        <span style="color:#75715e">// 子节点全部相同，进行合并
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">TopLeft</span>.<span style="color:#a6e22e">IsLeaf</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">TopRight</span>.<span style="color:#a6e22e">IsLeaf</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">BottomLeft</span>.<span style="color:#a6e22e">IsLeaf</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">BottomRight</span>.<span style="color:#a6e22e">IsLeaf</span> <span style="color:#f92672">&amp;&amp;</span>
+			<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">TopLeft</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">TopRight</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">TopLeft</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">BottomLeft</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">TopLeft</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">BottomRight</span>.<span style="color:#a6e22e">Val</span> {
+			<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+				<span style="color:#a6e22e">Val</span>:    <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">TopLeft</span>.<span style="color:#a6e22e">Val</span>,
+				<span style="color:#a6e22e">IsLeaf</span>: <span style="color:#66d9ef">true</span>,
+			}
+		}
+		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">quadTree1</span>, <span style="color:#a6e22e">quadTree2</span>, <span style="color:#a6e22e">quadTree1</span>.<span style="color:#a6e22e">Val</span>, <span style="color:#a6e22e">quadTree2</span>.<span style="color:#a6e22e">Val</span>)
+}
+</code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N), N = max(size(quadTree1), size(quadTree2) $</li>
+<li>空间复杂度：$ O(\log{N}) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/divide-and-conquer/">divide and conquer</a>
+        
+    </section>
+
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-241.-%E4%B8%BA%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%85%88%E7%BA%A7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 241. 为运算表达式设计优先级</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-53.-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 53. 最大子序和</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

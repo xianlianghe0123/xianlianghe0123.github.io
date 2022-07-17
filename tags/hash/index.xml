@@ -6,7 +6,48 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Wed, 29 Jun 2022 10:17:53 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jul 2022 10:11:46 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 745. 前缀和后缀搜索</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-745.-%E5%89%8D%E7%BC%80%E5%92%8C%E5%90%8E%E7%BC%80%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Thu, 14 Jul 2022 10:11:46 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-745.-%E5%89%8D%E7%BC%80%E5%92%8C%E5%90%8E%E7%BC%80%E6%90%9C%E7%B4%A2/</guid>
+      <description>链接： https://leetcode.cn/problems/prefix-and-suffix-search/
+难度： 困难
+题目描述 设计一个包含一些单词的特殊词典，并能够通过前缀和后缀来检索单词。
+ 实现 WordFilter 类： WordFilter(string[] words) 使用词典中的单词 words 初始化对象。 f(string pref, string suff) 返回词典中具有前缀 prefix 和后缀 suff 的单词的下标。如果存在不止一个满足要求的下标，返回其中 最大的下标 。如果不存在这样的单词，返回 -1 。  示例 1：  输入：
+[&amp;ldquo;WordFilter&amp;rdquo;, &amp;ldquo;f&amp;rdquo;]
+[[[&amp;ldquo;apple&amp;rdquo;]], [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;e&amp;rdquo;]]
+输出：
+[null, 0]
+解释：
+WordFilter wordFilter = new WordFilter([&amp;ldquo;apple&amp;rdquo;]);
+wordFilter.f(&amp;ldquo;a&amp;rdquo;, &amp;ldquo;e&amp;rdquo;); // 返回 0 ，因为下标为 0 的单词：前缀 prefix = &amp;ldquo;a&amp;rdquo; 且 后缀 suff = &amp;ldquo;e&amp;rdquo; 。
+ 提示：  2 &amp;lt;= letters.length &amp;lt;= 104 letters[i] 是一个小写字母 letters 按非递减顺序排序 letters 最少包含两个不同的字母 target 是一个小写字母  解题思路 哈希 由于字符串的长度很小，可以解析出所有能与之匹配的前后缀模式串，并记录该模式串对应的下标最大值到哈希表中。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 676. 实现一个魔法字典</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-676.-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/</link>
+      <pubDate>Mon, 11 Jul 2022 10:03:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-676.-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/</guid>
+      <description>链接： https://leetcode.cn/problems/implement-magic-dictionary/
+难度： 中等
+题目描述 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
+实现 MagicDictionary 类：
+ MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。  示例：  输入：
+[&amp;ldquo;MagicDictionary&amp;rdquo;, &amp;ldquo;buildDict&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]
+[[], [[&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]], [&amp;ldquo;hello&amp;rdquo;], [&amp;ldquo;hhllo&amp;rdquo;], [&amp;ldquo;hell&amp;rdquo;], [&amp;ldquo;leetcoded&amp;rdquo;]]
+输出：
+[null, null, false, true, false, false]
+解释：
+MagicDictionary magicDictionary = new MagicDictionary();
+magicDictionary.buildDict([&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]);
+magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False</description>
+    </item>
+    
     <item>
       <title>Leetcode 535. TinyURL 的加密与解密</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-535.-tinyurl-%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</link>

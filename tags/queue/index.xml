@@ -6,7 +6,28 @@
     <description>Recent content in queue on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 06 May 2022 09:25:11 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/queue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Jul 2022 10:23:33 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/queue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指 Offer II 041. 滑动窗口的平均值</title>
+      <link>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-041.-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC/</link>
+      <pubDate>Sat, 16 Jul 2022 10:23:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-041.-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC/</guid>
+      <description>链接： https://leetcode.cn/problems/qIsx9U/
+难度： 简单
+题目描述 给定一个整数数据流和一个窗口大小，根据该滑动窗口的大小，计算滑动窗口里所有数字的平均值。
+实现 MovingAverage 类：
+ MovingAverage(int size) 用窗口大小 size 初始化对象。 double next(int val) 成员函数 next 每次调用的时候都会往滑动窗口增加一个整数，请计算并返回数据流中最后 size 个值的移动平均值，即滑动窗口里所有数字的平均值。  示例：  输入：
+inputs = [&amp;ldquo;MovingAverage&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;, &amp;ldquo;next&amp;rdquo;]
+inputs = [[3], [1], [10], [3], [5]]
+输出：
+[null, 1.0, 5.5, 4.66667, 6.0]
+解释：
+MovingAverage movingAverage = new MovingAverage(3);
+movingAverage.next(1); // 返回 1.0 = 1 / 1
+movingAverage.next(10); // 返回 5.5 = (1 + 10) / 2</description>
+    </item>
+    
     <item>
       <title>Leetcode 933. 最近的请求次数</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-933.-%E6%9C%80%E8%BF%91%E7%9A%84%E8%AF%B7%E6%B1%82%E6%AC%A1%E6%95%B0/</link>

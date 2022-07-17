@@ -6,7 +6,23 @@
     <description>Recent content in divide and conquer on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Fri, 01 Jul 2022 10:16:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/divide-and-conquer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jul 2022 10:17:00 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/divide-and-conquer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 558. 四叉树交集</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-558.-%E5%9B%9B%E5%8F%89%E6%A0%91%E4%BA%A4%E9%9B%86/</link>
+      <pubDate>Fri, 15 Jul 2022 10:17:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-558.-%E5%9B%9B%E5%8F%89%E6%A0%91%E4%BA%A4%E9%9B%86/</guid>
+      <description>链接： https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/
+难度： 中等
+题目描述 二进制矩阵中的所有元素不是 0 就是 1 。
+给你两个四叉树，quadTree1 和 quadTree2。其中 quadTree1 表示一个 n * n 二进制矩阵，而 quadTree2 表示另一个 n * n 二进制矩阵。
+请你返回一个表示 n * n 二进制矩阵的四叉树，它是 quadTree1 和 quadTree2 所表示的两个二进制矩阵进行 按位逻辑或运算 的结果。
+注意，当 isLeaf 为 False 时，你可以把 True 或者 False 赋值给节点，两种值都会被判题机制 接受 。
+四叉树数据结构中，每个内部节点只有四个子节点。此外，每个节点都有两个属性：
+ val：储存叶子结点所代表的区域的值。1 对应 True，0 对应 False； isLeaf: 当这个节点是一个叶子结点时为 True，如果它有 4 个子节点则为 False 。  class Node { public boolean val; public boolean isLeaf; public Node topLeft; public Node topRight; public Node bottomLeft; public Node bottomRight; } 我们可以按以下步骤为二维区域构建四叉树：</description>
+    </item>
+    
     <item>
       <title>Leetcode 241. 为运算表达式设计优先级</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-241.-%E4%B8%BA%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%85%88%E7%BA%A7/</link>
