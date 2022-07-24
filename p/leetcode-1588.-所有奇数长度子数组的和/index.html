@@ -6,7 +6,7 @@
 题目描述 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
 子数组 定义为原数组中的一个连续子序列。
 请你返回 arr 中 所有奇数长度子数组的和 。
-示例 1：  输入： arr = [1,4,2,5,3]
+示例 1： 输入： arr = [1,4,2,5,3]
 输出： 58
 解释： 所有奇数长度子数组和它们的和为：
 [1] = 1
@@ -28,7 +28,7 @@
 题目描述 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
 子数组 定义为原数组中的一个连续子序列。
 请你返回 arr 中 所有奇数长度子数组的和 。
-示例 1：  输入： arr = [1,4,2,5,3]
+示例 1： 输入： arr = [1,4,2,5,3]
 输出： 58
 解释： 所有奇数长度子数组和它们的和为：
 [1] = 1
@@ -50,7 +50,7 @@
 题目描述 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
 子数组 定义为原数组中的一个连续子序列。
 请你返回 arr 中 所有奇数长度子数组的和 。
-示例 1：  输入： arr = [1,4,2,5,3]
+示例 1： 输入： arr = [1,4,2,5,3]
 输出： 58
 解释： 所有奇数长度子数组和它们的和为：
 [1] = 1
@@ -284,40 +284,40 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>枚举出所有奇数子数组的 <code>[i, j]</code>，求得子数组的和，累加进结果中。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOddLengthSubarrays</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">arr</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">arr</span>); <span style="color:#a6e22e">j</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span> {
-			<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">j</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span> {
-				<span style="color:#a6e22e">t</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">k</span>]
-			}
-			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">t</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOddLengthSubarrays</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">arr</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">arr</span>); <span style="color:#a6e22e">j</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">j</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">t</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">k</span>]
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">t</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^3), N = len(arr) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="前缀和">前缀和</h4>
 <p>依次枚举出所有子数组的开始下标 <code>i</code>，对于每个 <code>i</code> ，遍历其后元素，求得子数组的和，每当子数组长度为奇数时，将该数组的和累加进结果中。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOddLengthSubarrays</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">arr</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">arr</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">t</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>]
-			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-				<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">t</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOddLengthSubarrays</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">arr</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">arr</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">t</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2), N = len(arr) $</li>
 <li>空间复杂度：$ O(1) $</li>

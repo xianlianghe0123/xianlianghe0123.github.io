@@ -4,15 +4,15 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
 难度： 中等
 题目描述 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字 均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
-示例 1：  输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+示例 1： 输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
 输出： true
 解释： 我们可以按以下顺序执行：
 push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
 push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
- 示例 2：  输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+示例 2： 输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
 输出： false
 解释： 1 不能在 2 之前弹出。
- 提示：  0 &amp;lt;= pushed.'><title>剑指 Offer 31. 栈的压入、弹出序列</title>
+提示： 0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000 0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000 pushed 是 popped 的排列。 解题思路 模拟 使用一个栈模拟操作。遍历 pushed，将当前元素压栈，由于元素各不相同，随后将栈与 popped 对照，逐一地相同元素弹出。'><title>剑指 Offer 31. 栈的压入、弹出序列</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-31.-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/'>
 
@@ -20,15 +20,15 @@ push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
 难度： 中等
 题目描述 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字 均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
-示例 1：  输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+示例 1： 输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
 输出： true
 解释： 我们可以按以下顺序执行：
 push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
 push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
- 示例 2：  输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+示例 2： 输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
 输出： false
 解释： 1 不能在 2 之前弹出。
- 提示：  0 &amp;lt;= pushed.'>
+提示： 0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000 0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000 pushed 是 popped 的排列。 解题思路 模拟 使用一个栈模拟操作。遍历 pushed，将当前元素压栈，由于元素各不相同，随后将栈与 popped 对照，逐一地相同元素弹出。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-31.-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stack' /><meta property='article:published_time' content='2021-09-20T13:01:33&#43;08:00'/><meta property='article:modified_time' content='2021-09-20T13:01:33&#43;08:00'/>
@@ -36,15 +36,15 @@ push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
 难度： 中等
 题目描述 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字 均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
-示例 1：  输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+示例 1： 输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
 输出： true
 解释： 我们可以按以下顺序执行：
 push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
 push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
- 示例 2：  输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+示例 2： 输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
 输出： false
 解释： 1 不能在 2 之前弹出。
- 提示：  0 &amp;lt;= pushed.">
+提示： 0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000 0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000 pushed 是 popped 的排列。 解题思路 模拟 使用一个栈模拟操作。遍历 pushed，将当前元素压栈，由于元素各不相同，随后将栈与 popped 对照，逐一地相同元素弹出。">
     </head>
     <body class="
     article-page 
@@ -253,18 +253,18 @@ push(5), pop() -&gt; 5, pop() -&gt; 3, pop() -&gt; 2, pop() -&gt; 1</p>
 <h4 id="模拟">模拟</h4>
 <p>使用一个栈模拟操作。遍历 <code>pushed</code>，将当前元素压栈，由于元素各不相同，随后将栈与 <code>popped</code> 对照，逐一地相同元素弹出。</p>
 <p>最终栈为空则返回 <code>true</code>，否则返回 <code>false</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">validateStackSequences</span>(<span style="color:#a6e22e">pushed</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">popped</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">pushed</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">pushed</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">pushed</span>[<span style="color:#a6e22e">i</span>])
-		<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">stack</span>) &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">popped</span>[<span style="color:#a6e22e">j</span>] {
-			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-			<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">validateStackSequences</span>(<span style="color:#a6e22e">pushed</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">popped</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">pushed</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">pushed</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">pushed</span>[<span style="color:#a6e22e">i</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">stack</span>) &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">popped</span>[<span style="color:#a6e22e">j</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(pushed) $</li>
 <li>空间复杂度：$ O(N) $</li>

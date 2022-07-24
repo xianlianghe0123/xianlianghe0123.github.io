@@ -5,11 +5,12 @@
 难度： 简单
 题目描述 句子仅由小写字母（&#39;a&#39; 到 &#39;z&#39;）、数字（&#39;0&#39; 到 &#39;9&#39;）、连字符（&#39;-&#39;）、标点符号（&#39;!&#39;、&#39;.&#39; 和 &#39;,&#39;）以及空格（&#39; &#39;）组成。每个句子可以根据空格分解成 一个或者多个 token ，这些 token 之间由一个或者多个空格 &#39; &#39; 分隔。
 如果一个 token 同时满足下述条件，则认为这个 token 是一个有效单词：
- 仅由小写字母、连字符和/或标点（不含数字）。 至多一个 连字符 &#39;-&#39; 。如果存在，连字符两侧应当都存在小写字母（&amp;quot;a-b&amp;quot; 是一个有效单词，但 &amp;quot;-ab&amp;quot; 和 &amp;quot;ab-&amp;quot; 不是有效单词）。 至多一个 标点符号。如果存在，标点符号应当位于 token 的 末尾 。  这里给出几个有效单词的例子：&amp;quot;a-b.&amp;quot;、&amp;quot;afad&amp;quot;、&amp;quot;ba-c&amp;quot;、&amp;quot;a!&amp;quot; 和 &amp;quot;!&amp;quot; 。
+仅由小写字母、连字符和/或标点（不含数字）。 至多一个 连字符 &#39;-&#39; 。如果存在，连字符两侧应当都存在小写字母（&amp;quot;a-b&amp;quot; 是一个有效单词，但 &amp;quot;-ab&amp;quot; 和 &amp;quot;ab-&amp;quot; 不是有效单词）。 至多一个 标点符号。如果存在，标点符号应当位于 token 的 末尾 。 这里给出几个有效单词的例子：&amp;quot;a-b.&amp;quot;、&amp;quot;afad&amp;quot;、&amp;quot;ba-c&amp;quot;、&amp;quot;a!&amp;quot; 和 &amp;quot;!&amp;quot; 。
 给你一个字符串 sentence ，请你找出并返回 sentence 中 有效单词的数目 。
-示例 1：  输入： sentence = &amp;ldquo;cat and dog&amp;rdquo;
+示例 1： 输入： sentence = &amp;ldquo;cat and dog&amp;rdquo;
 输出： 3
-解释： 句子中的有效单词是 &amp;ldquo;cat&amp;rdquo;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo;'><title>Leetcode 2047. 句子中的有效单词数</title>
+解释： 句子中的有效单词是 &amp;ldquo;cat&amp;rdquo;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo;
+示例 2： 输入： sentence = &amp;ldquo;!'><title>Leetcode 2047. 句子中的有效单词数</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-2047.-%E5%8F%A5%E5%AD%90%E4%B8%AD%E7%9A%84%E6%9C%89%E6%95%88%E5%8D%95%E8%AF%8D%E6%95%B0/'>
 
@@ -18,11 +19,12 @@
 难度： 简单
 题目描述 句子仅由小写字母（&#39;a&#39; 到 &#39;z&#39;）、数字（&#39;0&#39; 到 &#39;9&#39;）、连字符（&#39;-&#39;）、标点符号（&#39;!&#39;、&#39;.&#39; 和 &#39;,&#39;）以及空格（&#39; &#39;）组成。每个句子可以根据空格分解成 一个或者多个 token ，这些 token 之间由一个或者多个空格 &#39; &#39; 分隔。
 如果一个 token 同时满足下述条件，则认为这个 token 是一个有效单词：
- 仅由小写字母、连字符和/或标点（不含数字）。 至多一个 连字符 &#39;-&#39; 。如果存在，连字符两侧应当都存在小写字母（&amp;quot;a-b&amp;quot; 是一个有效单词，但 &amp;quot;-ab&amp;quot; 和 &amp;quot;ab-&amp;quot; 不是有效单词）。 至多一个 标点符号。如果存在，标点符号应当位于 token 的 末尾 。  这里给出几个有效单词的例子：&amp;quot;a-b.&amp;quot;、&amp;quot;afad&amp;quot;、&amp;quot;ba-c&amp;quot;、&amp;quot;a!&amp;quot; 和 &amp;quot;!&amp;quot; 。
+仅由小写字母、连字符和/或标点（不含数字）。 至多一个 连字符 &#39;-&#39; 。如果存在，连字符两侧应当都存在小写字母（&amp;quot;a-b&amp;quot; 是一个有效单词，但 &amp;quot;-ab&amp;quot; 和 &amp;quot;ab-&amp;quot; 不是有效单词）。 至多一个 标点符号。如果存在，标点符号应当位于 token 的 末尾 。 这里给出几个有效单词的例子：&amp;quot;a-b.&amp;quot;、&amp;quot;afad&amp;quot;、&amp;quot;ba-c&amp;quot;、&amp;quot;a!&amp;quot; 和 &amp;quot;!&amp;quot; 。
 给你一个字符串 sentence ，请你找出并返回 sentence 中 有效单词的数目 。
-示例 1：  输入： sentence = &amp;ldquo;cat and dog&amp;rdquo;
+示例 1： 输入： sentence = &amp;ldquo;cat and dog&amp;rdquo;
 输出： 3
-解释： 句子中的有效单词是 &amp;ldquo;cat&amp;rdquo;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo;'>
+解释： 句子中的有效单词是 &amp;ldquo;cat&amp;rdquo;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo;
+示例 2： 输入： sentence = &amp;ldquo;!'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-2047.-%E5%8F%A5%E5%AD%90%E4%B8%AD%E7%9A%84%E6%9C%89%E6%95%88%E5%8D%95%E8%AF%8D%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-01-27T09:58:43&#43;08:00'/><meta property='article:modified_time' content='2022-01-27T09:58:43&#43;08:00'/>
@@ -31,11 +33,12 @@
 难度： 简单
 题目描述 句子仅由小写字母（&#39;a&#39; 到 &#39;z&#39;）、数字（&#39;0&#39; 到 &#39;9&#39;）、连字符（&#39;-&#39;）、标点符号（&#39;!&#39;、&#39;.&#39; 和 &#39;,&#39;）以及空格（&#39; &#39;）组成。每个句子可以根据空格分解成 一个或者多个 token ，这些 token 之间由一个或者多个空格 &#39; &#39; 分隔。
 如果一个 token 同时满足下述条件，则认为这个 token 是一个有效单词：
- 仅由小写字母、连字符和/或标点（不含数字）。 至多一个 连字符 &#39;-&#39; 。如果存在，连字符两侧应当都存在小写字母（&amp;quot;a-b&amp;quot; 是一个有效单词，但 &amp;quot;-ab&amp;quot; 和 &amp;quot;ab-&amp;quot; 不是有效单词）。 至多一个 标点符号。如果存在，标点符号应当位于 token 的 末尾 。  这里给出几个有效单词的例子：&amp;quot;a-b.&amp;quot;、&amp;quot;afad&amp;quot;、&amp;quot;ba-c&amp;quot;、&amp;quot;a!&amp;quot; 和 &amp;quot;!&amp;quot; 。
+仅由小写字母、连字符和/或标点（不含数字）。 至多一个 连字符 &#39;-&#39; 。如果存在，连字符两侧应当都存在小写字母（&amp;quot;a-b&amp;quot; 是一个有效单词，但 &amp;quot;-ab&amp;quot; 和 &amp;quot;ab-&amp;quot; 不是有效单词）。 至多一个 标点符号。如果存在，标点符号应当位于 token 的 末尾 。 这里给出几个有效单词的例子：&amp;quot;a-b.&amp;quot;、&amp;quot;afad&amp;quot;、&amp;quot;ba-c&amp;quot;、&amp;quot;a!&amp;quot; 和 &amp;quot;!&amp;quot; 。
 给你一个字符串 sentence ，请你找出并返回 sentence 中 有效单词的数目 。
-示例 1：  输入： sentence = &amp;ldquo;cat and dog&amp;rdquo;
+示例 1： 输入： sentence = &amp;ldquo;cat and dog&amp;rdquo;
 输出： 3
-解释： 句子中的有效单词是 &amp;ldquo;cat&amp;rdquo;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo;">
+解释： 句子中的有效单词是 &amp;ldquo;cat&amp;rdquo;、&amp;ldquo;and&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo;
+示例 2： 输入： sentence = &amp;ldquo;!">
     </head>
     <body class="
     article-page 
@@ -271,43 +274,43 @@
 <li>连字符数量超过1 或者 连字符后面不是小写字母</li>
 </ul>
 <p>当存在上述情况之一时，便可跳过此次遍历，继续找寻下一个 token。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countValidWords</span>(<span style="color:#a6e22e">sentence</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> len(<span style="color:#a6e22e">sentence</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">sentence</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span> {
-			<span style="color:#75715e">// 存在有效 token
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">start</span> &lt; <span style="color:#a6e22e">i</span> {
-				<span style="color:#a6e22e">hasHyphen</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
-				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">start</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-					<span style="color:#75715e">// 存在数字，不是有效单词
-</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;9&#39;</span> {
-						<span style="color:#a6e22e">cnt</span><span style="color:#f92672">--</span>
-						<span style="color:#66d9ef">break</span>
-					}
-					<span style="color:#75715e">// 标点符号不在末尾，不是有效单词
-</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;,&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;!&#39;</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
-						<span style="color:#a6e22e">cnt</span><span style="color:#f92672">--</span>
-						<span style="color:#66d9ef">break</span>
-					}
-					<span style="color:#75715e">//
-</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span> {
-						<span style="color:#75715e">// 连字符在头尾 或 后面是标点 或 数量超过1
-</span><span style="color:#75715e"></span>						<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;,&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;!&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">hasHyphen</span> {
-							<span style="color:#a6e22e">cnt</span><span style="color:#f92672">--</span>
-							<span style="color:#66d9ef">break</span>
-						}
-						<span style="color:#a6e22e">hasHyphen</span> = <span style="color:#66d9ef">true</span>
-					}
-				}
-				<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-			}
-			<span style="color:#a6e22e">start</span> = <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countValidWords</span>(<span style="color:#a6e22e">sentence</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> len(<span style="color:#a6e22e">sentence</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">sentence</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 存在有效 token
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">start</span> &lt; <span style="color:#a6e22e">i</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">hasHyphen</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">start</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#75715e">// 存在数字，不是有效单词
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;9&#39;</span> {
+</span></span><span style="display:flex;"><span>						<span style="color:#a6e22e">cnt</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>						<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>					<span style="color:#75715e">// 标点符号不在末尾，不是有效单词
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;,&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;!&#39;</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>						<span style="color:#a6e22e">cnt</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>						<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>					<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+</span></span><span style="display:flex;"><span>						<span style="color:#75715e">// 连字符在头尾 或 后面是标点 或 数量超过1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>						<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;,&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">sentence</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;!&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">hasHyphen</span> {
+</span></span><span style="display:flex;"><span>							<span style="color:#a6e22e">cnt</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>							<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>						}
+</span></span><span style="display:flex;"><span>						<span style="color:#a6e22e">hasHyphen</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">start</span> = <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(sentence) $</li>
 <li>空间复杂度：$ O(1) $</li>

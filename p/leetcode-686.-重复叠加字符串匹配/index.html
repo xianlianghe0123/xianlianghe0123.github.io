@@ -5,12 +5,14 @@
 难度： 中等
 题目描述 给定两个字符串 a 和 b，寻找重复叠加字符串 a 的最小次数，使得字符串 b 成为叠加后的字符串 a 的子串，如果不存在则返回 -1。
 注意：字符串 &amp;quot;abc&amp;quot; 重复叠加 0 次是 &amp;quot;&amp;quot;，重复叠加 1 次是 &amp;quot;abc&amp;quot;，重复叠加 2 次是 &amp;quot;abcabc&amp;quot;。
-示例 1：  输入： a = &amp;ldquo;abcd&amp;rdquo;, b = &amp;ldquo;cdabcdab&amp;rdquo;
+示例 1： 输入： a = &amp;ldquo;abcd&amp;rdquo;, b = &amp;ldquo;cdabcdab&amp;rdquo;
 输出： 3
 解释： a 重复叠加三遍后为 &amp;ldquo;abcdabcdabcd&amp;rdquo;, 此时 b 是其子串。
- 示例 2：  输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;aa&amp;rdquo;
+示例 2： 输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;aa&amp;rdquo;
 输出： 2
- 示例 3：  输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;a&amp;rdquo;'><title>Leetcode 686. 重复叠加字符串匹配</title>
+示例 3： 输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;a&amp;rdquo;
+输出： 1
+示例 4： 输入： a = &amp;ldquo;abc&amp;rdquo;, b = &amp;ldquo;wxyz&amp;rdquo;'><title>Leetcode 686. 重复叠加字符串匹配</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-686.-%E9%87%8D%E5%A4%8D%E5%8F%A0%E5%8A%A0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/'>
 
@@ -19,12 +21,14 @@
 难度： 中等
 题目描述 给定两个字符串 a 和 b，寻找重复叠加字符串 a 的最小次数，使得字符串 b 成为叠加后的字符串 a 的子串，如果不存在则返回 -1。
 注意：字符串 &amp;quot;abc&amp;quot; 重复叠加 0 次是 &amp;quot;&amp;quot;，重复叠加 1 次是 &amp;quot;abc&amp;quot;，重复叠加 2 次是 &amp;quot;abcabc&amp;quot;。
-示例 1：  输入： a = &amp;ldquo;abcd&amp;rdquo;, b = &amp;ldquo;cdabcdab&amp;rdquo;
+示例 1： 输入： a = &amp;ldquo;abcd&amp;rdquo;, b = &amp;ldquo;cdabcdab&amp;rdquo;
 输出： 3
 解释： a 重复叠加三遍后为 &amp;ldquo;abcdabcdabcd&amp;rdquo;, 此时 b 是其子串。
- 示例 2：  输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;aa&amp;rdquo;
+示例 2： 输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;aa&amp;rdquo;
 输出： 2
- 示例 3：  输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;a&amp;rdquo;'>
+示例 3： 输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;a&amp;rdquo;
+输出： 1
+示例 4： 输入： a = &amp;ldquo;abc&amp;rdquo;, b = &amp;ldquo;wxyz&amp;rdquo;'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-686.-%E9%87%8D%E5%A4%8D%E5%8F%A0%E5%8A%A0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-12-22T10:15:24&#43;08:00'/><meta property='article:modified_time' content='2021-12-22T10:15:24&#43;08:00'/>
@@ -33,12 +37,14 @@
 难度： 中等
 题目描述 给定两个字符串 a 和 b，寻找重复叠加字符串 a 的最小次数，使得字符串 b 成为叠加后的字符串 a 的子串，如果不存在则返回 -1。
 注意：字符串 &amp;quot;abc&amp;quot; 重复叠加 0 次是 &amp;quot;&amp;quot;，重复叠加 1 次是 &amp;quot;abc&amp;quot;，重复叠加 2 次是 &amp;quot;abcabc&amp;quot;。
-示例 1：  输入： a = &amp;ldquo;abcd&amp;rdquo;, b = &amp;ldquo;cdabcdab&amp;rdquo;
+示例 1： 输入： a = &amp;ldquo;abcd&amp;rdquo;, b = &amp;ldquo;cdabcdab&amp;rdquo;
 输出： 3
 解释： a 重复叠加三遍后为 &amp;ldquo;abcdabcdabcd&amp;rdquo;, 此时 b 是其子串。
- 示例 2：  输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;aa&amp;rdquo;
+示例 2： 输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;aa&amp;rdquo;
 输出： 2
- 示例 3：  输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;a&amp;rdquo;">
+示例 3： 输入： a = &amp;ldquo;a&amp;rdquo;, b = &amp;ldquo;a&amp;rdquo;
+输出： 1
+示例 4： 输入： a = &amp;ldquo;abc&amp;rdquo;, b = &amp;ldquo;wxyz&amp;rdquo;">
     </head>
     <body class="
     article-page 
@@ -256,24 +262,24 @@
 <p>当 <code>b</code> 可以满足其是 <code>a</code> 叠加后的字串的时候，其从 <code>a</code> 中某个字符开始，之后按照 <code>a</code> 中字母的顺序循环。当 <code>a</code> 叠加后的长度为 $len(a)*\lceil\frac{len(b)}{len(a)}+1\rceil$ 能覆盖所有情况。</p>
 <p>不断叠加 <code>a</code> 直到其长度为 $len(a)*\lceil\frac{len(b)}{len(a)}\rceil$ 为止。</p>
 <p>若此时当 <code>b</code> 满足条件，返回叠加次数。否则，再叠加一次进行判断，若还不满足，返回 <code>-1</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">repeatedStringMatch</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">a</span>)<span style="color:#f92672">*</span>(int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Ceil</span>(float64(len(<span style="color:#a6e22e">b</span>))<span style="color:#f92672">/</span>float64(len(<span style="color:#a6e22e">a</span>))))<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">b</span>); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">-=</span> len(<span style="color:#a6e22e">a</span>) {
-		<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">...</span>)
-		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#a6e22e">s</span>, []byte(<span style="color:#a6e22e">b</span>)) {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-	}
-	<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">...</span>)
-	<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#a6e22e">s</span>, []byte(<span style="color:#a6e22e">b</span>)) {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">repeatedStringMatch</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">a</span>)<span style="color:#f92672">*</span>(int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Ceil</span>(float64(len(<span style="color:#a6e22e">b</span>))<span style="color:#f92672">/</span>float64(len(<span style="color:#a6e22e">a</span>))))<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">b</span>); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">-=</span> len(<span style="color:#a6e22e">a</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#a6e22e">s</span>, []byte(<span style="color:#a6e22e">b</span>)) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#a6e22e">s</span>, []byte(<span style="color:#a6e22e">b</span>)) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(M), N = len(a), M = len(b) $</li>
 <li>空间复杂度：$ O(M) $</li>
@@ -281,22 +287,22 @@
 <h4 id="循环匹配">循环匹配</h4>
 <p>若 <code>b</code> 为 <code>a</code> 叠加后的字串，则其从 <code>a</code> 中的某个字符开始，按照 <code>a</code> 的模式不断在 <code>a</code> 上循环匹配，能匹配到 <code>b</code> 结束。</p>
 <p>若能找到这个开始的字符返回返回循环匹配的次数，否则返回 <code>-1</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">repeatedStringMatch</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-<span style="color:#a6e22e">Outer</span>:
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">a</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">b</span>[<span style="color:#ae81ff">0</span>] {
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">b</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">a</span>[(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">j</span>)<span style="color:#f92672">%</span>len(<span style="color:#a6e22e">a</span>)] {
-				<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Outer</span>
-			}
-		}
-		<span style="color:#66d9ef">return</span> int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Ceil</span>(float64(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span>len(<span style="color:#a6e22e">b</span>)) <span style="color:#f92672">/</span> float64(len(<span style="color:#a6e22e">a</span>))))
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">repeatedStringMatch</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Outer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">a</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">b</span>[<span style="color:#ae81ff">0</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">b</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">a</span>[(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">j</span>)<span style="color:#f92672">%</span>len(<span style="color:#a6e22e">a</span>)] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Outer</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Ceil</span>(float64(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span>len(<span style="color:#a6e22e">b</span>)) <span style="color:#f92672">/</span> float64(len(<span style="color:#a6e22e">a</span>))))
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N*M), N = len(a), M = len(b) $</li>
 <li>空间复杂度：$ O(1) $</li>

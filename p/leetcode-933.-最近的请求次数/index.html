@@ -5,8 +5,8 @@
 难度： 简单
 题目描述 写一个 RecentCounter 类来计算特定时间范围内最近的请求。
 请你实现 RecentCounter 类：
- RecentCounter() 初始化计数器，请求数为 0 。 int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。  保证 每次对 ping 的调用都使用比之前更大的 t 值。
-示例：  输入：
+RecentCounter() 初始化计数器，请求数为 0 。 int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。 保证 每次对 ping 的调用都使用比之前更大的 t 值。
+示例： 输入：
 [&amp;ldquo;RecentCounter&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;]
 [[], [1], [100], [3001], [3002]]
 输出：
@@ -23,8 +23,8 @@ recentCounter.ping(100); // requests = [1, 100]，范围是 [-2900,100]，返回
 难度： 简单
 题目描述 写一个 RecentCounter 类来计算特定时间范围内最近的请求。
 请你实现 RecentCounter 类：
- RecentCounter() 初始化计数器，请求数为 0 。 int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。  保证 每次对 ping 的调用都使用比之前更大的 t 值。
-示例：  输入：
+RecentCounter() 初始化计数器，请求数为 0 。 int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。 保证 每次对 ping 的调用都使用比之前更大的 t 值。
+示例： 输入：
 [&amp;ldquo;RecentCounter&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;]
 [[], [1], [100], [3001], [3002]]
 输出：
@@ -41,8 +41,8 @@ recentCounter.ping(100); // requests = [1, 100]，范围是 [-2900,100]，返回
 难度： 简单
 题目描述 写一个 RecentCounter 类来计算特定时间范围内最近的请求。
 请你实现 RecentCounter 类：
- RecentCounter() 初始化计数器，请求数为 0 。 int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。  保证 每次对 ping 的调用都使用比之前更大的 t 值。
-示例：  输入：
+RecentCounter() 初始化计数器，请求数为 0 。 int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。 保证 每次对 ping 的调用都使用比之前更大的 t 值。
+示例： 输入：
 [&amp;ldquo;RecentCounter&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;, &amp;ldquo;ping&amp;rdquo;]
 [[], [1], [100], [3001], [3002]]
 输出：
@@ -264,28 +264,28 @@ recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002]，范围是 [2,300
 <h3 id="解题思路">解题思路</h3>
 <h4 id="遍历">遍历</h4>
 <p>存储所有的请求时间点，由于时间点是有序的，通过倒序遍历统计所有符合条件的请求数量。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RecentCounter</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">time</span> []<span style="color:#66d9ef">int</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">RecentCounter</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">RecentCounter</span>{
-		<span style="color:#a6e22e">time</span>: <span style="color:#66d9ef">nil</span>,
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RecentCounter</span>) <span style="color:#a6e22e">Ping</span>(<span style="color:#a6e22e">t</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">time</span> = append(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">time</span>, <span style="color:#a6e22e">t</span>)
-	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">time</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">time</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">t</span><span style="color:#f92672">-</span><span style="color:#ae81ff">3000</span> {
-			<span style="color:#66d9ef">break</span>
-		}
-		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RecentCounter</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">time</span> []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">RecentCounter</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">RecentCounter</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">time</span>: <span style="color:#66d9ef">nil</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RecentCounter</span>) <span style="color:#a6e22e">Ping</span>(<span style="color:#a6e22e">t</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">time</span> = append(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">time</span>, <span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">time</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">time</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">t</span><span style="color:#f92672">-</span><span style="color:#ae81ff">3000</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>
@@ -297,24 +297,24 @@ recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002]，范围是 [2,300
 </ul>
 <h4 id="队列">队列</h4>
 <p>使用队列存储满足要求的区间内的请求，每次有新请求，执行出队操作直队列头元素满足 <code>≥ t - 3000</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RecentCounter</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">RecentCounter</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">RecentCounter</span>{
-		<span style="color:#a6e22e">queue</span>: <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RecentCounter</span>) <span style="color:#a6e22e">Ping</span>(<span style="color:#a6e22e">t</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">t</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>) &lt; <span style="color:#a6e22e">t</span><span style="color:#f92672">-</span><span style="color:#ae81ff">3000</span> {
-		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>())
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>()
-}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RecentCounter</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">RecentCounter</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">RecentCounter</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">queue</span>: <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RecentCounter</span>) <span style="color:#a6e22e">Ping</span>(<span style="color:#a6e22e">t</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>) &lt; <span style="color:#a6e22e">t</span><span style="color:#f92672">-</span><span style="color:#ae81ff">3000</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>())
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>时间复杂度：
 <ul>
 <li><code>constructor</code>：$ O(1) $</li>

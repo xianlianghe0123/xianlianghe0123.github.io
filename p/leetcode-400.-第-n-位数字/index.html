@@ -4,12 +4,12 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/nth-digit/
 难度： 中等
 题目描述 给你一个整数 n ，请你在无限的整数序列 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...] 中找出并返回第 n 位数字。
-示例 1：  输入： n = 3
+示例 1： 输入： n = 3
 输出： 3
- 示例 2：  输入： n = 11
+示例 2： 输入： n = 11
 输出： 0
 解释： 第 11 位数字在序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &amp;hellip; 里是 0 ，它是 10 的一部分。
- 提示：  1 &amp;lt;= n &amp;lt;= 231 - 1  解题思路 模拟 字符串按照数字顺序排列，其按照数字长度为 1、2、3、.'><title>Leetcode 400. 第 N 位数字</title>
+提示： 1 &amp;lt;= n &amp;lt;= 231 - 1 解题思路 模拟 字符串按照数字顺序排列，其按照数字长度为 1、2、3、.'><title>Leetcode 400. 第 N 位数字</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-400.-%E7%AC%AC-n-%E4%BD%8D%E6%95%B0%E5%AD%97/'>
 
@@ -17,12 +17,12 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/nth-digit/
 难度： 中等
 题目描述 给你一个整数 n ，请你在无限的整数序列 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...] 中找出并返回第 n 位数字。
-示例 1：  输入： n = 3
+示例 1： 输入： n = 3
 输出： 3
- 示例 2：  输入： n = 11
+示例 2： 输入： n = 11
 输出： 0
 解释： 第 11 位数字在序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &amp;hellip; 里是 0 ，它是 10 的一部分。
- 提示：  1 &amp;lt;= n &amp;lt;= 231 - 1  解题思路 模拟 字符串按照数字顺序排列，其按照数字长度为 1、2、3、.'>
+提示： 1 &amp;lt;= n &amp;lt;= 231 - 1 解题思路 模拟 字符串按照数字顺序排列，其按照数字长度为 1、2、3、.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-400.-%E7%AC%AC-n-%E4%BD%8D%E6%95%B0%E5%AD%97/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-11-30T10:30:37&#43;08:00'/><meta property='article:modified_time' content='2021-11-30T10:30:37&#43;08:00'/>
@@ -30,12 +30,12 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/nth-digit/
 难度： 中等
 题目描述 给你一个整数 n ，请你在无限的整数序列 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...] 中找出并返回第 n 位数字。
-示例 1：  输入： n = 3
+示例 1： 输入： n = 3
 输出： 3
- 示例 2：  输入： n = 11
+示例 2： 输入： n = 11
 输出： 0
 解释： 第 11 位数字在序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &amp;hellip; 里是 0 ，它是 10 的一部分。
- 提示：  1 &amp;lt;= n &amp;lt;= 231 - 1  解题思路 模拟 字符串按照数字顺序排列，其按照数字长度为 1、2、3、.">
+提示： 1 &amp;lt;= n &amp;lt;= 231 - 1 解题思路 模拟 字符串按照数字顺序排列，其按照数字长度为 1、2、3、.">
     </head>
     <body class="
     article-page 
@@ -240,22 +240,22 @@
 <p>字符串按照数字顺序排列，其按照数字长度为 <code>1、2、3、...</code> 进行排列，可以利用这个规则求得 <code>n</code> 所在的那个数，进而求的该位对应的数字。</p>
 <p>排除 <code>0</code>，则相同长度的数字所占的字符串长度为 <code>9*基数*数字长度</code>，（即<code>9=9*1*1、90=9*10*2、900=9*100*3、...</code>），通过覆盖范围的查找确定到 <code>n</code> 对应的数字长度和基数。</p>
 <p>之后获取到 <code>n</code> 所在数字的偏移量，并求得该数，之后返回 <code>n</code> 对应位的数字即可。对输入 <code>0</code> 需要验证。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findNthDigit</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">base</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>  <span style="color:#75715e">// 基数 10^N
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">digit</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 位数 10进制
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 确定位数
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">n</span> &gt; <span style="color:#a6e22e">base</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#a6e22e">digit</span>; <span style="color:#a6e22e">base</span>, <span style="color:#a6e22e">digit</span> = <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#a6e22e">base</span>, <span style="color:#a6e22e">digit</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> {
-		<span style="color:#a6e22e">n</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">base</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">digit</span>
-	}
-	<span style="color:#a6e22e">offset</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">digit</span> <span style="color:#75715e">// 偏移量
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 获取指定位数字
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">base</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">offset</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">digit</span> <span style="color:#f92672">-</span> (<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#a6e22e">digit</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">10</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findNthDigit</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">base</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>  <span style="color:#75715e">// 基数 10^N
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">digit</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 位数 10进制
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 确定位数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">n</span> &gt; <span style="color:#a6e22e">base</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#a6e22e">digit</span>; <span style="color:#a6e22e">base</span>, <span style="color:#a6e22e">digit</span> = <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#a6e22e">base</span>, <span style="color:#a6e22e">digit</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">n</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">base</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">digit</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">offset</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">digit</span> <span style="color:#75715e">// 偏移量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 获取指定位数字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">base</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">offset</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">digit</span> <span style="color:#f92672">-</span> (<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#a6e22e">digit</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(\log{n}) $</li>
 <li>空间复杂度：$ O(1) $</li>

@@ -6,10 +6,10 @@
 题目描述 Hercy 想要为购买第一辆车存钱。他 每天 都往力扣银行里存钱。
 最开始，他在周一的时候存入 1 块钱。从周二到周日，他每天都比前一天多存入 1 块钱。在接下来每一个周一，他都会比 前一个周一 多存入 1 块钱。
 给你 n ，请你返回在第 n 天结束的时候他在力扣银行总共存了多少块钱。
-示例 1：  输入： n = 4
+示例 1： 输入： n = 4
 输出： 10
 解释： 第 4 天后，总额为 1 &#43; 2 &#43; 3 &#43; 4 = 10 。
- 示例 2:  输入： n = 10
+示例 2: 输入： n = 10
 输出： 37
 解释： 第 10 天后，总额为 (1 &#43; 2 &#43; 3 &#43; 4 &#43; 5 &#43; 6 &#43; 7) &#43; (2 &#43; 3 &#43; 4) = 37 。注意到第二个星期一，Hercy 存入 2 块钱。'><title>Leetcode 1716. 计算力扣银行的钱</title>
 
@@ -21,10 +21,10 @@
 题目描述 Hercy 想要为购买第一辆车存钱。他 每天 都往力扣银行里存钱。
 最开始，他在周一的时候存入 1 块钱。从周二到周日，他每天都比前一天多存入 1 块钱。在接下来每一个周一，他都会比 前一个周一 多存入 1 块钱。
 给你 n ，请你返回在第 n 天结束的时候他在力扣银行总共存了多少块钱。
-示例 1：  输入： n = 4
+示例 1： 输入： n = 4
 输出： 10
 解释： 第 4 天后，总额为 1 &#43; 2 &#43; 3 &#43; 4 = 10 。
- 示例 2:  输入： n = 10
+示例 2: 输入： n = 10
 输出： 37
 解释： 第 10 天后，总额为 (1 &#43; 2 &#43; 3 &#43; 4 &#43; 5 &#43; 6 &#43; 7) &#43; (2 &#43; 3 &#43; 4) = 37 。注意到第二个星期一，Hercy 存入 2 块钱。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1716.-%E8%AE%A1%E7%AE%97%E5%8A%9B%E6%89%A3%E9%93%B6%E8%A1%8C%E7%9A%84%E9%92%B1/'>
@@ -36,10 +36,10 @@
 题目描述 Hercy 想要为购买第一辆车存钱。他 每天 都往力扣银行里存钱。
 最开始，他在周一的时候存入 1 块钱。从周二到周日，他每天都比前一天多存入 1 块钱。在接下来每一个周一，他都会比 前一个周一 多存入 1 块钱。
 给你 n ，请你返回在第 n 天结束的时候他在力扣银行总共存了多少块钱。
-示例 1：  输入： n = 4
+示例 1： 输入： n = 4
 输出： 10
 解释： 第 4 天后，总额为 1 &#43; 2 &#43; 3 &#43; 4 = 10 。
- 示例 2:  输入： n = 10
+示例 2: 输入： n = 10
 输出： 37
 解释： 第 10 天后，总额为 (1 &#43; 2 &#43; 3 &#43; 4 &#43; 5 &#43; 6 &#43; 7) &#43; (2 &#43; 3 &#43; 4) = 37 。注意到第二个星期一，Hercy 存入 2 块钱。">
     </head>
@@ -253,19 +253,19 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="模拟">模拟</h4>
 <p>根据题设，计算出每一天的钱，累加求和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">totalMoney</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">mondayMoney</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">7</span> {
-		<span style="color:#75715e">// 当周
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#ae81ff">7</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">mondayMoney</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span> <span style="color:#75715e">// 每天比前一天多 1 块
-</span><span style="color:#75715e"></span>		}
-		<span style="color:#a6e22e">mondayMoney</span><span style="color:#f92672">++</span> <span style="color:#75715e">// 每周比前一周多 1 块
-</span><span style="color:#75715e"></span>	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">totalMoney</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">mondayMoney</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">7</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 当周
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#ae81ff">7</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">mondayMoney</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span> <span style="color:#75715e">// 每天比前一天多 1 块
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mondayMoney</span><span style="color:#f92672">++</span> <span style="color:#75715e">// 每周比前一周多 1 块
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(n)$</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -273,18 +273,18 @@
 <h4 id="数学">数学</h4>
 <p>可以发现每周存的钱都比前一周多 <code>7</code> 块，其构成一个公差为 <code>7</code> 的等差数列，根据求和公式计算。</p>
 <p>对于最后若不满七天，周内存的钱也构成公差为 <code>1</code> 的等差数列，而且每周周一存的钱也构成公差为 <code>1</code> 的等差数列，故仍可以快速求和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">totalMoney</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#75715e">// 整周：首项28，公差为7
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">weeks</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">7</span> <span style="color:#75715e">// 项数
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">weeks</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">weeks</span><span style="color:#f92672">*</span><span style="color:#a6e22e">weeks</span><span style="color:#f92672">-</span><span style="color:#a6e22e">weeks</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">7</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
-	<span style="color:#75715e">// 不满一周，公差为1
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">monday</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span><span style="color:#f92672">/</span><span style="color:#ae81ff">7</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 首项
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">days</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">7</span>     <span style="color:#75715e">// 项数
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">monday</span><span style="color:#f92672">*</span><span style="color:#a6e22e">days</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">days</span><span style="color:#f92672">*</span><span style="color:#a6e22e">days</span><span style="color:#f92672">-</span><span style="color:#a6e22e">days</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">totalMoney</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 整周：首项28，公差为7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">weeks</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">7</span> <span style="color:#75715e">// 项数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">weeks</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">weeks</span><span style="color:#f92672">*</span><span style="color:#a6e22e">weeks</span><span style="color:#f92672">-</span><span style="color:#a6e22e">weeks</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">7</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 不满一周，公差为1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">monday</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span><span style="color:#f92672">/</span><span style="color:#ae81ff">7</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 首项
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">days</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">7</span>     <span style="color:#75715e">// 项数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">monday</span><span style="color:#f92672">*</span><span style="color:#a6e22e">days</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">days</span><span style="color:#f92672">*</span><span style="color:#a6e22e">days</span><span style="color:#f92672">-</span><span style="color:#a6e22e">days</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(1) $</li>
 <li>空间复杂度：$ O(1) $</li>

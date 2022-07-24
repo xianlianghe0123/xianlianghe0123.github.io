@@ -4,13 +4,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
 难度： 中等
 题目描述 给你二叉树的根结点 root ，请你将它展开为一个单链表：
- 展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。 展开后的单链表应该与二叉树 先序遍历 顺序相同。  示例 1：  输入： root = [1,2,5,3,4,null,6]
+展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。 展开后的单链表应该与二叉树 先序遍历 顺序相同。 示例 1： 输入： root = [1,2,5,3,4,null,6]
 输出： [1,null,2,null,3,null,4,null,5,null,6]
- 示例 2：  输入： root = []
+示例 2： 输入： root = []
 输出： []
- 示例 3：  输入： root = [0]
+示例 3： 输入： root = [0]
 输出： [0]
- 提示：  树中结点数在范围 [0, 2000] 内 -100 &amp;lt;= Node.val &amp;lt;= 100  进阶： 你可以使用原地算法（$O(1)$ 额外空间）展开这棵树吗？
+提示： 树中结点数在范围 [0, 2000] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 进阶： 你可以使用原地算法（$O(1)$ 额外空间）展开这棵树吗？
 解题思路 先序遍历 使用一个记录目前展开链表的尾部，先序遍历二叉树，每遇到一个新结点，将其加入到尾部。
 func flatten(root *TreeNode) { head := new(TreeNode) tail := head var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } left := node.'><title>Leetcode 114. 二叉树展开为链表</title>
 
@@ -20,13 +20,13 @@ func flatten(root *TreeNode) { head := new(TreeNode) tail := head var dfs func(n
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
 难度： 中等
 题目描述 给你二叉树的根结点 root ，请你将它展开为一个单链表：
- 展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。 展开后的单链表应该与二叉树 先序遍历 顺序相同。  示例 1：  输入： root = [1,2,5,3,4,null,6]
+展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。 展开后的单链表应该与二叉树 先序遍历 顺序相同。 示例 1： 输入： root = [1,2,5,3,4,null,6]
 输出： [1,null,2,null,3,null,4,null,5,null,6]
- 示例 2：  输入： root = []
+示例 2： 输入： root = []
 输出： []
- 示例 3：  输入： root = [0]
+示例 3： 输入： root = [0]
 输出： [0]
- 提示：  树中结点数在范围 [0, 2000] 内 -100 &amp;lt;= Node.val &amp;lt;= 100  进阶： 你可以使用原地算法（$O(1)$ 额外空间）展开这棵树吗？
+提示： 树中结点数在范围 [0, 2000] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 进阶： 你可以使用原地算法（$O(1)$ 额外空间）展开这棵树吗？
 解题思路 先序遍历 使用一个记录目前展开链表的尾部，先序遍历二叉树，每遇到一个新结点，将其加入到尾部。
 func flatten(root *TreeNode) { head := new(TreeNode) tail := head var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } left := node.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-114.-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/'>
@@ -36,13 +36,13 @@ func flatten(root *TreeNode) { head := new(TreeNode) tail := head var dfs func(n
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
 难度： 中等
 题目描述 给你二叉树的根结点 root ，请你将它展开为一个单链表：
- 展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。 展开后的单链表应该与二叉树 先序遍历 顺序相同。  示例 1：  输入： root = [1,2,5,3,4,null,6]
+展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。 展开后的单链表应该与二叉树 先序遍历 顺序相同。 示例 1： 输入： root = [1,2,5,3,4,null,6]
 输出： [1,null,2,null,3,null,4,null,5,null,6]
- 示例 2：  输入： root = []
+示例 2： 输入： root = []
 输出： []
- 示例 3：  输入： root = [0]
+示例 3： 输入： root = [0]
 输出： [0]
- 提示：  树中结点数在范围 [0, 2000] 内 -100 &amp;lt;= Node.val &amp;lt;= 100  进阶： 你可以使用原地算法（$O(1)$ 额外空间）展开这棵树吗？
+提示： 树中结点数在范围 [0, 2000] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 进阶： 你可以使用原地算法（$O(1)$ 额外空间）展开这棵树吗？
 解题思路 先序遍历 使用一个记录目前展开链表的尾部，先序遍历二叉树，每遇到一个新结点，将其加入到尾部。
 func flatten(root *TreeNode) { head := new(TreeNode) tail := head var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } left := node.">
     </head>
@@ -258,25 +258,25 @@ func flatten(root *TreeNode) { head := new(TreeNode) tail := head var dfs func(n
 <h3 id="解题思路">解题思路</h3>
 <h4 id="先序遍历">先序遍历</h4>
 <p>使用一个记录目前展开链表的尾部，先序遍历二叉树，每遇到一个新结点，将其加入到尾部。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) {
-	<span style="color:#a6e22e">head</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">TreeNode</span>)
-	<span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span>
-		}
-		<span style="color:#a6e22e">left</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>
-		<span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>
-		<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Right</span> = <span style="color:#a6e22e">node</span>
-		<span style="color:#a6e22e">tail</span> = <span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Right</span>
-		<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Left</span> = <span style="color:#66d9ef">nil</span>
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">left</span>)
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">right</span>)
-	}
-	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">TreeNode</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">left</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Right</span> = <span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tail</span> = <span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Right</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Left</span> = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">left</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">right</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

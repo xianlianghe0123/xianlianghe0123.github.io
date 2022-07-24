@@ -4,17 +4,17 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
 难度： 中等
 题目描述 给定一个字符串数组 words，找到 length(word[i]) * length(word[j]) 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 0。
-示例 1：  输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
+示例 1： 输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
 输出: 16
 解释: 这两个单词为 &amp;ldquo;abcw&amp;rdquo;, &amp;ldquo;xtfn&amp;rdquo;。
- 示例 2：  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
+示例 2： 输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
 输出: 4
 解释: 这两个单词为 &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;cd&amp;rdquo;。
- 示例 3:  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
+示例 3: 输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
 输出: 0
 解释: 不存在这样的两个单词。
- 提示：  2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母  解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
-func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度  时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $  排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。'><title>Leetcode 318. 最大单词长度乘积</title>
+提示： 2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母 解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
+func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度 时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $ 排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。'><title>Leetcode 318. 最大单词长度乘积</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-318.-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/'>
 
@@ -22,17 +22,17 @@ func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;g
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
 难度： 中等
 题目描述 给定一个字符串数组 words，找到 length(word[i]) * length(word[j]) 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 0。
-示例 1：  输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
+示例 1： 输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
 输出: 16
 解释: 这两个单词为 &amp;ldquo;abcw&amp;rdquo;, &amp;ldquo;xtfn&amp;rdquo;。
- 示例 2：  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
+示例 2： 输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
 输出: 4
 解释: 这两个单词为 &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;cd&amp;rdquo;。
- 示例 3:  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
+示例 3: 输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
 输出: 0
 解释: 不存在这样的两个单词。
- 提示：  2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母  解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
-func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度  时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $  排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。'>
+提示： 2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母 解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
+func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度 时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $ 排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-318.-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-11-17T10:19:33&#43;08:00'/><meta property='article:modified_time' content='2021-11-17T10:19:33&#43;08:00'/>
@@ -40,17 +40,17 @@ func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;g
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
 难度： 中等
 题目描述 给定一个字符串数组 words，找到 length(word[i]) * length(word[j]) 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 0。
-示例 1：  输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
+示例 1： 输入: [&amp;ldquo;abcw&amp;rdquo;,&amp;ldquo;baz&amp;rdquo;,&amp;ldquo;foo&amp;rdquo;,&amp;ldquo;bar&amp;rdquo;,&amp;ldquo;xtfn&amp;rdquo;,&amp;ldquo;abcdef&amp;rdquo;]
 输出: 16
 解释: 这两个单词为 &amp;ldquo;abcw&amp;rdquo;, &amp;ldquo;xtfn&amp;rdquo;。
- 示例 2：  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
+示例 2： 输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;bcd&amp;rdquo;,&amp;ldquo;abcd&amp;rdquo;]
 输出: 4
 解释: 这两个单词为 &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;cd&amp;rdquo;。
- 示例 3:  输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
+示例 3: 输入: [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;aa&amp;rdquo;,&amp;ldquo;aaa&amp;rdquo;,&amp;ldquo;aaaa&amp;rdquo;]
 输出: 0
 解释: 不存在这样的两个单词。
- 提示：  2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母  解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
-func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度  时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $  排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。">
+提示： 2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅包含小写字母 解题思路 暴力求解 将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。
+func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;gt; 0; i-- { exist := make([]bool, 26) for k := range words[i] { exist[words[i][k]-&amp;#39;a&amp;#39;] = true } Other: for j := i - 1; j &amp;gt;= 0; j-- { for k := range words[j] { if exist[words[j][k]-&amp;#39;a&amp;#39;] { continue Other } } if max &amp;lt; len(words[i])*len(words[j]) { max = len(words[i]) * len(words[j]) } } } return max } 复杂度 时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $ 空间复杂度：$ O(L) $ 排序 在暴力的基础上优化，将 words 按照长度排序，从最长的字符串 word[i] 开始遍历，寻找下一个与 words[i] 没有公共字符的字符串 word[j]，找到即求得 word[i] 关联的最大值，无需继续遍历；当 len(word[i]) * len(word[j]) 小于最大值的时候，也无需继续遍历。">
     </head>
     <body class="
     article-page 
@@ -262,28 +262,28 @@ func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;g
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>将字符串两两比较判定，使用哈希表确定是否有公共字符，有则跳过，没有将两个字符串长度相乘并更新最大值。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, <span style="color:#ae81ff">26</span>)
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] {
-			<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] = <span style="color:#66d9ef">true</span>
-		}
-	<span style="color:#a6e22e">Other</span>:
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>] {
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] {
-					<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Other</span>
-				}
-			}
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
-				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, <span style="color:#ae81ff">26</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Other</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Other</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $</li>
 <li>空间复杂度：$ O(L) $</li>
@@ -292,62 +292,62 @@ func maxProduct(words []string) int { max := 0 for i := len(words) - 1; i &amp;g
 <p>在暴力的基础上优化，将 <code>words</code> 按照长度排序，从最长的字符串 <code>word[i]</code> 开始遍历，寻找下一个与 <code>words[i]</code> 没有公共字符的字符串 <code>word[j]</code>，找到即求得 <code>word[i]</code> 关联的最大值，无需继续遍历；当 <code>len(word[i]) * len(word[j])</code> 小于最大值的时候，也无需继续遍历。</p>
 <p>当 <code>len(word[i])</code> 的平方小于最长单词的时候，即完成遍历。</p>
 <p>比较两个单词是否有公共字符时，使用哈希表，将 <code>word[i]</code> 以字符的维度记录到哈希表中，遍历 <code>word[j]</code> ，确认其字符是否在哈希表中。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">words</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
-	})
-	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &lt; len(<span style="color:#a6e22e">words</span>[len(<span style="color:#a6e22e">words</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) {
-			<span style="color:#66d9ef">break</span>
-		}
-		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, <span style="color:#ae81ff">26</span>)
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] {
-			<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] = <span style="color:#66d9ef">true</span>
-		}
-	<span style="color:#a6e22e">Other</span>:
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
-			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) &lt; <span style="color:#a6e22e">max</span> {
-				<span style="color:#66d9ef">break</span>
-			}
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>] {
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] {
-					<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Other</span>
-				}
-			}
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
-				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
-				<span style="color:#66d9ef">break</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">words</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &lt; len(<span style="color:#a6e22e">words</span>[len(<span style="color:#a6e22e">words</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, <span style="color:#ae81ff">26</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Other</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) &lt; <span style="color:#a6e22e">max</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Other</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2L), N = len(words), L = len(words[i]) $</li>
 <li>空间复杂度：$ O(\log{N}+L) $</li>
 </ul>
 <h4 id="位运算">位运算</h4>
 <p>当使用哈希表确定是否有公共字符时，需要进行遍历，效率比较低。而因为字符空间为小写字母集合，可以用整数中的位代替哈希表的作用，这样可以使用与运算 $O(1)$ 的计算出是否有公共字符。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">chars</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int32</span>, len(<span style="color:#a6e22e">words</span>))
-	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
-			<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">|=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span>)
-		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
-				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
-}
-</code></pre></div><h5 id="复杂度-2">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProduct</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">chars</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int32</span>, len(<span style="color:#a6e22e">words</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">|=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">words</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">max</span> &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>])<span style="color:#f92672">*</span>len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]) {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">max</span> = len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">*</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-2">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2+NL), N = len(words), L = len(words[i]) $</li>
 <li>空间复杂度：$ O(N) $</li>

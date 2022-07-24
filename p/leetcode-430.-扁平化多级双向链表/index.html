@@ -5,21 +5,22 @@
 难度： 中等
 题目描述 多级双向链表中，除了指向下一个节点和前一个节点指针之外，它还有一个子链表指针，可能指向单独的双向链表。这些子列表也可能会有一个或多个自己的子项，依此类推，生成多级数据结构，如下面的示例所示。
 给你位于列表第一级的头节点，请你扁平化列表，使所有结点出现在单级双链表中。
-示例 1：  输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+示例 1： 输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
 输出： [1,2,3,7,8,11,12,9,10,4,5,6]
 解释：
 输入的多级列表如下图所示：
 扁平化后的链表如下图：
- 示例 2：  输入： head = [1,2,null,3]
+示例 2： 输入： head = [1,2,null,3]
 输出： [1,3,2]
 解释：
 输入的多级列表如下图所示：
- 1---2---NULL | 3---NULL  示例 3：  输入： head = []
+1---2---NULL | 3---NULL 示例 3： 输入： head = []
 输出： []
- 如何表示测试用例中的多级链表？ 以 示例 1 为例：
- 1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
+如何表示测试用例中的多级链表？ 以 示例 1 为例：
+1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
 [1,2,3,4,5,6,null] [7,8,9,10,null] [11,12,null] 为了将每一级都序列化到一起，我们需要每一级中添加值为 null 的元素，以表示没有节点连接到上一级的上级节点。
-[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。'><title>Leetcode 430. 扁平化多级双向链表</title>
+[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。
+[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12] 提示： 节点数目不超过 1000 1 &amp;lt;= Node.val &amp;lt;= 105 解题思路 深度优先搜索 采用深度优先搜索，遍历当前链表，当遇到 Child 非空时，优先遍历 Child 链表，每次遍历结束返回链表尾部的指针。'><title>Leetcode 430. 扁平化多级双向链表</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-430.-%E6%89%81%E5%B9%B3%E5%8C%96%E5%A4%9A%E7%BA%A7%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/'>
 
@@ -28,21 +29,22 @@
 难度： 中等
 题目描述 多级双向链表中，除了指向下一个节点和前一个节点指针之外，它还有一个子链表指针，可能指向单独的双向链表。这些子列表也可能会有一个或多个自己的子项，依此类推，生成多级数据结构，如下面的示例所示。
 给你位于列表第一级的头节点，请你扁平化列表，使所有结点出现在单级双链表中。
-示例 1：  输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+示例 1： 输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
 输出： [1,2,3,7,8,11,12,9,10,4,5,6]
 解释：
 输入的多级列表如下图所示：
 扁平化后的链表如下图：
- 示例 2：  输入： head = [1,2,null,3]
+示例 2： 输入： head = [1,2,null,3]
 输出： [1,3,2]
 解释：
 输入的多级列表如下图所示：
- 1---2---NULL | 3---NULL  示例 3：  输入： head = []
+1---2---NULL | 3---NULL 示例 3： 输入： head = []
 输出： []
- 如何表示测试用例中的多级链表？ 以 示例 1 为例：
- 1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
+如何表示测试用例中的多级链表？ 以 示例 1 为例：
+1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
 [1,2,3,4,5,6,null] [7,8,9,10,null] [11,12,null] 为了将每一级都序列化到一起，我们需要每一级中添加值为 null 的元素，以表示没有节点连接到上一级的上级节点。
-[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。'>
+[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。
+[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12] 提示： 节点数目不超过 1000 1 &amp;lt;= Node.val &amp;lt;= 105 解题思路 深度优先搜索 采用深度优先搜索，遍历当前链表，当遇到 Child 非空时，优先遍历 Child 链表，每次遍历结束返回链表尾部的指针。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-430.-%E6%89%81%E5%B9%B3%E5%8C%96%E5%A4%9A%E7%BA%A7%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-09-24T10:35:19&#43;08:00'/><meta property='article:modified_time' content='2021-09-24T10:35:19&#43;08:00'/>
@@ -51,21 +53,22 @@
 难度： 中等
 题目描述 多级双向链表中，除了指向下一个节点和前一个节点指针之外，它还有一个子链表指针，可能指向单独的双向链表。这些子列表也可能会有一个或多个自己的子项，依此类推，生成多级数据结构，如下面的示例所示。
 给你位于列表第一级的头节点，请你扁平化列表，使所有结点出现在单级双链表中。
-示例 1：  输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+示例 1： 输入： head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
 输出： [1,2,3,7,8,11,12,9,10,4,5,6]
 解释：
 输入的多级列表如下图所示：
 扁平化后的链表如下图：
- 示例 2：  输入： head = [1,2,null,3]
+示例 2： 输入： head = [1,2,null,3]
 输出： [1,3,2]
 解释：
 输入的多级列表如下图所示：
- 1---2---NULL | 3---NULL  示例 3：  输入： head = []
+1---2---NULL | 3---NULL 示例 3： 输入： head = []
 输出： []
- 如何表示测试用例中的多级链表？ 以 示例 1 为例：
- 1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
+如何表示测试用例中的多级链表？ 以 示例 1 为例：
+1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
 [1,2,3,4,5,6,null] [7,8,9,10,null] [11,12,null] 为了将每一级都序列化到一起，我们需要每一级中添加值为 null 的元素，以表示没有节点连接到上一级的上级节点。
-[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。">
+[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。
+[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12] 提示： 节点数目不超过 1000 1 &amp;lt;= Node.val &amp;lt;= 105 解题思路 深度优先搜索 采用深度优先搜索，遍历当前链表，当遇到 Child 非空时，优先遍历 Child 链表，每次遍历结束返回链表尾部的指针。">
     </head>
     <body class="
     article-page 
@@ -302,29 +305,29 @@
 <h4 id="深度优先搜索">深度优先搜索</h4>
 <p>采用深度优先搜索，遍历当前链表，当遇到 <code>Child</code> 非空时，优先遍历 <code>Child</code> 链表，每次遍历结束返回链表尾部的指针。</p>
 <p>遍历完成 <code>Child</code> 后，将 <code>Next</code> 结点连接到返回的尾部，并将 <code>Child</code> 的头结点时候连接到当前节点。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
-		<span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">node</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span>)
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-					<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>
-					<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Prev</span> = <span style="color:#a6e22e">tail</span>
-				}
-				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span>
-				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span>.<span style="color:#a6e22e">Prev</span> = <span style="color:#a6e22e">node</span>
-				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span> = <span style="color:#66d9ef">nil</span>
-			}
-			<span style="color:#a6e22e">tail</span> = <span style="color:#a6e22e">node</span>
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">tail</span>
-	}
-	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">root</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">node</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Prev</span> = <span style="color:#a6e22e">tail</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span>.<span style="color:#a6e22e">Prev</span> = <span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Child</span> = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">tail</span> = <span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">tail</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">root</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(List) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

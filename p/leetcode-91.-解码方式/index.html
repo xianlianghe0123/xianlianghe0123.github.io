@@ -4,12 +4,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/decode-ways/
 难度： 中等
 题目描述 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
-&#39;A&#39; -&amp;gt; 1 &#39;B&#39; -&amp;gt; 2 ... &#39;Z&#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
- &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
+&amp;#39;A&amp;#39; -&amp;gt; 1 &amp;#39;B&amp;#39; -&amp;gt; 2 ... &amp;#39;Z&amp;#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
+&amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6) 注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  输入： s = &amp;ldquo;12&amp;rdquo;
-输出： 2'><title>Leetcode 91. 解码方式</title>
+示例1： 输入： s = &amp;ldquo;12&amp;rdquo;
+输出： 2
+解释： 它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。'><title>Leetcode 91. 解码方式</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/'>
 
@@ -17,12 +18,13 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/decode-ways/
 难度： 中等
 题目描述 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
-&#39;A&#39; -&amp;gt; 1 &#39;B&#39; -&amp;gt; 2 ... &#39;Z&#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
- &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
+&amp;#39;A&amp;#39; -&amp;gt; 1 &amp;#39;B&amp;#39; -&amp;gt; 2 ... &amp;#39;Z&amp;#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
+&amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6) 注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  输入： s = &amp;ldquo;12&amp;rdquo;
-输出： 2'>
+示例1： 输入： s = &amp;ldquo;12&amp;rdquo;
+输出： 2
+解释： 它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-91.-%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dp' /><meta property='article:published_time' content='2021-04-21T10:35:45&#43;08:00'/><meta property='article:modified_time' content='2021-04-21T10:35:45&#43;08:00'/>
@@ -30,12 +32,13 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/decode-ways/
 难度： 中等
 题目描述 一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：
-&#39;A&#39; -&amp;gt; 1 &#39;B&#39; -&amp;gt; 2 ... &#39;Z&#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
- &amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6)  注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
+&amp;#39;A&amp;#39; -&amp;gt; 1 &amp;#39;B&amp;#39; -&amp;gt; 2 ... &amp;#39;Z&amp;#39; -&amp;gt; 26 要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，&amp;quot;11106&amp;quot; 可以映射为：
+&amp;quot;AAJF&amp;quot; ，将消息分组为 (1 1 10 6) &amp;quot;KJF&amp;quot; ，将消息分组为 (11 10 6) 注意，消息不能分组为 (1 11 06) ，因为 &amp;quot;06&amp;quot; 不能映射为 &amp;quot;F&amp;quot; ，这是由于 &amp;quot;6&amp;quot; 和 &amp;quot;06&amp;quot; 在映射中并不等价。
 给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。
 题目数据保证答案肯定是一个 32 位 的整数。
-示例1：  输入： s = &amp;ldquo;12&amp;rdquo;
-输出： 2">
+示例1： 输入： s = &amp;ldquo;12&amp;rdquo;
+输出： 2
+解释： 它可以解码为 &amp;ldquo;AB&amp;rdquo;（1 2）或者 &amp;ldquo;L&amp;rdquo;（12）。">
     </head>
     <body class="
     article-page 
@@ -220,10 +223,10 @@
 <strong>难度：</strong> <font color="orange">中等</font></p>
 <h4 id="题目描述">题目描述</h4>
 <p>一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：</p>
-<pre tabindex="0"><code>'A' -&gt; 1
-'B' -&gt; 2
+<pre tabindex="0"><code>&#39;A&#39; -&gt; 1
+&#39;B&#39; -&gt; 2
 ...
-'Z' -&gt; 26
+&#39;Z&#39; -&gt; 26
 </code></pre><p>要 <strong>解码</strong> 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，<code>&quot;11106&quot;</code> 可以映射为：</p>
 <ul>
 <li><code>&quot;AAJF&quot;</code> ，将消息分组为 <code>(1 1 10 6)</code></li>
@@ -279,58 +282,58 @@
 <li>情况一和二均不满足，说明该字符串不能解码</li>
 </ul>
 <p>求解到 <code>s</code> 尾，即可求解得所有解码总数 <code>dp[len(s)]</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numDecodings</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">// 标记是否可以解码
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 情况一
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#e6db74">&#39;0&#39;</span> {
-			<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>]
-			<span style="color:#a6e22e">exist</span> = <span style="color:#66d9ef">true</span>
-		}
-		<span style="color:#75715e">// 情况二
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;0&#39;</span> {
-			<span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>int(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">+</span> int(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">26</span> {
-				<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-				<span style="color:#a6e22e">exist</span> = <span style="color:#66d9ef">true</span>
-			}
-		}
-		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">exist</span> {
-			<span style="color:#66d9ef">break</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[len(<span style="color:#a6e22e">s</span>)]
-}
-</code></pre></div><h5 id="优化">优化</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numDecodings</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">// 标记是否可以解码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">// 情况一
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#e6db74">&#39;0&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">exist</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 情况二
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;0&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>int(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">+</span> int(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">26</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">exist</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">exist</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[len(<span style="color:#a6e22e">s</span>)]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="优化">优化</h5>
 <p>每次迭代只涉及到三个变量，故可以用三个变量代替数组，进一步降低空间复杂度</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numDecodings</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">// 标记是否可以解码
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>] = <span style="color:#ae81ff">0</span>
-		<span style="color:#75715e">// 情况一
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#e6db74">&#39;0&#39;</span> {
-			<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>]
-			<span style="color:#a6e22e">exist</span> = <span style="color:#66d9ef">true</span>
-		}
-		<span style="color:#75715e">// 情况二
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;0&#39;</span> {
-			<span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>int(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">+</span> int(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">26</span> {
-				<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>]
-				<span style="color:#a6e22e">exist</span> = <span style="color:#66d9ef">true</span>
-			}
-		}
-		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">exist</span> {
-			<span style="color:#66d9ef">break</span>
-		}
-		<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>]
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numDecodings</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">// 标记是否可以解码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>] = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 情况一
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#e6db74">&#39;0&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">exist</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 情况二
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;0&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>int(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">+</span> int(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">26</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">exist</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">exist</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：优化前：O(N)，优化后O(1)</li>

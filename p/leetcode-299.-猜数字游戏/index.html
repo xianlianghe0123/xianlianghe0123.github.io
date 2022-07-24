@@ -5,19 +5,21 @@
 难度： 中等
 题目描述 你在和朋友一起玩 猜数字（Bulls and Cows）游戏，该游戏规则如下：
 写出一个秘密数字，并请朋友猜这个数字是多少。朋友每猜测一次，你就会给他一个包含下述信息的提示：
- 猜测数字中有多少位属于数字和确切位置都猜对了（称为 &amp;ldquo;Bulls&amp;rdquo;, 公牛）， 有多少位属于数字猜对了但是位置不对（称为 &amp;ldquo;Cows&amp;rdquo;, 奶牛）。也就是说，这次猜测中有多少位非公牛数字可以通过重新排列转换成公牛数字。  给你一个秘密数字 secret 和朋友猜测的数字 guess ，请你返回对朋友这次猜测的提示。
+猜测数字中有多少位属于数字和确切位置都猜对了（称为 &amp;ldquo;Bulls&amp;rdquo;, 公牛）， 有多少位属于数字猜对了但是位置不对（称为 &amp;ldquo;Cows&amp;rdquo;, 奶牛）。也就是说，这次猜测中有多少位非公牛数字可以通过重新排列转换成公牛数字。 给你一个秘密数字 secret 和朋友猜测的数字 guess ，请你返回对朋友这次猜测的提示。
 提示的格式为 &amp;quot;xAyB&amp;quot; ，x 是公牛个数， y 是奶牛个数，A 表示公牛，B 表示奶牛。
 请注意秘密数字和朋友猜测的数字都可能含有重复数字。
-示例 1：  输入: secret = &amp;ldquo;1807&amp;rdquo;, guess = &amp;ldquo;7810&amp;rdquo;
+示例 1： 输入: secret = &amp;ldquo;1807&amp;rdquo;, guess = &amp;ldquo;7810&amp;rdquo;
 输出: &amp;ldquo;1A3B&amp;rdquo;
 解释: 数字和位置都对（公牛）用 &amp;lsquo;|&amp;rsquo; 连接，数字猜对位置不对（奶牛）的采用斜体加粗标识。
 &amp;ldquo;1807&amp;rdquo;
 |
 &amp;ldquo;7810&amp;rdquo;
- 示例 2：  输入: secret = &amp;ldquo;1123&amp;rdquo;, guess = &amp;ldquo;0111&amp;rdquo;
+示例 2： 输入: secret = &amp;ldquo;1123&amp;rdquo;, guess = &amp;ldquo;0111&amp;rdquo;
 输出: &amp;ldquo;1A1B&amp;rdquo;
 解释: 数字和位置都对（公牛）用 &amp;lsquo;|&amp;rsquo; 连接，数字猜对位置不对（奶牛）的采用斜体加粗标识。
-&amp;ldquo;1123&amp;rdquo; &amp;ldquo;1123&amp;rdquo;'><title>Leetcode 299. 猜数字游戏</title>
+&amp;ldquo;1123&amp;rdquo; &amp;ldquo;1123&amp;rdquo;
+| or |
+&amp;ldquo;0111&amp;rdquo; &amp;ldquo;0111&amp;rdquo;'><title>Leetcode 299. 猜数字游戏</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-299.-%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/'>
 
@@ -26,19 +28,21 @@
 难度： 中等
 题目描述 你在和朋友一起玩 猜数字（Bulls and Cows）游戏，该游戏规则如下：
 写出一个秘密数字，并请朋友猜这个数字是多少。朋友每猜测一次，你就会给他一个包含下述信息的提示：
- 猜测数字中有多少位属于数字和确切位置都猜对了（称为 &amp;ldquo;Bulls&amp;rdquo;, 公牛）， 有多少位属于数字猜对了但是位置不对（称为 &amp;ldquo;Cows&amp;rdquo;, 奶牛）。也就是说，这次猜测中有多少位非公牛数字可以通过重新排列转换成公牛数字。  给你一个秘密数字 secret 和朋友猜测的数字 guess ，请你返回对朋友这次猜测的提示。
+猜测数字中有多少位属于数字和确切位置都猜对了（称为 &amp;ldquo;Bulls&amp;rdquo;, 公牛）， 有多少位属于数字猜对了但是位置不对（称为 &amp;ldquo;Cows&amp;rdquo;, 奶牛）。也就是说，这次猜测中有多少位非公牛数字可以通过重新排列转换成公牛数字。 给你一个秘密数字 secret 和朋友猜测的数字 guess ，请你返回对朋友这次猜测的提示。
 提示的格式为 &amp;quot;xAyB&amp;quot; ，x 是公牛个数， y 是奶牛个数，A 表示公牛，B 表示奶牛。
 请注意秘密数字和朋友猜测的数字都可能含有重复数字。
-示例 1：  输入: secret = &amp;ldquo;1807&amp;rdquo;, guess = &amp;ldquo;7810&amp;rdquo;
+示例 1： 输入: secret = &amp;ldquo;1807&amp;rdquo;, guess = &amp;ldquo;7810&amp;rdquo;
 输出: &amp;ldquo;1A3B&amp;rdquo;
 解释: 数字和位置都对（公牛）用 &amp;lsquo;|&amp;rsquo; 连接，数字猜对位置不对（奶牛）的采用斜体加粗标识。
 &amp;ldquo;1807&amp;rdquo;
 |
 &amp;ldquo;7810&amp;rdquo;
- 示例 2：  输入: secret = &amp;ldquo;1123&amp;rdquo;, guess = &amp;ldquo;0111&amp;rdquo;
+示例 2： 输入: secret = &amp;ldquo;1123&amp;rdquo;, guess = &amp;ldquo;0111&amp;rdquo;
 输出: &amp;ldquo;1A1B&amp;rdquo;
 解释: 数字和位置都对（公牛）用 &amp;lsquo;|&amp;rsquo; 连接，数字猜对位置不对（奶牛）的采用斜体加粗标识。
-&amp;ldquo;1123&amp;rdquo; &amp;ldquo;1123&amp;rdquo;'>
+&amp;ldquo;1123&amp;rdquo; &amp;ldquo;1123&amp;rdquo;
+| or |
+&amp;ldquo;0111&amp;rdquo; &amp;ldquo;0111&amp;rdquo;'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-299.-%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-11-08T22:46:13&#43;08:00'/><meta property='article:modified_time' content='2021-11-08T22:46:13&#43;08:00'/>
@@ -47,19 +51,21 @@
 难度： 中等
 题目描述 你在和朋友一起玩 猜数字（Bulls and Cows）游戏，该游戏规则如下：
 写出一个秘密数字，并请朋友猜这个数字是多少。朋友每猜测一次，你就会给他一个包含下述信息的提示：
- 猜测数字中有多少位属于数字和确切位置都猜对了（称为 &amp;ldquo;Bulls&amp;rdquo;, 公牛）， 有多少位属于数字猜对了但是位置不对（称为 &amp;ldquo;Cows&amp;rdquo;, 奶牛）。也就是说，这次猜测中有多少位非公牛数字可以通过重新排列转换成公牛数字。  给你一个秘密数字 secret 和朋友猜测的数字 guess ，请你返回对朋友这次猜测的提示。
+猜测数字中有多少位属于数字和确切位置都猜对了（称为 &amp;ldquo;Bulls&amp;rdquo;, 公牛）， 有多少位属于数字猜对了但是位置不对（称为 &amp;ldquo;Cows&amp;rdquo;, 奶牛）。也就是说，这次猜测中有多少位非公牛数字可以通过重新排列转换成公牛数字。 给你一个秘密数字 secret 和朋友猜测的数字 guess ，请你返回对朋友这次猜测的提示。
 提示的格式为 &amp;quot;xAyB&amp;quot; ，x 是公牛个数， y 是奶牛个数，A 表示公牛，B 表示奶牛。
 请注意秘密数字和朋友猜测的数字都可能含有重复数字。
-示例 1：  输入: secret = &amp;ldquo;1807&amp;rdquo;, guess = &amp;ldquo;7810&amp;rdquo;
+示例 1： 输入: secret = &amp;ldquo;1807&amp;rdquo;, guess = &amp;ldquo;7810&amp;rdquo;
 输出: &amp;ldquo;1A3B&amp;rdquo;
 解释: 数字和位置都对（公牛）用 &amp;lsquo;|&amp;rsquo; 连接，数字猜对位置不对（奶牛）的采用斜体加粗标识。
 &amp;ldquo;1807&amp;rdquo;
 |
 &amp;ldquo;7810&amp;rdquo;
- 示例 2：  输入: secret = &amp;ldquo;1123&amp;rdquo;, guess = &amp;ldquo;0111&amp;rdquo;
+示例 2： 输入: secret = &amp;ldquo;1123&amp;rdquo;, guess = &amp;ldquo;0111&amp;rdquo;
 输出: &amp;ldquo;1A1B&amp;rdquo;
 解释: 数字和位置都对（公牛）用 &amp;lsquo;|&amp;rsquo; 连接，数字猜对位置不对（奶牛）的采用斜体加粗标识。
-&amp;ldquo;1123&amp;rdquo; &amp;ldquo;1123&amp;rdquo;">
+&amp;ldquo;1123&amp;rdquo; &amp;ldquo;1123&amp;rdquo;
+| or |
+&amp;ldquo;0111&amp;rdquo; &amp;ldquo;0111&amp;rdquo;">
     </head>
     <body class="
     article-page 
@@ -297,29 +303,29 @@
 <li>若相同，则 <code>&quot;Bulls&quot;</code> 的数量 <code>+1</code>，同时记录这些位置。</li>
 </ul>
 <p>然后遍历 <code>guess</code> 对应的哈希表，选择数量小的求和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getHint</span>(<span style="color:#a6e22e">secret</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">guess</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">secretCnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">guessCnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">bulls</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">secret</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">secret</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">guess</span>[<span style="color:#a6e22e">i</span>] {
-			<span style="color:#a6e22e">bulls</span><span style="color:#f92672">++</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">secretCnt</span>[<span style="color:#a6e22e">secret</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
-			<span style="color:#a6e22e">guessCnt</span>[<span style="color:#a6e22e">guess</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
-		}
-	}
-	<span style="color:#a6e22e">cows</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">char</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">guessCnt</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">guessCnt</span>[<span style="color:#a6e22e">char</span>] &lt; <span style="color:#a6e22e">secretCnt</span>[<span style="color:#a6e22e">char</span>] {
-			<span style="color:#a6e22e">cows</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">guessCnt</span>[<span style="color:#a6e22e">char</span>]
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">cows</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">secretCnt</span>[<span style="color:#a6e22e">char</span>]
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%dA%dB&#34;</span>, <span style="color:#a6e22e">bulls</span>, <span style="color:#a6e22e">cows</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getHint</span>(<span style="color:#a6e22e">secret</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">guess</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">secretCnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">guessCnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bulls</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">secret</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">secret</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">guess</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">bulls</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">secretCnt</span>[<span style="color:#a6e22e">secret</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">guessCnt</span>[<span style="color:#a6e22e">guess</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cows</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">char</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">guessCnt</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">guessCnt</span>[<span style="color:#a6e22e">char</span>] &lt; <span style="color:#a6e22e">secretCnt</span>[<span style="color:#a6e22e">char</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cows</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">guessCnt</span>[<span style="color:#a6e22e">char</span>]
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cows</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">secretCnt</span>[<span style="color:#a6e22e">char</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%dA%dB&#34;</span>, <span style="color:#a6e22e">bulls</span>, <span style="color:#a6e22e">cows</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(secret) $</li>
 <li>空间复杂度：$ O(\Sigma), \Sigma表示字符集字符总数量，本题为10 $</li>

@@ -6,10 +6,10 @@
 题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
 子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
 如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入： nums = [23,2,4,6,7], k = 6
+示例1： 输入： nums = [23,2,4,6,7], k = 6
 输出： true
 解释： [2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入： nums = [23,2,6,4,7], k = 6
+示例2： 输入： nums = [23,2,6,4,7], k = 6
 输出： true
 解释： [23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。'><title>Leetcode 523. 连续的子数组和</title>
 
@@ -21,10 +21,10 @@
 题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
 子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
 如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入： nums = [23,2,4,6,7], k = 6
+示例1： 输入： nums = [23,2,4,6,7], k = 6
 输出： true
 解释： [2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入： nums = [23,2,6,4,7], k = 6
+示例2： 输入： nums = [23,2,6,4,7], k = 6
 输出： true
 解释： [23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-523.-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/'>
@@ -36,10 +36,10 @@
 题目描述 给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：
 子数组大小 至少为 2 ，且 子数组元素总和为 k 的倍数。 如果存在，返回 true ；否则，返回 false 。
 如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。
-示例1：  输入： nums = [23,2,4,6,7], k = 6
+示例1： 输入： nums = [23,2,4,6,7], k = 6
 输出： true
 解释： [2,4] 是一个大小为 2 的子数组，并且和为 6 。
- 示例2：  输入： nums = [23,2,6,4,7], k = 6
+示例2： 输入： nums = [23,2,6,4,7], k = 6
 输出： true
 解释： [23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。">
     </head>
@@ -261,24 +261,24 @@
 <p>又结果要求对 <code>k</code> 取模为 <code>0</code>，所以前缀和可以只需保留对 <code>k</code> 取模的值，此时两个前缀数组的差值就变为了 <code>0</code> ，原问题转化为在一个数组中找到两个相同的数，要求其距离大于 <code>1</code>。</p>
 <p>可以利用哈希表保存每个数最早出现的位置，直到找到相同的数，其距离必然为最大，判断是否满足条件即可。</p>
 <p>注意，对 <code>0</code> 需要特殊判断，可以预先在哈希表中存入其位置为 <code>-1</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkSubarraySum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">pos</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{
-		<span style="color:#ae81ff">0</span>: <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
-	}
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">sum</span> = (<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">k</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">sum</span>]; <span style="color:#a6e22e">ok</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> &gt; <span style="color:#ae81ff">1</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-			}
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">sum</span>] = <span style="color:#a6e22e">i</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkSubarraySum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">pos</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">0</span>: <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> = (<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">k</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">sum</span>]; <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> &gt; <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">pos</span>[<span style="color:#a6e22e">sum</span>] = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：O(min(N,k))</li>

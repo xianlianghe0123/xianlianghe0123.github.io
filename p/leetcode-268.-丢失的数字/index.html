@@ -4,13 +4,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/missing-number/
 难度： 简单
 题目描述 给定一个包含 [0, n] 中 n 个数的数组 nums ，找出 [0, n] 这个范围内没有出现在数组中的那个数。
-示例 1：  输入： nums = [3,0,1]
+示例 1： 输入： nums = [3,0,1]
 输出： 2
 解释： n = 3，因为有 3 个数字，所以所有的数字都在范围 [0,3] 内。2 是丢失的数字，因为它没有出现在 nums 中。
- 示例 2：  输入： nums = [0,1]
+示例 2： 输入： nums = [0,1]
 输出： 2
 解释： n = 2，因为有 2 个数字，所以所有的数字都在范围 [0,2] 内。2 是丢失的数字，因为它没有出现在 nums 中。
- 示例 3：  输入： nums = [9,6,4,2,3,5,7,0,1]
+示例 3： 输入： nums = [9,6,4,2,3,5,7,0,1]
 输出： 8
 解释： n = 9，因为有 9 个数字，所以所有的数字都在范围 [0,9] 内。8 是丢失的数字，因为它没有出现在 nums 中。'><title>Leetcode 268. 丢失的数字</title>
 
@@ -20,13 +20,13 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/missing-number/
 难度： 简单
 题目描述 给定一个包含 [0, n] 中 n 个数的数组 nums ，找出 [0, n] 这个范围内没有出现在数组中的那个数。
-示例 1：  输入： nums = [3,0,1]
+示例 1： 输入： nums = [3,0,1]
 输出： 2
 解释： n = 3，因为有 3 个数字，所以所有的数字都在范围 [0,3] 内。2 是丢失的数字，因为它没有出现在 nums 中。
- 示例 2：  输入： nums = [0,1]
+示例 2： 输入： nums = [0,1]
 输出： 2
 解释： n = 2，因为有 2 个数字，所以所有的数字都在范围 [0,2] 内。2 是丢失的数字，因为它没有出现在 nums 中。
- 示例 3：  输入： nums = [9,6,4,2,3,5,7,0,1]
+示例 3： 输入： nums = [9,6,4,2,3,5,7,0,1]
 输出： 8
 解释： n = 9，因为有 9 个数字，所以所有的数字都在范围 [0,9] 内。8 是丢失的数字，因为它没有出现在 nums 中。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-268.-%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/'>
@@ -36,13 +36,13 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/missing-number/
 难度： 简单
 题目描述 给定一个包含 [0, n] 中 n 个数的数组 nums ，找出 [0, n] 这个范围内没有出现在数组中的那个数。
-示例 1：  输入： nums = [3,0,1]
+示例 1： 输入： nums = [3,0,1]
 输出： 2
 解释： n = 3，因为有 3 个数字，所以所有的数字都在范围 [0,3] 内。2 是丢失的数字，因为它没有出现在 nums 中。
- 示例 2：  输入： nums = [0,1]
+示例 2： 输入： nums = [0,1]
 输出： 2
 解释： n = 2，因为有 2 个数字，所以所有的数字都在范围 [0,2] 内。2 是丢失的数字，因为它没有出现在 nums 中。
- 示例 3：  输入： nums = [9,6,4,2,3,5,7,0,1]
+示例 3： 输入： nums = [9,6,4,2,3,5,7,0,1]
 输出： 8
 解释： n = 9，因为有 9 个数字，所以所有的数字都在范围 [0,9] 内。8 是丢失的数字，因为它没有出现在 nums 中。">
     </head>
@@ -263,34 +263,34 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="哈希">哈希</h4>
 <p>使用哈希表记录出现过的数字，然后从 <code>1</code> 开始向后遍历，返回没有在哈希表中的数字。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">exists</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">struct</span>{})
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#a6e22e">exists</span>[<span style="color:#a6e22e">num</span>] = <span style="color:#66d9ef">struct</span>{}{}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; ; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">exists</span>[<span style="color:#a6e22e">i</span>]; !<span style="color:#a6e22e">ok</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
-		}
-	}
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">exists</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">struct</span>{})
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exists</span>[<span style="color:#a6e22e">num</span>] = <span style="color:#66d9ef">struct</span>{}{}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; ; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">exists</span>[<span style="color:#a6e22e">i</span>]; !<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(N) $</li>
 </ul>
 <h4 id="排序">排序</h4>
 <p>对整个数组排序，然后遍历数组，当遇到元素值和下标不一样时，返回下标；若都一样，则返回 <code>len(nums)</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">nums</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">num</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">nums</span>)
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">nums</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">num</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">nums</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log{N}), N = len(nums) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>
@@ -303,39 +303,39 @@
 <li>当缺少的元素不为 <code>n</code> 时，缺少的元素下表处放置的数字为 <code>n</code>。</li>
 </ul>
 <p>与排序后的处理方案一致：遍历数组，当遇到元素值和下标不一样时，返回下标；若都一样，则返回 <code>len(nums)</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] &lt; len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">i</span> {
-			<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
-		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">num</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">nums</span>)
-}
-</code></pre></div><h5 id="复杂度-2">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] &lt; len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">i</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">num</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">nums</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-2">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="位运算">位运算</h4>
 <p>将原数组拼接区间 <code>[0, n]</code> 形成一个新的数组，在这个数组中，除了结果项外，其他元素均出现了两次，通过异或运算消除相同的数字即可求得结果项。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">xor</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#a6e22e">xor</span> ^= <span style="color:#a6e22e">num</span>
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">xor</span> ^= <span style="color:#a6e22e">i</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">xor</span>
-}
-</code></pre></div><h5 id="复杂度-3">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xor</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">xor</span> ^= <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">xor</span> ^= <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">xor</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-3">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -343,14 +343,14 @@
 <h4 id="数学">数学</h4>
 <p>数组中的所有数字和结果需要返回的数字一起构成了首项为 <code>0</code>，公差为 <code>1</code> 的等差数列，现在需要求解其中一项，可以通过做差求得。</p>
 <p>等差数列的和为 $\frac{n(n+1)}{2}$，遍历数组求得已知项的和为 <code>sum</code> ，则未知项即为 $\frac{n(n+1)}{2} - sum$。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">num</span>
-	}
-	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">*</span>(len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><h5 id="复杂度-4">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">missingNumber</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">*</span>(len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-4">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>

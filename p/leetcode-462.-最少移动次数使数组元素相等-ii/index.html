@@ -5,14 +5,14 @@
 难度： 简单
 题目描述 给你一个长度为 n 的整数数组 nums ，返回使所有数组元素相等需要的最少移动数。
 在一步操作中，你可以使数组中的一个元素加 1 或者减 1 。
-示例 1：  输入： nums = [1,2,3]
+示例 1： 输入： nums = [1,2,3]
 输出： 2
 解释：
 只需要两步操作（每步操作指南使一个元素加 1 或减 1）：
 [1,2,3] =&amp;gt; [2,2,3] =&amp;gt; [2,2,2]
- 示例 2：  输入： nums = [1,10,2,9]
+示例 2： 输入： nums = [1,10,2,9]
 输出： 16
- 提示：  n == nums.length 1 &amp;lt;= nums.length &amp;lt;= 105 -109 &amp;lt;= nums[i] &amp;lt;= 109  解题思路 排序 将数组排序，首先计算出全部变换为最小数的移动次数。
+提示： n == nums.length 1 &amp;lt;= nums.length &amp;lt;= 105 -109 &amp;lt;= nums[i] &amp;lt;= 109 解题思路 排序 将数组排序，首先计算出全部变换为最小数的移动次数。
 然后向后遍历，依次计算变换为每一个数的移动次数，从中找出最小值。
 设当前要变换的数下标为 i，则之前元素从 nums[i-1] 变换为 nums[i] 的变换次数 (nums[i] - nums[i-1]) * i 需要加上，之后多余计算的变换次数 (nums[i] - nums[i-1]) * (len(nums) - i) 需要减去。'><title>Leetcode 462. 最少移动次数使数组元素相等 II</title>
 
@@ -23,14 +23,14 @@
 难度： 简单
 题目描述 给你一个长度为 n 的整数数组 nums ，返回使所有数组元素相等需要的最少移动数。
 在一步操作中，你可以使数组中的一个元素加 1 或者减 1 。
-示例 1：  输入： nums = [1,2,3]
+示例 1： 输入： nums = [1,2,3]
 输出： 2
 解释：
 只需要两步操作（每步操作指南使一个元素加 1 或减 1）：
 [1,2,3] =&amp;gt; [2,2,3] =&amp;gt; [2,2,2]
- 示例 2：  输入： nums = [1,10,2,9]
+示例 2： 输入： nums = [1,10,2,9]
 输出： 16
- 提示：  n == nums.length 1 &amp;lt;= nums.length &amp;lt;= 105 -109 &amp;lt;= nums[i] &amp;lt;= 109  解题思路 排序 将数组排序，首先计算出全部变换为最小数的移动次数。
+提示： n == nums.length 1 &amp;lt;= nums.length &amp;lt;= 105 -109 &amp;lt;= nums[i] &amp;lt;= 109 解题思路 排序 将数组排序，首先计算出全部变换为最小数的移动次数。
 然后向后遍历，依次计算变换为每一个数的移动次数，从中找出最小值。
 设当前要变换的数下标为 i，则之前元素从 nums[i-1] 变换为 nums[i] 的变换次数 (nums[i] - nums[i-1]) * i 需要加上，之后多余计算的变换次数 (nums[i] - nums[i-1]) * (len(nums) - i) 需要减去。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-462.-%E6%9C%80%E5%B0%91%E7%A7%BB%E5%8A%A8%E6%AC%A1%E6%95%B0%E4%BD%BF%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9B%B8%E7%AD%89-ii/'>
@@ -41,14 +41,14 @@
 难度： 简单
 题目描述 给你一个长度为 n 的整数数组 nums ，返回使所有数组元素相等需要的最少移动数。
 在一步操作中，你可以使数组中的一个元素加 1 或者减 1 。
-示例 1：  输入： nums = [1,2,3]
+示例 1： 输入： nums = [1,2,3]
 输出： 2
 解释：
 只需要两步操作（每步操作指南使一个元素加 1 或减 1）：
 [1,2,3] =&amp;gt; [2,2,3] =&amp;gt; [2,2,2]
- 示例 2：  输入： nums = [1,10,2,9]
+示例 2： 输入： nums = [1,10,2,9]
 输出： 16
- 提示：  n == nums.length 1 &amp;lt;= nums.length &amp;lt;= 105 -109 &amp;lt;= nums[i] &amp;lt;= 109  解题思路 排序 将数组排序，首先计算出全部变换为最小数的移动次数。
+提示： n == nums.length 1 &amp;lt;= nums.length &amp;lt;= 105 -109 &amp;lt;= nums[i] &amp;lt;= 109 解题思路 排序 将数组排序，首先计算出全部变换为最小数的移动次数。
 然后向后遍历，依次计算变换为每一个数的移动次数，从中找出最小值。
 设当前要变换的数下标为 i，则之前元素从 nums[i-1] 变换为 nums[i] 的变换次数 (nums[i] - nums[i-1]) * i 需要加上，之后多余计算的变换次数 (nums[i] - nums[i-1]) * (len(nums) - i) 需要减去。">
     </head>
@@ -260,28 +260,28 @@
 <p>将数组排序，首先计算出全部变换为最小数的移动次数。</p>
 <p>然后向后遍历，依次计算变换为每一个数的移动次数，从中找出最小值。</p>
 <p>设当前要变换的数下标为 <code>i</code>，则之前元素从 <code>nums[i-1]</code> 变换为 <code>nums[i]</code> 的变换次数 <code>(nums[i] - nums[i-1]) * i</code> 需要加上，之后多余计算的变换次数 <code>(nums[i] - nums[i-1]) * (len(nums) - i)</code> 需要减去。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minMoves2</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">num</span> {
-			<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">num</span>
-		}
-	}
-	<span style="color:#a6e22e">moves</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#a6e22e">moves</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>
-	}
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">nums</span>)
-	<span style="color:#a6e22e">minMoves</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">moves</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">moves</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> len(<span style="color:#a6e22e">nums</span>))
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">minMoves</span> &gt; <span style="color:#a6e22e">moves</span> {
-			<span style="color:#a6e22e">minMoves</span> = <span style="color:#a6e22e">moves</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">minMoves</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minMoves2</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">num</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">moves</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">moves</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">nums</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">minMoves</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">moves</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">moves</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> len(<span style="color:#a6e22e">nums</span>))
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">minMoves</span> &gt; <span style="color:#a6e22e">moves</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">minMoves</span> = <span style="color:#a6e22e">moves</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">minMoves</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log{N}), N = len(nums) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

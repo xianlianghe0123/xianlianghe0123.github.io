@@ -5,11 +5,11 @@
 难度： 中等
 题目描述 给你一个整数 n ，按字典序返回范围 [1, n] 内所有整数。
 你必须设计一个时间复杂度为 $ O(n) $ 且使用 $ O(1) $ 额外空间的算法。
-示例 1：  输入： n = 13
+示例 1： 输入： n = 13
 输出： [1,10,11,12,13,2,3,4,5,6,7,8,9]
- 示例 2：  输入： n = 2
+示例 2： 输入： n = 2
 输出： [1,2]
- 提示：  1 &amp;lt;= n &amp;lt;= 5 * 104  解题思路 自定义排序 生成 [1, n] 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。
+提示： 1 &amp;lt;= n &amp;lt;= 5 * 104 解题思路 自定义排序 生成 [1, n] 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。
 func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt;= n; i&#43;&#43; { nums = append(nums, i) } sort.'><title>Leetcode 386. 字典序排数</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-386.-%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E6%95%B0/'>
@@ -19,11 +19,11 @@ func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt
 难度： 中等
 题目描述 给你一个整数 n ，按字典序返回范围 [1, n] 内所有整数。
 你必须设计一个时间复杂度为 $ O(n) $ 且使用 $ O(1) $ 额外空间的算法。
-示例 1：  输入： n = 13
+示例 1： 输入： n = 13
 输出： [1,10,11,12,13,2,3,4,5,6,7,8,9]
- 示例 2：  输入： n = 2
+示例 2： 输入： n = 2
 输出： [1,2]
- 提示：  1 &amp;lt;= n &amp;lt;= 5 * 104  解题思路 自定义排序 生成 [1, n] 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。
+提示： 1 &amp;lt;= n &amp;lt;= 5 * 104 解题思路 自定义排序 生成 [1, n] 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。
 func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt;= n; i&#43;&#43; { nums = append(nums, i) } sort.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-386.-%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -33,11 +33,11 @@ func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt
 难度： 中等
 题目描述 给你一个整数 n ，按字典序返回范围 [1, n] 内所有整数。
 你必须设计一个时间复杂度为 $ O(n) $ 且使用 $ O(1) $ 额外空间的算法。
-示例 1：  输入： n = 13
+示例 1： 输入： n = 13
 输出： [1,10,11,12,13,2,3,4,5,6,7,8,9]
- 示例 2：  输入： n = 2
+示例 2： 输入： n = 2
 输出： [1,2]
- 提示：  1 &amp;lt;= n &amp;lt;= 5 * 104  解题思路 自定义排序 生成 [1, n] 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。
+提示： 1 &amp;lt;= n &amp;lt;= 5 * 104 解题思路 自定义排序 生成 [1, n] 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。
 func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt;= n; i&#43;&#43; { nums = append(nums, i) } sort.">
     </head>
     <body class="
@@ -241,17 +241,17 @@ func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt
 <h3 id="解题思路">解题思路</h3>
 <h4 id="自定义排序">自定义排序</h4>
 <p>生成 <code>[1, n]</code> 的数组，自定义排序规则：将两个数转化为字符串进行比较。完成一轮排序返回即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lexicalOrder</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">nums</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">n</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">nums</span> = append(<span style="color:#a6e22e">nums</span>, <span style="color:#a6e22e">i</span>)
-	}
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]) &lt; <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>])
-	})
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nums</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lexicalOrder</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nums</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">nums</span> = append(<span style="color:#a6e22e">nums</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]) &lt; <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>])
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nums</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(n\log{n}) $</li>
 <li>空间复杂度：$ O(\log{n}) $</li>
@@ -263,29 +263,29 @@ func lexicalOrder(n int) []int { nums := make([]int, 0, n) for i := 1; i &amp;lt
 <li>仅当前缀相同时，长度短的较小。</li>
 </ul>
 <p>在处理时尽量保持前缀相同，所以每次对后缀进行 <code>+1</code> 操作，直到到达上限后，后缀部分前移一位。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lexicalOrder</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">n</span>)
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#a6e22e">n</span> {
-			<span style="color:#66d9ef">return</span>
-		}
-		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">num</span>)
-		<span style="color:#75715e">// 当前位数字增加
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> &gt; <span style="color:#a6e22e">n</span> {
-				<span style="color:#66d9ef">break</span>
-			}
-			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">t</span>) <span style="color:#75715e">// 优先处理后缀
-</span><span style="color:#75715e"></span>		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lexicalOrder</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#a6e22e">n</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">num</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 当前位数字增加
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> &gt; <span style="color:#a6e22e">n</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">t</span>) <span style="color:#75715e">// 优先处理后缀
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(n) $</li>
 <li>空间复杂度：$ O(\log{n}) $</li>

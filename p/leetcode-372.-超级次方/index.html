@@ -4,15 +4,15 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/super-pow/
 难度： 中等
 题目描述 你的任务是计算 ab 对 1337 取模，a 是一个正整数，b 是一个非常大的正整数且会以数组形式给出。
-示例 1：  输入： a = 2, b = [3]
+示例 1： 输入： a = 2, b = [3]
 输出： 8
- 示例 2：  输入： a = 2, b = [1,0]
+示例 2： 输入： a = 2, b = [1,0]
 输出： 1024
- 示例 3：  输入： a = 1, b = [4,3,3,8,5,2]
+示例 3： 输入： a = 1, b = [4,3,3,8,5,2]
 输出： 1
- 示例 4：  输入： a = 2147483647, b = [2,0,0]
+示例 4： 输入： a = 2147483647, b = [2,0,0]
 输出： 1198
- 提示：  1 &amp;lt;= a &amp;lt;= 231 - 1 1 &amp;lt;= b.'><title>Leetcode 372. 超级次方</title>
+提示： 1 &amp;lt;= a &amp;lt;= 231 - 1 1 &amp;lt;= b.length &amp;lt;= 2000 0 &amp;lt;= b[i] &amp;lt;= 9 b 不含前导 0 解题思路 快速幂 两个因数相乘取模的值，与每个因数各自取模后相乘再取模的值一致。'><title>Leetcode 372. 超级次方</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-372.-%E8%B6%85%E7%BA%A7%E6%AC%A1%E6%96%B9/'>
 
@@ -20,15 +20,15 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/super-pow/
 难度： 中等
 题目描述 你的任务是计算 ab 对 1337 取模，a 是一个正整数，b 是一个非常大的正整数且会以数组形式给出。
-示例 1：  输入： a = 2, b = [3]
+示例 1： 输入： a = 2, b = [3]
 输出： 8
- 示例 2：  输入： a = 2, b = [1,0]
+示例 2： 输入： a = 2, b = [1,0]
 输出： 1024
- 示例 3：  输入： a = 1, b = [4,3,3,8,5,2]
+示例 3： 输入： a = 1, b = [4,3,3,8,5,2]
 输出： 1
- 示例 4：  输入： a = 2147483647, b = [2,0,0]
+示例 4： 输入： a = 2147483647, b = [2,0,0]
 输出： 1198
- 提示：  1 &amp;lt;= a &amp;lt;= 231 - 1 1 &amp;lt;= b.'>
+提示： 1 &amp;lt;= a &amp;lt;= 231 - 1 1 &amp;lt;= b.length &amp;lt;= 2000 0 &amp;lt;= b[i] &amp;lt;= 9 b 不含前导 0 解题思路 快速幂 两个因数相乘取模的值，与每个因数各自取模后相乘再取模的值一致。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-372.-%E8%B6%85%E7%BA%A7%E6%AC%A1%E6%96%B9/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='fast power' /><meta property='article:published_time' content='2021-12-05T11:48:08&#43;08:00'/><meta property='article:modified_time' content='2021-12-05T11:48:08&#43;08:00'/>
@@ -36,15 +36,15 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/super-pow/
 难度： 中等
 题目描述 你的任务是计算 ab 对 1337 取模，a 是一个正整数，b 是一个非常大的正整数且会以数组形式给出。
-示例 1：  输入： a = 2, b = [3]
+示例 1： 输入： a = 2, b = [3]
 输出： 8
- 示例 2：  输入： a = 2, b = [1,0]
+示例 2： 输入： a = 2, b = [1,0]
 输出： 1024
- 示例 3：  输入： a = 1, b = [4,3,3,8,5,2]
+示例 3： 输入： a = 1, b = [4,3,3,8,5,2]
 输出： 1
- 示例 4：  输入： a = 2147483647, b = [2,0,0]
+示例 4： 输入： a = 2147483647, b = [2,0,0]
 输出： 1198
- 提示：  1 &amp;lt;= a &amp;lt;= 231 - 1 1 &amp;lt;= b.">
+提示： 1 &amp;lt;= a &amp;lt;= 231 - 1 1 &amp;lt;= b.length &amp;lt;= 2000 0 &amp;lt;= b[i] &amp;lt;= 9 b 不含前导 0 解题思路 快速幂 两个因数相乘取模的值，与每个因数各自取模后相乘再取模的值一致。">
     </head>
     <body class="
     article-page 
@@ -260,27 +260,27 @@
 <h4 id="快速幂">快速幂</h4>
 <p>两个因数相乘取模的值，与每个因数各自取模后相乘再取模的值一致。</p>
 <p>显而易见是一道快速幂的题目，但是指数是以十进制数组的方式给出的，故每次步进时，是 <code>a, a<sup>10</sup>, a<sup>100</sup>, &hellip;</code>。同时，每一位上的数字可能的取值是 <code>1~9</code>，故用二进制快速幂求得每一位的计算结果和步进。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">superPow</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">b</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MOD</span> = <span style="color:#ae81ff">1337</span>
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fastPower</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">n</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;&gt;=</span> <span style="color:#ae81ff">1</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
-				<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
-			}
-			<span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-	<span style="color:#a6e22e">a</span> <span style="color:#f92672">%=</span> <span style="color:#a6e22e">MOD</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">b</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">fastPower</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
-		<span style="color:#a6e22e">a</span> = <span style="color:#a6e22e">fastPower</span>(<span style="color:#a6e22e">a</span>, <span style="color:#ae81ff">10</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">superPow</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">b</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MOD</span> = <span style="color:#ae81ff">1337</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fastPower</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">n</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;&gt;=</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">a</span> <span style="color:#f92672">%=</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">b</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">fastPower</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">a</span> = <span style="color:#a6e22e">fastPower</span>(<span style="color:#a6e22e">a</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(b) $</li>
 <li>空间复杂度：$ O(1) $</li>

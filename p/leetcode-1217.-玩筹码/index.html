@@ -5,15 +5,16 @@
 难度： 简单
 题目描述 有 n 个筹码。第 i 个筹码的位置是 position[i] 。
 我们需要把所有筹码移到同一个位置。在一步中，我们可以将第 i 个筹码的位置从 position[i] 改变为:
- position[i] &#43; 2 或 position[i] - 2 ，此时 cost = 0 position[i] &#43; 1 或 position[i] - 1 ，此时 cost = 1  返回将所有筹码移动到同一位置上所需要的 最小代价 。
-示例 1：  输入： position = [1,2,3]
+position[i] &#43; 2 或 position[i] - 2 ，此时 cost = 0 position[i] &#43; 1 或 position[i] - 1 ，此时 cost = 1 返回将所有筹码移动到同一位置上所需要的 最小代价 。
+示例 1： 输入： position = [1,2,3]
 输出： 1
 解释： 第一步:将位置3的筹码移动到位置1，成本为0。
 第二步:将位置2的筹码移动到位置1，成本= 1。
 总成本是1。
- 示例 2：  输入： position = [2,2,2,3,3]
+示例 2： 输入： position = [2,2,2,3,3]
 输出： 2
-解释： 我们可以把位置3的两个筹码移到位置2。每一步的成本为1。总成本= 2。'><title>Leetcode 1217. 玩筹码</title>
+解释： 我们可以把位置3的两个筹码移到位置2。每一步的成本为1。总成本= 2。
+示例 3： 输入： position = [1,1000000000]'><title>Leetcode 1217. 玩筹码</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1217.-%E7%8E%A9%E7%AD%B9%E7%A0%81/'>
 
@@ -22,15 +23,16 @@
 难度： 简单
 题目描述 有 n 个筹码。第 i 个筹码的位置是 position[i] 。
 我们需要把所有筹码移到同一个位置。在一步中，我们可以将第 i 个筹码的位置从 position[i] 改变为:
- position[i] &#43; 2 或 position[i] - 2 ，此时 cost = 0 position[i] &#43; 1 或 position[i] - 1 ，此时 cost = 1  返回将所有筹码移动到同一位置上所需要的 最小代价 。
-示例 1：  输入： position = [1,2,3]
+position[i] &#43; 2 或 position[i] - 2 ，此时 cost = 0 position[i] &#43; 1 或 position[i] - 1 ，此时 cost = 1 返回将所有筹码移动到同一位置上所需要的 最小代价 。
+示例 1： 输入： position = [1,2,3]
 输出： 1
 解释： 第一步:将位置3的筹码移动到位置1，成本为0。
 第二步:将位置2的筹码移动到位置1，成本= 1。
 总成本是1。
- 示例 2：  输入： position = [2,2,2,3,3]
+示例 2： 输入： position = [2,2,2,3,3]
 输出： 2
-解释： 我们可以把位置3的两个筹码移到位置2。每一步的成本为1。总成本= 2。'>
+解释： 我们可以把位置3的两个筹码移到位置2。每一步的成本为1。总成本= 2。
+示例 3： 输入： position = [1,1000000000]'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1217.-%E7%8E%A9%E7%AD%B9%E7%A0%81/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-08T10:33:33&#43;08:00'/><meta property='article:modified_time' content='2022-07-08T10:33:33&#43;08:00'/>
@@ -39,15 +41,16 @@
 难度： 简单
 题目描述 有 n 个筹码。第 i 个筹码的位置是 position[i] 。
 我们需要把所有筹码移到同一个位置。在一步中，我们可以将第 i 个筹码的位置从 position[i] 改变为:
- position[i] &#43; 2 或 position[i] - 2 ，此时 cost = 0 position[i] &#43; 1 或 position[i] - 1 ，此时 cost = 1  返回将所有筹码移动到同一位置上所需要的 最小代价 。
-示例 1：  输入： position = [1,2,3]
+position[i] &#43; 2 或 position[i] - 2 ，此时 cost = 0 position[i] &#43; 1 或 position[i] - 1 ，此时 cost = 1 返回将所有筹码移动到同一位置上所需要的 最小代价 。
+示例 1： 输入： position = [1,2,3]
 输出： 1
 解释： 第一步:将位置3的筹码移动到位置1，成本为0。
 第二步:将位置2的筹码移动到位置1，成本= 1。
 总成本是1。
- 示例 2：  输入： position = [2,2,2,3,3]
+示例 2： 输入： position = [2,2,2,3,3]
 输出： 2
-解释： 我们可以把位置3的两个筹码移到位置2。每一步的成本为1。总成本= 2。">
+解释： 我们可以把位置3的两个筹码移到位置2。每一步的成本为1。总成本= 2。
+示例 3： 输入： position = [1,1000000000]">
     </head>
     <body class="
     article-page 
@@ -272,21 +275,21 @@
 <li>同理，位置下标为奇数的所有筹码可以 <strong>零代价</strong> 移动到一起</li>
 </ul>
 <p>最终偶数下标的筹码与奇数下标的筹码距离为 <code>1</code>，移动较少的那一堆，即为 <strong>最小代价</strong>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minCostToMoveChips</span>(<span style="color:#a6e22e">position</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">odd</span>, <span style="color:#a6e22e">even</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">position</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-			<span style="color:#a6e22e">odd</span><span style="color:#f92672">++</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">even</span><span style="color:#f92672">++</span>
-		}
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">odd</span> &lt; <span style="color:#a6e22e">even</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">odd</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">even</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minCostToMoveChips</span>(<span style="color:#a6e22e">position</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">odd</span>, <span style="color:#a6e22e">even</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">position</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">odd</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">even</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">odd</span> &lt; <span style="color:#a6e22e">even</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">odd</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">even</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(position) $</li>
 <li>空间复杂度：$ O(1) $</li>

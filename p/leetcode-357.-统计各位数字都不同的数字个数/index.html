@@ -4,12 +4,14 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/count-numbers-with-unique-digits/
 难度： 中等
 题目描述 给你一个整数 n ，统计并返回各位数字都不同的数字 x 的个数，其中 0 &amp;lt;= x &amp;lt; 10n
-示例 1：  输入： n = 2
+示例 1： 输入： n = 2
 输出： 91
 解释： 答案应为除去 11、22、33、44、55、66、77、88、99 外，在 0 ≤ x &amp;lt; 100 范围内的所有数字。
- 示例 2：  输入： n = 0 输出： 1
- 提示：  0 &amp;lt;= n &amp;lt;= 8  解题思路 排列 对于给定长度的数字而言，由于不存在前导 0 ，其首个数字只能从 1～9 内选取，为保证每一位数均不重复，则第二个数字只能从剩余 9 个数字中选择，第三个数字只能从剩余 8 个数字中选择，以此类推。
-当长度为 1 时，数字 0 是个特例，其是 0 开头，但其必然存在于所有答案中，故初始就将其累加到结果中。'><title>Leetcode 357. 统计各位数字都不同的数字个数</title>
+示例 2： 输入： n = 0 输出： 1
+提示： 0 &amp;lt;= n &amp;lt;= 8 解题思路 排列 对于给定长度的数字而言，由于不存在前导 0 ，其首个数字只能从 1～9 内选取，为保证每一位数均不重复，则第二个数字只能从剩余 9 个数字中选择，第三个数字只能从剩余 8 个数字中选择，以此类推。
+当长度为 1 时，数字 0 是个特例，其是 0 开头，但其必然存在于所有答案中，故初始就将其累加到结果中。
+则对于连续的 [1,10&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt;] 范围内的数字，有：
+1位数部分，9 2位数部分, 9 * 9 3位数部分，9 * 9 * 8 &amp;hellip; n位数部分，9 * 9 * 8 * &amp;hellip; * (11-n) 对以上所有情况求和，得到结果为 9 * (1 &#43; 9 * (1 &#43; 8 * (.'><title>Leetcode 357. 统计各位数字都不同的数字个数</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-357.-%E7%BB%9F%E8%AE%A1%E5%90%84%E4%BD%8D%E6%95%B0%E5%AD%97%E9%83%BD%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%AA%E6%95%B0/'>
 
@@ -17,12 +19,14 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/count-numbers-with-unique-digits/
 难度： 中等
 题目描述 给你一个整数 n ，统计并返回各位数字都不同的数字 x 的个数，其中 0 &amp;lt;= x &amp;lt; 10n
-示例 1：  输入： n = 2
+示例 1： 输入： n = 2
 输出： 91
 解释： 答案应为除去 11、22、33、44、55、66、77、88、99 外，在 0 ≤ x &amp;lt; 100 范围内的所有数字。
- 示例 2：  输入： n = 0 输出： 1
- 提示：  0 &amp;lt;= n &amp;lt;= 8  解题思路 排列 对于给定长度的数字而言，由于不存在前导 0 ，其首个数字只能从 1～9 内选取，为保证每一位数均不重复，则第二个数字只能从剩余 9 个数字中选择，第三个数字只能从剩余 8 个数字中选择，以此类推。
-当长度为 1 时，数字 0 是个特例，其是 0 开头，但其必然存在于所有答案中，故初始就将其累加到结果中。'>
+示例 2： 输入： n = 0 输出： 1
+提示： 0 &amp;lt;= n &amp;lt;= 8 解题思路 排列 对于给定长度的数字而言，由于不存在前导 0 ，其首个数字只能从 1～9 内选取，为保证每一位数均不重复，则第二个数字只能从剩余 9 个数字中选择，第三个数字只能从剩余 8 个数字中选择，以此类推。
+当长度为 1 时，数字 0 是个特例，其是 0 开头，但其必然存在于所有答案中，故初始就将其累加到结果中。
+则对于连续的 [1,10&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt;] 范围内的数字，有：
+1位数部分，9 2位数部分, 9 * 9 3位数部分，9 * 9 * 8 &amp;hellip; n位数部分，9 * 9 * 8 * &amp;hellip; * (11-n) 对以上所有情况求和，得到结果为 9 * (1 &#43; 9 * (1 &#43; 8 * (.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-357.-%E7%BB%9F%E8%AE%A1%E5%90%84%E4%BD%8D%E6%95%B0%E5%AD%97%E9%83%BD%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%AA%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-04-11T09:36:55&#43;08:00'/><meta property='article:modified_time' content='2022-04-11T09:36:55&#43;08:00'/>
@@ -30,12 +34,14 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/count-numbers-with-unique-digits/
 难度： 中等
 题目描述 给你一个整数 n ，统计并返回各位数字都不同的数字 x 的个数，其中 0 &amp;lt;= x &amp;lt; 10n
-示例 1：  输入： n = 2
+示例 1： 输入： n = 2
 输出： 91
 解释： 答案应为除去 11、22、33、44、55、66、77、88、99 外，在 0 ≤ x &amp;lt; 100 范围内的所有数字。
- 示例 2：  输入： n = 0 输出： 1
- 提示：  0 &amp;lt;= n &amp;lt;= 8  解题思路 排列 对于给定长度的数字而言，由于不存在前导 0 ，其首个数字只能从 1～9 内选取，为保证每一位数均不重复，则第二个数字只能从剩余 9 个数字中选择，第三个数字只能从剩余 8 个数字中选择，以此类推。
-当长度为 1 时，数字 0 是个特例，其是 0 开头，但其必然存在于所有答案中，故初始就将其累加到结果中。">
+示例 2： 输入： n = 0 输出： 1
+提示： 0 &amp;lt;= n &amp;lt;= 8 解题思路 排列 对于给定长度的数字而言，由于不存在前导 0 ，其首个数字只能从 1～9 内选取，为保证每一位数均不重复，则第二个数字只能从剩余 9 个数字中选择，第三个数字只能从剩余 8 个数字中选择，以此类推。
+当长度为 1 时，数字 0 是个特例，其是 0 开头，但其必然存在于所有答案中，故初始就将其累加到结果中。
+则对于连续的 [1,10&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt;] 范围内的数字，有：
+1位数部分，9 2位数部分, 9 * 9 3位数部分，9 * 9 * 8 &amp;hellip; n位数部分，9 * 9 * 8 * &amp;hellip; * (11-n) 对以上所有情况求和，得到结果为 9 * (1 &#43; 9 * (1 &#43; 8 * (.">
     </head>
     <body class="
     article-page 
@@ -249,19 +255,19 @@
 </ul>
 <p>对以上所有情况求和，得到结果为 <code>9 * (1 + 9 * (1 + 8 * (...(1 + (11-n) * 1))))</code></p>
 <p>对数位为 <code>n = 0</code> 的情况特判。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countNumbersWithUniqueDigits</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-	<span style="color:#75715e">// 除首位部分求和
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">11</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">9</span>       <span style="color:#75715e">// 首位部分
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 0必然存在
-</span><span style="color:#75715e"></span>}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countNumbersWithUniqueDigits</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 除首位部分求和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">11</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">9</span>       <span style="color:#75715e">// 首位部分
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 0必然存在
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(n) $</li>
 <li>空间复杂度：$ O(1) $</li>

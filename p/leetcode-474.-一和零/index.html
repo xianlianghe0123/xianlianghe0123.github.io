@@ -6,7 +6,7 @@
 题目描述 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
 请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。
 如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 。
-示例 1：  输入： strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
+示例 1： 输入： strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
 输出： 4
 解释： 最多有 5 个 0 和 3 个 1 的最大子集是 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} ，因此答案是 4 。
 其他满足题意但较小的子集包括 {&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;} 和 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} 。{&amp;ldquo;111001&amp;rdquo;} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。'><title>Leetcode 474. 一和零</title>
@@ -19,7 +19,7 @@
 题目描述 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
 请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。
 如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 。
-示例 1：  输入： strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
+示例 1： 输入： strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
 输出： 4
 解释： 最多有 5 个 0 和 3 个 1 的最大子集是 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} ，因此答案是 4 。
 其他满足题意但较小的子集包括 {&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;} 和 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} 。{&amp;ldquo;111001&amp;rdquo;} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。'>
@@ -32,7 +32,7 @@
 题目描述 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
 请你找出并返回 strs 的最大子集的大小，该子集中 最多 有 m 个 0 和 n 个 1 。
 如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 子集 。
-示例 1：  输入： strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
+示例 1： 输入： strs = [&amp;ldquo;10&amp;rdquo;, &amp;ldquo;0001&amp;rdquo;, &amp;ldquo;111001&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;0&amp;rdquo;], m = 5, n = 3
 输出： 4
 解释： 最多有 5 个 0 和 3 个 1 的最大子集是 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} ，因此答案是 4 。
 其他满足题意但较小的子集包括 {&amp;ldquo;0001&amp;rdquo;,&amp;ldquo;1&amp;rdquo;} 和 {&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;} 。{&amp;ldquo;111001&amp;rdquo;} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。">
@@ -251,29 +251,29 @@
 <li>当当前元素可以被选择时，即<code>j &gt;= zeros</code> 且 <code>k &gt;= ones</code>，<code>dp[i][j][k] = max(dp[i-1][j-zeros][k-ones] + 1, dp[i-1][j][k])</code>。</li>
 </ul>
 <p>注意到每次转移仅依赖与上一个元素选择的结果，可以缩减一维空间，降低空间复杂度，而依赖前值的问题可以通过倒序计算解决:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findMaxForm</span>(<span style="color:#a6e22e">strs</span> []<span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">101</span>][<span style="color:#ae81ff">101</span>]<span style="color:#66d9ef">int</span>{}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">str</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">strs</span> {
-		<span style="color:#a6e22e">zeros</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#a6e22e">ones</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">str</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">str</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;0&#39;</span> {
-				<span style="color:#a6e22e">zeros</span><span style="color:#f92672">++</span>
-			} <span style="color:#66d9ef">else</span> {
-				<span style="color:#a6e22e">ones</span><span style="color:#f92672">++</span>
-			}
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">--</span> {
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">zeros</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">ones</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">zeros</span>][<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">ones</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>] {
-					<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">zeros</span>][<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">ones</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-				}
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">m</span>][<span style="color:#a6e22e">n</span>]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findMaxForm</span>(<span style="color:#a6e22e">strs</span> []<span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">101</span>][<span style="color:#ae81ff">101</span>]<span style="color:#66d9ef">int</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">str</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">strs</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">zeros</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ones</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">str</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">str</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;0&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">zeros</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ones</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">zeros</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">ones</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">zeros</span>][<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">ones</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>] {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">k</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">zeros</span>][<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">ones</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">m</span>][<span style="color:#a6e22e">n</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N*m*n)</li>
 <li>空间复杂度：O(m*n)</li>

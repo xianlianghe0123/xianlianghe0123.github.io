@@ -6,10 +6,10 @@
 题目描述 给出两个整数 n 和 k，找出所有包含从 1 到 n 的数字，且恰好拥有 k 个逆序对的不同的数组的个数。
 逆序对的定义如下：对于数组的第 i 个和第 j 个元素，如果满足 i &amp;lt; j 且 a[i] &amp;gt; a[j]，则其为一个逆序对；否则不是。
 由于答案可能很大，只需要返回 答案 mod 109 &#43; 7 的值。
-示例 1：  输入: n = 3, k = 0
+示例 1： 输入: n = 3, k = 0
 输出: 1
 解释: 只有数组 [1,2,3] 包含了从1到3的整数并且正好拥有 0 个逆序对。
- 示例 2：  输入: n = 3, k = 1
+示例 2： 输入: n = 3, k = 1
 输出: 2
 解释: 数组 [1,3,2] 和 [2,1,3] 都有 1 个逆序对。'><title>Leetcode 629. K个逆序对数组</title>
 
@@ -21,10 +21,10 @@
 题目描述 给出两个整数 n 和 k，找出所有包含从 1 到 n 的数字，且恰好拥有 k 个逆序对的不同的数组的个数。
 逆序对的定义如下：对于数组的第 i 个和第 j 个元素，如果满足 i &amp;lt; j 且 a[i] &amp;gt; a[j]，则其为一个逆序对；否则不是。
 由于答案可能很大，只需要返回 答案 mod 109 &#43; 7 的值。
-示例 1：  输入: n = 3, k = 0
+示例 1： 输入: n = 3, k = 0
 输出: 1
 解释: 只有数组 [1,2,3] 包含了从1到3的整数并且正好拥有 0 个逆序对。
- 示例 2：  输入: n = 3, k = 1
+示例 2： 输入: n = 3, k = 1
 输出: 2
 解释: 数组 [1,3,2] 和 [2,1,3] 都有 1 个逆序对。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-629.-k%E4%B8%AA%E9%80%86%E5%BA%8F%E5%AF%B9%E6%95%B0%E7%BB%84/'>
@@ -36,10 +36,10 @@
 题目描述 给出两个整数 n 和 k，找出所有包含从 1 到 n 的数字，且恰好拥有 k 个逆序对的不同的数组的个数。
 逆序对的定义如下：对于数组的第 i 个和第 j 个元素，如果满足 i &amp;lt; j 且 a[i] &amp;gt; a[j]，则其为一个逆序对；否则不是。
 由于答案可能很大，只需要返回 答案 mod 109 &#43; 7 的值。
-示例 1：  输入: n = 3, k = 0
+示例 1： 输入: n = 3, k = 0
 输出: 1
 解释: 只有数组 [1,2,3] 包含了从1到3的整数并且正好拥有 0 个逆序对。
- 示例 2：  输入: n = 3, k = 1
+示例 2： 输入: n = 3, k = 1
 输出: 2
 解释: 数组 [1,3,2] 和 [2,1,3] 都有 1 个逆序对。">
     </head>
@@ -256,29 +256,29 @@
 <p>可以看到上述每次转移时，时间复杂度为 <code>i</code>，需要优化。注意到：<br>
 <code>dp[i][j-1] = dp[i-1][j-i] + dp[i-1][j-i+1] + ... + dp[i-1][j-1]</code>,<br>
 则 <code>dp[i][j] = dp[i-1][j-i+1] + dp[i-1][j-i+2] + ... + dp[i-1][j] = dp[i][j-1] + dp[i-1][j] - dp[i-1][j-i]</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kInversePairs</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MOD</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1e9</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>
-	<span style="color:#a6e22e">dp0</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">dp1</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">dp0</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">dp1</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#a6e22e">dp0</span>[<span style="color:#ae81ff">0</span>]
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#75715e">// 越界检查
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">i</span> {
-				<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span>] = (<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">dp0</span>[<span style="color:#a6e22e">j</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
-			} <span style="color:#66d9ef">else</span> {
-				<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span>] = (<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">dp0</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">dp0</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span>] &lt; <span style="color:#ae81ff">0</span> {
-					<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">MOD</span>
-				}
-			}
-		}
-		<span style="color:#a6e22e">dp1</span>, <span style="color:#a6e22e">dp0</span> = <span style="color:#a6e22e">dp0</span>, <span style="color:#a6e22e">dp1</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp0</span>[<span style="color:#a6e22e">k</span>]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kInversePairs</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MOD</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1e9</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp0</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp1</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp0</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dp1</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#a6e22e">dp0</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 越界检查
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">i</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span>] = (<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">dp0</span>[<span style="color:#a6e22e">j</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span>] = (<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">dp0</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">dp0</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>]) <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span>] &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">dp1</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dp1</span>, <span style="color:#a6e22e">dp0</span> = <span style="color:#a6e22e">dp0</span>, <span style="color:#a6e22e">dp1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp0</span>[<span style="color:#a6e22e">k</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(nk) $</li>
 <li>空间复杂度：$ O(k) $</li>

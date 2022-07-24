@@ -8,7 +8,7 @@
 测试人员想要找出按键 持续时间最长 的键。第 i 次按键的持续时间为 releaseTimes[i] - releaseTimes[i - 1] ，第 0 次按键的持续时间为 releaseTimes[0] 。
 注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。
 请返回按键 持续时间最长 的键，如果有多个这样的键，则返回 按字母顺序排列最大 的那个键。
-示例 1：  输入： releaseTimes = [9,29,49,50], keysPressed = &amp;ldquo;cbcd&amp;rdquo;
+示例 1： 输入： releaseTimes = [9,29,49,50], keysPressed = &amp;ldquo;cbcd&amp;rdquo;
 输出： &amp;ldquo;c&amp;rdquo;
 解释： 按键顺序和持续时间如下：
 按下 &amp;lsquo;c&amp;rsquo; ，持续时间 9（时间 0 按下，时间 9 松开）'><title>Leetcode 1629. 按键持续时间最长的键</title>
@@ -23,7 +23,7 @@
 测试人员想要找出按键 持续时间最长 的键。第 i 次按键的持续时间为 releaseTimes[i] - releaseTimes[i - 1] ，第 0 次按键的持续时间为 releaseTimes[0] 。
 注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。
 请返回按键 持续时间最长 的键，如果有多个这样的键，则返回 按字母顺序排列最大 的那个键。
-示例 1：  输入： releaseTimes = [9,29,49,50], keysPressed = &amp;ldquo;cbcd&amp;rdquo;
+示例 1： 输入： releaseTimes = [9,29,49,50], keysPressed = &amp;ldquo;cbcd&amp;rdquo;
 输出： &amp;ldquo;c&amp;rdquo;
 解释： 按键顺序和持续时间如下：
 按下 &amp;lsquo;c&amp;rsquo; ，持续时间 9（时间 0 按下，时间 9 松开）'>
@@ -38,7 +38,7 @@
 测试人员想要找出按键 持续时间最长 的键。第 i 次按键的持续时间为 releaseTimes[i] - releaseTimes[i - 1] ，第 0 次按键的持续时间为 releaseTimes[0] 。
 注意，测试期间，同一个键可以在不同时刻被多次按下，而每次的持续时间都可能不同。
 请返回按键 持续时间最长 的键，如果有多个这样的键，则返回 按字母顺序排列最大 的那个键。
-示例 1：  输入： releaseTimes = [9,29,49,50], keysPressed = &amp;ldquo;cbcd&amp;rdquo;
+示例 1： 输入： releaseTimes = [9,29,49,50], keysPressed = &amp;ldquo;cbcd&amp;rdquo;
 输出： &amp;ldquo;c&amp;rdquo;
 解释： 按键顺序和持续时间如下：
 按下 &amp;lsquo;c&amp;rsquo; ，持续时间 9（时间 0 按下，时间 9 松开）">
@@ -238,7 +238,7 @@
 按下 &lsquo;c&rsquo; ，持续时间 9（时间 0 按下，时间 9 松开）<br>
 按下 &lsquo;b&rsquo; ，持续时间 29 - 9 = 20（松开上一个键的时间 9 按下，时间 29 松开）<br>
 按下 &lsquo;c&rsquo; ，持续时间 49 - 29 = 20（松开上一个键的时间 29 按下，时间 49 松开）<br>
-按下 &rsquo;d' ，持续时间 50 - 49 = 1（松开上一个键的时间 49 按下，时间 50 松开）<br>
+按下 &rsquo;d&rsquo; ，持续时间 50 - 49 = 1（松开上一个键的时间 49 按下，时间 50 松开）<br>
 按键持续时间最长的键是 &lsquo;b&rsquo; 和 &lsquo;c&rsquo;（第二次按下时），持续时间都是 20<br>
 &lsquo;c&rsquo; 按字母顺序排列比 &lsquo;b&rsquo; 大，所以答案是 &lsquo;c&rsquo;</p>
 </blockquote>
@@ -247,10 +247,10 @@
 <p><strong>输入：</strong> releaseTimes = [12,23,36,46,62], keysPressed = &ldquo;spuda&rdquo;<br>
 <strong>输出：</strong> &ldquo;a&rdquo;<br>
 <strong>解释：</strong> 按键顺序和持续时间如下：<br>
-按下 &rsquo;s' ，持续时间 12<br>
+按下 &rsquo;s&rsquo; ，持续时间 12<br>
 按下 &lsquo;p&rsquo; ，持续时间 23 - 12 = 11<br>
 按下 &lsquo;u&rsquo; ，持续时间 36 - 23 = 13<br>
-按下 &rsquo;d' ，持续时间 46 - 36 = 10<br>
+按下 &rsquo;d&rsquo; ，持续时间 46 - 36 = 10<br>
 按下 &lsquo;a&rsquo; ，持续时间 62 - 46 = 16<br>
 按键持续时间最长的键是 &lsquo;a&rsquo; ，持续时间 16</p>
 </blockquote>
@@ -266,19 +266,19 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="顺序">顺序</h4>
 <p>计算每个按键的持续时长，找出持续时长最长的那个按键。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">slowestKey</span>(<span style="color:#a6e22e">releaseTimes</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">keysPressed</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">byte</span> {
-	<span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">keysPressed</span>[<span style="color:#ae81ff">0</span>]
-	<span style="color:#a6e22e">duration</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#ae81ff">0</span>]
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">keysPressed</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-        <span style="color:#75715e">// 持续时间长 或 持续时间相相等但字典序更大
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">duration</span> &lt; <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">||</span> (<span style="color:#a6e22e">duration</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">key</span> &lt; <span style="color:#a6e22e">keysPressed</span>[<span style="color:#a6e22e">i</span>]) {
-			<span style="color:#a6e22e">duration</span> = <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-			<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">keysPressed</span>[<span style="color:#a6e22e">i</span>]
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">key</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">slowestKey</span>(<span style="color:#a6e22e">releaseTimes</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">keysPressed</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">byte</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">keysPressed</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">duration</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">keysPressed</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 持续时间长 或 持续时间相相等但字典序更大
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">duration</span> &lt; <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">||</span> (<span style="color:#a6e22e">duration</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">key</span> &lt; <span style="color:#a6e22e">keysPressed</span>[<span style="color:#a6e22e">i</span>]) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">duration</span> = <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">releaseTimes</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">keysPressed</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">key</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(releaseTimes) = len(keysPressed) $</li>
 <li>空间复杂度：$ O(1) $</li>

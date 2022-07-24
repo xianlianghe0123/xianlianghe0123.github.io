@@ -5,13 +5,15 @@
 难度： 中等
 题目描述 给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
 路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
-示例 1：  输入： root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+示例 1： 输入： root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
 输出： 3
 解释： 和等于 8 的路径有 3 条，如图所示。
- 示例 2：  输入： root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+示例 2： 输入： root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
 输出： 3
- 提示：  二叉树的节点个数的范围是 [0,1000] -109 &amp;lt;= Node.val &amp;lt;= 109 -1000 &amp;lt;= targetSum &amp;lt;= 1000  解题思路 深度优先搜索 &#43; 前缀和 采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。
-每当到达一个新结点时，查找到该结点的前缀和减去 target 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。'><title>Leetcode 437. 路径总和 III</title>
+提示： 二叉树的节点个数的范围是 [0,1000] -109 &amp;lt;= Node.val &amp;lt;= 109 -1000 &amp;lt;= targetSum &amp;lt;= 1000 解题思路 深度优先搜索 &#43; 前缀和 采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。
+每当到达一个新结点时，查找到该结点的前缀和减去 target 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。
+为保证从根结点开始的路径满足条件，初始哈希表中设置前缀和为 0 的次数为 1。
+func pathSum(root *TreeNode, targetSum int) int { cnt := make(map[int]int) cnt[0] = 1 var dfs func(node *TreeNode, sum int) int dfs = func(node *TreeNode, sum int) int { if node == nil { return 0 } sum &#43;= node.'><title>Leetcode 437. 路径总和 III</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-437.-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-iii/'>
 
@@ -20,13 +22,15 @@
 难度： 中等
 题目描述 给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
 路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
-示例 1：  输入： root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+示例 1： 输入： root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
 输出： 3
 解释： 和等于 8 的路径有 3 条，如图所示。
- 示例 2：  输入： root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+示例 2： 输入： root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
 输出： 3
- 提示：  二叉树的节点个数的范围是 [0,1000] -109 &amp;lt;= Node.val &amp;lt;= 109 -1000 &amp;lt;= targetSum &amp;lt;= 1000  解题思路 深度优先搜索 &#43; 前缀和 采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。
-每当到达一个新结点时，查找到该结点的前缀和减去 target 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。'>
+提示： 二叉树的节点个数的范围是 [0,1000] -109 &amp;lt;= Node.val &amp;lt;= 109 -1000 &amp;lt;= targetSum &amp;lt;= 1000 解题思路 深度优先搜索 &#43; 前缀和 采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。
+每当到达一个新结点时，查找到该结点的前缀和减去 target 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。
+为保证从根结点开始的路径满足条件，初始哈希表中设置前缀和为 0 的次数为 1。
+func pathSum(root *TreeNode, targetSum int) int { cnt := make(map[int]int) cnt[0] = 1 var dfs func(node *TreeNode, sum int) int dfs = func(node *TreeNode, sum int) int { if node == nil { return 0 } sum &#43;= node.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-437.-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-iii/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dfs' /><meta property='article:published_time' content='2021-09-28T14:08:48&#43;08:00'/><meta property='article:modified_time' content='2021-09-28T14:08:48&#43;08:00'/>
@@ -35,13 +39,15 @@
 难度： 中等
 题目描述 给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
 路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
-示例 1：  输入： root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+示例 1： 输入： root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
 输出： 3
 解释： 和等于 8 的路径有 3 条，如图所示。
- 示例 2：  输入： root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+示例 2： 输入： root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
 输出： 3
- 提示：  二叉树的节点个数的范围是 [0,1000] -109 &amp;lt;= Node.val &amp;lt;= 109 -1000 &amp;lt;= targetSum &amp;lt;= 1000  解题思路 深度优先搜索 &#43; 前缀和 采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。
-每当到达一个新结点时，查找到该结点的前缀和减去 target 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。">
+提示： 二叉树的节点个数的范围是 [0,1000] -109 &amp;lt;= Node.val &amp;lt;= 109 -1000 &amp;lt;= targetSum &amp;lt;= 1000 解题思路 深度优先搜索 &#43; 前缀和 采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。
+每当到达一个新结点时，查找到该结点的前缀和减去 target 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。
+为保证从根结点开始的路径满足条件，初始哈希表中设置前缀和为 0 的次数为 1。
+func pathSum(root *TreeNode, targetSum int) int { cnt := make(map[int]int) cnt[0] = 1 var dfs func(node *TreeNode, sum int) int dfs = func(node *TreeNode, sum int) int { if node == nil { return 0 } sum &#43;= node.">
     </head>
     <body class="
     article-page 
@@ -250,25 +256,25 @@
 <p>采用深度优先搜索，并将从根到当前结点的路径和保存到哈希表中，记录该和出现的数量。</p>
 <p>每当到达一个新结点时，查找到该结点的前缀和减去 <code>target</code> 是否存在于路径中，存在将其次数累加进结果中，然后递归的处理子结点，也将查询结果累加进结果中。</p>
 <p>为保证从根结点开始的路径满足条件，初始哈希表中设置前缀和为 <code>0</code> 的次数为 <code>1</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pathSum</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">targetSum</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
-    <span style="color:#a6e22e">cnt</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-		}
-		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>
-		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">sum</span><span style="color:#f92672">-</span><span style="color:#a6e22e">targetSum</span>]
-		<span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">sum</span>]<span style="color:#f92672">++</span>
-		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">sum</span>)
-		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">sum</span>)
-		<span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">sum</span>]<span style="color:#f92672">--</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pathSum</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">targetSum</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cnt</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">sum</span><span style="color:#f92672">-</span><span style="color:#a6e22e">targetSum</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">sum</span>]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">sum</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">sum</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">sum</span>]<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(List) $</li>
 <li>空间复杂度：$ O(N) $</li>

@@ -6,12 +6,12 @@
 题目描述 你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
 假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
-示例 1：  给定 n = 5，并且 version = 4 是第一个错误的版本。
+示例 1： 给定 n = 5，并且 version = 4 是第一个错误的版本。
 调用 isBadVersion(3) -&amp;gt; false
 调用 isBadVersion(5) -&amp;gt; true
 调用 isBadVersion(4) -&amp;gt; true
-所以，4 是第一个错误的版本。  解题思路 二分查找 对于连续的版本号 [i, j] 每次判断版本号 (i&#43;j)/2 是否出错，未出错查找范围缩小到 [(i&#43;j)/2&#43;1, j]，出错缩小到 [i, (i&#43;j)/2]，直到 i = j 即得到首个出错的版本号 i
-func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i &#43; j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid&#43;1, j) } } return binSearch(1, n) } 复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  '><title>Leetcode 278. 第一个错误的版本</title>
+所以，4 是第一个错误的版本。 解题思路 二分查找 对于连续的版本号 [i, j] 每次判断版本号 (i&#43;j)/2 是否出错，未出错查找范围缩小到 [(i&#43;j)/2&#43;1, j]，出错缩小到 [i, (i&#43;j)/2]，直到 i = j 即得到首个出错的版本号 i
+func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i &#43; j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid&#43;1, j) } } return binSearch(1, n) } 复杂度 时间复杂度：O(logN) 空间复杂度：O(1) '><title>Leetcode 278. 第一个错误的版本</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-278.-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E7%89%88%E6%9C%AC/'>
 
@@ -21,12 +21,12 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 题目描述 你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
 假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
-示例 1：  给定 n = 5，并且 version = 4 是第一个错误的版本。
+示例 1： 给定 n = 5，并且 version = 4 是第一个错误的版本。
 调用 isBadVersion(3) -&amp;gt; false
 调用 isBadVersion(5) -&amp;gt; true
 调用 isBadVersion(4) -&amp;gt; true
-所以，4 是第一个错误的版本。  解题思路 二分查找 对于连续的版本号 [i, j] 每次判断版本号 (i&#43;j)/2 是否出错，未出错查找范围缩小到 [(i&#43;j)/2&#43;1, j]，出错缩小到 [i, (i&#43;j)/2]，直到 i = j 即得到首个出错的版本号 i
-func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i &#43; j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid&#43;1, j) } } return binSearch(1, n) } 复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  '>
+所以，4 是第一个错误的版本。 解题思路 二分查找 对于连续的版本号 [i, j] 每次判断版本号 (i&#43;j)/2 是否出错，未出错查找范围缩小到 [(i&#43;j)/2&#43;1, j]，出错缩小到 [i, (i&#43;j)/2]，直到 i = j 即得到首个出错的版本号 i
+func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i &#43; j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid&#43;1, j) } } return binSearch(1, n) } 复杂度 时间复杂度：O(logN) 空间复杂度：O(1) '>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-278.-%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E7%89%88%E6%9C%AC/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-06-13T10:25:24&#43;08:00'/><meta property='article:modified_time' content='2021-06-13T10:25:24&#43;08:00'/>
@@ -36,12 +36,12 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 题目描述 你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
 假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
-示例 1：  给定 n = 5，并且 version = 4 是第一个错误的版本。
+示例 1： 给定 n = 5，并且 version = 4 是第一个错误的版本。
 调用 isBadVersion(3) -&amp;gt; false
 调用 isBadVersion(5) -&amp;gt; true
 调用 isBadVersion(4) -&amp;gt; true
-所以，4 是第一个错误的版本。  解题思路 二分查找 对于连续的版本号 [i, j] 每次判断版本号 (i&#43;j)/2 是否出错，未出错查找范围缩小到 [(i&#43;j)/2&#43;1, j]，出错缩小到 [i, (i&#43;j)/2]，直到 i = j 即得到首个出错的版本号 i
-func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i &#43; j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid&#43;1, j) } } return binSearch(1, n) } 复杂度  时间复杂度：O(logN) 空间复杂度：O(1)  ">
+所以，4 是第一个错误的版本。 解题思路 二分查找 对于连续的版本号 [i, j] 每次判断版本号 (i&#43;j)/2 是否出错，未出错查找范围缩小到 [(i&#43;j)/2&#43;1, j]，出错缩小到 [i, (i&#43;j)/2]，直到 i = j 即得到首个出错的版本号 i
+func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = func(i, j int) int { if i == j { return i } mid := (i &#43; j) / 2 if isBadVersion(mid) { return binSearch(i, mid) } else { return binSearch(mid&#43;1, j) } } return binSearch(1, n) } 复杂度 时间复杂度：O(logN) 空间复杂度：O(1) ">
     </head>
     <body class="
     article-page 
@@ -239,22 +239,22 @@ func firstBadVersion(n int) int { var binSearch func(i, j int) int binSearch = f
 <h3 id="解题思路">解题思路</h3>
 <h4 id="二分查找">二分查找</h4>
 <p>对于连续的版本号 <code>[i, j]</code> 每次判断版本号 <code>(i+j)/2</code> 是否出错，未出错查找范围缩小到 <code>[(i+j)/2+1, j]</code>，出错缩小到 <code>[i, (i+j)/2]</code>，直到 <code>i = j</code> 即得到首个出错的版本号 <code>i</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">firstBadVersion</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">binSearch</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">binSearch</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">j</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
-		}
-		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">isBadVersion</span>(<span style="color:#a6e22e">mid</span>) {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binSearch</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">mid</span>)
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binSearch</span>(<span style="color:#a6e22e">mid</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">j</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binSearch</span>(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">n</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">firstBadVersion</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">binSearch</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">binSearch</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">j</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">isBadVersion</span>(<span style="color:#a6e22e">mid</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binSearch</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">mid</span>)
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binSearch</span>(<span style="color:#a6e22e">mid</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">j</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binSearch</span>(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(logN)</li>
 <li>空间复杂度：O(1)</li>

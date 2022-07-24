@@ -5,9 +5,9 @@
 难度： 简单
 题目描述 输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。
 例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。
-示例：  给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 k = 2.
+示例： 给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 k = 2.
 返回链表 4-&amp;gt;5.
- 解题思路 顺序遍历 遍历一边链表，得到其长度 length，则 length - k 即为需要跳过的结点，重新遍历，跳过前 length - k 个结点。
+解题思路 顺序遍历 遍历一边链表，得到其长度 length，则 length - k 即为需要跳过的结点，重新遍历，跳过前 length - k 个结点。
 func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := head; node != nil; node = node.Next { length&#43;&#43; } node := head for i := length - k; i &amp;gt; 0; i-- { node = node.'><title>剑指 Offer 22. 链表中倒数第k个节点</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-22.-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/'>
@@ -17,9 +17,9 @@ func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := he
 难度： 简单
 题目描述 输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。
 例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。
-示例：  给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 k = 2.
+示例： 给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 k = 2.
 返回链表 4-&amp;gt;5.
- 解题思路 顺序遍历 遍历一边链表，得到其长度 length，则 length - k 即为需要跳过的结点，重新遍历，跳过前 length - k 个结点。
+解题思路 顺序遍历 遍历一边链表，得到其长度 length，则 length - k 即为需要跳过的结点，重新遍历，跳过前 length - k 个结点。
 func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := head; node != nil; node = node.Next { length&#43;&#43; } node := head for i := length - k; i &amp;gt; 0; i-- { node = node.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-22.-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -29,9 +29,9 @@ func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := he
 难度： 简单
 题目描述 输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。
 例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。
-示例：  给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 k = 2.
+示例： 给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 k = 2.
 返回链表 4-&amp;gt;5.
- 解题思路 顺序遍历 遍历一边链表，得到其长度 length，则 length - k 即为需要跳过的结点，重新遍历，跳过前 length - k 个结点。
+解题思路 顺序遍历 遍历一边链表，得到其长度 length，则 length - k 即为需要跳过的结点，重新遍历，跳过前 length - k 个结点。
 func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := head; node != nil; node = node.Next { length&#43;&#43; } node := head for i := length - k; i &amp;gt; 0; i-- { node = node.">
     </head>
     <body class="
@@ -226,18 +226,18 @@ func getKthFromEnd(head *ListNode, k int) *ListNode { length := 0 for node := he
 <h3 id="解题思路">解题思路</h3>
 <h4 id="顺序遍历">顺序遍历</h4>
 <p>遍历一边链表，得到其长度 <code>length</code>，则 <code>length - k</code> 即为需要跳过的结点，重新遍历，跳过前 <code>length - k</code> 个结点。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getKthFromEnd</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
-	<span style="color:#a6e22e">length</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">node</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> {
-		<span style="color:#a6e22e">length</span><span style="color:#f92672">++</span>
-	}
-	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getKthFromEnd</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">length</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">node</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">length</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(head) $</li>
 <li>空间复杂度：$ O(1) $</li>

@@ -6,14 +6,16 @@
 题目描述 给你一个字符串 time ，格式为 hh:mm（小时：分钟），其中某几位数字被隐藏（用 ? 表示）。
 有效的时间为 00:00 到 23:59 之间的所有时间，包括 00:00 和 23:59 。
 替换 time 中隐藏的数字，返回你可以得到的最晚有效时间。
-示例 1：  输入： time = &amp;ldquo;2?:?0&amp;rdquo;
+示例 1： 输入： time = &amp;ldquo;2?:?0&amp;rdquo;
 输出： &amp;ldquo;23:50&amp;rdquo;
 解释： 以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
- 示例 2：  输入： time = &amp;ldquo;0?:3?&amp;rdquo;
+示例 2： 输入： time = &amp;ldquo;0?:3?&amp;rdquo;
 输出： &amp;ldquo;09:39&amp;rdquo;
- 示例 3：  输入： time = &amp;ldquo;1?:22&amp;rdquo;
+示例 3： 输入： time = &amp;ldquo;1?:22&amp;rdquo;
 输出： &amp;ldquo;19:22&amp;rdquo;
- 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。'><title>Leetcode 1736. 替换隐藏数字得到的最晚时间</title>
+提示： time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间 解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。
+小时的有效范围为 00 ~ 23，十位和个位相互影响：
+当十位为 ? 时，若个位小于 4 或者个位也为 ?'><title>Leetcode 1736. 替换隐藏数字得到的最晚时间</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1736.-%E6%9B%BF%E6%8D%A2%E9%9A%90%E8%97%8F%E6%95%B0%E5%AD%97%E5%BE%97%E5%88%B0%E7%9A%84%E6%9C%80%E6%99%9A%E6%97%B6%E9%97%B4/'>
 
@@ -23,14 +25,16 @@
 题目描述 给你一个字符串 time ，格式为 hh:mm（小时：分钟），其中某几位数字被隐藏（用 ? 表示）。
 有效的时间为 00:00 到 23:59 之间的所有时间，包括 00:00 和 23:59 。
 替换 time 中隐藏的数字，返回你可以得到的最晚有效时间。
-示例 1：  输入： time = &amp;ldquo;2?:?0&amp;rdquo;
+示例 1： 输入： time = &amp;ldquo;2?:?0&amp;rdquo;
 输出： &amp;ldquo;23:50&amp;rdquo;
 解释： 以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
- 示例 2：  输入： time = &amp;ldquo;0?:3?&amp;rdquo;
+示例 2： 输入： time = &amp;ldquo;0?:3?&amp;rdquo;
 输出： &amp;ldquo;09:39&amp;rdquo;
- 示例 3：  输入： time = &amp;ldquo;1?:22&amp;rdquo;
+示例 3： 输入： time = &amp;ldquo;1?:22&amp;rdquo;
 输出： &amp;ldquo;19:22&amp;rdquo;
- 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。'>
+提示： time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间 解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。
+小时的有效范围为 00 ~ 23，十位和个位相互影响：
+当十位为 ? 时，若个位小于 4 或者个位也为 ?'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1736.-%E6%9B%BF%E6%8D%A2%E9%9A%90%E8%97%8F%E6%95%B0%E5%AD%97%E5%BE%97%E5%88%B0%E7%9A%84%E6%9C%80%E6%99%9A%E6%97%B6%E9%97%B4/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-07-24T12:24:31&#43;08:00'/><meta property='article:modified_time' content='2021-07-24T12:24:31&#43;08:00'/>
@@ -40,14 +44,16 @@
 题目描述 给你一个字符串 time ，格式为 hh:mm（小时：分钟），其中某几位数字被隐藏（用 ? 表示）。
 有效的时间为 00:00 到 23:59 之间的所有时间，包括 00:00 和 23:59 。
 替换 time 中隐藏的数字，返回你可以得到的最晚有效时间。
-示例 1：  输入： time = &amp;ldquo;2?:?0&amp;rdquo;
+示例 1： 输入： time = &amp;ldquo;2?:?0&amp;rdquo;
 输出： &amp;ldquo;23:50&amp;rdquo;
 解释： 以数字 &amp;lsquo;2&amp;rsquo; 开头的最晚一小时是 23 ，以 &amp;lsquo;0&amp;rsquo; 结尾的最晚一分钟是 50
- 示例 2：  输入： time = &amp;ldquo;0?:3?&amp;rdquo;
+示例 2： 输入： time = &amp;ldquo;0?:3?&amp;rdquo;
 输出： &amp;ldquo;09:39&amp;rdquo;
- 示例 3：  输入： time = &amp;ldquo;1?:22&amp;rdquo;
+示例 3： 输入： time = &amp;ldquo;1?:22&amp;rdquo;
 输出： &amp;ldquo;19:22&amp;rdquo;
- 提示：  time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间  解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。">
+提示： time 的格式为 hh:mm 题目数据保证你可以由输入的字符串生成有效的时间 解题思路 分类讨论 小时和分钟是完全独立的两个单元，分别针对这两个单元进行判断。
+小时的有效范围为 00 ~ 23，十位和个位相互影响：
+当十位为 ? 时，若个位小于 4 或者个位也为 ?">
     </head>
     <body class="
     article-page 
@@ -268,33 +274,33 @@
 <li>当十位为 <code>?</code> 时，取 <code>5</code></li>
 <li>当个位为 <code>?</code> 时，取 <code>9</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximumTime</span>(<span style="color:#a6e22e">time</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">time</span>)
-	<span style="color:#75715e">// 小时
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#e6db74">&#39;4&#39;</span> {
-			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#39;2&#39;</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#39;1&#39;</span>
-		}
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;2&#39;</span> {
-			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#39;3&#39;</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#39;9&#39;</span>
-		}
-	}
-	<span style="color:#75715e">//分钟
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
-		<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">3</span>] = <span style="color:#e6db74">&#39;5&#39;</span>
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
-		<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">4</span>] = <span style="color:#e6db74">&#39;9&#39;</span>
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">res</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximumTime</span>(<span style="color:#a6e22e">time</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">time</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 小时
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#e6db74">&#39;4&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#39;2&#39;</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#39;1&#39;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;2&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#39;9&#39;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//分钟
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">3</span>] = <span style="color:#e6db74">&#39;5&#39;</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">4</span>] = <span style="color:#e6db74">&#39;9&#39;</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">res</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(1) $</li>
 <li>空间复杂度：$ O(1) $</li>

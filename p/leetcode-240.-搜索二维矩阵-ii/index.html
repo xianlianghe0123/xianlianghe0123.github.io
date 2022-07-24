@@ -4,11 +4,12 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/search-a-2d-matrix-ii/
 难度： 中等
 题目描述 编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
- 每行的元素从左到右升序排列。 每列的元素从上到下升序排列。  示例 1：  输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
+每行的元素从左到右升序排列。 每列的元素从上到下升序排列。 示例 1： 输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
 输出： true
- 示例 2：  输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
+示例 2： 输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
 输出： false
- 提示：  m == matrix.length n == matrix[i].length 1 &amp;lt;= n, m &amp;lt;= 300 -109 &amp;lt;= matrix[i][j] &amp;lt;= 109 每行的所有元素从左到右升序排列 每列的所有元素从上到下升序排列 -109 &amp;lt;= target &amp;lt;= 109  解题思路 暴力求解 遍历整个矩阵，寻找 target。'><title>Leetcode 240. 搜索二维矩阵 II</title>
+提示： m == matrix.length n == matrix[i].length 1 &amp;lt;= n, m &amp;lt;= 300 -109 &amp;lt;= matrix[i][j] &amp;lt;= 109 每行的所有元素从左到右升序排列 每列的所有元素从上到下升序排列 -109 &amp;lt;= target &amp;lt;= 109 解题思路 暴力求解 遍历整个矩阵，寻找 target。
+func searchMatrix(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } } } return false } 复杂度 时间复杂度：$ O(mn)$ 空间复杂度：$ O(1) $ 二分查找 由于矩阵每一行是有序的，针对每一行二分查找 target。'><title>Leetcode 240. 搜索二维矩阵 II</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-240.-%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5-ii/'>
 
@@ -16,11 +17,12 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/search-a-2d-matrix-ii/
 难度： 中等
 题目描述 编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
- 每行的元素从左到右升序排列。 每列的元素从上到下升序排列。  示例 1：  输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
+每行的元素从左到右升序排列。 每列的元素从上到下升序排列。 示例 1： 输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
 输出： true
- 示例 2：  输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
+示例 2： 输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
 输出： false
- 提示：  m == matrix.length n == matrix[i].length 1 &amp;lt;= n, m &amp;lt;= 300 -109 &amp;lt;= matrix[i][j] &amp;lt;= 109 每行的所有元素从左到右升序排列 每列的所有元素从上到下升序排列 -109 &amp;lt;= target &amp;lt;= 109  解题思路 暴力求解 遍历整个矩阵，寻找 target。'>
+提示： m == matrix.length n == matrix[i].length 1 &amp;lt;= n, m &amp;lt;= 300 -109 &amp;lt;= matrix[i][j] &amp;lt;= 109 每行的所有元素从左到右升序排列 每列的所有元素从上到下升序排列 -109 &amp;lt;= target &amp;lt;= 109 解题思路 暴力求解 遍历整个矩阵，寻找 target。
+func searchMatrix(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } } } return false } 复杂度 时间复杂度：$ O(mn)$ 空间复杂度：$ O(1) $ 二分查找 由于矩阵每一行是有序的，针对每一行二分查找 target。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-240.-%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5-ii/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='binary search' /><meta property='article:tag' content='two pointers' /><meta property='article:published_time' content='2021-10-25T11:40:02&#43;08:00'/><meta property='article:modified_time' content='2021-10-25T11:40:02&#43;08:00'/>
@@ -28,11 +30,12 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/search-a-2d-matrix-ii/
 难度： 中等
 题目描述 编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
- 每行的元素从左到右升序排列。 每列的元素从上到下升序排列。  示例 1：  输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
+每行的元素从左到右升序排列。 每列的元素从上到下升序排列。 示例 1： 输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
 输出： true
- 示例 2：  输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
+示例 2： 输入： matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
 输出： false
- 提示：  m == matrix.length n == matrix[i].length 1 &amp;lt;= n, m &amp;lt;= 300 -109 &amp;lt;= matrix[i][j] &amp;lt;= 109 每行的所有元素从左到右升序排列 每列的所有元素从上到下升序排列 -109 &amp;lt;= target &amp;lt;= 109  解题思路 暴力求解 遍历整个矩阵，寻找 target。">
+提示： m == matrix.length n == matrix[i].length 1 &amp;lt;= n, m &amp;lt;= 300 -109 &amp;lt;= matrix[i][j] &amp;lt;= 109 每行的所有元素从左到右升序排列 每列的所有元素从上到下升序排列 -109 &amp;lt;= target &amp;lt;= 109 解题思路 暴力求解 遍历整个矩阵，寻找 target。
+func searchMatrix(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } } } return false } 复杂度 时间复杂度：$ O(mn)$ 空间复杂度：$ O(1) $ 二分查找 由于矩阵每一行是有序的，针对每一行二分查找 target。">
     </head>
     <body class="
     article-page 
@@ -246,33 +249,33 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>遍历整个矩阵，寻找 <code>target</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">searchMatrix</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">matrix</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">searchMatrix</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">matrix</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(mn)$</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="二分查找">二分查找</h4>
 <p>由于矩阵每一行是有序的，针对每一行二分查找 <code>target</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">searchMatrix</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">matrix</span> {
-		<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">SearchInts</span>(<span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">target</span>)
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> &lt; len(<span style="color:#a6e22e">matrix</span>[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">line</span>[<span style="color:#a6e22e">idx</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">searchMatrix</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">matrix</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">SearchInts</span>(<span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">target</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> &lt; len(<span style="color:#a6e22e">matrix</span>[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">line</span>[<span style="color:#a6e22e">idx</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(m\log{n}) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -290,20 +293,20 @@
 <li>若当前元素 <code>&lt; target</code>，则向下查找。</li>
 </ul>
 <p>当超出矩阵范围时，查找失败，返回 <code>false</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">searchMatrix</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">matrix</span>[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">row</span> &lt; len(<span style="color:#a6e22e">matrix</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] &gt; <span style="color:#a6e22e">target</span> {
-			<span style="color:#a6e22e">col</span><span style="color:#f92672">--</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">row</span><span style="color:#f92672">++</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><h5 id="复杂度-2">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">searchMatrix</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">matrix</span>[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">row</span> &lt; len(<span style="color:#a6e22e">matrix</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] &gt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">col</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">row</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-2">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(m+n) $</li>
 <li>空间复杂度：$ O(1) $</li>

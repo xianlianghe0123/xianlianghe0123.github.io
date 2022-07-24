@@ -5,7 +5,7 @@
 难度： 简单
 题目描述 给你一个下标从 0 开始的整数数组 nums ，该数组的大小为 n ，请你计算 nums[j] - nums[i] 能求得的 最大差值 ，其中 0 &amp;lt;= i &amp;lt; j &amp;lt; n 且 nums[i] &amp;lt; nums[j] 。
 返回 最大差值 。如果不存在满足要求的 i 和 j ，返回 -1 。
-示例 1：  输入： nums = [7,1,5,4]
+示例 1： 输入： nums = [7,1,5,4]
 输出： 4
 解释：
 最大差值出现在 i = 1 且 j = 2 时，nums[j] - nums[i] = 5 - 1 = 4 。 注意，尽管 i = 1 且 j = 0 时 ，nums[j] - nums[i] = 7 - 1 = 6 &amp;gt; 4 ，但 i &amp;gt; j 不满足题面要求，所以 6 不是有效的答案。'><title>Leetcode 2016. 增量元素之间的最大差值</title>
@@ -17,7 +17,7 @@
 难度： 简单
 题目描述 给你一个下标从 0 开始的整数数组 nums ，该数组的大小为 n ，请你计算 nums[j] - nums[i] 能求得的 最大差值 ，其中 0 &amp;lt;= i &amp;lt; j &amp;lt; n 且 nums[i] &amp;lt; nums[j] 。
 返回 最大差值 。如果不存在满足要求的 i 和 j ，返回 -1 。
-示例 1：  输入： nums = [7,1,5,4]
+示例 1： 输入： nums = [7,1,5,4]
 输出： 4
 解释：
 最大差值出现在 i = 1 且 j = 2 时，nums[j] - nums[i] = 5 - 1 = 4 。 注意，尽管 i = 1 且 j = 0 时 ，nums[j] - nums[i] = 7 - 1 = 6 &amp;gt; 4 ，但 i &amp;gt; j 不满足题面要求，所以 6 不是有效的答案。'>
@@ -29,7 +29,7 @@
 难度： 简单
 题目描述 给你一个下标从 0 开始的整数数组 nums ，该数组的大小为 n ，请你计算 nums[j] - nums[i] 能求得的 最大差值 ，其中 0 &amp;lt;= i &amp;lt; j &amp;lt; n 且 nums[i] &amp;lt; nums[j] 。
 返回 最大差值 。如果不存在满足要求的 i 和 j ，返回 -1 。
-示例 1：  输入： nums = [7,1,5,4]
+示例 1： 输入： nums = [7,1,5,4]
 输出： 4
 解释：
 最大差值出现在 i = 1 且 j = 2 时，nums[j] - nums[i] = 5 - 1 = 4 。 注意，尽管 i = 1 且 j = 0 时 ，nums[j] - nums[i] = 7 - 1 = 6 &amp;gt; 4 ，但 i &amp;gt; j 不满足题面要求，所以 6 不是有效的答案。">
@@ -249,18 +249,18 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="枚举">枚举</h4>
 <p>枚举所有可能的 <code>i</code> 和 <code>j</code>并求得差值，找出最大差值。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximumDifference</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">maxDiff</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] &gt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">maxDiff</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] {
-				<span style="color:#a6e22e">maxDiff</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxDiff</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximumDifference</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maxDiff</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] &gt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">maxDiff</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">maxDiff</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxDiff</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -268,20 +268,20 @@
 <h4 id="模拟">模拟</h4>
 <p>对于满足条件的<code>i</code> 和 <code>j</code>，对 <code>j</code> 而言，最大差值必定是 <code>nums[j]</code> 是与在其之前的最小值的差。</p>
 <p>故从左往右一次遍历，记录当前遍历到的最小值，在每个数与记录的最小值的差值中，寻找最大值。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximumDifference</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">maxDiff</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#a6e22e">min</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">maxDiff</span> &lt; <span style="color:#a6e22e">num</span><span style="color:#f92672">-</span><span style="color:#a6e22e">min</span> {
-			<span style="color:#a6e22e">maxDiff</span> = <span style="color:#a6e22e">num</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">num</span> {
-			<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">num</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxDiff</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximumDifference</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maxDiff</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#a6e22e">min</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">maxDiff</span> &lt; <span style="color:#a6e22e">num</span><span style="color:#f92672">-</span><span style="color:#a6e22e">min</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">maxDiff</span> = <span style="color:#a6e22e">num</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">num</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxDiff</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>

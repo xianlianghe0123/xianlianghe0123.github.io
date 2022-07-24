@@ -18,16 +18,16 @@
 题目描述 给定一个整数数组 asteroids，表示在同一行的行星。
 对于数组中的每一个元素，其绝对值表示行星的大小，正负表示行星的移动方向（正表示向右移动，负表示向左移动）。每一颗行星以相同的速度移动。
 找出碰撞后剩下的所有行星。碰撞规则：两个行星相互碰撞，较小的行星会爆炸。如果两颗行星大小相同，则两颗行星都会爆炸。两颗移动方向相同的行星，永远不会发生碰撞。
-示例 1：  输入： asteroids = [5,10,-5]
+示例 1： 输入： asteroids = [5,10,-5]
 输出： [5,10]
 解释： 10 和 -5 碰撞后只剩下 10 。 5 和 10 永远不会发生碰撞。
- 示例 2：  输入： asteroids = [8,-8]
+示例 2： 输入： asteroids = [8,-8]
 输出： []
 解释： 8 和 -8 碰撞后，两者都发生爆炸。
- 示例 3：  输入： asteroids = [10,2,-5]
+示例 3： 输入： asteroids = [10,2,-5]
 输出： [10]
 解释： 2 和 -5 发生碰撞后剩下 -5 。10 和 -5 发生碰撞后剩下 10 。
- 提示：  2 &amp;lt;= asteroids.</description>
+提示： 2 &amp;lt;= asteroids.length &amp;lt;= 104 -1000 &amp;lt;= asteroids[i] &amp;lt;= 1000 asteroids[i] !</description>
     </item>
     
     <item>
@@ -39,10 +39,10 @@
       <description>链接： https://leetcode.cn/problems/remove-outermost-parentheses/
 难度： 简单
 题目描述 有效括号字符串为空 &amp;quot;&amp;quot;、&amp;quot;(&amp;quot; + A + &amp;quot;)&amp;quot; 或 A + B ，其中 A 和 B 都是有效的括号字符串，+ 代表字符串的连接。
- 例如，&amp;quot;&amp;quot;，&amp;quot;()&amp;quot;，&amp;quot;(())()&amp;quot; 和 &amp;quot;(()(()))&amp;quot; 都是有效的括号字符串。  如果有效字符串 s 非空，且不存在将其拆分为 s = A + B 的方法，我们称其为 原语（primitive），其中 A 和 B 都是非空有效括号字符串。
+例如，&amp;quot;&amp;quot;，&amp;quot;()&amp;quot;，&amp;quot;(())()&amp;quot; 和 &amp;quot;(()(()))&amp;quot; 都是有效的括号字符串。 如果有效字符串 s 非空，且不存在将其拆分为 s = A + B 的方法，我们称其为 原语（primitive），其中 A 和 B 都是非空有效括号字符串。
 给出一个非空有效字符串 s，考虑将其进行原语化分解，使得：s = P_1 + P_2 + ... + P_k，其中 P_i 是有效括号字符串原语。
 对 s 进行原语化分解，删除分解中每个原语字符串的最外层括号，返回 s 。
-示例 1：  输入： s = &amp;ldquo;(()())(())&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;(()())(())&amp;rdquo;
 输出： &amp;ldquo;()()()&amp;rdquo;
 解释：
 输入字符串为 &amp;ldquo;(()())(())&amp;quot;，原语化分解得到 &amp;ldquo;(()())&amp;rdquo; + &amp;ldquo;(())&amp;quot;，</description>
@@ -57,10 +57,11 @@
       <description>链接： https://leetcode-cn.com/problems/tag-validator/
 难度： 困难
 题目描述 给定一个表示代码片段的字符串，你需要实现一个验证器来解析这段代码，并返回它是否合法。合法的代码片段需要遵守以下的所有规则：
- 代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。  合法代码的例子：  输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
+代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。 合法代码的例子： 输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
 输出： True
 解释：
-代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。</description>
+代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。
+TAG_NAME 是合法的，TAG_CONTENT 包含了一些字符和 cdata 。</description>
     </item>
     
     <item>
@@ -74,14 +75,14 @@
 题目描述 假设有一个同时存储文件和目录的文件系统。下图展示了文件系统的一个示例：
 这里将 dir 作为根目录中的唯一目录。dir 包含两个子目录 subdir1 和 subdir2 。subdir1 包含文件 file1.ext 和子目录 subsubdir1；subdir2 包含子目录 subsubdir2，该子目录下包含文件 file2.ext 。
 在文本格式中，如下所示(⟶表示制表符)：
- dir
+dir
 ⟶ subdir1
 ⟶ ⟶ file1.ext
 ⟶ ⟶ subsubdir1
 ⟶ subdir2
 ⟶ ⟶ subsubdir2
 ⟶ ⟶ ⟶ file2.ext
- 如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
+如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
 文件系统中的每个文件和文件夹都有一个唯一的 绝对路径 ，即必须打开才能到达文件/目录所在位置的目录顺序，所有路径用 &#39;/&#39; 连接。上面例子中，指向 file2.ext 的 绝对路径 是 &amp;quot;dir/subdir2/subsubdir2/file2.ext&amp;quot; 。每个目录名由字母、数字和/或空格组成，每个文件名遵循 name.extension 的格式，其中 name 和 extension 由字母、数字和/或空格组成。
 给定一个以上述格式表示文件系统的字符串 input ，返回文件系统中 指向 文件 的 最长绝对路径 的长度 。 如果系统中没有文件，返回 0。</description>
     </item>
@@ -96,16 +97,16 @@
 难度： 中等
 题目描述 给定一个字符串 s 表示一个整数嵌套列表，实现一个解析它的语法分析器并返回解析的结果 NestedInteger 。
 列表中的每个元素只可能是整数或整数嵌套列表
-示例 1：  输入： s = &amp;ldquo;324&amp;rdquo;,
+示例 1： 输入： s = &amp;ldquo;324&amp;rdquo;,
 输出： 324
 解释： 你应该返回一个 NestedInteger 对象，其中只包含整数值 324。
- 示例 2：  输入： s = &amp;ldquo;[123,[456,[789]]]&amp;rdquo;,
+示例 2： 输入： s = &amp;ldquo;[123,[456,[789]]]&amp;rdquo;,
 输出： [123,[456,[789]]]
 解释： 返回一个 NestedInteger 对象包含一个有两个元素的嵌套列表：
- 一个 integer 包含值 123 一个包含两个元素的嵌套列表：
+一个 integer 包含值 123 一个包含两个元素的嵌套列表：
 i. 一个 integer 包含值 456
 ii. 一个包含一个元素的嵌套列表
-a. 一个 integer 包含值 789   提示：  1 &amp;lt;= s.length &amp;lt;= 5 * 104 s 由数字、方括号 &amp;quot;[]&amp;quot;、负号 &#39;-&#39; 、逗号 &#39;,&#39; 组成 用例保证 s 是可解析的 NestedInteger 输入中的所有值的范围是 [-106, 106]  解题思路 深度优先搜索 嵌套列表只有两种情况，要么是一个值，要么是嵌套列表，在字符串中的体现是以 &#39;[&#39; 开头进行区分。</description>
+a. 一个 integer 包含值 789 提示： 1 &amp;lt;= s.length &amp;lt;= 5 * 104 s 由数字、方括号 &amp;quot;[]&amp;quot;、负号 &#39;-&#39; 、逗号 &#39;,&#39; 组成 用例保证 s 是可解析的 NestedInteger 输入中的所有值的范围是 [-106, 106] 解题思路 深度优先搜索 嵌套列表只有两种情况，要么是一个值，要么是嵌套列表，在字符串中的体现是以 &#39;[&#39; 开头进行区分。</description>
     </item>
     
     <item>
@@ -118,8 +119,8 @@ a. 一个 integer 包含值 789   提示：  1 &amp;lt;= s.length &amp;lt;= 5 * 
 难度： 简单
 题目描述 你现在是一场采用特殊赛制棒球比赛的记录员。这场比赛由若干回合组成，过去几回合的得分可能会影响以后几回合的得分。
 比赛开始时，记录是空白的。你会得到一个记录操作的字符串列表 ops，其中 ops[i] 是你需要记录的第 i 项操作，ops 遵循下述规则：
- 整数 x - 表示本回合新获得分数 x &amp;quot;+&amp;quot; - 表示本回合新获得的得分是前两次得分的总和。题目数据保证记录此操作时前面总是存在两个有效的分数。 &amp;quot;D&amp;quot; - 表示本回合新获得的得分是前一次得分的两倍。题目数据保证记录此操作时前面总是存在一个有效的分数。 &amp;quot;C&amp;quot; - 表示前一次得分无效，将其从记录中移除。题目数据保证记录此操作时前面总是存在一个有效的分数。  请你返回记录中所有得分的总和。
-示例 1：  输入： ops = [&amp;ldquo;5&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;C&amp;rdquo;,&amp;ldquo;D&amp;rdquo;,&amp;quot;+&amp;quot;]
+整数 x - 表示本回合新获得分数 x &amp;quot;+&amp;quot; - 表示本回合新获得的得分是前两次得分的总和。题目数据保证记录此操作时前面总是存在两个有效的分数。 &amp;quot;D&amp;quot; - 表示本回合新获得的得分是前一次得分的两倍。题目数据保证记录此操作时前面总是存在一个有效的分数。 &amp;quot;C&amp;quot; - 表示前一次得分无效，将其从记录中移除。题目数据保证记录此操作时前面总是存在一个有效的分数。 请你返回记录中所有得分的总和。
+示例 1： 输入： ops = [&amp;ldquo;5&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;C&amp;rdquo;,&amp;ldquo;D&amp;rdquo;,&amp;quot;+&amp;quot;]
 输出： 30
 解释：
 &amp;ldquo;5&amp;rdquo; - 记录加 5 ，记录现在是 [5]
@@ -140,14 +141,15 @@ a. 一个 integer 包含值 789   提示：  1 &amp;lt;= s.length &amp;lt;= 5 * 
 题目描述 给你一个字符串 path ，表示指向某一文件或目录的 Unix 风格 绝对路径 （以 &#39;/&#39; 开头），请你将其转化为更加简洁的规范路径。
 在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；此外，两个点 （..） 表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。任意多个连续的斜杠（即，&#39;//&#39;）都被视为单个斜杠 &#39;/&#39; 。 对于此问题，任何其他格式的点（例如，&#39;...&#39;）均被视为文件/目录名称。
 请注意，返回的 规范路径 必须遵循下述格式：
- 始终以斜杠 &amp;lsquo;/&amp;rsquo; 开头。 两个目录名之间必须只有一个斜杠 &amp;lsquo;/&amp;rsquo; 。 最后一个目录名（如果存在）不能 以 &amp;lsquo;/&amp;rsquo; 结尾。 此外，路径仅包含从根目录到目标文件或目录的路径上的目录（即，不含 &amp;lsquo;.&amp;rsquo; 或 &amp;lsquo;..&#39;）。  返回简化后得到的 规范路径 。
-示例 1：  输入： path = &amp;ldquo;/home/&amp;rdquo;
+始终以斜杠 &amp;lsquo;/&amp;rsquo; 开头。 两个目录名之间必须只有一个斜杠 &amp;lsquo;/&amp;rsquo; 。 最后一个目录名（如果存在）不能 以 &amp;lsquo;/&amp;rsquo; 结尾。 此外，路径仅包含从根目录到目标文件或目录的路径上的目录（即，不含 &amp;lsquo;.&amp;rsquo; 或 &amp;lsquo;..&amp;rsquo;）。 返回简化后得到的 规范路径 。
+示例 1： 输入： path = &amp;ldquo;/home/&amp;rdquo;
 输出： &amp;ldquo;/home&amp;rdquo;
 解释： 注意，最后一个目录名后面没有斜杠。
- 示例 2：  输入： path = &amp;ldquo;/../&amp;rdquo;
+示例 2： 输入： path = &amp;ldquo;/../&amp;rdquo;
 输出： &amp;ldquo;/&amp;rdquo;
 解释： 从根目录向上一级是不可行的，因为根目录是你可以到达的最高级。
- 示例 3：  输入： path = &amp;ldquo;/home//foo/&amp;rdquo;</description>
+示例 3： 输入： path = &amp;ldquo;/home//foo/&amp;rdquo;
+输出： &amp;ldquo;/home/foo&amp;rdquo;</description>
     </item>
     
     <item>
@@ -159,15 +161,15 @@ a. 一个 integer 包含值 789   提示：  1 &amp;lt;= s.length &amp;lt;= 5 * 
       <description>链接： https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
 难度： 中等
 题目描述 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字 均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
-示例 1：  输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+示例 1： 输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
 输出： true
 解释： 我们可以按以下顺序执行：
 push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
 push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
- 示例 2：  输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+示例 2： 输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
 输出： false
 解释： 1 不能在 2 之前弹出。
- 提示：  0 &amp;lt;= pushed.</description>
+提示： 0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000 0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000 pushed 是 popped 的排列。 解题思路 模拟 使用一个栈模拟操作。遍历 pushed，将当前元素压栈，由于元素各不相同，随后将栈与 popped 对照，逐一地相同元素弹出。</description>
     </item>
     
     <item>
@@ -179,7 +181,7 @@ push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt
       <description>链接： https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
 难度： 简单
 题目描述 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 $O(1)$。
-示例：  MinStack minStack = new MinStack();
+示例： MinStack minStack = new MinStack();
 minStack.push(-2);
 minStack.push(0);
 minStack.push(-3);
@@ -187,8 +189,8 @@ minStack.min(); &amp;ndash;&amp;gt; 返回 -3.
 minStack.pop();
 minStack.top(); &amp;ndash;&amp;gt; 返回 0.
 minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
- 提示：  各函数的调用总次数不超过 20000 次  解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
- 当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。  type MinStack struct { stack *list.</description>
+提示： 各函数的调用总次数不超过 20000 次 解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
+当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。 type MinStack struct { stack *list.List minStack *list.</description>
     </item>
     
     <item>
@@ -200,11 +202,11 @@ minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
       <description>链接： https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/
 难度： 简单
 题目描述 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
-示例：  输入： head = [1,3,2]
+示例： 输入： head = [1,3,2]
 输出： [2,3,1]
- 提示：  0 &amp;lt;= 链表长度 &amp;lt;= 10000  解题思路 递归 递归的添加当前节点的元素到子节点返回的数组后面。递归的终止条件为：当前元素不存在，返回空数组。
-func reversePrint(head *ListNode) []int { if head == nil { return make([]int, 0) } return append(reversePrint(head.Next), head.Val) } 复杂度  时间复杂度：$ O(N), N = len(list) $ 空间复杂度：$ O(N) $  栈 遍历链表，依次压栈，之后反转栈中元素即可。
-func reversePrint(head *ListNode) []int { if head == nil { return make([]int, 0) } return append(reversePrint(head.</description>
+提示： 0 &amp;lt;= 链表长度 &amp;lt;= 10000 解题思路 递归 递归的添加当前节点的元素到子节点返回的数组后面。递归的终止条件为：当前元素不存在，返回空数组。
+func reversePrint(head *ListNode) []int { if head == nil { return make([]int, 0) } return append(reversePrint(head.Next), head.Val) } 复杂度 时间复杂度：$ O(N), N = len(list) $ 空间复杂度：$ O(N) $ 栈 遍历链表，依次压栈，之后反转栈中元素即可。
+func reversePrint(head *ListNode) []int { if head == nil { return make([]int, 0) } return append(reversePrint(head.Next), head.Val) } 复杂度 时间复杂度：$ O(N), N = len(list) $ 空间复杂度：$ O(N) $ </description>
     </item>
     
     <item>
@@ -216,14 +218,14 @@ func reversePrint(head *ListNode) []int { if head == nil { return make([]int, 0)
       <description>链接： https://leetcode-cn.com/problems/valid-parenthesis-string/
 难度： 中等
 题目描述 给定一个只包含三种字符的字符串：( ，) 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
- 任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。  示例 1：  输入: &amp;ldquo;()&amp;rdquo;
+任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。 示例 1： 输入: &amp;ldquo;()&amp;rdquo;
 输出: True
- 示例 2：  输入: &amp;ldquo;(*)&amp;rdquo;
+示例 2： 输入: &amp;ldquo;(*)&amp;rdquo;
 输出: True
- 示例 3：  输入: &amp;ldquo;(*))&amp;rdquo;
+示例 3： 输入: &amp;ldquo;(*))&amp;rdquo;
 输出: True
- 注意：  字符串大小将在 [1，100] 范围内。  解题思路 栈 使用栈来进行括号的匹配:
- 每当遇到 ( 和 * ，入栈； 当遇到 ) 时，优先从栈中寻找距栈顶最近的 ( ，以完成配对，然后该 ( 从栈中弹出；当不存在 ( 时，使用 * 代替 ( 配对并弹出，都不存在返回 false。  对字符串完成遍历后，栈中仅剩下 ( 和 * ，此时从栈顶开始，配对消除 (，能全部消除，返回 true，否则返回 false。</description>
+注意： 字符串大小将在 [1，100] 范围内。 解题思路 栈 使用栈来进行括号的匹配:
+每当遇到 ( 和 * ，入栈； 当遇到 ) 时，优先从栈中寻找距栈顶最近的 ( ，以完成配对，然后该 ( 从栈中弹出；当不存在 ( 时，使用 * 代替 ( 配对并弹出，都不存在返回 false。 对字符串完成遍历后，栈中仅剩下 ( 和 * ，此时从栈顶开始，配对消除 (，能全部消除，返回 true，否则返回 false。</description>
     </item>
     
     <item>
@@ -240,15 +242,17 @@ func reversePrint(head *ListNode) []int { if head == nil { return make([]int, 0)
 两个化学式连在一起是新的化学式。例如 H2O2He3Mg4 也是化学式。
 一个括号中的化学式和数字（可选择性添加）也是化学式。例如 (H2O2) 和 (H2O2)3 是化学式。
 给定一个化学式 formula ，返回所有原子的数量。格式为：第一个（按字典序）原子的名字，跟着它的数量（如果数量大于 1），然后是第二个原子的名字（按字典序），跟着它的数量（如果数量大于 1），以此类推。
-示例 1：  输入： formula = &amp;ldquo;H2O&amp;rdquo;
+示例 1： 输入： formula = &amp;ldquo;H2O&amp;rdquo;
 输出： &amp;ldquo;H2O&amp;rdquo;
 解释：
 原子的数量是 {&amp;lsquo;H&amp;rsquo;: 2, &amp;lsquo;O&amp;rsquo;: 1}。
- 示例 2：  输入： formula = &amp;ldquo;Mg(OH)2&amp;rdquo;
+示例 2： 输入： formula = &amp;ldquo;Mg(OH)2&amp;rdquo;
 输出： &amp;ldquo;H2MgO2&amp;rdquo;
 解释：
 原子的数量是 {&amp;lsquo;H&amp;rsquo;: 2, &amp;lsquo;Mg&amp;rsquo;: 1, &amp;lsquo;O&amp;rsquo;: 2}。
- 示例 3：  输入： formula = &amp;ldquo;K4(ON(SO3)2)2&amp;rdquo;</description>
+示例 3： 输入： formula = &amp;ldquo;K4(ON(SO3)2)2&amp;rdquo;
+输出： &amp;ldquo;K4N2O14S4&amp;rdquo;
+解释：</description>
     </item>
     
   </channel>

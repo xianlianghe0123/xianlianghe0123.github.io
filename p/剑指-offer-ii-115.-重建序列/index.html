@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/ur2n8P/
+难度： 中等
+题目描述 给定一个长度为 n 的整数数组 nums ，其中 nums 是范围为 [1，n] 的整数的排列。还提供了一个 2D 整数数组 sequences ，其中 sequences[i] 是 nums 的子序列。
+检查 nums 是否是唯一的最短 超序列 。最短 超序列 是 长度最短 的序列，并且所有序列 sequences[i] 都是它的子序列。对于给定的数组 sequences ，可能存在多个有效的 超序列 。
+例如，对于 sequences = [[1,2],[1,3]] ，有两个最短的 超序列 ，[1,2,3] 和 [1,3,2] 。 而对于 sequences = [[1,2],[1,3],[1,2,3]] ，唯一可能的最短 超序列 是 [1,2,3] 。[1,2,3,4] 是可能的超序列，但不是最短的。 如果 nums 是序列的唯一最短 超序列 ，则返回 true ，否则返回 false 。
+子序列 是一个可以通过从另一个序列中删除一些元素或不删除任何元素，而不改变其余元素的顺序的序列。
+示例 1： 输入： nums = [1,2,3], sequences = [[1,2],[1,3]]'><title>剑指 Offer II 115. 重建序列</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-115.-%E9%87%8D%E5%BB%BA%E5%BA%8F%E5%88%97/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='剑指 Offer II 115. 重建序列'>
+<meta property='og:description' content='链接： https://leetcode.cn/problems/ur2n8P/
+难度： 中等
+题目描述 给定一个长度为 n 的整数数组 nums ，其中 nums 是范围为 [1，n] 的整数的排列。还提供了一个 2D 整数数组 sequences ，其中 sequences[i] 是 nums 的子序列。
+检查 nums 是否是唯一的最短 超序列 。最短 超序列 是 长度最短 的序列，并且所有序列 sequences[i] 都是它的子序列。对于给定的数组 sequences ，可能存在多个有效的 超序列 。
+例如，对于 sequences = [[1,2],[1,3]] ，有两个最短的 超序列 ，[1,2,3] 和 [1,3,2] 。 而对于 sequences = [[1,2],[1,3],[1,2,3]] ，唯一可能的最短 超序列 是 [1,2,3] 。[1,2,3,4] 是可能的超序列，但不是最短的。 如果 nums 是序列的唯一最短 超序列 ，则返回 true ，否则返回 false 。
+子序列 是一个可以通过从另一个序列中删除一些元素或不删除任何元素，而不改变其余元素的顺序的序列。
+示例 1： 输入： nums = [1,2,3], sequences = [[1,2],[1,3]]'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-ii-115.-%E9%87%8D%E5%BB%BA%E5%BA%8F%E5%88%97/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='tsort' /><meta property='article:published_time' content='2022-07-23T10:39:46&#43;08:00'/><meta property='article:modified_time' content='2022-07-23T10:39:46&#43;08:00'/>
+<meta name="twitter:title" content="剑指 Offer II 115. 重建序列">
+<meta name="twitter:description" content="链接： https://leetcode.cn/problems/ur2n8P/
+难度： 中等
+题目描述 给定一个长度为 n 的整数数组 nums ，其中 nums 是范围为 [1，n] 的整数的排列。还提供了一个 2D 整数数组 sequences ，其中 sequences[i] 是 nums 的子序列。
+检查 nums 是否是唯一的最短 超序列 。最短 超序列 是 长度最短 的序列，并且所有序列 sequences[i] 都是它的子序列。对于给定的数组 sequences ，可能存在多个有效的 超序列 。
+例如，对于 sequences = [[1,2],[1,3]] ，有两个最短的 超序列 ，[1,2,3] 和 [1,3,2] 。 而对于 sequences = [[1,2],[1,3],[1,2,3]] ，唯一可能的最短 超序列 是 [1,2,3] 。[1,2,3,4] 是可能的超序列，但不是最短的。 如果 nums 是序列的唯一最短 超序列 ，则返回 true ，否则返回 false 。
+子序列 是一个可以通过从另一个序列中删除一些元素或不删除任何元素，而不改变其余元素的顺序的序列。
+示例 1： 输入： nums = [1,2,3], sequences = [[1,2],[1,3]]">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%89%91%E6%8C%87-offer-ii-115.-%E9%87%8D%E5%BB%BA%E5%BA%8F%E5%88%97/">剑指 Offer II 115. 重建序列</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jul 23, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode.cn/problems/ur2n8P/"  target="_blank" rel="noopener"
+    >https://leetcode.cn/problems/ur2n8P/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个长度为 <code>n</code> 的整数数组 <code>nums</code> ，其中 <code>nums</code> 是范围为 <code>[1，n]</code> 的整数的排列。还提供了一个 2D 整数数组 <code>sequences</code> ，其中 <code>sequences[i]</code> 是 <code>nums</code> 的子序列。</p>
+<p>检查 <code>nums</code> 是否是唯一的最短 <strong>超序列</strong> 。最短 <strong>超序列</strong> 是 <strong>长度最短</strong> 的序列，并且所有序列 <code>sequences[i]</code> 都是它的子序列。对于给定的数组 <code>sequences</code> ，可能存在多个有效的 <strong>超序列</strong> 。</p>
+<ul>
+<li>例如，对于 <code>sequences = [[1,2],[1,3]]</code> ，有两个最短的 <strong>超序列</strong> ，<code>[1,2,3]</code> 和 <code>[1,3,2]</code> 。</li>
+<li>而对于 <code>sequences = [[1,2],[1,3],[1,2,3]]</code> ，唯一可能的最短 <strong>超序列</strong> 是 <code>[1,2,3]</code> 。<code>[1,2,3,4]</code> 是可能的超序列，但不是最短的。</li>
+</ul>
+<p>如果 <code>nums</code> 是序列的唯一最短 <strong>超序列</strong> ，则返回 <code>true</code> ，否则返回 <code>false</code> 。</p>
+<p><strong>子序列</strong> 是一个可以通过从另一个序列中删除一些元素或不删除任何元素，而不改变其余元素的顺序的序列。</p>
+<h4 id="示例-1">示例 1：</h4>
+<blockquote>
+<p><strong>输入：</strong> nums = [1,2,3], sequences = [[1,2],[1,3]]<br>
+<strong>输出：</strong> false<br>
+<strong>解释：</strong> 有两种可能的超序列：[1,2,3]和[1,3,2]。<br>
+序列 [1,2] 是[<u>1</u>,<u>2</u>,3]和[<u>1</u>,3,<u>2</u>]的子序列。<br>
+序列 [1,3] 是[<u>1</u>,2,<u>3</u>]和[<u>1</u>,<u>3</u>,2]的子序列。<br>
+因为 nums 不是唯一最短的超序列，所以返回false。</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> nums = [1,2,3], sequences = [[1,2]]<br>
+<strong>输出：</strong> false<br>
+<strong>解释：</strong> 最短可能的超序列为 [1,2]。<br>
+序列 [1,2] 是它的子序列：[<u>1</u>,<u>2</u>]。<br>
+因为 nums 不是最短的超序列，所以返回false。</p>
+</blockquote>
+<h4 id="示例-3">示例 3：</h4>
+<blockquote>
+<p><strong>输入：</strong> nums = [1,2,3], sequences = [[1,2],[1,3],[2,3]]<br>
+<strong>输出：</strong> true<br>
+<strong>解释：</strong> 最短可能的超序列为[1,2,3]。<br>
+序列 [1,2] 是它的一个子序列：[<u>1</u>,<u>2</u>,3]。<br>
+序列 [1,3] 是它的一个子序列：[<u>1</u>,2,<u>3</u>]。<br>
+序列 [2,3] 是它的一个子序列：[1,<u>2</u>,<u>3</u>]。<br>
+因为 nums 是唯一最短的超序列，所以返回true。</p>
+</blockquote>
+<h5 id="提示">提示</h5>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>nums</code> 是 <code>[1, n]</code> 范围内所有整数的排列</li>
+<li><code>1 &lt;= sequences.length &lt;= 10<sup>4</sup></code></li>
+<li><code>1 &lt;= sequences[i].length &lt;= 10<sup>4</sup></code></li>
+<li><code>1 &lt;= sum(sequences[i].length) &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= sequences[i][j] &lt;= n</code></li>
+<li><code>sequences</code> 的所有数组都是 <strong>唯一</strong> 的</li>
+<li><code>sequences[i]</code> 是 <code>nums</code> 的一个子序列</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="拓扑排序">拓扑排序</h4>
+<p><code>sequences</code> 中的每一个序列都决定了一些元素的先后顺序，则对整个 <code>sequences</code> 进行拓扑排序，即得到所谓的 <strong>超序列</strong>。</p>
+<p>超序列的唯一，要求在拓扑排序的结果唯一，即在排序过程中，不能出现入度为 <code>0</code> 的候选节点的数量<code>&gt; 1</code>。</p>
+<p>最后判定唯一的 <strong>超序列</strong> 和 <code>nums</code> 是否完全一致即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sequenceReconstruction</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">sequences</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inDegree</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e">// 入度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)   <span style="color:#75715e">// 邻接链表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">seq</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">sequences</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">seq</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">seq</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]] = append(<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">seq</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]], <span style="color:#a6e22e">seq</span>[<span style="color:#a6e22e">i</span>])
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">inDegree</span>[<span style="color:#a6e22e">seq</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">zeroInDegreeNums</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">inDegree</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">zeroInDegreeNums</span> = append(<span style="color:#a6e22e">zeroInDegreeNums</span>, <span style="color:#a6e22e">num</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">zeroInDegreeNums</span>) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 拓扑排序结果不唯一
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">zeroInDegreeNums</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">zeroInDegreeNums</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">zeroInDegreeNums</span> = <span style="color:#a6e22e">zeroInDegreeNums</span>[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 所有后继节点对应入度去除，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">// 寻找入度为 0 的节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">n</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">inDegree</span>[<span style="color:#a6e22e">num</span>]<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">inDegree</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">zeroInDegreeNums</span> = append(<span style="color:#a6e22e">zeroInDegreeNums</span>, <span style="color:#a6e22e">num</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N+M), N = len(nums), M = \sum{len(sequences[i])}  $</li>
+<li>空间复杂度：$ O(N+M) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/tsort/">tsort</a>
+        
+    </section>
+
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

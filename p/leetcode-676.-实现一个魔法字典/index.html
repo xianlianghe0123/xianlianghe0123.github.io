@@ -5,7 +5,7 @@
 难度： 中等
 题目描述 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
 实现 MagicDictionary 类：
- MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。  示例：  输入：
+MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。 示例： 输入：
 [&amp;ldquo;MagicDictionary&amp;rdquo;, &amp;ldquo;buildDict&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]
 [[], [[&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]], [&amp;ldquo;hello&amp;rdquo;], [&amp;ldquo;hhllo&amp;rdquo;], [&amp;ldquo;hell&amp;rdquo;], [&amp;ldquo;leetcoded&amp;rdquo;]]
 输出：
@@ -13,7 +13,8 @@
 解释：
 MagicDictionary magicDictionary = new MagicDictionary();
 magicDictionary.buildDict([&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]);
-magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False'><title>Leetcode 676. 实现一个魔法字典</title>
+magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False
+magicDictionary.search(&amp;ldquo;hhllo&amp;rdquo;); // 将第二个 &amp;lsquo;h&amp;rsquo; 替换为 &amp;rsquo;e&amp;rsquo; 可以匹配 &amp;ldquo;hello&amp;rdquo; ，所以返回 True'><title>Leetcode 676. 实现一个魔法字典</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-676.-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/'>
 
@@ -22,7 +23,7 @@ magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False'><title>Lee
 难度： 中等
 题目描述 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
 实现 MagicDictionary 类：
- MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。  示例：  输入：
+MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。 示例： 输入：
 [&amp;ldquo;MagicDictionary&amp;rdquo;, &amp;ldquo;buildDict&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]
 [[], [[&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]], [&amp;ldquo;hello&amp;rdquo;], [&amp;ldquo;hhllo&amp;rdquo;], [&amp;ldquo;hell&amp;rdquo;], [&amp;ldquo;leetcoded&amp;rdquo;]]
 输出：
@@ -30,7 +31,8 @@ magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False'><title>Lee
 解释：
 MagicDictionary magicDictionary = new MagicDictionary();
 magicDictionary.buildDict([&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]);
-magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False'>
+magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False
+magicDictionary.search(&amp;ldquo;hhllo&amp;rdquo;); // 将第二个 &amp;lsquo;h&amp;rsquo; 替换为 &amp;rsquo;e&amp;rsquo; 可以匹配 &amp;ldquo;hello&amp;rdquo; ，所以返回 True'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-676.-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:tag' content='trie' /><meta property='article:published_time' content='2022-07-11T10:03:34&#43;08:00'/><meta property='article:modified_time' content='2022-07-11T10:03:34&#43;08:00'/>
@@ -39,7 +41,7 @@ magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False'>
 难度： 中等
 题目描述 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
 实现 MagicDictionary 类：
- MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。  示例：  输入：
+MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。 示例： 输入：
 [&amp;ldquo;MagicDictionary&amp;rdquo;, &amp;ldquo;buildDict&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]
 [[], [[&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]], [&amp;ldquo;hello&amp;rdquo;], [&amp;ldquo;hhllo&amp;rdquo;], [&amp;ldquo;hell&amp;rdquo;], [&amp;ldquo;leetcoded&amp;rdquo;]]
 输出：
@@ -47,7 +49,8 @@ magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False'>
 解释：
 MagicDictionary magicDictionary = new MagicDictionary();
 magicDictionary.buildDict([&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]);
-magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False">
+magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False
+magicDictionary.search(&amp;ldquo;hhllo&amp;rdquo;); // 将第二个 &amp;lsquo;h&amp;rsquo; 替换为 &amp;rsquo;e&amp;rsquo; 可以匹配 &amp;ldquo;hello&amp;rdquo; ，所以返回 True">
     </head>
     <body class="
     article-page 
@@ -249,7 +252,7 @@ magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False">
 MagicDictionary magicDictionary = new MagicDictionary();<br>
 magicDictionary.buildDict([&ldquo;hello&rdquo;, &ldquo;leetcode&rdquo;]);<br>
 magicDictionary.search(&ldquo;hello&rdquo;); // 返回 False<br>
-magicDictionary.search(&ldquo;hhllo&rdquo;); // 将第二个 &lsquo;h&rsquo; 替换为 &lsquo;e&rsquo; 可以匹配 &ldquo;hello&rdquo; ，所以返回 True<br>
+magicDictionary.search(&ldquo;hhllo&rdquo;); // 将第二个 &lsquo;h&rsquo; 替换为 &rsquo;e&rsquo; 可以匹配 &ldquo;hello&rdquo; ，所以返回 True<br>
 magicDictionary.search(&ldquo;hell&rdquo;); // 返回 False<br>
 magicDictionary.search(&ldquo;leetcoded&rdquo;); // 返回 False</p>
 </blockquote>
@@ -268,37 +271,37 @@ magicDictionary.search(&ldquo;leetcoded&rdquo;); // 返回 False</p>
 <h4 id="哈希">哈希</h4>
 <p>基于题设的数据量，可以遍历整个词典，进行对照查找。</p>
 <p>满足题设 <code>Search</code> ，要求两个字符串的长度相同，在 <code>buildDict</code> 通过哈希表按照长度分开存储，降低搜索空间。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MagicDictionary</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">dict</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>][]<span style="color:#66d9ef">string</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MagicDictionary</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MagicDictionary</span>{
-		<span style="color:#a6e22e">dict</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>][]<span style="color:#66d9ef">string</span>),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MagicDictionary</span>) <span style="color:#a6e22e">BuildDict</span>(<span style="color:#a6e22e">dictionary</span> []<span style="color:#66d9ef">string</span>) {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dictionary</span> {
-		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">dict</span>[len(<span style="color:#a6e22e">word</span>)] = append(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">dict</span>[len(<span style="color:#a6e22e">word</span>)], <span style="color:#a6e22e">word</span>)
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MagicDictionary</span>) <span style="color:#a6e22e">Search</span>(<span style="color:#a6e22e">searchWord</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">dict</span>[len(<span style="color:#a6e22e">searchWord</span>)] {
-		<span style="color:#a6e22e">diff</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">word</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">searchWord</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>] {
-				<span style="color:#a6e22e">diff</span><span style="color:#f92672">++</span>
-			}
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">diff</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MagicDictionary</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dict</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>][]<span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MagicDictionary</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MagicDictionary</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dict</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>][]<span style="color:#66d9ef">string</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MagicDictionary</span>) <span style="color:#a6e22e">BuildDict</span>(<span style="color:#a6e22e">dictionary</span> []<span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dictionary</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">dict</span>[len(<span style="color:#a6e22e">word</span>)] = append(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">dict</span>[len(<span style="color:#a6e22e">word</span>)], <span style="color:#a6e22e">word</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MagicDictionary</span>) <span style="color:#a6e22e">Search</span>(<span style="color:#a6e22e">searchWord</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">dict</span>[len(<span style="color:#a6e22e">searchWord</span>)] {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">diff</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">word</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">searchWord</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">diff</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">diff</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>
@@ -311,78 +314,78 @@ magicDictionary.search(&ldquo;leetcoded&rdquo;); // 返回 False</p>
 <h4 id="trie-树">Trie 树</h4>
 <p>使用 <code>dictionary</code> 构造 Trie 树。</p>
 <p>进行匹配查询时，最多允许一次不匹配的情况。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">node</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">end</span>      <span style="color:#66d9ef">bool</span>
-	<span style="color:#a6e22e">children</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MagicDictionary</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MagicDictionary</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MagicDictionary</span>{
-		<span style="color:#a6e22e">head</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">node</span>{
-			<span style="color:#a6e22e">end</span>:      <span style="color:#66d9ef">false</span>,
-			<span style="color:#a6e22e">children</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>),
-		},
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MagicDictionary</span>) <span style="color:#a6e22e">BuildDict</span>(<span style="color:#a6e22e">dictionary</span> []<span style="color:#66d9ef">string</span>) {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dictionary</span> {
-		<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">node</span>{
-					<span style="color:#a6e22e">end</span>:      <span style="color:#66d9ef">false</span>,
-					<span style="color:#a6e22e">children</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>),
-				}
-			}
-			<span style="color:#a6e22e">n</span> = <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]]
-		}
-		<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">end</span> = <span style="color:#66d9ef">true</span>
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MagicDictionary</span>) <span style="color:#a6e22e">Search</span>(<span style="color:#a6e22e">searchWord</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">diff</span> <span style="color:#66d9ef">bool</span>) <span style="color:#66d9ef">bool</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">diff</span> <span style="color:#66d9ef">bool</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#75715e">// 完成匹配
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">searchWord</span>) {
-			<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">end</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">diff</span>
-		}
-		<span style="color:#75715e">// 已经代换过字符，后面需要完全匹配
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">diff</span> {
-			<span style="color:#75715e">// 未匹配到，
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">searchWord</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#75715e">// 继续匹配
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">searchWord</span>[<span style="color:#a6e22e">i</span>]], <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">true</span>)
-		}
-		<span style="color:#75715e">// 未代换过字符
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">char</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span> {
-			<span style="color:#75715e">// 精确匹配
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">searchWord</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">char</span> {
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">char</span>], <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>) {
-					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-				}
-				<span style="color:#66d9ef">continue</span>
-			}
-			<span style="color:#75715e">// 代换
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">char</span>], <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">true</span>) {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-			}
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">false</span>)
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">node</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">end</span>      <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">children</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MagicDictionary</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MagicDictionary</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MagicDictionary</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">head</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">node</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">end</span>:      <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">children</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>),
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MagicDictionary</span>) <span style="color:#a6e22e">BuildDict</span>(<span style="color:#a6e22e">dictionary</span> []<span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dictionary</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">node</span>{
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">end</span>:      <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">children</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>),
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">n</span> = <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">end</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MagicDictionary</span>) <span style="color:#a6e22e">Search</span>(<span style="color:#a6e22e">searchWord</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">diff</span> <span style="color:#66d9ef">bool</span>) <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">diff</span> <span style="color:#66d9ef">bool</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 完成匹配
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">searchWord</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">end</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">diff</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 已经代换过字符，后面需要完全匹配
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">diff</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 未匹配到，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">searchWord</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 继续匹配
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">searchWord</span>[<span style="color:#a6e22e">i</span>]], <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 未代换过字符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">char</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 精确匹配
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">searchWord</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">char</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">char</span>], <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>) {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 代换
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">children</span>[<span style="color:#a6e22e">char</span>], <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

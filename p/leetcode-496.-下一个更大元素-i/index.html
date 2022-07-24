@@ -6,13 +6,13 @@
 题目描述 给你两个 没有重复元素 的数组 nums1 和 nums2 ，其中 nums1 是 nums2 的子集。
 请你找出 nums1 中每个元素在 nums2 中的下一个比其大的值。
 nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的右边的第一个比 x 大的元素。如果不存在，对应位置输出 -1 。
-示例 1：  输入: nums1 = [4,1,2], nums2 = [1,3,4,2].
+示例 1： 输入: nums1 = [4,1,2], nums2 = [1,3,4,2].
 输出: [-1,3,-1]
 解释:
 对于 num1 中的数字 4 ，你无法在第二个数组中找到下一个更大的数字，因此输出 -1 。
 对于 num1 中的数字 1 ，第二个数组中数字1右边的下一个较大数字是 3 。
 对于 num1 中的数字 2 ，第二个数组中没有下一个更大的数字，因此输出 -1 。
- 示例 2：  输入: nums1 = [2,4], nums2 = [1,2,3,4].'><title>Leetcode 496. 下一个更大元素 I</title>
+示例 2： 输入: nums1 = [2,4], nums2 = [1,2,3,4].'><title>Leetcode 496. 下一个更大元素 I</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-496.-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0-i/'>
 
@@ -22,13 +22,13 @@ nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位
 题目描述 给你两个 没有重复元素 的数组 nums1 和 nums2 ，其中 nums1 是 nums2 的子集。
 请你找出 nums1 中每个元素在 nums2 中的下一个比其大的值。
 nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的右边的第一个比 x 大的元素。如果不存在，对应位置输出 -1 。
-示例 1：  输入: nums1 = [4,1,2], nums2 = [1,3,4,2].
+示例 1： 输入: nums1 = [4,1,2], nums2 = [1,3,4,2].
 输出: [-1,3,-1]
 解释:
 对于 num1 中的数字 4 ，你无法在第二个数组中找到下一个更大的数字，因此输出 -1 。
 对于 num1 中的数字 1 ，第二个数组中数字1右边的下一个较大数字是 3 。
 对于 num1 中的数字 2 ，第二个数组中没有下一个更大的数字，因此输出 -1 。
- 示例 2：  输入: nums1 = [2,4], nums2 = [1,2,3,4].'>
+示例 2： 输入: nums1 = [2,4], nums2 = [1,2,3,4].'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-496.-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0-i/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-26T11:32:45&#43;08:00'/><meta property='article:modified_time' content='2021-10-26T11:32:45&#43;08:00'/>
@@ -38,13 +38,13 @@ nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位
 题目描述 给你两个 没有重复元素 的数组 nums1 和 nums2 ，其中 nums1 是 nums2 的子集。
 请你找出 nums1 中每个元素在 nums2 中的下一个比其大的值。
 nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的右边的第一个比 x 大的元素。如果不存在，对应位置输出 -1 。
-示例 1：  输入: nums1 = [4,1,2], nums2 = [1,3,4,2].
+示例 1： 输入: nums1 = [4,1,2], nums2 = [1,3,4,2].
 输出: [-1,3,-1]
 解释:
 对于 num1 中的数字 4 ，你无法在第二个数组中找到下一个更大的数字，因此输出 -1 。
 对于 num1 中的数字 1 ，第二个数组中数字1右边的下一个较大数字是 3 。
 对于 num1 中的数字 2 ，第二个数组中没有下一个更大的数字，因此输出 -1 。
- 示例 2：  输入: nums1 = [2,4], nums2 = [1,2,3,4].">
+示例 2： 输入: nums1 = [2,4], nums2 = [1,2,3,4].">
     </head>
     <body class="
     article-page 
@@ -259,14 +259,14 @@ nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>对于 <code>nums1</code> 中的每个数字，在 <code>nums2</code> 中进行寻找。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextGreaterElement</span>(<span style="color:#a6e22e">nums1</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">nums2</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums2</span>))
-    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num2</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums2</span> {
-		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">sta</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextGreaterElement</span>(<span style="color:#a6e22e">nums1</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">nums2</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums2</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num2</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums2</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">sta</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N*M), N = len(nums1), M = len(nums2) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -279,28 +279,28 @@ nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位
 <li>然后将当前元素加入到栈中。</li>
 </ol>
 <p>处理结束，不在哈希表中的元素即没有找到，之后遍历 <code>nums1</code> 依次查找哈希表即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextGreaterElement</span>(<span style="color:#a6e22e">nums1</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">nums2</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">hash</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums2</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num2</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums2</span> {
-		<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">stack</span>) &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">num2</span> {
-			<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]] = <span style="color:#a6e22e">num2</span>
-			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-		}
-		<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">num2</span>)
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums1</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num1</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums1</span> {
-		<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">num1</span>]
-		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextGreaterElement</span>(<span style="color:#a6e22e">nums1</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">nums2</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">hash</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums2</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num2</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums2</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">stack</span>) &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">num2</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]] = <span style="color:#a6e22e">num2</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">num2</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums1</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num1</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">num1</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N+M), N = len(nums1), M = len(nums2) $</li>
 <li>空间复杂度：$ O(M) $</li>

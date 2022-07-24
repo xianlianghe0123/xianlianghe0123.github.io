@@ -5,14 +5,14 @@
 难度： 困难
 题目描述 给你一个 不含重复 单词的字符串数组 words ，请你找出并返回 words 中的所有 连接词 。
 连接词 定义为：一个完全由给定数组中的至少两个较短单词组成的字符串。
-示例 1：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
+示例 1： 输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
 输出： [&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
 解释： &amp;ldquo;catsdogcats&amp;rdquo; 由 &amp;ldquo;cats&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cats&amp;rdquo; 组成;
 &amp;ldquo;dogcatsdog&amp;rdquo; 由 &amp;ldquo;dog&amp;rdquo;, &amp;ldquo;cats&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo; 组成;
 &amp;ldquo;ratcatdogcat&amp;rdquo; 由 &amp;ldquo;rat&amp;rdquo;, &amp;ldquo;cat&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cat&amp;rdquo; 组成。
- 示例 2：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
 输出： [&amp;ldquo;catdog&amp;rdquo;]
- 提示：  1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].'><title>Leetcode 472. 连接词</title>
+提示： 1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].'><title>Leetcode 472. 连接词</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-472.-%E8%BF%9E%E6%8E%A5%E8%AF%8D/'>
 
@@ -21,14 +21,14 @@
 难度： 困难
 题目描述 给你一个 不含重复 单词的字符串数组 words ，请你找出并返回 words 中的所有 连接词 。
 连接词 定义为：一个完全由给定数组中的至少两个较短单词组成的字符串。
-示例 1：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
+示例 1： 输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
 输出： [&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
 解释： &amp;ldquo;catsdogcats&amp;rdquo; 由 &amp;ldquo;cats&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cats&amp;rdquo; 组成;
 &amp;ldquo;dogcatsdog&amp;rdquo; 由 &amp;ldquo;dog&amp;rdquo;, &amp;ldquo;cats&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo; 组成;
 &amp;ldquo;ratcatdogcat&amp;rdquo; 由 &amp;ldquo;rat&amp;rdquo;, &amp;ldquo;cat&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cat&amp;rdquo; 组成。
- 示例 2：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
 输出： [&amp;ldquo;catdog&amp;rdquo;]
- 提示：  1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].'>
+提示： 1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-472.-%E8%BF%9E%E6%8E%A5%E8%AF%8D/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='sort' /><meta property='article:tag' content='trie' /><meta property='article:tag' content='dfs' /><meta property='article:published_time' content='2021-12-28T11:53:28&#43;08:00'/><meta property='article:modified_time' content='2021-12-28T11:53:28&#43;08:00'/>
@@ -37,14 +37,14 @@
 难度： 困难
 题目描述 给你一个 不含重复 单词的字符串数组 words ，请你找出并返回 words 中的所有 连接词 。
 连接词 定义为：一个完全由给定数组中的至少两个较短单词组成的字符串。
-示例 1：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
+示例 1： 输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
 输出： [&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
 解释： &amp;ldquo;catsdogcats&amp;rdquo; 由 &amp;ldquo;cats&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cats&amp;rdquo; 组成;
 &amp;ldquo;dogcatsdog&amp;rdquo; 由 &amp;ldquo;dog&amp;rdquo;, &amp;ldquo;cats&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo; 组成;
 &amp;ldquo;ratcatdogcat&amp;rdquo; 由 &amp;ldquo;rat&amp;rdquo;, &amp;ldquo;cat&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cat&amp;rdquo; 组成。
- 示例 2：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
 输出： [&amp;ldquo;catdog&amp;rdquo;]
- 提示：  1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].">
+提示： 1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].">
     </head>
     <body class="
     article-page 
@@ -256,63 +256,63 @@
 <p>满足条件的字符串由更短的串拼接而成，故按照字符串的长度排序，则能组成当前串的所有字串均在前面，在遍历过程中将其逐一添加到 Trie树 中，确保匹配时仅比其短的串在 Trie树 中。</p>
 <p>匹配时采用深度优先搜索策略，每当匹配到一个单词时，从下一个字符开始继续匹配另一个。当不能匹配时，回溯到上一个单词结尾的地方尝试匹配更长的单词。</p>
 <p>当能匹配到该单词结尾，因为不存在重复的单词，故说明是连接词，不必将其加入到 Trie树 中。否则，将该词加入到 Trie树 中。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">End</span>      <span style="color:#66d9ef">bool</span>
-	<span style="color:#a6e22e">Children</span> [<span style="color:#ae81ff">26</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findAllConcatenatedWordsInADict</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">words</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
-	})
-	<span style="color:#a6e22e">root</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
-		<span style="color:#a6e22e">End</span>:      <span style="color:#66d9ef">false</span>,
-		<span style="color:#a6e22e">Children</span>: [<span style="color:#ae81ff">26</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>{},
-	}
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">word</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">word</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">word</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#75715e">// 无法继续匹配
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>]
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#66d9ef">break</span>
-			}
-			<span style="color:#75715e">// 匹配到某个单词
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">End</span> {
-				<span style="color:#75715e">// 匹配到结尾，匹配成功
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">word</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
-					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-				}
-				<span style="color:#75715e">// 尝试匹配下一个
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:]) {
-					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-				}
-			}
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">words</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">word</span>) {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">word</span>)
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#75715e">// 添加到 Trie树
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
-					<span style="color:#a6e22e">End</span>:      <span style="color:#66d9ef">false</span>,
-					<span style="color:#a6e22e">Children</span>: [<span style="color:#ae81ff">26</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>{},
-				}
-			}
-			<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>]
-		}
-		<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">End</span> = <span style="color:#66d9ef">true</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">End</span>      <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Children</span> [<span style="color:#ae81ff">26</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findAllConcatenatedWordsInADict</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">words</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &lt; len(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>])
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">root</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">End</span>:      <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Children</span>: [<span style="color:#ae81ff">26</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>{},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">word</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">word</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">word</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 无法继续匹配
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 匹配到某个单词
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">End</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 匹配到结尾，匹配成功
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">word</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 尝试匹配下一个
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:]) {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">words</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">word</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">word</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 添加到 Trie树
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">word</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">End</span>:      <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">Children</span>: [<span style="color:#ae81ff">26</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>{},
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Children</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">End</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log{N}+\sum_{i=0}^{N-1}{{L_i}^2}), N = len(words), L_i = len(words[i]) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

@@ -6,13 +6,13 @@
 题目描述 给你一个大小为 m x n 的二进制矩阵 grid ，其中 0 表示一个海洋单元格、1 表示一个陆地单元格。
 一次 移动 是指从一个陆地单元格走到另一个相邻（上、下、左、右）的陆地单元格或跨过 grid 的边界。
 返回网格中 无法 在任意次数的移动中离开网格边界的陆地单元格的数量。
-示例 1：  输入： grid = [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]
+示例 1： 输入： grid = [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]
 输出： 3
 解释： 有三个 1 被 0 包围。一个 1 没有被包围，因为它在边界上。
- 示例 2： 输入： grid = [[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]]
+示例 2： 输入： grid = [[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]]
 输出： 0
 解释： 所有 1 都在边界上或可以到达边界。
-提示：  m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 500 grid[i][j] 的值为 0 或 1  解题思路 广度优先搜索 从每个边界处出发，使用广度优先搜索，将可达的所有陆地标记出来，则剩余陆地为不可达，也即无法到达边界。'><title>Leetcode 1020. 飞地的数量</title>
+提示： m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 500 grid[i][j] 的值为 0 或 1 解题思路 广度优先搜索 从每个边界处出发，使用广度优先搜索，将可达的所有陆地标记出来，则剩余陆地为不可达，也即无法到达边界。'><title>Leetcode 1020. 飞地的数量</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1020.-%E9%A3%9E%E5%9C%B0%E7%9A%84%E6%95%B0%E9%87%8F/'>
 
@@ -22,13 +22,13 @@
 题目描述 给你一个大小为 m x n 的二进制矩阵 grid ，其中 0 表示一个海洋单元格、1 表示一个陆地单元格。
 一次 移动 是指从一个陆地单元格走到另一个相邻（上、下、左、右）的陆地单元格或跨过 grid 的边界。
 返回网格中 无法 在任意次数的移动中离开网格边界的陆地单元格的数量。
-示例 1：  输入： grid = [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]
+示例 1： 输入： grid = [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]
 输出： 3
 解释： 有三个 1 被 0 包围。一个 1 没有被包围，因为它在边界上。
- 示例 2： 输入： grid = [[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]]
+示例 2： 输入： grid = [[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]]
 输出： 0
 解释： 所有 1 都在边界上或可以到达边界。
-提示：  m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 500 grid[i][j] 的值为 0 或 1  解题思路 广度优先搜索 从每个边界处出发，使用广度优先搜索，将可达的所有陆地标记出来，则剩余陆地为不可达，也即无法到达边界。'>
+提示： m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 500 grid[i][j] 的值为 0 或 1 解题思路 广度优先搜索 从每个边界处出发，使用广度优先搜索，将可达的所有陆地标记出来，则剩余陆地为不可达，也即无法到达边界。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1020.-%E9%A3%9E%E5%9C%B0%E7%9A%84%E6%95%B0%E9%87%8F/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='bfs' /><meta property='article:tag' content='dfs' /><meta property='article:published_time' content='2022-02-12T09:18:39&#43;08:00'/><meta property='article:modified_time' content='2022-02-12T09:18:39&#43;08:00'/>
@@ -38,13 +38,13 @@
 题目描述 给你一个大小为 m x n 的二进制矩阵 grid ，其中 0 表示一个海洋单元格、1 表示一个陆地单元格。
 一次 移动 是指从一个陆地单元格走到另一个相邻（上、下、左、右）的陆地单元格或跨过 grid 的边界。
 返回网格中 无法 在任意次数的移动中离开网格边界的陆地单元格的数量。
-示例 1：  输入： grid = [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]
+示例 1： 输入： grid = [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]
 输出： 3
 解释： 有三个 1 被 0 包围。一个 1 没有被包围，因为它在边界上。
- 示例 2： 输入： grid = [[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]]
+示例 2： 输入： grid = [[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]]
 输出： 0
 解释： 所有 1 都在边界上或可以到达边界。
-提示：  m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 500 grid[i][j] 的值为 0 或 1  解题思路 广度优先搜索 从每个边界处出发，使用广度优先搜索，将可达的所有陆地标记出来，则剩余陆地为不可达，也即无法到达边界。">
+提示： m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 500 grid[i][j] 的值为 0 或 1 解题思路 广度优先搜索 从每个边界处出发，使用广度优先搜索，将可达的所有陆地标记出来，则剩余陆地为不可达，也即无法到达边界。">
     </head>
     <body class="
     article-page 
@@ -253,104 +253,104 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="广度优先搜索">广度优先搜索</h4>
 <p>从每个边界处出发，使用广度优先搜索，将可达的所有陆地标记出来，则剩余陆地为不可达，也即无法到达边界。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numEnclaves</span>(<span style="color:#a6e22e">grid</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
-	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
-	<span style="color:#75715e">// 首尾两列入队
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">row</span> &lt; len(<span style="color:#a6e22e">grid</span>); <span style="color:#a6e22e">row</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>} {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-				<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>})
-				<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">2</span> <span style="color:#75715e">// 标记可达
-</span><span style="color:#75715e"></span>			}
-		}
-	}
-	<span style="color:#75715e">// 首尾两行入队
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">col</span> &lt; len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]); <span style="color:#a6e22e">col</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">grid</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>} {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-				<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>})
-				<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">2</span> <span style="color:#75715e">// 标记可达
-</span><span style="color:#75715e"></span>			}
-		}
-	}
-	<span style="color:#75715e">// 广度优先搜索
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
-		<span style="color:#a6e22e">pos</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>()).([]<span style="color:#66d9ef">int</span>)
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
-			<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pos</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">pos</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">1</span>]
-			<span style="color:#75715e">// 越界
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">grid</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]) {
-				<span style="color:#66d9ef">continue</span>
-			}
-			<span style="color:#75715e">// 不可达
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> {
-				<span style="color:#66d9ef">continue</span>
-			}
-			<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>})
-			<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">2</span> <span style="color:#75715e">// 标记可达
-</span><span style="color:#75715e"></span>		}
-	}
-	<span style="color:#75715e">// 剩余陆地不可到达边界，统计数量
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">grid</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-				<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numEnclaves</span>(<span style="color:#a6e22e">grid</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 首尾两列入队
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">row</span> &lt; len(<span style="color:#a6e22e">grid</span>); <span style="color:#a6e22e">row</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>} {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>})
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">2</span> <span style="color:#75715e">// 标记可达
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 首尾两行入队
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">col</span> &lt; len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]); <span style="color:#a6e22e">col</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">grid</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>} {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>})
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">2</span> <span style="color:#75715e">// 标记可达
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 广度优先搜索
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">pos</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>()).([]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pos</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">pos</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 越界
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">grid</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 不可达
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>})
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">2</span> <span style="color:#75715e">// 标记可达
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 剩余陆地不可到达边界，统计数量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">grid</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(m*n) $</li>
 <li>空间复杂度：$ O(m*n) $</li>
 </ul>
 <h4 id="深度优先搜索">深度优先搜索</h4>
 <p>沿用上述广度优先搜索的思路，采用深度优先搜索实现。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numEnclaves</span>(<span style="color:#a6e22e">grid</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#75715e">// 深度优先搜索
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#75715e">// 越界
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">grid</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]) {
-			<span style="color:#66d9ef">return</span>
-		}
-		<span style="color:#75715e">// 不可达
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> {
-			<span style="color:#66d9ef">return</span>
-		}
-		<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">2</span> <span style="color:#75715e">// 标记可达
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
-			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">row</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">col</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">1</span>])
-		}
-	}
-	<span style="color:#75715e">// 首尾两列开始搜索
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">row</span> &lt; len(<span style="color:#a6e22e">grid</span>); <span style="color:#a6e22e">row</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>} {
-			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>)
-		}
-	}
-	<span style="color:#75715e">// 首尾两行开始搜索
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">col</span> &lt; len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]); <span style="color:#a6e22e">col</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">grid</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>} {
-			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>)
-		}
-	}
-	<span style="color:#75715e">// 剩余陆地不可到达边界，统计数量
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">grid</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-				<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numEnclaves</span>(<span style="color:#a6e22e">grid</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 深度优先搜索
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 越界
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">grid</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 不可达
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] = <span style="color:#ae81ff">2</span> <span style="color:#75715e">// 标记可达
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">row</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">col</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 首尾两列开始搜索
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">row</span> &lt; len(<span style="color:#a6e22e">grid</span>); <span style="color:#a6e22e">row</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>} {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 首尾两行开始搜索
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">col</span> &lt; len(<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">0</span>]); <span style="color:#a6e22e">col</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">grid</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>} {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 剩余陆地不可到达边界，统计数量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">grid</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(m*n) $</li>
 <li>空间复杂度：$ O(m*n) $</li>

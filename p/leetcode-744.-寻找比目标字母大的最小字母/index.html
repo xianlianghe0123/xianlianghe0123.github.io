@@ -5,13 +5,13 @@
 难度： 简单
 题目描述 给你一个排序后的字符列表 letters ，列表中只包含小写英文字母。另给出一个目标字母 target，请你寻找在这一有序列表里比目标字母大的最小字母。
 在比较时，字母是依序循环出现的。举个例子：
- 如果目标字母 target = &#39;z&#39; 并且字符列表为 letters = [&#39;a&#39;, &#39;b&#39;]，则答案返回 &#39;a&#39;  示例 1：  输入： letters = [&amp;ldquo;c&amp;rdquo;, &amp;ldquo;f&amp;rdquo;, &amp;ldquo;j&amp;rdquo;]，target = &amp;ldquo;a&amp;rdquo;
+如果目标字母 target = &#39;z&#39; 并且字符列表为 letters = [&#39;a&#39;, &#39;b&#39;]，则答案返回 &#39;a&#39; 示例 1： 输入： letters = [&amp;ldquo;c&amp;rdquo;, &amp;ldquo;f&amp;rdquo;, &amp;ldquo;j&amp;rdquo;]，target = &amp;ldquo;a&amp;rdquo;
 输出： &amp;ldquo;c&amp;rdquo;
- 示例 2：  输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;c&amp;rdquo;
+示例 2： 输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;c&amp;rdquo;
 输出： &amp;ldquo;f&amp;rdquo;
- 示例 3：  输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;d&amp;rdquo;
+示例 3： 输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;d&amp;rdquo;
 输出： &amp;ldquo;f&amp;rdquo;
- 提示：  2 &amp;lt;= letters.length &amp;lt;= 104 letters[i] 是一个小写字母 letters 按非递减顺序排序 letters 最少包含两个不同的字母 target 是一个小写字母  解题思路 模拟 由于给定的字母是有序的，只需遍历 letters 列表，找出首个比 target 大的字母并返回。'><title>Leetcode 744. 寻找比目标字母大的最小字母</title>
+提示： 2 &amp;lt;= letters.length &amp;lt;= 104 letters[i] 是一个小写字母 letters 按非递减顺序排序 letters 最少包含两个不同的字母 target 是一个小写字母 解题思路 模拟 由于给定的字母是有序的，只需遍历 letters 列表，找出首个比 target 大的字母并返回。'><title>Leetcode 744. 寻找比目标字母大的最小字母</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-744.-%E5%AF%BB%E6%89%BE%E6%AF%94%E7%9B%AE%E6%A0%87%E5%AD%97%E6%AF%8D%E5%A4%A7%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AF%8D/'>
 
@@ -20,13 +20,13 @@
 难度： 简单
 题目描述 给你一个排序后的字符列表 letters ，列表中只包含小写英文字母。另给出一个目标字母 target，请你寻找在这一有序列表里比目标字母大的最小字母。
 在比较时，字母是依序循环出现的。举个例子：
- 如果目标字母 target = &#39;z&#39; 并且字符列表为 letters = [&#39;a&#39;, &#39;b&#39;]，则答案返回 &#39;a&#39;  示例 1：  输入： letters = [&amp;ldquo;c&amp;rdquo;, &amp;ldquo;f&amp;rdquo;, &amp;ldquo;j&amp;rdquo;]，target = &amp;ldquo;a&amp;rdquo;
+如果目标字母 target = &#39;z&#39; 并且字符列表为 letters = [&#39;a&#39;, &#39;b&#39;]，则答案返回 &#39;a&#39; 示例 1： 输入： letters = [&amp;ldquo;c&amp;rdquo;, &amp;ldquo;f&amp;rdquo;, &amp;ldquo;j&amp;rdquo;]，target = &amp;ldquo;a&amp;rdquo;
 输出： &amp;ldquo;c&amp;rdquo;
- 示例 2：  输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;c&amp;rdquo;
+示例 2： 输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;c&amp;rdquo;
 输出： &amp;ldquo;f&amp;rdquo;
- 示例 3：  输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;d&amp;rdquo;
+示例 3： 输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;d&amp;rdquo;
 输出： &amp;ldquo;f&amp;rdquo;
- 提示：  2 &amp;lt;= letters.length &amp;lt;= 104 letters[i] 是一个小写字母 letters 按非递减顺序排序 letters 最少包含两个不同的字母 target 是一个小写字母  解题思路 模拟 由于给定的字母是有序的，只需遍历 letters 列表，找出首个比 target 大的字母并返回。'>
+提示： 2 &amp;lt;= letters.length &amp;lt;= 104 letters[i] 是一个小写字母 letters 按非递减顺序排序 letters 最少包含两个不同的字母 target 是一个小写字母 解题思路 模拟 由于给定的字母是有序的，只需遍历 letters 列表，找出首个比 target 大的字母并返回。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-744.-%E5%AF%BB%E6%89%BE%E6%AF%94%E7%9B%AE%E6%A0%87%E5%AD%97%E6%AF%8D%E5%A4%A7%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AF%8D/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='binary search' /><meta property='article:published_time' content='2022-04-03T10:30:01&#43;08:00'/><meta property='article:modified_time' content='2022-04-03T10:30:01&#43;08:00'/>
@@ -35,13 +35,13 @@
 难度： 简单
 题目描述 给你一个排序后的字符列表 letters ，列表中只包含小写英文字母。另给出一个目标字母 target，请你寻找在这一有序列表里比目标字母大的最小字母。
 在比较时，字母是依序循环出现的。举个例子：
- 如果目标字母 target = &#39;z&#39; 并且字符列表为 letters = [&#39;a&#39;, &#39;b&#39;]，则答案返回 &#39;a&#39;  示例 1：  输入： letters = [&amp;ldquo;c&amp;rdquo;, &amp;ldquo;f&amp;rdquo;, &amp;ldquo;j&amp;rdquo;]，target = &amp;ldquo;a&amp;rdquo;
+如果目标字母 target = &#39;z&#39; 并且字符列表为 letters = [&#39;a&#39;, &#39;b&#39;]，则答案返回 &#39;a&#39; 示例 1： 输入： letters = [&amp;ldquo;c&amp;rdquo;, &amp;ldquo;f&amp;rdquo;, &amp;ldquo;j&amp;rdquo;]，target = &amp;ldquo;a&amp;rdquo;
 输出： &amp;ldquo;c&amp;rdquo;
- 示例 2：  输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;c&amp;rdquo;
+示例 2： 输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;c&amp;rdquo;
 输出： &amp;ldquo;f&amp;rdquo;
- 示例 3：  输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;d&amp;rdquo;
+示例 3： 输入： letters = [&amp;ldquo;c&amp;rdquo;,&amp;ldquo;f&amp;rdquo;,&amp;ldquo;j&amp;rdquo;], target = &amp;ldquo;d&amp;rdquo;
 输出： &amp;ldquo;f&amp;rdquo;
- 提示：  2 &amp;lt;= letters.length &amp;lt;= 104 letters[i] 是一个小写字母 letters 按非递减顺序排序 letters 最少包含两个不同的字母 target 是一个小写字母  解题思路 模拟 由于给定的字母是有序的，只需遍历 letters 列表，找出首个比 target 大的字母并返回。">
+提示： 2 &amp;lt;= letters.length &amp;lt;= 104 letters[i] 是一个小写字母 letters 按非递减顺序排序 letters 最少包含两个不同的字母 target 是一个小写字母 解题思路 模拟 由于给定的字母是有序的，只需遍历 letters 列表，找出首个比 target 大的字母并返回。">
     </head>
     <body class="
     article-page 
@@ -257,37 +257,37 @@
 <h4 id="模拟">模拟</h4>
 <p>由于给定的字母是有序的，只需遍历 <code>letters</code> 列表，找出首个比 <code>target</code> 大的字母并返回。</p>
 <p>若不能找到，则说明需要进行一次循环，返回首个字母。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextGreatestLetter</span>(<span style="color:#a6e22e">letters</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">byte</span> {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">letter</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">letters</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">letter</span> &gt; <span style="color:#a6e22e">target</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">letter</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">letters</span>[<span style="color:#ae81ff">0</span>]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextGreatestLetter</span>(<span style="color:#a6e22e">letters</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">byte</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">letter</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">letters</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">letter</span> &gt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">letter</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">letters</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(letters) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="二分查找">二分查找</h4>
 <p>同上述思路，使用二分查找快速定位。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextGreatestLetter</span>(<span style="color:#a6e22e">letters</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">byte</span> {
-	<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">letters</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span> { <span style="color:#75715e">// 直到 l == r 为止
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">letters</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">target</span> {
-			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">mid</span>
-		}
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">letters</span>[<span style="color:#a6e22e">l</span>] &gt; <span style="color:#a6e22e">target</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">letters</span>[<span style="color:#a6e22e">l</span>]
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">letters</span>[<span style="color:#ae81ff">0</span>]
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextGreatestLetter</span>(<span style="color:#a6e22e">letters</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">byte</span>) <span style="color:#66d9ef">byte</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">letters</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span> { <span style="color:#75715e">// 直到 l == r 为止
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">letters</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">mid</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">letters</span>[<span style="color:#a6e22e">l</span>] &gt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">letters</span>[<span style="color:#a6e22e">l</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">letters</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(\log{N}), N = len(letters) $</li>
 <li>空间复杂度：$ O(1) $</li>

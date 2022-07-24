@@ -5,7 +5,7 @@
 难度： 中等
 题目描述 给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
 例如： 给定二叉树 [3,9,20,null,null,15,7],
- 3 / \ 9 20 / \ 15 7 返回锯齿形层序遍历如下：
+3 / \ 9 20 / \ 15 7 返回锯齿形层序遍历如下：
 [ [3], [20,9], [15,7] ] 解题思路 层序遍历 使用一个双端队列记录遍历到的结点，初始时根结点入队。
 奇偶分离，偶数层从头至尾遍历完当前整层的所有元素，子结点先左后右从队尾入队；奇数层从尾至头遍历整层所有元素，子结点先右后左从队头入队。
 每次遍历到的结点值加入到结果队列中，直至队列为空为止。
@@ -18,7 +18,7 @@ func zigzagLevelOrder(root *TreeNode) [][]int { if root == nil { return make([][
 难度： 中等
 题目描述 给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
 例如： 给定二叉树 [3,9,20,null,null,15,7],
- 3 / \ 9 20 / \ 15 7 返回锯齿形层序遍历如下：
+3 / \ 9 20 / \ 15 7 返回锯齿形层序遍历如下：
 [ [3], [20,9], [15,7] ] 解题思路 层序遍历 使用一个双端队列记录遍历到的结点，初始时根结点入队。
 奇偶分离，偶数层从头至尾遍历完当前整层的所有元素，子结点先左后右从队尾入队；奇数层从尾至头遍历整层所有元素，子结点先右后左从队头入队。
 每次遍历到的结点值加入到结果队列中，直至队列为空为止。
@@ -31,7 +31,7 @@ func zigzagLevelOrder(root *TreeNode) [][]int { if root == nil { return make([][
 难度： 中等
 题目描述 给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
 例如： 给定二叉树 [3,9,20,null,null,15,7],
- 3 / \ 9 20 / \ 15 7 返回锯齿形层序遍历如下：
+3 / \ 9 20 / \ 15 7 返回锯齿形层序遍历如下：
 [ [3], [20,9], [15,7] ] 解题思路 层序遍历 使用一个双端队列记录遍历到的结点，初始时根结点入队。
 奇偶分离，偶数层从头至尾遍历完当前整层的所有元素，子结点先左后右从队尾入队；奇数层从尾至头遍历整层所有元素，子结点先右后左从队头入队。
 每次遍历到的结点值加入到结果队列中，直至队列为空为止。
@@ -238,45 +238,45 @@ func zigzagLevelOrder(root *TreeNode) [][]int { if root == nil { return make([][
 <p>使用一个双端队列记录遍历到的结点，初始时根结点入队。</p>
 <p>奇偶分离，偶数层从头至尾遍历完当前整层的所有元素，子结点先左后右从队尾入队；奇数层从尾至头遍历整层所有元素，子结点先右后左从队头入队。</p>
 <p>每次遍历到的结点值加入到结果队列中，直至队列为空为止。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">zigzagLevelOrder</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) [][]<span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#66d9ef">return</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>)
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">deque</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
-	<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">root</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
-		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>())
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>(); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-			<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Front</span>()).(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
-			<span style="color:#a6e22e">t</span> = append(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
-			}
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
-			}
-		}
-		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">break</span>
-		}
-		<span style="color:#a6e22e">t</span> = make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>())
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>(); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-			<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Back</span>()).(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
-			<span style="color:#a6e22e">t</span> = append(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushFront</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
-			}
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-				<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushFront</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
-			}
-		}
-		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">zigzagLevelOrder</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) [][]<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">deque</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>())
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>(); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Front</span>()).(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span> = append(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span> = make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>())
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Len</span>(); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">Back</span>()).(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span> = append(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushFront</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">deque</span>.<span style="color:#a6e22e">PushFront</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(N) $</li>

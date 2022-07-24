@@ -5,7 +5,7 @@
 难度： 中等
 题目描述 你和一群强盗准备打劫银行。给你一个下标从 0 开始的整数数组 security ，其中 security[i] 是第 i 天执勤警卫的数量。日子从 0 开始编号。同时给你一个整数 time 。
 如果第 i 天满足以下所有条件，我们称它为一个适合打劫银行的日子：
- 第 i 天前和后都分别至少有 time 天。 第 i 天前连续 time 天警卫数目都是非递增的。 第 i 天后连续 time 天警卫数目都是非递减的。  更正式的，第 i 天是一个合适打劫银行的日子当且仅当：security[i - time] &amp;gt;= security[i - time &#43; 1] &amp;gt;= ... &amp;gt;= security[i] &amp;lt;= ... &amp;lt;= security[i &#43; time - 1] &amp;lt;= security[i &#43; time].
+第 i 天前和后都分别至少有 time 天。 第 i 天前连续 time 天警卫数目都是非递增的。 第 i 天后连续 time 天警卫数目都是非递减的。 更正式的，第 i 天是一个合适打劫银行的日子当且仅当：security[i - time] &amp;gt;= security[i - time &#43; 1] &amp;gt;= ... &amp;gt;= security[i] &amp;lt;= ... &amp;lt;= security[i &#43; time - 1] &amp;lt;= security[i &#43; time].
 请你返回一个数组，包含 所有 适合打劫银行的日子（下标从 0 开始）。返回的日子可以 任意 顺序排列。'><title>Leetcode 2100. 适合打劫银行的日子</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-2100.-%E9%80%82%E5%90%88%E6%89%93%E5%8A%AB%E9%93%B6%E8%A1%8C%E7%9A%84%E6%97%A5%E5%AD%90/'>
@@ -15,7 +15,7 @@
 难度： 中等
 题目描述 你和一群强盗准备打劫银行。给你一个下标从 0 开始的整数数组 security ，其中 security[i] 是第 i 天执勤警卫的数量。日子从 0 开始编号。同时给你一个整数 time 。
 如果第 i 天满足以下所有条件，我们称它为一个适合打劫银行的日子：
- 第 i 天前和后都分别至少有 time 天。 第 i 天前连续 time 天警卫数目都是非递增的。 第 i 天后连续 time 天警卫数目都是非递减的。  更正式的，第 i 天是一个合适打劫银行的日子当且仅当：security[i - time] &amp;gt;= security[i - time &#43; 1] &amp;gt;= ... &amp;gt;= security[i] &amp;lt;= ... &amp;lt;= security[i &#43; time - 1] &amp;lt;= security[i &#43; time].
+第 i 天前和后都分别至少有 time 天。 第 i 天前连续 time 天警卫数目都是非递增的。 第 i 天后连续 time 天警卫数目都是非递减的。 更正式的，第 i 天是一个合适打劫银行的日子当且仅当：security[i - time] &amp;gt;= security[i - time &#43; 1] &amp;gt;= ... &amp;gt;= security[i] &amp;lt;= ... &amp;lt;= security[i &#43; time - 1] &amp;lt;= security[i &#43; time].
 请你返回一个数组，包含 所有 适合打劫银行的日子（下标从 0 开始）。返回的日子可以 任意 顺序排列。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-2100.-%E9%80%82%E5%90%88%E6%89%93%E5%8A%AB%E9%93%B6%E8%A1%8C%E7%9A%84%E6%97%A5%E5%AD%90/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -25,7 +25,7 @@
 难度： 中等
 题目描述 你和一群强盗准备打劫银行。给你一个下标从 0 开始的整数数组 security ，其中 security[i] 是第 i 天执勤警卫的数量。日子从 0 开始编号。同时给你一个整数 time 。
 如果第 i 天满足以下所有条件，我们称它为一个适合打劫银行的日子：
- 第 i 天前和后都分别至少有 time 天。 第 i 天前连续 time 天警卫数目都是非递增的。 第 i 天后连续 time 天警卫数目都是非递减的。  更正式的，第 i 天是一个合适打劫银行的日子当且仅当：security[i - time] &amp;gt;= security[i - time &#43; 1] &amp;gt;= ... &amp;gt;= security[i] &amp;lt;= ... &amp;lt;= security[i &#43; time - 1] &amp;lt;= security[i &#43; time].
+第 i 天前和后都分别至少有 time 天。 第 i 天前连续 time 天警卫数目都是非递增的。 第 i 天后连续 time 天警卫数目都是非递减的。 更正式的，第 i 天是一个合适打劫银行的日子当且仅当：security[i - time] &amp;gt;= security[i - time &#43; 1] &amp;gt;= ... &amp;gt;= security[i] &amp;lt;= ... &amp;lt;= security[i &#43; time - 1] &amp;lt;= security[i &#43; time].
 请你返回一个数组，包含 所有 适合打劫银行的日子（下标从 0 开始）。返回的日子可以 任意 顺序排列。">
     </head>
     <body class="
@@ -265,26 +265,26 @@
 <li><code>ascDays[i]</code> 之后有多少天警卫数量不减少。</li>
 </ul>
 <p>对于每 <code>i</code> 天，判定其 <code>descDays[i] ≥ time</code> 且 <code>ascDays[i] ≥ time</code>，该天是可以打劫的。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">goodDaysToRobBank</span>(<span style="color:#a6e22e">security</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">time</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">descDays</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">security</span>))
-	<span style="color:#a6e22e">ascDays</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">security</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">security</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
-			<span style="color:#a6e22e">descDays</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">descDays</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">security</span>[len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">security</span>[len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] {
-			<span style="color:#a6e22e">ascDays</span>[len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">ascDays</span>[len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-		}
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">security</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">security</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">time</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">descDays</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ascDays</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">i</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">goodDaysToRobBank</span>(<span style="color:#a6e22e">security</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">time</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">descDays</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">security</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ascDays</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">security</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">security</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">descDays</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">descDays</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">security</span>[len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">security</span>[len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ascDays</span>[len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">ascDays</span>[len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">security</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">security</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">time</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">descDays</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ascDays</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(security) $</li>
 <li>空间复杂度：$ O(N) $</li>
@@ -297,27 +297,27 @@
 <li>否则，从当天出发寻找右边界，由于存在连续相等的区间段，可能在之前遍历过程中已经确定，仅当 <code>i &gt; r</code> 时向后便利直到发生递减为止。</li>
 </ul>
 <p>确定左右边界后，判定是否满足要求即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">goodDaysToRobBank</span>(<span style="color:#a6e22e">security</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">time</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">security</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#a6e22e">time</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#75715e">// 确定左边界
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
-			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">i</span>
-		}
-		<span style="color:#75715e">// 确定右边界
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span> &lt; <span style="color:#a6e22e">i</span> {
-			
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">r</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> &lt; len(<span style="color:#a6e22e">security</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">r</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">r</span>]; <span style="color:#a6e22e">r</span><span style="color:#f92672">++</span> {
-		}
-		}
-		<span style="color:#75715e">// 是否满足
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#a6e22e">l</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">i</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">goodDaysToRobBank</span>(<span style="color:#a6e22e">security</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">time</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">security</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">security</span>)<span style="color:#f92672">-</span><span style="color:#a6e22e">time</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 确定左边界
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 确定右边界
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span> &lt; <span style="color:#a6e22e">i</span> {
+</span></span><span style="display:flex;"><span>			
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">r</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> &lt; len(<span style="color:#a6e22e">security</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">r</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">security</span>[<span style="color:#a6e22e">r</span>]; <span style="color:#a6e22e">r</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 是否满足
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#a6e22e">l</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(security) $</li>
 <li>空间复杂度：$ O(1) $</li>

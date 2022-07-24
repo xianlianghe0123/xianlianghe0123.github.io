@@ -16,11 +16,11 @@
       <description>链接： https://leetcode-cn.com/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/
 难度： 简单
 题目描述 在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。
-示例 1：  输入： s = &amp;ldquo;abaccdeff&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;abaccdeff&amp;rdquo;
 输出： &amp;lsquo;b&amp;rsquo;
- 示例 2：  输入： s = &amp;quot;&amp;quot;
-输出： &#39; &#39;
- 限制：  0 &amp;lt;= s 的长度 &amp;lt;= 50000  解题思路 哈希 + 两次遍历 第一次遍历，使用哈希表记录每个字符是否重复出现；第二次遍历，返回找到的第一个不重复的字符，找不到返回 &#39; &#39;。
+示例 2： 输入： s = &amp;quot;&amp;quot;
+输出： &amp;rsquo; &#39;
+限制： 0 &amp;lt;= s 的长度 &amp;lt;= 50000 解题思路 哈希 + 两次遍历 第一次遍历，使用哈希表记录每个字符是否重复出现；第二次遍历，返回找到的第一个不重复的字符，找不到返回 &#39; &#39;。
 func firstUniqChar(s string) byte { repeat := make(map[byte]bool) for i := range s { _, ok := repeat[s[i]] if !ok { repeat[s[i]] = false } else { repeat[s[i]] = true } } for i := range s { if !</description>
     </item>
     

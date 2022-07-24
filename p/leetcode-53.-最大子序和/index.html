@@ -4,18 +4,18 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/maximum-subarray/
 难度： 简单
 题目描述 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
-示例 1：  输入： nums = [-2,1,-3,4,-1,2,1,-5,4]
+示例 1： 输入： nums = [-2,1,-3,4,-1,2,1,-5,4]
 输出： 6
 解释： 连续子数组 [4,-1,2,1] 的和最大，为 6 。
- 示例 2：  输入： nums = [1]
+示例 2： 输入： nums = [1]
 输出： 1
- 示例 3：  输入： nums = [0]
+示例 3： 输入： nums = [0]
 输出： 0
- 示例 4：  输入： nums = [-1]
+示例 4： 输入： nums = [-1]
 输出： -1
- 示例 5：  输入： nums = [-100000]
+示例 5： 输入： nums = [-100000]
 输出： -100000
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 -104 &amp;lt;= nums[i] &amp;lt;= 104  进阶： 如果你已经实现复杂度为 $O(n)$ 的解法，尝试使用更为精妙的 分治法 求解。'><title>Leetcode 53. 最大子序和</title>
+提示： 1 &amp;lt;= nums.length &amp;lt;= 105 -104 &amp;lt;= nums[i] &amp;lt;= 104 进阶： 如果你已经实现复杂度为 $O(n)$ 的解法，尝试使用更为精妙的 分治法 求解。'><title>Leetcode 53. 最大子序和</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-53.-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/'>
 
@@ -23,18 +23,18 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/maximum-subarray/
 难度： 简单
 题目描述 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
-示例 1：  输入： nums = [-2,1,-3,4,-1,2,1,-5,4]
+示例 1： 输入： nums = [-2,1,-3,4,-1,2,1,-5,4]
 输出： 6
 解释： 连续子数组 [4,-1,2,1] 的和最大，为 6 。
- 示例 2：  输入： nums = [1]
+示例 2： 输入： nums = [1]
 输出： 1
- 示例 3：  输入： nums = [0]
+示例 3： 输入： nums = [0]
 输出： 0
- 示例 4：  输入： nums = [-1]
+示例 4： 输入： nums = [-1]
 输出： -1
- 示例 5：  输入： nums = [-100000]
+示例 5： 输入： nums = [-100000]
 输出： -100000
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 -104 &amp;lt;= nums[i] &amp;lt;= 104  进阶： 如果你已经实现复杂度为 $O(n)$ 的解法，尝试使用更为精妙的 分治法 求解。'>
+提示： 1 &amp;lt;= nums.length &amp;lt;= 105 -104 &amp;lt;= nums[i] &amp;lt;= 104 进阶： 如果你已经实现复杂度为 $O(n)$ 的解法，尝试使用更为精妙的 分治法 求解。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-53.-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dp' /><meta property='article:tag' content='divide and conquer' /><meta property='article:published_time' content='2021-10-14T13:28:41&#43;08:00'/><meta property='article:modified_time' content='2021-10-14T13:28:41&#43;08:00'/>
@@ -42,18 +42,18 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/maximum-subarray/
 难度： 简单
 题目描述 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
-示例 1：  输入： nums = [-2,1,-3,4,-1,2,1,-5,4]
+示例 1： 输入： nums = [-2,1,-3,4,-1,2,1,-5,4]
 输出： 6
 解释： 连续子数组 [4,-1,2,1] 的和最大，为 6 。
- 示例 2：  输入： nums = [1]
+示例 2： 输入： nums = [1]
 输出： 1
- 示例 3：  输入： nums = [0]
+示例 3： 输入： nums = [0]
 输出： 0
- 示例 4：  输入： nums = [-1]
+示例 4： 输入： nums = [-1]
 输出： -1
- 示例 5：  输入： nums = [-100000]
+示例 5： 输入： nums = [-100000]
 输出： -100000
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 105 -104 &amp;lt;= nums[i] &amp;lt;= 104  进阶： 如果你已经实现复杂度为 $O(n)$ 的解法，尝试使用更为精妙的 分治法 求解。">
+提示： 1 &amp;lt;= nums.length &amp;lt;= 105 -104 &amp;lt;= nums[i] &amp;lt;= 104 进阶： 如果你已经实现复杂度为 $O(n)$ 的解法，尝试使用更为精妙的 分治法 求解。">
     </head>
     <body class="
     article-page 
@@ -279,22 +279,22 @@
 </ul>
 <p>在遍历的过程中找出最大值即可。</p>
 <p>由于状态转移时，其仅依赖上一个值，使用滚动变量降低空间复杂度。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxSubArray</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>]
-	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dp</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">dp</span><span style="color:#f92672">+</span><span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] {
-			<span style="color:#a6e22e">dp</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">dp</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">dp</span> {
-			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">dp</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxSubArray</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dp</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">dp</span><span style="color:#f92672">+</span><span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dp</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dp</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">dp</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">dp</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -308,33 +308,33 @@
 <li><code>rMax = max(左区间lMax, 左区间rMax + 右区sum)</code></li>
 <li><code>sum = 左区间sum + 右区间sum</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxSubArray</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">getMax</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">nums</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>]
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] {
-				<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
-			}
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
-	}
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">divideAndConquer</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">max</span>, <span style="color:#a6e22e">lMax</span>, <span style="color:#a6e22e">rMax</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">divideAndConquer</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">max</span>, <span style="color:#a6e22e">lMax</span>, <span style="color:#a6e22e">rMax</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>]
-		}
-		<span style="color:#a6e22e">leftMax</span>, <span style="color:#a6e22e">leftLMax</span>, <span style="color:#a6e22e">leftRMax</span>, <span style="color:#a6e22e">leftSum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">divideAndConquer</span>(<span style="color:#a6e22e">nums</span>[:len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>])
-		<span style="color:#a6e22e">rightMax</span>, <span style="color:#a6e22e">rightLMax</span>, <span style="color:#a6e22e">rightRMax</span>, <span style="color:#a6e22e">rightSum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">divideAndConquer</span>(<span style="color:#a6e22e">nums</span>[len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>:])
-		<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">getMax</span>(<span style="color:#a6e22e">leftMax</span>, <span style="color:#a6e22e">rightMax</span>, <span style="color:#a6e22e">leftRMax</span><span style="color:#f92672">+</span><span style="color:#a6e22e">rightLMax</span>)
-		<span style="color:#a6e22e">lMax</span> = <span style="color:#a6e22e">getMax</span>(<span style="color:#a6e22e">leftLMax</span>, <span style="color:#a6e22e">leftSum</span><span style="color:#f92672">+</span><span style="color:#a6e22e">rightLMax</span>)
-		<span style="color:#a6e22e">rMax</span> = <span style="color:#a6e22e">getMax</span>(<span style="color:#a6e22e">rightRMax</span>, <span style="color:#a6e22e">rightSum</span><span style="color:#f92672">+</span><span style="color:#a6e22e">leftRMax</span>)
-		<span style="color:#a6e22e">sum</span> = <span style="color:#a6e22e">leftSum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">rightSum</span>
-		<span style="color:#66d9ef">return</span>
-	}
-	<span style="color:#a6e22e">max</span>, <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">divideAndConquer</span>(<span style="color:#a6e22e">nums</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxSubArray</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">getMax</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">nums</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">divideAndConquer</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">max</span>, <span style="color:#a6e22e">lMax</span>, <span style="color:#a6e22e">rMax</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">divideAndConquer</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">max</span>, <span style="color:#a6e22e">lMax</span>, <span style="color:#a6e22e">rMax</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">leftMax</span>, <span style="color:#a6e22e">leftLMax</span>, <span style="color:#a6e22e">leftRMax</span>, <span style="color:#a6e22e">leftSum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">divideAndConquer</span>(<span style="color:#a6e22e">nums</span>[:len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">rightMax</span>, <span style="color:#a6e22e">rightLMax</span>, <span style="color:#a6e22e">rightRMax</span>, <span style="color:#a6e22e">rightSum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">divideAndConquer</span>(<span style="color:#a6e22e">nums</span>[len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>:])
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">getMax</span>(<span style="color:#a6e22e">leftMax</span>, <span style="color:#a6e22e">rightMax</span>, <span style="color:#a6e22e">leftRMax</span><span style="color:#f92672">+</span><span style="color:#a6e22e">rightLMax</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">lMax</span> = <span style="color:#a6e22e">getMax</span>(<span style="color:#a6e22e">leftLMax</span>, <span style="color:#a6e22e">leftSum</span><span style="color:#f92672">+</span><span style="color:#a6e22e">rightLMax</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">rMax</span> = <span style="color:#a6e22e">getMax</span>(<span style="color:#a6e22e">rightRMax</span>, <span style="color:#a6e22e">rightSum</span><span style="color:#f92672">+</span><span style="color:#a6e22e">leftRMax</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> = <span style="color:#a6e22e">leftSum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">rightSum</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span>, <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">divideAndConquer</span>(<span style="color:#a6e22e">nums</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

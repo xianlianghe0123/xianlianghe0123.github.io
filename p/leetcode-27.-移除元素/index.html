@@ -9,7 +9,7 @@
 说明： 为什么返回数值是整数，但输出的答案是数组呢?
 请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
 你可以想象内部操作如下:
-// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1：  输入： nums = [3,2,2,3], val = 3
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1： 输入： nums = [3,2,2,3], val = 3
 输出： 2, nums = [2,2]
 解释： 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。'><title>Leetcode 27. 移除元素</title>
 
@@ -24,7 +24,7 @@
 说明： 为什么返回数值是整数，但输出的答案是数组呢?
 请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
 你可以想象内部操作如下:
-// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1：  输入： nums = [3,2,2,3], val = 3
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1： 输入： nums = [3,2,2,3], val = 3
 输出： 2, nums = [2,2]
 解释： 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-27.-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/'>
@@ -39,7 +39,7 @@
 说明： 为什么返回数值是整数，但输出的答案是数组呢?
 请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
 你可以想象内部操作如下:
-// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1：  输入： nums = [3,2,2,3], val = 3
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝 int len = removeDuplicates(nums); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i &amp;lt; len; i&#43;&#43;) { print(nums[i]); } 示例1： 输入： nums = [3,2,2,3], val = 3
 输出： 2, nums = [2,2]
 解释： 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。">
     </head>
@@ -232,15 +232,15 @@
 <p>为什么返回数值是整数，但输出的答案是数组呢?<br>
 请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。<br>
 你可以想象内部操作如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> removeDuplicates(nums);
-
-<span style="color:#75715e">// 在函数里修改输入数组对于调用者是可见的。
-</span><span style="color:#75715e">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">++</span>) {
-	print(nums[i]);
-}
-</code></pre></div><h5 id="示例1">示例1：</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> removeDuplicates(nums);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 在函数里修改输入数组对于调用者是可见的。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	print(nums[i]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="示例1">示例1：</h5>
 <blockquote>
 <p><strong>输入：</strong> nums = [3,2,2,3], val = 3<br>
 <strong>输出：</strong> 2, nums = [2,2]<br>
@@ -267,17 +267,17 @@
 <li>当 <code>nums[j] != val</code> 时，表示该数毋需删除，将其加入到结果数组，遍历下一个元素。</li>
 </ul>
 <p>遍历结束，返回数组长度 <code>i</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">removeElement</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">val</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">val</span> {
-			<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
-			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">removeElement</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">val</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">val</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(N)</li>
 <li>空间复杂度：O(1)</li>

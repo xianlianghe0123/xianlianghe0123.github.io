@@ -5,12 +5,13 @@
 难度： 简单
 题目描述 给定一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，如果这些点构成一个 回旋镖 则返回 true 。
 回旋镖 定义为一组三个点，这些点 各不相同 且 不在一条直线上 。
-示例 1：  输入： points = [[1,1],[2,3],[3,2]]
+示例 1： 输入： points = [[1,1],[2,3],[3,2]]
 输出： true
- 示例 2：  输入： points = [[1,1],[2,2],[3,3]]
+示例 2： 输入： points = [[1,1],[2,2],[3,3]]
 输出： false
- 提示：  points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100  解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
-$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$'><title>Leetcode 1037. 有效的回旋镖</title>
+提示： points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100 解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
+$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$
+注意： 需要处理斜率为 ∞ 的情况，可以将上式进行交叉变换：$ (y_1-y_0)(x_2-x_0) = (y_2-y_0)(x_1-x_0) $'><title>Leetcode 1037. 有效的回旋镖</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1037.-%E6%9C%89%E6%95%88%E7%9A%84%E5%9B%9E%E6%97%8B%E9%95%96/'>
 
@@ -19,12 +20,13 @@ $$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$'><title>Leetcode 1037. �
 难度： 简单
 题目描述 给定一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，如果这些点构成一个 回旋镖 则返回 true 。
 回旋镖 定义为一组三个点，这些点 各不相同 且 不在一条直线上 。
-示例 1：  输入： points = [[1,1],[2,3],[3,2]]
+示例 1： 输入： points = [[1,1],[2,3],[3,2]]
 输出： true
- 示例 2：  输入： points = [[1,1],[2,2],[3,3]]
+示例 2： 输入： points = [[1,1],[2,2],[3,3]]
 输出： false
- 提示：  points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100  解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
-$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$'>
+提示： points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100 解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
+$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$
+注意： 需要处理斜率为 ∞ 的情况，可以将上式进行交叉变换：$ (y_1-y_0)(x_2-x_0) = (y_2-y_0)(x_1-x_0) $'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1037.-%E6%9C%89%E6%95%88%E7%9A%84%E5%9B%9E%E6%97%8B%E9%95%96/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dp' /><meta property='article:published_time' content='2022-06-09T10:04:08&#43;08:00'/><meta property='article:modified_time' content='2022-06-09T10:04:08&#43;08:00'/>
@@ -33,12 +35,13 @@ $$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$'>
 难度： 简单
 题目描述 给定一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，如果这些点构成一个 回旋镖 则返回 true 。
 回旋镖 定义为一组三个点，这些点 各不相同 且 不在一条直线上 。
-示例 1：  输入： points = [[1,1],[2,3],[3,2]]
+示例 1： 输入： points = [[1,1],[2,3],[3,2]]
 输出： true
- 示例 2：  输入： points = [[1,1],[2,2],[3,3]]
+示例 2： 输入： points = [[1,1],[2,2],[3,3]]
 输出： false
- 提示：  points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100  解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
-$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$">
+提示： points.length == 3 points[i].length == 2 0 &amp;lt;= xi, yi &amp;lt;= 100 解题思路 数学 不妨设三个点为 A、B、C，分别求出直线 AB 和 AC 的斜率，若两条直线斜率相同，又因为有公共点 A，此时三个点在同一条直线上。如下公式：
+$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$
+注意： 需要处理斜率为 ∞ 的情况，可以将上式进行交叉变换：$ (y_1-y_0)(x_2-x_0) = (y_2-y_0)(x_1-x_0) $">
     </head>
     <body class="
     article-page 
@@ -245,13 +248,13 @@ $$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$">
 <p>不妨设三个点为 <strong>A</strong>、<strong>B</strong>、<strong>C</strong>，分别求出直线 <strong>AB</strong> 和 <strong>AC</strong> 的斜率，若两条直线斜率相同，又因为有公共点 <strong>A</strong>，此时三个点在同一条直线上。如下公式：</p>
 <p>$$ \frac{y_1-y_0}{x_1-x_0} = \frac{y_2-y_0}{x_2-x_0} $$</p>
 <p><strong>注意：</strong> 需要处理斜率为 <strong>∞</strong> 的情况，可以将上式进行交叉变换：$ (y_1-y_0)(x_2-x_0) = (y_2-y_0)(x_1-x_0) $</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isBoomerang</span>(<span style="color:#a6e22e">points</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])<span style="color:#f92672">*</span>(<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">==</span> (<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])<span style="color:#f92672">*</span>(<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]) {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isBoomerang</span>(<span style="color:#a6e22e">points</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])<span style="color:#f92672">*</span>(<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">==</span> (<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])<span style="color:#f92672">*</span>(<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(1) $</li>
 <li>空间复杂度：$ O(1) $</li>

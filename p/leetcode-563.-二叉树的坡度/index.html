@@ -6,17 +6,18 @@
 题目描述 给定一个二叉树，计算 整个树 的坡度 。
 一个树的 节点的坡度 定义即为，该节点左子树的节点之和和右子树节点之和的 差的绝对值 。如果没有左子树的话，左子树的节点之和为 0 ；没有右子树的话也是一样。空结点的坡度是 0 。
 整个树 的坡度就是其所有节点的坡度之和。
-示例 1：  输入： root = [1,2,3]
+示例 1： 输入： root = [1,2,3]
 输出： 1
 解释：
 节点 2 的坡度：|0-0| = 0（没有子节点）
 节点 3 的坡度：|0-0| = 0（没有子节点）
 节点 1 的坡度：|2-3| = 1（左子树就是左子节点，所以和是 2 ；右子树就是右子节点，所以和是 3 ）
 坡度总和：0 &#43; 0 &#43; 1 = 1
- 示例 2：  输入： root = [4,2,9,3,5,null,7]
+示例 2： 输入： root = [4,2,9,3,5,null,7]
 输出： 15
 解释：
-节点 3 的坡度：|0-0| = 0（没有子节点）'><title>Leetcode 563. 二叉树的坡度</title>
+节点 3 的坡度：|0-0| = 0（没有子节点）
+节点 5 的坡度：|0-0| = 0（没有子节点）'><title>Leetcode 563. 二叉树的坡度</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-563.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9D%A1%E5%BA%A6/'>
 
@@ -26,17 +27,18 @@
 题目描述 给定一个二叉树，计算 整个树 的坡度 。
 一个树的 节点的坡度 定义即为，该节点左子树的节点之和和右子树节点之和的 差的绝对值 。如果没有左子树的话，左子树的节点之和为 0 ；没有右子树的话也是一样。空结点的坡度是 0 。
 整个树 的坡度就是其所有节点的坡度之和。
-示例 1：  输入： root = [1,2,3]
+示例 1： 输入： root = [1,2,3]
 输出： 1
 解释：
 节点 2 的坡度：|0-0| = 0（没有子节点）
 节点 3 的坡度：|0-0| = 0（没有子节点）
 节点 1 的坡度：|2-3| = 1（左子树就是左子节点，所以和是 2 ；右子树就是右子节点，所以和是 3 ）
 坡度总和：0 &#43; 0 &#43; 1 = 1
- 示例 2：  输入： root = [4,2,9,3,5,null,7]
+示例 2： 输入： root = [4,2,9,3,5,null,7]
 输出： 15
 解释：
-节点 3 的坡度：|0-0| = 0（没有子节点）'>
+节点 3 的坡度：|0-0| = 0（没有子节点）
+节点 5 的坡度：|0-0| = 0（没有子节点）'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-563.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9D%A1%E5%BA%A6/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='dfs' /><meta property='article:published_time' content='2021-11-18T10:13:03&#43;08:00'/><meta property='article:modified_time' content='2021-11-18T10:13:03&#43;08:00'/>
@@ -46,17 +48,18 @@
 题目描述 给定一个二叉树，计算 整个树 的坡度 。
 一个树的 节点的坡度 定义即为，该节点左子树的节点之和和右子树节点之和的 差的绝对值 。如果没有左子树的话，左子树的节点之和为 0 ；没有右子树的话也是一样。空结点的坡度是 0 。
 整个树 的坡度就是其所有节点的坡度之和。
-示例 1：  输入： root = [1,2,3]
+示例 1： 输入： root = [1,2,3]
 输出： 1
 解释：
 节点 2 的坡度：|0-0| = 0（没有子节点）
 节点 3 的坡度：|0-0| = 0（没有子节点）
 节点 1 的坡度：|2-3| = 1（左子树就是左子节点，所以和是 2 ；右子树就是右子节点，所以和是 3 ）
 坡度总和：0 &#43; 0 &#43; 1 = 1
- 示例 2：  输入： root = [4,2,9,3,5,null,7]
+示例 2： 输入： root = [4,2,9,3,5,null,7]
 输出： 15
 解释：
-节点 3 的坡度：|0-0| = 0（没有子节点）">
+节点 3 的坡度：|0-0| = 0（没有子节点）
+节点 5 的坡度：|0-0| = 0（没有子节点）">
     </head>
     <body class="
     article-page 
@@ -284,25 +287,25 @@
 <p>计算某个结点的坡度需要知道左右子树的所有结点之和，可以用后序遍历求得，进而得到结点的坡度。</p>
 <p>某棵树的坡度求解也分为当前结点的坡度加上左右子树的坡度，仍可以采用后序遍历的方式求解。</p>
 <p>需要每次后序遍历返回以当前结点为根结点的子树的坡度以及所有结点之和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTilt</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>) {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
-		}
-		<span style="color:#a6e22e">lSum</span>, <span style="color:#a6e22e">lTilt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
-		<span style="color:#a6e22e">RSum</span>, <span style="color:#a6e22e">rTilt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
-		<span style="color:#a6e22e">tilt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">lSum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">RSum</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">tilt</span> &lt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#a6e22e">tilt</span> = <span style="color:#f92672">-</span><span style="color:#a6e22e">tilt</span>
-		}
-		<span style="color:#a6e22e">tilt</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">lTilt</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">rTilt</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lSum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">RSum</span>, <span style="color:#a6e22e">tilt</span>
-	}
-	<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">tilt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">tilt</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTilt</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">lSum</span>, <span style="color:#a6e22e">lTilt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">RSum</span>, <span style="color:#a6e22e">rTilt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tilt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">lSum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">RSum</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">tilt</span> &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">tilt</span> = <span style="color:#f92672">-</span><span style="color:#a6e22e">tilt</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tilt</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">lTilt</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">rTilt</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lSum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">RSum</span>, <span style="color:#a6e22e">tilt</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">tilt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">tilt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

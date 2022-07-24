@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/reverse-linked-list-ii/
 难度： 中等
 题目描述 给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &amp;lt;= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
-示例 1：  输入： head = [1,2,3,4,5], left = 2, right = 4
+示例 1： 输入： head = [1,2,3,4,5], left = 2, right = 4
 输出： [1,4,3,2,5]
- 示例 2：  输入： head = [5], left = 1, right = 1
+示例 2： 输入： head = [5], left = 1, right = 1
 输出： [5]
- 提示：  链表中节点数目为 n 1 &amp;lt;= n &amp;lt;= 500 -500 &amp;lt;= Node.val &amp;lt;= 500 1 &amp;lt;= left &amp;lt;= right &amp;lt;= n  进阶： 你可以使用一趟扫描完成反转吗？'><title>Leetcode 92. 反转链表 II</title>
+提示： 链表中节点数目为 n 1 &amp;lt;= n &amp;lt;= 500 -500 &amp;lt;= Node.val &amp;lt;= 500 1 &amp;lt;= left &amp;lt;= right &amp;lt;= n 进阶： 你可以使用一趟扫描完成反转吗？'><title>Leetcode 92. 反转链表 II</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-92.-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8-ii/'>
 
@@ -16,11 +16,11 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/reverse-linked-list-ii/
 难度： 中等
 题目描述 给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &amp;lt;= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
-示例 1：  输入： head = [1,2,3,4,5], left = 2, right = 4
+示例 1： 输入： head = [1,2,3,4,5], left = 2, right = 4
 输出： [1,4,3,2,5]
- 示例 2：  输入： head = [5], left = 1, right = 1
+示例 2： 输入： head = [5], left = 1, right = 1
 输出： [5]
- 提示：  链表中节点数目为 n 1 &amp;lt;= n &amp;lt;= 500 -500 &amp;lt;= Node.val &amp;lt;= 500 1 &amp;lt;= left &amp;lt;= right &amp;lt;= n  进阶： 你可以使用一趟扫描完成反转吗？'>
+提示： 链表中节点数目为 n 1 &amp;lt;= n &amp;lt;= 500 -500 &amp;lt;= Node.val &amp;lt;= 500 1 &amp;lt;= left &amp;lt;= right &amp;lt;= n 进阶： 你可以使用一趟扫描完成反转吗？'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-92.-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8-ii/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-12T16:28:21&#43;08:00'/><meta property='article:modified_time' content='2021-10-12T16:28:21&#43;08:00'/>
@@ -28,11 +28,11 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/reverse-linked-list-ii/
 难度： 中等
 题目描述 给你单链表的头指针 head 和两个整数 left 和 right ，其中 left &amp;lt;= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
-示例 1：  输入： head = [1,2,3,4,5], left = 2, right = 4
+示例 1： 输入： head = [1,2,3,4,5], left = 2, right = 4
 输出： [1,4,3,2,5]
- 示例 2：  输入： head = [5], left = 1, right = 1
+示例 2： 输入： head = [5], left = 1, right = 1
 输出： [5]
- 提示：  链表中节点数目为 n 1 &amp;lt;= n &amp;lt;= 500 -500 &amp;lt;= Node.val &amp;lt;= 500 1 &amp;lt;= left &amp;lt;= right &amp;lt;= n  进阶： 你可以使用一趟扫描完成反转吗？">
+提示： 链表中节点数目为 n 1 &amp;lt;= n &amp;lt;= 500 -500 &amp;lt;= Node.val &amp;lt;= 500 1 &amp;lt;= left &amp;lt;= right &amp;lt;= n 进阶： 你可以使用一趟扫描完成反转吗？">
     </head>
     <body class="
     article-page 
@@ -239,27 +239,27 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="就地反转">就地反转</h4>
 <p>使用虚拟的头结点，遍历找到待反转区域的上一个结点 <code>prev</code>，反转该区域，将 <code>prev.Next</code> 指向反转后的头部， 和尾部区域，</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseBetween</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>, <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">right</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
-    <span style="color:#a6e22e">newHead</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{
-        <span style="color:#a6e22e">Next</span>: <span style="color:#a6e22e">head</span>,
-    }
-    <span style="color:#75715e">// 跳过头
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">prev</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">newHead</span>
-    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-        <span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">Next</span>
-    }
-    <span style="color:#75715e">// 反转中间
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> (<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>)(<span style="color:#66d9ef">nil</span>)
-    <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">Next</span>
-    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>, <span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">tail</span> = <span style="color:#a6e22e">tail</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>, <span style="color:#a6e22e">node</span>
-    }
-    <span style="color:#75715e">// 连接头尾
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">node</span> 
-    <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">tail</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newHead</span>.<span style="color:#a6e22e">Next</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseBetween</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>, <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">right</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">newHead</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Next</span>: <span style="color:#a6e22e">head</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 跳过头
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">prev</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">newHead</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 反转中间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> (<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>)(<span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>, <span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">tail</span> = <span style="color:#a6e22e">tail</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>, <span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 连接头尾
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">node</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">tail</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newHead</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(right) $</li>
 <li>空间复杂度：$ O(1) $</li>

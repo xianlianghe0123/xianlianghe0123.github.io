@@ -6,10 +6,10 @@
 题目描述 Alice 有 n 枚糖，其中第 i 枚糖的类型为 candyType[i] 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。
 医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 n / 2 即可（n 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。
 给你一个长度为 n 的整数数组 candyType ，返回： Alice 在仅吃掉 n / 2 枚糖的情况下，可以吃到糖的最多种类数。
-示例 1：  输入： candyType = [1,1,2,2,3,3]
+示例 1： 输入： candyType = [1,1,2,2,3,3]
 输出： 3
 解释： Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。
- 示例 2：  输入： candyType = [1,1,2,3]
+示例 2： 输入： candyType = [1,1,2,3]
 输出： 2
 解释： Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。'><title>Leetcode 575. 分糖果</title>
 
@@ -21,10 +21,10 @@
 题目描述 Alice 有 n 枚糖，其中第 i 枚糖的类型为 candyType[i] 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。
 医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 n / 2 即可（n 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。
 给你一个长度为 n 的整数数组 candyType ，返回： Alice 在仅吃掉 n / 2 枚糖的情况下，可以吃到糖的最多种类数。
-示例 1：  输入： candyType = [1,1,2,2,3,3]
+示例 1： 输入： candyType = [1,1,2,2,3,3]
 输出： 3
 解释： Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。
- 示例 2：  输入： candyType = [1,1,2,3]
+示例 2： 输入： candyType = [1,1,2,3]
 输出： 2
 解释： Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-575.-%E5%88%86%E7%B3%96%E6%9E%9C/'>
@@ -36,10 +36,10 @@
 题目描述 Alice 有 n 枚糖，其中第 i 枚糖的类型为 candyType[i] 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。
 医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 n / 2 即可（n 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。
 给你一个长度为 n 的整数数组 candyType ，返回： Alice 在仅吃掉 n / 2 枚糖的情况下，可以吃到糖的最多种类数。
-示例 1：  输入： candyType = [1,1,2,2,3,3]
+示例 1： 输入： candyType = [1,1,2,2,3,3]
 输出： 3
 解释： Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。
- 示例 2：  输入： candyType = [1,1,2,3]
+示例 2： 输入： candyType = [1,1,2,3]
 输出： 2
 解释： Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。">
     </head>
@@ -256,18 +256,18 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="哈希">哈希</h4>
 <p>使用哈希表记录糖果的种类，记为 <code>types</code>, 则其能吃到糖的最多种类数即为 <code>min(n/2, size(types))</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">distributeCandies</span>(<span style="color:#a6e22e">candyType</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">types</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">struct</span>{})
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">candyType</span> {
-		<span style="color:#a6e22e">types</span>[<span style="color:#a6e22e">t</span>] = <span style="color:#66d9ef">struct</span>{}{}
-	}
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">candyType</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> &lt; len(<span style="color:#a6e22e">types</span>) {
-		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">candyType</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
-	} <span style="color:#66d9ef">else</span> {
-		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">types</span>)
-	}
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">distributeCandies</span>(<span style="color:#a6e22e">candyType</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">types</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">struct</span>{})
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">candyType</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">types</span>[<span style="color:#a6e22e">t</span>] = <span style="color:#66d9ef">struct</span>{}{}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">candyType</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> &lt; len(<span style="color:#a6e22e">types</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">candyType</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">types</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(candyType) $</li>
 <li>空间复杂度：$ O(N) $</li>

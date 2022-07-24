@@ -5,12 +5,12 @@
 难度： 中等
 题目描述 给你数字 k ，请你返回和为 k 的斐波那契数字的最少数目，其中，每个斐波那契数字都可以被使用多次。
 斐波那契数字定义为：
- F1 = 1 F2 = 1 Fn = Fn-1 &#43; Fn-2 ， 其中 n &amp;gt; 2 。  数据保证对于给定的 k ，一定能找到可行解。
-示例 1：  输入： k = 7
+F1 = 1 F2 = 1 Fn = Fn-1 &#43; Fn-2 ， 其中 n &amp;gt; 2 。 数据保证对于给定的 k ，一定能找到可行解。
+示例 1： 输入： k = 7
 输出： 2
 解释： 斐波那契数字为：1，1，2，3，5，8，13，……
 对于 k = 7 ，我们可以得到 2 &#43; 5 = 7 。
- 示例 2：  输入： k = 10
+示例 2： 输入： k = 10
 输出： 2
 解释： 对于 k = 10 ，我们可以得到 2 &#43; 8 = 10 。'><title>Leetcode 1414. 和为 K 的最少斐波那契数字数目</title>
 
@@ -21,12 +21,12 @@
 难度： 中等
 题目描述 给你数字 k ，请你返回和为 k 的斐波那契数字的最少数目，其中，每个斐波那契数字都可以被使用多次。
 斐波那契数字定义为：
- F1 = 1 F2 = 1 Fn = Fn-1 &#43; Fn-2 ， 其中 n &amp;gt; 2 。  数据保证对于给定的 k ，一定能找到可行解。
-示例 1：  输入： k = 7
+F1 = 1 F2 = 1 Fn = Fn-1 &#43; Fn-2 ， 其中 n &amp;gt; 2 。 数据保证对于给定的 k ，一定能找到可行解。
+示例 1： 输入： k = 7
 输出： 2
 解释： 斐波那契数字为：1，1，2，3，5，8，13，……
 对于 k = 7 ，我们可以得到 2 &#43; 5 = 7 。
- 示例 2：  输入： k = 10
+示例 2： 输入： k = 10
 输出： 2
 解释： 对于 k = 10 ，我们可以得到 2 &#43; 8 = 10 。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1414.-%E5%92%8C%E4%B8%BA-k-%E7%9A%84%E6%9C%80%E5%B0%91%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%AD%97%E6%95%B0%E7%9B%AE/'>
@@ -37,12 +37,12 @@
 难度： 中等
 题目描述 给你数字 k ，请你返回和为 k 的斐波那契数字的最少数目，其中，每个斐波那契数字都可以被使用多次。
 斐波那契数字定义为：
- F1 = 1 F2 = 1 Fn = Fn-1 &#43; Fn-2 ， 其中 n &amp;gt; 2 。  数据保证对于给定的 k ，一定能找到可行解。
-示例 1：  输入： k = 7
+F1 = 1 F2 = 1 Fn = Fn-1 &#43; Fn-2 ， 其中 n &amp;gt; 2 。 数据保证对于给定的 k ，一定能找到可行解。
+示例 1： 输入： k = 7
 输出： 2
 解释： 斐波那契数字为：1，1，2，3，5，8，13，……
 对于 k = 7 ，我们可以得到 2 &#43; 5 = 7 。
- 示例 2：  输入： k = 10
+示例 2： 输入： k = 10
 输出： 2
 解释： 对于 k = 10 ，我们可以得到 2 &#43; 8 = 10 。">
     </head>
@@ -276,25 +276,25 @@ $$
 可以发现若存在某个斐波那契数可以被选择两次则将其替换，最少数量不变。</p>
 <p>遵循上述原则，则可知，对于构成和为 <code>k</code> 的所有斐波那契数，均不相同。</p>
 <p>故使用贪心算法，每次选择最大的斐波那契数，即得到最小数量。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findMinFibonacciNumbers</span>(<span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">f</span>[len(<span style="color:#a6e22e">f</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">k</span> {
-		<span style="color:#a6e22e">f</span> = append(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">f</span>[len(<span style="color:#a6e22e">f</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">f</span>[len(<span style="color:#a6e22e">f</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>])
-	}
-	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">f</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span> &lt; <span style="color:#a6e22e">f</span>[<span style="color:#a6e22e">i</span>] {
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#a6e22e">k</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">f</span>[<span style="color:#a6e22e">i</span>]
-		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">break</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findMinFibonacciNumbers</span>(<span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">f</span>[len(<span style="color:#a6e22e">f</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">k</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">f</span> = append(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">f</span>[len(<span style="color:#a6e22e">f</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">f</span>[len(<span style="color:#a6e22e">f</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">f</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span> &lt; <span style="color:#a6e22e">f</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">k</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">f</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(\log{k}) $</li>
 <li>空间复杂度：$ O(\log{k}) $</li>

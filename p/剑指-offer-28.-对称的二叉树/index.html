@@ -5,12 +5,12 @@
 难度： 简单
 题目描述 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
- 1 / \ 2 2 / \ / \ 3 4 4 3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
- 1 / \ 2 2 \ \ 3 3 示例 1：  输入： root = [1,2,2,3,4,4,3]
+1 / \ 2 2 / \ / \ 3 4 4 3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+1 / \ 2 2 \ \ 3 3 示例 1： 输入： root = [1,2,2,3,4,4,3]
 输出： true
- 示例 2：  输入： root = [1,2,2,null,3,null,3]
+示例 2： 输入： root = [1,2,2,null,3,null,3]
 输出： false
- 限制：  0 &amp;lt;= 节点个数 &amp;lt;= 1000  解题思路 递归 递归遍历比较互为镜像的两个结点，不同则返回 false，相同则继续遍历比较子结点。
+限制： 0 &amp;lt;= 节点个数 &amp;lt;= 1000 解题思路 递归 递归遍历比较互为镜像的两个结点，不同则返回 false，相同则继续遍历比较子结点。
 因为是镜像比较，所以左子树的左结点和右子树的右结点比较，而左子树的右结点和右子树的左结点比较。
 func isSymmetric(root *TreeNode) bool { if root == nil { return true } var same func(node1, node2 *TreeNode) bool same = func(node1, node2 *TreeNode) bool { if node1 == nil &amp;amp;&amp;amp; node2 == nil { return true } if node1 == nil || node2 == nil || node1.'><title>剑指 Offer 28. 对称的二叉树</title>
 
@@ -21,12 +21,12 @@ func isSymmetric(root *TreeNode) bool { if root == nil { return true } var same 
 难度： 简单
 题目描述 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
- 1 / \ 2 2 / \ / \ 3 4 4 3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
- 1 / \ 2 2 \ \ 3 3 示例 1：  输入： root = [1,2,2,3,4,4,3]
+1 / \ 2 2 / \ / \ 3 4 4 3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+1 / \ 2 2 \ \ 3 3 示例 1： 输入： root = [1,2,2,3,4,4,3]
 输出： true
- 示例 2：  输入： root = [1,2,2,null,3,null,3]
+示例 2： 输入： root = [1,2,2,null,3,null,3]
 输出： false
- 限制：  0 &amp;lt;= 节点个数 &amp;lt;= 1000  解题思路 递归 递归遍历比较互为镜像的两个结点，不同则返回 false，相同则继续遍历比较子结点。
+限制： 0 &amp;lt;= 节点个数 &amp;lt;= 1000 解题思路 递归 递归遍历比较互为镜像的两个结点，不同则返回 false，相同则继续遍历比较子结点。
 因为是镜像比较，所以左子树的左结点和右子树的右结点比较，而左子树的右结点和右子树的左结点比较。
 func isSymmetric(root *TreeNode) bool { if root == nil { return true } var same func(node1, node2 *TreeNode) bool same = func(node1, node2 *TreeNode) bool { if node1 == nil &amp;amp;&amp;amp; node2 == nil { return true } if node1 == nil || node2 == nil || node1.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-28.-%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/'>
@@ -37,12 +37,12 @@ func isSymmetric(root *TreeNode) bool { if root == nil { return true } var same 
 难度： 简单
 题目描述 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
- 1 / \ 2 2 / \ / \ 3 4 4 3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
- 1 / \ 2 2 \ \ 3 3 示例 1：  输入： root = [1,2,2,3,4,4,3]
+1 / \ 2 2 / \ / \ 3 4 4 3 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+1 / \ 2 2 \ \ 3 3 示例 1： 输入： root = [1,2,2,3,4,4,3]
 输出： true
- 示例 2：  输入： root = [1,2,2,null,3,null,3]
+示例 2： 输入： root = [1,2,2,null,3,null,3]
 输出： false
- 限制：  0 &amp;lt;= 节点个数 &amp;lt;= 1000  解题思路 递归 递归遍历比较互为镜像的两个结点，不同则返回 false，相同则继续遍历比较子结点。
+限制： 0 &amp;lt;= 节点个数 &amp;lt;= 1000 解题思路 递归 递归遍历比较互为镜像的两个结点，不同则返回 false，相同则继续遍历比较子结点。
 因为是镜像比较，所以左子树的左结点和右子树的右结点比较，而左子树的右结点和右子树的左结点比较。
 func isSymmetric(root *TreeNode) bool { if root == nil { return true } var same func(node1, node2 *TreeNode) bool same = func(node1, node2 *TreeNode) bool { if node1 == nil &amp;amp;&amp;amp; node2 == nil { return true } if node1 == nil || node2 == nil || node1.">
     </head>
@@ -259,23 +259,23 @@ func isSymmetric(root *TreeNode) bool { if root == nil { return true } var same 
 <h4 id="递归">递归</h4>
 <p>递归遍历比较互为镜像的两个结点，不同则返回 <code>false</code>，相同则继续遍历比较子结点。</p>
 <p>因为是镜像比较，所以左子树的左结点和右子树的右结点比较，而左子树的右结点和右子树的左结点比较。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isSymmetric</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-	}
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">same</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node1</span>, <span style="color:#a6e22e">node2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span>
-	<span style="color:#a6e22e">same</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node1</span>, <span style="color:#a6e22e">node2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">node2</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">node2</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">node1</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">node2</span>.<span style="color:#a6e22e">Val</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">same</span>(<span style="color:#a6e22e">node1</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">node2</span>.<span style="color:#a6e22e">Right</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">same</span>(<span style="color:#a6e22e">node1</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">node2</span>.<span style="color:#a6e22e">Left</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">same</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isSymmetric</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">same</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node1</span>, <span style="color:#a6e22e">node2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">same</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node1</span>, <span style="color:#a6e22e">node2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">node2</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">node2</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">node1</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">node2</span>.<span style="color:#a6e22e">Val</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">same</span>(<span style="color:#a6e22e">node1</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">node2</span>.<span style="color:#a6e22e">Right</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">same</span>(<span style="color:#a6e22e">node1</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">node2</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">same</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

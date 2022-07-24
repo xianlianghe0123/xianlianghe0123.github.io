@@ -17,14 +17,14 @@
 难度： 中等
 题目描述 你要开发一座金矿，地质勘测学家已经探明了这座金矿中的资源分布，并用大小为 m * n 的网格 grid 进行了标注。每个单元格中的整数就表示这一单元格中的黄金数量；如果该单元格是空的，那么就是 0。
 为了使收益最大化，矿工需要按以下规则来开采黄金：
- 每当矿工进入一个单元，就会收集该单元格中的所有黄金。 矿工每次可以从当前位置向上下左右四个方向走。 每个单元格只能被开采（进入）一次。 不得开采（进入）黄金数目为 0 的单元格。 矿工可以从网格中 任意一个 有黄金的单元格出发或者是停止。  示例1：  输入： grid = [[0,6,0],[5,8,7],[0,9,0]]
+每当矿工进入一个单元，就会收集该单元格中的所有黄金。 矿工每次可以从当前位置向上下左右四个方向走。 每个单元格只能被开采（进入）一次。 不得开采（进入）黄金数目为 0 的单元格。 矿工可以从网格中 任意一个 有黄金的单元格出发或者是停止。 示例1： 输入： grid = [[0,6,0],[5,8,7],[0,9,0]]
 输出： 24
 解释：
 [[0,6,0],
 [5,8,7],
 [0,9,0]]
 一种收集最多黄金的路线是：9 -&amp;gt; 8 -&amp;gt; 7。
- 示例 2：  输入： grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]
+示例 2： 输入： grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]
 输出： 28
 解释：
 [[1,0,7],
@@ -32,7 +32,8 @@
 [3,4,5],
 [0,3,0],
 [9,0,20]]
-一种收集最多黄金的路线是：1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6 -&amp;gt; 7。</description>
+一种收集最多黄金的路线是：1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6 -&amp;gt; 7。
+提示： 1 &amp;lt;= grid.length, grid[i].</description>
     </item>
     
     <item>
@@ -44,13 +45,15 @@
       <description>链接： https://leetcode-cn.com/problems/expression-add-operators/
 难度： 中等
 题目描述 给定一个仅包含数字 0-9 的字符串 num 和一个目标值整数 target ，在 num 的数字之间添加 二元 运算符（不是一元）+、- 或 * ，返回所有能够得到目标值的表达式。
-示例 1：  输入: num = &amp;ldquo;123&amp;rdquo;, target = 6
+示例 1： 输入: num = &amp;ldquo;123&amp;rdquo;, target = 6
 输出: [&amp;ldquo;1+2+3&amp;rdquo;, &amp;ldquo;123&amp;rdquo;]
- 示例 2：  输入: num = &amp;ldquo;232&amp;rdquo;, target = 8
+示例 2： 输入: num = &amp;ldquo;232&amp;rdquo;, target = 8
 输出: [&amp;ldquo;23+2&amp;rdquo;, &amp;ldquo;2+32&amp;rdquo;]
- 示例 3：  输入: num = &amp;ldquo;105&amp;rdquo;, target = 5
+示例 3： 输入: num = &amp;ldquo;105&amp;rdquo;, target = 5
 输出: [&amp;ldquo;1*0+5&amp;rdquo;,&amp;ldquo;10-5&amp;rdquo;]
- 示例 4：  输入: num = &amp;ldquo;00&amp;rdquo;, target = 0</description>
+示例 4： 输入: num = &amp;ldquo;00&amp;rdquo;, target = 0
+输出: [&amp;ldquo;0+0&amp;rdquo;, &amp;ldquo;0-0&amp;rdquo;, &amp;ldquo;0*0&amp;rdquo;]
+示例 5： 输入: num = &amp;ldquo;3456237490&amp;rdquo;, target = 9191</description>
     </item>
     
     <item>
@@ -62,14 +65,14 @@
       <description>链接： https://leetcode-cn.com/problems/permutations/
 难度： 中等
 题目描述 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
-示例 1：  输入： nums = [1,2,3]
+示例 1： 输入： nums = [1,2,3]
 输出： [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
- 示例 2：  输入： nums = [0,1]
+示例 2： 输入： nums = [0,1]
 输出： [[0,1],[1,0]]
- 示例 3：  输入： nums = [1]
+示例 3： 输入： nums = [1]
 输出： [[1]]
- 提示：  1 &amp;lt;= nums.length &amp;lt;= 6 -10 &amp;lt;= nums[i] &amp;lt;= 10 nums 中的所有整数 互不相同  解题思路 回溯 每次从可选数字中选出一个数，加入到栈中，直到栈中元素数量与原数组相同，则其为其中一个的全排列，加入到结果中，回溯，重复上述步骤，直到搜索到所有情况。
-func permute(nums []int) [][]int { cnt := 1 for i := 2; i &amp;lt;= len(nums); i++ { cnt *= i } ans := make([][]int, 0, cnt) choice := make(map[int]struct{}) var backtracking func(stack []int) backtracking = func(stack []int) { if len(stack) == len(nums) { t := make([]int, len(stack)) copy(t, stack) ans = append(ans, t) return } for _, num := range nums { if _, ok := choice[num]; ok { continue } choice[num] = struct{}{} stack = append(stack, num) backtracking(stack) stack = stack[:len(stack)-1] delete(choice, num) } } backtracking(make([]int, 0, len(nums))) return ans } 复杂度  时间复杂度：$ O(N*N!</description>
+提示： 1 &amp;lt;= nums.length &amp;lt;= 6 -10 &amp;lt;= nums[i] &amp;lt;= 10 nums 中的所有整数 互不相同 解题思路 回溯 每次从可选数字中选出一个数，加入到栈中，直到栈中元素数量与原数组相同，则其为其中一个的全排列，加入到结果中，回溯，重复上述步骤，直到搜索到所有情况。
+func permute(nums []int) [][]int { cnt := 1 for i := 2; i &amp;lt;= len(nums); i++ { cnt *= i } ans := make([][]int, 0, cnt) choice := make(map[int]struct{}) var backtracking func(stack []int) backtracking = func(stack []int) { if len(stack) == len(nums) { t := make([]int, len(stack)) copy(t, stack) ans = append(ans, t) return } for _, num := range nums { if _, ok := choice[num]; ok { continue } choice[num] = struct{}{} stack = append(stack, num) backtracking(stack) stack = stack[:len(stack)-1] delete(choice, num) } } backtracking(make([]int, 0, len(nums))) return ans } 复杂度 时间复杂度：$ O(N*N!</description>
     </item>
     
     <item>
@@ -81,8 +84,8 @@ func permute(nums []int) [][]int { cnt := 1 for i := 2; i &amp;lt;= len(nums); i
       <description>链接： https://leetcode-cn.com/problems/beautiful-arrangement/
 难度： 中等
 题目描述 假设有从 1 到 N 的 N 个整数，如果从这 N 个数字中成功构造出一个数组，使得数组的第 i 位 (1 &amp;lt;= i &amp;lt;= N) 满足如下两个条件中的一个，我们就称这个数组为一个优美的排列。条件：
- 第 i 位的数字能被 i 整除 i 能被第 i 位上的数字整除  现在给定一个整数 N，请问可以构造多少个优美的排列？
-示例：  输入: 2
+第 i 位的数字能被 i 整除 i 能被第 i 位上的数字整除 现在给定一个整数 N，请问可以构造多少个优美的排列？
+示例： 输入: 2
 输出: 2
 解释:
 第 1 个优美的排列是 [1, 2]:
@@ -91,7 +94,7 @@ func permute(nums []int) [][]int { cnt := 1 for i := 2; i &amp;lt;= len(nums); i
 第 2 个优美的排列是 [2, 1]:
 第 1 个位置（i=1）上的数字是2，2能被 i（i=1）整除
 第 2 个位置（i=2）上的数字是1，i（i=2）能被 1 整除
- 说明：  N 是一个正整数，并且不会超过 15。  解题思路 回溯 使用一个数组 arr 记录该排列，另使用一个数组 choice 记录每个数字是否已经被填写到 arr 中。</description>
+说明： N 是一个正整数，并且不会超过 15。 解题思路 回溯 使用一个数组 arr 记录该排列，另使用一个数组 choice 记录每个数字是否已经被填写到 arr 中。</description>
     </item>
     
     <item>
@@ -104,10 +107,10 @@ func permute(nums []int) [][]int { cnt := 1 for i := 2; i &amp;lt;= len(nums); i
 难度： 中等
 题目描述 输入一个字符串，打印出该字符串中字符的所有排列。
 你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
-示例1：  输入： s = &amp;ldquo;abc&amp;rdquo;
+示例1： 输入： s = &amp;ldquo;abc&amp;rdquo;
 输出： [&amp;ldquo;abc&amp;rdquo;,&amp;ldquo;acb&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bca&amp;rdquo;,&amp;ldquo;cab&amp;rdquo;,&amp;ldquo;cba&amp;rdquo;]
- 提示：  1 &amp;lt;= s 的长度 &amp;lt;= 8  解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
-func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res } 复杂度  时间复杂度：O(N*N!</description>
+提示： 1 &amp;lt;= s 的长度 &amp;lt;= 8 解题思路 回溯 遍历未入栈字符列表，每次选取一个字符入栈，并标记此字符已经入栈，递归的寻找下一个字符，直到所有字符全部入栈，将结果加入集合中。
+func permutation(s string) []string { only := make(map[string]bool) choice := make([]bool, len(s)) prefix := make([]byte, 0, len(s)) var backtrack func() backtrack = func() { if len(prefix) == len(s) { only[string(prefix)] = true return } for i := range choice { if choice[i] { continue } prefix = append(prefix, s[i]) choice[i] = true backtrack() choice[i] = false prefix = prefix[:len(prefix)-1] } } backtrack() res := make([]string, 0, 1&amp;lt;&amp;lt;(len(s)-1)) for k := range only { res = append(res, k) } return res } 复杂度 时间复杂度：O(N*N!</description>
     </item>
     
   </channel>

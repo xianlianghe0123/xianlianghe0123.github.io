@@ -18,10 +18,11 @@
 题目描述 给你一个整数数组 nums ，请你找出 nums 子集 按位或 可能得到的 最大值 ，并返回按位或能得到最大值的 不同非空子集的数目 。
 如果数组 a 可以由数组 b 删除一些元素（或不删除）得到，则认为数组 a 是数组 b 的一个 子集 。如果选中的元素下标位置不一样，则认为两个子集 不同 。
 对数组 a 执行 按位或 ，结果等于 a[0] OR a[1] OR &amp;hellip; OR a[a.length - 1]（下标从 0 开始）。
-示例 1：  输入： nums = [3,1]
+示例 1： 输入： nums = [3,1]
 输出： 2
 解释： 子集按位或能得到的最大值是 3 。有 2 个子集按位或可以得到 3 ：
- [3] [3,1]   示例 2：  输入： nums = [2,2,2]</description>
+[3] [3,1] 示例 2： 输入： nums = [2,2,2]
+输出： 7</description>
     </item>
     
     <item>
@@ -35,9 +36,10 @@
 题目描述 给你一支股票价格的数据流。数据流中每一条记录包含一个 时间戳 和该时间点股票对应的 价格 。
 不巧的是，由于股票市场内在的波动性，股票价格记录可能不是按时间顺序到来的。某些情况下，有的记录可能是错的。如果两个有相同时间戳的记录出现在数据流中，前一条记录视为错误记录，后出现的记录 更正 前一条错误的记录。
 请你设计一个算法，实现：
- 更新 股票在某一时间戳的股票价格，如果有之前同一时间戳的价格，这一操作将 更正 之前的错误价格。 找到当前记录里 最新股票价格 。最新股票价格 定义为时间戳最晚的股票价格。 找到当前记录里股票的 最高价格 。 找到当前记录里股票的 最低价格 。  请你实现 StockPrice 类：
- StockPrice() 初始化对象，当前无股票价格记录。 void update(int timestamp, int price) 在时间点 timestamp 更新股票价格为 price 。 int current() 返回股票 最新价格 。 int maximum() 返回股票 最高价格 。 int minimum() 返回股票 最低价格 。  示例：  输入：
-[&amp;ldquo;StockPrice&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;current&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;minimum&amp;rdquo;]</description>
+更新 股票在某一时间戳的股票价格，如果有之前同一时间戳的价格，这一操作将 更正 之前的错误价格。 找到当前记录里 最新股票价格 。最新股票价格 定义为时间戳最晚的股票价格。 找到当前记录里股票的 最高价格 。 找到当前记录里股票的 最低价格 。 请你实现 StockPrice 类：
+StockPrice() 初始化对象，当前无股票价格记录。 void update(int timestamp, int price) 在时间点 timestamp 更新股票价格为 price 。 int current() 返回股票 最新价格 。 int maximum() 返回股票 最高价格 。 int minimum() 返回股票 最低价格 。 示例： 输入：
+[&amp;ldquo;StockPrice&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;current&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;maximum&amp;rdquo;, &amp;ldquo;update&amp;rdquo;, &amp;ldquo;minimum&amp;rdquo;]
+[[], [1, 10], [2, 5], [], [], [1, 3], [], [4, 2], []]</description>
     </item>
     
     <item>
@@ -51,15 +53,15 @@
 题目描述 给定两个以升序排列的整数数组 nums1 和 nums2 , 以及一个整数 k 。
 定义一对值 (u,v)，其中第一个元素来自 nums1，第二个元素来自 nums2 。
 请找到和最小的 k 个数对 (u1,v1), (u2,v2) &amp;hellip; (uk,vk) 。
-示例 1：  输入： nums1 = [1,7,11], nums2 = [2,4,6], k = 3
+示例 1： 输入： nums1 = [1,7,11], nums2 = [2,4,6], k = 3
 输出： [1,2],[1,4],[1,6]
 解释： 返回序列中的前 3 对数：
 [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]
- 示例 2：  输入： nums1 = [1,1,2], nums2 = [1,2,3], k = 2
+示例 2： 输入： nums1 = [1,1,2], nums2 = [1,2,3], k = 2
 输出： [1,1],[1,1]
 解释： 返回序列中的前 2 对数：
 [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]
- 示例 3：  输入： nums1 = [1,2], nums2 = [3], k = 3</description>
+示例 3： 输入： nums1 = [1,2], nums2 = [3], k = 3</description>
     </item>
     
     <item>
@@ -72,16 +74,16 @@
 难度： 简单
 题目描述 给你一个整数数组 nums ，其中总是存在 唯一的 一个最大整数 。
 请你找出数组中的最大元素并检查它是否 至少是数组中每个其他数字的两倍 。如果是，则返回 最大元素的下标 ，否则返回 -1 。
-示例 1：  输入： nums = [3,6,1,0]
+示例 1： 输入： nums = [3,6,1,0]
 输出： 1
 解释： 6 是最大的整数，对于数组中的其他整数，6 大于数组中其他元素的两倍。6 的下标是 1 ，所以返回 1 。
- 示例 2：  输入： nums = [1,2,3,4]
+示例 2： 输入： nums = [1,2,3,4]
 输出： -1
 解释： 4 没有超过 3 的两倍大，所以返回 -1 。
- 示例 3：  输入： nums = [1]
+示例 3： 输入： nums = [1]
 输出： 0
 解释： 因为不存在其他数字，所以认为现有数字 1 至少是其他数字的两倍。
- 提示：  1 &amp;lt;= nums.</description>
+提示： 1 &amp;lt;= nums.length &amp;lt;= 50 0 &amp;lt;= nums[i] &amp;lt;= 100 nums 中的最大元素是唯一的 解题思路 模拟 首先完成一遍遍历找出最大的数字，然后再次遍历判定其是否为其他数字的两倍。</description>
     </item>
     
     <item>
@@ -95,10 +97,12 @@
 题目描述 有一棵特殊的苹果树，一连 n 天，每天都可以长出若干个苹果。在第 i 天，树上会长出 apples[i] 个苹果，这些苹果将会在 days[i] 天后（也就是说，第 i + days[i] 天时）腐烂，变得无法食用。也可能有那么几天，树上不会长出新的苹果，此时用 apples[i] == 0 且 days[i] == 0 表示。
 你打算每天 最多 吃一个苹果来保证营养均衡。注意，你可以在这 n 天之后继续吃苹果。
 给你两个长度为 n 的整数数组 days 和 apples ，返回你可以吃掉的苹果的最大数目。
-示例 1：  输入： apples = [1,2,3,5,2], days = [3,2,1,4,2]
+示例 1： 输入： apples = [1,2,3,5,2], days = [3,2,1,4,2]
 输出： 7
 解释： 你可以吃掉 7 个苹果：
- 第一天，你吃掉第一天长出来的苹果。 第二天，你吃掉一个第二天长出来的苹果。 第三天，你吃掉一个第二天长出来的苹果。过了这一天，第三天长出来的苹果就已经腐烂了。 第四天到第七天，你吃的都是第四天长出来的苹果。   示例 2：  输入： apples = [3,0,0,0,0,2], days = [3,0,0,0,0,2]</description>
+第一天，你吃掉第一天长出来的苹果。 第二天，你吃掉一个第二天长出来的苹果。 第三天，你吃掉一个第二天长出来的苹果。过了这一天，第三天长出来的苹果就已经腐烂了。 第四天到第七天，你吃的都是第四天长出来的苹果。 示例 2： 输入： apples = [3,0,0,0,0,2], days = [3,0,0,0,0,2]
+输出： 5
+解释： 你可以吃掉 5 个苹果：</description>
     </item>
     
     <item>
@@ -112,11 +116,12 @@
 题目描述 给你一个按递增顺序排序的数组 arr 和一个整数 k 。数组 arr 由 1 和若干 素数 组成，且其中所有整数互不相同。
 对于每对满足 0 &amp;lt; i &amp;lt; j &amp;lt; arr.length 的 i 和 j ，可以得到分数 arr[i] / arr[j] 。
 那么第 k 个最小的分数是多少呢? 以长度为 2 的整数数组返回你的答案, 这里 answer[0] == arr[i] 且 answer[1] == arr[j] 。
-示例 1：  输入： arr = [1,2,3,5], k = 3
+示例 1： 输入： arr = [1,2,3,5], k = 3
 输出： [2,5]
 解释： 已构造好的分数,排序后如下所示:
 1/5, 1/3, 2/5, 1/2, 3/5, 2/3
-很明显第三个最小的分数是 2/5</description>
+很明显第三个最小的分数是 2/5
+示例 2： 输入： arr = [1,7], k = 1</description>
     </item>
     
     <item>
@@ -128,7 +133,7 @@
       <description>链接： https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/
 难度： 困难
 题目描述 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。
-示例：  输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
+示例： 输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
 输出: [3,3,5,5,6,7]
 解释:
 滑动窗口的位置 最大值
@@ -149,12 +154,12 @@
       <description>链接： https://leetcode-cn.com/problems/chou-shu-lcof/
 难度： 中等
 题目描述 我们把只包含质因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
-示例：  输入: n = 10
+示例： 输入: n = 10
 输出: 12
 解释: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 是前 10 个丑数。
- 说明：  1 是丑数。 n 不超过 1690。  解题思路 堆 + 哈希 维护一个小顶堆和哈希表，初始堆中元素为 1，每次弹出堆顶最小元素，然后将其分别乘以 2、3、5加入堆中，此处需要使用哈希表去重。
+说明： 1 是丑数。 n 不超过 1690。 解题思路 堆 + 哈希 维护一个小顶堆和哈希表，初始堆中元素为 1，每次弹出堆顶最小元素，然后将其分别乘以 2、3、5加入堆中，此处需要使用哈希表去重。
 弹出的第 n 个数即为第 n 个丑数。
-type MinHeap struct { sort.IntSlice } func (this *MinHeap) Push(x interface{}) { this.IntSlice = append(this.</description>
+type MinHeap struct { sort.IntSlice } func (this *MinHeap) Push(x interface{}) { this.IntSlice = append(this.IntSlice, x.(int)) } func (this *MinHeap) Pop() interface{} { x := this.</description>
     </item>
     
     <item>
@@ -166,12 +171,12 @@ type MinHeap struct { sort.IntSlice } func (this *MinHeap) Push(x interface{}) {
       <description>链接： https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
 难度： 简单
 题目描述 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
-示例 1：  输入： arr = [3,2,1], k = 2
+示例 1： 输入： arr = [3,2,1], k = 2
 输出： [1,2] 或者 [2,1]
- 示例 2：  输入： arr = [0,1,2,1], k = 1
+示例 2： 输入： arr = [0,1,2,1], k = 1
 输出： [0]
- 限制：  0 &amp;lt;= k &amp;lt;= arr.length &amp;lt;= 10000 0 &amp;lt;= arr[i] &amp;lt;= 10000  解题思路 排序 对数组进行排序，返回前 k 个数。
-func getLeastNumbers(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂度  时间复杂度：$ O(N\log{N}), N = len(arr) $ 空间复杂度：$ O(\log{N}) $  堆 使用大顶堆维护最小的 k 个数。遍历数组，当堆不满 k 时，入堆；否则，当前元素小于堆顶元素时，弹出最大元素，当前元素入堆。</description>
+限制： 0 &amp;lt;= k &amp;lt;= arr.length &amp;lt;= 10000 0 &amp;lt;= arr[i] &amp;lt;= 10000 解题思路 排序 对数组进行排序，返回前 k 个数。
+func getLeastNumbers(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂度 时间复杂度：$ O(N\log{N}), N = len(arr) $ 空间复杂度：$ O(\log{N}) $ 堆 使用大顶堆维护最小的 k 个数。遍历数组，当堆不满 k 时，入堆；否则，当前元素小于堆顶元素时，弹出最大元素，当前元素入堆。</description>
     </item>
     
     <item>
@@ -183,11 +188,11 @@ func getLeastNumbers(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } �
       <description>链接： https://leetcode-cn.com/problems/smallest-k-lcci/
 难度： 中等
 题目描述 设计一个算法，找出数组中最小的k个数。以任意顺序返回这k个数均可。
-示例：  输入： arr = [1,3,5,7,2,4,6,8], k = 4
+示例： 输入： arr = [1,3,5,7,2,4,6,8], k = 4
 输出： [1,2,3,4]
- 提示：  0 &amp;lt;= len(arr) &amp;lt;= 100000 0 &amp;lt;= k &amp;lt;= min(100000, len(arr))  解题思路 排序 对原数组排序，返回前 k 个元素。
-func smallestK(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂度  时间复杂度：$ O(N\log N), N = len(arr) $ 空间复杂度：$ O(\log N) $  堆 构建一个大顶堆，保存前 k 个最小的数。遍历 arr 数组
- 当堆中元素数量不足 k 时，入堆； 当堆中元素书数量为 k 时，与堆顶元素比较  当堆顶元素为较大时，弹出队顶元素，当前元素入堆 否则，忽略当前元素    遍历结束，返回堆中所有元素。</description>
+提示： 0 &amp;lt;= len(arr) &amp;lt;= 100000 0 &amp;lt;= k &amp;lt;= min(100000, len(arr)) 解题思路 排序 对原数组排序，返回前 k 个元素。
+func smallestK(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂度 时间复杂度：$ O(N\log N), N = len(arr) $ 空间复杂度：$ O(\log N) $ 堆 构建一个大顶堆，保存前 k 个最小的数。遍历 arr 数组
+当堆中元素数量不足 k 时，入堆； 当堆中元素书数量为 k 时，与堆顶元素比较 当堆顶元素为较大时，弹出队顶元素，当前元素入堆 否则，忽略当前元素 遍历结束，返回堆中所有元素。</description>
     </item>
     
     <item>
@@ -201,13 +206,13 @@ func smallestK(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂�
 题目描述 超级丑数 是一个正整数，并满足其所有质因数都出现在质数数组 primes 中。
 给你一个整数 n 和一个整数数组 primes ，返回第 n 个 超级丑数 。
 题目数据保证第 n 个 超级丑数 在 32-bit 带符号整数范围内。
-示例 1：  输入： n = 12, primes = [2,7,13,19]
+示例 1： 输入： n = 12, primes = [2,7,13,19]
 输出： 32
 解释： 给定长度为 4 的质数数组 primes = [2,7,13,19]，前 12 个超级丑数序列为：[1,2,4,7,8,13,14,16,19,26,28,32] 。
- 示例 2：  输入： n = 1, primes = [2,3,5]
+示例 2： 输入： n = 1, primes = [2,3,5]
 输出： 1
 解释： 1 不含质因数，因此它的所有质因数都在质数数组 primes = [2,3,5] 中。
- 注意：  1 &amp;lt;= n &amp;lt;= 106 1 &amp;lt;= primes.</description>
+注意： 1 &amp;lt;= n &amp;lt;= 106 1 &amp;lt;= primes.</description>
     </item>
     
     <item>
@@ -221,11 +226,11 @@ func smallestK(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂�
 题目描述 有 n 个网络节点，标记为 1 到 n 。
 给你一个列表 times，表示信号经过 有向 边的传递时间。 times[i] = (ui, vi, wi)，其中 ui 是源节点，vi 是目标节点， wi 是一个信号从源节点传递到目标节点的时间。
 现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 -1 。
-示例 1：  输入： times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+示例 1： 输入： times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
 输出： 2
- 示例 2：  输入： times = [[1,2,1]], n = 2, k = 1
+示例 2： 输入： times = [[1,2,1]], n = 2, k = 1
 输出： 1
- 示例 3：  输入： times = [[1,2,1]], n = 2, k = 2</description>
+示例 3： 输入： times = [[1,2,1]], n = 2, k = 2</description>
     </item>
     
   </channel>

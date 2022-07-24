@@ -16,11 +16,11 @@
       <description>链接： https://leetcode-cn.com/problems/smallest-k-lcci/
 难度： 中等
 题目描述 设计一个算法，找出数组中最小的k个数。以任意顺序返回这k个数均可。
-示例：  输入： arr = [1,3,5,7,2,4,6,8], k = 4
+示例： 输入： arr = [1,3,5,7,2,4,6,8], k = 4
 输出： [1,2,3,4]
- 提示：  0 &amp;lt;= len(arr) &amp;lt;= 100000 0 &amp;lt;= k &amp;lt;= min(100000, len(arr))  解题思路 排序 对原数组排序，返回前 k 个元素。
-func smallestK(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂度  时间复杂度：$ O(N\log N), N = len(arr) $ 空间复杂度：$ O(\log N) $  堆 构建一个大顶堆，保存前 k 个最小的数。遍历 arr 数组
- 当堆中元素数量不足 k 时，入堆； 当堆中元素书数量为 k 时，与堆顶元素比较  当堆顶元素为较大时，弹出队顶元素，当前元素入堆 否则，忽略当前元素    遍历结束，返回堆中所有元素。</description>
+提示： 0 &amp;lt;= len(arr) &amp;lt;= 100000 0 &amp;lt;= k &amp;lt;= min(100000, len(arr)) 解题思路 排序 对原数组排序，返回前 k 个元素。
+func smallestK(arr []int, k int) []int { sort.Ints(arr) return arr[:k] } 复杂度 时间复杂度：$ O(N\log N), N = len(arr) $ 空间复杂度：$ O(\log N) $ 堆 构建一个大顶堆，保存前 k 个最小的数。遍历 arr 数组
+当堆中元素数量不足 k 时，入堆； 当堆中元素书数量为 k 时，与堆顶元素比较 当堆顶元素为较大时，弹出队顶元素，当前元素入堆 否则，忽略当前元素 遍历结束，返回堆中所有元素。</description>
     </item>
     
   </channel>

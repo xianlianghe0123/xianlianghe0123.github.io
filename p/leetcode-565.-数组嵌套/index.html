@@ -5,10 +5,11 @@
 难度： 简单
 题目描述 索引从 0 开始长度为 N 的数组 A，包含 0 到 N - 1 的所有整数。找到最大的集合 S 并返回其大小，其中 S[i] = {A[i], A[A[i]], A[A[A[i]]], ... } 且遵守以下的规则。
 假设选择索引为 i 的元素 A[i] 为 S 的第一个元素，S 的下一个元素应该是 A[A[i]]，之后是 A[A[A[i]]]... 以此类推，不断添加直到 S 出现重复的元素。
-示例：  输入： A = [5,4,0,3,1,6,2]
+示例： 输入： A = [5,4,0,3,1,6,2]
 输出： 4
 解释：
-A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.'><title>Leetcode 565. 数组嵌套</title>
+A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.
+其中一种最长的 S[K]:'><title>Leetcode 565. 数组嵌套</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-565.-%E6%95%B0%E7%BB%84%E5%B5%8C%E5%A5%97/'>
 
@@ -17,10 +18,11 @@ A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.'><title>Le
 难度： 简单
 题目描述 索引从 0 开始长度为 N 的数组 A，包含 0 到 N - 1 的所有整数。找到最大的集合 S 并返回其大小，其中 S[i] = {A[i], A[A[i]], A[A[A[i]]], ... } 且遵守以下的规则。
 假设选择索引为 i 的元素 A[i] 为 S 的第一个元素，S 的下一个元素应该是 A[A[i]]，之后是 A[A[A[i]]]... 以此类推，不断添加直到 S 出现重复的元素。
-示例：  输入： A = [5,4,0,3,1,6,2]
+示例： 输入： A = [5,4,0,3,1,6,2]
 输出： 4
 解释：
-A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.'>
+A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.
+其中一种最长的 S[K]:'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-565.-%E6%95%B0%E7%BB%84%E5%B5%8C%E5%A5%97/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-17T09:17:02&#43;08:00'/><meta property='article:modified_time' content='2022-07-17T09:17:02&#43;08:00'/>
@@ -29,10 +31,11 @@ A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.'>
 难度： 简单
 题目描述 索引从 0 开始长度为 N 的数组 A，包含 0 到 N - 1 的所有整数。找到最大的集合 S 并返回其大小，其中 S[i] = {A[i], A[A[i]], A[A[A[i]]], ... } 且遵守以下的规则。
 假设选择索引为 i 的元素 A[i] 为 S 的第一个元素，S 的下一个元素应该是 A[A[i]]，之后是 A[A[A[i]]]... 以此类推，不断添加直到 S 出现重复的元素。
-示例：  输入： A = [5,4,0,3,1,6,2]
+示例： 输入： A = [5,4,0,3,1,6,2]
 输出： 4
 解释：
-A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.">
+A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.
+其中一种最长的 S[K]:">
     </head>
     <body class="
     article-page 
@@ -238,21 +241,21 @@ S[0] = {A[0], A[5], A[6], A[2]} = {5, 6, 2, 0}</p>
 <p>根据题意，由于数组中的元素不会重复，则整个数组中元素会构成一个或多个环。</p>
 <p>枚举所有的初始元素，不断寻找直到出现环为止。</p>
 <p>将已经查找过的元素做标记，降低时间复杂度。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">arrayNesting</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">maxCnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; {
-			<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">j</span> = <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#75715e">// 标记已查找，并继续查找
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxCnt</span> &lt; <span style="color:#a6e22e">cnt</span> {
-			<span style="color:#a6e22e">maxCnt</span> = <span style="color:#a6e22e">cnt</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxCnt</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">arrayNesting</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maxCnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">j</span> = <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#75715e">// 标记已查找，并继续查找
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxCnt</span> &lt; <span style="color:#a6e22e">cnt</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">maxCnt</span> = <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxCnt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>

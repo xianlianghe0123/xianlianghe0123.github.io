@@ -6,7 +6,7 @@
 题目描述 给你一个整数数组 nums 。nums 中，子数组的 范围 是子数组中最大元素和最小元素的差值。
 返回 nums 中 所有 子数组范围的 和 。
 子数组是数组中一个连续 非空 的元素序列。
-示例 1：  输入： nums = [1,2,3]
+示例 1： 输入： nums = [1,2,3]
 输出： 4
 解释： nums 的 6 个子数组如下所示：
 [1]，范围 = 最大 - 最小 = 1 - 1 = 0
@@ -23,7 +23,7 @@
 题目描述 给你一个整数数组 nums 。nums 中，子数组的 范围 是子数组中最大元素和最小元素的差值。
 返回 nums 中 所有 子数组范围的 和 。
 子数组是数组中一个连续 非空 的元素序列。
-示例 1：  输入： nums = [1,2,3]
+示例 1： 输入： nums = [1,2,3]
 输出： 4
 解释： nums 的 6 个子数组如下所示：
 [1]，范围 = 最大 - 最小 = 1 - 1 = 0
@@ -40,7 +40,7 @@
 题目描述 给你一个整数数组 nums 。nums 中，子数组的 范围 是子数组中最大元素和最小元素的差值。
 返回 nums 中 所有 子数组范围的 和 。
 子数组是数组中一个连续 非空 的元素序列。
-示例 1：  输入： nums = [1,2,3]
+示例 1： 输入： nums = [1,2,3]
 输出： 4
 解释： nums 的 6 个子数组如下所示：
 [1]，范围 = 最大 - 最小 = 1 - 1 = 0
@@ -275,24 +275,24 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>枚举子数组的左边界，向右枚举右边界的过程中，同更新字数组的最大值和最小值，累加求得的子数组范围。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">subArrayRanges</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int64</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> int64(<span style="color:#ae81ff">0</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
-		<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] {
-				<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
-			}
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] {
-				<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
-			}
-			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> int64(<span style="color:#a6e22e">max</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">subArrayRanges</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> int64(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> int64(<span style="color:#a6e22e">max</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>

@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/2-keys-keyboard/
 难度： 中等
 题目描述 给定一个二叉搜索树 root 和一个目标结果 k，如果 BST 中存在两个元素且它们的和等于给定的目标结果，则返回 true。
-示例 1：  输入： root = [5,3,6,2,4,null,7], k = 9
+示例 1： 输入： root = [5,3,6,2,4,null,7], k = 9
 输出： true
- 示例 2：  输入： root = [5,3,6,2,4,null,7], k = 28
+示例 2： 输入： root = [5,3,6,2,4,null,7], k = 28
 输出： false
- 提示：  二叉树的节点个数的范围是 [1, 104]. -104 &amp;lt;= Node.val &amp;lt;= 104 root 为二叉搜索树 -105 &amp;lt;= k &amp;lt;= 105  解题思路 先序遍历 &#43; 哈希 采用先序遍历遍历整颗树，将之前遍历到的所有数记录到哈希表中。
+提示： 二叉树的节点个数的范围是 [1, 104]. -104 &amp;lt;= Node.val &amp;lt;= 104 root 为二叉搜索树 -105 &amp;lt;= k &amp;lt;= 105 解题思路 先序遍历 &#43; 哈希 采用先序遍历遍历整颗树，将之前遍历到的所有数记录到哈希表中。
 对于每个新遍历到的数字，在哈希表中寻找令其和为 k 的数。
 func findTarget(root *TreeNode, k int) bool { exist := make(map[int]struct{}) var dfs func(*TreeNode) bool dfs = func(node *TreeNode) bool { if node == nil { return false } if _, ok := exist[k-node.'><title>Leetcode 653. 两数之和 IV - 输入 BST</title>
 
@@ -18,11 +18,11 @@ func findTarget(root *TreeNode, k int) bool { exist := make(map[int]struct{}) va
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/2-keys-keyboard/
 难度： 中等
 题目描述 给定一个二叉搜索树 root 和一个目标结果 k，如果 BST 中存在两个元素且它们的和等于给定的目标结果，则返回 true。
-示例 1：  输入： root = [5,3,6,2,4,null,7], k = 9
+示例 1： 输入： root = [5,3,6,2,4,null,7], k = 9
 输出： true
- 示例 2：  输入： root = [5,3,6,2,4,null,7], k = 28
+示例 2： 输入： root = [5,3,6,2,4,null,7], k = 28
 输出： false
- 提示：  二叉树的节点个数的范围是 [1, 104]. -104 &amp;lt;= Node.val &amp;lt;= 104 root 为二叉搜索树 -105 &amp;lt;= k &amp;lt;= 105  解题思路 先序遍历 &#43; 哈希 采用先序遍历遍历整颗树，将之前遍历到的所有数记录到哈希表中。
+提示： 二叉树的节点个数的范围是 [1, 104]. -104 &amp;lt;= Node.val &amp;lt;= 104 root 为二叉搜索树 -105 &amp;lt;= k &amp;lt;= 105 解题思路 先序遍历 &#43; 哈希 采用先序遍历遍历整颗树，将之前遍历到的所有数记录到哈希表中。
 对于每个新遍历到的数字，在哈希表中寻找令其和为 k 的数。
 func findTarget(root *TreeNode, k int) bool { exist := make(map[int]struct{}) var dfs func(*TreeNode) bool dfs = func(node *TreeNode) bool { if node == nil { return false } if _, ok := exist[k-node.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-653.-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-iv-%E8%BE%93%E5%85%A5-bst/'>
@@ -32,11 +32,11 @@ func findTarget(root *TreeNode, k int) bool { exist := make(map[int]struct{}) va
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/2-keys-keyboard/
 难度： 中等
 题目描述 给定一个二叉搜索树 root 和一个目标结果 k，如果 BST 中存在两个元素且它们的和等于给定的目标结果，则返回 true。
-示例 1：  输入： root = [5,3,6,2,4,null,7], k = 9
+示例 1： 输入： root = [5,3,6,2,4,null,7], k = 9
 输出： true
- 示例 2：  输入： root = [5,3,6,2,4,null,7], k = 28
+示例 2： 输入： root = [5,3,6,2,4,null,7], k = 28
 输出： false
- 提示：  二叉树的节点个数的范围是 [1, 104]. -104 &amp;lt;= Node.val &amp;lt;= 104 root 为二叉搜索树 -105 &amp;lt;= k &amp;lt;= 105  解题思路 先序遍历 &#43; 哈希 采用先序遍历遍历整颗树，将之前遍历到的所有数记录到哈希表中。
+提示： 二叉树的节点个数的范围是 [1, 104]. -104 &amp;lt;= Node.val &amp;lt;= 104 root 为二叉搜索树 -105 &amp;lt;= k &amp;lt;= 105 解题思路 先序遍历 &#43; 哈希 采用先序遍历遍历整颗树，将之前遍历到的所有数记录到哈希表中。
 对于每个新遍历到的数字，在哈希表中寻找令其和为 k 的数。
 func findTarget(root *TreeNode, k int) bool { exist := make(map[int]struct{}) var dfs func(*TreeNode) bool dfs = func(node *TreeNode) bool { if node == nil { return false } if _, ok := exist[k-node.">
     </head>
@@ -246,54 +246,54 @@ func findTarget(root *TreeNode, k int) bool { exist := make(map[int]struct{}) va
 <h4 id="先序遍历--哈希">先序遍历 + 哈希</h4>
 <p>采用先序遍历遍历整颗树，将之前遍历到的所有数记录到哈希表中。</p>
 <p>对于每个新遍历到的数字，在哈希表中寻找令其和为 <code>k</code> 的数。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTarget</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">struct</span>{})
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>]; <span style="color:#a6e22e">ok</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		}
-		<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>] = <span style="color:#66d9ef">struct</span>{}{}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTarget</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">struct</span>{})
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>]; <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>] = <span style="color:#66d9ef">struct</span>{}{}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(N) $</li>
 </ul>
 <h4 id="二分查找">二分查找</h4>
 <p>遍历整颗树，使用二分查找寻找对应的另一个数。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTarget</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">binSearch</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>; <span style="color:#a6e22e">node</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &lt; <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> {
-				<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>
-			} <span style="color:#66d9ef">else</span> {
-				<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>
-			}
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-	}
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">binSearch</span>(<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>) {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findTarget</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">binSearch</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>; <span style="color:#a6e22e">node</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &lt; <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">binSearch</span>(<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log{N}), N = size(Tree) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

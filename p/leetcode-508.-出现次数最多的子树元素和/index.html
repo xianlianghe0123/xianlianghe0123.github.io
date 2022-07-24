@@ -5,11 +5,11 @@
 难度： 中等
 题目描述 给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。
 一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。
-示例 1：  输入： root = [5,2,-3]
+示例 1： 输入： root = [5,2,-3]
 输出： [2,-3,4]
- 示例 2：  输入： root = [5,2,-5]
+示例 2： 输入： root = [5,2,-5]
 输出： [2]
- 提示：  节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105  解题思路 深度优先搜索 &#43; 哈希 遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。
+提示： 节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105 解题思路 深度优先搜索 &#43; 哈希 遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。
 遍历哈希表，找出最大次数的和返回。
 func findFrequentTreeSum(root *TreeNode) []int { sum2Cnt := make(map[int]int) maxCnt := 0 var dfs func(node *TreeNode) int dfs = func(node *TreeNode) int { if node == nil { return 0 } sum := node.'><title>Leetcode 508. 出现次数最多的子树元素和</title>
 
@@ -20,11 +20,11 @@ func findFrequentTreeSum(root *TreeNode) []int { sum2Cnt := make(map[int]int) ma
 难度： 中等
 题目描述 给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。
 一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。
-示例 1：  输入： root = [5,2,-3]
+示例 1： 输入： root = [5,2,-3]
 输出： [2,-3,4]
- 示例 2：  输入： root = [5,2,-5]
+示例 2： 输入： root = [5,2,-5]
 输出： [2]
- 提示：  节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105  解题思路 深度优先搜索 &#43; 哈希 遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。
+提示： 节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105 解题思路 深度优先搜索 &#43; 哈希 遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。
 遍历哈希表，找出最大次数的和返回。
 func findFrequentTreeSum(root *TreeNode) []int { sum2Cnt := make(map[int]int) maxCnt := 0 var dfs func(node *TreeNode) int dfs = func(node *TreeNode) int { if node == nil { return 0 } sum := node.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-508.-%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AD%90%E6%A0%91%E5%85%83%E7%B4%A0%E5%92%8C/'>
@@ -35,11 +35,11 @@ func findFrequentTreeSum(root *TreeNode) []int { sum2Cnt := make(map[int]int) ma
 难度： 中等
 题目描述 给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。
 一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。
-示例 1：  输入： root = [5,2,-3]
+示例 1： 输入： root = [5,2,-3]
 输出： [2,-3,4]
- 示例 2：  输入： root = [5,2,-5]
+示例 2： 输入： root = [5,2,-5]
 输出： [2]
- 提示：  节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105  解题思路 深度优先搜索 &#43; 哈希 遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。
+提示： 节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105 解题思路 深度优先搜索 &#43; 哈希 遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。
 遍历哈希表，找出最大次数的和返回。
 func findFrequentTreeSum(root *TreeNode) []int { sum2Cnt := make(map[int]int) maxCnt := 0 var dfs func(node *TreeNode) int dfs = func(node *TreeNode) int { if node == nil { return 0 } sum := node.">
     </head>
@@ -248,32 +248,32 @@ func findFrequentTreeSum(root *TreeNode) []int { sum2Cnt := make(map[int]int) ma
 <h4 id="深度优先搜索--哈希">深度优先搜索 + 哈希</h4>
 <p>遍历二叉树，计算以每个节点为根节点的子树的和，使用哈希表记录每个和出现的次数，并求得最大出现次数。</p>
 <p>遍历哈希表，找出最大次数的和返回。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findFrequentTreeSum</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum2Cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">maxCnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-		}
-		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
-		<span style="color:#a6e22e">sum2Cnt</span>[<span style="color:#a6e22e">sum</span>]<span style="color:#f92672">++</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxCnt</span> &lt; <span style="color:#a6e22e">sum2Cnt</span>[<span style="color:#a6e22e">sum</span>] {
-			<span style="color:#a6e22e">maxCnt</span> = <span style="color:#a6e22e">sum2Cnt</span>[<span style="color:#a6e22e">sum</span>]
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-	}
-	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
-
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">sum</span>, <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">sum2Cnt</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">maxCnt</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">sum</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findFrequentTreeSum</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum2Cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maxCnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum2Cnt</span>[<span style="color:#a6e22e">sum</span>]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxCnt</span> &lt; <span style="color:#a6e22e">sum2Cnt</span>[<span style="color:#a6e22e">sum</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">maxCnt</span> = <span style="color:#a6e22e">sum2Cnt</span>[<span style="color:#a6e22e">sum</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">sum</span>, <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">sum2Cnt</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">maxCnt</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">sum</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(N) $</li>

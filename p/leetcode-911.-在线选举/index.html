@@ -7,7 +7,7 @@
 对于发生在时刻 t 的每个查询，需要找出在 t 时刻在选举中领先的候选人的编号。
 在 t 时刻投出的选票也将被计入我们的查询之中。在平局的情况下，最近获得投票的候选人将会获胜。
 实现 TopVotedCandidate 类：
- TopVotedCandidate(int[] persons, int[] times) 使用 persons 和 times 数组初始化对象。 int q(int t) 根据前面描述的规则，返回在时刻 t 在选举中领先的候选人的编号。  示例：  输入：
+TopVotedCandidate(int[] persons, int[] times) 使用 persons 和 times 数组初始化对象。 int q(int t) 根据前面描述的规则，返回在时刻 t 在选举中领先的候选人的编号。 示例： 输入：
 [&amp;ldquo;TopVotedCandidate&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;]
 [[[0, 1, 1, 0, 0, 1, 0], [0, 5, 10, 15, 20, 25, 30]], [3], [12], [25], [15], [24], [8]]'><title>Leetcode 911. 在线选举</title>
 
@@ -20,7 +20,7 @@
 对于发生在时刻 t 的每个查询，需要找出在 t 时刻在选举中领先的候选人的编号。
 在 t 时刻投出的选票也将被计入我们的查询之中。在平局的情况下，最近获得投票的候选人将会获胜。
 实现 TopVotedCandidate 类：
- TopVotedCandidate(int[] persons, int[] times) 使用 persons 和 times 数组初始化对象。 int q(int t) 根据前面描述的规则，返回在时刻 t 在选举中领先的候选人的编号。  示例：  输入：
+TopVotedCandidate(int[] persons, int[] times) 使用 persons 和 times 数组初始化对象。 int q(int t) 根据前面描述的规则，返回在时刻 t 在选举中领先的候选人的编号。 示例： 输入：
 [&amp;ldquo;TopVotedCandidate&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;]
 [[[0, 1, 1, 0, 0, 1, 0], [0, 5, 10, 15, 20, 25, 30]], [3], [12], [25], [15], [24], [8]]'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-911.-%E5%9C%A8%E7%BA%BF%E9%80%89%E4%B8%BE/'>
@@ -33,7 +33,7 @@
 对于发生在时刻 t 的每个查询，需要找出在 t 时刻在选举中领先的候选人的编号。
 在 t 时刻投出的选票也将被计入我们的查询之中。在平局的情况下，最近获得投票的候选人将会获胜。
 实现 TopVotedCandidate 类：
- TopVotedCandidate(int[] persons, int[] times) 使用 persons 和 times 数组初始化对象。 int q(int t) 根据前面描述的规则，返回在时刻 t 在选举中领先的候选人的编号。  示例：  输入：
+TopVotedCandidate(int[] persons, int[] times) 使用 persons 和 times 数组初始化对象。 int q(int t) 根据前面描述的规则，返回在时刻 t 在选举中领先的候选人的编号。 示例： 输入：
 [&amp;ldquo;TopVotedCandidate&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;, &amp;ldquo;q&amp;rdquo;]
 [[[0, 1, 1, 0, 0, 1, 0], [0, 5, 10, 15, 20, 25, 30]], [3], [12], [25], [15], [24], [8]]">
     </head>
@@ -257,44 +257,44 @@ topVotedCandidate.q(8); // 返回 1</p>
 <h4 id="哈希--二分查找">哈希 + 二分查找</h4>
 <p>使用哈希表记录到 <code>t</code> 时刻为止，每个人可以获得的选票，求得在每个时刻 <code>times[i]</code> 中领先的那一个人记录到数组中。</p>
 <p>后续 <code>q</code> 操作通过二分查找寻找不超过 <code>t</code> 的 <code>times[i]</code> 时刻，返回当时领先的那一个人。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TopVotedCandidate</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">times</span>  []<span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">winers</span> []<span style="color:#66d9ef">int</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">persons</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">times</span> []<span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">TopVotedCandidate</span> {
-	<span style="color:#a6e22e">winers</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">times</span>)) <span style="color:#75715e">// 每个时刻赢家
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">votes</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)           <span style="color:#75715e">// 每个候选人获得的选票
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>                            <span style="color:#75715e">// 当前最大投票数
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">winer</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>                           <span style="color:#75715e">// 当前赢家
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">times</span> {
-		<span style="color:#a6e22e">votes</span>[<span style="color:#a6e22e">persons</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
-		<span style="color:#75715e">// 更新最大票数，当前赢家，相同票数最近的候选人赢
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">votes</span>[<span style="color:#a6e22e">persons</span>[<span style="color:#a6e22e">i</span>]] {
-			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">votes</span>[<span style="color:#a6e22e">persons</span>[<span style="color:#a6e22e">i</span>]]
-			<span style="color:#a6e22e">winer</span> = <span style="color:#a6e22e">persons</span>[<span style="color:#a6e22e">i</span>]
-		}
-		<span style="color:#a6e22e">winers</span> = append(<span style="color:#a6e22e">winers</span>, <span style="color:#a6e22e">winer</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">TopVotedCandidate</span>{
-		<span style="color:#a6e22e">times</span>:  <span style="color:#a6e22e">times</span>,
-		<span style="color:#a6e22e">winers</span>: <span style="color:#a6e22e">winers</span>,
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TopVotedCandidate</span>) <span style="color:#a6e22e">Q</span>(<span style="color:#a6e22e">t</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">times</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
-		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> &lt; <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">times</span>[<span style="color:#a6e22e">mid</span>] {
-			<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">mid</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">mid</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">winers</span>[<span style="color:#a6e22e">l</span>]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TopVotedCandidate</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">times</span>  []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">winers</span> []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">persons</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">times</span> []<span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">TopVotedCandidate</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">winers</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">times</span>)) <span style="color:#75715e">// 每个时刻赢家
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">votes</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)           <span style="color:#75715e">// 每个候选人获得的选票
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>                            <span style="color:#75715e">// 当前最大投票数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">winer</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>                           <span style="color:#75715e">// 当前赢家
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">times</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">votes</span>[<span style="color:#a6e22e">persons</span>[<span style="color:#a6e22e">i</span>]]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 更新最大票数，当前赢家，相同票数最近的候选人赢
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">votes</span>[<span style="color:#a6e22e">persons</span>[<span style="color:#a6e22e">i</span>]] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">votes</span>[<span style="color:#a6e22e">persons</span>[<span style="color:#a6e22e">i</span>]]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">winer</span> = <span style="color:#a6e22e">persons</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">winers</span> = append(<span style="color:#a6e22e">winers</span>, <span style="color:#a6e22e">winer</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">TopVotedCandidate</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">times</span>:  <span style="color:#a6e22e">times</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">winers</span>: <span style="color:#a6e22e">winers</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TopVotedCandidate</span>) <span style="color:#a6e22e">Q</span>(<span style="color:#a6e22e">t</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">times</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> &lt; <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">times</span>[<span style="color:#a6e22e">mid</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">mid</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">mid</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">winers</span>[<span style="color:#a6e22e">l</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

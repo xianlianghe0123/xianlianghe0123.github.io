@@ -8,14 +8,15 @@
 如果一张垂直竖立的多米诺骨牌的两侧同时有多米诺骨牌倒下时，由于受力平衡， 该骨牌仍然保持不变。
 就这个问题而言，我们会认为一张正在倒下的多米诺骨牌不会对其它正在倒下或已经倒下的多米诺骨牌施加额外的力。
 给你一个字符串 dominoes 表示这一行多米诺骨牌的初始状态，其中：
- dominoes[i] = &#39;L&#39;，表示第 i 张多米诺骨牌被推向左侧， dominoes[i] = &#39;R&#39;，表示第 i 张多米诺骨牌被推向右侧， dominoes[i] = &#39;.&#39;，表示没有推动第 i 张多米诺骨牌。  返回表示最终状态的字符串。
-示例 1：  输入： dominoes = &amp;ldquo;RR.L&amp;rdquo;
+dominoes[i] = &#39;L&#39;，表示第 i 张多米诺骨牌被推向左侧， dominoes[i] = &#39;R&#39;，表示第 i 张多米诺骨牌被推向右侧， dominoes[i] = &#39;.&#39;，表示没有推动第 i 张多米诺骨牌。 返回表示最终状态的字符串。
+示例 1： 输入： dominoes = &amp;ldquo;RR.L&amp;rdquo;
 输出： &amp;ldquo;RR.L&amp;rdquo;
 解释： 第一张多米诺骨牌没有给第二张施加额外的力。
- 示例 2：  输入： dominoes = &amp;ldquo;.L.R&amp;hellip;LR..L..&amp;rdquo;
+示例 2： 输入： dominoes = &amp;ldquo;.L.R&amp;hellip;LR..L..&amp;rdquo;
 输出： &amp;ldquo;LL.RR.LLRRLL..&amp;rdquo;
- 提示： -n == dominoes.length -1 &amp;lt;= n &amp;lt;= 105
- dominoes[i] 为 &#39;L&#39;、&#39;R&#39; 或 &#39;.&#39;  解题思路 广度优先搜索 所有一开始被推的骨牌为起始状态，进行广度优先搜索，判定倒向一侧的下一个多米诺骨牌的状态：'><title>Leetcode 838. 推多米诺</title>
+提示： -n == dominoes.length -1 &amp;lt;= n &amp;lt;= 105
+dominoes[i] 为 &#39;L&#39;、&#39;R&#39; 或 &#39;.&#39; 解题思路 广度优先搜索 所有一开始被推的骨牌为起始状态，进行广度优先搜索，判定倒向一侧的下一个多米诺骨牌的状态：
+当已经倒下时，忽略，不进行传递； 当另一侧存在同一时间与当前倒下方向相反的骨牌时，仍保持直立； 否则，保持与当前倒下方向一致，并加入到队列。 func pushDominoes(dominoes string) string { dominoesBytes := []byte(dominoes) times := make([]int, len(dominoesBytes)) // 记录倒下时间 queue := list.'><title>Leetcode 838. 推多米诺</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-838.-%E6%8E%A8%E5%A4%9A%E7%B1%B3%E8%AF%BA/'>
 
@@ -27,14 +28,15 @@
 如果一张垂直竖立的多米诺骨牌的两侧同时有多米诺骨牌倒下时，由于受力平衡， 该骨牌仍然保持不变。
 就这个问题而言，我们会认为一张正在倒下的多米诺骨牌不会对其它正在倒下或已经倒下的多米诺骨牌施加额外的力。
 给你一个字符串 dominoes 表示这一行多米诺骨牌的初始状态，其中：
- dominoes[i] = &#39;L&#39;，表示第 i 张多米诺骨牌被推向左侧， dominoes[i] = &#39;R&#39;，表示第 i 张多米诺骨牌被推向右侧， dominoes[i] = &#39;.&#39;，表示没有推动第 i 张多米诺骨牌。  返回表示最终状态的字符串。
-示例 1：  输入： dominoes = &amp;ldquo;RR.L&amp;rdquo;
+dominoes[i] = &#39;L&#39;，表示第 i 张多米诺骨牌被推向左侧， dominoes[i] = &#39;R&#39;，表示第 i 张多米诺骨牌被推向右侧， dominoes[i] = &#39;.&#39;，表示没有推动第 i 张多米诺骨牌。 返回表示最终状态的字符串。
+示例 1： 输入： dominoes = &amp;ldquo;RR.L&amp;rdquo;
 输出： &amp;ldquo;RR.L&amp;rdquo;
 解释： 第一张多米诺骨牌没有给第二张施加额外的力。
- 示例 2：  输入： dominoes = &amp;ldquo;.L.R&amp;hellip;LR..L..&amp;rdquo;
+示例 2： 输入： dominoes = &amp;ldquo;.L.R&amp;hellip;LR..L..&amp;rdquo;
 输出： &amp;ldquo;LL.RR.LLRRLL..&amp;rdquo;
- 提示： -n == dominoes.length -1 &amp;lt;= n &amp;lt;= 105
- dominoes[i] 为 &#39;L&#39;、&#39;R&#39; 或 &#39;.&#39;  解题思路 广度优先搜索 所有一开始被推的骨牌为起始状态，进行广度优先搜索，判定倒向一侧的下一个多米诺骨牌的状态：'>
+提示： -n == dominoes.length -1 &amp;lt;= n &amp;lt;= 105
+dominoes[i] 为 &#39;L&#39;、&#39;R&#39; 或 &#39;.&#39; 解题思路 广度优先搜索 所有一开始被推的骨牌为起始状态，进行广度优先搜索，判定倒向一侧的下一个多米诺骨牌的状态：
+当已经倒下时，忽略，不进行传递； 当另一侧存在同一时间与当前倒下方向相反的骨牌时，仍保持直立； 否则，保持与当前倒下方向一致，并加入到队列。 func pushDominoes(dominoes string) string { dominoesBytes := []byte(dominoes) times := make([]int, len(dominoesBytes)) // 记录倒下时间 queue := list.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-838.-%E6%8E%A8%E5%A4%9A%E7%B1%B3%E8%AF%BA/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='bfs' /><meta property='article:tag' content='two pointers' /><meta property='article:published_time' content='2022-02-21T09:45:54&#43;08:00'/><meta property='article:modified_time' content='2022-02-21T09:45:54&#43;08:00'/>
@@ -46,14 +48,15 @@
 如果一张垂直竖立的多米诺骨牌的两侧同时有多米诺骨牌倒下时，由于受力平衡， 该骨牌仍然保持不变。
 就这个问题而言，我们会认为一张正在倒下的多米诺骨牌不会对其它正在倒下或已经倒下的多米诺骨牌施加额外的力。
 给你一个字符串 dominoes 表示这一行多米诺骨牌的初始状态，其中：
- dominoes[i] = &#39;L&#39;，表示第 i 张多米诺骨牌被推向左侧， dominoes[i] = &#39;R&#39;，表示第 i 张多米诺骨牌被推向右侧， dominoes[i] = &#39;.&#39;，表示没有推动第 i 张多米诺骨牌。  返回表示最终状态的字符串。
-示例 1：  输入： dominoes = &amp;ldquo;RR.L&amp;rdquo;
+dominoes[i] = &#39;L&#39;，表示第 i 张多米诺骨牌被推向左侧， dominoes[i] = &#39;R&#39;，表示第 i 张多米诺骨牌被推向右侧， dominoes[i] = &#39;.&#39;，表示没有推动第 i 张多米诺骨牌。 返回表示最终状态的字符串。
+示例 1： 输入： dominoes = &amp;ldquo;RR.L&amp;rdquo;
 输出： &amp;ldquo;RR.L&amp;rdquo;
 解释： 第一张多米诺骨牌没有给第二张施加额外的力。
- 示例 2：  输入： dominoes = &amp;ldquo;.L.R&amp;hellip;LR..L..&amp;rdquo;
+示例 2： 输入： dominoes = &amp;ldquo;.L.R&amp;hellip;LR..L..&amp;rdquo;
 输出： &amp;ldquo;LL.RR.LLRRLL..&amp;rdquo;
- 提示： -n == dominoes.length -1 &amp;lt;= n &amp;lt;= 105
- dominoes[i] 为 &#39;L&#39;、&#39;R&#39; 或 &#39;.&#39;  解题思路 广度优先搜索 所有一开始被推的骨牌为起始状态，进行广度优先搜索，判定倒向一侧的下一个多米诺骨牌的状态：">
+提示： -n == dominoes.length -1 &amp;lt;= n &amp;lt;= 105
+dominoes[i] 为 &#39;L&#39;、&#39;R&#39; 或 &#39;.&#39; 解题思路 广度优先搜索 所有一开始被推的骨牌为起始状态，进行广度优先搜索，判定倒向一侧的下一个多米诺骨牌的状态：
+当已经倒下时，忽略，不进行传递； 当另一侧存在同一时间与当前倒下方向相反的骨牌时，仍保持直立； 否则，保持与当前倒下方向一致，并加入到队列。 func pushDominoes(dominoes string) string { dominoesBytes := []byte(dominoes) times := make([]int, len(dominoesBytes)) // 记录倒下时间 queue := list.">
     </head>
     <body class="
     article-page 
@@ -274,39 +277,39 @@
 <li>当另一侧存在同一时间与当前倒下方向相反的骨牌时，仍保持直立；</li>
 <li>否则，保持与当前倒下方向一致，并加入到队列。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pushDominoes</span>(<span style="color:#a6e22e">dominoes</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">dominoesBytes</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">dominoes</span>)
-	<span style="color:#a6e22e">times</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">dominoesBytes</span>)) <span style="color:#75715e">// 记录倒下时间
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
-	<span style="color:#75715e">// 初始状态
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dominoesBytes</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;.&#39;</span> {
-			<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">i</span>)
-		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">time</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>(); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-			<span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>()).(<span style="color:#66d9ef">int</span>)
-			<span style="color:#75715e">// 确定下一个受影响的骨牌 以及 另一侧的骨牌
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">next</span>, <span style="color:#a6e22e">another</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cur</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">cur</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;R&#39;</span> {
-				<span style="color:#a6e22e">next</span>, <span style="color:#a6e22e">another</span> = <span style="color:#a6e22e">cur</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">cur</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>
-			}
-			<span style="color:#75715e">// 到达边界 或 已倒下，忽略
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">next</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">dominoesBytes</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">next</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;.&#39;</span> {
-				<span style="color:#66d9ef">continue</span>
-			}
-			<span style="color:#a6e22e">times</span>[<span style="color:#a6e22e">next</span>] = <span style="color:#a6e22e">time</span>
-			<span style="color:#75715e">// 未能保持平衡（另一侧骨牌不存在 或 倒下时间不一致 或 方向不与当前相反）
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">another</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">another</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">dominoes</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">times</span>[<span style="color:#a6e22e">another</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">times</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">||</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">another</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">another</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">cur</span>] {
-				<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">next</span>] = <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">cur</span>]
-				<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">next</span>) <span style="color:#75715e">// 传导到倒下骨牌
-</span><span style="color:#75715e"></span>			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">dominoesBytes</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pushDominoes</span>(<span style="color:#a6e22e">dominoes</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dominoesBytes</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">dominoes</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">times</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">dominoesBytes</span>)) <span style="color:#75715e">// 记录倒下时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 初始状态
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dominoesBytes</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;.&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">time</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>(); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>()).(<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 确定下一个受影响的骨牌 以及 另一侧的骨牌
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">next</span>, <span style="color:#a6e22e">another</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cur</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">cur</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;R&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">next</span>, <span style="color:#a6e22e">another</span> = <span style="color:#a6e22e">cur</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">cur</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 到达边界 或 已倒下，忽略
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">next</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">dominoesBytes</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">next</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;.&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">times</span>[<span style="color:#a6e22e">next</span>] = <span style="color:#a6e22e">time</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 未能保持平衡（另一侧骨牌不存在 或 倒下时间不一致 或 方向不与当前相反）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">another</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">another</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">dominoes</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">times</span>[<span style="color:#a6e22e">another</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">times</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">||</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">another</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">another</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">cur</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">next</span>] = <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">cur</span>]
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">next</span>) <span style="color:#75715e">// 传导到倒下骨牌
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">dominoesBytes</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(dominoes) $</li>
 <li>空间复杂度：$ O(N) $</li>
@@ -321,36 +324,36 @@
 <li>除了上述4中之外的情况，不会影响这一段骨牌的状态。</li>
 </ul>
 <p>使用双指针，从初始态寻找下个倒下的骨牌或尾部，判定构成的区间段，符合上述哪种条件，进行相应的变更。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pushDominoes</span>(<span style="color:#a6e22e">dominoes</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">dominoesBytes</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">dominoes</span>)
-	<span style="color:#75715e">// 初始状态
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">r</span> = <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dominoesBytes</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">dominoesBytes</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;.&#39;</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;R&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;L&#39;</span> {
-				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">l</span><span style="color:#f92672">+</span><span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span><span style="color:#f92672">+</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>]
-					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>]
-				}
-			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;L&#39;</span> {
-				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">r</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#e6db74">&#39;L&#39;</span>
-				}
-			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;R&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> {
-				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">r</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#e6db74">&#39;R&#39;</span>
-				}
-			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] {
-				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">r</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>]
-				}
-			}
-			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">r</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">dominoesBytes</span>)
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pushDominoes</span>(<span style="color:#a6e22e">dominoes</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dominoesBytes</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">dominoes</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 初始状态
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">r</span> = <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dominoesBytes</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">dominoesBytes</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;.&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;R&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;L&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">l</span><span style="color:#f92672">+</span><span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span><span style="color:#f92672">+</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>]
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>]
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;L&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">r</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#e6db74">&#39;L&#39;</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;R&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">r</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#e6db74">&#39;R&#39;</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">r</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">r</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dominoesBytes</span>[<span style="color:#a6e22e">l</span>]
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">r</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">dominoesBytes</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(dominoes) $</li>
 <li>空间复杂度：$ O(1) $</li>

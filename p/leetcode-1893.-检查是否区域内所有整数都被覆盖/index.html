@@ -6,7 +6,7 @@
 题目描述 给你一个二维整数数组 ranges 和两个整数 left 和 right 。每个 ranges[i] = [starti, endi] 表示一个从 starti 到 endi 的 闭区间 。
 如果闭区间 [left, right] 内每个整数都被 ranges 中 至少一个 区间覆盖，那么请你返回 true ，否则返回 false 。
 已知区间 ranges[i] = [starti, endi] ，如果整数 x 满足 starti &amp;lt;= x &amp;lt;= endi ，那么我们称整数 x 被覆盖了。
-示例 1：  输入： ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
+示例 1： 输入： ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
 输出： true
 解释： 2 到 5 的每个整数都被覆盖了：'><title>Leetcode 1893. 检查是否区域内所有整数都被覆盖</title>
 
@@ -18,7 +18,7 @@
 题目描述 给你一个二维整数数组 ranges 和两个整数 left 和 right 。每个 ranges[i] = [starti, endi] 表示一个从 starti 到 endi 的 闭区间 。
 如果闭区间 [left, right] 内每个整数都被 ranges 中 至少一个 区间覆盖，那么请你返回 true ，否则返回 false 。
 已知区间 ranges[i] = [starti, endi] ，如果整数 x 满足 starti &amp;lt;= x &amp;lt;= endi ，那么我们称整数 x 被覆盖了。
-示例 1：  输入： ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
+示例 1： 输入： ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
 输出： true
 解释： 2 到 5 的每个整数都被覆盖了：'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1893.-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%8C%BA%E5%9F%9F%E5%86%85%E6%89%80%E6%9C%89%E6%95%B4%E6%95%B0%E9%83%BD%E8%A2%AB%E8%A6%86%E7%9B%96/'>
@@ -30,7 +30,7 @@
 题目描述 给你一个二维整数数组 ranges 和两个整数 left 和 right 。每个 ranges[i] = [starti, endi] 表示一个从 starti 到 endi 的 闭区间 。
 如果闭区间 [left, right] 内每个整数都被 ranges 中 至少一个 区间覆盖，那么请你返回 true ，否则返回 false 。
 已知区间 ranges[i] = [starti, endi] ，如果整数 x 满足 starti &amp;lt;= x &amp;lt;= endi ，那么我们称整数 x 被覆盖了。
-示例 1：  输入： ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
+示例 1： 输入： ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
 输出： true
 解释： 2 到 5 的每个整数都被覆盖了：">
     </head>
@@ -245,40 +245,40 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>对于区间内的每个数字，遍历 <code>range</code>，判断其是否被覆盖，不被覆盖返回 <code>false</code>，被覆盖继续执行下一轮循环。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isCovered</span>(<span style="color:#a6e22e">ranges</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">right</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-<span style="color:#a6e22e">Outer</span>:
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ranges</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">1</span>] {
-				<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Outer</span>
-			}
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isCovered</span>(<span style="color:#a6e22e">ranges</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">right</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Outer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ranges</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Outer</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NM), N = len(ranges), M = right-left+1 $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="哈希">哈希</h4>
 <p>直接记录被覆盖的数，然后遍历 <code>[left, right]</code> ，判断该区间内的数是否全部被覆盖。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isCovered</span>(<span style="color:#a6e22e">ranges</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">right</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">isCover</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">51</span>]<span style="color:#66d9ef">bool</span>{}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ranges</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">0</span>]; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">1</span>]; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">isCover</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#66d9ef">true</span>
-		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isCover</span>[<span style="color:#a6e22e">i</span>] {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isCovered</span>(<span style="color:#a6e22e">ranges</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">right</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">isCover</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">51</span>]<span style="color:#66d9ef">bool</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ranges</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">0</span>]; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">1</span>]; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">isCover</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isCover</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NS+M), N = len(ranges), S = scope, M = right-left+1 $</li>
 <li>空间复杂度：$ O(S) $</li>

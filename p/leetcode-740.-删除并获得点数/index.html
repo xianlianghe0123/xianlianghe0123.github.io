@@ -6,11 +6,11 @@
 题目描述 给你一个整数数组 nums ，你可以对它进行一些操作。
 每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] &#43; 1 的元素。
 开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。
-示例1：  输入： nums = [3,4,2]
+示例1： 输入： nums = [3,4,2]
 输出： 6
 解释： 删除 4 获得 4 个点数，因此 3 也被删除。
 之后，删除 2 获得 2 个点数。总共获得 6 个点数。
- 示例2：  输入： nums = [2,2,3,3,3,4]
+示例2： 输入： nums = [2,2,3,3,3,4]
 输出： 9
 解释： 删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
 之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。'><title>Leetcode 740. 删除并获得点数</title>
@@ -23,11 +23,11 @@
 题目描述 给你一个整数数组 nums ，你可以对它进行一些操作。
 每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] &#43; 1 的元素。
 开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。
-示例1：  输入： nums = [3,4,2]
+示例1： 输入： nums = [3,4,2]
 输出： 6
 解释： 删除 4 获得 4 个点数，因此 3 也被删除。
 之后，删除 2 获得 2 个点数。总共获得 6 个点数。
- 示例2：  输入： nums = [2,2,3,3,3,4]
+示例2： 输入： nums = [2,2,3,3,3,4]
 输出： 9
 解释： 删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
 之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。'>
@@ -40,11 +40,11 @@
 题目描述 给你一个整数数组 nums ，你可以对它进行一些操作。
 每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] &#43; 1 的元素。
 开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。
-示例1：  输入： nums = [3,4,2]
+示例1： 输入： nums = [3,4,2]
 输出： 6
 解释： 删除 4 获得 4 个点数，因此 3 也被删除。
 之后，删除 2 获得 2 个点数。总共获得 6 个点数。
- 示例2：  输入： nums = [2,2,3,3,3,4]
+示例2： 输入： nums = [2,2,3,3,3,4]
 输出： 9
 解释： 删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
 之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。">
@@ -264,26 +264,26 @@
 <li><code>dp[i] = max(dp[i-1], dp[i-2]+map[i])</code></li>
 </ul>
 <p>执行到整个数组的最大值时为止，得到最大点数。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">deleteAndEarn</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">maxNum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">num</span>]<span style="color:#f92672">++</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxNum</span> &lt; <span style="color:#a6e22e">num</span> {
-			<span style="color:#a6e22e">maxNum</span> = <span style="color:#a6e22e">num</span>
-		}
-	}
-	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">maxNum</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">cnt</span>[<span style="color:#ae81ff">1</span>]
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">maxNum</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">i</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
-			<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">maxNum</span>]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">deleteAndEarn</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maxNum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">num</span>]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxNum</span> &lt; <span style="color:#a6e22e">num</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">maxNum</span> = <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">maxNum</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">cnt</span>[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">maxNum</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">cnt</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">maxNum</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：O(max(num[i]))</li>
 <li>空间复杂度：O(N)</li>

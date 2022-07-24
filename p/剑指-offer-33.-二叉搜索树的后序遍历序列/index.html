@@ -5,13 +5,13 @@
 难度： 中等
 题目描述 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回 true，否则返回 false。假设输入的数组的任意两个数字都 互不相同。
 参考以下这颗二叉搜索树：
- 5 / \ 2 6 / \ 1 3 示例 1：  输入： [1,6,3,2,5]
+5 / \ 2 6 / \ 1 3 示例 1： 输入： [1,6,3,2,5]
 输出： false
- 示例 2：  输入： [1,3,2,6,5]
+示例 2： 输入： [1,3,2,6,5]
 输出： true
- 提示：  数组长度 &amp;lt;= 1000  解题思路 递归 对于一棵树的后续遍历序列，最后一个元素必然是根，然后向前遍历。根据二叉搜索树的性质，其右边元素一定大于根，而左边元素一定小于根，由此找到首个小于根的元素即为左右子树分界点。
+提示： 数组长度 &amp;lt;= 1000 解题思路 递归 对于一棵树的后续遍历序列，最后一个元素必然是根，然后向前遍历。根据二叉搜索树的性质，其右边元素一定大于根，而左边元素一定小于根，由此找到首个小于根的元素即为左右子树分界点。
 若在左子树序列里存在一个大于根的结点，则返回 false，否则递归处理左右子树。
-func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { return true } root := postorder[len(postorder)-1] split := len(postorder) - 2 for ; split &amp;gt;= 0 &amp;amp;&amp;amp; postorder[split] &amp;gt; root; split-- { } for i := 0; i &amp;lt; split; i&#43;&#43; { if postorder[i] &amp;gt; root { return false } } return verifyPostorder(postorder[:split&#43;1]) &amp;amp;&amp;amp; verifyPostorder(postorder[split&#43;1:len(postorder)-1]) } 复杂度  时间复杂度：$ O(N\log{N}), N = len(postorder) $ 空间复杂度：$ O(\log{N}) $  '><title>剑指 Offer 33. 二叉搜索树的后序遍历序列</title>
+func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { return true } root := postorder[len(postorder)-1] split := len(postorder) - 2 for ; split &amp;gt;= 0 &amp;amp;&amp;amp; postorder[split] &amp;gt; root; split-- { } for i := 0; i &amp;lt; split; i&#43;&#43; { if postorder[i] &amp;gt; root { return false } } return verifyPostorder(postorder[:split&#43;1]) &amp;amp;&amp;amp; verifyPostorder(postorder[split&#43;1:len(postorder)-1]) } 复杂度 时间复杂度：$ O(N\log{N}), N = len(postorder) $ 空间复杂度：$ O(\log{N}) $ '><title>剑指 Offer 33. 二叉搜索树的后序遍历序列</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-33.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/'>
 
@@ -20,13 +20,13 @@ func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { ret
 难度： 中等
 题目描述 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回 true，否则返回 false。假设输入的数组的任意两个数字都 互不相同。
 参考以下这颗二叉搜索树：
- 5 / \ 2 6 / \ 1 3 示例 1：  输入： [1,6,3,2,5]
+5 / \ 2 6 / \ 1 3 示例 1： 输入： [1,6,3,2,5]
 输出： false
- 示例 2：  输入： [1,3,2,6,5]
+示例 2： 输入： [1,3,2,6,5]
 输出： true
- 提示：  数组长度 &amp;lt;= 1000  解题思路 递归 对于一棵树的后续遍历序列，最后一个元素必然是根，然后向前遍历。根据二叉搜索树的性质，其右边元素一定大于根，而左边元素一定小于根，由此找到首个小于根的元素即为左右子树分界点。
+提示： 数组长度 &amp;lt;= 1000 解题思路 递归 对于一棵树的后续遍历序列，最后一个元素必然是根，然后向前遍历。根据二叉搜索树的性质，其右边元素一定大于根，而左边元素一定小于根，由此找到首个小于根的元素即为左右子树分界点。
 若在左子树序列里存在一个大于根的结点，则返回 false，否则递归处理左右子树。
-func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { return true } root := postorder[len(postorder)-1] split := len(postorder) - 2 for ; split &amp;gt;= 0 &amp;amp;&amp;amp; postorder[split] &amp;gt; root; split-- { } for i := 0; i &amp;lt; split; i&#43;&#43; { if postorder[i] &amp;gt; root { return false } } return verifyPostorder(postorder[:split&#43;1]) &amp;amp;&amp;amp; verifyPostorder(postorder[split&#43;1:len(postorder)-1]) } 复杂度  时间复杂度：$ O(N\log{N}), N = len(postorder) $ 空间复杂度：$ O(\log{N}) $  '>
+func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { return true } root := postorder[len(postorder)-1] split := len(postorder) - 2 for ; split &amp;gt;= 0 &amp;amp;&amp;amp; postorder[split] &amp;gt; root; split-- { } for i := 0; i &amp;lt; split; i&#43;&#43; { if postorder[i] &amp;gt; root { return false } } return verifyPostorder(postorder[:split&#43;1]) &amp;amp;&amp;amp; verifyPostorder(postorder[split&#43;1:len(postorder)-1]) } 复杂度 时间复杂度：$ O(N\log{N}), N = len(postorder) $ 空间复杂度：$ O(\log{N}) $ '>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-33.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-09-20T13:56:50&#43;08:00'/><meta property='article:modified_time' content='2021-09-20T13:56:50&#43;08:00'/>
@@ -35,13 +35,13 @@ func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { ret
 难度： 中等
 题目描述 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回 true，否则返回 false。假设输入的数组的任意两个数字都 互不相同。
 参考以下这颗二叉搜索树：
- 5 / \ 2 6 / \ 1 3 示例 1：  输入： [1,6,3,2,5]
+5 / \ 2 6 / \ 1 3 示例 1： 输入： [1,6,3,2,5]
 输出： false
- 示例 2：  输入： [1,3,2,6,5]
+示例 2： 输入： [1,3,2,6,5]
 输出： true
- 提示：  数组长度 &amp;lt;= 1000  解题思路 递归 对于一棵树的后续遍历序列，最后一个元素必然是根，然后向前遍历。根据二叉搜索树的性质，其右边元素一定大于根，而左边元素一定小于根，由此找到首个小于根的元素即为左右子树分界点。
+提示： 数组长度 &amp;lt;= 1000 解题思路 递归 对于一棵树的后续遍历序列，最后一个元素必然是根，然后向前遍历。根据二叉搜索树的性质，其右边元素一定大于根，而左边元素一定小于根，由此找到首个小于根的元素即为左右子树分界点。
 若在左子树序列里存在一个大于根的结点，则返回 false，否则递归处理左右子树。
-func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { return true } root := postorder[len(postorder)-1] split := len(postorder) - 2 for ; split &amp;gt;= 0 &amp;amp;&amp;amp; postorder[split] &amp;gt; root; split-- { } for i := 0; i &amp;lt; split; i&#43;&#43; { if postorder[i] &amp;gt; root { return false } } return verifyPostorder(postorder[:split&#43;1]) &amp;amp;&amp;amp; verifyPostorder(postorder[split&#43;1:len(postorder)-1]) } 复杂度  时间复杂度：$ O(N\log{N}), N = len(postorder) $ 空间复杂度：$ O(\log{N}) $  ">
+func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { return true } root := postorder[len(postorder)-1] split := len(postorder) - 2 for ; split &amp;gt;= 0 &amp;amp;&amp;amp; postorder[split] &amp;gt; root; split-- { } for i := 0; i &amp;lt; split; i&#43;&#43; { if postorder[i] &amp;gt; root { return false } } return verifyPostorder(postorder[:split&#43;1]) &amp;amp;&amp;amp; verifyPostorder(postorder[split&#43;1:len(postorder)-1]) } 复杂度 时间复杂度：$ O(N\log{N}), N = len(postorder) $ 空间复杂度：$ O(\log{N}) $ ">
     </head>
     <body class="
     article-page 
@@ -250,22 +250,22 @@ func verifyPostorder(postorder []int) bool { if len(postorder) &amp;lt;= 2 { ret
 <h4 id="递归">递归</h4>
 <p>对于一棵树的后续遍历序列，最后一个元素必然是根，然后向前遍历。根据二叉搜索树的性质，其右边元素一定大于根，而左边元素一定小于根，由此找到首个小于根的元素即为左右子树分界点。</p>
 <p>若在左子树序列里存在一个大于根的结点，则返回 <code>false</code>，否则递归处理左右子树。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">verifyPostorder</span>(<span style="color:#a6e22e">postorder</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">postorder</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-	}
-	<span style="color:#a6e22e">root</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">postorder</span>[len(<span style="color:#a6e22e">postorder</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-	<span style="color:#a6e22e">split</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">postorder</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>
-	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">split</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">postorder</span>[<span style="color:#a6e22e">split</span>] &gt; <span style="color:#a6e22e">root</span>; <span style="color:#a6e22e">split</span><span style="color:#f92672">--</span> {
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">split</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">postorder</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#a6e22e">root</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">verifyPostorder</span>(<span style="color:#a6e22e">postorder</span>[:<span style="color:#a6e22e">split</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">verifyPostorder</span>(<span style="color:#a6e22e">postorder</span>[<span style="color:#a6e22e">split</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:len(<span style="color:#a6e22e">postorder</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">verifyPostorder</span>(<span style="color:#a6e22e">postorder</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">postorder</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">root</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">postorder</span>[len(<span style="color:#a6e22e">postorder</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">split</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">postorder</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">split</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">postorder</span>[<span style="color:#a6e22e">split</span>] &gt; <span style="color:#a6e22e">root</span>; <span style="color:#a6e22e">split</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">split</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">postorder</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#a6e22e">root</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">verifyPostorder</span>(<span style="color:#a6e22e">postorder</span>[:<span style="color:#a6e22e">split</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">verifyPostorder</span>(<span style="color:#a6e22e">postorder</span>[<span style="color:#a6e22e">split</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:len(<span style="color:#a6e22e">postorder</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log{N}), N = len(postorder) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

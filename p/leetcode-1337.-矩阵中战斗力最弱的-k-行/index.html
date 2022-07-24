@@ -7,7 +7,7 @@
 请你返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序。
 如果第 i 行的军人数量少于第 j 行，或者两行军人数量相同但 i 小于 j，那么我们认为第 i 行的战斗力比第 j 行弱。
 军人 总是 排在一行中的靠前位置，也就是说 1 总是出现在 0 之前。
-示例 1：  输入： mat =
+示例 1： 输入： mat =
 [[1,1,0,0,0],
 [1,1,1,1,0],
 [1,0,0,0,0],
@@ -30,7 +30,7 @@ k = 3
 请你返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序。
 如果第 i 行的军人数量少于第 j 行，或者两行军人数量相同但 i 小于 j，那么我们认为第 i 行的战斗力比第 j 行弱。
 军人 总是 排在一行中的靠前位置，也就是说 1 总是出现在 0 之前。
-示例 1：  输入： mat =
+示例 1： 输入： mat =
 [[1,1,0,0,0],
 [1,1,1,1,0],
 [1,0,0,0,0],
@@ -53,7 +53,7 @@ k = 3
 请你返回矩阵中战斗力最弱的 k 行的索引，按从最弱到最强排序。
 如果第 i 行的军人数量少于第 j 行，或者两行军人数量相同但 i 小于 j，那么我们认为第 i 行的战斗力比第 j 行弱。
 军人 总是 排在一行中的靠前位置，也就是说 1 总是出现在 0 之前。
-示例 1：  输入： mat =
+示例 1： 输入： mat =
 [[1,1,0,0,0],
 [1,1,1,1,0],
 [1,0,0,0,0],
@@ -300,78 +300,78 @@ k = 2<br>
 <h3 id="解题思路">解题思路</h3>
 <h4 id="排序">排序</h4>
 <p>以行为单位，记录每一行军人的数量及行号，按战力从小到大排序，返回前 <code>k</code> 个最弱战力的行号。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kWeakestRows</span>(<span style="color:#a6e22e">mat</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
-		<span style="color:#a6e22e">Row</span>     <span style="color:#66d9ef">int</span>
-		<span style="color:#a6e22e">Soldier</span> <span style="color:#66d9ef">int</span>
-	}
-	<span style="color:#a6e22e">nodes</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">mat</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">mat</span> {
-		<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
-			<span style="color:#a6e22e">Row</span>:     <span style="color:#a6e22e">i</span>,
-			<span style="color:#a6e22e">Soldier</span>: <span style="color:#ae81ff">0</span>,
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">mat</span>[<span style="color:#a6e22e">i</span>] {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Soldier</span><span style="color:#f92672">++</span>
-			} <span style="color:#66d9ef">else</span> {
-				<span style="color:#66d9ef">break</span>
-			}
-		}
-		<span style="color:#a6e22e">nodes</span> = append(<span style="color:#a6e22e">nodes</span>, <span style="color:#a6e22e">node</span>)
-	}
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">nodes</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Soldier</span> &lt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Soldier</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Soldier</span> &gt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Soldier</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Row</span> &lt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Row</span>
-		}
-	})
-	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">k</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Row</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kWeakestRows</span>(<span style="color:#a6e22e">mat</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Row</span>     <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Soldier</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nodes</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">mat</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">mat</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Row</span>:     <span style="color:#a6e22e">i</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Soldier</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">mat</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Soldier</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">nodes</span> = append(<span style="color:#a6e22e">nodes</span>, <span style="color:#a6e22e">node</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">nodes</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Soldier</span> &lt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Soldier</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Soldier</span> &gt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Soldier</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Row</span> &lt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Row</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">k</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Row</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(MN+M\log\ M), M = rows, N = cols $</li>
 <li>空间复杂度：$ O(M) $</li>
 </ul>
 <h4 id="排序--二分查找">排序 + 二分查找</h4>
 <p>在上述题解的基础上，由于军人始终排在平民前面，可以用二分查找降低时间复杂度。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kWeakestRows</span>(<span style="color:#a6e22e">mat</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
-		<span style="color:#a6e22e">Row</span>     <span style="color:#66d9ef">int</span>
-		<span style="color:#a6e22e">Soldier</span> <span style="color:#66d9ef">int</span>
-	}
-	<span style="color:#a6e22e">nodes</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">mat</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">mat</span> {
-		<span style="color:#a6e22e">nodes</span> = append(<span style="color:#a6e22e">nodes</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
-			<span style="color:#a6e22e">Row</span>: <span style="color:#a6e22e">i</span>,
-			<span style="color:#a6e22e">Soldier</span>: <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Search</span>(len(<span style="color:#a6e22e">mat</span>[<span style="color:#a6e22e">i</span>]), <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mat</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
-			})},
-		)
-	}
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">nodes</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Soldier</span> &lt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Soldier</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Soldier</span> &gt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Soldier</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Row</span> &lt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Row</span>
-		}
-	})
-	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">k</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Row</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kWeakestRows</span>(<span style="color:#a6e22e">mat</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Row</span>     <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Soldier</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nodes</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">mat</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">mat</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">nodes</span> = append(<span style="color:#a6e22e">nodes</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Row</span>: <span style="color:#a6e22e">i</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Soldier</span>: <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Search</span>(len(<span style="color:#a6e22e">mat</span>[<span style="color:#a6e22e">i</span>]), <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mat</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>			})},
+</span></span><span style="display:flex;"><span>		)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">nodes</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Soldier</span> &lt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Soldier</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Soldier</span> &gt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Soldier</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Row</span> &lt; <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Row</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">k</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Row</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(M\log\ N+M\log\ M), M = rows, N = cols $</li>
 <li>空间复杂度：$ O(M) $</li>

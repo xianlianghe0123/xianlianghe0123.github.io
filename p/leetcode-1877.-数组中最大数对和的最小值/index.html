@@ -5,8 +5,8 @@
 难度： 中等
 题目描述 一个数对 (a,b) 的 数对和 等于 a &#43; b 。最大数对和 是一个数对数组中最大的 数对和 。
 比方说，如果我们有数对 (1,5) ，(2,3) 和 (4,4)，最大数对和 为 max(1&#43;5, 2&#43;3, 4&#43;4) = max(6, 5, 8) = 8 。 给你一个长度为 偶数 n 的数组 nums ，请你将 nums 中的元素分成 n / 2 个数对，使得：
- nums 中每个元素 恰好 在 一个 数对中，且 最大数对和 的值 最小 。  请你在最优数对划分的方案下，返回最小的 最大数对和 。
-示例 1：  输入： nums = [3,5,2,3]
+nums 中每个元素 恰好 在 一个 数对中，且 最大数对和 的值 最小 。 请你在最优数对划分的方案下，返回最小的 最大数对和 。
+示例 1： 输入： nums = [3,5,2,3]
 输出： 7
 解释： 数组中的元素可以分为数对 (3,3) 和 (5,2) 。'><title>Leetcode 1877. 数组中最大数对和的最小值</title>
 
@@ -17,8 +17,8 @@
 难度： 中等
 题目描述 一个数对 (a,b) 的 数对和 等于 a &#43; b 。最大数对和 是一个数对数组中最大的 数对和 。
 比方说，如果我们有数对 (1,5) ，(2,3) 和 (4,4)，最大数对和 为 max(1&#43;5, 2&#43;3, 4&#43;4) = max(6, 5, 8) = 8 。 给你一个长度为 偶数 n 的数组 nums ，请你将 nums 中的元素分成 n / 2 个数对，使得：
- nums 中每个元素 恰好 在 一个 数对中，且 最大数对和 的值 最小 。  请你在最优数对划分的方案下，返回最小的 最大数对和 。
-示例 1：  输入： nums = [3,5,2,3]
+nums 中每个元素 恰好 在 一个 数对中，且 最大数对和 的值 最小 。 请你在最优数对划分的方案下，返回最小的 最大数对和 。
+示例 1： 输入： nums = [3,5,2,3]
 输出： 7
 解释： 数组中的元素可以分为数对 (3,3) 和 (5,2) 。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1877.-%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AF%B9%E5%92%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/'>
@@ -29,8 +29,8 @@
 难度： 中等
 题目描述 一个数对 (a,b) 的 数对和 等于 a &#43; b 。最大数对和 是一个数对数组中最大的 数对和 。
 比方说，如果我们有数对 (1,5) ，(2,3) 和 (4,4)，最大数对和 为 max(1&#43;5, 2&#43;3, 4&#43;4) = max(6, 5, 8) = 8 。 给你一个长度为 偶数 n 的数组 nums ，请你将 nums 中的元素分成 n / 2 个数对，使得：
- nums 中每个元素 恰好 在 一个 数对中，且 最大数对和 的值 最小 。  请你在最优数对划分的方案下，返回最小的 最大数对和 。
-示例 1：  输入： nums = [3,5,2,3]
+nums 中每个元素 恰好 在 一个 数对中，且 最大数对和 的值 最小 。 请你在最优数对划分的方案下，返回最小的 最大数对和 。
+示例 1： 输入： nums = [3,5,2,3]
 输出： 7
 解释： 数组中的元素可以分为数对 (3,3) 和 (5,2) 。">
     </head>
@@ -249,17 +249,17 @@
 <h4 id="排序">排序</h4>
 <p>为使得 <strong>最大数对和</strong> 最小，应让最大值和最小值成对，次大值和次小值成对……，以此类推。</p>
 <p>经过一次排序，可以快速地找出每一组数对，并记录最大数对和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minPairSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">nums</span>)
-	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">nums</span>[len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] {
-			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>]
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minPairSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">nums</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">nums</span>[len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NlogN), N = len(nums) $</li>
 <li>空间复杂度：$ O(logN) $</li>

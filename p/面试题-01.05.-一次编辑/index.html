@@ -4,16 +4,16 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/one-away-lcci/
 难度： 中等
 题目描述 字符串有三种编辑操作:插入一个字符、删除一个字符或者替换一个字符。 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
-示例 1：  输入：
+示例 1： 输入：
 first = &amp;ldquo;pale&amp;rdquo;
 second = &amp;ldquo;ple&amp;rdquo;
 输出： True
- 示例 2：  输入：
+示例 2： 输入：
 first = &amp;ldquo;pales&amp;rdquo;
 second = &amp;ldquo;pal&amp;rdquo;
 输出： False
- 解题思路 分类讨论 符合条件的两个字符串的长度应 ≤ 1。
- 当两个字符串相等时，判断是否仅有 ≤ 1 个字符不同； 当两个字符串不相同时，判断较短的是否为较长字符串的子序列。  func oneEditAway(first string, second string) bool { if len(first) &amp;gt; len(second) { first, second = second, first } if len(second)-len(first) &amp;gt; 1 { return false } // 等长，统计不同字符数量，要求 ≤ 1 	if len(first) == len(second) { diff := 0 for i := range first { if first[i] !'><title>面试题 01.05. 一次编辑</title>
+解题思路 分类讨论 符合条件的两个字符串的长度应 ≤ 1。
+当两个字符串相等时，判断是否仅有 ≤ 1 个字符不同； 当两个字符串不相同时，判断较短的是否为较长字符串的子序列。 func oneEditAway(first string, second string) bool { if len(first) &amp;gt; len(second) { first, second = second, first } if len(second)-len(first) &amp;gt; 1 { return false } // 等长，统计不同字符数量，要求 ≤ 1 if len(first) == len(second) { diff := 0 for i := range first { if first[i] !'><title>面试题 01.05. 一次编辑</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-01.05.-%E4%B8%80%E6%AC%A1%E7%BC%96%E8%BE%91/'>
 
@@ -21,16 +21,16 @@ second = &amp;ldquo;pal&amp;rdquo;
 <meta property='og:description' content='链接： https://leetcode.cn/problems/one-away-lcci/
 难度： 中等
 题目描述 字符串有三种编辑操作:插入一个字符、删除一个字符或者替换一个字符。 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
-示例 1：  输入：
+示例 1： 输入：
 first = &amp;ldquo;pale&amp;rdquo;
 second = &amp;ldquo;ple&amp;rdquo;
 输出： True
- 示例 2：  输入：
+示例 2： 输入：
 first = &amp;ldquo;pales&amp;rdquo;
 second = &amp;ldquo;pal&amp;rdquo;
 输出： False
- 解题思路 分类讨论 符合条件的两个字符串的长度应 ≤ 1。
- 当两个字符串相等时，判断是否仅有 ≤ 1 个字符不同； 当两个字符串不相同时，判断较短的是否为较长字符串的子序列。  func oneEditAway(first string, second string) bool { if len(first) &amp;gt; len(second) { first, second = second, first } if len(second)-len(first) &amp;gt; 1 { return false } // 等长，统计不同字符数量，要求 ≤ 1 	if len(first) == len(second) { diff := 0 for i := range first { if first[i] !'>
+解题思路 分类讨论 符合条件的两个字符串的长度应 ≤ 1。
+当两个字符串相等时，判断是否仅有 ≤ 1 个字符不同； 当两个字符串不相同时，判断较短的是否为较长字符串的子序列。 func oneEditAway(first string, second string) bool { if len(first) &amp;gt; len(second) { first, second = second, first } if len(second)-len(first) &amp;gt; 1 { return false } // 等长，统计不同字符数量，要求 ≤ 1 if len(first) == len(second) { diff := 0 for i := range first { if first[i] !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-01.05.-%E4%B8%80%E6%AC%A1%E7%BC%96%E8%BE%91/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-05-13T10:05:12&#43;08:00'/><meta property='article:modified_time' content='2022-05-13T10:05:12&#43;08:00'/>
@@ -38,16 +38,16 @@ second = &amp;ldquo;pal&amp;rdquo;
 <meta name="twitter:description" content="链接： https://leetcode.cn/problems/one-away-lcci/
 难度： 中等
 题目描述 字符串有三种编辑操作:插入一个字符、删除一个字符或者替换一个字符。 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
-示例 1：  输入：
+示例 1： 输入：
 first = &amp;ldquo;pale&amp;rdquo;
 second = &amp;ldquo;ple&amp;rdquo;
 输出： True
- 示例 2：  输入：
+示例 2： 输入：
 first = &amp;ldquo;pales&amp;rdquo;
 second = &amp;ldquo;pal&amp;rdquo;
 输出： False
- 解题思路 分类讨论 符合条件的两个字符串的长度应 ≤ 1。
- 当两个字符串相等时，判断是否仅有 ≤ 1 个字符不同； 当两个字符串不相同时，判断较短的是否为较长字符串的子序列。  func oneEditAway(first string, second string) bool { if len(first) &amp;gt; len(second) { first, second = second, first } if len(second)-len(first) &amp;gt; 1 { return false } // 等长，统计不同字符数量，要求 ≤ 1 	if len(first) == len(second) { diff := 0 for i := range first { if first[i] !">
+解题思路 分类讨论 符合条件的两个字符串的长度应 ≤ 1。
+当两个字符串相等时，判断是否仅有 ≤ 1 个字符不同； 当两个字符串不相同时，判断较短的是否为较长字符串的子序列。 func oneEditAway(first string, second string) bool { if len(first) &amp;gt; len(second) { first, second = second, first } if len(second)-len(first) &amp;gt; 1 { return false } // 等长，统计不同字符数量，要求 ≤ 1 if len(first) == len(second) { diff := 0 for i := range first { if first[i] !">
     </head>
     <body class="
     article-page 
@@ -253,37 +253,37 @@ second = &ldquo;pal&rdquo;<br>
 <li>当两个字符串相等时，判断是否仅有 <code>≤ 1</code> 个字符不同；</li>
 <li>当两个字符串不相同时，判断较短的是否为较长字符串的子序列。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">oneEditAway</span>(<span style="color:#a6e22e">first</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">second</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">first</span>) &gt; len(<span style="color:#a6e22e">second</span>) {
-		<span style="color:#a6e22e">first</span>, <span style="color:#a6e22e">second</span> = <span style="color:#a6e22e">second</span>, <span style="color:#a6e22e">first</span>
-	}
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">second</span>)<span style="color:#f92672">-</span>len(<span style="color:#a6e22e">first</span>) &gt; <span style="color:#ae81ff">1</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-	}
-	<span style="color:#75715e">// 等长，统计不同字符数量，要求 ≤ 1
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">first</span>) <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">second</span>) {
-		<span style="color:#a6e22e">diff</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">first</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">first</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">second</span>[<span style="color:#a6e22e">i</span>] {
-				<span style="color:#a6e22e">diff</span><span style="color:#f92672">++</span>
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">diff</span> &gt; <span style="color:#ae81ff">1</span> {
-					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-				}
-			}
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-	}
-	<span style="color:#75715e">// 不等长，寻找首个不同的字符
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">first</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">first</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">second</span>[<span style="color:#a6e22e">i</span>] {
-			<span style="color:#66d9ef">break</span>
-		}
-	}
-	<span style="color:#75715e">// 判断后缀是否相同
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">first</span>[<span style="color:#a6e22e">i</span>:] <span style="color:#f92672">==</span> <span style="color:#a6e22e">second</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">oneEditAway</span>(<span style="color:#a6e22e">first</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">second</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">first</span>) &gt; len(<span style="color:#a6e22e">second</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">first</span>, <span style="color:#a6e22e">second</span> = <span style="color:#a6e22e">second</span>, <span style="color:#a6e22e">first</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">second</span>)<span style="color:#f92672">-</span>len(<span style="color:#a6e22e">first</span>) &gt; <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 等长，统计不同字符数量，要求 ≤ 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">first</span>) <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">second</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">diff</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">first</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">first</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">second</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">diff</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">diff</span> &gt; <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 不等长，寻找首个不同的字符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">first</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">first</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">second</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 判断后缀是否相同
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">first</span>[<span style="color:#a6e22e">i</span>:] <span style="color:#f92672">==</span> <span style="color:#a6e22e">second</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(first) $</li>
 <li>空间复杂度：$ O(1) $</li>

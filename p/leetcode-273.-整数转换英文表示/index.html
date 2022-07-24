@@ -4,13 +4,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/integer-to-english-words/
 难度： 困难
 题目描述 将非负整数 num 转换为其对应的英文表示。
-示例 1：  输入： num = 123
+示例 1： 输入： num = 123
 输出： &amp;ldquo;One Hundred Twenty Three&amp;rdquo;
- 示例 2：  输入： num = 12345
+示例 2： 输入： num = 12345
 输出： &amp;ldquo;Twelve Thousand Three Hundred Forty Five&amp;rdquo;
- 示例 3：  输入： num = 1234567
+示例 3： 输入： num = 1234567
 输出： &amp;ldquo;One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven&amp;rdquo;
- 示例 4：  输入： num = 1234567891
+示例 4： 输入： num = 1234567891
 输出： &amp;ldquo;One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One&amp;rdquo;'><title>Leetcode 273. 整数转换英文表示</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-273.-%E6%95%B4%E6%95%B0%E8%BD%AC%E6%8D%A2%E8%8B%B1%E6%96%87%E8%A1%A8%E7%A4%BA/'>
@@ -19,13 +19,13 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/integer-to-english-words/
 难度： 困难
 题目描述 将非负整数 num 转换为其对应的英文表示。
-示例 1：  输入： num = 123
+示例 1： 输入： num = 123
 输出： &amp;ldquo;One Hundred Twenty Three&amp;rdquo;
- 示例 2：  输入： num = 12345
+示例 2： 输入： num = 12345
 输出： &amp;ldquo;Twelve Thousand Three Hundred Forty Five&amp;rdquo;
- 示例 3：  输入： num = 1234567
+示例 3： 输入： num = 1234567
 输出： &amp;ldquo;One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven&amp;rdquo;
- 示例 4：  输入： num = 1234567891
+示例 4： 输入： num = 1234567891
 输出： &amp;ldquo;One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One&amp;rdquo;'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-273.-%E6%95%B4%E6%95%B0%E8%BD%AC%E6%8D%A2%E8%8B%B1%E6%96%87%E8%A1%A8%E7%A4%BA/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -34,13 +34,13 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/integer-to-english-words/
 难度： 困难
 题目描述 将非负整数 num 转换为其对应的英文表示。
-示例 1：  输入： num = 123
+示例 1： 输入： num = 123
 输出： &amp;ldquo;One Hundred Twenty Three&amp;rdquo;
- 示例 2：  输入： num = 12345
+示例 2： 输入： num = 12345
 输出： &amp;ldquo;Twelve Thousand Three Hundred Forty Five&amp;rdquo;
- 示例 3：  输入： num = 1234567
+示例 3： 输入： num = 1234567
 输出： &amp;ldquo;One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven&amp;rdquo;
- 示例 4：  输入： num = 1234567891
+示例 4： 输入： num = 1234567891
 输出： &amp;ldquo;One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One&amp;rdquo;">
     </head>
     <body class="
@@ -253,69 +253,69 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="模拟">模拟</h4>
 <p>将数字分为三个一组，将每一部分的三位数转换为对应的英文表示，然后添加对应组的单位。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numberToWords</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">en</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">string</span>{
-		<span style="color:#ae81ff">0</span>:    <span style="color:#e6db74">&#34;Zero&#34;</span>,
-		<span style="color:#ae81ff">1</span>:    <span style="color:#e6db74">&#34;One&#34;</span>,
-		<span style="color:#ae81ff">2</span>:    <span style="color:#e6db74">&#34;Two&#34;</span>,
-		<span style="color:#ae81ff">3</span>:    <span style="color:#e6db74">&#34;Three&#34;</span>,
-		<span style="color:#ae81ff">4</span>:    <span style="color:#e6db74">&#34;Four&#34;</span>,
-		<span style="color:#ae81ff">5</span>:    <span style="color:#e6db74">&#34;Five&#34;</span>,
-		<span style="color:#ae81ff">6</span>:    <span style="color:#e6db74">&#34;Six&#34;</span>,
-		<span style="color:#ae81ff">7</span>:    <span style="color:#e6db74">&#34;Seven&#34;</span>,
-		<span style="color:#ae81ff">8</span>:    <span style="color:#e6db74">&#34;Eight&#34;</span>,
-		<span style="color:#ae81ff">9</span>:    <span style="color:#e6db74">&#34;Nine&#34;</span>,
-		<span style="color:#ae81ff">10</span>:   <span style="color:#e6db74">&#34;Ten&#34;</span>,
-		<span style="color:#ae81ff">11</span>:   <span style="color:#e6db74">&#34;Eleven&#34;</span>,
-		<span style="color:#ae81ff">12</span>:   <span style="color:#e6db74">&#34;Twelve&#34;</span>,
-		<span style="color:#ae81ff">13</span>:   <span style="color:#e6db74">&#34;Thirteen&#34;</span>,
-		<span style="color:#ae81ff">14</span>:   <span style="color:#e6db74">&#34;Fourteen&#34;</span>,
-		<span style="color:#ae81ff">15</span>:   <span style="color:#e6db74">&#34;Fifteen&#34;</span>,
-		<span style="color:#ae81ff">16</span>:   <span style="color:#e6db74">&#34;Sixteen&#34;</span>,
-		<span style="color:#ae81ff">17</span>:   <span style="color:#e6db74">&#34;Seventeen&#34;</span>,
-		<span style="color:#ae81ff">18</span>:   <span style="color:#e6db74">&#34;Eighteen&#34;</span>,
-		<span style="color:#ae81ff">19</span>:   <span style="color:#e6db74">&#34;Nineteen&#34;</span>,
-		<span style="color:#ae81ff">20</span>:   <span style="color:#e6db74">&#34;Twenty&#34;</span>,
-		<span style="color:#ae81ff">30</span>:   <span style="color:#e6db74">&#34;Thirty&#34;</span>,
-		<span style="color:#ae81ff">40</span>:   <span style="color:#e6db74">&#34;Forty&#34;</span>,
-		<span style="color:#ae81ff">50</span>:   <span style="color:#e6db74">&#34;Fifty&#34;</span>,
-		<span style="color:#ae81ff">60</span>:   <span style="color:#e6db74">&#34;Sixty&#34;</span>,
-		<span style="color:#ae81ff">70</span>:   <span style="color:#e6db74">&#34;Seventy&#34;</span>,
-		<span style="color:#ae81ff">80</span>:   <span style="color:#e6db74">&#34;Eighty&#34;</span>,
-		<span style="color:#ae81ff">90</span>:   <span style="color:#e6db74">&#34;Ninety&#34;</span>,
-		<span style="color:#ae81ff">100</span>:  <span style="color:#e6db74">&#34;Hundred&#34;</span>,
-		<span style="color:#ae81ff">1000</span>: <span style="color:#e6db74">&#34;Thousand&#34;</span>,
-		<span style="color:#ae81ff">1e6</span>:  <span style="color:#e6db74">&#34;Million&#34;</span>,
-		<span style="color:#ae81ff">1e9</span>:  <span style="color:#e6db74">&#34;Billion&#34;</span>,
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">en</span>[<span style="color:#ae81ff">0</span>]
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">mod</span> <span style="color:#f92672">:=</span> int(<span style="color:#ae81ff">1e9</span>); <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">mod</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">1000</span> {
-		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">mod</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">100</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">t</span><span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>], <span style="color:#a6e22e">en</span>[<span style="color:#ae81ff">100</span>])
-		}
-		<span style="color:#a6e22e">t</span> <span style="color:#f92672">%=</span> <span style="color:#ae81ff">100</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> &lt; <span style="color:#ae81ff">20</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">t</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">t</span>])
-			} <span style="color:#66d9ef">else</span> {
-				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">t</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>], <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">t</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>])
-			}
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">mod</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">mod</span>])
-		}
-		<span style="color:#a6e22e">num</span> <span style="color:#f92672">%=</span> <span style="color:#a6e22e">mod</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#34; &#34;</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">numberToWords</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">en</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">string</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">0</span>:    <span style="color:#e6db74">&#34;Zero&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">1</span>:    <span style="color:#e6db74">&#34;One&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">2</span>:    <span style="color:#e6db74">&#34;Two&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">3</span>:    <span style="color:#e6db74">&#34;Three&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">4</span>:    <span style="color:#e6db74">&#34;Four&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">5</span>:    <span style="color:#e6db74">&#34;Five&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">6</span>:    <span style="color:#e6db74">&#34;Six&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">7</span>:    <span style="color:#e6db74">&#34;Seven&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">8</span>:    <span style="color:#e6db74">&#34;Eight&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">9</span>:    <span style="color:#e6db74">&#34;Nine&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">10</span>:   <span style="color:#e6db74">&#34;Ten&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">11</span>:   <span style="color:#e6db74">&#34;Eleven&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">12</span>:   <span style="color:#e6db74">&#34;Twelve&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">13</span>:   <span style="color:#e6db74">&#34;Thirteen&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">14</span>:   <span style="color:#e6db74">&#34;Fourteen&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">15</span>:   <span style="color:#e6db74">&#34;Fifteen&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">16</span>:   <span style="color:#e6db74">&#34;Sixteen&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">17</span>:   <span style="color:#e6db74">&#34;Seventeen&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">18</span>:   <span style="color:#e6db74">&#34;Eighteen&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">19</span>:   <span style="color:#e6db74">&#34;Nineteen&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">20</span>:   <span style="color:#e6db74">&#34;Twenty&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">30</span>:   <span style="color:#e6db74">&#34;Thirty&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">40</span>:   <span style="color:#e6db74">&#34;Forty&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">50</span>:   <span style="color:#e6db74">&#34;Fifty&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">60</span>:   <span style="color:#e6db74">&#34;Sixty&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">70</span>:   <span style="color:#e6db74">&#34;Seventy&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">80</span>:   <span style="color:#e6db74">&#34;Eighty&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">90</span>:   <span style="color:#e6db74">&#34;Ninety&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">100</span>:  <span style="color:#e6db74">&#34;Hundred&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">1000</span>: <span style="color:#e6db74">&#34;Thousand&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">1e6</span>:  <span style="color:#e6db74">&#34;Million&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">1e9</span>:  <span style="color:#e6db74">&#34;Billion&#34;</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">en</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">mod</span> <span style="color:#f92672">:=</span> int(<span style="color:#ae81ff">1e9</span>); <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">mod</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">1000</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">mod</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">100</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">t</span><span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>], <span style="color:#a6e22e">en</span>[<span style="color:#ae81ff">100</span>])
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span> <span style="color:#f92672">%=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> &lt; <span style="color:#ae81ff">20</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">t</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">t</span>])
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">t</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>], <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">t</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>])
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">mod</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">en</span>[<span style="color:#a6e22e">mod</span>])
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">num</span> <span style="color:#f92672">%=</span> <span style="color:#a6e22e">mod</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(1) $</li>
 <li>空间复杂度：$ O(1) $</li>

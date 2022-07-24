@@ -5,14 +5,15 @@
 难度： 中等
 题目描述 给你一份旅游线路图，该线路图中的旅行线路用数组 paths 表示，其中 paths[i] = [cityAi, cityBi] 表示该线路将会从 cityAi 直接前往 cityBi 。请你找出这次旅行的终点站，即没有任何可以通往其他城市的线路的城市。
 题目数据保证线路图会形成一条不存在循环的线路，因此恰有一个旅行终点站。
-示例 1：  输入： paths = [[&amp;ldquo;London&amp;rdquo;,&amp;ldquo;New York&amp;rdquo;],[&amp;ldquo;New York&amp;rdquo;,&amp;ldquo;Lima&amp;rdquo;],[&amp;ldquo;Lima&amp;rdquo;,&amp;ldquo;Sao Paulo&amp;rdquo;]]
+示例 1： 输入： paths = [[&amp;ldquo;London&amp;rdquo;,&amp;ldquo;New York&amp;rdquo;],[&amp;ldquo;New York&amp;rdquo;,&amp;ldquo;Lima&amp;rdquo;],[&amp;ldquo;Lima&amp;rdquo;,&amp;ldquo;Sao Paulo&amp;rdquo;]]
 输出： &amp;ldquo;Sao Paulo&amp;rdquo;
 解释： 从 &amp;ldquo;London&amp;rdquo; 出发，最后抵达终点站 &amp;ldquo;Sao Paulo&amp;rdquo; 。本次旅行的路线是 &amp;ldquo;London&amp;rdquo; -&amp;gt; &amp;ldquo;New York&amp;rdquo; -&amp;gt; &amp;ldquo;Lima&amp;rdquo; -&amp;gt; &amp;ldquo;Sao Paulo&amp;rdquo; 。
- 示例 2:  输入： paths = [[&amp;ldquo;B&amp;rdquo;,&amp;ldquo;C&amp;rdquo;],[&amp;ldquo;D&amp;rdquo;,&amp;ldquo;B&amp;rdquo;],[&amp;ldquo;C&amp;rdquo;,&amp;ldquo;A&amp;rdquo;]]
+示例 2: 输入： paths = [[&amp;ldquo;B&amp;rdquo;,&amp;ldquo;C&amp;rdquo;],[&amp;ldquo;D&amp;rdquo;,&amp;ldquo;B&amp;rdquo;],[&amp;ldquo;C&amp;rdquo;,&amp;ldquo;A&amp;rdquo;]]
 输出： &amp;ldquo;A&amp;rdquo;
 解释： 所有可能的线路是：
 &amp;ldquo;D&amp;rdquo; -&amp;gt; &amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.
-&amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.'><title>Leetcode 1436. 旅行终点站</title>
+&amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.
+&amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.'><title>Leetcode 1436. 旅行终点站</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1436.-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/'>
 
@@ -21,14 +22,15 @@
 难度： 中等
 题目描述 给你一份旅游线路图，该线路图中的旅行线路用数组 paths 表示，其中 paths[i] = [cityAi, cityBi] 表示该线路将会从 cityAi 直接前往 cityBi 。请你找出这次旅行的终点站，即没有任何可以通往其他城市的线路的城市。
 题目数据保证线路图会形成一条不存在循环的线路，因此恰有一个旅行终点站。
-示例 1：  输入： paths = [[&amp;ldquo;London&amp;rdquo;,&amp;ldquo;New York&amp;rdquo;],[&amp;ldquo;New York&amp;rdquo;,&amp;ldquo;Lima&amp;rdquo;],[&amp;ldquo;Lima&amp;rdquo;,&amp;ldquo;Sao Paulo&amp;rdquo;]]
+示例 1： 输入： paths = [[&amp;ldquo;London&amp;rdquo;,&amp;ldquo;New York&amp;rdquo;],[&amp;ldquo;New York&amp;rdquo;,&amp;ldquo;Lima&amp;rdquo;],[&amp;ldquo;Lima&amp;rdquo;,&amp;ldquo;Sao Paulo&amp;rdquo;]]
 输出： &amp;ldquo;Sao Paulo&amp;rdquo;
 解释： 从 &amp;ldquo;London&amp;rdquo; 出发，最后抵达终点站 &amp;ldquo;Sao Paulo&amp;rdquo; 。本次旅行的路线是 &amp;ldquo;London&amp;rdquo; -&amp;gt; &amp;ldquo;New York&amp;rdquo; -&amp;gt; &amp;ldquo;Lima&amp;rdquo; -&amp;gt; &amp;ldquo;Sao Paulo&amp;rdquo; 。
- 示例 2:  输入： paths = [[&amp;ldquo;B&amp;rdquo;,&amp;ldquo;C&amp;rdquo;],[&amp;ldquo;D&amp;rdquo;,&amp;ldquo;B&amp;rdquo;],[&amp;ldquo;C&amp;rdquo;,&amp;ldquo;A&amp;rdquo;]]
+示例 2: 输入： paths = [[&amp;ldquo;B&amp;rdquo;,&amp;ldquo;C&amp;rdquo;],[&amp;ldquo;D&amp;rdquo;,&amp;ldquo;B&amp;rdquo;],[&amp;ldquo;C&amp;rdquo;,&amp;ldquo;A&amp;rdquo;]]
 输出： &amp;ldquo;A&amp;rdquo;
 解释： 所有可能的线路是：
 &amp;ldquo;D&amp;rdquo; -&amp;gt; &amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.
-&amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.'>
+&amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.
+&amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1436.-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-01T13:11:21&#43;08:00'/><meta property='article:modified_time' content='2021-10-01T13:11:21&#43;08:00'/>
@@ -37,14 +39,15 @@
 难度： 中等
 题目描述 给你一份旅游线路图，该线路图中的旅行线路用数组 paths 表示，其中 paths[i] = [cityAi, cityBi] 表示该线路将会从 cityAi 直接前往 cityBi 。请你找出这次旅行的终点站，即没有任何可以通往其他城市的线路的城市。
 题目数据保证线路图会形成一条不存在循环的线路，因此恰有一个旅行终点站。
-示例 1：  输入： paths = [[&amp;ldquo;London&amp;rdquo;,&amp;ldquo;New York&amp;rdquo;],[&amp;ldquo;New York&amp;rdquo;,&amp;ldquo;Lima&amp;rdquo;],[&amp;ldquo;Lima&amp;rdquo;,&amp;ldquo;Sao Paulo&amp;rdquo;]]
+示例 1： 输入： paths = [[&amp;ldquo;London&amp;rdquo;,&amp;ldquo;New York&amp;rdquo;],[&amp;ldquo;New York&amp;rdquo;,&amp;ldquo;Lima&amp;rdquo;],[&amp;ldquo;Lima&amp;rdquo;,&amp;ldquo;Sao Paulo&amp;rdquo;]]
 输出： &amp;ldquo;Sao Paulo&amp;rdquo;
 解释： 从 &amp;ldquo;London&amp;rdquo; 出发，最后抵达终点站 &amp;ldquo;Sao Paulo&amp;rdquo; 。本次旅行的路线是 &amp;ldquo;London&amp;rdquo; -&amp;gt; &amp;ldquo;New York&amp;rdquo; -&amp;gt; &amp;ldquo;Lima&amp;rdquo; -&amp;gt; &amp;ldquo;Sao Paulo&amp;rdquo; 。
- 示例 2:  输入： paths = [[&amp;ldquo;B&amp;rdquo;,&amp;ldquo;C&amp;rdquo;],[&amp;ldquo;D&amp;rdquo;,&amp;ldquo;B&amp;rdquo;],[&amp;ldquo;C&amp;rdquo;,&amp;ldquo;A&amp;rdquo;]]
+示例 2: 输入： paths = [[&amp;ldquo;B&amp;rdquo;,&amp;ldquo;C&amp;rdquo;],[&amp;ldquo;D&amp;rdquo;,&amp;ldquo;B&amp;rdquo;],[&amp;ldquo;C&amp;rdquo;,&amp;ldquo;A&amp;rdquo;]]
 输出： &amp;ldquo;A&amp;rdquo;
 解释： 所有可能的线路是：
 &amp;ldquo;D&amp;rdquo; -&amp;gt; &amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.
-&amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.">
+&amp;ldquo;B&amp;rdquo; -&amp;gt; &amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.
+&amp;ldquo;C&amp;rdquo; -&amp;gt; &amp;ldquo;A&amp;rdquo;.">
     </head>
     <body class="
     article-page 
@@ -264,20 +267,20 @@
 <h4 id="哈希">哈希</h4>
 <p>使用一个哈希表记录可以当前城市可以去往的其他城市的数量，也即图中该结点的出度。</p>
 <p>之后遍历哈希表，返回出度为 <code>0</code> 的结点。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">destCity</span>(<span style="color:#a6e22e">paths</span> [][]<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">outDegrees</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">path</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">paths</span> {
-		<span style="color:#a6e22e">outDegrees</span>[<span style="color:#a6e22e">path</span>[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">++</span>
-		<span style="color:#a6e22e">outDegrees</span>[<span style="color:#a6e22e">path</span>[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0</span>
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">city</span>, <span style="color:#a6e22e">outDegree</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">outDegrees</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">outDegree</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">city</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">destCity</span>(<span style="color:#a6e22e">paths</span> [][]<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">outDegrees</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">path</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">paths</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">outDegrees</span>[<span style="color:#a6e22e">path</span>[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">outDegrees</span>[<span style="color:#a6e22e">path</span>[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">city</span>, <span style="color:#a6e22e">outDegree</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">outDegrees</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">outDegree</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">city</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N=len(paths) $</li>
 <li>空间复杂度：$ O(N) $</li>

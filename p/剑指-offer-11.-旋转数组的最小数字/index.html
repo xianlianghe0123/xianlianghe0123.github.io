@@ -3,36 +3,36 @@
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/
 难度： 简单
-题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。 示例 1：  输入： [3,4,5,1,2]
+题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。 示例 1： 输入： [3,4,5,1,2]
 输出： 1
- 示例 2：  输入： [2,2,2,0,1]
+示例 2： 输入： [2,2,2,0,1]
 输出： 0
- 提示：  1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用  解题思路 遍历 顺序便利，找出最小值。
-func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numbers { if min &amp;gt; num { min = num } } return min } 复杂度  时间复杂度：$ O(N), N = len(numbers) $ 空间复杂度：$ O(1) $  二分查找 对于数组，每次选出中间元素，和区间右端点比较：'><title>剑指 Offer 11. 旋转数组的最小数字</title>
+提示： 1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用 解题思路 遍历 顺序便利，找出最小值。
+func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numbers { if min &amp;gt; num { min = num } } return min } 复杂度 时间复杂度：$ O(N), N = len(numbers) $ 空间复杂度：$ O(1) $ 二分查找 对于数组，每次选出中间元素，和区间右端点比较：'><title>剑指 Offer 11. 旋转数组的最小数字</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-11.-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='剑指 Offer 11. 旋转数组的最小数字'>
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/
 难度： 简单
-题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。 示例 1：  输入： [3,4,5,1,2]
+题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。 示例 1： 输入： [3,4,5,1,2]
 输出： 1
- 示例 2：  输入： [2,2,2,0,1]
+示例 2： 输入： [2,2,2,0,1]
 输出： 0
- 提示：  1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用  解题思路 遍历 顺序便利，找出最小值。
-func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numbers { if min &amp;gt; num { min = num } } return min } 复杂度  时间复杂度：$ O(N), N = len(numbers) $ 空间复杂度：$ O(1) $  二分查找 对于数组，每次选出中间元素，和区间右端点比较：'>
+提示： 1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用 解题思路 遍历 顺序便利，找出最小值。
+func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numbers { if min &amp;gt; num { min = num } } return min } 复杂度 时间复杂度：$ O(N), N = len(numbers) $ 空间复杂度：$ O(1) $ 二分查找 对于数组，每次选出中间元素，和区间右端点比较：'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-11.-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-09-17T17:37:57&#43;08:00'/><meta property='article:modified_time' content='2021-09-17T17:37:57&#43;08:00'/>
 <meta name="twitter:title" content="剑指 Offer 11. 旋转数组的最小数字">
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/
 难度： 简单
-题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。 示例 1：  输入： [3,4,5,1,2]
+题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。 示例 1： 输入： [3,4,5,1,2]
 输出： 1
- 示例 2：  输入： [2,2,2,0,1]
+示例 2： 输入： [2,2,2,0,1]
 输出： 0
- 提示：  1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用  解题思路 遍历 顺序便利，找出最小值。
-func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numbers { if min &amp;gt; num { min = num } } return min } 复杂度  时间复杂度：$ O(N), N = len(numbers) $ 空间复杂度：$ O(1) $  二分查找 对于数组，每次选出中间元素，和区间右端点比较：">
+提示： 1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用 解题思路 遍历 顺序便利，找出最小值。
+func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numbers { if min &amp;gt; num { min = num } } return min } 复杂度 时间复杂度：$ O(N), N = len(numbers) $ 空间复杂度：$ O(1) $ 二分查找 对于数组，每次选出中间元素，和区间右端点比较：">
     </head>
     <body class="
     article-page 
@@ -235,16 +235,16 @@ func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numb
 <h3 id="解题思路">解题思路</h3>
 <h4 id="遍历">遍历</h4>
 <p>顺序便利，找出最小值。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minArray</span>(<span style="color:#a6e22e">numbers</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt32</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">numbers</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">num</span> {
-			<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">num</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minArray</span>(<span style="color:#a6e22e">numbers</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt32</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">numbers</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">num</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(numbers) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -257,24 +257,24 @@ func minArray(numbers []int) int { min := math.MaxInt32 for _, num := range numb
 <li>若等于右端点，则无法界定最小值在那半边区间，故使得右端点缩进1</li>
 </ul>
 <p>直到区间仅剩一个数，返回。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minArray</span>(<span style="color:#a6e22e">numbers</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">numbers</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-	}
-	<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">numbers</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span> {
-		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">mid</span>] &lt; <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">r</span>] {
-			<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">mid</span>
-		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">mid</span>] &gt; <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">r</span>] {
-			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">r</span><span style="color:#f92672">--</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">l</span>]
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minArray</span>(<span style="color:#a6e22e">numbers</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">numbers</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">numbers</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">mid</span>] &lt; <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">r</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">mid</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">mid</span>] &gt; <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">r</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">r</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">l</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(\log N), N = len(numbers) $</li>
 <li>空间复杂度：$ O(1) $</li>

@@ -6,16 +6,17 @@
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例 1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;(abcd)&amp;rdquo;
 输出： &amp;ldquo;dcba&amp;rdquo;
- 示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
 输出： &amp;ldquo;iloveu&amp;rdquo;
- 示例 3：  输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
+示例 3： 输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
 输出： &amp;ldquo;leetcode&amp;rdquo;
- 示例 4：  输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
+示例 4： 输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
 输出： &amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
- 提示：  0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的  解题思路 栈 利用栈来进行每一次的反转：
- 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。'><title>Leetcode 1190. 反转每对括号间的子串</title>
+提示： 0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的 解题思路 栈 利用栈来进行每一次的反转：
+当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。 依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。
+func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queue := make([]byte, 0, len(s)) for i := range s { if s[i] !'><title>Leetcode 1190. 反转每对括号间的子串</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1190.-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2/'>
 
@@ -25,16 +26,17 @@
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例 1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;(abcd)&amp;rdquo;
 输出： &amp;ldquo;dcba&amp;rdquo;
- 示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
 输出： &amp;ldquo;iloveu&amp;rdquo;
- 示例 3：  输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
+示例 3： 输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
 输出： &amp;ldquo;leetcode&amp;rdquo;
- 示例 4：  输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
+示例 4： 输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
 输出： &amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
- 提示：  0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的  解题思路 栈 利用栈来进行每一次的反转：
- 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。'>
+提示： 0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的 解题思路 栈 利用栈来进行每一次的反转：
+当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。 依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。
+func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queue := make([]byte, 0, len(s)) for i := range s { if s[i] !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1190.-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-05-26T23:59:13&#43;08:00'/><meta property='article:modified_time' content='2021-05-26T23:59:13&#43;08:00'/>
@@ -44,16 +46,17 @@
 题目描述 给出一个字符串 s（仅含有小写英文字母和括号）。
 请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
 注意，您的结果中 不应 包含任何括号。
-示例 1：  输入： s = &amp;ldquo;(abcd)&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;(abcd)&amp;rdquo;
 输出： &amp;ldquo;dcba&amp;rdquo;
- 示例 2：  输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;(u(love)i)&amp;rdquo;
 输出： &amp;ldquo;iloveu&amp;rdquo;
- 示例 3：  输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
+示例 3： 输入： s = &amp;ldquo;(ed(et(oc))el)&amp;rdquo;
 输出： &amp;ldquo;leetcode&amp;rdquo;
- 示例 4：  输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
+示例 4： 输入： s = &amp;ldquo;a(bcdefghijkl(mno)p)q&amp;rdquo;
 输出： &amp;ldquo;apmnolkjihgfedcbq&amp;rdquo;
- 提示：  0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的  解题思路 栈 利用栈来进行每一次的反转：
- 当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。  依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。">
+提示： 0 &amp;lt;= s.length &amp;lt;= 2000 s 中只有小写英文字母和括号 我们确保所有括号都是成对出现的 解题思路 栈 利用栈来进行每一次的反转：
+当遇到非 ) 时，入栈； 当遇到 ) 时，依次从栈中取出元素加入一个队列，直到取出 ( 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。 依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。
+func reverseParentheses(s string) string { stack := make([]byte, 0, len(s)) queue := make([]byte, 0, len(s)) for i := range s { if s[i] !">
     </head>
     <body class="
     article-page 
@@ -274,25 +277,25 @@
 <li>当遇到 <code>)</code> 时，依次从栈中取出元素加入一个<strong>队列</strong>，直到取出 <code>(</code> 时为止，再将队列中的元素全部入栈，即先完成了内层括号的反转。</li>
 </ul>
 <p>依次执行上述逻辑，直到遍历到字符串结尾，栈中元素即为反转后的结果。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseParentheses</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
-	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;)&#39;</span> {
-			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>])
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#a6e22e">queue</span> = <span style="color:#a6e22e">queue</span>[:<span style="color:#ae81ff">0</span>]
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">stack</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;(&#39;</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
-			<span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">stack</span>[<span style="color:#a6e22e">j</span>])
-			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-		}
-		<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-		<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">queue</span><span style="color:#f92672">...</span>)
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">stack</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseParentheses</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;)&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>])
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">queue</span> = <span style="color:#a6e22e">queue</span>[:<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">stack</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;(&#39;</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">stack</span>[<span style="color:#a6e22e">j</span>])
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">queue</span><span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">stack</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(s) $</li>
 <li>空间复杂度：$ O(N^2) $</li>
@@ -300,32 +303,32 @@
 <h5 id="跳跃">跳跃</h5>
 <p>通过模拟可以发现，每次奇数层的括号内元素需要反转，而偶数内不需要。</p>
 <p>当遇到一个括号时，可以跳转到其对应的另一个括号处，并改变遍历方向，即完成了反转。最终遍历的结果即是答案。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseParentheses</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
-	<span style="color:#a6e22e">pair</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
-		<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] {
-		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;(&#39;</span>:
-			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">i</span>)
-		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;)&#39;</span>:
-			<span style="color:#a6e22e">pair</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-			<span style="color:#a6e22e">pair</span>[<span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]] = <span style="color:#a6e22e">i</span>
-			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-		}
-	}
-	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
-	<span style="color:#a6e22e">step</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>); <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">step</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span> {
-			<span style="color:#a6e22e">step</span> = <span style="color:#f92672">-</span><span style="color:#a6e22e">step</span>
-			<span style="color:#a6e22e">i</span> = <span style="color:#a6e22e">pair</span>[<span style="color:#a6e22e">i</span>]
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>])
-		}
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">res</span>)
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseParentheses</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">pair</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;(&#39;</span>:
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;)&#39;</span>:
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">pair</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">pair</span>[<span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]] = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">step</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>); <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">step</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">step</span> = <span style="color:#f92672">-</span><span style="color:#a6e22e">step</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">i</span> = <span style="color:#a6e22e">pair</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>])
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">res</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(s) $</li>
 <li>空间复杂度：$ O(N) $</li>

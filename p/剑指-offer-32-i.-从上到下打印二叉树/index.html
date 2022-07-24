@@ -6,10 +6,10 @@
 题目描述 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
 例如:
 给定二叉树: [3,9,20,null,null,15,7],
-  3 / \ 9 20 / \ 15 7  返回：
- [3,9,20,15,7]
- 提示：  节点总数 &amp;lt;= 1000  解题思路 层序遍历 使用一个队列记录遍历到的结点，初始时根结点入队，每次从队头取出一个结点，将其值加入到结果队列，并按顺序将左右非空子结点入队，直到队列为空。
-func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { node := q.Front().Value.(*TreeNode) q.Remove(q.Front()) ans = append(ans, node.Val) if node.Left !'><title>剑指 Offer 32 - I. 从上到下打印二叉树</title>
+3 / \ 9 20 / \ 15 7 返回：
+[3,9,20,15,7]
+提示： 节点总数 &amp;lt;= 1000 解题思路 层序遍历 使用一个队列记录遍历到的结点，初始时根结点入队，每次从队头取出一个结点，将其值加入到结果队列，并按顺序将左右非空子结点入队，直到队列为空。
+func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { node := q.Front().Value.(*TreeNode) q.Remove(q.Front()) ans = append(ans, node.Val) if node.Left != nil { q.PushBack(node.Left) } if node.Right !'><title>剑指 Offer 32 - I. 从上到下打印二叉树</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-32-i.-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/'>
 
@@ -19,10 +19,10 @@ func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { r
 题目描述 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
 例如:
 给定二叉树: [3,9,20,null,null,15,7],
-  3 / \ 9 20 / \ 15 7  返回：
- [3,9,20,15,7]
- 提示：  节点总数 &amp;lt;= 1000  解题思路 层序遍历 使用一个队列记录遍历到的结点，初始时根结点入队，每次从队头取出一个结点，将其值加入到结果队列，并按顺序将左右非空子结点入队，直到队列为空。
-func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { node := q.Front().Value.(*TreeNode) q.Remove(q.Front()) ans = append(ans, node.Val) if node.Left !'>
+3 / \ 9 20 / \ 15 7 返回：
+[3,9,20,15,7]
+提示： 节点总数 &amp;lt;= 1000 解题思路 层序遍历 使用一个队列记录遍历到的结点，初始时根结点入队，每次从队头取出一个结点，将其值加入到结果队列，并按顺序将左右非空子结点入队，直到队列为空。
+func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { node := q.Front().Value.(*TreeNode) q.Remove(q.Front()) ans = append(ans, node.Val) if node.Left != nil { q.PushBack(node.Left) } if node.Right !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-32-i.-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='bfs' /><meta property='article:published_time' content='2021-09-27T18:48:47&#43;08:00'/><meta property='article:modified_time' content='2021-09-27T18:48:47&#43;08:00'/>
@@ -32,10 +32,10 @@ func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { r
 题目描述 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
 例如:
 给定二叉树: [3,9,20,null,null,15,7],
-  3 / \ 9 20 / \ 15 7  返回：
- [3,9,20,15,7]
- 提示：  节点总数 &amp;lt;= 1000  解题思路 层序遍历 使用一个队列记录遍历到的结点，初始时根结点入队，每次从队头取出一个结点，将其值加入到结果队列，并按顺序将左右非空子结点入队，直到队列为空。
-func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { node := q.Front().Value.(*TreeNode) q.Remove(q.Front()) ans = append(ans, node.Val) if node.Left !">
+3 / \ 9 20 / \ 15 7 返回：
+[3,9,20,15,7]
+提示： 节点总数 &amp;lt;= 1000 解题思路 层序遍历 使用一个队列记录遍历到的结点，初始时根结点入队，每次从队头取出一个结点，将其值加入到结果队列，并按顺序将左右非空子结点入队，直到队列为空。
+func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { return ans } q := list.New() q.PushBack(root) for q.Len() &amp;gt; 0 { node := q.Front().Value.(*TreeNode) q.Remove(q.Front()) ans = append(ans, node.Val) if node.Left != nil { q.PushBack(node.Left) } if node.Right !">
     </head>
     <body class="
     article-page 
@@ -240,27 +240,27 @@ func levelOrder(root *TreeNode) []int { ans := make([]int, 0) if root == nil { r
 <h3 id="解题思路">解题思路</h3>
 <h4 id="层序遍历">层序遍历</h4>
 <p>使用一个队列记录遍历到的结点，初始时根结点入队，每次从队头取出一个结点，将其值加入到结果队列，并按顺序将左右非空子结点入队，直到队列为空。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">levelOrder</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>)
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-	}
-	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
-	<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">root</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
-		<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Front</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
-		<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Front</span>())
-		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">levelOrder</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Front</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Front</span>())
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(N) $</li>

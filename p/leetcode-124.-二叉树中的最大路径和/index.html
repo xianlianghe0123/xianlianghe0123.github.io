@@ -6,13 +6,13 @@
 题目描述 路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。
 路径和 是路径中各节点值的总和。
 给你一个二叉树的根节点 root ，返回其 最大路径和 。
-示例 1：  输入： root = [1,2,3]
+示例 1： 输入： root = [1,2,3]
 输出： 6
 解释： 最优路径是 2 -&amp;gt; 1 -&amp;gt; 3 ，路径和为 2 &#43; 1 &#43; 3 = 6
- 示例 2：  输入： root = [-10,9,20,null,null,15,7]
+示例 2： 输入： root = [-10,9,20,null,null,15,7]
 输出： 42
 解释： 最优路径是 15 -&amp;gt; 20 -&amp;gt; 7 ，路径和为 15 &#43; 20 &#43; 7 = 42
- 提示：  树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.'><title>Leetcode 124. 二叉树中的最大路径和</title>
+提示： 树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.'><title>Leetcode 124. 二叉树中的最大路径和</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-124.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/'>
 
@@ -22,13 +22,13 @@
 题目描述 路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。
 路径和 是路径中各节点值的总和。
 给你一个二叉树的根节点 root ，返回其 最大路径和 。
-示例 1：  输入： root = [1,2,3]
+示例 1： 输入： root = [1,2,3]
 输出： 6
 解释： 最优路径是 2 -&amp;gt; 1 -&amp;gt; 3 ，路径和为 2 &#43; 1 &#43; 3 = 6
- 示例 2：  输入： root = [-10,9,20,null,null,15,7]
+示例 2： 输入： root = [-10,9,20,null,null,15,7]
 输出： 42
 解释： 最优路径是 15 -&amp;gt; 20 -&amp;gt; 7 ，路径和为 15 &#43; 20 &#43; 7 = 42
- 提示：  树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.'>
+提示： 树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-124.-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-12T18:59:28&#43;08:00'/><meta property='article:modified_time' content='2021-10-12T18:59:28&#43;08:00'/>
@@ -38,13 +38,13 @@
 题目描述 路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。
 路径和 是路径中各节点值的总和。
 给你一个二叉树的根节点 root ，返回其 最大路径和 。
-示例 1：  输入： root = [1,2,3]
+示例 1： 输入： root = [1,2,3]
 输出： 6
 解释： 最优路径是 2 -&amp;gt; 1 -&amp;gt; 3 ，路径和为 2 &#43; 1 &#43; 3 = 6
- 示例 2：  输入： root = [-10,9,20,null,null,15,7]
+示例 2： 输入： root = [-10,9,20,null,null,15,7]
 输出： 42
 解释： 最优路径是 15 -&amp;gt; 20 -&amp;gt; 7 ，路径和为 15 &#43; 20 &#43; 7 = 42
- 提示：  树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.">
+提示： 树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.">
     </head>
     <body class="
     article-page 
@@ -254,36 +254,36 @@
 <h4 id="递归--前缀和">递归 + 前缀和</h4>
 <p>最大路径和或者跨越当前结点，或者在左子树，或者在右子树。</p>
 <p>每次获得从根节点到左右子树的最大前缀和，以及左子树和右子树的最大路径和，然后将三者做比较，返回最大路径和以及最大前缀和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxPathSum</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">prefixSum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">maxPath</span>, <span style="color:#a6e22e">maxPrefixSum</span> <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">prefixSum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">maxPath</span>, <span style="color:#a6e22e">maxPrefixSum</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt32</span>, <span style="color:#a6e22e">prefixSum</span>
-		}
-        <span style="color:#75715e">// 子树的最大前缀和、最大路径和
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">maxPath</span>, <span style="color:#a6e22e">maxPrefixSum</span> = <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">prefixSum</span><span style="color:#f92672">+</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
-		<span style="color:#a6e22e">rMaxPath</span>, <span style="color:#a6e22e">rMaxPrefixSum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">prefixSum</span><span style="color:#f92672">+</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
-        <span style="color:#75715e">// 当前树的大路径和
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">curMaxPath</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">maxPrefixSum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">rMaxPrefixSum</span> <span style="color:#f92672">-</span> (<span style="color:#a6e22e">prefixSum</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxPath</span> &lt; <span style="color:#a6e22e">curMaxPath</span> {
-			<span style="color:#a6e22e">maxPath</span> = <span style="color:#a6e22e">curMaxPath</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxPath</span> &lt; <span style="color:#a6e22e">rMaxPath</span> {
-			<span style="color:#a6e22e">maxPath</span> = <span style="color:#a6e22e">rMaxPath</span>
-		}
-        <span style="color:#75715e">// 最大前缀和
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxPrefixSum</span> &lt; <span style="color:#a6e22e">rMaxPrefixSum</span> {
-			<span style="color:#a6e22e">maxPrefixSum</span> = <span style="color:#a6e22e">rMaxPrefixSum</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxPrefixSum</span> &lt; <span style="color:#a6e22e">prefixSum</span> {
-			<span style="color:#a6e22e">maxPrefixSum</span> = <span style="color:#a6e22e">prefixSum</span>
-		}
-		<span style="color:#66d9ef">return</span>
-	}
-	<span style="color:#a6e22e">maxPath</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxPath</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxPathSum</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">prefixSum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">maxPath</span>, <span style="color:#a6e22e">maxPrefixSum</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">prefixSum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">maxPath</span>, <span style="color:#a6e22e">maxPrefixSum</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt32</span>, <span style="color:#a6e22e">prefixSum</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 子树的最大前缀和、最大路径和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">maxPath</span>, <span style="color:#a6e22e">maxPrefixSum</span> = <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">prefixSum</span><span style="color:#f92672">+</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">rMaxPath</span>, <span style="color:#a6e22e">rMaxPrefixSum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">prefixSum</span><span style="color:#f92672">+</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 当前树的大路径和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">curMaxPath</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">maxPrefixSum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">rMaxPrefixSum</span> <span style="color:#f92672">-</span> (<span style="color:#a6e22e">prefixSum</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxPath</span> &lt; <span style="color:#a6e22e">curMaxPath</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">maxPath</span> = <span style="color:#a6e22e">curMaxPath</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxPath</span> &lt; <span style="color:#a6e22e">rMaxPath</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">maxPath</span> = <span style="color:#a6e22e">rMaxPath</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 最大前缀和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxPrefixSum</span> &lt; <span style="color:#a6e22e">rMaxPrefixSum</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">maxPrefixSum</span> = <span style="color:#a6e22e">rMaxPrefixSum</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxPrefixSum</span> &lt; <span style="color:#a6e22e">prefixSum</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">maxPrefixSum</span> = <span style="color:#a6e22e">prefixSum</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maxPath</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxPath</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

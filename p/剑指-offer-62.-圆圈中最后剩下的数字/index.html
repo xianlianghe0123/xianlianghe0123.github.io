@@ -5,11 +5,11 @@
 难度： 简单
 题目描述 0,1,···,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字（删除后从下一个数字开始计数）。求出这个圆圈里剩下的最后一个数字。
 例如，0、1、2、3、4这5个数字组成一个圆圈，从数字0开始每次删除第3个数字，则删除的前4个数字依次是2、0、4、1，因此最后剩下的数字是3。
-示例 1：  输入: n = 5, m = 3
+示例 1： 输入: n = 5, m = 3
 输出: 3
- 示例 2：  输入: n = 10, m = 17
+示例 2： 输入: n = 10, m = 17
 输出: 2
- 限制：  1 &amp;lt;= n &amp;lt;= 105 1 &amp;lt;= m &amp;lt;= 106  解题思路 递归 令 f(n, m) 表示从 n 个数字中不断删除第 m 个数字后剩余的数字， 则需要删除的数字为 (m-1) % n，然后变成了从 n-1 个数字中删除第 m 个数字。
+限制： 1 &amp;lt;= n &amp;lt;= 105 1 &amp;lt;= m &amp;lt;= 106 解题思路 递归 令 f(n, m) 表示从 n 个数字中不断删除第 m 个数字后剩余的数字， 则需要删除的数字为 (m-1) % n，然后变成了从 n-1 个数字中删除第 m 个数字。
 f(n-1, m) 可以得到从第 n-1 个数字中不断删除第 m 个数字后剩余的数字，该表达式是按照从第一个数字开始计数；然而在删除一个数字后，需要从 m % n 开始计数，故需要找到两者间的映射关系，即 f(n, m) = F(f(n-1, m))。'><title>剑指 Offer 62. 圆圈中最后剩下的数字</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-62.-%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/'>
@@ -19,11 +19,11 @@ f(n-1, m) 可以得到从第 n-1 个数字中不断删除第 m 个数字后剩�
 难度： 简单
 题目描述 0,1,···,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字（删除后从下一个数字开始计数）。求出这个圆圈里剩下的最后一个数字。
 例如，0、1、2、3、4这5个数字组成一个圆圈，从数字0开始每次删除第3个数字，则删除的前4个数字依次是2、0、4、1，因此最后剩下的数字是3。
-示例 1：  输入: n = 5, m = 3
+示例 1： 输入: n = 5, m = 3
 输出: 3
- 示例 2：  输入: n = 10, m = 17
+示例 2： 输入: n = 10, m = 17
 输出: 2
- 限制：  1 &amp;lt;= n &amp;lt;= 105 1 &amp;lt;= m &amp;lt;= 106  解题思路 递归 令 f(n, m) 表示从 n 个数字中不断删除第 m 个数字后剩余的数字， 则需要删除的数字为 (m-1) % n，然后变成了从 n-1 个数字中删除第 m 个数字。
+限制： 1 &amp;lt;= n &amp;lt;= 105 1 &amp;lt;= m &amp;lt;= 106 解题思路 递归 令 f(n, m) 表示从 n 个数字中不断删除第 m 个数字后剩余的数字， 则需要删除的数字为 (m-1) % n，然后变成了从 n-1 个数字中删除第 m 个数字。
 f(n-1, m) 可以得到从第 n-1 个数字中不断删除第 m 个数字后剩余的数字，该表达式是按照从第一个数字开始计数；然而在删除一个数字后，需要从 m % n 开始计数，故需要找到两者间的映射关系，即 f(n, m) = F(f(n-1, m))。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-62.-%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -33,11 +33,11 @@ f(n-1, m) 可以得到从第 n-1 个数字中不断删除第 m 个数字后剩�
 难度： 简单
 题目描述 0,1,···,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字（删除后从下一个数字开始计数）。求出这个圆圈里剩下的最后一个数字。
 例如，0、1、2、3、4这5个数字组成一个圆圈，从数字0开始每次删除第3个数字，则删除的前4个数字依次是2、0、4、1，因此最后剩下的数字是3。
-示例 1：  输入: n = 5, m = 3
+示例 1： 输入: n = 5, m = 3
 输出: 3
- 示例 2：  输入: n = 10, m = 17
+示例 2： 输入: n = 10, m = 17
 输出: 2
- 限制：  1 &amp;lt;= n &amp;lt;= 105 1 &amp;lt;= m &amp;lt;= 106  解题思路 递归 令 f(n, m) 表示从 n 个数字中不断删除第 m 个数字后剩余的数字， 则需要删除的数字为 (m-1) % n，然后变成了从 n-1 个数字中删除第 m 个数字。
+限制： 1 &amp;lt;= n &amp;lt;= 105 1 &amp;lt;= m &amp;lt;= 106 解题思路 递归 令 f(n, m) 表示从 n 个数字中不断删除第 m 个数字后剩余的数字， 则需要删除的数字为 (m-1) % n，然后变成了从 n-1 个数字中删除第 m 个数字。
 f(n-1, m) 可以得到从第 n-1 个数字中不断删除第 m 个数字后剩余的数字，该表达式是按照从第一个数字开始计数；然而在删除一个数字后，需要从 m % n 开始计数，故需要找到两者间的映射关系，即 f(n, m) = F(f(n-1, m))。">
     </head>
     <body class="
@@ -287,27 +287,27 @@ f(n-1, m) 可以得到从第 n-1 个数字中不断删除第 m 个数字后剩�
 </table>
 <p>通过上表得到递归公式： <code>f(n, m) = (f(n-1, m) + m) % n</code>；<br>
 当仅剩一个数字时，返回该数字，递归中止条件为 <code>f(1, m) = 0</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lastRemaining</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-	}
-	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">lastRemaining</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">m</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">m</span>) <span style="color:#f92672">%</span> <span style="color:#a6e22e">n</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lastRemaining</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">lastRemaining</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">m</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">m</span>) <span style="color:#f92672">%</span> <span style="color:#a6e22e">n</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(n) $</li>
 <li>空间复杂度：$ O(n) $</li>
 </ul>
 <h4 id="迭代">迭代</h4>
 <p>将上述递归修改为迭代，降低空间复杂度。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lastRemaining</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-    <span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-        <span style="color:#a6e22e">ans</span> = (<span style="color:#a6e22e">ans</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">m</span>) <span style="color:#f92672">%</span> <span style="color:#a6e22e">i</span>
-    }
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lastRemaining</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ans</span> = (<span style="color:#a6e22e">ans</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">m</span>) <span style="color:#f92672">%</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(n) $</li>
 <li>空间复杂度：$ O(1) $</li>

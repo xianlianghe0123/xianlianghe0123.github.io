@@ -7,7 +7,7 @@
 一个有效的 累加序列 必须 至少 包含 3 个数。除了最开始的两个数以外，字符串中的其他数都等于它之前两个数相加的和。
 给你一个只包含数字 &#39;0&#39;-&#39;9&#39; 的字符串，编写一个算法来判断给定输入是否是 累加数 。如果是，返回 true ；否则，返回 false 。
 说明： 累加序列里的数 不会 以 0 开头，所以不会出现 1, 2, 03 或者 1, 02, 3 的情况。
-示例 1：  输入： &amp;ldquo;112358&amp;rdquo;
+示例 1： 输入： &amp;ldquo;112358&amp;rdquo;
 输出： true
 解释： 累加序列为: 1, 1, 2, 3, 5, 8 。1 &#43; 1 = 2, 1 &#43; 2 = 3, 2 &#43; 3 = 5, 3 &#43; 5 = 8'><title>Leetcode 306. 累加数</title>
 
@@ -20,7 +20,7 @@
 一个有效的 累加序列 必须 至少 包含 3 个数。除了最开始的两个数以外，字符串中的其他数都等于它之前两个数相加的和。
 给你一个只包含数字 &#39;0&#39;-&#39;9&#39; 的字符串，编写一个算法来判断给定输入是否是 累加数 。如果是，返回 true ；否则，返回 false 。
 说明： 累加序列里的数 不会 以 0 开头，所以不会出现 1, 2, 03 或者 1, 02, 3 的情况。
-示例 1：  输入： &amp;ldquo;112358&amp;rdquo;
+示例 1： 输入： &amp;ldquo;112358&amp;rdquo;
 输出： true
 解释： 累加序列为: 1, 1, 2, 3, 5, 8 。1 &#43; 1 = 2, 1 &#43; 2 = 3, 2 &#43; 3 = 5, 3 &#43; 5 = 8'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-306.-%E7%B4%AF%E5%8A%A0%E6%95%B0/'>
@@ -33,7 +33,7 @@
 一个有效的 累加序列 必须 至少 包含 3 个数。除了最开始的两个数以外，字符串中的其他数都等于它之前两个数相加的和。
 给你一个只包含数字 &#39;0&#39;-&#39;9&#39; 的字符串，编写一个算法来判断给定输入是否是 累加数 。如果是，返回 true ；否则，返回 false 。
 说明： 累加序列里的数 不会 以 0 开头，所以不会出现 1, 2, 03 或者 1, 02, 3 的情况。
-示例 1：  输入： &amp;ldquo;112358&amp;rdquo;
+示例 1： 输入： &amp;ldquo;112358&amp;rdquo;
 输出： true
 解释： 累加序列为: 1, 1, 2, 3, 5, 8 。1 &#43; 1 = 2, 1 &#43; 2 = 3, 2 &#43; 3 = 5, 3 &#43; 5 = 8">
     </head>
@@ -245,58 +245,58 @@
 <h4 id="哈希">哈希</h4>
 <p>单前两个数字确定后，后续的累加序列可以依次算出。故枚举所有可能的两个初始数字，逐个往后计算，并在原始串中匹配。</p>
 <p>当存在有一种情况满足 <strong>累加数</strong> 的要求，即可以匹配到结尾时，返回 <code>true</code> , 否则返回 <code>false</code> 。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isAdditiveNumber</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> len(<span style="color:#a6e22e">num</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">num</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#75715e">// 前导 0 跳过
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">num</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;0&#39;</span> {
-				<span style="color:#66d9ef">break</span>
-			}
-			<span style="color:#a6e22e">num1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span>[:<span style="color:#a6e22e">i</span>]
-			<span style="color:#a6e22e">num2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span>[<span style="color:#a6e22e">i</span>:<span style="color:#a6e22e">j</span>]
-			<span style="color:#75715e">// 计算是否是累加和
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">j</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;=</span> len(<span style="color:#a6e22e">num</span>); {
-				<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">num1</span>, <span style="color:#a6e22e">num2</span>)
-				<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">HasPrefix</span>(<span style="color:#a6e22e">num</span>[<span style="color:#a6e22e">k</span>:], <span style="color:#a6e22e">sum</span>) {
-					<span style="color:#66d9ef">break</span>
-				}
-				<span style="color:#a6e22e">k</span> <span style="color:#f92672">+=</span> len(<span style="color:#a6e22e">sum</span>)
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">num</span>) {
-					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-				}
-				<span style="color:#a6e22e">num1</span>, <span style="color:#a6e22e">num2</span> = <span style="color:#a6e22e">num2</span>, <span style="color:#a6e22e">sum</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">s1</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">s2</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s1</span>) &lt; len(<span style="color:#a6e22e">s2</span>) {
-		<span style="color:#a6e22e">s1</span>, <span style="color:#a6e22e">s2</span> = <span style="color:#a6e22e">s2</span>, <span style="color:#a6e22e">s1</span>
-	}
-	<span style="color:#a6e22e">result</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, len(<span style="color:#a6e22e">s1</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> byte(<span style="color:#ae81ff">0</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">s1</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, len(<span style="color:#a6e22e">s2</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, len(<span style="color:#a6e22e">result</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span> = <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
-		<span style="color:#66d9ef">switch</span> {
-		<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">j</span> &lt; <span style="color:#ae81ff">0</span>:
-			<span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">k</span>] = <span style="color:#a6e22e">s1</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>
-		<span style="color:#66d9ef">default</span>:
-			<span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">k</span>] = <span style="color:#a6e22e">s1</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">s2</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> byte(<span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>
-		}
-		<span style="color:#a6e22e">c</span> = <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">k</span>] &gt; <span style="color:#e6db74">&#39;9&#39;</span> {
-			<span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">-=</span> <span style="color:#ae81ff">10</span>
-			<span style="color:#a6e22e">c</span> = <span style="color:#ae81ff">1</span>
-		}
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-		<span style="color:#a6e22e">result</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#39;1&#39;</span>
-		<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">result</span>)
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">result</span>[<span style="color:#ae81ff">1</span>:])
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isAdditiveNumber</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> len(<span style="color:#a6e22e">num</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">num</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 前导 0 跳过
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">num</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;0&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">num1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span>[:<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">num2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">num</span>[<span style="color:#a6e22e">i</span>:<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 计算是否是累加和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">j</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;=</span> len(<span style="color:#a6e22e">num</span>); {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">num1</span>, <span style="color:#a6e22e">num2</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">HasPrefix</span>(<span style="color:#a6e22e">num</span>[<span style="color:#a6e22e">k</span>:], <span style="color:#a6e22e">sum</span>) {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">k</span> <span style="color:#f92672">+=</span> len(<span style="color:#a6e22e">sum</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">num1</span>, <span style="color:#a6e22e">num2</span> = <span style="color:#a6e22e">num2</span>, <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">s1</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">s2</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s1</span>) &lt; len(<span style="color:#a6e22e">s2</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">s1</span>, <span style="color:#a6e22e">s2</span> = <span style="color:#a6e22e">s2</span>, <span style="color:#a6e22e">s1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, len(<span style="color:#a6e22e">s1</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> byte(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">s1</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, len(<span style="color:#a6e22e">s2</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, len(<span style="color:#a6e22e">result</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span> = <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">j</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">switch</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">j</span> &lt; <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">k</span>] = <span style="color:#a6e22e">s1</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">k</span>] = <span style="color:#a6e22e">s1</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">s2</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> byte(<span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">c</span> = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">k</span>] &gt; <span style="color:#e6db74">&#39;9&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">-=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">c</span> = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">result</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#39;1&#39;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">result</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">result</span>[<span style="color:#ae81ff">1</span>:])
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^3), N = len(num) $</li>
 <li>空间复杂度：$ O(N) $</li>

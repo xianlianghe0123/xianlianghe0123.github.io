@@ -5,7 +5,7 @@
 难度： 中等
 题目描述 给定一个正整数 n，找到并返回 n 的二进制表示中两个 相邻 1 之间的 最长距离 。如果不存在两个相邻的 1，返回 0 。
 如果只有 0 将两个 1 分隔开（可能不存在 0 ），则认为这两个 1 彼此 相邻 。两个 1 之间的距离是它们的二进制表示中位置的绝对差。例如，&amp;quot;1001&amp;quot; 中的两个 1 的距离为 3 。
-示例 1：  输入： n = 22
+示例 1： 输入： n = 22
 输出： 2
 解释： 22 的二进制是 &amp;ldquo;10110&amp;rdquo; 。
 在 22 的二进制表示中，有三个 1，组成两对相邻的 1 。
@@ -20,7 +20,7 @@
 难度： 中等
 题目描述 给定一个正整数 n，找到并返回 n 的二进制表示中两个 相邻 1 之间的 最长距离 。如果不存在两个相邻的 1，返回 0 。
 如果只有 0 将两个 1 分隔开（可能不存在 0 ），则认为这两个 1 彼此 相邻 。两个 1 之间的距离是它们的二进制表示中位置的绝对差。例如，&amp;quot;1001&amp;quot; 中的两个 1 的距离为 3 。
-示例 1：  输入： n = 22
+示例 1： 输入： n = 22
 输出： 2
 解释： 22 的二进制是 &amp;ldquo;10110&amp;rdquo; 。
 在 22 的二进制表示中，有三个 1，组成两对相邻的 1 。
@@ -35,7 +35,7 @@
 难度： 中等
 题目描述 给定一个正整数 n，找到并返回 n 的二进制表示中两个 相邻 1 之间的 最长距离 。如果不存在两个相邻的 1，返回 0 。
 如果只有 0 将两个 1 分隔开（可能不存在 0 ），则认为这两个 1 彼此 相邻 。两个 1 之间的距离是它们的二进制表示中位置的绝对差。例如，&amp;quot;1001&amp;quot; 中的两个 1 的距离为 3 。
-示例 1：  输入： n = 22
+示例 1： 输入： n = 22
 输出： 2
 解释： 22 的二进制是 &amp;ldquo;10110&amp;rdquo; 。
 在 22 的二进制表示中，有三个 1，组成两对相邻的 1 。
@@ -257,20 +257,20 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="移位">移位</h4>
 <p>对 <code>n</code> 执行右移运算，当末尾为 <code>1</code> 时，判断相邻的两个 <code>1</code> 之间的距离。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">binaryGap</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">lastIdx</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">i</span> = <span style="color:#a6e22e">n</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">lastIdx</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ans</span> &lt; <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#a6e22e">lastIdx</span> {
-			<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">lastIdx</span>
-		}
-		<span style="color:#a6e22e">lastIdx</span> = <span style="color:#a6e22e">i</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">binaryGap</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">lastIdx</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">i</span> = <span style="color:#a6e22e">n</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">lastIdx</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ans</span> &lt; <span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#a6e22e">lastIdx</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">lastIdx</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">lastIdx</span> = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(\log{n}) $</li>
 <li>空间复杂度：$ O(1) $</li>

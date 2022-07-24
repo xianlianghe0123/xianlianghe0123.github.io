@@ -4,12 +4,12 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
 难度： 简单
 题目描述 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
-示例 1：  输入： &amp;ldquo;hello&amp;rdquo;
+示例 1： 输入： &amp;ldquo;hello&amp;rdquo;
 输出： &amp;ldquo;holle&amp;rdquo;
- 示例 2：  输入： &amp;ldquo;leetcode&amp;rdquo;
+示例 2： 输入： &amp;ldquo;leetcode&amp;rdquo;
 输出： &amp;ldquo;leotcede&amp;rdquo;
- 提示：  元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。  解题思路 双指针 使用两个指针 i, j 分别从字符串首尾向中间遍历：
- 遇到非元音字母向中间靠拢； i, j 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢  最终两个指针相遇时停止，元音字母反转完毕。
+提示： 元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。 解题思路 双指针 使用两个指针 i, j 分别从字符串首尾向中间遍历：
+遇到非元音字母向中间靠拢； i, j 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢 最终两个指针相遇时停止，元音字母反转完毕。
 func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &amp;#39;a&amp;#39;: true, &amp;#39;A&amp;#39;: true, &amp;#39;e&amp;#39;: true, &amp;#39;E&amp;#39;: true, &amp;#39;i&amp;#39;: true, &amp;#39;I&amp;#39;: true, &amp;#39;o&amp;#39;: true, &amp;#39;O&amp;#39;: true, &amp;#39;u&amp;#39;: true, &amp;#39;U&amp;#39;: true, } for i, j := 0, len(s)-1; i &amp;lt; j; { if !'><title>Leetcode 345. 反转字符串中的元音字母</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-345.-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/'>
@@ -18,12 +18,12 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
 难度： 简单
 题目描述 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
-示例 1：  输入： &amp;ldquo;hello&amp;rdquo;
+示例 1： 输入： &amp;ldquo;hello&amp;rdquo;
 输出： &amp;ldquo;holle&amp;rdquo;
- 示例 2：  输入： &amp;ldquo;leetcode&amp;rdquo;
+示例 2： 输入： &amp;ldquo;leetcode&amp;rdquo;
 输出： &amp;ldquo;leotcede&amp;rdquo;
- 提示：  元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。  解题思路 双指针 使用两个指针 i, j 分别从字符串首尾向中间遍历：
- 遇到非元音字母向中间靠拢； i, j 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢  最终两个指针相遇时停止，元音字母反转完毕。
+提示： 元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。 解题思路 双指针 使用两个指针 i, j 分别从字符串首尾向中间遍历：
+遇到非元音字母向中间靠拢； i, j 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢 最终两个指针相遇时停止，元音字母反转完毕。
 func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &amp;#39;a&amp;#39;: true, &amp;#39;A&amp;#39;: true, &amp;#39;e&amp;#39;: true, &amp;#39;E&amp;#39;: true, &amp;#39;i&amp;#39;: true, &amp;#39;I&amp;#39;: true, &amp;#39;o&amp;#39;: true, &amp;#39;O&amp;#39;: true, &amp;#39;u&amp;#39;: true, &amp;#39;U&amp;#39;: true, } for i, j := 0, len(s)-1; i &amp;lt; j; { if !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-345.-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -32,12 +32,12 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
 难度： 简单
 题目描述 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
-示例 1：  输入： &amp;ldquo;hello&amp;rdquo;
+示例 1： 输入： &amp;ldquo;hello&amp;rdquo;
 输出： &amp;ldquo;holle&amp;rdquo;
- 示例 2：  输入： &amp;ldquo;leetcode&amp;rdquo;
+示例 2： 输入： &amp;ldquo;leetcode&amp;rdquo;
 输出： &amp;ldquo;leotcede&amp;rdquo;
- 提示：  元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。  解题思路 双指针 使用两个指针 i, j 分别从字符串首尾向中间遍历：
- 遇到非元音字母向中间靠拢； i, j 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢  最终两个指针相遇时停止，元音字母反转完毕。
+提示： 元音字母不包含字母 &amp;ldquo;y&amp;rdquo; 。 解题思路 双指针 使用两个指针 i, j 分别从字符串首尾向中间遍历：
+遇到非元音字母向中间靠拢； i, j 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢 最终两个指针相遇时停止，元音字母反转完毕。
 func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &amp;#39;a&amp;#39;: true, &amp;#39;A&amp;#39;: true, &amp;#39;e&amp;#39;: true, &amp;#39;E&amp;#39;: true, &amp;#39;i&amp;#39;: true, &amp;#39;I&amp;#39;: true, &amp;#39;o&amp;#39;: true, &amp;#39;O&amp;#39;: true, &amp;#39;u&amp;#39;: true, &amp;#39;U&amp;#39;: true, } for i, j := 0, len(s)-1; i &amp;lt; j; { if !">
     </head>
     <body class="
@@ -245,36 +245,36 @@ func reverseVowels(s string) string { t := []byte(s) isVowel := map[byte]bool{ &
 <li><code>i, j</code> 两个指针都指向元音字母时，交换两个指针指向的字母并向中靠拢</li>
 </ul>
 <p>最终两个指针相遇时停止，元音字母反转完毕。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseVowels</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">s</span>)
-	<span style="color:#a6e22e">isVowel</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">bool</span>{
-		<span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;e&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;i&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;o&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;O&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;u&#39;</span>: <span style="color:#66d9ef">true</span>,
-		<span style="color:#e6db74">&#39;U&#39;</span>: <span style="color:#66d9ef">true</span>,
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">j</span>; {
-		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isVowel</span>[<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>]] {
-			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isVowel</span>[<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">j</span>]] {
-			<span style="color:#a6e22e">j</span><span style="color:#f92672">--</span>
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>]
-		<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
-		<span style="color:#a6e22e">j</span><span style="color:#f92672">--</span>
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">t</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseVowels</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">isVowel</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">bool</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;e&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;i&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;o&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;O&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;u&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#39;U&#39;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">j</span>; {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isVowel</span>[<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>]] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isVowel</span>[<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">j</span>]] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">j</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">j</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(s) $</li>
 <li>空间复杂度：$ O(1) $</li>

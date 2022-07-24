@@ -6,11 +6,11 @@
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入： nums = [1,2,2,4]
+示例 1： 输入： nums = [1,2,2,4]
 输出： [2,3]
- 示例 2：  输入： nums = [1,1]
+示例 2： 输入： nums = [1,1]
 输出： [1,2]
- 提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
+提示： 2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104 解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !'><title>Leetcode 645. 错误的集合</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-645.-%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88/'>
@@ -21,11 +21,11 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入： nums = [1,2,2,4]
+示例 1： 输入： nums = [1,2,2,4]
 输出： [2,3]
- 示例 2：  输入： nums = [1,1]
+示例 2： 输入： nums = [1,1]
 输出： [1,2]
- 提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
+提示： 2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104 解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-645.-%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -36,11 +36,11 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 题目描述 集合 s 包含从 1 到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个数字复制了成了集合里面的另外一个数字的值，导致集合 丢失了一个数字 并且 有一个数字重复 。
 给定一个数组 nums 代表了集合 S 发生错误后的结果。
 请你找出重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
-示例 1：  输入： nums = [1,2,2,4]
+示例 1： 输入： nums = [1,2,2,4]
 输出： [2,3]
- 示例 2：  输入： nums = [1,1]
+示例 2： 输入： nums = [1,1]
 输出： [1,2]
- 提示：  2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104  解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
+提示： 2 &amp;lt;= nums.length &amp;lt;= 104 1 &amp;lt;= nums[i] &amp;lt;= 104 解题思路 哈希 利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。
 func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, len(nums)) for _, num := range nums { if exist[num-1] { res[0] = num } exist[num-1] = true } for num, ok := range exist { if !">
     </head>
     <body class="
@@ -246,23 +246,23 @@ func findErrorNums(nums []int) []int { res := []int{0, 0} exist := make([]bool, 
 <h3 id="解题思路">解题思路</h3>
 <h4 id="哈希">哈希</h4>
 <p>利用哈希表记录每个数字是否出现，可以找到重复出现过的数字；遍历哈希表可以找到丢失的数字。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findErrorNums</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}
-	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, len(<span style="color:#a6e22e">nums</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">num</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
-			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#a6e22e">num</span>
-		}
-		<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">num</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">true</span>
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">exist</span> {
-		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
-			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">num</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findErrorNums</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">bool</span>, len(<span style="color:#a6e22e">nums</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">num</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">num</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">exist</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">num</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(N) $</li>

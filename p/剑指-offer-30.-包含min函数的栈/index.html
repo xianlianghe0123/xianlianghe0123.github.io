@@ -4,7 +4,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
 难度： 简单
 题目描述 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 $O(1)$。
-示例：  MinStack minStack = new MinStack();
+示例： MinStack minStack = new MinStack();
 minStack.push(-2);
 minStack.push(0);
 minStack.push(-3);
@@ -12,8 +12,8 @@ minStack.min(); &amp;ndash;&amp;gt; 返回 -3.
 minStack.pop();
 minStack.top(); &amp;ndash;&amp;gt; 返回 0.
 minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
- 提示：  各函数的调用总次数不超过 20000 次  解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
- 当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。  type MinStack struct { stack *list.'><title>剑指 Offer 30. 包含min函数的栈</title>
+提示： 各函数的调用总次数不超过 20000 次 解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
+当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。 type MinStack struct { stack *list.List minStack *list.'><title>剑指 Offer 30. 包含min函数的栈</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-30.-%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/'>
 
@@ -21,7 +21,7 @@ minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
 难度： 简单
 题目描述 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 $O(1)$。
-示例：  MinStack minStack = new MinStack();
+示例： MinStack minStack = new MinStack();
 minStack.push(-2);
 minStack.push(0);
 minStack.push(-3);
@@ -29,8 +29,8 @@ minStack.min(); &amp;ndash;&amp;gt; 返回 -3.
 minStack.pop();
 minStack.top(); &amp;ndash;&amp;gt; 返回 0.
 minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
- 提示：  各函数的调用总次数不超过 20000 次  解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
- 当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。  type MinStack struct { stack *list.'>
+提示： 各函数的调用总次数不超过 20000 次 解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
+当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。 type MinStack struct { stack *list.List minStack *list.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-30.-%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stack' /><meta property='article:published_time' content='2021-09-20T12:29:44&#43;08:00'/><meta property='article:modified_time' content='2021-09-20T12:29:44&#43;08:00'/>
@@ -38,7 +38,7 @@ minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/
 难度： 简单
 题目描述 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 $O(1)$。
-示例：  MinStack minStack = new MinStack();
+示例： MinStack minStack = new MinStack();
 minStack.push(-2);
 minStack.push(0);
 minStack.push(-3);
@@ -46,8 +46,8 @@ minStack.min(); &amp;ndash;&amp;gt; 返回 -3.
 minStack.pop();
 minStack.top(); &amp;ndash;&amp;gt; 返回 0.
 minStack.min(); &amp;ndash;&amp;gt; 返回 -2.
- 提示：  各函数的调用总次数不超过 20000 次  解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
- 当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。  type MinStack struct { stack *list.">
+提示： 各函数的调用总次数不超过 20000 次 解题思路 双栈 当最小元素入栈后，后续压入的所有大于最小元素的元素，均不会影响 min 的值，除非压入更小的元素。同理，需要弹出最小元素，min 的值才会改变。故使用另一个栈 B 记录可能使得 min 改变的所有元素值。
+当一个元素入栈时，压入栈 A ，若此元素不大于栈 B 栈顶元素或栈 B 为空，同时需要压入栈 B； 当出栈时，弹出栈 A 栈顶元素，若该元素与栈 B 栈顶元素相同，栈 B 栈顶元素也弹出。 type MinStack struct { stack *list.List minStack *list.">
     </head>
     <body class="
     article-page 
@@ -254,41 +254,41 @@ minStack.min();   &ndash;&gt; 返回 -2.</p>
 <li>当一个元素入栈时，压入栈 <code>A</code> ，若此元素不大于栈 <code>B</code> 栈顶元素或栈 <code>B</code> 为空，同时需要压入栈 <code>B</code>；</li>
 <li>当出栈时，弹出栈 <code>A</code> 栈顶元素，若该元素与栈 <code>B</code> 栈顶元素相同，栈 <code>B</code> 栈顶元素也弹出。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MinStack</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">stack</span>    <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
-	<span style="color:#a6e22e">minStack</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MinStack</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MinStack</span>{
-		<span style="color:#a6e22e">stack</span>:    <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
-		<span style="color:#a6e22e">minStack</span>: <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinStack</span>) <span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) {
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">x</span>)
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Back</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">x</span> {
-		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">x</span>)
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinStack</span>) <span style="color:#a6e22e">Pop</span>() {
-	<span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">Back</span>()
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">e</span>)
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Back</span>().<span style="color:#a6e22e">Value</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Value</span> {
-		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Back</span>())
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinStack</span>) <span style="color:#a6e22e">Top</span>() <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">Back</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>)
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinStack</span>) <span style="color:#a6e22e">Min</span>() <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Back</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MinStack</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span>    <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">minStack</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MinStack</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MinStack</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">stack</span>:    <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">minStack</span>: <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinStack</span>) <span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">x</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Back</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">x</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">x</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinStack</span>) <span style="color:#a6e22e">Pop</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">Back</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">e</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Back</span>().<span style="color:#a6e22e">Value</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Value</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Back</span>())
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinStack</span>) <span style="color:#a6e22e">Top</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">Back</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MinStack</span>) <span style="color:#a6e22e">Min</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">minStack</span>.<span style="color:#a6e22e">Back</span>().<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

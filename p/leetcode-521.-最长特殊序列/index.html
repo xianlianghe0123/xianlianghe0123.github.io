@@ -7,10 +7,10 @@
 「最长特殊序列」 定义如下：该序列为 某字符串独有的最长子序列（即不能是其他字符串的子序列） 。
 字符串 s 的子序列是在从 s 中删除任意数量的字符后可以获得的字符串。
 例如，&amp;quot;abc&amp;quot; 是 &amp;quot;aebdc&amp;quot; 的子序列，因为删除 &amp;ldquo;aebdc&amp;rdquo; 中斜体加粗的字符可以得到 &amp;quot;abc&amp;quot; 。 &amp;quot;aebdc&amp;quot; 的子序列还包括 &amp;quot;aebdc&amp;quot; 、 &amp;quot;aeb&amp;quot; 和 &amp;quot;&amp;quot; (空字符串)。
-示例 1：  输入： a = &amp;ldquo;aba&amp;rdquo;, b = &amp;ldquo;cdc&amp;rdquo;
+示例 1： 输入： a = &amp;ldquo;aba&amp;rdquo;, b = &amp;ldquo;cdc&amp;rdquo;
 输出： 3
 解释： 最长特殊序列可为 &amp;ldquo;aba&amp;rdquo; (或 &amp;ldquo;cdc&amp;rdquo;)，两者均为自身的子序列且不是对方的子序列。
- 示例 2：  输入： a = &amp;ldquo;aaa&amp;rdquo;, b = &amp;ldquo;bbb&amp;rdquo;
+示例 2： 输入： a = &amp;ldquo;aaa&amp;rdquo;, b = &amp;ldquo;bbb&amp;rdquo;
 输出： 3
 解释： 最长特殊序列是 &amp;ldquo;aaa&amp;rdquo; 和 &amp;ldquo;bbb&amp;rdquo; 。'><title>Leetcode 521. 最长特殊序列 Ⅰ</title>
 
@@ -23,10 +23,10 @@
 「最长特殊序列」 定义如下：该序列为 某字符串独有的最长子序列（即不能是其他字符串的子序列） 。
 字符串 s 的子序列是在从 s 中删除任意数量的字符后可以获得的字符串。
 例如，&amp;quot;abc&amp;quot; 是 &amp;quot;aebdc&amp;quot; 的子序列，因为删除 &amp;ldquo;aebdc&amp;rdquo; 中斜体加粗的字符可以得到 &amp;quot;abc&amp;quot; 。 &amp;quot;aebdc&amp;quot; 的子序列还包括 &amp;quot;aebdc&amp;quot; 、 &amp;quot;aeb&amp;quot; 和 &amp;quot;&amp;quot; (空字符串)。
-示例 1：  输入： a = &amp;ldquo;aba&amp;rdquo;, b = &amp;ldquo;cdc&amp;rdquo;
+示例 1： 输入： a = &amp;ldquo;aba&amp;rdquo;, b = &amp;ldquo;cdc&amp;rdquo;
 输出： 3
 解释： 最长特殊序列可为 &amp;ldquo;aba&amp;rdquo; (或 &amp;ldquo;cdc&amp;rdquo;)，两者均为自身的子序列且不是对方的子序列。
- 示例 2：  输入： a = &amp;ldquo;aaa&amp;rdquo;, b = &amp;ldquo;bbb&amp;rdquo;
+示例 2： 输入： a = &amp;ldquo;aaa&amp;rdquo;, b = &amp;ldquo;bbb&amp;rdquo;
 输出： 3
 解释： 最长特殊序列是 &amp;ldquo;aaa&amp;rdquo; 和 &amp;ldquo;bbb&amp;rdquo; 。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-521.-%E6%9C%80%E9%95%BF%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97/'>
@@ -39,10 +39,10 @@
 「最长特殊序列」 定义如下：该序列为 某字符串独有的最长子序列（即不能是其他字符串的子序列） 。
 字符串 s 的子序列是在从 s 中删除任意数量的字符后可以获得的字符串。
 例如，&amp;quot;abc&amp;quot; 是 &amp;quot;aebdc&amp;quot; 的子序列，因为删除 &amp;ldquo;aebdc&amp;rdquo; 中斜体加粗的字符可以得到 &amp;quot;abc&amp;quot; 。 &amp;quot;aebdc&amp;quot; 的子序列还包括 &amp;quot;aebdc&amp;quot; 、 &amp;quot;aeb&amp;quot; 和 &amp;quot;&amp;quot; (空字符串)。
-示例 1：  输入： a = &amp;ldquo;aba&amp;rdquo;, b = &amp;ldquo;cdc&amp;rdquo;
+示例 1： 输入： a = &amp;ldquo;aba&amp;rdquo;, b = &amp;ldquo;cdc&amp;rdquo;
 输出： 3
 解释： 最长特殊序列可为 &amp;ldquo;aba&amp;rdquo; (或 &amp;ldquo;cdc&amp;rdquo;)，两者均为自身的子序列且不是对方的子序列。
- 示例 2：  输入： a = &amp;ldquo;aaa&amp;rdquo;, b = &amp;ldquo;bbb&amp;rdquo;
+示例 2： 输入： a = &amp;ldquo;aaa&amp;rdquo;, b = &amp;ldquo;bbb&amp;rdquo;
 输出： 3
 解释： 最长特殊序列是 &amp;ldquo;aaa&amp;rdquo; 和 &amp;ldquo;bbb&amp;rdquo; 。">
     </head>
@@ -267,19 +267,19 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findLUSlength</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">switch</span> {
-	<span style="color:#66d9ef">case</span> len(<span style="color:#a6e22e">a</span>) &gt; len(<span style="color:#a6e22e">b</span>):
-		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">a</span>)
-	<span style="color:#66d9ef">case</span> len(<span style="color:#a6e22e">a</span>) &lt; len(<span style="color:#a6e22e">b</span>):
-		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">b</span>)
-	<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">b</span>:
-		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">a</span>)
-	<span style="color:#66d9ef">default</span>:
-		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	}
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findLUSlength</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">switch</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> len(<span style="color:#a6e22e">a</span>) &gt; len(<span style="color:#a6e22e">b</span>):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> len(<span style="color:#a6e22e">a</span>) &lt; len(<span style="color:#a6e22e">b</span>):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">b</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">b</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = min(len(a), len(b)) $</li>
 <li>空间复杂度：$ O(1) $</li>

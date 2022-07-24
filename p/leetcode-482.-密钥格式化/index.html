@@ -3,51 +3,51 @@
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/license-key-formatting/
 难度： 简单
-题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&#39;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
-给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&#39;（破折号）隔开，并且将所有的小写字母转换为大写字母。
+题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&amp;rsquo;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
+给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&amp;rsquo;（破折号）隔开，并且将所有的小写字母转换为大写字母。
 给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。
-示例 1：  输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
+示例 1： 输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
 输出： &amp;ldquo;5F3Z-2E9W&amp;rdquo;
 解释： 字符串 S 被分成了两个部分，每部分 4 个字符；
 注意，两个额外的破折号需要删掉。
- 示例 2：  输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
+示例 2： 输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
 输出： &amp;ldquo;2-5G-3J&amp;rdquo;
 解释： 字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。
- 提示：  S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空  解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。'><title>Leetcode 482. 密钥格式化</title>
+提示： S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空 解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。'><title>Leetcode 482. 密钥格式化</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 482. 密钥格式化'>
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/license-key-formatting/
 难度： 简单
-题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&#39;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
-给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&#39;（破折号）隔开，并且将所有的小写字母转换为大写字母。
+题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&amp;rsquo;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
+给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&amp;rsquo;（破折号）隔开，并且将所有的小写字母转换为大写字母。
 给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。
-示例 1：  输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
+示例 1： 输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
 输出： &amp;ldquo;5F3Z-2E9W&amp;rdquo;
 解释： 字符串 S 被分成了两个部分，每部分 4 个字符；
 注意，两个额外的破折号需要删掉。
- 示例 2：  输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
+示例 2： 输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
 输出： &amp;ldquo;2-5G-3J&amp;rdquo;
 解释： 字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。
- 提示：  S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空  解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。'>
+提示： S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空 解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-482.-%E5%AF%86%E9%92%A5%E6%A0%BC%E5%BC%8F%E5%8C%96/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-04T11:44:14&#43;08:00'/><meta property='article:modified_time' content='2021-10-04T11:44:14&#43;08:00'/>
 <meta name="twitter:title" content="Leetcode 482. 密钥格式化">
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/license-key-formatting/
 难度： 简单
-题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&#39;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
-给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&#39;（破折号）隔开，并且将所有的小写字母转换为大写字母。
+题目描述 有一个密钥字符串 S ，只包含字母，数字以及 &amp;lsquo;-&amp;rsquo;（破折号）。其中， N 个 &amp;lsquo;-&amp;rsquo; 将字符串分成了 N&#43;1 组。
+给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &amp;lsquo;-&amp;rsquo;（破折号）隔开，并且将所有的小写字母转换为大写字母。
 给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。
-示例 1：  输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
+示例 1： 输入： S = &amp;ldquo;5F3Z-2e-9-w&amp;rdquo;, K = 4
 输出： &amp;ldquo;5F3Z-2E9W&amp;rdquo;
 解释： 字符串 S 被分成了两个部分，每部分 4 个字符；
 注意，两个额外的破折号需要删掉。
- 示例 2：  输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
+示例 2： 输入： S = &amp;ldquo;2-5g-3-J&amp;rdquo;, K = 2
 输出： &amp;ldquo;2-5G-3J&amp;rdquo;
 解释： 字符串 S 被分成了 3 个部分，按照前面的规则描述，第一部分的字符可以少于给定的数量，其余部分皆为 2 个字符。
- 提示：  S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空  解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。">
+提示： S 的长度可能很长，请按需分配大小。K 为正整数。 S 只包含字母数字（a-z，A-Z，0-9）以及破折号&amp;rsquo;-&amp;rsquo; S 非空 解题思路 计数 遍历一遍列表，统计所有字母的数量，若首个分组不足 k 个，需要额外处理，之后按 k 个一组进行分组。">
     </head>
     <body class="
     article-page 
@@ -231,8 +231,8 @@
     >https://leetcode-cn.com/problems/license-key-formatting/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
 <h3 id="题目描述">题目描述</h3>
-<p>有一个密钥字符串 S ，只包含字母，数字以及 &lsquo;-'（破折号）。其中， N 个 &lsquo;-&rsquo; 将字符串分成了 N+1 组。</p>
-<p>给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &lsquo;-'（破折号）隔开，并且将所有的小写字母转换为大写字母。</p>
+<p>有一个密钥字符串 S ，只包含字母，数字以及 &lsquo;-&rsquo;（破折号）。其中， N 个 &lsquo;-&rsquo; 将字符串分成了 N+1 组。</p>
+<p>给你一个数字 K，请你重新格式化字符串，使每个分组恰好包含 K 个字符。特别地，第一个分组包含的字符个数必须小于等于 K，但至少要包含 1 个字符。两个分组之间需要用 &lsquo;-&rsquo;（破折号）隔开，并且将所有的小写字母转换为大写字母。</p>
 <p>给定非空字符串 S 和数字 K，按照上面描述的规则进行格式化。</p>
 <h4 id="示例-1">示例 1：</h4>
 <blockquote>
@@ -256,85 +256,85 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="计数">计数</h4>
 <p>遍历一遍列表，统计所有字母的数量，若首个分组不足 <code>k</code> 个，需要额外处理，之后按 <code>k</code> 个一组进行分组。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">licenseKeyFormatting</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#75715e">// 计数
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
-			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-		}
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">cnt</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cnt</span><span style="color:#f92672">/</span><span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#75715e">// 首个分组 处理
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span><span style="color:#f92672">%</span><span style="color:#a6e22e">k</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">cnt</span><span style="color:#f92672">%</span><span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
-				<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
-					<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
-				}
-				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
-				<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>
-			}
-		}
-		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">k</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
-		}
-	}
-	<span style="color:#75715e">// 剩余分组处理
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
-				<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
-					<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
-				}
-				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
-				<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>
-			}
-		}
-		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">k</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">ans</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">licenseKeyFormatting</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 计数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">cnt</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cnt</span><span style="color:#f92672">/</span><span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 首个分组 处理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span><span style="color:#f92672">%</span><span style="color:#a6e22e">k</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">cnt</span><span style="color:#f92672">%</span><span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">k</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 剩余分组处理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">k</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">ans</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(s) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="倒序遍历">倒序遍历</h4>
 <p>从尾至头遍历，<code>k</code> 个一组，最后剩余的不足 <code>k</code> 个字符也构成一组，然后反转整个字符串即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">licenseKeyFormatting</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span> {
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
-		<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
-			<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
-		}
-		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
-		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">k</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
-			<span style="color:#a6e22e">cnt</span> = <span style="color:#ae81ff">0</span>
-		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>]
-	}
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">ans</span>) &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ans</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span> {
-		<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span>[<span style="color:#ae81ff">1</span>:]
-	}
-	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">ans</span>)
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">licenseKeyFormatting</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">k</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cnt</span> = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">ans</span>) &gt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ans</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span>[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">ans</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(s) $</li>
 <li>空间复杂度：$ O(1) $</li>

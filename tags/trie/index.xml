@@ -17,7 +17,7 @@
 难度： 中等
 题目描述 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
 实现 MagicDictionary 类：
- MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。  示例：  输入：
+MagicDictionary() 初始化对象 void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。 示例： 输入：
 [&amp;ldquo;MagicDictionary&amp;rdquo;, &amp;ldquo;buildDict&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]
 [[], [[&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]], [&amp;ldquo;hello&amp;rdquo;], [&amp;ldquo;hhllo&amp;rdquo;], [&amp;ldquo;hell&amp;rdquo;], [&amp;ldquo;leetcoded&amp;rdquo;]]
 输出：
@@ -25,7 +25,8 @@
 解释：
 MagicDictionary magicDictionary = new MagicDictionary();
 magicDictionary.buildDict([&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;leetcode&amp;rdquo;]);
-magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False</description>
+magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False
+magicDictionary.search(&amp;ldquo;hhllo&amp;rdquo;); // 将第二个 &amp;lsquo;h&amp;rsquo; 替换为 &amp;rsquo;e&amp;rsquo; 可以匹配 &amp;ldquo;hello&amp;rdquo; ，所以返回 True</description>
     </item>
     
     <item>
@@ -39,11 +40,11 @@ magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False</descriptio
 题目描述 在英语中，我们有一个叫做 词根(root) 的概念，可以词根后面添加其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。例如，词根 an，跟随着单词 other (其他)，可以形成新的单词 another (另一个)。
 现在，给定一个由许多词根组成的词典 dictionary 和一个用空格分隔单词形成的句子 sentence。你需要将句子中的所有继承词用词根替换掉。如果继承词有许多可以形成它的词根，则用最短的词根替换它。
 你需要输出替换之后的句子。
-示例 1：  输入： dictionary = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;bat&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;], sentence = &amp;ldquo;the cattle was rattled by the battery&amp;rdquo;
+示例 1： 输入： dictionary = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;bat&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;], sentence = &amp;ldquo;the cattle was rattled by the battery&amp;rdquo;
 输出： &amp;ldquo;the cat was rat by the bat&amp;rdquo;
- 示例 2：  输入： dictionary = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;], sentence = &amp;ldquo;aadsfasf absbs bbab cadsfafs&amp;rdquo;
+示例 2： 输入： dictionary = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;], sentence = &amp;ldquo;aadsfasf absbs bbab cadsfafs&amp;rdquo;
 输出： &amp;ldquo;a a b c&amp;rdquo;
- 提示：  1 &amp;lt;= dictionary.length &amp;lt;= 1000 1 &amp;lt;= dictionary[i].</description>
+提示： 1 &amp;lt;= dictionary.length &amp;lt;= 1000 1 &amp;lt;= dictionary[i].length &amp;lt;= 100 dictionary[i] 仅由小写字母组成。 1 &amp;lt;= sentence.</description>
     </item>
     
     <item>
@@ -56,14 +57,14 @@ magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False</descriptio
 难度： 困难
 题目描述 给你一个 不含重复 单词的字符串数组 words ，请你找出并返回 words 中的所有 连接词 。
 连接词 定义为：一个完全由给定数组中的至少两个较短单词组成的字符串。
-示例 1：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
+示例 1： 输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;cats&amp;rdquo;,&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;hippopotamuses&amp;rdquo;,&amp;ldquo;rat&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
 输出： [&amp;ldquo;catsdogcats&amp;rdquo;,&amp;ldquo;dogcatsdog&amp;rdquo;,&amp;ldquo;ratcatdogcat&amp;rdquo;]
 解释： &amp;ldquo;catsdogcats&amp;rdquo; 由 &amp;ldquo;cats&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cats&amp;rdquo; 组成;
 &amp;ldquo;dogcatsdog&amp;rdquo; 由 &amp;ldquo;dog&amp;rdquo;, &amp;ldquo;cats&amp;rdquo; 和 &amp;ldquo;dog&amp;rdquo; 组成;
 &amp;ldquo;ratcatdogcat&amp;rdquo; 由 &amp;ldquo;rat&amp;rdquo;, &amp;ldquo;cat&amp;rdquo;, &amp;ldquo;dog&amp;rdquo; 和 &amp;ldquo;cat&amp;rdquo; 组成。
- 示例 2：  输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;cat&amp;rdquo;,&amp;ldquo;dog&amp;rdquo;,&amp;ldquo;catdog&amp;rdquo;]
 输出： [&amp;ldquo;catdog&amp;rdquo;]
- 提示：  1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].</description>
+提示： 1 &amp;lt;= words.length &amp;lt;= 104 0 &amp;lt;= words[i].length &amp;lt;= 1000 words[i] 仅由小写字母组成 0 &amp;lt;= sum(words[i].</description>
     </item>
     
     <item>
@@ -75,7 +76,7 @@ magicDictionary.search(&amp;ldquo;hello&amp;rdquo;); // 返回 False</descriptio
       <description>链接： https://leetcode-cn.com/problems/map-sum-pairs/
 难度： 中等
 题目描述 实现一个 MapSum 类，支持两个方法，insert 和 sum：
- MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。  示例：  输入：
+MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。 示例： 输入：
 [&amp;ldquo;MapSum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;]
 [[], [&amp;ldquo;apple&amp;rdquo;, 3], [&amp;ldquo;ap&amp;rdquo;], [&amp;ldquo;app&amp;rdquo;, 2], [&amp;ldquo;ap&amp;rdquo;]]
 输出：
@@ -96,9 +97,9 @@ mapSum.sum(&amp;ldquo;ap&amp;rdquo;); // return 3 (apple = 3)</description>
 难度： 中等
 题目描述 请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。
 实现词典类 WordDictionary ：
- WordDictionary() 初始化词典对象 void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配 bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 &#39;.&#39; ，每个 . 都可以表示任何一个字母。  示例：  输入：
+WordDictionary() 初始化词典对象 void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配 bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 &#39;.&#39; ，每个 . 都可以表示任何一个字母。 示例： 输入：
 [&amp;ldquo;WordDictionary&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;addWord&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;,&amp;ldquo;search&amp;rdquo;]
-[[],[&amp;ldquo;bad&amp;rdquo;],[&amp;ldquo;dad&amp;rdquo;],[&amp;ldquo;mad&amp;rdquo;],[&amp;ldquo;pad&amp;rdquo;],[&amp;ldquo;bad&amp;rdquo;],[&amp;quot;.ad&amp;quot;],[&amp;ldquo;b..&amp;quot;]]
+[[],[&amp;ldquo;bad&amp;rdquo;],[&amp;ldquo;dad&amp;rdquo;],[&amp;ldquo;mad&amp;rdquo;],[&amp;ldquo;pad&amp;rdquo;],[&amp;ldquo;bad&amp;rdquo;],[&amp;quot;.ad&amp;quot;],[&amp;ldquo;b..&amp;rdquo;]]
 输出：
 [null,null,null,null,false,true,true,true]
 解释：
@@ -108,9 +109,9 @@ wordDictionary.addWord(&amp;ldquo;dad&amp;rdquo;);
 wordDictionary.addWord(&amp;ldquo;mad&amp;rdquo;);
 wordDictionary.search(&amp;ldquo;pad&amp;rdquo;); // return False
 wordDictionary.search(&amp;ldquo;bad&amp;rdquo;); // return True
-wordDictionary.search(&amp;quot;.ad&amp;rdquo;); // return True
-wordDictionary.search(&amp;ldquo;b..&amp;quot;); // return True
- 提示：  1 &amp;lt;= word.</description>
+wordDictionary.search(&amp;quot;.ad&amp;quot;); // return True
+wordDictionary.search(&amp;ldquo;b..&amp;rdquo;); // return True
+提示： 1 &amp;lt;= word.length &amp;lt;= 500 addWord 中的 word 由小写英文字母组成 search 中的 word 由 &#39;.</description>
     </item>
     
   </channel>

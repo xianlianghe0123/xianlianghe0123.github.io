@@ -5,12 +5,12 @@
 难度： 简单
 题目描述 有一个无向的 星型 图，由 n 个编号从 1 到 n 的节点组成。星型图有一个 中心 节点，并且恰有 n - 1 条边将中心节点与其他每个节点连接起来。
 给你一个二维整数数组 edges ，其中 edges[i] = [ui, vi] 表示在节点 ui 和 vi 之间存在一条边。请你找出并返回 edges 所表示星型图的中心节点。
-示例 1：  输入： edges = [[1,2],[2,3],[4,2]]
+示例 1： 输入： edges = [[1,2],[2,3],[4,2]]
 输出： 2
 解释： 如上图所示，节点 2 与其他每个节点都相连，所以节点 2 是中心节点。
- 示例 2：  输入： edges = [[1,2],[5,1],[1,3],[1,4]]
+示例 2： 输入： edges = [[1,2],[5,1],[1,3],[1,4]]
 输出： 1
- 提示：  3 &amp;lt;= n &amp;lt;= 105 edges.length == n - 1 edges[i].'><title>Leetcode 1791. 找出星型图的中心节点</title>
+提示： 3 &amp;lt;= n &amp;lt;= 105 edges.length == n - 1 edges[i].length == 2 1 &amp;lt;= ui, vi &amp;lt;= n ui !'><title>Leetcode 1791. 找出星型图的中心节点</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1791.-%E6%89%BE%E5%87%BA%E6%98%9F%E5%9E%8B%E5%9B%BE%E7%9A%84%E4%B8%AD%E5%BF%83%E8%8A%82%E7%82%B9/'>
 
@@ -19,12 +19,12 @@
 难度： 简单
 题目描述 有一个无向的 星型 图，由 n 个编号从 1 到 n 的节点组成。星型图有一个 中心 节点，并且恰有 n - 1 条边将中心节点与其他每个节点连接起来。
 给你一个二维整数数组 edges ，其中 edges[i] = [ui, vi] 表示在节点 ui 和 vi 之间存在一条边。请你找出并返回 edges 所表示星型图的中心节点。
-示例 1：  输入： edges = [[1,2],[2,3],[4,2]]
+示例 1： 输入： edges = [[1,2],[2,3],[4,2]]
 输出： 2
 解释： 如上图所示，节点 2 与其他每个节点都相连，所以节点 2 是中心节点。
- 示例 2：  输入： edges = [[1,2],[5,1],[1,3],[1,4]]
+示例 2： 输入： edges = [[1,2],[5,1],[1,3],[1,4]]
 输出： 1
- 提示：  3 &amp;lt;= n &amp;lt;= 105 edges.length == n - 1 edges[i].'>
+提示： 3 &amp;lt;= n &amp;lt;= 105 edges.length == n - 1 edges[i].length == 2 1 &amp;lt;= ui, vi &amp;lt;= n ui !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1791.-%E6%89%BE%E5%87%BA%E6%98%9F%E5%9E%8B%E5%9B%BE%E7%9A%84%E4%B8%AD%E5%BF%83%E8%8A%82%E7%82%B9/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-02-18T09:34:18&#43;08:00'/><meta property='article:modified_time' content='2022-02-18T09:34:18&#43;08:00'/>
@@ -33,12 +33,12 @@
 难度： 简单
 题目描述 有一个无向的 星型 图，由 n 个编号从 1 到 n 的节点组成。星型图有一个 中心 节点，并且恰有 n - 1 条边将中心节点与其他每个节点连接起来。
 给你一个二维整数数组 edges ，其中 edges[i] = [ui, vi] 表示在节点 ui 和 vi 之间存在一条边。请你找出并返回 edges 所表示星型图的中心节点。
-示例 1：  输入： edges = [[1,2],[2,3],[4,2]]
+示例 1： 输入： edges = [[1,2],[2,3],[4,2]]
 输出： 2
 解释： 如上图所示，节点 2 与其他每个节点都相连，所以节点 2 是中心节点。
- 示例 2：  输入： edges = [[1,2],[5,1],[1,3],[1,4]]
+示例 2： 输入： edges = [[1,2],[5,1],[1,3],[1,4]]
 输出： 1
- 提示：  3 &amp;lt;= n &amp;lt;= 105 edges.length == n - 1 edges[i].">
+提示： 3 &amp;lt;= n &amp;lt;= 105 edges.length == n - 1 edges[i].length == 2 1 &amp;lt;= ui, vi &amp;lt;= n ui !">
     </head>
     <body class="
     article-page 
@@ -249,13 +249,13 @@
 <h4 id="寻找公共结点">寻找公共结点</h4>
 <p>除中心结点外，其余的结点有且仅有一条边与其他结点相连，故只在整个 <code>edges</code> 数组中出现一次，而中心结点在会出现在每一条边上。</p>
 <p>只需要遍历任意两条边，找出重复出现的结点即为中心结点。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findCenter</span>(<span style="color:#a6e22e">edges</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">||</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findCenter</span>(<span style="color:#a6e22e">edges</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">||</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">edges</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(1) $</li>
 <li>空间复杂度：$ O(1) $</li>

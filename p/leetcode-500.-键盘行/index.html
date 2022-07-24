@@ -5,13 +5,14 @@
 难度： 简单
 题目描述 给你一个字符串数组 words ，只返回可以使用在 美式键盘 同一行的字母打印出来的单词。键盘如下图所示。
 美式键盘 中：
- 第一行由字符 &amp;quot;qwertyuiop&amp;quot; 组成。 第二行由字符 &amp;quot;asdfghjkl&amp;quot; 组成。 第三行由字符 &amp;quot;zxcvbnm&amp;quot; 组成。  示例 1：  输入： words = [&amp;ldquo;Hello&amp;rdquo;,&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;,&amp;ldquo;Peace&amp;rdquo;]
+第一行由字符 &amp;quot;qwertyuiop&amp;quot; 组成。 第二行由字符 &amp;quot;asdfghjkl&amp;quot; 组成。 第三行由字符 &amp;quot;zxcvbnm&amp;quot; 组成。 示例 1： 输入： words = [&amp;ldquo;Hello&amp;rdquo;,&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;,&amp;ldquo;Peace&amp;rdquo;]
 输出： [&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;]
- 示例 2：  输入： words = [&amp;ldquo;omk&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;omk&amp;rdquo;]
 输出： []
- 示例 3：  输入： words = [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
+示例 3： 输入： words = [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
 输出： [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
- 提示：  1 &amp;lt;= words.length &amp;lt;= 20 1 &amp;lt;= words[i].length &amp;lt;= 100 words[i] 由英文字母（小写和大写字母）组成  解题思路 哈希 使用哈希表记录每个字母对应的行号。之后遍历每个字符串，判断每个字母行号是否相同。'><title>Leetcode 500. 键盘行</title>
+提示： 1 &amp;lt;= words.length &amp;lt;= 20 1 &amp;lt;= words[i].length &amp;lt;= 100 words[i] 由英文字母（小写和大写字母）组成 解题思路 哈希 使用哈希表记录每个字母对应的行号。之后遍历每个字符串，判断每个字母行号是否相同。
+func findWords(words []string) []string { row := make(map[byte]int) for line, chars := range []string{&amp;#34;qwertyuiop&amp;#34;, &amp;#34;asdfghjkl&amp;#34;, &amp;#34;zxcvbnm&amp;#34;} { for i := range chars { row[chars[i]] = line row[chars[i]-&amp;#39;a&amp;#39;&#43;&amp;#39;A&amp;#39;] = line } } ans := make([]string, 0, len(words)) Outer: for _, word := range words { line := row[word[0]] for i := 1; i &amp;lt; len(word); i&#43;&#43; { if row[word[i]] !'><title>Leetcode 500. 键盘行</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-500.-%E9%94%AE%E7%9B%98%E8%A1%8C/'>
 
@@ -20,13 +21,14 @@
 难度： 简单
 题目描述 给你一个字符串数组 words ，只返回可以使用在 美式键盘 同一行的字母打印出来的单词。键盘如下图所示。
 美式键盘 中：
- 第一行由字符 &amp;quot;qwertyuiop&amp;quot; 组成。 第二行由字符 &amp;quot;asdfghjkl&amp;quot; 组成。 第三行由字符 &amp;quot;zxcvbnm&amp;quot; 组成。  示例 1：  输入： words = [&amp;ldquo;Hello&amp;rdquo;,&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;,&amp;ldquo;Peace&amp;rdquo;]
+第一行由字符 &amp;quot;qwertyuiop&amp;quot; 组成。 第二行由字符 &amp;quot;asdfghjkl&amp;quot; 组成。 第三行由字符 &amp;quot;zxcvbnm&amp;quot; 组成。 示例 1： 输入： words = [&amp;ldquo;Hello&amp;rdquo;,&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;,&amp;ldquo;Peace&amp;rdquo;]
 输出： [&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;]
- 示例 2：  输入： words = [&amp;ldquo;omk&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;omk&amp;rdquo;]
 输出： []
- 示例 3：  输入： words = [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
+示例 3： 输入： words = [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
 输出： [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
- 提示：  1 &amp;lt;= words.length &amp;lt;= 20 1 &amp;lt;= words[i].length &amp;lt;= 100 words[i] 由英文字母（小写和大写字母）组成  解题思路 哈希 使用哈希表记录每个字母对应的行号。之后遍历每个字符串，判断每个字母行号是否相同。'>
+提示： 1 &amp;lt;= words.length &amp;lt;= 20 1 &amp;lt;= words[i].length &amp;lt;= 100 words[i] 由英文字母（小写和大写字母）组成 解题思路 哈希 使用哈希表记录每个字母对应的行号。之后遍历每个字符串，判断每个字母行号是否相同。
+func findWords(words []string) []string { row := make(map[byte]int) for line, chars := range []string{&amp;#34;qwertyuiop&amp;#34;, &amp;#34;asdfghjkl&amp;#34;, &amp;#34;zxcvbnm&amp;#34;} { for i := range chars { row[chars[i]] = line row[chars[i]-&amp;#39;a&amp;#39;&#43;&amp;#39;A&amp;#39;] = line } } ans := make([]string, 0, len(words)) Outer: for _, word := range words { line := row[word[0]] for i := 1; i &amp;lt; len(word); i&#43;&#43; { if row[word[i]] !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-500.-%E9%94%AE%E7%9B%98%E8%A1%8C/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:published_time' content='2021-10-31T13:42:17&#43;08:00'/><meta property='article:modified_time' content='2021-10-31T13:42:17&#43;08:00'/>
@@ -35,13 +37,14 @@
 难度： 简单
 题目描述 给你一个字符串数组 words ，只返回可以使用在 美式键盘 同一行的字母打印出来的单词。键盘如下图所示。
 美式键盘 中：
- 第一行由字符 &amp;quot;qwertyuiop&amp;quot; 组成。 第二行由字符 &amp;quot;asdfghjkl&amp;quot; 组成。 第三行由字符 &amp;quot;zxcvbnm&amp;quot; 组成。  示例 1：  输入： words = [&amp;ldquo;Hello&amp;rdquo;,&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;,&amp;ldquo;Peace&amp;rdquo;]
+第一行由字符 &amp;quot;qwertyuiop&amp;quot; 组成。 第二行由字符 &amp;quot;asdfghjkl&amp;quot; 组成。 第三行由字符 &amp;quot;zxcvbnm&amp;quot; 组成。 示例 1： 输入： words = [&amp;ldquo;Hello&amp;rdquo;,&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;,&amp;ldquo;Peace&amp;rdquo;]
 输出： [&amp;ldquo;Alaska&amp;rdquo;,&amp;ldquo;Dad&amp;rdquo;]
- 示例 2：  输入： words = [&amp;ldquo;omk&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;omk&amp;rdquo;]
 输出： []
- 示例 3：  输入： words = [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
+示例 3： 输入： words = [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
 输出： [&amp;ldquo;adsdf&amp;rdquo;,&amp;ldquo;sfd&amp;rdquo;]
- 提示：  1 &amp;lt;= words.length &amp;lt;= 20 1 &amp;lt;= words[i].length &amp;lt;= 100 words[i] 由英文字母（小写和大写字母）组成  解题思路 哈希 使用哈希表记录每个字母对应的行号。之后遍历每个字符串，判断每个字母行号是否相同。">
+提示： 1 &amp;lt;= words.length &amp;lt;= 20 1 &amp;lt;= words[i].length &amp;lt;= 100 words[i] 由英文字母（小写和大写字母）组成 解题思路 哈希 使用哈希表记录每个字母对应的行号。之后遍历每个字符串，判断每个字母行号是否相同。
+func findWords(words []string) []string { row := make(map[byte]int) for line, chars := range []string{&amp;#34;qwertyuiop&amp;#34;, &amp;#34;asdfghjkl&amp;#34;, &amp;#34;zxcvbnm&amp;#34;} { for i := range chars { row[chars[i]] = line row[chars[i]-&amp;#39;a&amp;#39;&#43;&amp;#39;A&amp;#39;] = line } } ans := make([]string, 0, len(words)) Outer: for _, word := range words { line := row[word[0]] for i := 1; i &amp;lt; len(word); i&#43;&#43; { if row[word[i]] !">
     </head>
     <body class="
     article-page 
@@ -256,28 +259,28 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="哈希">哈希</h4>
 <p>使用哈希表记录每个字母对应的行号。之后遍历每个字符串，判断每个字母行号是否相同。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findWords</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">chars</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;qwertyuiop&#34;</span>, <span style="color:#e6db74">&#34;asdfghjkl&#34;</span>, <span style="color:#e6db74">&#34;zxcvbnm&#34;</span>} {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">chars</span> {
-			<span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#a6e22e">line</span>
-			<span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;A&#39;</span>] = <span style="color:#a6e22e">line</span>
-		}
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">words</span>))
-<span style="color:#a6e22e">Outer</span>:
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
-		<span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">word</span>[<span style="color:#ae81ff">0</span>]]
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">word</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">line</span> {
-				<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Outer</span>
-			}
-		}
-		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">word</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findWords</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">chars</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;qwertyuiop&#34;</span>, <span style="color:#e6db74">&#34;asdfghjkl&#34;</span>, <span style="color:#e6db74">&#34;zxcvbnm&#34;</span>} {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">chars</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#a6e22e">line</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;A&#39;</span>] = <span style="color:#a6e22e">line</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">words</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Outer</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">word</span>[<span style="color:#ae81ff">0</span>]]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">word</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">line</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span> <span style="color:#a6e22e">Outer</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">word</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N*L), N = len(words), L = avg(len(word[i])) $</li>
 <li>空间复杂度：$ O(\Sigma), \Sigma 表示字符集，此题为26 $</li>

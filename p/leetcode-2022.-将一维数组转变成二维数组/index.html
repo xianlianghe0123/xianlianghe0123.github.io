@@ -6,7 +6,7 @@
 题目描述 给你一个下标从 0 开始的一维整数数组 original 和两个整数 m 和 n 。你需要使用 original 中 所有 元素创建一个 m 行 n 列的二维数组。
 original 中下标从 0 到 n - 1 （都 包含 ）的元素构成二维数组的第一行，下标从 n 到 2 * n - 1 （都 包含 ）的元素构成二维数组的第二行，依此类推。
 请你根据上述过程返回一个 m x n 的二维数组。如果无法构成这样的二维数组，请你返回一个空的二维数组。
-示例 1：  输入： original = [1,2,3,4], m = 2, n = 2
+示例 1： 输入： original = [1,2,3,4], m = 2, n = 2
 输出： [[1,2],[3,4]]
 解释：
 构造出的二维数组应该包含 2 行 2 列。
@@ -20,7 +20,7 @@ original 中第一个 n=2 的部分为 [1,2] ，构成二维数组的第一行�
 题目描述 给你一个下标从 0 开始的一维整数数组 original 和两个整数 m 和 n 。你需要使用 original 中 所有 元素创建一个 m 行 n 列的二维数组。
 original 中下标从 0 到 n - 1 （都 包含 ）的元素构成二维数组的第一行，下标从 n 到 2 * n - 1 （都 包含 ）的元素构成二维数组的第二行，依此类推。
 请你根据上述过程返回一个 m x n 的二维数组。如果无法构成这样的二维数组，请你返回一个空的二维数组。
-示例 1：  输入： original = [1,2,3,4], m = 2, n = 2
+示例 1： 输入： original = [1,2,3,4], m = 2, n = 2
 输出： [[1,2],[3,4]]
 解释：
 构造出的二维数组应该包含 2 行 2 列。
@@ -34,7 +34,7 @@ original 中第一个 n=2 的部分为 [1,2] ，构成二维数组的第一行�
 题目描述 给你一个下标从 0 开始的一维整数数组 original 和两个整数 m 和 n 。你需要使用 original 中 所有 元素创建一个 m 行 n 列的二维数组。
 original 中下标从 0 到 n - 1 （都 包含 ）的元素构成二维数组的第一行，下标从 n 到 2 * n - 1 （都 包含 ）的元素构成二维数组的第二行，依此类推。
 请你根据上述过程返回一个 m x n 的二维数组。如果无法构成这样的二维数组，请你返回一个空的二维数组。
-示例 1：  输入： original = [1,2,3,4], m = 2, n = 2
+示例 1： 输入： original = [1,2,3,4], m = 2, n = 2
 输出： [[1,2],[3,4]]
 解释：
 构造出的二维数组应该包含 2 行 2 列。
@@ -269,17 +269,17 @@ original 中只有 1 个元素。<br>
 <h4 id="模拟">模拟</h4>
 <p>首先需要判断是否能构成二维数组，要求一维数组长度等于 <code>m x n</code> ，若不成立即返回空。</p>
 <p>遍历一位数组，每 <code>n</code> 个构成一个新数组，添加到二维数组中。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">construct2DArray</span>(<span style="color:#a6e22e">original</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) [][]<span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">m</span><span style="color:#f92672">*</span><span style="color:#a6e22e">n</span> <span style="color:#f92672">!=</span> len(<span style="color:#a6e22e">original</span>) {
-		<span style="color:#66d9ef">return</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>)
-	}
-	<span style="color:#a6e22e">matrix</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">m</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">original</span>); <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">n</span> {
-		<span style="color:#a6e22e">matrix</span> = append(<span style="color:#a6e22e">matrix</span>, <span style="color:#a6e22e">original</span>[<span style="color:#a6e22e">i</span>:<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">n</span>])
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">matrix</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">construct2DArray</span>(<span style="color:#a6e22e">original</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) [][]<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">m</span><span style="color:#f92672">*</span><span style="color:#a6e22e">n</span> <span style="color:#f92672">!=</span> len(<span style="color:#a6e22e">original</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">matrix</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">m</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">original</span>); <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">n</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">matrix</span> = append(<span style="color:#a6e22e">matrix</span>, <span style="color:#a6e22e">original</span>[<span style="color:#a6e22e">i</span>:<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">n</span>])
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">matrix</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(original) $</li>
 <li>空间复杂度：$ O(1) $</li>

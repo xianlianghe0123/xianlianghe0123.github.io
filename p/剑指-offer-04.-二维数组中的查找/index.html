@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/
 难度： 中等
 题目描述 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
-示例：  现有矩阵 matrix 如下：
+示例： 现有矩阵 matrix 如下：
 [ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30] ] 给定 target = 5，返回 true。
 给定 target = 20，返回 false。
- 提示：  0 &amp;lt;= n &amp;lt;= 1000 0 &amp;lt;= m &amp;lt;= 1000  解题思路 暴力求解 遍历整个二维数组，寻找该整数。
-func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } else if cell &amp;gt; target { break } } } return false } 复杂度  时间复杂度：$ O(nm) $ 空间复杂度：$ O(1) $  阶梯遍历 从矩阵右上角开始遍历：'><title>剑指 Offer 04. 二维数组中的查找</title>
+提示： 0 &amp;lt;= n &amp;lt;= 1000 0 &amp;lt;= m &amp;lt;= 1000 解题思路 暴力求解 遍历整个二维数组，寻找该整数。
+func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } else if cell &amp;gt; target { break } } } return false } 复杂度 时间复杂度：$ O(nm) $ 空间复杂度：$ O(1) $ 阶梯遍历 从矩阵右上角开始遍历：'><title>剑指 Offer 04. 二维数组中的查找</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/'>
 
@@ -16,11 +16,11 @@ func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/
 难度： 中等
 题目描述 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
-示例：  现有矩阵 matrix 如下：
+示例： 现有矩阵 matrix 如下：
 [ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30] ] 给定 target = 5，返回 true。
 给定 target = 20，返回 false。
- 提示：  0 &amp;lt;= n &amp;lt;= 1000 0 &amp;lt;= m &amp;lt;= 1000  解题思路 暴力求解 遍历整个二维数组，寻找该整数。
-func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } else if cell &amp;gt; target { break } } } return false } 复杂度  时间复杂度：$ O(nm) $ 空间复杂度：$ O(1) $  阶梯遍历 从矩阵右上角开始遍历：'>
+提示： 0 &amp;lt;= n &amp;lt;= 1000 0 &amp;lt;= m &amp;lt;= 1000 解题思路 暴力求解 遍历整个二维数组，寻找该整数。
+func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } else if cell &amp;gt; target { break } } } return false } 复杂度 时间复杂度：$ O(nm) $ 空间复杂度：$ O(1) $ 阶梯遍历 从矩阵右上角开始遍历：'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-04.-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-09-16T19:42:33&#43;08:00'/><meta property='article:modified_time' content='2021-09-16T19:42:33&#43;08:00'/>
@@ -28,11 +28,11 @@ func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/
 难度： 中等
 题目描述 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
-示例：  现有矩阵 matrix 如下：
+示例： 现有矩阵 matrix 如下：
 [ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30] ] 给定 target = 5，返回 true。
 给定 target = 20，返回 false。
- 提示：  0 &amp;lt;= n &amp;lt;= 1000 0 &amp;lt;= m &amp;lt;= 1000  解题思路 暴力求解 遍历整个二维数组，寻找该整数。
-func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } else if cell &amp;gt; target { break } } } return false } 复杂度  时间复杂度：$ O(nm) $ 空间复杂度：$ O(1) $  阶梯遍历 从矩阵右上角开始遍历：">
+提示： 0 &amp;lt;= n &amp;lt;= 1000 0 &amp;lt;= m &amp;lt;= 1000 解题思路 暴力求解 遍历整个二维数组，寻找该整数。
+func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range matrix { for _, cell := range line { if cell == target { return true } else if cell &amp;gt; target { break } } } return false } 复杂度 时间复杂度：$ O(nm) $ 空间复杂度：$ O(1) $ 阶梯遍历 从矩阵右上角开始遍历：">
     </head>
     <body class="
     article-page 
@@ -238,19 +238,19 @@ func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>遍历整个二维数组，寻找该整数。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findNumberIn2DArray</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">matrix</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> &gt; <span style="color:#a6e22e">target</span> {
-				<span style="color:#66d9ef">break</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findNumberIn2DArray</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">matrix</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> &gt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(nm) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -262,23 +262,23 @@ func findNumberIn2DArray(matrix [][]int, target int) bool { for _, line := range
 <li>大于 <code>target</code>，则向左移动一列；</li>
 <li>小于 <code>target</code>，则向下移动一行。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findNumberIn2DArray</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">matrix</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-	}
-	<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">matrix</span>[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">matrix</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] &lt; <span style="color:#a6e22e">target</span> {
-			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">j</span><span style="color:#f92672">--</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findNumberIn2DArray</span>(<span style="color:#a6e22e">matrix</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">matrix</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">matrix</span>[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">matrix</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] &lt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">j</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(n+m) $</li>
 <li>空间复杂度：$ O(1) $</li>

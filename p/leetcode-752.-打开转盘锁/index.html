@@ -7,7 +7,7 @@
 锁的初始数字为 &#39;0000&#39; ，一个代表四个拨轮的数字的字符串。
 列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
 字符串 target 代表可以解锁的数字，你需要给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
-示例 1：  输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
+示例 1： 输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
 输出： 6
 解释：
 可能的移动序列为 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;1000&amp;rdquo; -&amp;gt; &amp;ldquo;1100&amp;rdquo; -&amp;gt; &amp;ldquo;1200&amp;rdquo; -&amp;gt; &amp;ldquo;1201&amp;rdquo; -&amp;gt; &amp;ldquo;1202&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo;。
@@ -22,7 +22,7 @@
 锁的初始数字为 &#39;0000&#39; ，一个代表四个拨轮的数字的字符串。
 列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
 字符串 target 代表可以解锁的数字，你需要给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
-示例 1：  输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
+示例 1： 输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
 输出： 6
 解释：
 可能的移动序列为 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;1000&amp;rdquo; -&amp;gt; &amp;ldquo;1100&amp;rdquo; -&amp;gt; &amp;ldquo;1200&amp;rdquo; -&amp;gt; &amp;ldquo;1201&amp;rdquo; -&amp;gt; &amp;ldquo;1202&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo;。
@@ -37,7 +37,7 @@
 锁的初始数字为 &#39;0000&#39; ，一个代表四个拨轮的数字的字符串。
 列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
 字符串 target 代表可以解锁的数字，你需要给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
-示例 1：  输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
+示例 1： 输入： deadends = [&amp;ldquo;0201&amp;rdquo;,&amp;ldquo;0101&amp;rdquo;,&amp;ldquo;0102&amp;rdquo;,&amp;ldquo;1212&amp;rdquo;,&amp;ldquo;2002&amp;rdquo;], target = &amp;ldquo;0202&amp;rdquo;
 输出： 6
 解释：
 可能的移动序列为 &amp;ldquo;0000&amp;rdquo; -&amp;gt; &amp;ldquo;1000&amp;rdquo; -&amp;gt; &amp;ldquo;1100&amp;rdquo; -&amp;gt; &amp;ldquo;1200&amp;rdquo; -&amp;gt; &amp;ldquo;1201&amp;rdquo; -&amp;gt; &amp;ldquo;1202&amp;rdquo; -&amp;gt; &amp;ldquo;0202&amp;rdquo;。
@@ -270,63 +270,63 @@
 <p>每次转动一个拨轮，记录转动后的锁状态，以及到目前为止转动的次数，如果未访问过，加入队列，直到首次与target匹配则返回。</p>
 <p>每次入队后将当前锁状态加入到 <code>deadends</code> 中，防止重复搜索。</p>
 <p>需要对一开始即被锁的情况进行特判。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">openLock</span>(<span style="color:#a6e22e">deadends</span> []<span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Pair</span> <span style="color:#66d9ef">struct</span> {
-		<span style="color:#a6e22e">Cur</span> <span style="color:#66d9ef">string</span>
-		<span style="color:#a6e22e">Cnt</span> <span style="color:#66d9ef">int</span>
-	}
-
-	<span style="color:#a6e22e">deadendsMap</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">bool</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">deadends</span> {
-		<span style="color:#a6e22e">deadendsMap</span>[<span style="color:#a6e22e">s</span>] = <span style="color:#66d9ef">true</span>
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">deadendsMap</span>[<span style="color:#e6db74">&#34;0000&#34;</span>] {
-		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	}
-	<span style="color:#75715e">// 广度优先搜索
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10000</span>)
-	<span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
-		<span style="color:#a6e22e">Cur</span>: <span style="color:#e6db74">&#34;0000&#34;</span>,
-		<span style="color:#a6e22e">Cnt</span>: <span style="color:#ae81ff">0</span>,
-	})
-	<span style="color:#a6e22e">deadendsMap</span>[<span style="color:#e6db74">&#34;0000&#34;</span>] = <span style="color:#66d9ef">true</span>
-	<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">queue</span>) &gt; <span style="color:#ae81ff">0</span> {
-		<span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">Cur</span>
-		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">Cnt</span>
-		<span style="color:#a6e22e">queue</span> = <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">1</span>:]
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cur</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
-				<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">cnt</span>
-				<span style="color:#66d9ef">break</span>
-			}
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">4</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#75715e">// 向后旋转
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">cur</span>)
-			<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> ((<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>
-			<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">deadendsMap</span>[string(<span style="color:#a6e22e">t</span>)] {
-				<span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
-					<span style="color:#a6e22e">Cur</span>: string(<span style="color:#a6e22e">t</span>),
-					<span style="color:#a6e22e">Cnt</span>: <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
-				})
-				<span style="color:#a6e22e">deadendsMap</span>[string(<span style="color:#a6e22e">t</span>)] = <span style="color:#66d9ef">true</span>
-			}
-			<span style="color:#75715e">// 向前旋转
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">t</span> = []byte(<span style="color:#a6e22e">cur</span>)
-			<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> ((<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>
-			<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">deadendsMap</span>[string(<span style="color:#a6e22e">t</span>)] {
-				<span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
-					<span style="color:#a6e22e">Cur</span>: string(<span style="color:#a6e22e">t</span>),
-					<span style="color:#a6e22e">Cnt</span>: <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
-				})
-				<span style="color:#a6e22e">deadendsMap</span>[string(<span style="color:#a6e22e">t</span>)] = <span style="color:#66d9ef">true</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">openLock</span>(<span style="color:#a6e22e">deadends</span> []<span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Pair</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Cur</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Cnt</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">deadendsMap</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">bool</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">deadends</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">deadendsMap</span>[<span style="color:#a6e22e">s</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">deadendsMap</span>[<span style="color:#e6db74">&#34;0000&#34;</span>] {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 广度优先搜索
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10000</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Cur</span>: <span style="color:#e6db74">&#34;0000&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Cnt</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">deadendsMap</span>[<span style="color:#e6db74">&#34;0000&#34;</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">queue</span>) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">Cur</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">Cnt</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">queue</span> = <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cur</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">4</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 向后旋转
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">cur</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> ((<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">deadendsMap</span>[string(<span style="color:#a6e22e">t</span>)] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">Cur</span>: string(<span style="color:#a6e22e">t</span>),
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">Cnt</span>: <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>				})
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">deadendsMap</span>[string(<span style="color:#a6e22e">t</span>)] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 向前旋转
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">t</span> = []byte(<span style="color:#a6e22e">cur</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> ((<span style="color:#a6e22e">t</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">deadendsMap</span>[string(<span style="color:#a6e22e">t</span>)] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">Cur</span>: string(<span style="color:#a6e22e">t</span>),
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">Cnt</span>: <span style="color:#a6e22e">cnt</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>				})
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">deadendsMap</span>[string(<span style="color:#a6e22e">t</span>)] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(b^d*d)，其中 b 是数字的进制，d 是转盘数字的位数 $</li>
 <li>空间复杂度：$ O(b^d*d) $</li>

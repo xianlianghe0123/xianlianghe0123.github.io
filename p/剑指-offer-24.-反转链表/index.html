@@ -4,10 +4,10 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/
 难度： 简单
 题目描述 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
-示例：  输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
+示例： 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
- 说明：  0 &amp;lt;= nums.length &amp;lt;= 50000 1 &amp;lt;= nums[i] &amp;lt;= 10000  解题思路 递归 利用调用栈记录上一个结点的信息，每次现将后续链表反转，得到反转链表的头部，然后通过当前结点的 Next 指针将当前节点添加到反转链表的尾部，注意还需要将当前节点的 Next 指针置空。
-func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil { return head } newHead := reverseList(head.Next) head.Next.Next = head head.Next = nil return newHead } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  双指针 链表是单向的，无法访问到上一个节点，所以使用两个指针 last 和 cur 记录当前结点和上一个结点。'><title>剑指 Offer 24. 反转链表</title>
+说明： 0 &amp;lt;= nums.length &amp;lt;= 50000 1 &amp;lt;= nums[i] &amp;lt;= 10000 解题思路 递归 利用调用栈记录上一个结点的信息，每次现将后续链表反转，得到反转链表的头部，然后通过当前结点的 Next 指针将当前节点添加到反转链表的尾部，注意还需要将当前节点的 Next 指针置空。
+func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil { return head } newHead := reverseList(head.Next) head.Next.Next = head head.Next = nil return newHead } 复杂度 时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $ 双指针 链表是单向的，无法访问到上一个节点，所以使用两个指针 last 和 cur 记录当前结点和上一个结点。'><title>剑指 Offer 24. 反转链表</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-24.-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/'>
 
@@ -15,10 +15,10 @@ func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil 
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/
 难度： 简单
 题目描述 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
-示例：  输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
+示例： 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
- 说明：  0 &amp;lt;= nums.length &amp;lt;= 50000 1 &amp;lt;= nums[i] &amp;lt;= 10000  解题思路 递归 利用调用栈记录上一个结点的信息，每次现将后续链表反转，得到反转链表的头部，然后通过当前结点的 Next 指针将当前节点添加到反转链表的尾部，注意还需要将当前节点的 Next 指针置空。
-func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil { return head } newHead := reverseList(head.Next) head.Next.Next = head head.Next = nil return newHead } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  双指针 链表是单向的，无法访问到上一个节点，所以使用两个指针 last 和 cur 记录当前结点和上一个结点。'>
+说明： 0 &amp;lt;= nums.length &amp;lt;= 50000 1 &amp;lt;= nums[i] &amp;lt;= 10000 解题思路 递归 利用调用栈记录上一个结点的信息，每次现将后续链表反转，得到反转链表的头部，然后通过当前结点的 Next 指针将当前节点添加到反转链表的尾部，注意还需要将当前节点的 Next 指针置空。
+func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil { return head } newHead := reverseList(head.Next) head.Next.Next = head head.Next = nil return newHead } 复杂度 时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $ 双指针 链表是单向的，无法访问到上一个节点，所以使用两个指针 last 和 cur 记录当前结点和上一个结点。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-24.-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-09-19T18:31:45&#43;08:00'/><meta property='article:modified_time' content='2021-09-19T18:31:45&#43;08:00'/>
@@ -26,10 +26,10 @@ func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil 
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/
 难度： 简单
 题目描述 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
-示例：  输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
+示例： 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
- 说明：  0 &amp;lt;= nums.length &amp;lt;= 50000 1 &amp;lt;= nums[i] &amp;lt;= 10000  解题思路 递归 利用调用栈记录上一个结点的信息，每次现将后续链表反转，得到反转链表的头部，然后通过当前结点的 Next 指针将当前节点添加到反转链表的尾部，注意还需要将当前节点的 Next 指针置空。
-func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil { return head } newHead := reverseList(head.Next) head.Next.Next = head head.Next = nil return newHead } 复杂度  时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $  双指针 链表是单向的，无法访问到上一个节点，所以使用两个指针 last 和 cur 记录当前结点和上一个结点。">
+说明： 0 &amp;lt;= nums.length &amp;lt;= 50000 1 &amp;lt;= nums[i] &amp;lt;= 10000 解题思路 递归 利用调用栈记录上一个结点的信息，每次现将后续链表反转，得到反转链表的头部，然后通过当前结点的 Next 指针将当前节点添加到反转链表的尾部，注意还需要将当前节点的 Next 指针置空。
+func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil { return head } newHead := reverseList(head.Next) head.Next.Next = head head.Next = nil return newHead } 复杂度 时间复杂度：$ O(N), N = len(nums) $ 空间复杂度：$ O(N) $ 双指针 链表是单向的，无法访问到上一个节点，所以使用两个指针 last 和 cur 记录当前结点和上一个结点。">
     </head>
     <body class="
     article-page 
@@ -227,16 +227,16 @@ func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil 
 <h3 id="解题思路">解题思路</h3>
 <h4 id="递归">递归</h4>
 <p>利用调用栈记录上一个结点的信息，每次现将后续链表反转，得到反转链表的头部，然后通过当前结点的 <code>Next</code> 指针将当前节点添加到反转链表的尾部，注意还需要将当前节点的 <code>Next</code> 指针置空。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseList</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">head</span>
-	}
-	<span style="color:#a6e22e">newHead</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">reverseList</span>(<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span>)
-	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">head</span>
-	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#66d9ef">nil</span>
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newHead</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseList</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">newHead</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">reverseList</span>(<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newHead</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(N) $</li>
@@ -244,13 +244,13 @@ func reverseList(head *ListNode) *ListNode { if head == nil || head.Next == nil 
 <h4 id="双指针">双指针</h4>
 <p>链表是单向的，无法访问到上一个节点，所以使用两个指针 <code>last</code> 和 <code>cur</code> 记录当前结点和上一个结点。</p>
 <p>遍历链表，逐一的将当前节点的 <code>Next</code> 指针指向 <code>last</code>，<code>last</code> 和 <code>cur</code> 前进一步。最终当 <code>cur</code> 为 <code>nil</code> 时，返回 <code>last</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseList</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
-	<span style="color:#a6e22e">last</span> <span style="color:#f92672">:=</span> (<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>)(<span style="color:#66d9ef">nil</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">cur</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span>, <span style="color:#a6e22e">last</span>, <span style="color:#a6e22e">cur</span> = <span style="color:#a6e22e">last</span>, <span style="color:#a6e22e">cur</span>, <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> {
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">last</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseList</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">last</span> <span style="color:#f92672">:=</span> (<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>)(<span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">cur</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span>, <span style="color:#a6e22e">last</span>, <span style="color:#a6e22e">cur</span> = <span style="color:#a6e22e">last</span>, <span style="color:#a6e22e">cur</span>, <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> {
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">last</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>

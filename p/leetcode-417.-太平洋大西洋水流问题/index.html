@@ -7,10 +7,11 @@
 这个岛被分割成一个由若干方形单元格组成的网格。给定一个 m x n 的整数矩阵 heights ， heights[r][c] 表示坐标 (r, c) 上单元格 高于海平面的高度 。
 岛上雨水较多，如果相邻单元格的高度 小于或等于 当前单元格的高度，雨水可以直接向北、南、东、西流向相邻单元格。水可以从海洋附近的任何单元格流入海洋。
 返回 网格坐标 result 的 2D列表 ，其中 result[i] = [ri, ci] 表示雨水可以从单元格 (ri, ci) 流向 太平洋和大西洋 。
-示例 1：  输入： heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+示例 1： 输入： heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
 输出： [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
- 示例 2：  输入： heights = [[2,1],[1,2]]
-输出： [[0,0],[0,1],[1,0],[1,1]]'><title>Leetcode 417. 太平洋大西洋水流问题</title>
+示例 2： 输入： heights = [[2,1],[1,2]]
+输出： [[0,0],[0,1],[1,0],[1,1]]
+提示： m == heights.'><title>Leetcode 417. 太平洋大西洋水流问题</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-417.-%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/'>
 
@@ -21,10 +22,11 @@
 这个岛被分割成一个由若干方形单元格组成的网格。给定一个 m x n 的整数矩阵 heights ， heights[r][c] 表示坐标 (r, c) 上单元格 高于海平面的高度 。
 岛上雨水较多，如果相邻单元格的高度 小于或等于 当前单元格的高度，雨水可以直接向北、南、东、西流向相邻单元格。水可以从海洋附近的任何单元格流入海洋。
 返回 网格坐标 result 的 2D列表 ，其中 result[i] = [ri, ci] 表示雨水可以从单元格 (ri, ci) 流向 太平洋和大西洋 。
-示例 1：  输入： heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+示例 1： 输入： heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
 输出： [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
- 示例 2：  输入： heights = [[2,1],[1,2]]
-输出： [[0,0],[0,1],[1,0],[1,1]]'>
+示例 2： 输入： heights = [[2,1],[1,2]]
+输出： [[0,0],[0,1],[1,0],[1,1]]
+提示： m == heights.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-417.-%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='bfs' /><meta property='article:tag' content='dfs' /><meta property='article:published_time' content='2022-04-27T10:34:55&#43;08:00'/><meta property='article:modified_time' content='2022-04-27T10:34:55&#43;08:00'/>
@@ -35,10 +37,11 @@
 这个岛被分割成一个由若干方形单元格组成的网格。给定一个 m x n 的整数矩阵 heights ， heights[r][c] 表示坐标 (r, c) 上单元格 高于海平面的高度 。
 岛上雨水较多，如果相邻单元格的高度 小于或等于 当前单元格的高度，雨水可以直接向北、南、东、西流向相邻单元格。水可以从海洋附近的任何单元格流入海洋。
 返回 网格坐标 result 的 2D列表 ，其中 result[i] = [ri, ci] 表示雨水可以从单元格 (ri, ci) 流向 太平洋和大西洋 。
-示例 1：  输入： heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+示例 1： 输入： heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
 输出： [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
- 示例 2：  输入： heights = [[2,1],[1,2]]
-输出： [[0,0],[0,1],[1,0],[1,1]]">
+示例 2： 输入： heights = [[2,1],[1,2]]
+输出： [[0,0],[0,1],[1,0],[1,1]]
+提示： m == heights.">
     </head>
     <body class="
     article-page 
@@ -248,113 +251,113 @@
 <h4 id="广度优先搜索">广度优先搜索</h4>
 <p>雨水按照 <strong>高度</strong> 非严格递减的方向，流入 <strong>太平洋</strong> 和 <strong>大西洋</strong>，反之，可以按照 <strong>高度</strong> 非严格递增的顺序，找出分别可以流入 <strong>太平洋</strong> 和 <strong>大西洋</strong> 的单元格，从中挑选去能同时流入 <strong>太平洋</strong> 和 <strong>大西洋</strong> 的单元格。</p>
 <p>采用多源广度优先搜索策略，初始时，从紧邻 <strong>太平洋</strong>/<strong>大西洋</strong> 的单元格开始搜索。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pacificAtlantic</span>(<span style="color:#a6e22e">heights</span> [][]<span style="color:#66d9ef">int</span>) [][]<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">heights</span>), len(<span style="color:#a6e22e">heights</span>[<span style="color:#ae81ff">0</span>])
-	<span style="color:#a6e22e">visit</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">heights</span> {
-		<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">i</span>] = make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
-	}
-	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
-	<span style="color:#a6e22e">bfs</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">flag</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
-		<span style="color:#75715e">// 初始单元格入队
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">i</span>})
-			<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">i</span>] <span style="color:#f92672">|=</span> <span style="color:#a6e22e">flag</span>
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">m</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">col</span>})
-			<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">|=</span> <span style="color:#a6e22e">flag</span>
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>()).([]<span style="color:#66d9ef">int</span>)
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">dir</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
-				<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">cur</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">cur</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span>[<span style="color:#ae81ff">1</span>]}
-				<span style="color:#75715e">// 越界检查
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>] &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">n</span> {
-					<span style="color:#66d9ef">continue</span>
-				}
-				<span style="color:#75715e">// 通过其他单元格流入
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">flag</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
-					<span style="color:#66d9ef">continue</span>
-				}
-				<span style="color:#75715e">// 无法通过当前单元格流入
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">heights</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]] &lt; <span style="color:#a6e22e">heights</span>[<span style="color:#a6e22e">cur</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">cur</span>[<span style="color:#ae81ff">1</span>]] {
-					<span style="color:#66d9ef">continue</span>
-				}
-				<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">next</span>)
-				<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">|=</span> <span style="color:#a6e22e">flag</span>
-			}
-		}
-	}
-	<span style="color:#a6e22e">bfs</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)     <span style="color:#75715e">// 太平洋
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">bfs</span>(<span style="color:#a6e22e">m</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e">// 大西洋
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">visit</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> {
-				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">j</span>})
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pacificAtlantic</span>(<span style="color:#a6e22e">heights</span> [][]<span style="color:#66d9ef">int</span>) [][]<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">heights</span>), len(<span style="color:#a6e22e">heights</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">visit</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">heights</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">i</span>] = make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bfs</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">flag</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 初始单元格入队
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">i</span>})
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">i</span>] <span style="color:#f92672">|=</span> <span style="color:#a6e22e">flag</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">m</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>([]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">col</span>})
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">|=</span> <span style="color:#a6e22e">flag</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Front</span>()).([]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">dir</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">cur</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">cur</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span>[<span style="color:#ae81ff">1</span>]}
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 越界检查
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>] &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">n</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 通过其他单元格流入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">flag</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 无法通过当前单元格流入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">heights</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]] &lt; <span style="color:#a6e22e">heights</span>[<span style="color:#a6e22e">cur</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">cur</span>[<span style="color:#ae81ff">1</span>]] {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">next</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">|=</span> <span style="color:#a6e22e">flag</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bfs</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)     <span style="color:#75715e">// 太平洋
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">bfs</span>(<span style="color:#a6e22e">m</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e">// 大西洋
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">visit</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">j</span>})
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(m*n) $</li>
 <li>空间复杂度：$ O(m*n) $</li>
 </ul>
 <h4 id="深度优先搜索">深度优先搜索</h4>
 <p>接上述广度优先思路，从边界每个单元格出发采用深度优先搜索实现，区分源是属于 <strong>太平洋</strong> 和 <strong>大西洋</strong>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pacificAtlantic</span>(<span style="color:#a6e22e">heights</span> [][]<span style="color:#66d9ef">int</span>) [][]<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">heights</span>), len(<span style="color:#a6e22e">heights</span>[<span style="color:#ae81ff">0</span>])
-	<span style="color:#a6e22e">visit</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">heights</span> {
-		<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">i</span>] = make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
-	}
-	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">flag</span> <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">flag</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">|=</span> <span style="color:#a6e22e">flag</span>
-		<span style="color:#75715e">// 越界检查
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">n</span> {
-			<span style="color:#66d9ef">return</span>
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">dir</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
-			<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">col</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span>[<span style="color:#ae81ff">1</span>]}
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>] &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">n</span> {
-				<span style="color:#66d9ef">continue</span>
-			}
-			<span style="color:#75715e">// 通过其他单元格流入
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">flag</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
-				<span style="color:#66d9ef">continue</span>
-			}
-			<span style="color:#75715e">// 无法通过当前单元格流入
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">heights</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]] &lt; <span style="color:#a6e22e">heights</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] {
-				<span style="color:#66d9ef">continue</span>
-			}
-			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">flag</span>)
-		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>)   <span style="color:#75715e">// 太平洋
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">m</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e">// 大西洋
-</span><span style="color:#75715e"></span>	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">m</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)   <span style="color:#75715e">// 太平洋
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e">// 大西洋
-</span><span style="color:#75715e"></span>	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">visit</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> {
-				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>})
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pacificAtlantic</span>(<span style="color:#a6e22e">heights</span> [][]<span style="color:#66d9ef">int</span>) [][]<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">heights</span>), len(<span style="color:#a6e22e">heights</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">visit</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">m</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">heights</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">i</span>] = make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dirs</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">flag</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">col</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">flag</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">|=</span> <span style="color:#a6e22e">flag</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 越界检查
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">row</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">n</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">dir</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">dirs</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">col</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span>[<span style="color:#ae81ff">1</span>]}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>] &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">n</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 通过其他单元格流入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">visit</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">flag</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 无法通过当前单元格流入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">heights</span>[<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]][<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>]] &lt; <span style="color:#a6e22e">heights</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">flag</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>)   <span style="color:#75715e">// 太平洋
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">m</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e">// 大西洋
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">m</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)   <span style="color:#75715e">// 太平洋
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e">// 大西洋
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">visit</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">cell</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">line</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>})
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(m*n) $</li>
 <li>空间复杂度：$ O(m*n) $</li>

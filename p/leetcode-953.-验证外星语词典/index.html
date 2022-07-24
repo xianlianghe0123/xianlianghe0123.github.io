@@ -5,15 +5,15 @@
 难度： 简单
 题目描述 某种外星语也使用英文小写字母，但可能顺序 order 不同。字母表的顺序（order）是一些小写字母的排列。
 给定一组用外星语书写的单词 words，以及其字母表的顺序 order，只有当给定的单词在这种外星语中按字典序排列时，返回 true；否则，返回 false。
-示例 1：  输入： words = [&amp;ldquo;hello&amp;rdquo;,&amp;ldquo;leetcode&amp;rdquo;], order = &amp;ldquo;hlabcdefgijkmnopqrstuvwxyz&amp;rdquo;
+示例 1： 输入： words = [&amp;ldquo;hello&amp;rdquo;,&amp;ldquo;leetcode&amp;rdquo;], order = &amp;ldquo;hlabcdefgijkmnopqrstuvwxyz&amp;rdquo;
 输出： true
-解释： 在该语言的字母表中，&amp;lsquo;h&amp;rsquo; 位于 &amp;lsquo;l&amp;rsquo; 之前，所以单词序列是按字典序排列的。
- 示例 2：  输入： words = [&amp;ldquo;word&amp;rdquo;,&amp;ldquo;world&amp;rdquo;,&amp;ldquo;row&amp;rdquo;], order = &amp;ldquo;worldabcefghijkmnpqstuvxyz&amp;rdquo;
+解释： 在该语言的字母表中，&amp;lsquo;h&amp;rsquo; 位于 &amp;rsquo;l&amp;rsquo; 之前，所以单词序列是按字典序排列的。
+示例 2： 输入： words = [&amp;ldquo;word&amp;rdquo;,&amp;ldquo;world&amp;rdquo;,&amp;ldquo;row&amp;rdquo;], order = &amp;ldquo;worldabcefghijkmnpqstuvxyz&amp;rdquo;
 输出： false
-解释： 在该语言的字母表中，&amp;rsquo;d&#39; 位于 &amp;lsquo;l&amp;rsquo; 之后，那么 words[0] &amp;gt; words[1]，因此单词序列不是按字典序排列的。
- 示例 3：  输入： words = [&amp;ldquo;apple&amp;rdquo;,&amp;ldquo;app&amp;rdquo;], order = &amp;ldquo;abcdefghijklmnopqrstuvwxyz&amp;rdquo;
+解释： 在该语言的字母表中，&amp;rsquo;d&amp;rsquo; 位于 &amp;rsquo;l&amp;rsquo; 之后，那么 words[0] &amp;gt; words[1]，因此单词序列不是按字典序排列的。
+示例 3： 输入： words = [&amp;ldquo;apple&amp;rdquo;,&amp;ldquo;app&amp;rdquo;], order = &amp;ldquo;abcdefghijklmnopqrstuvwxyz&amp;rdquo;
 输出： false
-解释： 当前三个字符 &amp;ldquo;app&amp;rdquo; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &amp;ldquo;apple&amp;rdquo; &amp;gt; &amp;ldquo;app&amp;rdquo;，因为 &amp;lsquo;l&amp;rsquo; &amp;gt; &amp;lsquo;∅&amp;rsquo;，其中 &amp;lsquo;∅&amp;rsquo; 是空白字符，定义为比任何其他字符都小。'><title>Leetcode 953. 验证外星语词典</title>
+解释： 当前三个字符 &amp;ldquo;app&amp;rdquo; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &amp;ldquo;apple&amp;rdquo; &amp;gt; &amp;ldquo;app&amp;rdquo;，因为 &amp;rsquo;l&amp;rsquo; &amp;gt; &amp;lsquo;∅&amp;rsquo;，其中 &amp;lsquo;∅&amp;rsquo; 是空白字符，定义为比任何其他字符都小。'><title>Leetcode 953. 验证外星语词典</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-953.-%E9%AA%8C%E8%AF%81%E5%A4%96%E6%98%9F%E8%AF%AD%E8%AF%8D%E5%85%B8/'>
 
@@ -22,15 +22,15 @@
 难度： 简单
 题目描述 某种外星语也使用英文小写字母，但可能顺序 order 不同。字母表的顺序（order）是一些小写字母的排列。
 给定一组用外星语书写的单词 words，以及其字母表的顺序 order，只有当给定的单词在这种外星语中按字典序排列时，返回 true；否则，返回 false。
-示例 1：  输入： words = [&amp;ldquo;hello&amp;rdquo;,&amp;ldquo;leetcode&amp;rdquo;], order = &amp;ldquo;hlabcdefgijkmnopqrstuvwxyz&amp;rdquo;
+示例 1： 输入： words = [&amp;ldquo;hello&amp;rdquo;,&amp;ldquo;leetcode&amp;rdquo;], order = &amp;ldquo;hlabcdefgijkmnopqrstuvwxyz&amp;rdquo;
 输出： true
-解释： 在该语言的字母表中，&amp;lsquo;h&amp;rsquo; 位于 &amp;lsquo;l&amp;rsquo; 之前，所以单词序列是按字典序排列的。
- 示例 2：  输入： words = [&amp;ldquo;word&amp;rdquo;,&amp;ldquo;world&amp;rdquo;,&amp;ldquo;row&amp;rdquo;], order = &amp;ldquo;worldabcefghijkmnpqstuvxyz&amp;rdquo;
+解释： 在该语言的字母表中，&amp;lsquo;h&amp;rsquo; 位于 &amp;rsquo;l&amp;rsquo; 之前，所以单词序列是按字典序排列的。
+示例 2： 输入： words = [&amp;ldquo;word&amp;rdquo;,&amp;ldquo;world&amp;rdquo;,&amp;ldquo;row&amp;rdquo;], order = &amp;ldquo;worldabcefghijkmnpqstuvxyz&amp;rdquo;
 输出： false
-解释： 在该语言的字母表中，&amp;rsquo;d&#39; 位于 &amp;lsquo;l&amp;rsquo; 之后，那么 words[0] &amp;gt; words[1]，因此单词序列不是按字典序排列的。
- 示例 3：  输入： words = [&amp;ldquo;apple&amp;rdquo;,&amp;ldquo;app&amp;rdquo;], order = &amp;ldquo;abcdefghijklmnopqrstuvwxyz&amp;rdquo;
+解释： 在该语言的字母表中，&amp;rsquo;d&amp;rsquo; 位于 &amp;rsquo;l&amp;rsquo; 之后，那么 words[0] &amp;gt; words[1]，因此单词序列不是按字典序排列的。
+示例 3： 输入： words = [&amp;ldquo;apple&amp;rdquo;,&amp;ldquo;app&amp;rdquo;], order = &amp;ldquo;abcdefghijklmnopqrstuvwxyz&amp;rdquo;
 输出： false
-解释： 当前三个字符 &amp;ldquo;app&amp;rdquo; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &amp;ldquo;apple&amp;rdquo; &amp;gt; &amp;ldquo;app&amp;rdquo;，因为 &amp;lsquo;l&amp;rsquo; &amp;gt; &amp;lsquo;∅&amp;rsquo;，其中 &amp;lsquo;∅&amp;rsquo; 是空白字符，定义为比任何其他字符都小。'>
+解释： 当前三个字符 &amp;ldquo;app&amp;rdquo; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &amp;ldquo;apple&amp;rdquo; &amp;gt; &amp;ldquo;app&amp;rdquo;，因为 &amp;rsquo;l&amp;rsquo; &amp;gt; &amp;lsquo;∅&amp;rsquo;，其中 &amp;lsquo;∅&amp;rsquo; 是空白字符，定义为比任何其他字符都小。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-953.-%E9%AA%8C%E8%AF%81%E5%A4%96%E6%98%9F%E8%AF%AD%E8%AF%8D%E5%85%B8/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-05-18T10:25:43&#43;08:00'/><meta property='article:modified_time' content='2022-05-18T10:25:43&#43;08:00'/>
@@ -39,15 +39,15 @@
 难度： 简单
 题目描述 某种外星语也使用英文小写字母，但可能顺序 order 不同。字母表的顺序（order）是一些小写字母的排列。
 给定一组用外星语书写的单词 words，以及其字母表的顺序 order，只有当给定的单词在这种外星语中按字典序排列时，返回 true；否则，返回 false。
-示例 1：  输入： words = [&amp;ldquo;hello&amp;rdquo;,&amp;ldquo;leetcode&amp;rdquo;], order = &amp;ldquo;hlabcdefgijkmnopqrstuvwxyz&amp;rdquo;
+示例 1： 输入： words = [&amp;ldquo;hello&amp;rdquo;,&amp;ldquo;leetcode&amp;rdquo;], order = &amp;ldquo;hlabcdefgijkmnopqrstuvwxyz&amp;rdquo;
 输出： true
-解释： 在该语言的字母表中，&amp;lsquo;h&amp;rsquo; 位于 &amp;lsquo;l&amp;rsquo; 之前，所以单词序列是按字典序排列的。
- 示例 2：  输入： words = [&amp;ldquo;word&amp;rdquo;,&amp;ldquo;world&amp;rdquo;,&amp;ldquo;row&amp;rdquo;], order = &amp;ldquo;worldabcefghijkmnpqstuvxyz&amp;rdquo;
+解释： 在该语言的字母表中，&amp;lsquo;h&amp;rsquo; 位于 &amp;rsquo;l&amp;rsquo; 之前，所以单词序列是按字典序排列的。
+示例 2： 输入： words = [&amp;ldquo;word&amp;rdquo;,&amp;ldquo;world&amp;rdquo;,&amp;ldquo;row&amp;rdquo;], order = &amp;ldquo;worldabcefghijkmnpqstuvxyz&amp;rdquo;
 输出： false
-解释： 在该语言的字母表中，&amp;rsquo;d&#39; 位于 &amp;lsquo;l&amp;rsquo; 之后，那么 words[0] &amp;gt; words[1]，因此单词序列不是按字典序排列的。
- 示例 3：  输入： words = [&amp;ldquo;apple&amp;rdquo;,&amp;ldquo;app&amp;rdquo;], order = &amp;ldquo;abcdefghijklmnopqrstuvwxyz&amp;rdquo;
+解释： 在该语言的字母表中，&amp;rsquo;d&amp;rsquo; 位于 &amp;rsquo;l&amp;rsquo; 之后，那么 words[0] &amp;gt; words[1]，因此单词序列不是按字典序排列的。
+示例 3： 输入： words = [&amp;ldquo;apple&amp;rdquo;,&amp;ldquo;app&amp;rdquo;], order = &amp;ldquo;abcdefghijklmnopqrstuvwxyz&amp;rdquo;
 输出： false
-解释： 当前三个字符 &amp;ldquo;app&amp;rdquo; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &amp;ldquo;apple&amp;rdquo; &amp;gt; &amp;ldquo;app&amp;rdquo;，因为 &amp;lsquo;l&amp;rsquo; &amp;gt; &amp;lsquo;∅&amp;rsquo;，其中 &amp;lsquo;∅&amp;rsquo; 是空白字符，定义为比任何其他字符都小。">
+解释： 当前三个字符 &amp;ldquo;app&amp;rdquo; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &amp;ldquo;apple&amp;rdquo; &amp;gt; &amp;ldquo;app&amp;rdquo;，因为 &amp;rsquo;l&amp;rsquo; &amp;gt; &amp;lsquo;∅&amp;rsquo;，其中 &amp;lsquo;∅&amp;rsquo; 是空白字符，定义为比任何其他字符都小。">
     </head>
     <body class="
     article-page 
@@ -237,19 +237,19 @@
 <blockquote>
 <p><strong>输入：</strong> words = [&ldquo;hello&rdquo;,&ldquo;leetcode&rdquo;], order = &ldquo;hlabcdefgijkmnopqrstuvwxyz&rdquo;<br>
 <strong>输出：</strong> true<br>
-<strong>解释：</strong> 在该语言的字母表中，&lsquo;h&rsquo; 位于 &lsquo;l&rsquo; 之前，所以单词序列是按字典序排列的。</p>
+<strong>解释：</strong> 在该语言的字母表中，&lsquo;h&rsquo; 位于 &rsquo;l&rsquo; 之前，所以单词序列是按字典序排列的。</p>
 </blockquote>
 <h4 id="示例-2">示例 2：</h4>
 <blockquote>
 <p><strong>输入：</strong> words = [&ldquo;word&rdquo;,&ldquo;world&rdquo;,&ldquo;row&rdquo;], order = &ldquo;worldabcefghijkmnpqstuvxyz&rdquo;<br>
 <strong>输出：</strong> false<br>
-<strong>解释：</strong> 在该语言的字母表中，&rsquo;d' 位于 &lsquo;l&rsquo; 之后，那么 words[0] &gt; words[1]，因此单词序列不是按字典序排列的。</p>
+<strong>解释：</strong> 在该语言的字母表中，&rsquo;d&rsquo; 位于 &rsquo;l&rsquo; 之后，那么 words[0] &gt; words[1]，因此单词序列不是按字典序排列的。</p>
 </blockquote>
 <h4 id="示例-3">示例 3：</h4>
 <blockquote>
 <p><strong>输入：</strong> words = [&ldquo;apple&rdquo;,&ldquo;app&rdquo;], order = &ldquo;abcdefghijklmnopqrstuvwxyz&rdquo;<br>
 <strong>输出：</strong> false<br>
-<strong>解释：</strong> 当前三个字符 &ldquo;app&rdquo; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &ldquo;apple&rdquo; &gt; &ldquo;app&rdquo;，因为 &lsquo;l&rsquo; &gt; &lsquo;∅&rsquo;，其中 &lsquo;∅&rsquo; 是空白字符，定义为比任何其他字符都小。</p>
+<strong>解释：</strong> 当前三个字符 &ldquo;app&rdquo; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &ldquo;apple&rdquo; &gt; &ldquo;app&rdquo;，因为 &rsquo;l&rsquo; &gt; &lsquo;∅&rsquo;，其中 &lsquo;∅&rsquo; 是空白字符，定义为比任何其他字符都小。</p>
 </blockquote>
 <h5 id="提示">提示：</h5>
 <ul>
@@ -261,36 +261,36 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="模拟">模拟</h4>
 <p>使用字典中字母下标，初始化字典序的权重，方便比较字符大小，然后实现字符串比较。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isAlienSorted</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">order</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">weight</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">order</span> {
-		<span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">order</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#a6e22e">i</span>
-	}
-	<span style="color:#a6e22e">cmp</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">s1</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">s2</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s1</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s2</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">s1</span>[<span style="color:#a6e22e">i</span>]] &lt; <span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">s2</span>[<span style="color:#a6e22e">i</span>]] {
-				<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">s1</span>[<span style="color:#a6e22e">i</span>]] &gt; <span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">s2</span>[<span style="color:#a6e22e">i</span>]] {
-				<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-			}
-		}
-		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s1</span>) <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">s2</span>) {
-			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s1</span>) &lt; len(<span style="color:#a6e22e">s2</span>) {
-			<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">words</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cmp</span>(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &gt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isAlienSorted</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">order</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">weight</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">order</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">order</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cmp</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">s1</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">s2</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s1</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s2</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">s1</span>[<span style="color:#a6e22e">i</span>]] &lt; <span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">s2</span>[<span style="color:#a6e22e">i</span>]] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">s1</span>[<span style="color:#a6e22e">i</span>]] &gt; <span style="color:#a6e22e">weight</span>[<span style="color:#a6e22e">s2</span>[<span style="color:#a6e22e">i</span>]] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s1</span>) <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">s2</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s1</span>) &lt; len(<span style="color:#a6e22e">s2</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">words</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cmp</span>(<span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>]) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N*L), N = len(words), L = avg(len(words[i])) $</li>
 <li>空间复杂度：$ O(\Sigma), \Sigma表示字符集，本题中为26 $</li>

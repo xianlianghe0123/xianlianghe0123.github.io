@@ -6,11 +6,11 @@
 题目描述 序列化是将数据结构或对象转换为一系列位的过程，以便它可以存储在文件或内存缓冲区中，或通过网络连接链路传输，以便稍后在同一个或另一个计算机环境中重建。
 设计一个算法来序列化和反序列化 二叉搜索树 。 对序列化/反序列化算法的工作方式没有限制。 您只需确保二叉搜索树可以序列化为字符串，并且可以将该字符串反序列化为最初的二叉搜索树。
 编码的字符串应尽可能紧凑。
-示例 1：  输入： root = [2,1,3]
+示例 1： 输入： root = [2,1,3]
 输出： [2,1,3]
- 示例 2：  输入： root = []
+示例 2： 输入： root = []
 输出： []
- 提示：  树中节点数范围是 [0, 104] 0 &amp;lt;= Node.val &amp;lt;= 104 题目数据 保证 输入的树是一棵二叉搜索树。  解题思路 先序遍历 根据二叉搜索树的特性，对于每个结点，可以得出左右子数的数据范围。
+提示： 树中节点数范围是 [0, 104] 0 &amp;lt;= Node.val &amp;lt;= 104 题目数据 保证 输入的树是一棵二叉搜索树。 解题思路 先序遍历 根据二叉搜索树的特性，对于每个结点，可以得出左右子数的数据范围。
 故序列化时，进行先序遍历存储顺序即可；反序列化时，根据确定的数据范围，递归构建即可。
 type Codec struct { } func Constructor() Codec { return Codec{} } // Serializes a tree to a single string. func (this *Codec) serialize(root *TreeNode) string { sVals := make([]string, 0, 5) var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } sVals = append(sVals, strconv.'><title>Leetcode 449. 序列化和反序列化二叉搜索树</title>
 
@@ -22,11 +22,11 @@ type Codec struct { } func Constructor() Codec { return Codec{} } // Serializes 
 题目描述 序列化是将数据结构或对象转换为一系列位的过程，以便它可以存储在文件或内存缓冲区中，或通过网络连接链路传输，以便稍后在同一个或另一个计算机环境中重建。
 设计一个算法来序列化和反序列化 二叉搜索树 。 对序列化/反序列化算法的工作方式没有限制。 您只需确保二叉搜索树可以序列化为字符串，并且可以将该字符串反序列化为最初的二叉搜索树。
 编码的字符串应尽可能紧凑。
-示例 1：  输入： root = [2,1,3]
+示例 1： 输入： root = [2,1,3]
 输出： [2,1,3]
- 示例 2：  输入： root = []
+示例 2： 输入： root = []
 输出： []
- 提示：  树中节点数范围是 [0, 104] 0 &amp;lt;= Node.val &amp;lt;= 104 题目数据 保证 输入的树是一棵二叉搜索树。  解题思路 先序遍历 根据二叉搜索树的特性，对于每个结点，可以得出左右子数的数据范围。
+提示： 树中节点数范围是 [0, 104] 0 &amp;lt;= Node.val &amp;lt;= 104 题目数据 保证 输入的树是一棵二叉搜索树。 解题思路 先序遍历 根据二叉搜索树的特性，对于每个结点，可以得出左右子数的数据范围。
 故序列化时，进行先序遍历存储顺序即可；反序列化时，根据确定的数据范围，递归构建即可。
 type Codec struct { } func Constructor() Codec { return Codec{} } // Serializes a tree to a single string. func (this *Codec) serialize(root *TreeNode) string { sVals := make([]string, 0, 5) var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } sVals = append(sVals, strconv.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-449.-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/'>
@@ -38,11 +38,11 @@ type Codec struct { } func Constructor() Codec { return Codec{} } // Serializes 
 题目描述 序列化是将数据结构或对象转换为一系列位的过程，以便它可以存储在文件或内存缓冲区中，或通过网络连接链路传输，以便稍后在同一个或另一个计算机环境中重建。
 设计一个算法来序列化和反序列化 二叉搜索树 。 对序列化/反序列化算法的工作方式没有限制。 您只需确保二叉搜索树可以序列化为字符串，并且可以将该字符串反序列化为最初的二叉搜索树。
 编码的字符串应尽可能紧凑。
-示例 1：  输入： root = [2,1,3]
+示例 1： 输入： root = [2,1,3]
 输出： [2,1,3]
- 示例 2：  输入： root = []
+示例 2： 输入： root = []
 输出： []
- 提示：  树中节点数范围是 [0, 104] 0 &amp;lt;= Node.val &amp;lt;= 104 题目数据 保证 输入的树是一棵二叉搜索树。  解题思路 先序遍历 根据二叉搜索树的特性，对于每个结点，可以得出左右子数的数据范围。
+提示： 树中节点数范围是 [0, 104] 0 &amp;lt;= Node.val &amp;lt;= 104 题目数据 保证 输入的树是一棵二叉搜索树。 解题思路 先序遍历 根据二叉搜索树的特性，对于每个结点，可以得出左右子数的数据范围。
 故序列化时，进行先序遍历存储顺序即可；反序列化时，根据确定的数据范围，递归构建即可。
 type Codec struct { } func Constructor() Codec { return Codec{} } // Serializes a tree to a single string. func (this *Codec) serialize(root *TreeNode) string { sVals := make([]string, 0, 5) var dfs func(node *TreeNode) dfs = func(node *TreeNode) { if node == nil { return } sVals = append(sVals, strconv.">
     </head>
@@ -251,54 +251,54 @@ type Codec struct { } func Constructor() Codec { return Codec{} } // Serializes 
 <h4 id="先序遍历">先序遍历</h4>
 <p>根据二叉搜索树的特性，对于每个结点，可以得出左右子数的数据范围。</p>
 <p>故序列化时，进行先序遍历存储顺序即可；反序列化时，根据确定的数据范围，递归构建即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Codec</span> <span style="color:#66d9ef">struct</span> {
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">Codec</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Codec</span>{}
-}
-
-<span style="color:#75715e">// Serializes a tree to a single string.
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Codec</span>) <span style="color:#a6e22e">serialize</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">sVals</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">return</span>
-		}
-		<span style="color:#a6e22e">sVals</span> = append(<span style="color:#a6e22e">sVals</span>, <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>))
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
-	}
-	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#a6e22e">sVals</span>, <span style="color:#e6db74">&#34;,&#34;</span>)
-}
-
-<span style="color:#75715e">// Deserializes your encoded data to tree.
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Codec</span>) <span style="color:#a6e22e">deserialize</span>(<span style="color:#a6e22e">data</span> <span style="color:#66d9ef">string</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-	}
-	<span style="color:#a6e22e">sVals</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">data</span>, <span style="color:#e6db74">&#34;,&#34;</span>)
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">max</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">max</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
-		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">sVals</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-		}
-		<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">sVals</span>[<span style="color:#ae81ff">0</span>])
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">min</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">max</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-		}
-		<span style="color:#a6e22e">sVals</span> = <span style="color:#a6e22e">sVals</span>[<span style="color:#ae81ff">1</span>:]
-		<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">TreeNode</span>{
-			<span style="color:#a6e22e">Val</span>:   <span style="color:#a6e22e">val</span>,
-			<span style="color:#a6e22e">Left</span>:  <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">val</span>),
-			<span style="color:#a6e22e">Right</span>: <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">max</span>),
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1e4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Codec</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">Codec</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Codec</span>{}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Serializes a tree to a single string.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Codec</span>) <span style="color:#a6e22e">serialize</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sVals</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sVals</span> = append(<span style="color:#a6e22e">sVals</span>, <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>))
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#a6e22e">sVals</span>, <span style="color:#e6db74">&#34;,&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Deserializes your encoded data to tree.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Codec</span>) <span style="color:#a6e22e">deserialize</span>(<span style="color:#a6e22e">data</span> <span style="color:#66d9ef">string</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sVals</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">data</span>, <span style="color:#e6db74">&#34;,&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">max</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">max</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">sVals</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">sVals</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">min</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">max</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sVals</span> = <span style="color:#a6e22e">sVals</span>[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">TreeNode</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Val</span>:   <span style="color:#a6e22e">val</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Left</span>:  <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">val</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">Right</span>: <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">max</span>),
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1e4</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

@@ -4,12 +4,14 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/range-sum-of-bst/
 难度： 简单
 题目描述 由范围 [0,n] 内所有整数组成的 n &#43; 1 个整数的排列序列可以表示为长度为 n 的字符串 s ，其中:
- 如果 perm[i] &amp;lt; perm[i &#43; 1] ，那么 s[i] == &#39;I&#39; 如果 perm[i] &amp;gt; perm[i &#43; 1] ，那么 s[i] == &#39;D&#39;  给定一个字符串 s ，重构排列 perm 并返回它。如果有多个有效排列 perm，则返回其中 任何一个 。
-示例 1：  输入： s = &amp;ldquo;IDID&amp;rdquo;
+如果 perm[i] &amp;lt; perm[i &#43; 1] ，那么 s[i] == &#39;I&#39; 如果 perm[i] &amp;gt; perm[i &#43; 1] ，那么 s[i] == &#39;D&#39; 给定一个字符串 s ，重构排列 perm 并返回它。如果有多个有效排列 perm，则返回其中 任何一个 。
+示例 1： 输入： s = &amp;ldquo;IDID&amp;rdquo;
 输出： [0,4,1,3,2]
- 示例 2：  输入： s = &amp;ldquo;III&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;III&amp;rdquo;
 输出： [0,1,2,3]
- 示例 3：  输入： s = &amp;ldquo;DDI&amp;rdquo;'><title>Leetcode 942. 增减字符串匹配</title>
+示例 3： 输入： s = &amp;ldquo;DDI&amp;rdquo;
+输出： [3,2,0,1]
+提示： 1 &amp;lt;= s.'><title>Leetcode 942. 增减字符串匹配</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-942.-%E5%A2%9E%E5%87%8F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/'>
 
@@ -17,12 +19,14 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/range-sum-of-bst/
 难度： 简单
 题目描述 由范围 [0,n] 内所有整数组成的 n &#43; 1 个整数的排列序列可以表示为长度为 n 的字符串 s ，其中:
- 如果 perm[i] &amp;lt; perm[i &#43; 1] ，那么 s[i] == &#39;I&#39; 如果 perm[i] &amp;gt; perm[i &#43; 1] ，那么 s[i] == &#39;D&#39;  给定一个字符串 s ，重构排列 perm 并返回它。如果有多个有效排列 perm，则返回其中 任何一个 。
-示例 1：  输入： s = &amp;ldquo;IDID&amp;rdquo;
+如果 perm[i] &amp;lt; perm[i &#43; 1] ，那么 s[i] == &#39;I&#39; 如果 perm[i] &amp;gt; perm[i &#43; 1] ，那么 s[i] == &#39;D&#39; 给定一个字符串 s ，重构排列 perm 并返回它。如果有多个有效排列 perm，则返回其中 任何一个 。
+示例 1： 输入： s = &amp;ldquo;IDID&amp;rdquo;
 输出： [0,4,1,3,2]
- 示例 2：  输入： s = &amp;ldquo;III&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;III&amp;rdquo;
 输出： [0,1,2,3]
- 示例 3：  输入： s = &amp;ldquo;DDI&amp;rdquo;'>
+示例 3： 输入： s = &amp;ldquo;DDI&amp;rdquo;
+输出： [3,2,0,1]
+提示： 1 &amp;lt;= s.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-942.-%E5%A2%9E%E5%87%8F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='greedy' /><meta property='article:published_time' content='2022-05-09T09:59:48&#43;08:00'/><meta property='article:modified_time' content='2022-05-09T09:59:48&#43;08:00'/>
@@ -30,12 +34,14 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/range-sum-of-bst/
 难度： 简单
 题目描述 由范围 [0,n] 内所有整数组成的 n &#43; 1 个整数的排列序列可以表示为长度为 n 的字符串 s ，其中:
- 如果 perm[i] &amp;lt; perm[i &#43; 1] ，那么 s[i] == &#39;I&#39; 如果 perm[i] &amp;gt; perm[i &#43; 1] ，那么 s[i] == &#39;D&#39;  给定一个字符串 s ，重构排列 perm 并返回它。如果有多个有效排列 perm，则返回其中 任何一个 。
-示例 1：  输入： s = &amp;ldquo;IDID&amp;rdquo;
+如果 perm[i] &amp;lt; perm[i &#43; 1] ，那么 s[i] == &#39;I&#39; 如果 perm[i] &amp;gt; perm[i &#43; 1] ，那么 s[i] == &#39;D&#39; 给定一个字符串 s ，重构排列 perm 并返回它。如果有多个有效排列 perm，则返回其中 任何一个 。
+示例 1： 输入： s = &amp;ldquo;IDID&amp;rdquo;
 输出： [0,4,1,3,2]
- 示例 2：  输入： s = &amp;ldquo;III&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;III&amp;rdquo;
 输出： [0,1,2,3]
- 示例 3：  输入： s = &amp;ldquo;DDI&amp;rdquo;">
+示例 3： 输入： s = &amp;ldquo;DDI&amp;rdquo;
+输出： [3,2,0,1]
+提示： 1 &amp;lt;= s.">
     </head>
     <body class="
     article-page 
@@ -249,22 +255,22 @@
 <h4 id="贪心">贪心</h4>
 <p>根据题目描述，当为字符为 <code>I</code> 时，表示前一个数字小，为 <code>D</code> 时，表示前一个数字大。</p>
 <p>对于首个字符，当其为 <code>I</code> 时，选择排列中的最小值；为 <code>D</code> 时，选择排列中的最大值。则后续处理变为相同的子问题，不断重复处理直到排列中的元素选择完毕。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">diStringMatch</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
-	<span style="color:#a6e22e">iNum</span>, <span style="color:#a6e22e">dNum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;I&#39;</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">iNum</span>)
-			<span style="color:#a6e22e">iNum</span><span style="color:#f92672">++</span>
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">dNum</span>)
-			<span style="color:#a6e22e">dNum</span><span style="color:#f92672">--</span>
-		}
-	}
-	<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">iNum</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">diStringMatch</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">iNum</span>, <span style="color:#a6e22e">dNum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;I&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">iNum</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">iNum</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">dNum</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">dNum</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">iNum</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(s) $</li>
 <li>空间复杂度：$ O(1) $</li>

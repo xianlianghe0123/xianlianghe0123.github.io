@@ -6,10 +6,11 @@
 题目描述 给你一个整数数组 nums ，请你找出 nums 子集 按位或 可能得到的 最大值 ，并返回按位或能得到最大值的 不同非空子集的数目 。
 如果数组 a 可以由数组 b 删除一些元素（或不删除）得到，则认为数组 a 是数组 b 的一个 子集 。如果选中的元素下标位置不一样，则认为两个子集 不同 。
 对数组 a 执行 按位或 ，结果等于 a[0] OR a[1] OR &amp;hellip; OR a[a.length - 1]（下标从 0 开始）。
-示例 1：  输入： nums = [3,1]
+示例 1： 输入： nums = [3,1]
 输出： 2
 解释： 子集按位或能得到的最大值是 3 。有 2 个子集按位或可以得到 3 ：
- [3] [3,1]   示例 2：  输入： nums = [2,2,2]'><title>Leetcode 2044. 统计按位或能得到最大值的子集数目</title>
+[3] [3,1] 示例 2： 输入： nums = [2,2,2]
+输出： 7'><title>Leetcode 2044. 统计按位或能得到最大值的子集数目</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-2044.-%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/'>
 
@@ -19,10 +20,11 @@
 题目描述 给你一个整数数组 nums ，请你找出 nums 子集 按位或 可能得到的 最大值 ，并返回按位或能得到最大值的 不同非空子集的数目 。
 如果数组 a 可以由数组 b 删除一些元素（或不删除）得到，则认为数组 a 是数组 b 的一个 子集 。如果选中的元素下标位置不一样，则认为两个子集 不同 。
 对数组 a 执行 按位或 ，结果等于 a[0] OR a[1] OR &amp;hellip; OR a[a.length - 1]（下标从 0 开始）。
-示例 1：  输入： nums = [3,1]
+示例 1： 输入： nums = [3,1]
 输出： 2
 解释： 子集按位或能得到的最大值是 3 。有 2 个子集按位或可以得到 3 ：
- [3] [3,1]   示例 2：  输入： nums = [2,2,2]'>
+[3] [3,1] 示例 2： 输入： nums = [2,2,2]
+输出： 7'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-2044.-%E7%BB%9F%E8%AE%A1%E6%8C%89%E4%BD%8D%E6%88%96%E8%83%BD%E5%BE%97%E5%88%B0%E6%9C%80%E5%A4%A7%E5%80%BC%E7%9A%84%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hash' /><meta property='article:tag' content='heap' /><meta property='article:published_time' content='2022-03-15T10:55:01&#43;08:00'/><meta property='article:modified_time' content='2022-03-15T10:55:01&#43;08:00'/>
@@ -32,10 +34,11 @@
 题目描述 给你一个整数数组 nums ，请你找出 nums 子集 按位或 可能得到的 最大值 ，并返回按位或能得到最大值的 不同非空子集的数目 。
 如果数组 a 可以由数组 b 删除一些元素（或不删除）得到，则认为数组 a 是数组 b 的一个 子集 。如果选中的元素下标位置不一样，则认为两个子集 不同 。
 对数组 a 执行 按位或 ，结果等于 a[0] OR a[1] OR &amp;hellip; OR a[a.length - 1]（下标从 0 开始）。
-示例 1：  输入： nums = [3,1]
+示例 1： 输入： nums = [3,1]
 输出： 2
 解释： 子集按位或能得到的最大值是 3 。有 2 个子集按位或可以得到 3 ：
- [3] [3,1]   示例 2：  输入： nums = [2,2,2]">
+[3] [3,1] 示例 2： 输入： nums = [2,2,2]
+输出： 7">
     </head>
     <body class="
     article-page 
@@ -260,26 +263,26 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="枚举">枚举</h4>
 <p>利用位来枚举出所有子集，计算最大值，同时统计满足条件的子集数目。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countMaxOrSubsets</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">bits</span> <span style="color:#f92672">:=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> len(<span style="color:#a6e22e">nums</span>)) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">bits</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">bits</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">or</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">bits</span><span style="color:#f92672">&amp;</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#a6e22e">i</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
-				<span style="color:#a6e22e">or</span> <span style="color:#f92672">|=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
-			}
-		}
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">or</span> {
-			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">or</span>
-			<span style="color:#a6e22e">cnt</span> = <span style="color:#ae81ff">1</span>
-		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">or</span> {
-			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countMaxOrSubsets</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">bits</span> <span style="color:#f92672">:=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> len(<span style="color:#a6e22e">nums</span>)) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">bits</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">bits</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">or</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">bits</span><span style="color:#f92672">&amp;</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#a6e22e">i</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">or</span> <span style="color:#f92672">|=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">or</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">or</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cnt</span> = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">or</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(2^N*N), N = len(nums) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -287,28 +290,28 @@
 <h4 id="回溯">回溯</h4>
 <p>对于数组的子集，每个元素都有存在和不存在两种情况，按照此方式进行回溯，找出所有可能的子集。</p>
 <p>对于每个子集，判定其是否为最大值，同时统计满足条件的子集数目。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countMaxOrSubsets</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">or</span> <span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">or</span> <span style="color:#66d9ef">int</span>) {
-		<span style="color:#75715e">// 子集筛选完毕，判定最大值
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">nums</span>) {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">or</span> {
-				<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">or</span>
-				<span style="color:#a6e22e">cnt</span> = <span style="color:#ae81ff">1</span>
-			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">or</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">max</span> {
-				<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
-			}
-			<span style="color:#66d9ef">return</span>
-		}
-		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">or</span>)         <span style="color:#75715e">// 当前元素不在子集中
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">or</span>|<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#75715e">// 当前元素位于子集中
-</span><span style="color:#75715e"></span>	}
-	<span style="color:#a6e22e">dfs</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countMaxOrSubsets</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cnt</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">or</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">or</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 子集筛选完毕，判定最大值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">nums</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">or</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">or</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">cnt</span> = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">or</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">max</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">cnt</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">or</span>)         <span style="color:#75715e">// 当前元素不在子集中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">or</span>|<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#75715e">// 当前元素位于子集中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(2^N), N = len(nums) $</li>
 <li>空间复杂度：$ O(\log{N}) $</li>

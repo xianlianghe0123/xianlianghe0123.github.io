@@ -6,7 +6,7 @@
 题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
 请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
-示例 1：  输入： bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+示例 1： 输入： bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
 输出： [10,55,45,25,25]
 解释：
 航班编号 1 2 3 4 5
@@ -21,7 +21,7 @@
 题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
 请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
-示例 1：  输入： bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+示例 1： 输入： bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
 输出： [10,55,45,25,25]
 解释：
 航班编号 1 2 3 4 5
@@ -36,7 +36,7 @@
 题目描述 这里有 n 个航班，它们分别从 1 到 n 进行编号。
 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
 请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
-示例 1：  输入： bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+示例 1： 输入： bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
 输出： [10,55,45,25,25]
 解释：
 航班编号 1 2 3 4 5
@@ -262,16 +262,16 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>遍历 <code>bookings</code> 列表，将 <code>first</code> 到 <code>last</code> 的 <code>seats</code> 累加到对应的航班中。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">booking</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">bookings</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>]; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">booking</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">bookings</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>]; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(Mn), M = len(bookings) $</li>
 <li>空间复杂度：$ O(1) $</li>
@@ -279,20 +279,20 @@
 <h4 id="差分数组">差分数组</h4>
 <p>使用差分数组，<code>ans[i]</code> 保存与 <code>ans[i-1]</code> 的差值，每次即可进行区间操作：</p>
 <p>对 <code>first<sub>i</sub></code> 加上 <code>seats<sub>i</sub></code>，然后对 <code>last<sub>i</sub>+1</code> 减去 <code>seats<sub>i</sub></code>，表示对区间 <code>[first<sub>i</sub>, last<sub>i</sub>]</code> 加上<code>seats<sub>i</sub></code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">booking</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">bookings</span> {
-		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">n</span> {
-			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">-=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
-		}
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">corpFlightBookings</span>(<span style="color:#a6e22e">bookings</span> [][]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">booking</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">bookings</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>] &lt; <span style="color:#a6e22e">n</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">-=</span> <span style="color:#a6e22e">booking</span>[<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(M+n), M = len(bookings) $</li>
 <li>空间复杂度：$ O(1) $</li>

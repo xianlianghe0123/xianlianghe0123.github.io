@@ -7,7 +7,7 @@
 在给定的矩形覆盖的空间内的任何整数点都有可能被返回。
 请注意 ，整数点是具有整数坐标的点。
 实现 Solution 类:
- Solution(int[][] rects) 用给定的矩形数组 rects 初始化对象。 int[] pick() 返回一个随机的整数点 [u, v] 在给定的矩形所覆盖的空间内。  示例 1：  输入：
+Solution(int[][] rects) 用给定的矩形数组 rects 初始化对象。 int[] pick() 返回一个随机的整数点 [u, v] 在给定的矩形所覆盖的空间内。 示例 1： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;]
 [[[[-2, -2, 1, 1], [2, 2, 4, 6]]], [], [], [], [], []]
 输出：
@@ -22,7 +22,7 @@
 在给定的矩形覆盖的空间内的任何整数点都有可能被返回。
 请注意 ，整数点是具有整数坐标的点。
 实现 Solution 类:
- Solution(int[][] rects) 用给定的矩形数组 rects 初始化对象。 int[] pick() 返回一个随机的整数点 [u, v] 在给定的矩形所覆盖的空间内。  示例 1：  输入：
+Solution(int[][] rects) 用给定的矩形数组 rects 初始化对象。 int[] pick() 返回一个随机的整数点 [u, v] 在给定的矩形所覆盖的空间内。 示例 1： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;]
 [[[[-2, -2, 1, 1], [2, 2, 4, 6]]], [], [], [], [], []]
 输出：
@@ -37,7 +37,7 @@
 在给定的矩形覆盖的空间内的任何整数点都有可能被返回。
 请注意 ，整数点是具有整数坐标的点。
 实现 Solution 类:
- Solution(int[][] rects) 用给定的矩形数组 rects 初始化对象。 int[] pick() 返回一个随机的整数点 [u, v] 在给定的矩形所覆盖的空间内。  示例 1：  输入：
+Solution(int[][] rects) 用给定的矩形数组 rects 初始化对象。 int[] pick() 返回一个随机的整数点 [u, v] 在给定的矩形所覆盖的空间内。 示例 1： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;, &amp;ldquo;pick&amp;rdquo;]
 [[[[-2, -2, 1, 1], [2, 2, 4, 6]]], [], [], [], [], []]
 输出：
@@ -264,33 +264,33 @@ solution.pick(); // 返回 [0, 0]</p>
 <h4 id="前缀和--二分查找">前缀和 + 二分查找</h4>
 <p>由于矩形都不重叠，所以统计所有可能的点的数量，从中随机取得一个点。</p>
 <p>然后确定该点在哪个矩形中，确定其坐标。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">rects</span>  [][]<span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">sum</span>    []<span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">random</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">rects</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">Solution</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">rects</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">rect</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">rects</span> {
-		<span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> (<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>(<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
-		<span style="color:#a6e22e">rects</span>:  <span style="color:#a6e22e">rects</span>,
-		<span style="color:#a6e22e">sum</span>:    <span style="color:#a6e22e">sum</span>,
-		<span style="color:#a6e22e">random</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">Pick</span>() []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">pointSeq</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">random</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">sum</span>[len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">sum</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
-	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">SearchInts</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">sum</span>, <span style="color:#a6e22e">pointSeq</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e">// 确定矩形
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pointSeq</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]                  <span style="color:#75715e">// 当前矩形第 pointSeq 个点
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">pointSeq</span>)
-	<span style="color:#a6e22e">rect</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rects</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-	<span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">pointSeq</span><span style="color:#f92672">%</span>(<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>), <span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">pointSeq</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)}
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">rects</span>  [][]<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span>    []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">random</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">rects</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">rects</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">rect</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">rects</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> (<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>(<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">rects</span>:  <span style="color:#a6e22e">rects</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span>:    <span style="color:#a6e22e">sum</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">random</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">Pick</span>() []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">pointSeq</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">random</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">sum</span>[len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">sum</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">SearchInts</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">sum</span>, <span style="color:#a6e22e">pointSeq</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e">// 确定矩形
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pointSeq</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">sum</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]                  <span style="color:#75715e">// 当前矩形第 pointSeq 个点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">pointSeq</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">rect</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rects</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">pointSeq</span><span style="color:#f92672">%</span>(<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>), <span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">pointSeq</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">rect</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

@@ -6,7 +6,7 @@
 题目描述 给你一个 m x n 的二元矩阵 matrix ，且所有值被初始化为 0 。请你设计一个算法，随机选取一个满足 matrix[i][j] == 0 的下标 (i, j) ，并将它的值变为 1 。所有满足 matrix[i][j] == 0 的下标 (i, j) 被选取的概率应当均等。
 尽量最少调用内置的随机函数，并且优化时间和空间复杂度。
 实现 Solution 类：
- Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0  示例：  输入：
+Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0 示例： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;reset&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;]
 [[3, 1], [], [], [], [], []]'><title>Leetcode 519. 随机翻转矩阵</title>
 
@@ -18,7 +18,7 @@
 题目描述 给你一个 m x n 的二元矩阵 matrix ，且所有值被初始化为 0 。请你设计一个算法，随机选取一个满足 matrix[i][j] == 0 的下标 (i, j) ，并将它的值变为 1 。所有满足 matrix[i][j] == 0 的下标 (i, j) 被选取的概率应当均等。
 尽量最少调用内置的随机函数，并且优化时间和空间复杂度。
 实现 Solution 类：
- Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0  示例：  输入：
+Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0 示例： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;reset&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;]
 [[3, 1], [], [], [], [], []]'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-519.-%E9%9A%8F%E6%9C%BA%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5/'>
@@ -30,7 +30,7 @@
 题目描述 给你一个 m x n 的二元矩阵 matrix ，且所有值被初始化为 0 。请你设计一个算法，随机选取一个满足 matrix[i][j] == 0 的下标 (i, j) ，并将它的值变为 1 。所有满足 matrix[i][j] == 0 的下标 (i, j) 被选取的概率应当均等。
 尽量最少调用内置的随机函数，并且优化时间和空间复杂度。
 实现 Solution 类：
- Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0  示例：  输入：
+Solution(int m, int n) 使用二元矩阵的大小 m 和 n 初始化该对象 int[] flip() 返回一个满足 matrix[i][j] == 0 的随机下标 [i, j] ，并将其对应格子中的值变为 1 void reset() 将矩阵中所有的值重置为 0 示例： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;, &amp;ldquo;reset&amp;rdquo;, &amp;ldquo;flip&amp;rdquo;]
 [[3, 1], [], [], [], [], []]">
     </head>
@@ -257,43 +257,43 @@ solution.flip();  // 返回 [2, 0]，此时返回 [0,0]、[1,0] 和 [2,0] 的概
 <p>在数组中，初始数组下标和数组中保存的编号是一致的。当执行交换后，才会有两个元素下标和编号不一致。而操作次数远小于矩阵元素数量，故使用哈希表记录不一致的这些元素即可。</p>
 <p>对于 <code>flip</code> 操作，从可用区间内随机选取一个下标，将其置到可用区间尾部，可用区间缩短 <code>1</code>。每次的交换操作均需要去哈希表中查找确认操作数，若不存在则操作数即和下标相同，否则操作数为哈希表中的数。</p>
 <p>对于 <code>reset</code> 操作，直接将可用区间扩展为整个数组即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">hash</span>   <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">valid</span>  <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">rows</span>   <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">cols</span>   <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">random</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">Solution</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
-		<span style="color:#a6e22e">hash</span>:   make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>),
-		<span style="color:#a6e22e">valid</span>:  <span style="color:#a6e22e">m</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">n</span>,
-		<span style="color:#a6e22e">rows</span>:   <span style="color:#a6e22e">m</span>,
-		<span style="color:#a6e22e">cols</span>:   <span style="color:#a6e22e">n</span>,
-		<span style="color:#a6e22e">random</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">Flip</span>() []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">random</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>)
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span><span style="color:#f92672">--</span>
-	<span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">idx</span>
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>]; <span style="color:#a6e22e">ok</span> {
-		<span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>]
-	}
-	<span style="color:#a6e22e">swapNum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>]; <span style="color:#a6e22e">ok</span> {
-		<span style="color:#a6e22e">swapNum</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>]
-	}
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>] = <span style="color:#a6e22e">swapNum</span>, <span style="color:#a6e22e">num</span>
-	<span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">num</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">Reset</span>() {
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rows</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">hash</span>   <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">valid</span>  <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">rows</span>   <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cols</span>   <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">random</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">hash</span>:   make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>),
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">valid</span>:  <span style="color:#a6e22e">m</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">n</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">rows</span>:   <span style="color:#a6e22e">m</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cols</span>:   <span style="color:#a6e22e">n</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">random</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">Flip</span>() []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">random</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">idx</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>]; <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">num</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">swapNum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>]; <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">swapNum</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">idx</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span>] = <span style="color:#a6e22e">swapNum</span>, <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">num</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">Reset</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">valid</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rows</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">cols</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

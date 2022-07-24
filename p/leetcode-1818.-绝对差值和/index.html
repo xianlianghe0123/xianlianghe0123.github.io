@@ -8,7 +8,7 @@
 你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
 在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。因为答案可能很大，所以需要对 109 &#43; 7 取余 后返回。
 |x| 定义为：
- 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  输入： nums1 = [1,7,5], nums2 = [2,3,5]'><title>Leetcode 1818. 绝对差值和</title>
+如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x 示例 1： 输入： nums1 = [1,7,5], nums2 = [2,3,5]'><title>Leetcode 1818. 绝对差值和</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/'>
 
@@ -20,7 +20,7 @@
 你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
 在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。因为答案可能很大，所以需要对 109 &#43; 7 取余 后返回。
 |x| 定义为：
- 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  输入： nums1 = [1,7,5], nums2 = [2,3,5]'>
+如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x 示例 1： 输入： nums1 = [1,7,5], nums2 = [2,3,5]'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1818.-%E7%BB%9D%E5%AF%B9%E5%B7%AE%E5%80%BC%E5%92%8C/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='sort' /><meta property='article:tag' content='binary search' /><meta property='article:published_time' content='2021-07-14T10:34:23&#43;08:00'/><meta property='article:modified_time' content='2021-07-14T10:34:23&#43;08:00'/>
@@ -32,7 +32,7 @@
 你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
 在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。因为答案可能很大，所以需要对 109 &#43; 7 取余 后返回。
 |x| 定义为：
- 如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x  示例 1：  输入： nums1 = [1,7,5], nums2 = [2,3,5]">
+如果 x &amp;gt;= 0 ，值为 x ，或者 如果 x &amp;lt;= 0 ，值为 -x 示例 1： 输入： nums1 = [1,7,5], nums2 = [2,3,5]">
     </head>
     <body class="
     article-page 
@@ -262,62 +262,62 @@
 <p>通过上式观察得出：对于每个 <code>i</code>，前一项 <code>|nums1[i] - nums2[i]|</code> 确定不变，唯一的变量即在 <code>j</code>，需要找出使得 <code>|nums1[j] - nums2[i]|</code> 最小的 <code>j</code>，也就是找出 <code>nums1</code> 中与 <code>nums2[i]</code> 最接近的值。</p>
 <p>对于每个 <code>i</code>，通过二分查找的方法，找出最接近的 <code>j</code>。一次遍历完成后，得到最大的缩小量的最大值 <code>max</code>，用原始绝对差值和减去 <code>max</code> 即得到 <strong>最小化</strong> 绝对差值和。</p>
 <p>二分查找时，当不存在与 <code>nums2[i]</code> 相等的值时，需要找寻最接近的值，此时查找终止条件为仅剩两个元素，因为最接近的值可能大于 <code>nums2[i]</code>，也可能小于 <code>nums2[i]</code>，需要对两个元素均进行判断。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minAbsoluteSumDiff</span>(<span style="color:#a6e22e">nums1</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">nums2</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MOD</span> = <span style="color:#ae81ff">1e9</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>
-	<span style="color:#75715e">// 求绝对值
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">diff</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">y</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">d</span> &lt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#a6e22e">d</span> = <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span>
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">d</span>
-	}
-
-	<span style="color:#75715e">// nums1排序
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sortedNums1</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">nums1</span>))
-	copy(<span style="color:#a6e22e">sortedNums1</span>, <span style="color:#a6e22e">nums1</span>)
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">sortedNums1</span>)
-
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 绝对差只和
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 最小化缩小量最大值
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums2</span> {
-		<span style="color:#a6e22e">absDiff</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">nums1</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>])
-		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">%=</span> <span style="color:#a6e22e">MOD</span>
-		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">absDiff</span> <span style="color:#75715e">// 求和
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 二分查找确定最小化缩小量
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">sortedNums1</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span>; {
-			<span style="color:#75715e">// l, r 最接近nums2[i]
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">r</span> {
-				<span style="color:#a6e22e">dl</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">sortedNums1</span>[<span style="color:#a6e22e">l</span>], <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>])
-				<span style="color:#a6e22e">dr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">sortedNums1</span>[<span style="color:#a6e22e">r</span>], <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>])
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dl</span> &lt; <span style="color:#a6e22e">dr</span> {
-					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">absDiff</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dl</span> {
-						<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">absDiff</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">dl</span>
-					}
-				} <span style="color:#66d9ef">else</span> {
-					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">absDiff</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dr</span> {
-						<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">absDiff</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">dr</span>
-					}
-				}
-				<span style="color:#66d9ef">break</span>
-			}
-			<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
-			<span style="color:#75715e">// 与nums2相等，已找到
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sortedNums1</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>] {
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">absDiff</span> {
-					<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">absDiff</span>
-				}
-				<span style="color:#66d9ef">break</span>
-			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sortedNums1</span>[<span style="color:#a6e22e">mid</span>] &gt; <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>] {
-				<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">mid</span>
-			} <span style="color:#66d9ef">else</span> {
-				<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">mid</span>
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">MOD</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">max</span>) <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minAbsoluteSumDiff</span>(<span style="color:#a6e22e">nums1</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">nums2</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MOD</span> = <span style="color:#ae81ff">1e9</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 求绝对值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">diff</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">d</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">y</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">d</span> &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">d</span> = <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">d</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// nums1排序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sortedNums1</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">nums1</span>))
+</span></span><span style="display:flex;"><span>	copy(<span style="color:#a6e22e">sortedNums1</span>, <span style="color:#a6e22e">nums1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">sortedNums1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 绝对差只和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 最小化缩小量最大值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums2</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">absDiff</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">nums1</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">%=</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">absDiff</span> <span style="color:#75715e">// 求和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">// 二分查找确定最小化缩小量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">sortedNums1</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span>; {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// l, r 最接近nums2[i]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">r</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">dl</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">sortedNums1</span>[<span style="color:#a6e22e">l</span>], <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>])
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">dr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">sortedNums1</span>[<span style="color:#a6e22e">r</span>], <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>])
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">dl</span> &lt; <span style="color:#a6e22e">dr</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">absDiff</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dl</span> {
+</span></span><span style="display:flex;"><span>						<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">absDiff</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">dl</span>
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>				} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">absDiff</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dr</span> {
+</span></span><span style="display:flex;"><span>						<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">absDiff</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">dr</span>
+</span></span><span style="display:flex;"><span>					}
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 与nums2相等，已找到
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sortedNums1</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">max</span> &lt; <span style="color:#a6e22e">absDiff</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">max</span> = <span style="color:#a6e22e">absDiff</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sortedNums1</span>[<span style="color:#a6e22e">mid</span>] &gt; <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">mid</span>
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">l</span> = <span style="color:#a6e22e">mid</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">MOD</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">max</span>) <span style="color:#f92672">%</span> <span style="color:#a6e22e">MOD</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log{N}), N = len(nums1) $</li>
 <li>空间复杂度：$ O(N) $</li>

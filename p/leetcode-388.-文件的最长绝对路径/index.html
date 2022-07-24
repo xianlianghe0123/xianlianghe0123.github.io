@@ -6,14 +6,14 @@
 题目描述 假设有一个同时存储文件和目录的文件系统。下图展示了文件系统的一个示例：
 这里将 dir 作为根目录中的唯一目录。dir 包含两个子目录 subdir1 和 subdir2 。subdir1 包含文件 file1.ext 和子目录 subsubdir1；subdir2 包含子目录 subsubdir2，该子目录下包含文件 file2.ext 。
 在文本格式中，如下所示(⟶表示制表符)：
- dir
+dir
 ⟶ subdir1
 ⟶ ⟶ file1.ext
 ⟶ ⟶ subsubdir1
 ⟶ subdir2
 ⟶ ⟶ subsubdir2
 ⟶ ⟶ ⟶ file2.ext
- 如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
+如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
 文件系统中的每个文件和文件夹都有一个唯一的 绝对路径 ，即必须打开才能到达文件/目录所在位置的目录顺序，所有路径用 &#39;/&#39; 连接。上面例子中，指向 file2.ext 的 绝对路径 是 &amp;quot;dir/subdir2/subsubdir2/file2.ext&amp;quot; 。每个目录名由字母、数字和/或空格组成，每个文件名遵循 name.extension 的格式，其中 name 和 extension 由字母、数字和/或空格组成。
 给定一个以上述格式表示文件系统的字符串 input ，返回文件系统中 指向 文件 的 最长绝对路径 的长度 。 如果系统中没有文件，返回 0。'><title>Leetcode 388. 文件的最长绝对路径</title>
 
@@ -25,14 +25,14 @@
 题目描述 假设有一个同时存储文件和目录的文件系统。下图展示了文件系统的一个示例：
 这里将 dir 作为根目录中的唯一目录。dir 包含两个子目录 subdir1 和 subdir2 。subdir1 包含文件 file1.ext 和子目录 subsubdir1；subdir2 包含子目录 subsubdir2，该子目录下包含文件 file2.ext 。
 在文本格式中，如下所示(⟶表示制表符)：
- dir
+dir
 ⟶ subdir1
 ⟶ ⟶ file1.ext
 ⟶ ⟶ subsubdir1
 ⟶ subdir2
 ⟶ ⟶ subsubdir2
 ⟶ ⟶ ⟶ file2.ext
- 如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
+如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
 文件系统中的每个文件和文件夹都有一个唯一的 绝对路径 ，即必须打开才能到达文件/目录所在位置的目录顺序，所有路径用 &#39;/&#39; 连接。上面例子中，指向 file2.ext 的 绝对路径 是 &amp;quot;dir/subdir2/subsubdir2/file2.ext&amp;quot; 。每个目录名由字母、数字和/或空格组成，每个文件名遵循 name.extension 的格式，其中 name 和 extension 由字母、数字和/或空格组成。
 给定一个以上述格式表示文件系统的字符串 input ，返回文件系统中 指向 文件 的 最长绝对路径 的长度 。 如果系统中没有文件，返回 0。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-388.-%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E9%95%BF%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/'>
@@ -44,14 +44,14 @@
 题目描述 假设有一个同时存储文件和目录的文件系统。下图展示了文件系统的一个示例：
 这里将 dir 作为根目录中的唯一目录。dir 包含两个子目录 subdir1 和 subdir2 。subdir1 包含文件 file1.ext 和子目录 subsubdir1；subdir2 包含子目录 subsubdir2，该子目录下包含文件 file2.ext 。
 在文本格式中，如下所示(⟶表示制表符)：
- dir
+dir
 ⟶ subdir1
 ⟶ ⟶ file1.ext
 ⟶ ⟶ subsubdir1
 ⟶ subdir2
 ⟶ ⟶ subsubdir2
 ⟶ ⟶ ⟶ file2.ext
- 如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
+如果是代码表示，上面的文件系统可以写为 &amp;quot;dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext&amp;quot; 。&#39;\n&#39; 和 &#39;\t&#39; 分别是换行符和制表符。
 文件系统中的每个文件和文件夹都有一个唯一的 绝对路径 ，即必须打开才能到达文件/目录所在位置的目录顺序，所有路径用 &#39;/&#39; 连接。上面例子中，指向 file2.ext 的 绝对路径 是 &amp;quot;dir/subdir2/subsubdir2/file2.ext&amp;quot; 。每个目录名由字母、数字和/或空格组成，每个文件名遵循 name.extension 的格式，其中 name 和 extension 由字母、数字和/或空格组成。
 给定一个以上述格式表示文件系统的字符串 input ，返回文件系统中 指向 文件 的 最长绝对路径 的长度 。 如果系统中没有文件，返回 0。">
     </head>
@@ -295,40 +295,40 @@
 <li>当深度增加时，若为目录则入栈；若为文件判定路径长度。</li>
 <li>当深度减少时，需要恢复到当前目录。通过执行出栈操作，直到栈元素数量少于深度为止。然后执行和上述相同的操作。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lengthLongestPath</span>(<span style="color:#a6e22e">input</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">maxLength</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// 目录栈
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">length</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>                   <span style="color:#75715e">// 当前路径长度
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">lineStart</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>                <span style="color:#75715e">// 行首
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> len(<span style="color:#a6e22e">input</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#75715e">// 每一行
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">input</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">input</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;\n&#39;</span> {
-			<span style="color:#75715e">// 计算深度
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">depth</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-			<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">input</span>[<span style="color:#a6e22e">lineStart</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;\t&#39;</span>; <span style="color:#a6e22e">lineStart</span><span style="color:#f92672">++</span> {
-				<span style="color:#a6e22e">depth</span><span style="color:#f92672">++</span>
-			}
-			<span style="color:#a6e22e">name</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">input</span>[<span style="color:#a6e22e">lineStart</span>:<span style="color:#a6e22e">i</span>] <span style="color:#75715e">// 文件/目录名
-</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 恢复到当前所在目录
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">depth</span> {
-				<span style="color:#a6e22e">length</span> <span style="color:#f92672">-=</span> len(<span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-				<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-			}
-			<span style="color:#75715e">// 文件，判断是否是最长路径
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#a6e22e">name</span>, <span style="color:#e6db74">&#34;.&#34;</span>) {
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxLength</span> &lt; <span style="color:#a6e22e">length</span><span style="color:#f92672">+</span>len(<span style="color:#a6e22e">name</span>) {
-					<span style="color:#a6e22e">maxLength</span> = <span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> len(<span style="color:#a6e22e">name</span>)
-				}
-			} <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 目录加入到栈中
-</span><span style="color:#75715e"></span>				<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">name</span>)
-				<span style="color:#a6e22e">length</span> <span style="color:#f92672">+=</span> len(<span style="color:#a6e22e">name</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-			}
-			<span style="color:#a6e22e">lineStart</span> = <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 下一行
-</span><span style="color:#75715e"></span>		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxLength</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lengthLongestPath</span>(<span style="color:#a6e22e">input</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maxLength</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// 目录栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">length</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>                   <span style="color:#75715e">// 当前路径长度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">lineStart</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>                <span style="color:#75715e">// 行首
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> len(<span style="color:#a6e22e">input</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 每一行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">input</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">input</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;\n&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 计算深度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">depth</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">input</span>[<span style="color:#a6e22e">lineStart</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;\t&#39;</span>; <span style="color:#a6e22e">lineStart</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">depth</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">name</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">input</span>[<span style="color:#a6e22e">lineStart</span>:<span style="color:#a6e22e">i</span>] <span style="color:#75715e">// 文件/目录名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#75715e">// 恢复到当前所在目录
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">depth</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">length</span> <span style="color:#f92672">-=</span> len(<span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 文件，判断是否是最长路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Contains</span>(<span style="color:#a6e22e">name</span>, <span style="color:#e6db74">&#34;.&#34;</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">maxLength</span> &lt; <span style="color:#a6e22e">length</span><span style="color:#f92672">+</span>len(<span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">maxLength</span> = <span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> len(<span style="color:#a6e22e">name</span>)
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			} <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 目录加入到栈中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">name</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">length</span> <span style="color:#f92672">+=</span> len(<span style="color:#a6e22e">name</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">lineStart</span> = <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 下一行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxLength</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(input) $</li>
 <li>空间复杂度：$ O(N) $</li>

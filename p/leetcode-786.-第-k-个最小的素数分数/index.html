@@ -6,11 +6,12 @@
 题目描述 给你一个按递增顺序排序的数组 arr 和一个整数 k 。数组 arr 由 1 和若干 素数 组成，且其中所有整数互不相同。
 对于每对满足 0 &amp;lt; i &amp;lt; j &amp;lt; arr.length 的 i 和 j ，可以得到分数 arr[i] / arr[j] 。
 那么第 k 个最小的分数是多少呢? 以长度为 2 的整数数组返回你的答案, 这里 answer[0] == arr[i] 且 answer[1] == arr[j] 。
-示例 1：  输入： arr = [1,2,3,5], k = 3
+示例 1： 输入： arr = [1,2,3,5], k = 3
 输出： [2,5]
 解释： 已构造好的分数,排序后如下所示:
 1/5, 1/3, 2/5, 1/2, 3/5, 2/3
-很明显第三个最小的分数是 2/5'><title>Leetcode 786. 第 K 个最小的素数分数</title>
+很明显第三个最小的分数是 2/5
+示例 2： 输入： arr = [1,7], k = 1'><title>Leetcode 786. 第 K 个最小的素数分数</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-786.-%E7%AC%AC-k-%E4%B8%AA%E6%9C%80%E5%B0%8F%E7%9A%84%E7%B4%A0%E6%95%B0%E5%88%86%E6%95%B0/'>
 
@@ -20,11 +21,12 @@
 题目描述 给你一个按递增顺序排序的数组 arr 和一个整数 k 。数组 arr 由 1 和若干 素数 组成，且其中所有整数互不相同。
 对于每对满足 0 &amp;lt; i &amp;lt; j &amp;lt; arr.length 的 i 和 j ，可以得到分数 arr[i] / arr[j] 。
 那么第 k 个最小的分数是多少呢? 以长度为 2 的整数数组返回你的答案, 这里 answer[0] == arr[i] 且 answer[1] == arr[j] 。
-示例 1：  输入： arr = [1,2,3,5], k = 3
+示例 1： 输入： arr = [1,2,3,5], k = 3
 输出： [2,5]
 解释： 已构造好的分数,排序后如下所示:
 1/5, 1/3, 2/5, 1/2, 3/5, 2/3
-很明显第三个最小的分数是 2/5'>
+很明显第三个最小的分数是 2/5
+示例 2： 输入： arr = [1,7], k = 1'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-786.-%E7%AC%AC-k-%E4%B8%AA%E6%9C%80%E5%B0%8F%E7%9A%84%E7%B4%A0%E6%95%B0%E5%88%86%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='sort' /><meta property='article:tag' content='heap' /><meta property='article:published_time' content='2021-11-29T10:26:07&#43;08:00'/><meta property='article:modified_time' content='2021-11-29T10:26:07&#43;08:00'/>
@@ -34,11 +36,12 @@
 题目描述 给你一个按递增顺序排序的数组 arr 和一个整数 k 。数组 arr 由 1 和若干 素数 组成，且其中所有整数互不相同。
 对于每对满足 0 &amp;lt; i &amp;lt; j &amp;lt; arr.length 的 i 和 j ，可以得到分数 arr[i] / arr[j] 。
 那么第 k 个最小的分数是多少呢? 以长度为 2 的整数数组返回你的答案, 这里 answer[0] == arr[i] 且 answer[1] == arr[j] 。
-示例 1：  输入： arr = [1,2,3,5], k = 3
+示例 1： 输入： arr = [1,2,3,5], k = 3
 输出： [2,5]
 解释： 已构造好的分数,排序后如下所示:
 1/5, 1/3, 2/5, 1/2, 3/5, 2/3
-很明显第三个最小的分数是 2/5">
+很明显第三个最小的分数是 2/5
+示例 2： 输入： arr = [1,7], k = 1">
     </head>
     <body class="
     article-page 
@@ -250,26 +253,26 @@
 <h3 id="解题思路">解题思路</h3>
 <h4 id="排序">排序</h4>
 <p>整个数组中的素数两两组成分数，构成一个列表，对整个列表进行排序，便可直接得到第 <code>k</code> 小的分数。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kthSmallestPrimeFraction</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Pair</span> <span style="color:#66d9ef">struct</span> {
-		<span style="color:#a6e22e">nums</span>     []<span style="color:#66d9ef">int</span>
-		<span style="color:#a6e22e">fraction</span> <span style="color:#66d9ef">float64</span>
-	}
-	<span style="color:#a6e22e">fractions</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">arr</span>)<span style="color:#f92672">*</span>(len(<span style="color:#a6e22e">arr</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">numerator</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">arr</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">denominator</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:] {
-			<span style="color:#a6e22e">fractions</span> = append(<span style="color:#a6e22e">fractions</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
-				<span style="color:#a6e22e">nums</span>:     []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">numerator</span>, <span style="color:#a6e22e">denominator</span>},
-				<span style="color:#a6e22e">fraction</span>: float64(<span style="color:#a6e22e">numerator</span>) <span style="color:#f92672">/</span> float64(<span style="color:#a6e22e">denominator</span>),
-			})
-		}
-	}
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">fractions</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fractions</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">fraction</span> &lt; <span style="color:#a6e22e">fractions</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">fraction</span>
-	})
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fractions</span>[<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">nums</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kthSmallestPrimeFraction</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Pair</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">nums</span>     []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fraction</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fractions</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">arr</span>)<span style="color:#f92672">*</span>(len(<span style="color:#a6e22e">arr</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">numerator</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">arr</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">denominator</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fractions</span> = append(<span style="color:#a6e22e">fractions</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">nums</span>:     []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">numerator</span>, <span style="color:#a6e22e">denominator</span>},
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">fraction</span>: float64(<span style="color:#a6e22e">numerator</span>) <span style="color:#f92672">/</span> float64(<span style="color:#a6e22e">denominator</span>),
+</span></span><span style="display:flex;"><span>			})
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">fractions</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fractions</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">fraction</span> &lt; <span style="color:#a6e22e">fractions</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">fraction</span>
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fractions</span>[<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">nums</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2\log{N}), N = len(arr) $</li>
 <li>空间复杂度：$ O(N^2) $</li>
@@ -286,59 +289,59 @@
 </li>
 </ul>
 <p>遍历完成后，堆中所有元素即位前 <code>k</code> 小的分数，堆定元素即位第 <code>k</code> 小的元素。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Pair</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">nums</span>     []<span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">fraction</span> <span style="color:#66d9ef">float64</span>
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MaxHeap</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">elems</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Len</span>() <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>)
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Swap</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) {
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>]
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">fraction</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">fraction</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">interface</span>{}) {
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span> = append(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>, <span style="color:#a6e22e">elem</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>))
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Pop</span>() <span style="color:#66d9ef">interface</span>{} {
-	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[:len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kthSmallestPrimeFraction</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">h</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">MaxHeap</span>{
-		<span style="color:#a6e22e">elems</span>: make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">k</span>),
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">numerator</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">arr</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">arr</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &gt; <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
-			<span style="color:#a6e22e">pair</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
-				<span style="color:#a6e22e">nums</span>:     []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">numerator</span>, <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>]},
-				<span style="color:#a6e22e">fraction</span>: float64(<span style="color:#a6e22e">numerator</span>) <span style="color:#f92672">/</span> float64(<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>]),
-			}
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#a6e22e">k</span> {
-				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">pair</span>.<span style="color:#a6e22e">fraction</span> &gt; <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">fraction</span> {
-					<span style="color:#66d9ef">break</span>
-				}
-				<span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Pop</span>(<span style="color:#a6e22e">h</span>)
-			}
-			<span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">pair</span>)
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">nums</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Pair</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nums</span>     []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fraction</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MaxHeap</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">elems</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Len</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Swap</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">fraction</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">fraction</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">interface</span>{}) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span> = append(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>, <span style="color:#a6e22e">elem</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MaxHeap</span>) <span style="color:#a6e22e">Pop</span>() <span style="color:#66d9ef">interface</span>{} {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">max</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>[:len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">elems</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">kthSmallestPrimeFraction</span>(<span style="color:#a6e22e">arr</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">h</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">MaxHeap</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">elems</span>: make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Pair</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">k</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">numerator</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">arr</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">arr</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &gt; <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">pair</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Pair</span>{
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">nums</span>:     []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">numerator</span>, <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>]},
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">fraction</span>: float64(<span style="color:#a6e22e">numerator</span>) <span style="color:#f92672">/</span> float64(<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">j</span>]),
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#a6e22e">k</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">pair</span>.<span style="color:#a6e22e">fraction</span> &gt; <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">fraction</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Pop</span>(<span style="color:#a6e22e">h</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">pair</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">elems</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">nums</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2\log{k}), N = len(arr) $</li>
 <li>空间复杂度：$ O(k) $</li>

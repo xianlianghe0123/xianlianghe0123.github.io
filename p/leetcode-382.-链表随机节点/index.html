@@ -5,7 +5,7 @@
 难度： 中等
 题目描述 给你一个单链表，随机选择链表的一个节点，并返回相应的节点值。每个节点 被选中的概率一样 。
 实现 Solution 类：
- Solution(ListNode head) 使用整数数组初始化对象。 int getRandom() 从链表中随机选择一个节点并返回该节点的值。链表中所有节点被选中的概率相等。  示例：  输入：
+Solution(ListNode head) 使用整数数组初始化对象。 int getRandom() 从链表中随机选择一个节点并返回该节点的值。链表中所有节点被选中的概率相等。 示例： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;]
 [[[1, 2, 3]], [], [], [], [], []]
 输出：
@@ -16,7 +16,8 @@ solution.getRandom(); // 返回 1
 solution.getRandom(); // 返回 3
 solution.getRandom(); // 返回 2
 solution.getRandom(); // 返回 2
-solution.getRandom(); // 返回 3'><title>Leetcode 382. 链表随机节点</title>
+solution.getRandom(); // 返回 3
+// getRandom() 方法应随机返回 1、2、3中的一个，每个元素被返回的概率相等。'><title>Leetcode 382. 链表随机节点</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-382.-%E9%93%BE%E8%A1%A8%E9%9A%8F%E6%9C%BA%E8%8A%82%E7%82%B9/'>
 
@@ -25,7 +26,7 @@ solution.getRandom(); // 返回 3'><title>Leetcode 382. 链表随机节点</titl
 难度： 中等
 题目描述 给你一个单链表，随机选择链表的一个节点，并返回相应的节点值。每个节点 被选中的概率一样 。
 实现 Solution 类：
- Solution(ListNode head) 使用整数数组初始化对象。 int getRandom() 从链表中随机选择一个节点并返回该节点的值。链表中所有节点被选中的概率相等。  示例：  输入：
+Solution(ListNode head) 使用整数数组初始化对象。 int getRandom() 从链表中随机选择一个节点并返回该节点的值。链表中所有节点被选中的概率相等。 示例： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;]
 [[[1, 2, 3]], [], [], [], [], []]
 输出：
@@ -36,7 +37,8 @@ solution.getRandom(); // 返回 1
 solution.getRandom(); // 返回 3
 solution.getRandom(); // 返回 2
 solution.getRandom(); // 返回 2
-solution.getRandom(); // 返回 3'>
+solution.getRandom(); // 返回 3
+// getRandom() 方法应随机返回 1、2、3中的一个，每个元素被返回的概率相等。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-382.-%E9%93%BE%E8%A1%A8%E9%9A%8F%E6%9C%BA%E8%8A%82%E7%82%B9/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-01-16T09:57:49&#43;08:00'/><meta property='article:modified_time' content='2022-01-16T09:57:49&#43;08:00'/>
@@ -45,7 +47,7 @@ solution.getRandom(); // 返回 3'>
 难度： 中等
 题目描述 给你一个单链表，随机选择链表的一个节点，并返回相应的节点值。每个节点 被选中的概率一样 。
 实现 Solution 类：
- Solution(ListNode head) 使用整数数组初始化对象。 int getRandom() 从链表中随机选择一个节点并返回该节点的值。链表中所有节点被选中的概率相等。  示例：  输入：
+Solution(ListNode head) 使用整数数组初始化对象。 int getRandom() 从链表中随机选择一个节点并返回该节点的值。链表中所有节点被选中的概率相等。 示例： 输入：
 [&amp;ldquo;Solution&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;, &amp;ldquo;getRandom&amp;rdquo;]
 [[[1, 2, 3]], [], [], [], [], []]
 输出：
@@ -56,7 +58,8 @@ solution.getRandom(); // 返回 1
 solution.getRandom(); // 返回 3
 solution.getRandom(); // 返回 2
 solution.getRandom(); // 返回 2
-solution.getRandom(); // 返回 3">
+solution.getRandom(); // 返回 3
+// getRandom() 方法应随机返回 1、2、3中的一个，每个元素被返回的概率相等。">
     </head>
     <body class="
     article-page 
@@ -277,26 +280,26 @@ solution.getRandom(); // 返回 3<br>
 <h3 id="解题思路">解题思路</h3>
 <h4 id="顺序表">顺序表</h4>
 <p>将链表中的元素存放到顺序表中，每次随机选出一个下标，返回对应的元素。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">vals</span> []<span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">rand</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#a6e22e">Solution</span> {
-	<span style="color:#a6e22e">vals</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)
-	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">head</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">head</span> = <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span> {
-		<span style="color:#a6e22e">vals</span> = append(<span style="color:#a6e22e">vals</span>, <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Val</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
-		<span style="color:#a6e22e">vals</span>: <span style="color:#a6e22e">vals</span>,
-		<span style="color:#a6e22e">rand</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">GetRandom</span>() <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">vals</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">vals</span>))]
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">vals</span> []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">rand</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">vals</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">head</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">head</span> = <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">vals</span> = append(<span style="color:#a6e22e">vals</span>, <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">vals</span>: <span style="color:#a6e22e">vals</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">rand</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">GetRandom</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">vals</span>[<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">vals</span>))]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>
@@ -308,32 +311,32 @@ solution.getRandom(); // 返回 3<br>
 </ul>
 <h4 id="遍历">遍历</h4>
 <p>遍历链表，记录其长度。每次随机选定一个索引，从头遍历到该索引处，返回值。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">len</span>  <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>
-	<span style="color:#a6e22e">rand</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#a6e22e">Solution</span> {
-	<span style="color:#a6e22e">len</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">node</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> {
-		<span style="color:#a6e22e">len</span><span style="color:#f92672">++</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
-		<span style="color:#a6e22e">len</span>:  <span style="color:#a6e22e">len</span>,
-		<span style="color:#a6e22e">head</span>: <span style="color:#a6e22e">head</span>,
-		<span style="color:#a6e22e">rand</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">GetRandom</span>() <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">len</span>); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Solution</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">len</span>  <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">rand</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Rand</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">len</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">node</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>; <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">len</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Solution</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">len</span>:  <span style="color:#a6e22e">len</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">head</span>: <span style="color:#a6e22e">head</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">rand</span>: <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Solution</span>) <span style="color:#a6e22e">GetRandom</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">len</span>); <span style="color:#a6e22e">i</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

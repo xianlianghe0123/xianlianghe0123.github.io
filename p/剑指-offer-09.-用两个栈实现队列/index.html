@@ -4,17 +4,17 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
 难度： 简单
 题目描述 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
-示例 1：  输入：
+示例 1： 输入：
 [&amp;ldquo;CQueue&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;]
 [[],[3],[],[]]
 输出： [null,null,3,-1]
- 示例 2：  输入：
+示例 2： 输入：
 [&amp;ldquo;CQueue&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;]
 [[],[],[5],[2],[],[]]
 输出： [null,-1,null,null,5,2]
- 提示：  1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用  解题思路 出入分离 栈的特点是后进先出。想要取得头部元素，需要将整个栈中元素依次加入另一个栈中，此时，另一个栈中元素的出栈顺序即变成了先进先出。
+提示： 1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用 解题思路 出入分离 栈的特点是后进先出。想要取得头部元素，需要将整个栈中元素依次加入另一个栈中，此时，另一个栈中元素的出栈顺序即变成了先进先出。
 故使用两个栈，将入栈和出栈的操作分离，分别对应到尾部栈和头部栈：
- 当一个元素要入栈时，压入尾部栈； 当要出栈时，从头部栈弹出，若头部栈为空，则将尾部栈所有元素加入到头部栈。  type CQueue struct { frontStack *list.List backStack *list.List } func Constructor() CQueue { return CQueue{ frontStack: list.New(), backStack: list.'><title>剑指 Offer 09. 用两个栈实现队列</title>
+当一个元素要入栈时，压入尾部栈； 当要出栈时，从头部栈弹出，若头部栈为空，则将尾部栈所有元素加入到头部栈。 type CQueue struct { frontStack *list.List backStack *list.List } func Constructor() CQueue { return CQueue{ frontStack: list.New(), backStack: list.New(), } } func (this *CQueue) AppendTail(value int) { this.'><title>剑指 Offer 09. 用两个栈实现队列</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-09.-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/'>
 
@@ -22,17 +22,17 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
 难度： 简单
 题目描述 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
-示例 1：  输入：
+示例 1： 输入：
 [&amp;ldquo;CQueue&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;]
 [[],[3],[],[]]
 输出： [null,null,3,-1]
- 示例 2：  输入：
+示例 2： 输入：
 [&amp;ldquo;CQueue&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;]
 [[],[],[5],[2],[],[]]
 输出： [null,-1,null,null,5,2]
- 提示：  1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用  解题思路 出入分离 栈的特点是后进先出。想要取得头部元素，需要将整个栈中元素依次加入另一个栈中，此时，另一个栈中元素的出栈顺序即变成了先进先出。
+提示： 1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用 解题思路 出入分离 栈的特点是后进先出。想要取得头部元素，需要将整个栈中元素依次加入另一个栈中，此时，另一个栈中元素的出栈顺序即变成了先进先出。
 故使用两个栈，将入栈和出栈的操作分离，分别对应到尾部栈和头部栈：
- 当一个元素要入栈时，压入尾部栈； 当要出栈时，从头部栈弹出，若头部栈为空，则将尾部栈所有元素加入到头部栈。  type CQueue struct { frontStack *list.List backStack *list.List } func Constructor() CQueue { return CQueue{ frontStack: list.New(), backStack: list.'>
+当一个元素要入栈时，压入尾部栈； 当要出栈时，从头部栈弹出，若头部栈为空，则将尾部栈所有元素加入到头部栈。 type CQueue struct { frontStack *list.List backStack *list.List } func Constructor() CQueue { return CQueue{ frontStack: list.New(), backStack: list.New(), } } func (this *CQueue) AppendTail(value int) { this.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-09.-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-09-17T16:40:45&#43;08:00'/><meta property='article:modified_time' content='2021-09-17T16:40:45&#43;08:00'/>
@@ -40,17 +40,17 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
 难度： 简单
 题目描述 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
-示例 1：  输入：
+示例 1： 输入：
 [&amp;ldquo;CQueue&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;]
 [[],[3],[],[]]
 输出： [null,null,3,-1]
- 示例 2：  输入：
+示例 2： 输入：
 [&amp;ldquo;CQueue&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;appendTail&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;,&amp;ldquo;deleteHead&amp;rdquo;]
 [[],[],[5],[2],[],[]]
 输出： [null,-1,null,null,5,2]
- 提示：  1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用  解题思路 出入分离 栈的特点是后进先出。想要取得头部元素，需要将整个栈中元素依次加入另一个栈中，此时，另一个栈中元素的出栈顺序即变成了先进先出。
+提示： 1 &amp;lt;= values &amp;lt;= 10000 最多会对 appendTail、deleteHead 进行 10000 次调用 解题思路 出入分离 栈的特点是后进先出。想要取得头部元素，需要将整个栈中元素依次加入另一个栈中，此时，另一个栈中元素的出栈顺序即变成了先进先出。
 故使用两个栈，将入栈和出栈的操作分离，分别对应到尾部栈和头部栈：
- 当一个元素要入栈时，压入尾部栈； 当要出栈时，从头部栈弹出，若头部栈为空，则将尾部栈所有元素加入到头部栈。  type CQueue struct { frontStack *list.List backStack *list.List } func Constructor() CQueue { return CQueue{ frontStack: list.New(), backStack: list.">
+当一个元素要入栈时，压入尾部栈； 当要出栈时，从头部栈弹出，若头部栈为空，则将尾部栈所有元素加入到头部栈。 type CQueue struct { frontStack *list.List backStack *list.List } func Constructor() CQueue { return CQueue{ frontStack: list.New(), backStack: list.New(), } } func (this *CQueue) AppendTail(value int) { this.">
     </head>
     <body class="
     article-page 
@@ -262,39 +262,39 @@
 <li>当一个元素要入栈时，压入尾部栈；</li>
 <li>当要出栈时，从头部栈弹出，若头部栈为空，则将尾部栈所有元素加入到头部栈。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CQueue</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">frontStack</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
-	<span style="color:#a6e22e">backStack</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">CQueue</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">CQueue</span>{
-		<span style="color:#a6e22e">frontStack</span>: <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
-		<span style="color:#a6e22e">backStack</span>:  <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CQueue</span>) <span style="color:#a6e22e">AppendTail</span>(<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">int</span>) {
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">value</span>)
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CQueue</span>) <span style="color:#a6e22e">DeleteHead</span>() <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">frontStack</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">Back</span>()
-			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">v</span>)
-			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">frontStack</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Value</span>)
-		}
-	}
-
-	<span style="color:#a6e22e">front</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">frontStack</span>.<span style="color:#a6e22e">Back</span>()
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">frontStack</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">front</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">front</span>.<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CQueue</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">frontStack</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">backStack</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">List</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">CQueue</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">CQueue</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">frontStack</span>: <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">backStack</span>:  <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">New</span>(),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CQueue</span>) <span style="color:#a6e22e">AppendTail</span>(<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">value</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CQueue</span>) <span style="color:#a6e22e">DeleteHead</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">frontStack</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">Len</span>() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">Len</span>() &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">Back</span>()
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">backStack</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">v</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">frontStack</span>.<span style="color:#a6e22e">PushBack</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Value</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">front</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">frontStack</span>.<span style="color:#a6e22e">Back</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">frontStack</span>.<span style="color:#a6e22e">Remove</span>(<span style="color:#a6e22e">front</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">front</span>.<span style="color:#a6e22e">Value</span>.(<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

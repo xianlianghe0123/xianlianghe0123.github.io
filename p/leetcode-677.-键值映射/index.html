@@ -4,7 +4,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/map-sum-pairs/
 难度： 中等
 题目描述 实现一个 MapSum 类，支持两个方法，insert 和 sum：
- MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。  示例：  输入：
+MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。 示例： 输入：
 [&amp;ldquo;MapSum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;]
 [[], [&amp;ldquo;apple&amp;rdquo;, 3], [&amp;ldquo;ap&amp;rdquo;], [&amp;ldquo;app&amp;rdquo;, 2], [&amp;ldquo;ap&amp;rdquo;]]
 输出：
@@ -20,7 +20,7 @@ mapSum.sum(&amp;ldquo;ap&amp;rdquo;); // return 3 (apple = 3)'><title>Leetcode 6
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/map-sum-pairs/
 难度： 中等
 题目描述 实现一个 MapSum 类，支持两个方法，insert 和 sum：
- MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。  示例：  输入：
+MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。 示例： 输入：
 [&amp;ldquo;MapSum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;]
 [[], [&amp;ldquo;apple&amp;rdquo;, 3], [&amp;ldquo;ap&amp;rdquo;], [&amp;ldquo;app&amp;rdquo;, 2], [&amp;ldquo;ap&amp;rdquo;]]
 输出：
@@ -36,7 +36,7 @@ mapSum.sum(&amp;ldquo;ap&amp;rdquo;); // return 3 (apple = 3)'>
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/map-sum-pairs/
 难度： 中等
 题目描述 实现一个 MapSum 类，支持两个方法，insert 和 sum：
- MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。  示例：  输入：
+MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。 示例： 输入：
 [&amp;ldquo;MapSum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;sum&amp;rdquo;]
 [[], [&amp;ldquo;apple&amp;rdquo;, 3], [&amp;ldquo;ap&amp;rdquo;], [&amp;ldquo;app&amp;rdquo;, 2], [&amp;ldquo;ap&amp;rdquo;]]
 输出：
@@ -258,30 +258,30 @@ mapSum.sum(&ldquo;ap&rdquo;);           // return 5 (apple + app = 3 + 2 = 5)</p
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>使用哈希表记录字符串和整数的对象的映射。每次求和时，遍历哈希表找到满足条件的 <code>key</code> 然后对 <code>val</code> 求和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MapSum</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">hash</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MapSum</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MapSum</span>{
-		<span style="color:#a6e22e">hash</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>),
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MapSum</span>) <span style="color:#a6e22e">Insert</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">val</span> <span style="color:#66d9ef">int</span>) {
-	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">key</span>] = <span style="color:#a6e22e">val</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MapSum</span>) <span style="color:#a6e22e">Sum</span>(<span style="color:#a6e22e">prefix</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">HasPrefix</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">prefix</span>) {
-			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">val</span>
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MapSum</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">hash</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MapSum</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MapSum</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">hash</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MapSum</span>) <span style="color:#a6e22e">Insert</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">val</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">key</span>] = <span style="color:#a6e22e">val</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MapSum</span>) <span style="color:#a6e22e">Sum</span>(<span style="color:#a6e22e">prefix</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hash</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">HasPrefix</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">prefix</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">val</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>
@@ -293,55 +293,55 @@ mapSum.sum(&ldquo;ap&rdquo;);           // return 5 (apple + app = 3 + 2 = 5)</p
 </ul>
 <h4 id="trie树">Trie树</h4>
 <p>使用 Trie树 记录字符串和整数的对象的映射。每次求和时，遍历 Trie树 的前缀部分，然后使用深度优先搜索找到所有满足前缀的 <code>key</code> ，并对 <code>val</code> 求和。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">val</span>   <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">child</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MapSum</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MapSum</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MapSum</span>{
-		<span style="color:#a6e22e">head</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
-			<span style="color:#a6e22e">child</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
-		},
-	}
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MapSum</span>) <span style="color:#a6e22e">Insert</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">val</span> <span style="color:#66d9ef">int</span>) {
-	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">key</span>); <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>[<span style="color:#a6e22e">i</span>]] {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>[<span style="color:#a6e22e">i</span>]]; !<span style="color:#a6e22e">ok</span> {
-			<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
-				<span style="color:#a6e22e">val</span>:   <span style="color:#ae81ff">0</span>,
-				<span style="color:#a6e22e">child</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
-			}
-		}
-	}
-	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">val</span> = <span style="color:#a6e22e">val</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MapSum</span>) <span style="color:#a6e22e">Sum</span>(<span style="color:#a6e22e">prefix</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">prefix</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ok</span> <span style="color:#66d9ef">bool</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">ok</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">prefix</span>[<span style="color:#a6e22e">i</span>]]; !<span style="color:#a6e22e">ok</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-		}
-	}
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">val</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span> {
-			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>)
-		}
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>)
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">val</span>   <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">child</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MapSum</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">MapSum</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MapSum</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">head</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">child</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MapSum</span>) <span style="color:#a6e22e">Insert</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">val</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">key</span>); <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>[<span style="color:#a6e22e">i</span>]] {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>[<span style="color:#a6e22e">i</span>]]; !<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>[<span style="color:#a6e22e">i</span>]] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">val</span>:   <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">child</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">val</span> = <span style="color:#a6e22e">val</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MapSum</span>) <span style="color:#a6e22e">Sum</span>(<span style="color:#a6e22e">prefix</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">prefix</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ok</span> <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">ok</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">prefix</span>[<span style="color:#a6e22e">i</span>]]; !<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dfs</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfs</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">val</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">child</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">node</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：
 <ul>

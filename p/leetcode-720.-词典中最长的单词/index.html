@@ -5,13 +5,16 @@
 难度： 简单
 题目描述 给出一个字符串数组 words 组成的一本英语词典。返回 words 中最长的一个单词，该单词是由 words 词典中其他单词逐步添加一个字母组成。
 若其中有多个可行的答案，则返回答案中字典序最小的单词。若无答案，则返回空字符串。
-示例 1：  输入： words = [&amp;ldquo;w&amp;rdquo;,&amp;ldquo;wo&amp;rdquo;,&amp;ldquo;wor&amp;rdquo;,&amp;ldquo;worl&amp;rdquo;, &amp;ldquo;world&amp;rdquo;]
+示例 1： 输入： words = [&amp;ldquo;w&amp;rdquo;,&amp;ldquo;wo&amp;rdquo;,&amp;ldquo;wor&amp;rdquo;,&amp;ldquo;worl&amp;rdquo;, &amp;ldquo;world&amp;rdquo;]
 输出： &amp;ldquo;world&amp;rdquo;
 解释： 单词&amp;quot;world&amp;quot;可由&amp;quot;w&amp;quot;, &amp;ldquo;wo&amp;rdquo;, &amp;ldquo;wor&amp;rdquo;, 和 &amp;ldquo;worl&amp;quot;逐步添加一个字母组成。
- 示例 2：  输入： words = [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;banana&amp;rdquo;, &amp;ldquo;app&amp;rdquo;, &amp;ldquo;appl&amp;rdquo;, &amp;ldquo;ap&amp;rdquo;, &amp;ldquo;apply&amp;rdquo;, &amp;ldquo;apple&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;banana&amp;rdquo;, &amp;ldquo;app&amp;rdquo;, &amp;ldquo;appl&amp;rdquo;, &amp;ldquo;ap&amp;rdquo;, &amp;ldquo;apply&amp;rdquo;, &amp;ldquo;apple&amp;rdquo;]
 输出： &amp;ldquo;apple&amp;rdquo;
 解释： &amp;ldquo;apply&amp;rdquo; 和 &amp;ldquo;apple&amp;rdquo; 都能由词典中的单词组成。但是 &amp;ldquo;apple&amp;rdquo; 的字典序小于 &amp;ldquo;apply&amp;rdquo;
- 提示：  1 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 30 所有输入的字符串 words[i] 都只包含小写字母。  解题思路 排序&#43;哈希 对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。'><title>Leetcode 720. 词典中最长的单词</title>
+提示： 1 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 30 所有输入的字符串 words[i] 都只包含小写字母。 解题思路 排序&#43;哈希 对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。
+将遍历过的满足条件的字符串加入到哈希表中，每次遍历查看前缀是否在哈希表中，若满足条件也将起加入到哈希表中。
+遍历过程中维护最长且字典序最小的字符串。
+func longestWord(words []string) string { sort.'><title>Leetcode 720. 词典中最长的单词</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-720.-%E8%AF%8D%E5%85%B8%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E5%8D%95%E8%AF%8D/'>
 
@@ -20,13 +23,16 @@
 难度： 简单
 题目描述 给出一个字符串数组 words 组成的一本英语词典。返回 words 中最长的一个单词，该单词是由 words 词典中其他单词逐步添加一个字母组成。
 若其中有多个可行的答案，则返回答案中字典序最小的单词。若无答案，则返回空字符串。
-示例 1：  输入： words = [&amp;ldquo;w&amp;rdquo;,&amp;ldquo;wo&amp;rdquo;,&amp;ldquo;wor&amp;rdquo;,&amp;ldquo;worl&amp;rdquo;, &amp;ldquo;world&amp;rdquo;]
+示例 1： 输入： words = [&amp;ldquo;w&amp;rdquo;,&amp;ldquo;wo&amp;rdquo;,&amp;ldquo;wor&amp;rdquo;,&amp;ldquo;worl&amp;rdquo;, &amp;ldquo;world&amp;rdquo;]
 输出： &amp;ldquo;world&amp;rdquo;
 解释： 单词&amp;quot;world&amp;quot;可由&amp;quot;w&amp;quot;, &amp;ldquo;wo&amp;rdquo;, &amp;ldquo;wor&amp;rdquo;, 和 &amp;ldquo;worl&amp;quot;逐步添加一个字母组成。
- 示例 2：  输入： words = [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;banana&amp;rdquo;, &amp;ldquo;app&amp;rdquo;, &amp;ldquo;appl&amp;rdquo;, &amp;ldquo;ap&amp;rdquo;, &amp;ldquo;apply&amp;rdquo;, &amp;ldquo;apple&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;banana&amp;rdquo;, &amp;ldquo;app&amp;rdquo;, &amp;ldquo;appl&amp;rdquo;, &amp;ldquo;ap&amp;rdquo;, &amp;ldquo;apply&amp;rdquo;, &amp;ldquo;apple&amp;rdquo;]
 输出： &amp;ldquo;apple&amp;rdquo;
 解释： &amp;ldquo;apply&amp;rdquo; 和 &amp;ldquo;apple&amp;rdquo; 都能由词典中的单词组成。但是 &amp;ldquo;apple&amp;rdquo; 的字典序小于 &amp;ldquo;apply&amp;rdquo;
- 提示：  1 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 30 所有输入的字符串 words[i] 都只包含小写字母。  解题思路 排序&#43;哈希 对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。'>
+提示： 1 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 30 所有输入的字符串 words[i] 都只包含小写字母。 解题思路 排序&#43;哈希 对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。
+将遍历过的满足条件的字符串加入到哈希表中，每次遍历查看前缀是否在哈希表中，若满足条件也将起加入到哈希表中。
+遍历过程中维护最长且字典序最小的字符串。
+func longestWord(words []string) string { sort.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-720.-%E8%AF%8D%E5%85%B8%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E5%8D%95%E8%AF%8D/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-03-17T09:59:59&#43;08:00'/><meta property='article:modified_time' content='2022-03-17T09:59:59&#43;08:00'/>
@@ -35,13 +41,16 @@
 难度： 简单
 题目描述 给出一个字符串数组 words 组成的一本英语词典。返回 words 中最长的一个单词，该单词是由 words 词典中其他单词逐步添加一个字母组成。
 若其中有多个可行的答案，则返回答案中字典序最小的单词。若无答案，则返回空字符串。
-示例 1：  输入： words = [&amp;ldquo;w&amp;rdquo;,&amp;ldquo;wo&amp;rdquo;,&amp;ldquo;wor&amp;rdquo;,&amp;ldquo;worl&amp;rdquo;, &amp;ldquo;world&amp;rdquo;]
+示例 1： 输入： words = [&amp;ldquo;w&amp;rdquo;,&amp;ldquo;wo&amp;rdquo;,&amp;ldquo;wor&amp;rdquo;,&amp;ldquo;worl&amp;rdquo;, &amp;ldquo;world&amp;rdquo;]
 输出： &amp;ldquo;world&amp;rdquo;
 解释： 单词&amp;quot;world&amp;quot;可由&amp;quot;w&amp;quot;, &amp;ldquo;wo&amp;rdquo;, &amp;ldquo;wor&amp;rdquo;, 和 &amp;ldquo;worl&amp;quot;逐步添加一个字母组成。
- 示例 2：  输入： words = [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;banana&amp;rdquo;, &amp;ldquo;app&amp;rdquo;, &amp;ldquo;appl&amp;rdquo;, &amp;ldquo;ap&amp;rdquo;, &amp;ldquo;apply&amp;rdquo;, &amp;ldquo;apple&amp;rdquo;]
+示例 2： 输入： words = [&amp;ldquo;a&amp;rdquo;, &amp;ldquo;banana&amp;rdquo;, &amp;ldquo;app&amp;rdquo;, &amp;ldquo;appl&amp;rdquo;, &amp;ldquo;ap&amp;rdquo;, &amp;ldquo;apply&amp;rdquo;, &amp;ldquo;apple&amp;rdquo;]
 输出： &amp;ldquo;apple&amp;rdquo;
 解释： &amp;ldquo;apply&amp;rdquo; 和 &amp;ldquo;apple&amp;rdquo; 都能由词典中的单词组成。但是 &amp;ldquo;apple&amp;rdquo; 的字典序小于 &amp;ldquo;apply&amp;rdquo;
- 提示：  1 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 30 所有输入的字符串 words[i] 都只包含小写字母。  解题思路 排序&#43;哈希 对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。">
+提示： 1 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 30 所有输入的字符串 words[i] 都只包含小写字母。 解题思路 排序&#43;哈希 对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。
+将遍历过的满足条件的字符串加入到哈希表中，每次遍历查看前缀是否在哈希表中，若满足条件也将起加入到哈希表中。
+遍历过程中维护最长且字典序最小的字符串。
+func longestWord(words []string) string { sort.">
     </head>
     <body class="
     article-page 
@@ -250,26 +259,26 @@
 <p>对字符串数组按照长度进行一轮排序，然后进行遍历，可以保证前缀先进行遍历。</p>
 <p>将遍历过的满足条件的字符串加入到哈希表中，每次遍历查看前缀是否在哈希表中，若满足条件也将起加入到哈希表中。</p>
 <p>遍历过程中维护最长且字典序最小的字符串。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">longestWord</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">words</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]
-	})
-	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">struct</span>{}{
-		<span style="color:#e6db74">&#34;&#34;</span>: {},
-	}
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;&#34;</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">word</span>[:len(<span style="color:#a6e22e">word</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]]; !<span style="color:#a6e22e">ok</span> {
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">ans</span>) &lt; len(<span style="color:#a6e22e">word</span>) <span style="color:#f92672">||</span> (len(<span style="color:#a6e22e">ans</span>) <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">word</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ans</span> &gt; <span style="color:#a6e22e">word</span>) {
-			<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">word</span>
-		}
-		<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">word</span>] = <span style="color:#66d9ef">struct</span>{}{}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">longestWord</span>(<span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">words</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">exist</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">struct</span>{}{
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;&#34;</span>: {},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">word</span>[:len(<span style="color:#a6e22e">word</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]]; !<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">ans</span>) &lt; len(<span style="color:#a6e22e">word</span>) <span style="color:#f92672">||</span> (len(<span style="color:#a6e22e">ans</span>) <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">word</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ans</span> &gt; <span style="color:#a6e22e">word</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">word</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exist</span>[<span style="color:#a6e22e">word</span>] = <span style="color:#66d9ef">struct</span>{}{}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log{N}), N = len(words[i]) $</li>
 <li>空间复杂度：$ O(N) $</li>

@@ -4,15 +4,15 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/
 难度： 中等
 题目描述 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
-示例 1：  输入: [7,1,5,3,6,4]
+示例 1： 输入: [7,1,5,3,6,4]
 输出: 5
 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
 注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
- 示例 2：  输入: [7,6,4,3,1]
+示例 2： 输入: [7,6,4,3,1]
 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
- 限制：  0 &amp;lt;= 数组长度 &amp;lt;= 105  解题思路 暴力求解 枚举买卖点，记录最大值。
-func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &#43; 1; j &amp;lt; len(prices); j&#43;&#43; { if ans &amp;lt; prices[j]-prices[i] { ans = prices[j] - prices[i] } } } return ans } 复杂度  时间复杂度：$ O(N^2), N = len(prices) $ 空间复杂度：$ O(1) $  遍历 使用 min 记录到目前为止股票的最小值，每次使用当前股票价格减去 min ，更新最大利润。'><title>剑指 Offer 63. 股票的最大利润</title>
+限制： 0 &amp;lt;= 数组长度 &amp;lt;= 105 解题思路 暴力求解 枚举买卖点，记录最大值。
+func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &#43; 1; j &amp;lt; len(prices); j&#43;&#43; { if ans &amp;lt; prices[j]-prices[i] { ans = prices[j] - prices[i] } } } return ans } 复杂度 时间复杂度：$ O(N^2), N = len(prices) $ 空间复杂度：$ O(1) $ 遍历 使用 min 记录到目前为止股票的最小值，每次使用当前股票价格减去 min ，更新最大利润。'><title>剑指 Offer 63. 股票的最大利润</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-63.-%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6/'>
 
@@ -20,15 +20,15 @@ func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/
 难度： 中等
 题目描述 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
-示例 1：  输入: [7,1,5,3,6,4]
+示例 1： 输入: [7,1,5,3,6,4]
 输出: 5
 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
 注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
- 示例 2：  输入: [7,6,4,3,1]
+示例 2： 输入: [7,6,4,3,1]
 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
- 限制：  0 &amp;lt;= 数组长度 &amp;lt;= 105  解题思路 暴力求解 枚举买卖点，记录最大值。
-func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &#43; 1; j &amp;lt; len(prices); j&#43;&#43; { if ans &amp;lt; prices[j]-prices[i] { ans = prices[j] - prices[i] } } } return ans } 复杂度  时间复杂度：$ O(N^2), N = len(prices) $ 空间复杂度：$ O(1) $  遍历 使用 min 记录到目前为止股票的最小值，每次使用当前股票价格减去 min ，更新最大利润。'>
+限制： 0 &amp;lt;= 数组长度 &amp;lt;= 105 解题思路 暴力求解 枚举买卖点，记录最大值。
+func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &#43; 1; j &amp;lt; len(prices); j&#43;&#43; { if ans &amp;lt; prices[j]-prices[i] { ans = prices[j] - prices[i] } } } return ans } 复杂度 时间复杂度：$ O(N^2), N = len(prices) $ 空间复杂度：$ O(1) $ 遍历 使用 min 记录到目前为止股票的最小值，每次使用当前股票价格减去 min ，更新最大利润。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/%E5%89%91%E6%8C%87-offer-63.-%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-01T20:29:26&#43;08:00'/><meta property='article:modified_time' content='2021-10-01T20:29:26&#43;08:00'/>
@@ -36,15 +36,15 @@ func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/
 难度： 中等
 题目描述 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
-示例 1：  输入: [7,1,5,3,6,4]
+示例 1： 输入: [7,1,5,3,6,4]
 输出: 5
 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
 注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
- 示例 2：  输入: [7,6,4,3,1]
+示例 2： 输入: [7,6,4,3,1]
 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
- 限制：  0 &amp;lt;= 数组长度 &amp;lt;= 105  解题思路 暴力求解 枚举买卖点，记录最大值。
-func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &#43; 1; j &amp;lt; len(prices); j&#43;&#43; { if ans &amp;lt; prices[j]-prices[i] { ans = prices[j] - prices[i] } } } return ans } 复杂度  时间复杂度：$ O(N^2), N = len(prices) $ 空间复杂度：$ O(1) $  遍历 使用 min 记录到目前为止股票的最小值，每次使用当前股票价格减去 min ，更新最大利润。">
+限制： 0 &amp;lt;= 数组长度 &amp;lt;= 105 解题思路 暴力求解 枚举买卖点，记录最大值。
+func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &#43; 1; j &amp;lt; len(prices); j&#43;&#43; { if ans &amp;lt; prices[j]-prices[i] { ans = prices[j] - prices[i] } } } return ans } 复杂度 时间复杂度：$ O(N^2), N = len(prices) $ 空间复杂度：$ O(1) $ 遍历 使用 min 记录到目前为止股票的最小值，每次使用当前股票价格减去 min ，更新最大利润。">
     </head>
     <body class="
     article-page 
@@ -249,38 +249,38 @@ func maxProfit(prices []int) int { ans := 0 for i := range prices { for j := i &
 <h3 id="解题思路">解题思路</h3>
 <h4 id="暴力求解">暴力求解</h4>
 <p>枚举买卖点，记录最大值。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProfit</span>(<span style="color:#a6e22e">prices</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">prices</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">prices</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ans</span> &lt; <span style="color:#a6e22e">prices</span>[<span style="color:#a6e22e">j</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">prices</span>[<span style="color:#a6e22e">i</span>] {
-				<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">prices</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">prices</span>[<span style="color:#a6e22e">i</span>]
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProfit</span>(<span style="color:#a6e22e">prices</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">prices</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">prices</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ans</span> &lt; <span style="color:#a6e22e">prices</span>[<span style="color:#a6e22e">j</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">prices</span>[<span style="color:#a6e22e">i</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">prices</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">prices</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^2), N = len(prices) $</li>
 <li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="遍历">遍历</h4>
 <p>使用 <code>min</code> 记录到目前为止股票的最小值，每次使用当前股票价格减去 <code>min</code> ，更新最大利润。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProfit</span>(<span style="color:#a6e22e">prices</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-    <span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt32</span>)
-    <span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">price</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">prices</span> {
-        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">price</span> {
-            <span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">price</span>
-        }
-        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ans</span> &lt; <span style="color:#a6e22e">price</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span> {
-            <span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">price</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>
-        }
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度-1">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxProfit</span>(<span style="color:#a6e22e">prices</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt32</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">price</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">prices</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#a6e22e">price</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">price</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ans</span> &lt; <span style="color:#a6e22e">price</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">price</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(prices) $</li>
 <li>空间复杂度：$ O(1) $</li>

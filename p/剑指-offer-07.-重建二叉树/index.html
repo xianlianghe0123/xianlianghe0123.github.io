@@ -5,11 +5,11 @@
 难度： 中等
 题目描述 输入某二叉树的前序遍历和中序遍历的结果，请构建该二叉树并返回其根节点。
 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
-示例 1：  输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+示例 1： 输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 输出: [3,9,20,null,null,15,7]
- 示例 2：  输入: preorder = [-1], inorder = [-1]
+示例 2： 输入: preorder = [-1], inorder = [-1]
 输出: [-1]
- 提示：  0 &amp;lt;= 链表长度 &amp;lt;= 10000  解题思路 递归 二叉树的先序遍历的顺序是 根&amp;gt;左&amp;gt;右，而中序遍历顺序为 左&amp;gt;根&amp;gt;右。
+提示： 0 &amp;lt;= 链表长度 &amp;lt;= 10000 解题思路 递归 二叉树的先序遍历的顺序是 根&amp;gt;左&amp;gt;右，而中序遍历顺序为 左&amp;gt;根&amp;gt;右。
 故先序遍历的第一个结点即为 根结点，然后在中序遍历中找到根节点，其左侧所有元素位于为左子树，右侧所有元素在右子树。
 左右子树均按照上述规则，递归地建立二叉树。
 func buildTree(preorder []int, inorder []int) *TreeNode { if len(preorder) == 0 { return nil } this := &amp;amp;TreeNode{ Val: preorder[0], } for i, val := range inorder { if val == preorder[0] { this.'><title>剑指 Offer 07. 重建二叉树</title>
@@ -21,11 +21,11 @@ func buildTree(preorder []int, inorder []int) *TreeNode { if len(preorder) == 0 
 难度： 中等
 题目描述 输入某二叉树的前序遍历和中序遍历的结果，请构建该二叉树并返回其根节点。
 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
-示例 1：  输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+示例 1： 输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 输出: [3,9,20,null,null,15,7]
- 示例 2：  输入: preorder = [-1], inorder = [-1]
+示例 2： 输入: preorder = [-1], inorder = [-1]
 输出: [-1]
- 提示：  0 &amp;lt;= 链表长度 &amp;lt;= 10000  解题思路 递归 二叉树的先序遍历的顺序是 根&amp;gt;左&amp;gt;右，而中序遍历顺序为 左&amp;gt;根&amp;gt;右。
+提示： 0 &amp;lt;= 链表长度 &amp;lt;= 10000 解题思路 递归 二叉树的先序遍历的顺序是 根&amp;gt;左&amp;gt;右，而中序遍历顺序为 左&amp;gt;根&amp;gt;右。
 故先序遍历的第一个结点即为 根结点，然后在中序遍历中找到根节点，其左侧所有元素位于为左子树，右侧所有元素在右子树。
 左右子树均按照上述规则，递归地建立二叉树。
 func buildTree(preorder []int, inorder []int) *TreeNode { if len(preorder) == 0 { return nil } this := &amp;amp;TreeNode{ Val: preorder[0], } for i, val := range inorder { if val == preorder[0] { this.'>
@@ -37,11 +37,11 @@ func buildTree(preorder []int, inorder []int) *TreeNode { if len(preorder) == 0 
 难度： 中等
 题目描述 输入某二叉树的前序遍历和中序遍历的结果，请构建该二叉树并返回其根节点。
 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
-示例 1：  输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+示例 1： 输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 输出: [3,9,20,null,null,15,7]
- 示例 2：  输入: preorder = [-1], inorder = [-1]
+示例 2： 输入: preorder = [-1], inorder = [-1]
 输出: [-1]
- 提示：  0 &amp;lt;= 链表长度 &amp;lt;= 10000  解题思路 递归 二叉树的先序遍历的顺序是 根&amp;gt;左&amp;gt;右，而中序遍历顺序为 左&amp;gt;根&amp;gt;右。
+提示： 0 &amp;lt;= 链表长度 &amp;lt;= 10000 解题思路 递归 二叉树的先序遍历的顺序是 根&amp;gt;左&amp;gt;右，而中序遍历顺序为 左&amp;gt;根&amp;gt;右。
 故先序遍历的第一个结点即为 根结点，然后在中序遍历中找到根节点，其左侧所有元素位于为左子树，右侧所有元素在右子树。
 左右子树均按照上述规则，递归地建立二叉树。
 func buildTree(preorder []int, inorder []int) *TreeNode { if len(preorder) == 0 { return nil } this := &amp;amp;TreeNode{ Val: preorder[0], } for i, val := range inorder { if val == preorder[0] { this.">
@@ -250,22 +250,22 @@ func buildTree(preorder []int, inorder []int) *TreeNode { if len(preorder) == 0 
 <p>二叉树的先序遍历的顺序是 <strong>根&gt;左&gt;右</strong>，而中序遍历顺序为 <strong>左&gt;根&gt;右</strong>。</p>
 <p>故先序遍历的第一个结点即为 <strong>根结点</strong>，然后在中序遍历中找到根节点，其左侧所有元素位于为左子树，右侧所有元素在右子树。</p>
 <p>左右子树均按照上述规则，递归地建立二叉树。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">buildTree</span>(<span style="color:#a6e22e">preorder</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">inorder</span> []<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">preorder</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-	}
-	<span style="color:#a6e22e">this</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">TreeNode</span>{
-		<span style="color:#a6e22e">Val</span>: <span style="color:#a6e22e">preorder</span>[<span style="color:#ae81ff">0</span>],
-	}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">inorder</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">preorder</span>[<span style="color:#ae81ff">0</span>] {
-			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">Left</span> = <span style="color:#a6e22e">buildTree</span>(<span style="color:#a6e22e">preorder</span>[<span style="color:#ae81ff">1</span>:<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">inorder</span>[:<span style="color:#a6e22e">i</span>])
-			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">Right</span> = <span style="color:#a6e22e">buildTree</span>(<span style="color:#a6e22e">preorder</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:], <span style="color:#a6e22e">inorder</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:])
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">buildTree</span>(<span style="color:#a6e22e">preorder</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">inorder</span> []<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">preorder</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">TreeNode</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Val</span>: <span style="color:#a6e22e">preorder</span>[<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">inorder</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">preorder</span>[<span style="color:#ae81ff">0</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">Left</span> = <span style="color:#a6e22e">buildTree</span>(<span style="color:#a6e22e">preorder</span>[<span style="color:#ae81ff">1</span>:<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">inorder</span>[:<span style="color:#a6e22e">i</span>])
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">Right</span> = <span style="color:#a6e22e">buildTree</span>(<span style="color:#a6e22e">preorder</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:], <span style="color:#a6e22e">inorder</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:])
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">this</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N\log N), N = size(Tree) $</li>
 <li>空间复杂度：$ O(\log N) $</li>

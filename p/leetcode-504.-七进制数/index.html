@@ -4,12 +4,12 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/base-7/
 难度： 简单
 题目描述 给定一个整数 num，将其转化为 7 进制，并以字符串形式输出。
-示例 1：  输入： num = 100
+示例 1： 输入： num = 100
 输出： &amp;ldquo;202&amp;rdquo;
- 示例 2：  输入： num = -7
+示例 2： 输入： num = -7
 输出： &amp;ldquo;-10&amp;rdquo;
- 提示：  -107 &amp;lt;= num &amp;lt;= 107  解题思路 数学 除7取余，逆序排列。负数需要转换为对应相反数求得7进制，之后再在前面加上 &#39;-&#39;。
-func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; } convertPositiveToBase7 := func(num int) string { ans := make([]byte, 0, 11) for ; num &amp;gt; 0; num /= 7 { ans = append(ans, byte(&amp;#39;0&amp;#39;&#43;num%7)) } for i := len(ans)/2 - 1; i &amp;gt;= 0; i-- { ans[i], ans[len(ans)-1-i] = ans[len(ans)-1-i], ans[i] } return string(ans) } if num &amp;lt; 0 { return &amp;#34;-&amp;#34; &#43; convertPositiveToBase7(-num) } return convertPositiveToBase7(num) } 复杂度  时间复杂度：$ O(\log{\lvert{num}\rvert}) $ 空间复杂度：$ O(1) $  '><title>Leetcode 504. 七进制数</title>
+提示： -107 &amp;lt;= num &amp;lt;= 107 解题思路 数学 除7取余，逆序排列。负数需要转换为对应相反数求得7进制，之后再在前面加上 &#39;-&#39;。
+func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; } convertPositiveToBase7 := func(num int) string { ans := make([]byte, 0, 11) for ; num &amp;gt; 0; num /= 7 { ans = append(ans, byte(&amp;#39;0&amp;#39;&#43;num%7)) } for i := len(ans)/2 - 1; i &amp;gt;= 0; i-- { ans[i], ans[len(ans)-1-i] = ans[len(ans)-1-i], ans[i] } return string(ans) } if num &amp;lt; 0 { return &amp;#34;-&amp;#34; &#43; convertPositiveToBase7(-num) } return convertPositiveToBase7(num) } 复杂度 时间复杂度：$ O(\log{\lvert{num}\rvert}) $ 空间复杂度：$ O(1) $ '><title>Leetcode 504. 七进制数</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-504.-%E4%B8%83%E8%BF%9B%E5%88%B6%E6%95%B0/'>
 
@@ -17,12 +17,12 @@ func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; }
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/base-7/
 难度： 简单
 题目描述 给定一个整数 num，将其转化为 7 进制，并以字符串形式输出。
-示例 1：  输入： num = 100
+示例 1： 输入： num = 100
 输出： &amp;ldquo;202&amp;rdquo;
- 示例 2：  输入： num = -7
+示例 2： 输入： num = -7
 输出： &amp;ldquo;-10&amp;rdquo;
- 提示：  -107 &amp;lt;= num &amp;lt;= 107  解题思路 数学 除7取余，逆序排列。负数需要转换为对应相反数求得7进制，之后再在前面加上 &#39;-&#39;。
-func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; } convertPositiveToBase7 := func(num int) string { ans := make([]byte, 0, 11) for ; num &amp;gt; 0; num /= 7 { ans = append(ans, byte(&amp;#39;0&amp;#39;&#43;num%7)) } for i := len(ans)/2 - 1; i &amp;gt;= 0; i-- { ans[i], ans[len(ans)-1-i] = ans[len(ans)-1-i], ans[i] } return string(ans) } if num &amp;lt; 0 { return &amp;#34;-&amp;#34; &#43; convertPositiveToBase7(-num) } return convertPositiveToBase7(num) } 复杂度  时间复杂度：$ O(\log{\lvert{num}\rvert}) $ 空间复杂度：$ O(1) $  '>
+提示： -107 &amp;lt;= num &amp;lt;= 107 解题思路 数学 除7取余，逆序排列。负数需要转换为对应相反数求得7进制，之后再在前面加上 &#39;-&#39;。
+func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; } convertPositiveToBase7 := func(num int) string { ans := make([]byte, 0, 11) for ; num &amp;gt; 0; num /= 7 { ans = append(ans, byte(&amp;#39;0&amp;#39;&#43;num%7)) } for i := len(ans)/2 - 1; i &amp;gt;= 0; i-- { ans[i], ans[len(ans)-1-i] = ans[len(ans)-1-i], ans[i] } return string(ans) } if num &amp;lt; 0 { return &amp;#34;-&amp;#34; &#43; convertPositiveToBase7(-num) } return convertPositiveToBase7(num) } 复杂度 时间复杂度：$ O(\log{\lvert{num}\rvert}) $ 空间复杂度：$ O(1) $ '>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-504.-%E4%B8%83%E8%BF%9B%E5%88%B6%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-03-07T09:33:06&#43;08:00'/><meta property='article:modified_time' content='2022-03-07T09:33:06&#43;08:00'/>
@@ -30,12 +30,12 @@ func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; }
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/base-7/
 难度： 简单
 题目描述 给定一个整数 num，将其转化为 7 进制，并以字符串形式输出。
-示例 1：  输入： num = 100
+示例 1： 输入： num = 100
 输出： &amp;ldquo;202&amp;rdquo;
- 示例 2：  输入： num = -7
+示例 2： 输入： num = -7
 输出： &amp;ldquo;-10&amp;rdquo;
- 提示：  -107 &amp;lt;= num &amp;lt;= 107  解题思路 数学 除7取余，逆序排列。负数需要转换为对应相反数求得7进制，之后再在前面加上 &#39;-&#39;。
-func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; } convertPositiveToBase7 := func(num int) string { ans := make([]byte, 0, 11) for ; num &amp;gt; 0; num /= 7 { ans = append(ans, byte(&amp;#39;0&amp;#39;&#43;num%7)) } for i := len(ans)/2 - 1; i &amp;gt;= 0; i-- { ans[i], ans[len(ans)-1-i] = ans[len(ans)-1-i], ans[i] } return string(ans) } if num &amp;lt; 0 { return &amp;#34;-&amp;#34; &#43; convertPositiveToBase7(-num) } return convertPositiveToBase7(num) } 复杂度  时间复杂度：$ O(\log{\lvert{num}\rvert}) $ 空间复杂度：$ O(1) $  ">
+提示： -107 &amp;lt;= num &amp;lt;= 107 解题思路 数学 除7取余，逆序排列。负数需要转换为对应相反数求得7进制，之后再在前面加上 &#39;-&#39;。
+func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; } convertPositiveToBase7 := func(num int) string { ans := make([]byte, 0, 11) for ; num &amp;gt; 0; num /= 7 { ans = append(ans, byte(&amp;#39;0&amp;#39;&#43;num%7)) } for i := len(ans)/2 - 1; i &amp;gt;= 0; i-- { ans[i], ans[len(ans)-1-i] = ans[len(ans)-1-i], ans[i] } return string(ans) } if num &amp;lt; 0 { return &amp;#34;-&amp;#34; &#43; convertPositiveToBase7(-num) } return convertPositiveToBase7(num) } 复杂度 时间复杂度：$ O(\log{\lvert{num}\rvert}) $ 空间复杂度：$ O(1) $ ">
     </head>
     <body class="
     article-page 
@@ -237,26 +237,26 @@ func convertToBase7(num int) string { if num == 0 { return &amp;#34;0&amp;#34; }
 <h3 id="解题思路">解题思路</h3>
 <h4 id="数学">数学</h4>
 <p>除7取余，逆序排列。负数需要转换为对应相反数求得7进制，之后再在前面加上 <code>'-'</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertToBase7</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;0&#34;</span>
-	}
-	<span style="color:#a6e22e">convertPositiveToBase7</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
-		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">11</span>)
-		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">num</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">7</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, byte(<span style="color:#e6db74">&#39;0&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">num</span><span style="color:#f92672">%</span><span style="color:#ae81ff">7</span>))
-		}
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>]
-		}
-		<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">ans</span>)
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &lt; <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">convertPositiveToBase7</span>(<span style="color:#f92672">-</span><span style="color:#a6e22e">num</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">convertPositiveToBase7</span>(<span style="color:#a6e22e">num</span>)
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertToBase7</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">convertPositiveToBase7</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">num</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">7</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, byte(<span style="color:#e6db74">&#39;0&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">num</span><span style="color:#f92672">%</span><span style="color:#ae81ff">7</span>))
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">ans</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">num</span> &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">convertPositiveToBase7</span>(<span style="color:#f92672">-</span><span style="color:#a6e22e">num</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">convertPositiveToBase7</span>(<span style="color:#a6e22e">num</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(\log{\lvert{num}\rvert}) $</li>
 <li>空间复杂度：$ O(1) $</li>

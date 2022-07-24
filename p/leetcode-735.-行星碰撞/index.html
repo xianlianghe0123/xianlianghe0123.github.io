@@ -6,16 +6,16 @@
 题目描述 给定一个整数数组 asteroids，表示在同一行的行星。
 对于数组中的每一个元素，其绝对值表示行星的大小，正负表示行星的移动方向（正表示向右移动，负表示向左移动）。每一颗行星以相同的速度移动。
 找出碰撞后剩下的所有行星。碰撞规则：两个行星相互碰撞，较小的行星会爆炸。如果两颗行星大小相同，则两颗行星都会爆炸。两颗移动方向相同的行星，永远不会发生碰撞。
-示例 1：  输入： asteroids = [5,10,-5]
+示例 1： 输入： asteroids = [5,10,-5]
 输出： [5,10]
 解释： 10 和 -5 碰撞后只剩下 10 。 5 和 10 永远不会发生碰撞。
- 示例 2：  输入： asteroids = [8,-8]
+示例 2： 输入： asteroids = [8,-8]
 输出： []
 解释： 8 和 -8 碰撞后，两者都发生爆炸。
- 示例 3：  输入： asteroids = [10,2,-5]
+示例 3： 输入： asteroids = [10,2,-5]
 输出： [10]
 解释： 2 和 -5 发生碰撞后剩下 -5 。10 和 -5 发生碰撞后剩下 10 。
- 提示：  2 &amp;lt;= asteroids.'><title>Leetcode 735. 行星碰撞</title>
+提示： 2 &amp;lt;= asteroids.length &amp;lt;= 104 -1000 &amp;lt;= asteroids[i] &amp;lt;= 1000 asteroids[i] !'><title>Leetcode 735. 行星碰撞</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-735.-%E8%A1%8C%E6%98%9F%E7%A2%B0%E6%92%9E/'>
 
@@ -25,16 +25,16 @@
 题目描述 给定一个整数数组 asteroids，表示在同一行的行星。
 对于数组中的每一个元素，其绝对值表示行星的大小，正负表示行星的移动方向（正表示向右移动，负表示向左移动）。每一颗行星以相同的速度移动。
 找出碰撞后剩下的所有行星。碰撞规则：两个行星相互碰撞，较小的行星会爆炸。如果两颗行星大小相同，则两颗行星都会爆炸。两颗移动方向相同的行星，永远不会发生碰撞。
-示例 1：  输入： asteroids = [5,10,-5]
+示例 1： 输入： asteroids = [5,10,-5]
 输出： [5,10]
 解释： 10 和 -5 碰撞后只剩下 10 。 5 和 10 永远不会发生碰撞。
- 示例 2：  输入： asteroids = [8,-8]
+示例 2： 输入： asteroids = [8,-8]
 输出： []
 解释： 8 和 -8 碰撞后，两者都发生爆炸。
- 示例 3：  输入： asteroids = [10,2,-5]
+示例 3： 输入： asteroids = [10,2,-5]
 输出： [10]
 解释： 2 和 -5 发生碰撞后剩下 -5 。10 和 -5 发生碰撞后剩下 10 。
- 提示：  2 &amp;lt;= asteroids.'>
+提示： 2 &amp;lt;= asteroids.length &amp;lt;= 104 -1000 &amp;lt;= asteroids[i] &amp;lt;= 1000 asteroids[i] !'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-735.-%E8%A1%8C%E6%98%9F%E7%A2%B0%E6%92%9E/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stack' /><meta property='article:published_time' content='2022-07-13T21:10:28&#43;08:00'/><meta property='article:modified_time' content='2022-07-13T21:10:28&#43;08:00'/>
@@ -44,16 +44,16 @@
 题目描述 给定一个整数数组 asteroids，表示在同一行的行星。
 对于数组中的每一个元素，其绝对值表示行星的大小，正负表示行星的移动方向（正表示向右移动，负表示向左移动）。每一颗行星以相同的速度移动。
 找出碰撞后剩下的所有行星。碰撞规则：两个行星相互碰撞，较小的行星会爆炸。如果两颗行星大小相同，则两颗行星都会爆炸。两颗移动方向相同的行星，永远不会发生碰撞。
-示例 1：  输入： asteroids = [5,10,-5]
+示例 1： 输入： asteroids = [5,10,-5]
 输出： [5,10]
 解释： 10 和 -5 碰撞后只剩下 10 。 5 和 10 永远不会发生碰撞。
- 示例 2：  输入： asteroids = [8,-8]
+示例 2： 输入： asteroids = [8,-8]
 输出： []
 解释： 8 和 -8 碰撞后，两者都发生爆炸。
- 示例 3：  输入： asteroids = [10,2,-5]
+示例 3： 输入： asteroids = [10,2,-5]
 输出： [10]
 解释： 2 和 -5 发生碰撞后剩下 -5 。10 和 -5 发生碰撞后剩下 10 。
- 提示：  2 &amp;lt;= asteroids.">
+提示： 2 &amp;lt;= asteroids.length &amp;lt;= 104 -1000 &amp;lt;= asteroids[i] &amp;lt;= 1000 asteroids[i] !">
     </head>
     <body class="
     article-page 
@@ -275,33 +275,33 @@
 <li>当向右移动的栈顶行星比该行星小时，栈顶行星爆炸，继续进行碰撞判断；</li>
 </ul>
 <p>最后栈中存在所有未发生碰撞的行星。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">asteroidCollision</span>(<span style="color:#a6e22e">asteroids</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">asteroids</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">asteroids</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">a</span> &gt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">a</span>)
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#66d9ef">for</span> {
-			<span style="color:#75715e">// 不发生碰撞，
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">ans</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] &lt; <span style="color:#ae81ff">0</span> {
-				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">a</span>)
-				<span style="color:#66d9ef">break</span>
-			}
-			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">a</span>
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> &gt; <span style="color:#ae81ff">0</span> {
-				<span style="color:#66d9ef">break</span>
-			}
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 两个都爆炸
-</span><span style="color:#75715e"></span>				<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span>[:len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-				<span style="color:#66d9ef">break</span>
-			}
-			<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span>[:len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">asteroidCollision</span>(<span style="color:#a6e22e">asteroids</span> []<span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">asteroids</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">asteroids</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">a</span> &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 不发生碰撞，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">ans</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, <span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ans</span>[len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">a</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 两个都爆炸
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span>[:len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span>[:len(<span style="color:#a6e22e">ans</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(asteroids) $</li>
 <li>空间复杂度：$ O(1) $</li>

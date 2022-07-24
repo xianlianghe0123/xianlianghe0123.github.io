@@ -4,10 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode-cn.com/problems/tag-validator/
 难度： 困难
 题目描述 给定一个表示代码片段的字符串，你需要实现一个验证器来解析这段代码，并返回它是否合法。合法的代码片段需要遵守以下的所有规则：
- 代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。  合法代码的例子：  输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
+代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。 合法代码的例子： 输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
 输出： True
 解释：
-代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。'><title>Leetcode 591. 标签验证器</title>
+代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。
+TAG_NAME 是合法的，TAG_CONTENT 包含了一些字符和 cdata 。'><title>Leetcode 591. 标签验证器</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-591.-%E6%A0%87%E7%AD%BE%E9%AA%8C%E8%AF%81%E5%99%A8/'>
 
@@ -15,10 +16,11 @@
 <meta property='og:description' content='链接： https://leetcode-cn.com/problems/tag-validator/
 难度： 困难
 题目描述 给定一个表示代码片段的字符串，你需要实现一个验证器来解析这段代码，并返回它是否合法。合法的代码片段需要遵守以下的所有规则：
- 代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。  合法代码的例子：  输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
+代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。 合法代码的例子： 输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
 输出： True
 解释：
-代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。'>
+代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。
+TAG_NAME 是合法的，TAG_CONTENT 包含了一些字符和 cdata 。'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-591.-%E6%A0%87%E7%AD%BE%E9%AA%8C%E8%AF%81%E5%99%A8/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stack' /><meta property='article:published_time' content='2022-05-02T12:14:17&#43;08:00'/><meta property='article:modified_time' content='2022-05-02T12:14:17&#43;08:00'/>
@@ -26,10 +28,11 @@
 <meta name="twitter:description" content="链接： https://leetcode-cn.com/problems/tag-validator/
 难度： 困难
 题目描述 给定一个表示代码片段的字符串，你需要实现一个验证器来解析这段代码，并返回它是否合法。合法的代码片段需要遵守以下的所有规则：
- 代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。  合法代码的例子：  输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
+代码必须被合法的闭合标签包围。否则，代码是无效的。 闭合标签（不一定合法）要严格符合格式：&amp;lt;TAG_NAME&amp;gt;TAG_CONTENT&amp;lt;/TAG_NAME&amp;gt;。其中，&amp;lt;TAG_NAME&amp;gt;是起始标签，&amp;lt;/TAG_NAME&amp;gt;是结束标签。起始和结束标签中的 TAG_NAME 应当相同。当且仅当 TAG_NAME 和 TAG_CONTENT 都是合法的，闭合标签才是合法的。 合法的 TAG_NAME 仅含有大写字母，长度在范围 [1,9] 之间。否则，该 TAG_NAME 是不合法的。 合法的 TAG_CONTENT 可以包含其他合法的闭合标签，cdata （请参考规则7）和任意字符（注意参考规则1）除了不匹配的 &amp;lt;、不匹配的起始和结束标签、不匹配的或带有不合法 TAG_NAME 的闭合标签。否则，TAG_CONTENT 是不合法的。 一个起始标签，如果没有具有相同 TAG_NAME 的结束标签与之匹配，是不合法的。反之亦然。不过，你也需要考虑标签嵌套的问题。 一个 &amp;lt;，如果你找不到一个后续的 &amp;gt; 与之匹配，是不合法的。并且当你找到一个 &amp;lt; 或&amp;lt;/ 时，所有直到下一个 &amp;gt; 的前的字符，都应当被解析为 TAG_NAME（不一定合法）。 cdata 有如下格式：&amp;lt;![CDATA[CDATA_CONTENT]]&amp;gt;。CDATA_CONTENT 的范围被定义成 &amp;lt;![CDATA[ 和后续的第一个 ]]&amp;gt; 之间的字符。 CDATA_CONTENT 可以包含任意字符。cdata 的功能是阻止验证器解析 CDATA_CONTENT，所以即使其中有一些字符可以被解析为标签（无论合法还是不合法），也应该将它们视为常规字符。 合法代码的例子： 输入： &amp;quot;&amp;lt;DIV&amp;gt;This is the first line &amp;lt;![CDATA[&amp;lt;div&amp;gt;]]&amp;gt;&amp;lt;/DIV&amp;gt;&amp;quot;
 输出： True
 解释：
-代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。">
+代码被包含在了闭合的标签内： &amp;lt;DIV&amp;gt; 和 &amp;lt;/DIV&amp;gt; 。
+TAG_NAME 是合法的，TAG_CONTENT 包含了一些字符和 cdata 。">
     </head>
     <body class="
     article-page 
@@ -278,79 +281,79 @@
 </ul>
 <p>整个字符串需要由一对标签包围，即最外层不能有标签并列。</p>
 <p>根据上述情形，解析此字符串，判断是否有效。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValid</span>(<span style="color:#a6e22e">code</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">code</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
-		<span style="color:#75715e">// 非特定模式
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;&lt;&#39;</span> {
-			<span style="color:#75715e">// 没有被包围，无效
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#75715e">// 不做处理
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">code</span> = <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">1</span>:]
-			<span style="color:#66d9ef">continue</span>
-		}
-		<span style="color:#75715e">// 模式匹配，至少为三个字符 &lt;TAG_NAME&gt;
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">code</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span> {
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-		}
-		<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">1</span>] {
-		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;/&#39;</span>: <span style="color:#75715e">// 结束标签
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">IndexByte</span>(<span style="color:#a6e22e">code</span>, <span style="color:#e6db74">&#39;&gt;&#39;</span>)
-			<span style="color:#75715e">// 没有被 &lt;/ 和 &gt; 包围，无效
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#a6e22e">tagName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">2</span>:<span style="color:#a6e22e">idx</span>]
-			<span style="color:#75715e">// 和栈顶开始标签不匹配，无效
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">tagName</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#75715e">// 出栈
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">code</span> = <span style="color:#a6e22e">code</span>[len(<span style="color:#a6e22e">tagName</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>:]
-			<span style="color:#75715e">// 最外层未被一对标签包围，无效
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">code</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;!&#39;</span>: <span style="color:#75715e">// cdata
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">HasPrefix</span>(<span style="color:#a6e22e">code</span>, <span style="color:#e6db74">&#34;&lt;![CDATA[&#34;</span>) {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Index</span>(<span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">9</span>:], <span style="color:#e6db74">&#34;]]&gt;&#34;</span>)
-			<span style="color:#75715e">// 没有被 &lt;![CDATA[ 和 ]]&gt; 包围，无效
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#75715e">// 没有被包围，无效
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#a6e22e">code</span> = <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">9</span><span style="color:#f92672">+</span><span style="color:#a6e22e">idx</span><span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>:]
-		<span style="color:#66d9ef">default</span>: <span style="color:#75715e">// 开始标签
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">IndexByte</span>(<span style="color:#a6e22e">code</span>, <span style="color:#e6db74">&#39;&gt;&#39;</span>)
-			<span style="color:#75715e">// 没有被 &lt; 和 &gt; 包围，无效
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#a6e22e">tagName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">1</span>:<span style="color:#a6e22e">idx</span>]
-			<span style="color:#75715e">// 标签名长度不合法，无效
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">tagName</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> len(<span style="color:#a6e22e">tagName</span>) &gt; <span style="color:#ae81ff">9</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-			}
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">tagName</span> {
-				<span style="color:#75715e">// 标签名包含非大写字母，无效
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">tagName</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#e6db74">&#39;A&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">tagName</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#e6db74">&#39;Z&#39;</span> {
-					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-				}
-			}
-			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">tagName</span>) <span style="color:#75715e">// 入栈
-</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">code</span> = <span style="color:#a6e22e">code</span>[len(<span style="color:#a6e22e">tagName</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>:]
-		}
-	}
-	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValid</span>(<span style="color:#a6e22e">code</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">code</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 非特定模式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;&lt;&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 没有被包围，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 不做处理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">code</span> = <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 模式匹配，至少为三个字符 &lt;TAG_NAME&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">code</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;/&#39;</span>: <span style="color:#75715e">// 结束标签
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">IndexByte</span>(<span style="color:#a6e22e">code</span>, <span style="color:#e6db74">&#39;&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 没有被 &lt;/ 和 &gt; 包围，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">tagName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">2</span>:<span style="color:#a6e22e">idx</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 和栈顶开始标签不匹配，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">tagName</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#75715e">// 出栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">code</span> = <span style="color:#a6e22e">code</span>[len(<span style="color:#a6e22e">tagName</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>:]
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 最外层未被一对标签包围，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">code</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;!&#39;</span>: <span style="color:#75715e">// cdata
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">HasPrefix</span>(<span style="color:#a6e22e">code</span>, <span style="color:#e6db74">&#34;&lt;![CDATA[&#34;</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Index</span>(<span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">9</span>:], <span style="color:#e6db74">&#34;]]&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 没有被 &lt;![CDATA[ 和 ]]&gt; 包围，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 没有被包围，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">code</span> = <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">9</span><span style="color:#f92672">+</span><span style="color:#a6e22e">idx</span><span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>:]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">default</span>: <span style="color:#75715e">// 开始标签
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">idx</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">IndexByte</span>(<span style="color:#a6e22e">code</span>, <span style="color:#e6db74">&#39;&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 没有被 &lt; 和 &gt; 包围，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">tagName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">code</span>[<span style="color:#ae81ff">1</span>:<span style="color:#a6e22e">idx</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 标签名长度不合法，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">tagName</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> len(<span style="color:#a6e22e">tagName</span>) &gt; <span style="color:#ae81ff">9</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">tagName</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// 标签名包含非大写字母，无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">tagName</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#e6db74">&#39;A&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">tagName</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#e6db74">&#39;Z&#39;</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">tagName</span>) <span style="color:#75715e">// 入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">code</span> = <span style="color:#a6e22e">code</span>[len(<span style="color:#a6e22e">tagName</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>:]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(code) $</li>
 <li>空间复杂度：$ O(N) $</li>

@@ -6,7 +6,7 @@
 题目描述 给你一个数组 orders ，表示客户在餐厅中完成的订单，确切地说， orders[i]=[customerNamei,tableNumberi,foodItemi] ，其中 customerNamei 是客户的姓名，tableNumberi 是客户所在餐桌的桌号，而 foodItemi 是客户点的餐品名称。
 请你返回该餐厅的 点菜展示表 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。
 注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
-示例 1：  输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
+示例 1： 输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
 输出： [[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
 解释：
 点菜展示表如下所示：
@@ -15,7 +15,8 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 5 ,0 ,1 ,0 ,1
 10 ,1 ,0 ,0 ,0
 对于餐桌 3：David 点了 &amp;ldquo;Ceviche&amp;rdquo; 和 &amp;ldquo;Fried Chicken&amp;rdquo;，而 Rous 点了 &amp;ldquo;Ceviche&amp;rdquo;
-而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;'><title>Leetcode 1418. 点菜展示表</title>
+而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;
+餐桌 10：Corina 点了 &amp;ldquo;Beef Burrito&amp;rdquo;'><title>Leetcode 1418. 点菜展示表</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1418.-%E7%82%B9%E8%8F%9C%E5%B1%95%E7%A4%BA%E8%A1%A8/'>
 
@@ -25,7 +26,7 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 题目描述 给你一个数组 orders ，表示客户在餐厅中完成的订单，确切地说， orders[i]=[customerNamei,tableNumberi,foodItemi] ，其中 customerNamei 是客户的姓名，tableNumberi 是客户所在餐桌的桌号，而 foodItemi 是客户点的餐品名称。
 请你返回该餐厅的 点菜展示表 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。
 注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
-示例 1：  输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
+示例 1： 输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
 输出： [[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
 解释：
 点菜展示表如下所示：
@@ -34,7 +35,8 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 5 ,0 ,1 ,0 ,1
 10 ,1 ,0 ,0 ,0
 对于餐桌 3：David 点了 &amp;ldquo;Ceviche&amp;rdquo; 和 &amp;ldquo;Fried Chicken&amp;rdquo;，而 Rous 点了 &amp;ldquo;Ceviche&amp;rdquo;
-而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;'>
+而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;
+餐桌 10：Corina 点了 &amp;ldquo;Beef Burrito&amp;rdquo;'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1418.-%E7%82%B9%E8%8F%9C%E5%B1%95%E7%A4%BA%E8%A1%A8/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-07-06T09:20:22&#43;08:00'/><meta property='article:modified_time' content='2021-07-06T09:20:22&#43;08:00'/>
@@ -44,7 +46,7 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 题目描述 给你一个数组 orders ，表示客户在餐厅中完成的订单，确切地说， orders[i]=[customerNamei,tableNumberi,foodItemi] ，其中 customerNamei 是客户的姓名，tableNumberi 是客户所在餐桌的桌号，而 foodItemi 是客户点的餐品名称。
 请你返回该餐厅的 点菜展示表 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。
 注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
-示例 1：  输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
+示例 1： 输入： orders = [[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Corina&amp;rdquo;,&amp;ldquo;10&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;],[&amp;ldquo;David&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;Carla&amp;rdquo;,&amp;ldquo;5&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;],[&amp;ldquo;Rous&amp;rdquo;,&amp;ldquo;3&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;]]
 输出： [[&amp;ldquo;Table&amp;rdquo;,&amp;ldquo;Beef Burrito&amp;rdquo;,&amp;ldquo;Ceviche&amp;rdquo;,&amp;ldquo;Fried Chicken&amp;rdquo;,&amp;ldquo;Water&amp;rdquo;],[&amp;ldquo;3&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;2&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;],[&amp;ldquo;5&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;1&amp;rdquo;],[&amp;ldquo;10&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;,&amp;ldquo;0&amp;rdquo;]]
 解释：
 点菜展示表如下所示：
@@ -53,7 +55,8 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
 5 ,0 ,1 ,0 ,1
 10 ,1 ,0 ,0 ,0
 对于餐桌 3：David 点了 &amp;ldquo;Ceviche&amp;rdquo; 和 &amp;ldquo;Fried Chicken&amp;rdquo;，而 Rous 点了 &amp;ldquo;Ceviche&amp;rdquo;
-而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;">
+而餐桌 5：Carla 点了 &amp;ldquo;Water&amp;rdquo; 和 &amp;ldquo;Ceviche&amp;rdquo;
+餐桌 10：Corina 点了 &amp;ldquo;Beef Burrito&amp;rdquo;">
     </head>
     <body class="
     article-page 
@@ -278,53 +281,53 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water<br>
 <h3 id="解题思路">解题思路</h3>
 <h4 id="哈希计数">哈希计数</h4>
 <p>遍历所有每个订单，记录同一桌号每种菜品的数量，然后根据桌号顺序，和菜品顺序生成结果。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">displayTable</span>(<span style="color:#a6e22e">orders</span> [][]<span style="color:#66d9ef">string</span>) [][]<span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">tableFoodsCnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
-	<span style="color:#a6e22e">foods</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">orders</span>)) <span style="color:#75715e">// 菜品名单
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">isAddToFoods</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">bool</span>)   <span style="color:#75715e">// 去重
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">order</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">orders</span> {
-		<span style="color:#75715e">// 加入菜品名单
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isAddToFoods</span>[<span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">2</span>]] {
-			<span style="color:#a6e22e">foods</span> = append(<span style="color:#a6e22e">foods</span>, <span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">2</span>])
-			<span style="color:#a6e22e">isAddToFoods</span>[<span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">2</span>]] = <span style="color:#66d9ef">true</span>
-		}
-		<span style="color:#75715e">// 统计数量
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">table</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">1</span>])
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">tableFoodsCnt</span>[<span style="color:#a6e22e">table</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#a6e22e">tableFoodsCnt</span>[<span style="color:#a6e22e">table</span>] = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
-		}
-		<span style="color:#a6e22e">tableFoodsCnt</span>[<span style="color:#a6e22e">table</span>][<span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">2</span>]]<span style="color:#f92672">++</span>
-	}
-	<span style="color:#75715e">// 菜品排序
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Strings</span>(<span style="color:#a6e22e">foods</span>)
-	<span style="color:#75715e">// 桌号排序
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">tables</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">tableFoodsCnt</span>))
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">table</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">tableFoodsCnt</span> {
-		<span style="color:#a6e22e">tables</span> = append(<span style="color:#a6e22e">tables</span>, <span style="color:#a6e22e">table</span>)
-	}
-	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">tables</span>)
-	<span style="color:#75715e">// 生成结果
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">string</span>, len(<span style="color:#a6e22e">tables</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">foods</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#75715e">// 表头
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = append(<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">&#34;Table&#34;</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">food</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">foods</span> {
-		<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = append(<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">food</span>)
-	}
-	<span style="color:#75715e">// 填表
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">table</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">tables</span> {
-		<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] = make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">foods</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-		<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] = append(<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatInt</span>(int64(<span style="color:#a6e22e">table</span>), <span style="color:#ae81ff">10</span>)) <span style="color:#75715e">// 桌号
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 菜品数
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">food</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">foods</span> {
-			<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] = append(<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatInt</span>(int64(<span style="color:#a6e22e">tableFoodsCnt</span>[<span style="color:#a6e22e">table</span>][<span style="color:#a6e22e">food</span>]), <span style="color:#ae81ff">10</span>))
-		}
-		<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">displayTable</span>(<span style="color:#a6e22e">orders</span> [][]<span style="color:#66d9ef">string</span>) [][]<span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">tableFoodsCnt</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">foods</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">orders</span>)) <span style="color:#75715e">// 菜品名单
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">isAddToFoods</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">bool</span>)   <span style="color:#75715e">// 去重
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">order</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">orders</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 加入菜品名单
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isAddToFoods</span>[<span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">2</span>]] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">foods</span> = append(<span style="color:#a6e22e">foods</span>, <span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">isAddToFoods</span>[<span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">2</span>]] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 统计数量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">table</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">tableFoodsCnt</span>[<span style="color:#a6e22e">table</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">tableFoodsCnt</span>[<span style="color:#a6e22e">table</span>] = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tableFoodsCnt</span>[<span style="color:#a6e22e">table</span>][<span style="color:#a6e22e">order</span>[<span style="color:#ae81ff">2</span>]]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 菜品排序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Strings</span>(<span style="color:#a6e22e">foods</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 桌号排序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">tables</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">tableFoodsCnt</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">table</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">tableFoodsCnt</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tables</span> = append(<span style="color:#a6e22e">tables</span>, <span style="color:#a6e22e">table</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">tables</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 生成结果
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([][]<span style="color:#66d9ef">string</span>, len(<span style="color:#a6e22e">tables</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">foods</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 表头
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = append(<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">&#34;Table&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">food</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">foods</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>] = append(<span style="color:#a6e22e">res</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">food</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 填表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">table</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">tables</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] = make([]<span style="color:#66d9ef">string</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">foods</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] = append(<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatInt</span>(int64(<span style="color:#a6e22e">table</span>), <span style="color:#ae81ff">10</span>)) <span style="color:#75715e">// 桌号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#75715e">// 菜品数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">food</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">foods</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] = append(<span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatInt</span>(int64(<span style="color:#a6e22e">tableFoodsCnt</span>[<span style="color:#a6e22e">table</span>][<span style="color:#a6e22e">food</span>]), <span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(NlogN), N=len(orders) $</li>
 <li>空间复杂度：O(N)</li>

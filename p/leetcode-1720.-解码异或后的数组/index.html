@@ -7,7 +7,7 @@
 经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i &#43; 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
 给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
 请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
-示例 1：  输入： encoded = [1,2,3], first = 1
+示例 1： 输入： encoded = [1,2,3], first = 1
 输出： [1,0,2,1]
 解释： 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]'><title>Leetcode 1720. 解码异或后的数组</title>
 
@@ -20,7 +20,7 @@
 经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i &#43; 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
 给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
 请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
-示例 1：  输入： encoded = [1,2,3], first = 1
+示例 1： 输入： encoded = [1,2,3], first = 1
 输出： [1,0,2,1]
 解释： 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1720.-%E8%A7%A3%E7%A0%81%E5%BC%82%E6%88%96%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84/'>
@@ -33,7 +33,7 @@
 经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i &#43; 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。
 给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。
 请解码返回原数组 arr 。可以证明答案存在并且是唯一的。
-示例 1：  输入： encoded = [1,2,3], first = 1
+示例 1： 输入： encoded = [1,2,3], first = 1
 输出： [1,0,2,1]
 解释： 若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]">
     </head>
@@ -279,15 +279,15 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">decode</span>(<span style="color:#a6e22e">encoded</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">first</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">encoded</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-	<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">first</span>)
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">encoded</span> {
-		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] ^ <span style="color:#a6e22e">e</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">decode</span>(<span style="color:#a6e22e">encoded</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">first</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">encoded</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">first</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">encoded</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">res</span> = append(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] ^ <span style="color:#a6e22e">e</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(encoded) $</li>
 <li>空间复杂度：$ O(1) $</li>

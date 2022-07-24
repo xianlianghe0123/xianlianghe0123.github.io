@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/largest-triangle-area/
 难度： 简单
 题目描述 给定包含多个点的集合，从其中取三个点组成三角形，返回能组成的最大三角形的面积。
-示例：  输入： points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
+示例： 输入： points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
 输出： 2
 解释：
 这五个点如下图所示。组成的橙色三角形是最大的，面积为2。
- 注意：  3 &amp;lt;= points.length &amp;lt;= 50 不存在重复的点。 -50 &amp;lt;= points[i][j] &amp;lt;= 50 结果误差值在 106 以内都认为是正确答案。  解题思路 枚举 依次枚举三个顶点，计算构成三角形的面积，求得最大值。
+注意： 3 &amp;lt;= points.length &amp;lt;= 50 不存在重复的点。 -50 &amp;lt;= points[i][j] &amp;lt;= 50 结果误差值在 106 以内都认为是正确答案。 解题思路 枚举 依次枚举三个顶点，计算构成三角形的面积，求得最大值。
 func largestTriangleArea(points [][]int) float64 { maxArea := 0. for i := len(points) - 3; i &amp;gt;= 0; i-- { for j := len(points) - 2; j &amp;gt; i; j-- { for k := len(points) - 1; k &amp;gt; j; k-- { area := math.'><title>Leetcode 812. 最大三角形面积</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-812.-%E6%9C%80%E5%A4%A7%E4%B8%89%E8%A7%92%E5%BD%A2%E9%9D%A2%E7%A7%AF/'>
@@ -17,11 +17,11 @@ func largestTriangleArea(points [][]int) float64 { maxArea := 0. for i := len(po
 <meta property='og:description' content='链接： https://leetcode.cn/problems/largest-triangle-area/
 难度： 简单
 题目描述 给定包含多个点的集合，从其中取三个点组成三角形，返回能组成的最大三角形的面积。
-示例：  输入： points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
+示例： 输入： points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
 输出： 2
 解释：
 这五个点如下图所示。组成的橙色三角形是最大的，面积为2。
- 注意：  3 &amp;lt;= points.length &amp;lt;= 50 不存在重复的点。 -50 &amp;lt;= points[i][j] &amp;lt;= 50 结果误差值在 106 以内都认为是正确答案。  解题思路 枚举 依次枚举三个顶点，计算构成三角形的面积，求得最大值。
+注意： 3 &amp;lt;= points.length &amp;lt;= 50 不存在重复的点。 -50 &amp;lt;= points[i][j] &amp;lt;= 50 结果误差值在 106 以内都认为是正确答案。 解题思路 枚举 依次枚举三个顶点，计算构成三角形的面积，求得最大值。
 func largestTriangleArea(points [][]int) float64 { maxArea := 0. for i := len(points) - 3; i &amp;gt;= 0; i-- { for j := len(points) - 2; j &amp;gt; i; j-- { for k := len(points) - 1; k &amp;gt; j; k-- { area := math.'>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-812.-%E6%9C%80%E5%A4%A7%E4%B8%89%E8%A7%92%E5%BD%A2%E9%9D%A2%E7%A7%AF/'>
 <meta property='og:site_name' content='贺贤良'>
@@ -30,11 +30,11 @@ func largestTriangleArea(points [][]int) float64 { maxArea := 0. for i := len(po
 <meta name="twitter:description" content="链接： https://leetcode.cn/problems/largest-triangle-area/
 难度： 简单
 题目描述 给定包含多个点的集合，从其中取三个点组成三角形，返回能组成的最大三角形的面积。
-示例：  输入： points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
+示例： 输入： points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
 输出： 2
 解释：
 这五个点如下图所示。组成的橙色三角形是最大的，面积为2。
- 注意：  3 &amp;lt;= points.length &amp;lt;= 50 不存在重复的点。 -50 &amp;lt;= points[i][j] &amp;lt;= 50 结果误差值在 106 以内都认为是正确答案。  解题思路 枚举 依次枚举三个顶点，计算构成三角形的面积，求得最大值。
+注意： 3 &amp;lt;= points.length &amp;lt;= 50 不存在重复的点。 -50 &amp;lt;= points[i][j] &amp;lt;= 50 结果误差值在 106 以内都认为是正确答案。 解题思路 枚举 依次枚举三个顶点，计算构成三角形的面积，求得最大值。
 func largestTriangleArea(points [][]int) float64 { maxArea := 0. for i := len(points) - 3; i &amp;gt;= 0; i-- { for j := len(points) - 2; j &amp;gt; i; j-- { for k := len(points) - 1; k &amp;gt; j; k-- { area := math.">
     </head>
     <body class="
@@ -238,22 +238,22 @@ func largestTriangleArea(points [][]int) float64 { maxArea := 0. for i := len(po
 <h3 id="解题思路">解题思路</h3>
 <h4 id="枚举">枚举</h4>
 <p>依次枚举三个顶点，计算构成三角形的面积，求得最大值。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">largestTriangleArea</span>(<span style="color:#a6e22e">points</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">float64</span> {
-	<span style="color:#a6e22e">maxArea</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0.</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">points</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">points</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">j</span> &gt; <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">points</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">k</span> &gt; <span style="color:#a6e22e">j</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">--</span> {
-				<span style="color:#a6e22e">area</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Abs</span>(float64(
-					<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">k</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">k</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>
-						<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">k</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">k</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">1</span>],
-				)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
-				<span style="color:#a6e22e">maxArea</span> = <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Max</span>(<span style="color:#a6e22e">maxArea</span>, <span style="color:#a6e22e">area</span>)
-			}
-		}
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxArea</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">largestTriangleArea</span>(<span style="color:#a6e22e">points</span> [][]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maxArea</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">points</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">points</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">j</span> &gt; <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">points</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">k</span> &gt; <span style="color:#a6e22e">j</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">area</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Abs</span>(float64(
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">k</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">k</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span>						<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">k</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">k</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>				)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">maxArea</span> = <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Max</span>(<span style="color:#a6e22e">maxArea</span>, <span style="color:#a6e22e">area</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxArea</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N^3), N = len(points) $</li>
 <li>空间复杂度：$ O(1) $</li>

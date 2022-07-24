@@ -5,11 +5,11 @@
 难度： 简单
 题目描述 统计字符串中的单词个数，这里的单词指的是连续的不是空格的字符。
 请注意，你可以假定字符串里不包括任何不可打印的字符。
-示例：  输入: &amp;ldquo;Hello, my name is John&amp;rdquo;
+示例： 输入: &amp;ldquo;Hello, my name is John&amp;rdquo;
 输出: 5
 解释: 这里的单词是指连续的不是空格的字符，所以 &amp;ldquo;Hello,&amp;rdquo; 算作 1 个单词。
- 解题思路 遍历计数 遍历字符串，使用一个 hasWord 布尔值记录是否有单词：
- 当遇到空格时，可能是单词结尾，若 hasWord = true ，单词数量加一，hasWord 置为 false； 当遇到非空格时，表示有新单词，hasWord 置为 true。  func countSegments(s string) int { ans := 0 hasWord := false for i := range s { if s[i] == &amp;#39; &amp;#39; { if hasWord { ans&#43;&#43; hasWord = false } } else { hasWord = true } } if hasWord { ans&#43;&#43; } return ans } 复杂度  时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $  '><title>Leetcode 434. 字符串中的单词数</title>
+解题思路 遍历计数 遍历字符串，使用一个 hasWord 布尔值记录是否有单词：
+当遇到空格时，可能是单词结尾，若 hasWord = true ，单词数量加一，hasWord 置为 false； 当遇到非空格时，表示有新单词，hasWord 置为 true。 func countSegments(s string) int { ans := 0 hasWord := false for i := range s { if s[i] == &amp;#39; &amp;#39; { if hasWord { ans&#43;&#43; hasWord = false } } else { hasWord = true } } if hasWord { ans&#43;&#43; } return ans } 复杂度 时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $ '><title>Leetcode 434. 字符串中的单词数</title>
 
 <link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-434.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0/'>
 
@@ -18,11 +18,11 @@
 难度： 简单
 题目描述 统计字符串中的单词个数，这里的单词指的是连续的不是空格的字符。
 请注意，你可以假定字符串里不包括任何不可打印的字符。
-示例：  输入: &amp;ldquo;Hello, my name is John&amp;rdquo;
+示例： 输入: &amp;ldquo;Hello, my name is John&amp;rdquo;
 输出: 5
 解释: 这里的单词是指连续的不是空格的字符，所以 &amp;ldquo;Hello,&amp;rdquo; 算作 1 个单词。
- 解题思路 遍历计数 遍历字符串，使用一个 hasWord 布尔值记录是否有单词：
- 当遇到空格时，可能是单词结尾，若 hasWord = true ，单词数量加一，hasWord 置为 false； 当遇到非空格时，表示有新单词，hasWord 置为 true。  func countSegments(s string) int { ans := 0 hasWord := false for i := range s { if s[i] == &amp;#39; &amp;#39; { if hasWord { ans&#43;&#43; hasWord = false } } else { hasWord = true } } if hasWord { ans&#43;&#43; } return ans } 复杂度  时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $  '>
+解题思路 遍历计数 遍历字符串，使用一个 hasWord 布尔值记录是否有单词：
+当遇到空格时，可能是单词结尾，若 hasWord = true ，单词数量加一，hasWord 置为 false； 当遇到非空格时，表示有新单词，hasWord 置为 true。 func countSegments(s string) int { ans := 0 hasWord := false for i := range s { if s[i] == &amp;#39; &amp;#39; { if hasWord { ans&#43;&#43; hasWord = false } } else { hasWord = true } } if hasWord { ans&#43;&#43; } return ans } 复杂度 时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $ '>
 <meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-434.-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0/'>
 <meta property='og:site_name' content='贺贤良'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-10-07T13:05:49&#43;08:00'/><meta property='article:modified_time' content='2021-10-07T13:05:49&#43;08:00'/>
@@ -31,11 +31,11 @@
 难度： 简单
 题目描述 统计字符串中的单词个数，这里的单词指的是连续的不是空格的字符。
 请注意，你可以假定字符串里不包括任何不可打印的字符。
-示例：  输入: &amp;ldquo;Hello, my name is John&amp;rdquo;
+示例： 输入: &amp;ldquo;Hello, my name is John&amp;rdquo;
 输出: 5
 解释: 这里的单词是指连续的不是空格的字符，所以 &amp;ldquo;Hello,&amp;rdquo; 算作 1 个单词。
- 解题思路 遍历计数 遍历字符串，使用一个 hasWord 布尔值记录是否有单词：
- 当遇到空格时，可能是单词结尾，若 hasWord = true ，单词数量加一，hasWord 置为 false； 当遇到非空格时，表示有新单词，hasWord 置为 true。  func countSegments(s string) int { ans := 0 hasWord := false for i := range s { if s[i] == &amp;#39; &amp;#39; { if hasWord { ans&#43;&#43; hasWord = false } } else { hasWord = true } } if hasWord { ans&#43;&#43; } return ans } 复杂度  时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $  ">
+解题思路 遍历计数 遍历字符串，使用一个 hasWord 布尔值记录是否有单词：
+当遇到空格时，可能是单词结尾，若 hasWord = true ，单词数量加一，hasWord 置为 false； 当遇到非空格时，表示有新单词，hasWord 置为 true。 func countSegments(s string) int { ans := 0 hasWord := false for i := range s { if s[i] == &amp;#39; &amp;#39; { if hasWord { ans&#43;&#43; hasWord = false } } else { hasWord = true } } if hasWord { ans&#43;&#43; } return ans } 复杂度 时间复杂度：$ O(N), N = len(s) $ 空间复杂度：$ O(1) $ ">
     </head>
     <body class="
     article-page 
@@ -234,25 +234,25 @@
 <li>当遇到空格时，可能是单词结尾，若 <code>hasWord = true</code> ，单词数量加一，<code>hasWord</code> 置为 <code>false</code>；</li>
 <li>当遇到非空格时，表示有新单词，<code>hasWord</code> 置为 <code>true</code>。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countSegments</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#a6e22e">hasWord</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">hasWord</span> {
-				<span style="color:#a6e22e">ans</span><span style="color:#f92672">++</span>
-				<span style="color:#a6e22e">hasWord</span> = <span style="color:#66d9ef">false</span>
-			}
-		} <span style="color:#66d9ef">else</span> {
-			<span style="color:#a6e22e">hasWord</span> = <span style="color:#66d9ef">true</span>
-		}
-	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">hasWord</span> {
-		<span style="color:#a6e22e">ans</span><span style="color:#f92672">++</span>
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
-}
-</code></pre></div><h5 id="复杂度">复杂度</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">countSegments</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">hasWord</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">hasWord</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">hasWord</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">hasWord</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">hasWord</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ans</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
 <li>时间复杂度：$ O(N), N = len(s) $</li>
 <li>空间复杂度：$ O(1) $</li>
