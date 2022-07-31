@@ -5,9 +5,12 @@
 难度： 简单
 题目描述 给你一个字符串 s ，根据下述规则反转字符串：
 所有非英文字母保留在原有位置。 所有英文字母（小写或大写）位置反转。 返回反转后的 s 。
-示例 1： 输入：s = &amp;ldquo;ab-cd&amp;rdquo; 输出：&amp;ldquo;dc-ba&amp;rdquo;
-示例 2： 输入：s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo; 输出：&amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
-示例 3： 输入：s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo; 输出：&amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;ab-cd&amp;rdquo;
+输出： &amp;ldquo;dc-ba&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo;
+输出： &amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
+示例 3： 输入： s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo;
+输出： &amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
 提示： 1 &amp;lt;= s.length &amp;lt;= 100 s 仅由 ASCII 值在范围 [33, 122] 的字符组成 s 不含 &#39;\&amp;quot;&#39; 或 &#39;\\&#39; 解题思路 双指针 使用两个指针分别从两端开始，向中间遍历。
 当任一指针指向字符不为字母时，向中间寻找下一个字母；当两个指针指向的字符均为字母时，交换并继续遍历；最终直到两个指针相遇。
 func reverseOnlyLetters(s string) string { t := []byte(s) for i, j := 0, len(t)-1; i &amp;lt; j; { if !'><title>Leetcode 917. 仅仅反转字母</title>
@@ -19,9 +22,12 @@ func reverseOnlyLetters(s string) string { t := []byte(s) for i, j := 0, len(t)-
 难度： 简单
 题目描述 给你一个字符串 s ，根据下述规则反转字符串：
 所有非英文字母保留在原有位置。 所有英文字母（小写或大写）位置反转。 返回反转后的 s 。
-示例 1： 输入：s = &amp;ldquo;ab-cd&amp;rdquo; 输出：&amp;ldquo;dc-ba&amp;rdquo;
-示例 2： 输入：s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo; 输出：&amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
-示例 3： 输入：s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo; 输出：&amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;ab-cd&amp;rdquo;
+输出： &amp;ldquo;dc-ba&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo;
+输出： &amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
+示例 3： 输入： s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo;
+输出： &amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
 提示： 1 &amp;lt;= s.length &amp;lt;= 100 s 仅由 ASCII 值在范围 [33, 122] 的字符组成 s 不含 &#39;\&amp;quot;&#39; 或 &#39;\\&#39; 解题思路 双指针 使用两个指针分别从两端开始，向中间遍历。
 当任一指针指向字符不为字母时，向中间寻找下一个字母；当两个指针指向的字符均为字母时，交换并继续遍历；最终直到两个指针相遇。
 func reverseOnlyLetters(s string) string { t := []byte(s) for i, j := 0, len(t)-1; i &amp;lt; j; { if !'>
@@ -33,9 +39,12 @@ func reverseOnlyLetters(s string) string { t := []byte(s) for i, j := 0, len(t)-
 难度： 简单
 题目描述 给你一个字符串 s ，根据下述规则反转字符串：
 所有非英文字母保留在原有位置。 所有英文字母（小写或大写）位置反转。 返回反转后的 s 。
-示例 1： 输入：s = &amp;ldquo;ab-cd&amp;rdquo; 输出：&amp;ldquo;dc-ba&amp;rdquo;
-示例 2： 输入：s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo; 输出：&amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
-示例 3： 输入：s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo; 输出：&amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;ab-cd&amp;rdquo;
+输出： &amp;ldquo;dc-ba&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo;
+输出： &amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
+示例 3： 输入： s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo;
+输出： &amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
 提示： 1 &amp;lt;= s.length &amp;lt;= 100 s 仅由 ASCII 值在范围 [33, 122] 的字符组成 s 不含 &#39;\&amp;quot;&#39; 或 &#39;\\&#39; 解题思路 双指针 使用两个指针分别从两端开始，向中间遍历。
 当任一指针指向字符不为字母时，向中间寻找下一个字母；当两个指针指向的字符均为字母时，交换并继续遍历；最终直到两个指针相遇。
 func reverseOnlyLetters(s string) string { t := []byte(s) for i, j := 0, len(t)-1; i &amp;lt; j; { if !">
@@ -229,14 +238,20 @@ func reverseOnlyLetters(s string) string { t := []byte(s) for i, j := 0, len(t)-
 </ul>
 <p>返回反转后的 <code>s</code> 。</p>
 <h4 id="示例-1">示例 1：</h4>
-<p>输入：s = &ldquo;ab-cd&rdquo;
-输出：&ldquo;dc-ba&rdquo;</p>
+<blockquote>
+<p><strong>输入：</strong> s = &ldquo;ab-cd&rdquo;<br>
+<strong>输出：</strong> &ldquo;dc-ba&rdquo;</p>
+</blockquote>
 <h4 id="示例-2">示例 2：</h4>
-<p>输入：s = &ldquo;a-bC-dEf-ghIj&rdquo;
-输出：&ldquo;j-Ih-gfE-dCba&rdquo;</p>
+<blockquote>
+<p><strong>输入：</strong> s = &ldquo;a-bC-dEf-ghIj&rdquo;<br>
+<strong>输出：</strong> &ldquo;j-Ih-gfE-dCba&rdquo;</p>
+</blockquote>
 <h4 id="示例-3">示例 3：</h4>
-<p>输入：s = &ldquo;Test1ng-Leet=code-Q!&rdquo;
-输出：&ldquo;Qedo1ct-eeLg=ntse-T!&rdquo;</p>
+<blockquote>
+<p><strong>输入：</strong> s = &ldquo;Test1ng-Leet=code-Q!&rdquo;<br>
+<strong>输出：</strong> &ldquo;Qedo1ct-eeLg=ntse-T!&rdquo;</p>
+</blockquote>
 <h5 id="提示">提示：</h5>
 <ul>
 <li><code>1 &lt;= s.length &lt;= 100</code></li>

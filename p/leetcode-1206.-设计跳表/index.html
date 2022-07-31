@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/design-skiplist/
+难度： 困难
+题目描述 不使用任何库函数，设计一个 跳表 。
+跳表 是在 O(log(n)) 时间内完成增加、删除、搜索操作的数据结构。跳表相比于树堆与红黑树，其功能与性能相当，并且跳表的代码长度相较下更短，其设计思想与链表相似。
+例如，一个跳表包含 [30, 40, 50, 60, 70, 90] ，然后增加 80、45 到跳表中，以下图的方式操作：
+Artyom Kalinin [CC BY-SA 3.0], via Wikimedia Commons
+跳表中有很多层，每一层是一个短的链表。在第一层的作用下，增加、删除和搜索操作的时间复杂度不超过 O(n)。跳表的每一个操作的平均时间复杂度是 O(log(n))，空间复杂度是 O(n)。
+了解更多 : https://en.wikipedia.org/wiki/Skip_list
+在本题中，你的设计应该要包含这些函数：
+bool search(int target): 返回 target 是否存在于跳表中。 void add(int num): 插入一个元素到跳表。 bool erase(int num): 在跳表中删除一个值，如果 num 不存在，直接返回 false. 如果存在多个 num ，删除其中任意一个即可。 注意，跳表中可能存在多个相同的值，你的代码需要处理这种情况。
+示例： 输入
+[&amp;ldquo;Skiplist&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;erase&amp;rdquo;, &amp;ldquo;erase&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]'><title>Leetcode 1206. 设计跳表</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-1206.-%E8%AE%BE%E8%AE%A1%E8%B7%B3%E8%A1%A8/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 1206. 设计跳表'>
+<meta property='og:description' content='链接： https://leetcode.cn/problems/design-skiplist/
+难度： 困难
+题目描述 不使用任何库函数，设计一个 跳表 。
+跳表 是在 O(log(n)) 时间内完成增加、删除、搜索操作的数据结构。跳表相比于树堆与红黑树，其功能与性能相当，并且跳表的代码长度相较下更短，其设计思想与链表相似。
+例如，一个跳表包含 [30, 40, 50, 60, 70, 90] ，然后增加 80、45 到跳表中，以下图的方式操作：
+Artyom Kalinin [CC BY-SA 3.0], via Wikimedia Commons
+跳表中有很多层，每一层是一个短的链表。在第一层的作用下，增加、删除和搜索操作的时间复杂度不超过 O(n)。跳表的每一个操作的平均时间复杂度是 O(log(n))，空间复杂度是 O(n)。
+了解更多 : https://en.wikipedia.org/wiki/Skip_list
+在本题中，你的设计应该要包含这些函数：
+bool search(int target): 返回 target 是否存在于跳表中。 void add(int num): 插入一个元素到跳表。 bool erase(int num): 在跳表中删除一个值，如果 num 不存在，直接返回 false. 如果存在多个 num ，删除其中任意一个即可。 注意，跳表中可能存在多个相同的值，你的代码需要处理这种情况。
+示例： 输入
+[&amp;ldquo;Skiplist&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;erase&amp;rdquo;, &amp;ldquo;erase&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-1206.-%E8%AE%BE%E8%AE%A1%E8%B7%B3%E8%A1%A8/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='sort' /><meta property='article:published_time' content='2022-07-26T20:06:39&#43;08:00'/><meta property='article:modified_time' content='2022-07-26T20:06:39&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 1206. 设计跳表">
+<meta name="twitter:description" content="链接： https://leetcode.cn/problems/design-skiplist/
+难度： 困难
+题目描述 不使用任何库函数，设计一个 跳表 。
+跳表 是在 O(log(n)) 时间内完成增加、删除、搜索操作的数据结构。跳表相比于树堆与红黑树，其功能与性能相当，并且跳表的代码长度相较下更短，其设计思想与链表相似。
+例如，一个跳表包含 [30, 40, 50, 60, 70, 90] ，然后增加 80、45 到跳表中，以下图的方式操作：
+Artyom Kalinin [CC BY-SA 3.0], via Wikimedia Commons
+跳表中有很多层，每一层是一个短的链表。在第一层的作用下，增加、删除和搜索操作的时间复杂度不超过 O(n)。跳表的每一个操作的平均时间复杂度是 O(log(n))，空间复杂度是 O(n)。
+了解更多 : https://en.wikipedia.org/wiki/Skip_list
+在本题中，你的设计应该要包含这些函数：
+bool search(int target): 返回 target 是否存在于跳表中。 void add(int num): 插入一个元素到跳表。 bool erase(int num): 在跳表中删除一个值，如果 num 不存在，直接返回 false. 如果存在多个 num ，删除其中任意一个即可。 注意，跳表中可能存在多个相同的值，你的代码需要处理这种情况。
+示例： 输入
+[&amp;ldquo;Skiplist&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;erase&amp;rdquo;, &amp;ldquo;erase&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-1206.-%E8%AE%BE%E8%AE%A1%E8%B7%B3%E8%A1%A8/">Leetcode 1206. 设计跳表</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jul 26, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode.cn/problems/design-skiplist/"  target="_blank" rel="noopener"
+    >https://leetcode.cn/problems/design-skiplist/</a><br>
+<strong>难度：</strong> <font color="red">困难</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>不使用任何库函数，设计一个 <strong>跳表</strong> 。</p>
+<p><strong>跳表</strong> 是在 <code>O(log(n))</code> 时间内完成增加、删除、搜索操作的数据结构。跳表相比于树堆与红黑树，其功能与性能相当，并且跳表的代码长度相较下更短，其设计思想与链表相似。</p>
+<p>例如，一个跳表包含 <code>[30, 40, 50, 60, 70, 90]</code> ，然后增加 <code>80</code>、<code>45</code> 到跳表中，以下图的方式操作：</p>
+<img src="/img/1206.1506_skiplist.gif">
+<p>Artyom Kalinin [CC BY-SA 3.0], via <a class="link" href="https://commons.wikimedia.org/wiki/File:Skip_list_add_element-en.gif"  target="_blank" rel="noopener"
+    >Wikimedia Commons</a></p>
+<p>跳表中有很多层，每一层是一个短的链表。在第一层的作用下，增加、删除和搜索操作的时间复杂度不超过 <code>O(n)</code>。跳表的每一个操作的平均时间复杂度是 <code>O(log(n))</code>，空间复杂度是 <code>O(n)</code>。</p>
+<p>了解更多 : <a class="link" href="https://en.wikipedia.org/wiki/Skip_list"  target="_blank" rel="noopener"
+    >https://en.wikipedia.org/wiki/Skip_list</a></p>
+<p>在本题中，你的设计应该要包含这些函数：</p>
+<ul>
+<li><code>bool search(int target)</code>: 返回 <code>target</code> 是否存在于跳表中。</li>
+<li><code>void add(int num)</code>: 插入一个元素到跳表。</li>
+<li><code>bool erase(int num)</code>: 在跳表中删除一个值，如果 <code>num</code> 不存在，直接返回 <code>false</code>. 如果存在多个 <code>num</code> ，删除其中任意一个即可。</li>
+</ul>
+<p>注意，跳表中可能存在多个相同的值，你的代码需要处理这种情况。</p>
+<h4 id="示例">示例：</h4>
+<blockquote>
+<p><strong>输入</strong><br>
+[&ldquo;Skiplist&rdquo;, &ldquo;add&rdquo;, &ldquo;add&rdquo;, &ldquo;add&rdquo;, &ldquo;search&rdquo;, &ldquo;add&rdquo;, &ldquo;search&rdquo;, &ldquo;erase&rdquo;, &ldquo;erase&rdquo;, &ldquo;search&rdquo;]<br>
+[[], [1], [2], [3], [0], [4], [1], [0], [1], [1]]<br>
+<strong>输出</strong><br>
+[null, null, null, null, false, null, true, false, true, false]</p>
+<p><strong>解释</strong><br>
+Skiplist skiplist = new Skiplist();<br>
+skiplist.add(1);<br>
+skiplist.add(2);<br>
+skiplist.add(3);<br>
+skiplist.search(0);   // 返回 false<br>
+skiplist.add(4);<br>
+skiplist.search(1);   // 返回 true<br>
+skiplist.erase(0);    // 返回 false，0 不在跳表中<br>
+skiplist.erase(1);    // 返回 true<br>
+skiplist.search(1);   // 返回 false，1 已被擦除</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<ul>
+<li><code>0 &lt;= num, target &lt;= 2 * 10<sup>4</sup></code></li>
+<li>调用 <code>search</code>, <code>add</code>, <code>erase</code>操作次数不大于 <code>5 * 10<sup>4</sup></code></li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="排序">排序</h4>
+<p>将原数组从小到大排序，则最小差值一定出现在两个相邻的元素之间，依次遍历判断寻找：</p>
+<ul>
+<li>当当前差值大于最小差值时，忽略；</li>
+<li>当当前差值等于最小差值时，加入到结果数组中；</li>
+<li>当当前差值小于最小差值时，之前保留的结果无效，进行清空，并将当前元素对加入到结果数组中；</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">node</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">val</span>  <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">next</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Skiplist</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>        <span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">randomLevel</span> <span style="color:#66d9ef">func</span>() <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">level</span>       <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>() <span style="color:#a6e22e">Skiplist</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">maxLevel</span> = <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Skiplist</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">head</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">node</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">val</span>:  <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">next</span>: make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">maxLevel</span>),
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">randomLevel</span>: <span style="color:#66d9ef">func</span>() <span style="color:#66d9ef">func</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">random</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">NewSource</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixNano</span>())).<span style="color:#a6e22e">Int31n</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxLevel</span> <span style="color:#f92672">-</span> int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Log2</span>(float64(<span style="color:#a6e22e">random</span>(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt16</span>))))
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}(),
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">level</span>: <span style="color:#a6e22e">maxLevel</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Skiplist</span>) <span style="color:#a6e22e">Search</span>(<span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">level</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">level</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">level</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">level</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 当前 level 不大于 target
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>] <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>].<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">target</span>; <span style="color:#a6e22e">n</span> = <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>] {
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 已找到
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Skiplist</span>) <span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">preNodes</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">level</span>) <span style="color:#75715e">// 每层前置节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">level</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">level</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>; <span style="color:#a6e22e">level</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">level</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 当前 level 不大于 num
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>] <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>].<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">num</span>; <span style="color:#a6e22e">n</span> = <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>] {
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">preNodes</span>[<span style="color:#a6e22e">level</span>] = <span style="color:#a6e22e">n</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">level</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">randomLevel</span>() <span style="color:#75715e">// 随机当前节点的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">newNode</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">node</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">val</span>:  <span style="color:#a6e22e">num</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">next</span>: make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">level</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 更新前置结点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">level</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">preNodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">newNode</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">newNode</span>, <span style="color:#a6e22e">preNodes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Skiplist</span>) <span style="color:#a6e22e">Erase</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">preNodes</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">level</span>) <span style="color:#75715e">// 每层前置节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">level</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">level</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">level</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">level</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 当前 level 小于 num
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>] <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>].<span style="color:#a6e22e">val</span> &lt; <span style="color:#a6e22e">num</span>; <span style="color:#a6e22e">n</span> = <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>] {
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">preNodes</span>[<span style="color:#a6e22e">level</span>] = <span style="color:#a6e22e">n</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">n</span> = <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 判定是否存在
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">num</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">level</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">level</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">level</span><span style="color:#f92672">--</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">preNodes</span>[<span style="color:#a6e22e">level</span>].<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>] = <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span>[<span style="color:#a6e22e">level</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：
+<ul>
+<li><code>Constructor</code>：$ O(1) $</li>
+<li><code>Search</code>：$ O(\log{N}), N = len(skiplist) $</li>
+<li><code>Add</code>：$ O(\log{N}) $</li>
+<li><code>Erase</code>：$ O(\log{N}) $</li>
+</ul>
+</li>
+<li>空间复杂度：$ O(N) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/sort/">sort</a>
+        
+    </section>
+
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1200.-%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1200. 最小绝对差</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1051.-%E9%AB%98%E5%BA%A6%E6%A3%80%E6%9F%A5%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1051. 高度检查器</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-436.-%E5%AF%BB%E6%89%BE%E5%8F%B3%E5%8C%BA%E9%97%B4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 436. 寻找右区间</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-462.-%E6%9C%80%E5%B0%91%E7%A7%BB%E5%8A%A8%E6%AC%A1%E6%95%B0%E4%BD%BF%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9B%B8%E7%AD%89-ii/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 462. 最少移动次数使数组元素相等 II</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1305.-%E4%B8%A4%E6%A3%B5%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1305. 两棵二叉搜索树中的所有元素</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

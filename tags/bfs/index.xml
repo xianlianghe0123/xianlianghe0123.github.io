@@ -6,7 +6,54 @@
     <description>Recent content in bfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 07 May 2022 10:07:37 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jul 2022 09:39:44 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1161. 最大层内元素和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1161.-%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/</link>
+      <pubDate>Sun, 31 Jul 2022 09:39:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1161.-%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-level-sum-of-a-binary-tree/
+难度： 中等
+题目描述 给你一个二叉树的根节点 root。设根节点位于二叉树的第 1 层，而根节点的子节点位于第 2 层，依此类推。
+请返回层内元素之和 最大 的那几层（可能只有一层）的层号，并返回其中 最小 的那个。
+示例 1： 输入： root = [1,7,0,7,-8,null,null]
+输出： 2
+解释：
+第 1 层各元素之和为 1，
+第 2 层各元素之和为 7 + 0 = 7，
+第 3 层各元素之和为 7 + -8 = -1，
+所以我们返回第 2 层的层号，它的层内元素之和最大。
+示例 2： 输入： root = [989,null,10250,98693,-89388,null,null,null,-32127]
+输出： 2
+提示： 树中的节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105 解题思路 层序遍历 层序遍历，求得每层节点元素和，找出最大的那一层。
+func maxLevelSum(root *TreeNode) int { q := list.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 919. 完全二叉树插入器</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-919.-%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/</link>
+      <pubDate>Mon, 25 Jul 2022 20:31:06 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-919.-%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/</guid>
+      <description>链接： https://leetcode.cn/problems/complete-binary-tree-inserter/
+难度： 简单
+题目描述 完全二叉树 是每一层（除最后一层外）都是完全填充（即，节点数达到最大）的，并且所有的节点都尽可能地集中在左侧。
+设计一种算法，将一个新节点插入到一个完整的二叉树中，并在插入后保持其完整。
+实现 CBTInserter 类:
+CBTInserter(TreeNode root) 使用头节点为 root 的给定树初始化该数据结构； CBTInserter.insert(int v) 向树中插入一个值为 Node.val == val 的新节点 TreeNode。使树保持完全二叉树的状态，并返回插入节点 TreeNode 的父节点的值； CBTInserter.get_root() 将返回树的头节点。 示例： 输入：
+[&amp;ldquo;CBTInserter&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;get_root&amp;rdquo;]
+[[[1, 2]], [3], [4], []]
+输出：
+[null, 1, 2, [1, 2, 3, 4]]
+解释：
+CBTInserter cBTInserter = new CBTInserter([1, 2]);
+cBTInserter.insert(3); // 返回 1
+cBTInserter.insert(4); // 返回 2
+cBTInserter.get_root(); // 返回 [1, 2, 3, 4]
+提示： 树中节点数量范围为 [1, 1000] 0 &amp;lt;= Node.</description>
+    </item>
+    
     <item>
       <title>Leetcode 433. 最小基因变化</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-433.-%E6%9C%80%E5%B0%8F%E5%9F%BA%E5%9B%A0%E5%8F%98%E5%8C%96/</link>

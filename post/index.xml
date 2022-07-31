@@ -6,7 +6,153 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 24 Jul 2022 12:04:02 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jul 2022 09:39:44 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1161. 最大层内元素和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1161.-%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/</link>
+      <pubDate>Sun, 31 Jul 2022 09:39:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1161.-%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-level-sum-of-a-binary-tree/
+难度： 中等
+题目描述 给你一个二叉树的根节点 root。设根节点位于二叉树的第 1 层，而根节点的子节点位于第 2 层，依此类推。
+请返回层内元素之和 最大 的那几层（可能只有一层）的层号，并返回其中 最小 的那个。
+示例 1： 输入： root = [1,7,0,7,-8,null,null]
+输出： 2
+解释：
+第 1 层各元素之和为 1，
+第 2 层各元素之和为 7 + 0 = 7，
+第 3 层各元素之和为 7 + -8 = -1，
+所以我们返回第 2 层的层号，它的层内元素之和最大。
+示例 2： 输入： root = [989,null,10250,98693,-89388,null,null,null,-32127]
+输出： 2
+提示： 树中的节点数在 [1, 104] 范围内 -105 &amp;lt;= Node.val &amp;lt;= 105 解题思路 层序遍历 层序遍历，求得每层节点元素和，找出最大的那一层。
+func maxLevelSum(root *TreeNode) int { q := list.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 952. 按公因数计算最大组件大小</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-952.-%E6%8C%89%E5%85%AC%E5%9B%A0%E6%95%B0%E8%AE%A1%E7%AE%97%E6%9C%80%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%A4%A7%E5%B0%8F/</link>
+      <pubDate>Sat, 30 Jul 2022 13:52:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-952.-%E6%8C%89%E5%85%AC%E5%9B%A0%E6%95%B0%E8%AE%A1%E7%AE%97%E6%9C%80%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%A4%A7%E5%B0%8F/</guid>
+      <description>链接： https://leetcode.cn/problems/largest-component-size-by-common-factor/
+难度： 困难
+题目描述 给定一个由不同正整数的组成的非空数组 nums ，考虑下面的图：
+有 nums.length 个节点，按从 nums[0] 到 nums[nums.length - 1] 标记； 只有当 nums[i] 和 nums[j] 共用一个大于 1 的公因数时，nums[i] 和 nums[j] 之间才有一条边。 返回 图中最大连通组件的大小 。
+示例 1： 输入： nums = [4,6,15,35]
+输出： 4
+示例 2： 输入： nums = [20,50,9,63]
+输出： 2
+示例 3： 输入： nums = [2,3,6,7,4,12,21,39]
+输出： 8
+提示： 1 &amp;lt;= nums.length &amp;lt;= 2 * 104 1 &amp;lt;= nums[i] &amp;lt;= 105 nums 中所有值都 不同 解题思路 并查集 a 和 b 连通，则与 a 连通的所有元素和与 c 连通的所有元素均处于一个连通集中，典型的并查集题目。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 593. 有效的正方形</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-593.-%E6%9C%89%E6%95%88%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/</link>
+      <pubDate>Fri, 29 Jul 2022 10:02:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-593.-%E6%9C%89%E6%95%88%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/</guid>
+      <description>链接： https://leetcode.cn/problems/valid-square/
+难度： 中等
+题目描述 给定2D空间中四个点的坐标 p1, p2, p3 和 p4，如果这四个点构成一个正方形，则返回 true 。
+点的坐标 pi 表示为 [xi, yi] 。输入 不是 按任何顺序给出的。
+一个 有效的正方形 有四条等边和四个等角(90度角)。
+示例 1： 输入： p1 = [0,0], p2 = [1,1], p3 = [1,0], p4 = [0,1]
+输出： True
+示例 2： 输入： p1 = [0,0], p2 = [1,1], p3 = [1,0], p4 = [0,12]
+输出： false
+示例 3： 输入： p1 = [1,0], p2 = [-1,0], p3 = [0,1], p4 = [0,-1]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1331. 数组序号转换</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1331.-%E6%95%B0%E7%BB%84%E5%BA%8F%E5%8F%B7%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Thu, 28 Jul 2022 09:45:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1331.-%E6%95%B0%E7%BB%84%E5%BA%8F%E5%8F%B7%E8%BD%AC%E6%8D%A2/</guid>
+      <description>链接： https://leetcode.cn/problems/rank-transform-of-an-array/
+难度： 简单
+题目描述 给你一个整数数组 arr ，请你将数组中的每个元素替换为它们排序后的序号。
+序号代表了一个元素有多大。序号编号的规则如下：
+序号从 1 开始编号。 一个元素越大，那么序号越大。如果两个元素相等，那么它们的序号相同。 每个数字的序号都应该尽可能地小。 示例 1： 输入： arr = [40,10,20,30]
+输出： [4,1,2,3]
+解释： 40 是最大的元素。 10 是最小的元素。 20 是第二小的数字。 30 是第三小的数字。
+示例 2： 输入： arr = [100,100,100]
+输出： [1,1,1]
+解释： 所有元素有相同的序号。
+示例 3： 输入： arr = [37,12,28,9,100,56,80,5,12]
+输出： [5,3,4,2,8,6,7,1,3]
+提示： 0 &amp;lt;= arr.length &amp;lt;= 105 -109 &amp;lt;= arr[i] &amp;lt;= 109 解题思路 排序 &amp;amp; 哈希 按照元素大小进行一轮排序，然后使用哈希表去重并记录元素的序号。
+最后按照原来的元素顺序查表得到结果。
+func arrayRankTransform(arr []int) []int { ans := make([]int, len(arr)) copy(ans, arr) sort.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 592. 分数加减运算</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-592.-%E5%88%86%E6%95%B0%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Wed, 27 Jul 2022 10:06:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-592.-%E5%88%86%E6%95%B0%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97/</guid>
+      <description>链接： https://leetcode.cn/problems/fraction-addition-and-subtraction/
+难度： 中等
+题目描述 给定一个表示分数加减运算的字符串 expression ，你需要返回一个字符串形式的计算结果。 这个结果应该是不可约分的分数，即最简分数。 如果最终结果是一个整数，例如 2，你需要将它转换成分数形式，其分母为 1。所以在上述例子中, 2 应该被转换为 2/1。
+示例 1： 输入： expression = &amp;ldquo;-1/2+1/2&amp;rdquo;
+输出： &amp;ldquo;0/1&amp;rdquo;
+示例 2： 输入： expression = &amp;ldquo;-1/2+1/2+1/3&amp;rdquo;
+输出： &amp;ldquo;1/3&amp;rdquo;
+示例 3： 输入： expression = &amp;ldquo;1/3-1/2&amp;rdquo;
+输出： &amp;ldquo;-1/6&amp;rdquo;
+提示： 输入和输出字符串只包含 &#39;0&#39; 到 &#39;9&#39; 的数字，以及 &#39;/&#39;, &#39;+&#39; 和 &#39;-&#39;。 输入和输出分数格式均为 ±分子/分母。如果输入的第一个分数或者输出的分数是正数，则 &#39;+&#39; 会被省略掉。 输入只包含合法的最简分数，每个分数的分子与分母的范围是 [1,10]。 如果分母是 1，意味着这个分数实际上是一个整数。 输入的分数个数范围是 [1,10]。 最终结果的分子与分母保证是 32 位整数范围内的有效整数。 解题思路 模拟 识别出每个分数的分子和分母，做累计求和运算，每次运算后进行约分。
+func fractionAddition(expression string) string { sum := &amp;amp;frac{ numerator: 0, denominator: 1, } for i := 0; i &amp;lt; len(expression); { newFrac := new(frac) // 识别分子 j := i for ; j &amp;lt; len(expression) &amp;amp;&amp;amp; (expression[j] &amp;gt;= &amp;#39;0&amp;#39; &amp;amp;&amp;amp; expression[j] &amp;lt;= &amp;#39;9&amp;#39; || expression[j] == &amp;#39;+&amp;#39; || expression[j] == &amp;#39;-&amp;#39;); j++ { } newFrac.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1206. 设计跳表</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1206.-%E8%AE%BE%E8%AE%A1%E8%B7%B3%E8%A1%A8/</link>
+      <pubDate>Tue, 26 Jul 2022 20:06:39 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1206.-%E8%AE%BE%E8%AE%A1%E8%B7%B3%E8%A1%A8/</guid>
+      <description>链接： https://leetcode.cn/problems/design-skiplist/
+难度： 困难
+题目描述 不使用任何库函数，设计一个 跳表 。
+跳表 是在 O(log(n)) 时间内完成增加、删除、搜索操作的数据结构。跳表相比于树堆与红黑树，其功能与性能相当，并且跳表的代码长度相较下更短，其设计思想与链表相似。
+例如，一个跳表包含 [30, 40, 50, 60, 70, 90] ，然后增加 80、45 到跳表中，以下图的方式操作：
+Artyom Kalinin [CC BY-SA 3.0], via Wikimedia Commons
+跳表中有很多层，每一层是一个短的链表。在第一层的作用下，增加、删除和搜索操作的时间复杂度不超过 O(n)。跳表的每一个操作的平均时间复杂度是 O(log(n))，空间复杂度是 O(n)。
+了解更多 : https://en.wikipedia.org/wiki/Skip_list
+在本题中，你的设计应该要包含这些函数：
+bool search(int target): 返回 target 是否存在于跳表中。 void add(int num): 插入一个元素到跳表。 bool erase(int num): 在跳表中删除一个值，如果 num 不存在，直接返回 false. 如果存在多个 num ，删除其中任意一个即可。 注意，跳表中可能存在多个相同的值，你的代码需要处理这种情况。
+示例： 输入
+[&amp;ldquo;Skiplist&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;add&amp;rdquo;, &amp;ldquo;search&amp;rdquo;, &amp;ldquo;erase&amp;rdquo;, &amp;ldquo;erase&amp;rdquo;, &amp;ldquo;search&amp;rdquo;]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 919. 完全二叉树插入器</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-919.-%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/</link>
+      <pubDate>Mon, 25 Jul 2022 20:31:06 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-919.-%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/</guid>
+      <description>链接： https://leetcode.cn/problems/complete-binary-tree-inserter/
+难度： 简单
+题目描述 完全二叉树 是每一层（除最后一层外）都是完全填充（即，节点数达到最大）的，并且所有的节点都尽可能地集中在左侧。
+设计一种算法，将一个新节点插入到一个完整的二叉树中，并在插入后保持其完整。
+实现 CBTInserter 类:
+CBTInserter(TreeNode root) 使用头节点为 root 的给定树初始化该数据结构； CBTInserter.insert(int v) 向树中插入一个值为 Node.val == val 的新节点 TreeNode。使树保持完全二叉树的状态，并返回插入节点 TreeNode 的父节点的值； CBTInserter.get_root() 将返回树的头节点。 示例： 输入：
+[&amp;ldquo;CBTInserter&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;insert&amp;rdquo;, &amp;ldquo;get_root&amp;rdquo;]
+[[[1, 2]], [3], [4], []]
+输出：
+[null, 1, 2, [1, 2, 3, 4]]
+解释：
+CBTInserter cBTInserter = new CBTInserter([1, 2]);
+cBTInserter.insert(3); // 返回 1
+cBTInserter.insert(4); // 返回 2
+cBTInserter.get_root(); // 返回 [1, 2, 3, 4]
+提示： 树中节点数量范围为 [1, 1000] 0 &amp;lt;= Node.</description>
+    </item>
+    
     <item>
       <title>Leetcode 1184. 公交站间的距离</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1184.-%E5%85%AC%E4%BA%A4%E7%AB%99%E9%97%B4%E7%9A%84%E8%B7%9D%E7%A6%BB/</link>
@@ -2323,9 +2469,12 @@ b2 球开始放在第 2 列上，会卡在第 2、3 列和第 0 行之间的 &am
 难度： 简单
 题目描述 给你一个字符串 s ，根据下述规则反转字符串：
 所有非英文字母保留在原有位置。 所有英文字母（小写或大写）位置反转。 返回反转后的 s 。
-示例 1： 输入：s = &amp;ldquo;ab-cd&amp;rdquo; 输出：&amp;ldquo;dc-ba&amp;rdquo;
-示例 2： 输入：s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo; 输出：&amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
-示例 3： 输入：s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo; 输出：&amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
+示例 1： 输入： s = &amp;ldquo;ab-cd&amp;rdquo;
+输出： &amp;ldquo;dc-ba&amp;rdquo;
+示例 2： 输入： s = &amp;ldquo;a-bC-dEf-ghIj&amp;rdquo;
+输出： &amp;ldquo;j-Ih-gfE-dCba&amp;rdquo;
+示例 3： 输入： s = &amp;ldquo;Test1ng-Leet=code-Q!&amp;rdquo;
+输出： &amp;ldquo;Qedo1ct-eeLg=ntse-T!&amp;rdquo;
 提示： 1 &amp;lt;= s.length &amp;lt;= 100 s 仅由 ASCII 值在范围 [33, 122] 的字符组成 s 不含 &#39;\&amp;quot;&#39; 或 &#39;\\&#39; 解题思路 双指针 使用两个指针分别从两端开始，向中间遍历。
 当任一指针指向字符不为字母时，向中间寻找下一个字母；当两个指针指向的字符均为字母时，交换并继续遍历；最终直到两个指针相遇。
 func reverseOnlyLetters(s string) string { t := []byte(s) for i, j := 0, len(t)-1; i &amp;lt; j; { if !</description>
