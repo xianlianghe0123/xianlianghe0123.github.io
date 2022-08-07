@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/exclusive-time-of-functions/
+难度： 中等
+题目描述 有一个 单线程 CPU 正在运行一个含有 n 道函数的程序。每道函数都有一个位于 0 和 n-1 之间的唯一标识符。
+函数调用 存储在一个 调用栈 上 ：当一个函数调用开始时，它的标识符将会推入栈中。而当一个函数调用结束时，它的标识符将会从栈中弹出。标识符位于栈顶的函数是 当前正在执行的函数 。每当一个函数开始或者结束时，将会记录一条日志，包括函数标识符、是开始还是结束、以及相应的时间戳。
+给你一个由日志组成的列表 logs ，其中 logs[i] 表示第 i 条日志消息，该消息是一个按 &amp;quot;{function_id}:{&amp;quot;start&amp;quot; | &amp;quot;end&amp;quot;}:{timestamp}&amp;quot; 进行格式化的字符串。例如，&amp;quot;0:start:3&amp;quot; 意味着标识符为 0 的函数调用在时间戳 3 的 起始开始执行 ；而 &amp;quot;1:end:2&amp;quot; 意味着标识符为 1 的函数调用在时间戳 2 的 末尾结束执行。注意，函数可以 调用多次，可能存在递归调用 。
+函数的 独占时间 定义是在这个函数在程序所有函数调用中执行时间的总和，调用其他函数花费的时间不算该函数的独占时间。例如，如果一个函数被调用两次，一次调用执行 2 单位时间，另一次调用执行 1 单位时间，那么该函数的 独占时间 为 2 &#43; 1 = 3 。
+以数组形式返回每个函数的 独占时间 ，其中第 i 个下标对应的值表示标识符 i 的函数的独占时间。'><title>Leetcode 636. 函数的独占时间</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-636.-%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 636. 函数的独占时间'>
+<meta property='og:description' content='链接： https://leetcode.cn/problems/exclusive-time-of-functions/
+难度： 中等
+题目描述 有一个 单线程 CPU 正在运行一个含有 n 道函数的程序。每道函数都有一个位于 0 和 n-1 之间的唯一标识符。
+函数调用 存储在一个 调用栈 上 ：当一个函数调用开始时，它的标识符将会推入栈中。而当一个函数调用结束时，它的标识符将会从栈中弹出。标识符位于栈顶的函数是 当前正在执行的函数 。每当一个函数开始或者结束时，将会记录一条日志，包括函数标识符、是开始还是结束、以及相应的时间戳。
+给你一个由日志组成的列表 logs ，其中 logs[i] 表示第 i 条日志消息，该消息是一个按 &amp;quot;{function_id}:{&amp;quot;start&amp;quot; | &amp;quot;end&amp;quot;}:{timestamp}&amp;quot; 进行格式化的字符串。例如，&amp;quot;0:start:3&amp;quot; 意味着标识符为 0 的函数调用在时间戳 3 的 起始开始执行 ；而 &amp;quot;1:end:2&amp;quot; 意味着标识符为 1 的函数调用在时间戳 2 的 末尾结束执行。注意，函数可以 调用多次，可能存在递归调用 。
+函数的 独占时间 定义是在这个函数在程序所有函数调用中执行时间的总和，调用其他函数花费的时间不算该函数的独占时间。例如，如果一个函数被调用两次，一次调用执行 2 单位时间，另一次调用执行 1 单位时间，那么该函数的 独占时间 为 2 &#43; 1 = 3 。
+以数组形式返回每个函数的 独占时间 ，其中第 i 个下标对应的值表示标识符 i 的函数的独占时间。'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-636.-%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stack' /><meta property='article:published_time' content='2022-08-07T09:30:44&#43;08:00'/><meta property='article:modified_time' content='2022-08-07T09:30:44&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 636. 函数的独占时间">
+<meta name="twitter:description" content="链接： https://leetcode.cn/problems/exclusive-time-of-functions/
+难度： 中等
+题目描述 有一个 单线程 CPU 正在运行一个含有 n 道函数的程序。每道函数都有一个位于 0 和 n-1 之间的唯一标识符。
+函数调用 存储在一个 调用栈 上 ：当一个函数调用开始时，它的标识符将会推入栈中。而当一个函数调用结束时，它的标识符将会从栈中弹出。标识符位于栈顶的函数是 当前正在执行的函数 。每当一个函数开始或者结束时，将会记录一条日志，包括函数标识符、是开始还是结束、以及相应的时间戳。
+给你一个由日志组成的列表 logs ，其中 logs[i] 表示第 i 条日志消息，该消息是一个按 &amp;quot;{function_id}:{&amp;quot;start&amp;quot; | &amp;quot;end&amp;quot;}:{timestamp}&amp;quot; 进行格式化的字符串。例如，&amp;quot;0:start:3&amp;quot; 意味着标识符为 0 的函数调用在时间戳 3 的 起始开始执行 ；而 &amp;quot;1:end:2&amp;quot; 意味着标识符为 1 的函数调用在时间戳 2 的 末尾结束执行。注意，函数可以 调用多次，可能存在递归调用 。
+函数的 独占时间 定义是在这个函数在程序所有函数调用中执行时间的总和，调用其他函数花费的时间不算该函数的独占时间。例如，如果一个函数被调用两次，一次调用执行 2 单位时间，另一次调用执行 1 单位时间，那么该函数的 独占时间 为 2 &#43; 1 = 3 。
+以数组形式返回每个函数的 独占时间 ，其中第 i 个下标对应的值表示标识符 i 的函数的独占时间。">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-636.-%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/">Leetcode 636. 函数的独占时间</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Aug 07, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode.cn/problems/exclusive-time-of-functions/"  target="_blank" rel="noopener"
+    >https://leetcode.cn/problems/exclusive-time-of-functions/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>有一个 <strong>单线程</strong> CPU 正在运行一个含有 <code>n</code> 道函数的程序。每道函数都有一个位于 <code>0</code> 和 <code>n-1</code> 之间的唯一标识符。</p>
+<p>函数调用 <strong>存储在一个</strong> <font color="grey">调用栈</font> <strong>上</strong> ：当一个函数调用开始时，它的标识符将会推入栈中。而当一个函数调用结束时，它的标识符将会从栈中弹出。标识符位于栈顶的函数是 <strong>当前正在执行的函数</strong> 。每当一个函数开始或者结束时，将会记录一条日志，包括函数标识符、是开始还是结束、以及相应的时间戳。</p>
+<p>给你一个由日志组成的列表 <code>logs</code> ，其中 <code>logs[i]</code> 表示第 <code>i</code> 条日志消息，该消息是一个按 <code>&quot;{function_id}:{&quot;start&quot; | &quot;end&quot;}:{timestamp}&quot;</code> 进行格式化的字符串。例如，<code>&quot;0:start:3&quot;</code> 意味着标识符为 <code>0</code> 的函数调用在时间戳 <code>3</code> 的 <strong>起始开始执行</strong> ；而 <code>&quot;1:end:2&quot;</code> 意味着标识符为 <code>1</code> 的函数调用在时间戳 <code>2</code> 的 <strong>末尾结束执行</strong>。注意，函数可以 <strong>调用多次</strong>，<strong>可能存在递归调用</strong> 。</p>
+<p>函数的 <strong>独占时间</strong> 定义是在这个函数在程序所有函数调用中执行时间的总和，调用其他函数花费的时间不算该函数的独占时间。例如，如果一个函数被调用两次，一次调用执行 <code>2</code> 单位时间，另一次调用执行 <code>1</code> 单位时间，那么该函数的 <strong>独占时间</strong> 为 <code>2 + 1 = 3</code> 。</p>
+<p>以数组形式返回每个函数的 <strong>独占时间</strong> ，其中第 <code>i</code> 个下标对应的值表示标识符 <code>i</code> 的函数的独占时间。</p>
+<h4 id="示例-1">示例 1：</h4>
+<img src="/img/636.diag1b.png" width="550px">
+<blockquote>
+<p><strong>输入：</strong> n = 2, logs = [&ldquo;0:start:0&rdquo;,&ldquo;1:start:2&rdquo;,&ldquo;1:end:5&rdquo;,&ldquo;0:end:6&rdquo;]<br>
+<strong>输出：</strong> [3,4]<br>
+<strong>解释：</strong><br>
+函数 0 在时间戳 0 的起始开始执行，执行 2 个单位时间，于时间戳 1 的末尾结束执行。<br>
+函数 1 在时间戳 2 的起始开始执行，执行 4 个单位时间，于时间戳 5 的末尾结束执行。<br>
+函数 0 在时间戳 6 的开始恢复执行，执行 1 个单位时间。<br>
+所以函数 0 总共执行 2 + 1 = 3 个单位时间，函数 1 总共执行 4 个单位时间。</p>
+</blockquote>
+<h4 id="示例-2">示例 2：</h4>
+<blockquote>
+<p><strong>输入：</strong> n = 1, logs = [&ldquo;0:start:0&rdquo;,&ldquo;0:start:2&rdquo;,&ldquo;0:end:5&rdquo;,&ldquo;0:start:6&rdquo;,&ldquo;0:end:6&rdquo;,&ldquo;0:end:7&rdquo;]<br>
+<strong>输出：</strong> [8]<br>
+<strong>解释：</strong><br>
+函数 0 在时间戳 0 的起始开始执行，执行 2 个单位时间，并递归调用它自身。<br>
+函数 0（递归调用）在时间戳 2 的起始开始执行，执行 4 个单位时间。<br>
+函数 0（初始调用）恢复执行，并立刻再次调用它自身。<br>
+函数 0（第二次递归调用）在时间戳 6 的起始开始执行，执行 1 个单位时间。<br>
+函数 0（初始调用）在时间戳 7 的起始恢复执行，执行 1 个单位时间。<br>
+所以函数 0 总共执行 2 + 4 + 1 + 1 = 8 个单位时间。</p>
+</blockquote>
+<h4 id="示例-3">示例 3：</h4>
+<blockquote>
+<p><strong>输入：</strong> n = 2, logs = [&ldquo;0:start:0&rdquo;,&ldquo;0:start:2&rdquo;,&ldquo;0:end:5&rdquo;,&ldquo;1:start:6&rdquo;,&ldquo;1:end:6&rdquo;,&ldquo;0:end:7&rdquo;]<br>
+<strong>输出：</strong> [7,1]<br>
+<strong>解释：</strong><br>
+函数 0 在时间戳 0 的起始开始执行，执行 2 个单位时间，并递归调用它自身。<br>
+函数 0（递归调用）在时间戳 2 的起始开始执行，执行 4 个单位时间。<br>
+函数 0（初始调用）恢复执行，并立刻调用函数 1 。<br>
+函数 1在时间戳 6 的起始开始执行，执行 1 个单位时间，于时间戳 6 的末尾结束执行。<br>
+函数 0（初始调用）在时间戳 7 的起始恢复执行，执行 1 个单位时间，于时间戳 7 的末尾结束执行。<br>
+所以函数 0 总共执行 2 + 4 + 1 = 7 个单位时间，函数 1 总共执行 1 个单位时间。</p>
+</blockquote>
+<h4 id="示例-4">示例 4：</h4>
+<blockquote>
+<p><strong>输入：</strong> n = 2, logs = [&ldquo;0:start:0&rdquo;,&ldquo;0:start:2&rdquo;,&ldquo;0:end:5&rdquo;,&ldquo;1:start:7&rdquo;,&ldquo;1:end:7&rdquo;,&ldquo;0:end:8&rdquo;]<br>
+<strong>输出：</strong> [8,1]</p>
+</blockquote>
+<h4 id="示例-5">示例 5：</h4>
+<blockquote>
+<p><strong>输入：</strong> n = 1, logs = [&ldquo;0:start:0&rdquo;,&ldquo;0:end:0&rdquo;]<br>
+<strong>输出：</strong> [1]</p>
+</blockquote>
+<h5 id="提示">提示：</h5>
+<blockquote>
+<p><code>1 &lt;= n &lt;= 100</code>
+<code>1 &lt;= logs.length &lt;= 500</code>
+<code>0 &lt;= function_id &lt; n</code>
+<code>0 &lt;= timestamp &lt;= 10<sup>9</sup></code>
+两个开始事件不会在同一时间戳发生
+两个结束事件不会在同一时间戳发生
+每道函数都有一个对应 <code>&quot;start&quot;</code> 日志的 <code>&quot;end&quot;</code> 日志</p>
+</blockquote>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="栈">栈</h4>
+<p>模拟调用栈，所有的开始时间入栈，通过栈顶元素的开始和结束时间，统计每个函数的独占时间总和。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">exclusiveTime</span>(<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">logs</span> []<span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">logs</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">now</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 当前时间，开始位置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">log</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">logs</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">l</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">log</span>, <span style="color:#e6db74">&#34;:&#34;</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">no</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">l</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">time</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Atoi</span>(<span style="color:#a6e22e">l</span>[<span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 当前在执行的函数，执行时间累加
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">now</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;end&#34;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">ans</span>[<span style="color:#a6e22e">cur</span>]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;start&#34;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 新函数运行开始，入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">no</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">now</span> = <span style="color:#a6e22e">time</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// 栈顶函数运行结束，出栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">now</span> = <span style="color:#a6e22e">time</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N), N = len(logs) $</li>
+<li>空间复杂度：$ O(N) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/stack/">stack</a>
+        
+    </section>
+
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-735.-%E8%A1%8C%E6%98%9F%E7%A2%B0%E6%92%9E/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 735. 行星碰撞</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-1021.-%E5%88%A0%E9%99%A4%E6%9C%80%E5%A4%96%E5%B1%82%E7%9A%84%E6%8B%AC%E5%8F%B7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 1021. 删除最外层的括号</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-591.-%E6%A0%87%E7%AD%BE%E9%AA%8C%E8%AF%81%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 591. 标签验证器</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-388.-%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E9%95%BF%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 388. 文件的最长绝对路径</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-385.-%E8%BF%B7%E4%BD%A0%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 385. 迷你语法分析器</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
