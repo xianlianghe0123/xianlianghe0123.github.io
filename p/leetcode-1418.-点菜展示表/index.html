@@ -239,11 +239,11 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/</a><br>
 <strong>难度：</strong> <font color="orange">中等</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p>给你一个数组 <code>orders</code> ，表示客户在餐厅中完成的订单，确切地说， <code>orders[i]=[customerName<sub>i</sub>,tableNumber<sub>i</sub>,foodItem<sub>i</sub>]</code> ，其中 <code>customerName<sub>i</sub></code> 是客户的姓名，<code>tableNumber<sub>i</sub></code> 是客户所在餐桌的桌号，而 <code>foodItem<sub>i</sub></code> 是客户点的餐品名称。</p>
 <p>请你返回该餐厅的 <strong>点菜展示表</strong> 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。</p>
 <p>注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。</p>
-<h5 id="示例-1">示例 1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 <blockquote>
 <p><strong>输入：</strong> orders = [[&ldquo;David&rdquo;,&ldquo;3&rdquo;,&ldquo;Ceviche&rdquo;],[&ldquo;Corina&rdquo;,&ldquo;10&rdquo;,&ldquo;Beef Burrito&rdquo;],[&ldquo;David&rdquo;,&ldquo;3&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Carla&rdquo;,&ldquo;5&rdquo;,&ldquo;Water&rdquo;],[&ldquo;Carla&rdquo;,&ldquo;5&rdquo;,&ldquo;Ceviche&rdquo;],[&ldquo;Rous&rdquo;,&ldquo;3&rdquo;,&ldquo;Ceviche&rdquo;]]<br>
 <strong>输出：</strong> [[&ldquo;Table&rdquo;,&ldquo;Beef Burrito&rdquo;,&ldquo;Ceviche&rdquo;,&ldquo;Fried Chicken&rdquo;,&ldquo;Water&rdquo;],[&ldquo;3&rdquo;,&ldquo;0&rdquo;,&ldquo;2&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;],[&ldquo;5&rdquo;,&ldquo;0&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;,&ldquo;1&rdquo;],[&ldquo;10&rdquo;,&ldquo;1&rdquo;,&ldquo;0&rdquo;,&ldquo;0&rdquo;,&ldquo;0&rdquo;]]<br>
@@ -257,7 +257,7 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water<br>
 而餐桌 5：Carla 点了 &ldquo;Water&rdquo; 和 &ldquo;Ceviche&rdquo;<br>
 餐桌 10：Corina 点了 &ldquo;Beef Burrito&rdquo;</p>
 </blockquote>
-<h5 id="示例-2">示例 2:</h5>
+<h4 id="示例-2">示例 2:</h4>
 <blockquote>
 <p><strong>输入：</strong> orders = [[&ldquo;James&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Ratesh&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Amadeus&rdquo;,&ldquo;12&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;Adam&rdquo;,&ldquo;1&rdquo;,&ldquo;Canadian Waffles&rdquo;],[&ldquo;Brianna&rdquo;,&ldquo;1&rdquo;,&ldquo;Canadian Waffles&rdquo;]]<br>
 <strong>输出：</strong> [[&ldquo;Table&rdquo;,&ldquo;Canadian Waffles&rdquo;,&ldquo;Fried Chicken&rdquo;],[&ldquo;1&rdquo;,&ldquo;2&rdquo;,&ldquo;0&rdquo;],[&ldquo;12&rdquo;,&ldquo;0&rdquo;,&ldquo;3&rdquo;]]<br>
@@ -265,7 +265,7 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water<br>
 对于餐桌 1：Adam 和 Brianna 都点了 &ldquo;Canadian Waffles&rdquo;<br>
 而餐桌 12：James, Ratesh 和 Amadeus 都点了 &ldquo;Fried Chicken&rdquo;</p>
 </blockquote>
-<h5 id="示例-3">示例 3:</h5>
+<h4 id="示例-3">示例 3:</h4>
 <blockquote>
 <p><strong>输入：</strong> orders = [[&ldquo;Laura&rdquo;,&ldquo;2&rdquo;,&ldquo;Bean Burrito&rdquo;],[&ldquo;Jhon&rdquo;,&ldquo;2&rdquo;,&ldquo;Beef Burrito&rdquo;],[&ldquo;Melissa&rdquo;,&ldquo;2&rdquo;,&ldquo;Soda&rdquo;]]<br>
 <strong>输出：</strong> [[&ldquo;Table&rdquo;,&ldquo;Bean Burrito&rdquo;,&ldquo;Beef Burrito&rdquo;,&ldquo;Soda&rdquo;],[&ldquo;2&rdquo;,&ldquo;1&rdquo;,&ldquo;1&rdquo;,&ldquo;1&rdquo;]]</p>
@@ -329,8 +329,8 @@ Table,Beef Burrito,Ceviche,Fried Chicken,Water<br>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：$ O(NlogN), N=len(orders) $</li>
-<li>空间复杂度：O(N)</li>
+<li>时间复杂度：$ O(N\log{N}), N=len(orders) $</li>
+<li>空间复杂度：$ O(N) $</li>
 </ul>
 
 </section>

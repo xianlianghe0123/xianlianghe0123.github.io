@@ -6,7 +6,132 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 07 Aug 2022 09:30:44 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Aug 2022 10:43:40 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1422. 分割字符串的最大得分</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1422.-%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BE%97%E5%88%86/</link>
+      <pubDate>Sun, 14 Aug 2022 10:43:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1422.-%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BE%97%E5%88%86/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-score-after-splitting-a-string/
+难度： 简单
+题目描述 给你一个由若干 0 和 1 组成的字符串 s ，请你计算并返回将该字符串分割成两个 非空 子字符串（即 左 子字符串和 右 子字符串）所能获得的最大得分。
+「分割字符串的得分」为 左 子字符串中 0 的数量加上 右 子字符串中 1 的数量。
+示例 1： 输入： s = &amp;ldquo;011101&amp;rdquo;
+输出： 5
+解释：
+将字符串 s 划分为两个非空子字符串的可行方案有： 左子字符串 = &amp;ldquo;0&amp;rdquo; 且 右子字符串 = &amp;ldquo;11101&amp;rdquo;，得分 = 1 + 4 = 5
+左子字符串 = &amp;ldquo;01&amp;rdquo; 且 右子字符串 = &amp;ldquo;1101&amp;rdquo;，得分 = 1 + 3 = 4
+左子字符串 = &amp;ldquo;011&amp;rdquo; 且 右子字符串 = &amp;ldquo;101&amp;rdquo;，得分 = 1 + 2 = 3</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 768. 最多能完成排序的块 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-768.-%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97-ii/</link>
+      <pubDate>Sat, 13 Aug 2022 10:13:18 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-768.-%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97-ii/</guid>
+      <description>链接： https://leetcode.cn/problems/max-chunks-to-make-sorted-ii/
+难度： 困难
+题目描述 这个问题和 “最多能完成排序的块” 相似，但给定数组中的元素可以重复，输入数组最大长度为 2000，其中的元素最大为108。
+arr 是一个可能包含 重复元素 的整数数组，我们将这个数组分割成几个“块”，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。
+我们最多能将数组分成多少块？
+示例 1： 输入： arr = [5,4,3,2,1]
+输出： 1
+解释：
+将数组分成2块或者更多块，都无法得到所需的结果。
+例如，分成 [5, 4], [3, 2, 1] 的结果是 [4, 5, 1, 2, 3]，这不是有序的数组。
+示例 2： 输入： arr = [2,1,3,4,4]
+输出： 4
+解释：
+我们可以把它分成两块，例如 [2, 1], [3, 4, 4]。
+然而，分成 [2, 1], [3], [4], [4] 可以得到最多的块数。
+提示： arr 的长度在 [1, 2000] 之间。 arr[i] 的大小在 [0, 108]之间。 解题思路 排序 + 哈希 要使得分块后排序的结果和整体排序后的结果相同，则每一块内的元素必须和整体排序后对应的元素除顺序外保持相同。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1282. 用户分组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1282.-%E7%94%A8%E6%88%B7%E5%88%86%E7%BB%84/</link>
+      <pubDate>Fri, 12 Aug 2022 09:57:09 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1282.-%E7%94%A8%E6%88%B7%E5%88%86%E7%BB%84/</guid>
+      <description>链接： https://leetcode-cn.com/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/
+难度： 困难
+题目描述 有 n 个人被分成数量未知的组。每个人都被标记为一个从 0 到 n - 1 的 唯一ID 。
+给定一个整数数组 groupSizes ，其中 groupSizes[i] 是第 i 个人所在的组的大小。例如，如果 groupSizes[1] = 3 ，则第 1 个人必须位于大小为 3 的组中。
+返回一个组列表，使每个人 i 都在一个大小为 groupSizes[i] 的组中。
+每个人应该 恰好只 出现在 一个组 中，并且每个人必须在一个组中。如果有多个答案，返回其中 任何 一个。可以 保证 给定输入 至少有一个 有效的解。
+示例 1： 输入： groupSizes = [3,3,3,3,3,1,3]
+输出： [[5],[0,1,2],[3,4,6]]
+解释：
+第一组是 [5]，大小为 1，groupSizes[5] = 1。
+第二组是 [0,1,2]，大小为 3，groupSizes[0] = groupSizes[1] = groupSizes[2] = 3。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1417. 重新格式化字符串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1417.-%E9%87%8D%E6%96%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Thu, 11 Aug 2022 10:45:39 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1417.-%E9%87%8D%E6%96%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode.cn/problems/reformat-the-string/
+难度： 简单
+题目描述 给你一个混合了数字和字母的字符串 s，其中的字母均为小写英文字母。
+请你将该字符串重新格式化，使得任意两个相邻字符的类型都不同。也就是说，字母后面应该跟着数字，而数字后面应该跟着字母。
+请你返回 重新格式化后 的字符串；如果无法按要求重新格式化，则返回一个 空字符串 。
+示例 1： 输入： s = &amp;ldquo;a0b1c2&amp;rdquo;
+输出： &amp;ldquo;0a1b2c&amp;rdquo;
+解释： &amp;ldquo;0a1b2c&amp;rdquo; 中任意两个相邻字符的类型都不同。 &amp;ldquo;a0b1c2&amp;rdquo;, &amp;ldquo;0a1b2c&amp;rdquo;, &amp;ldquo;0c2a1b&amp;rdquo; 也是满足题目要求的答案。
+示例 2： 输入： s = &amp;ldquo;leetcode&amp;rdquo;
+输出： &amp;quot;&amp;quot;
+解释： &amp;ldquo;leetcode&amp;rdquo; 中只有字母，所以无法满足重新格式化的条件。
+示例 3： 输入： s = &amp;ldquo;1229857369&amp;rdquo;
+输出： &amp;quot;&amp;quot;
+解释： &amp;ldquo;1229857369&amp;rdquo; 中只有数字，所以无法满足重新格式化的条件。
+示例 4： 输入： s = &amp;ldquo;covid2019&amp;rdquo;
+输出： &amp;ldquo;c2o0v1i9d&amp;rdquo;
+示例 5： 输入： s = &amp;ldquo;ab123&amp;rdquo;
+输出： &amp;ldquo;1a2b3&amp;rdquo;
+提示： 1 &amp;lt;= s.length &amp;lt;= 500 s 仅由小写英文字母和/或数字组成。 解题思路 模拟 统计字母和数字的数量，当且仅当二者的差值小于1时，可以格式化。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 640. 求解方程</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-640.-%E6%B1%82%E8%A7%A3%E6%96%B9%E7%A8%8B/</link>
+      <pubDate>Wed, 10 Aug 2022 09:57:21 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-640.-%E6%B1%82%E8%A7%A3%E6%96%B9%E7%A8%8B/</guid>
+      <description>链接： https://leetcode.cn/problems/solve-the-equation/
+难度： 中等
+题目描述 求解一个给定的方程，将 x 以字符串 &amp;quot;x=#value&amp;quot; 的形式返回。该方程仅包含 &#39;+&#39; ， &#39;-&#39; 操作，变量 x 和其对应系数。
+如果方程没有解，请返回 &amp;quot;No solution&amp;quot; 。如果方程有无限解，则返回 &amp;quot;Infinite solutions&amp;quot; 。
+题目保证，如果方程中只有一个解，则 &#39;x&#39; 的值是一个整数。
+示例 1： 输入： equation = &amp;ldquo;x+5-3+x=6+x-2&amp;rdquo;
+输出： &amp;ldquo;x=2&amp;rdquo;
+示例 2： 输入： equation = &amp;ldquo;x=x&amp;rdquo;
+输出： &amp;ldquo;Infinite solutions&amp;rdquo;
+示例 3： 输入： equation = &amp;ldquo;2x=x&amp;rdquo;
+输出： &amp;ldquo;x=0&amp;rdquo;
+提示： 3 &amp;lt;= equation.length &amp;lt;= 1000 equation 只有一个 &#39;=&#39;. equation 方程由整数组成，其绝对值在 [0, 100] 范围内，不含前导零和变量 &#39;x&#39; 。 解题思路 模拟 解析字符串，并进行移项，得到形如 a*x + b = 0 的形式。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1413. 逐步求和得到正数的最小值</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1413.-%E9%80%90%E6%AD%A5%E6%B1%82%E5%92%8C%E5%BE%97%E5%88%B0%E6%AD%A3%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</link>
+      <pubDate>Tue, 09 Aug 2022 09:49:56 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1413.-%E9%80%90%E6%AD%A5%E6%B1%82%E5%92%8C%E5%BE%97%E5%88%B0%E6%AD%A3%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</guid>
+      <description>链接： https://leetcode.cn/problems/minimum-value-to-get-positive-step-by-step-sum/
+难度： 简单
+题目描述 给你一个整数数组 nums 。你可以选定任意的 正数 startValue 作为初始值。
+你需要从左到右遍历 nums 数组，并将 startValue 依次累加上 nums 数组中的值。
+请你在确保累加和始终大于等于 1 的前提下，选出一个最小的 正数 作为 startValue 。
+示例 1： 输入： nums = [-3,2,-3,4,2]
+输出： 5
+解释： 如果你选择 startValue = 4，在第三次累加时，和小于 1 。
+累加求和 startValue = 4 startValue = 5 nums (4 -3 ) = 1 (5 -3 ) = 2 -3 (1 +2 ) = 3 (2 +2 ) = 4 2 (3 -3 ) = 0 (4 -3 ) = 1 -3 (0 +4 ) = 4 (1 +4 ) = 5 4 (4 +2 ) = 6 (5 +2 ) = 7 2 示例 2： 输入： nums = [1,2]</description>
+    </item>
+    
     <item>
       <title>Leetcode 636. 函数的独占时间</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-636.-%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/</link>
