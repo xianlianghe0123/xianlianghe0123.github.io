@@ -6,7 +6,106 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 14 Aug 2022 10:43:40 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Aug 2022 09:25:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1455. 检查单词是否为句中其他单词的前缀</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1455.-%E6%A3%80%E6%9F%A5%E5%8D%95%E8%AF%8D%E6%98%AF%E5%90%A6%E4%B8%BA%E5%8F%A5%E4%B8%AD%E5%85%B6%E4%BB%96%E5%8D%95%E8%AF%8D%E7%9A%84%E5%89%8D%E7%BC%80/</link>
+      <pubDate>Sun, 21 Aug 2022 09:25:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1455.-%E6%A3%80%E6%9F%A5%E5%8D%95%E8%AF%8D%E6%98%AF%E5%90%A6%E4%B8%BA%E5%8F%A5%E4%B8%AD%E5%85%B6%E4%BB%96%E5%8D%95%E8%AF%8D%E7%9A%84%E5%89%8D%E7%BC%80/</guid>
+      <description>链接： https://leetcode.cn/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/
+难度： 简单
+题目描述 给你一个字符串 sentence 作为句子并指定检索词为 searchWord ，其中句子由若干用 单个空格 分隔的单词组成。请你检查检索词 searchWord 是否为句子 sentence 中任意单词的前缀。
+如果 searchWord 是某一个单词的前缀，则返回句子 sentence 中该单词所对应的下标（下标从 1 开始）。如果 searchWord 是多个单词的前缀，则返回匹配的第一个单词的下标（最小下标）。如果 searchWord 不是任何单词的前缀，则返回 -1 。
+字符串 s 的 前缀 是 s 的任何前导连续子字符串。
+示例 1： 输入： sentence = &amp;ldquo;i love eating burger&amp;rdquo;, searchWord = &amp;ldquo;burg&amp;rdquo;
+输出： 4
+解释： &amp;ldquo;burg&amp;rdquo; 是 &amp;ldquo;burger&amp;rdquo; 的前缀，而 &amp;ldquo;burger&amp;rdquo; 是句子中第 4 个单词。
+示例 2： 输入： sentence = &amp;ldquo;this problem is an easy problem&amp;rdquo;, searchWord = &amp;ldquo;pro&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 654. 最大二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-654.-%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Sat, 20 Aug 2022 08:56:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-654.-%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode-cn.com/problems/2-keys-keyboard/
+难度： 中等
+题目描述 给定一个不重复的整数数组 nums 。 最大二叉树 可以用下面的算法从 nums 递归地构建:
+创建一个根节点，其值为 nums 中的最大值。 递归地在最大值 左边 的 子数组前缀上 构建左子树。 递归地在最大值 右边 的 子数组后缀上 构建右子树。 返回 nums 构建的 最大二叉树 。
+示例 1： 输入： nums = [3,2,1,6,0,5]
+输出： [6,3,5,null,2,0,null,null,1]
+解释： 递归调用如下所示：
+[3,2,1,6,0,5] 中的最大值是 6 ，左边部分是 [3,2,1] ，右边部分是 [0,5] 。 [3,2,1] 中的最大值是 3 ，左边部分是 [] ，右边部分是 [2,1] 。 空数组，无子节点。 [2,1] 中的最大值是 2 ，左边部分是 [] ，右边部分是 [1] 。 空数组，无子节点。 只有一个元素，所以子节点是一个值为 1 的节点。 [0,5] 中的最大值是 5 ，左边部分是 [0] ，右边部分是 [] 。 只有一个元素，所以子节点是一个值为 0 的节点。 空数组，无子节点。 示例 2： 输入： nums = [3,2,1]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1450. 在既定时间做作业的学生人数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1450.-%E5%9C%A8%E6%97%A2%E5%AE%9A%E6%97%B6%E9%97%B4%E5%81%9A%E4%BD%9C%E4%B8%9A%E7%9A%84%E5%AD%A6%E7%94%9F%E4%BA%BA%E6%95%B0/</link>
+      <pubDate>Fri, 19 Aug 2022 10:10:46 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1450.-%E5%9C%A8%E6%97%A2%E5%AE%9A%E6%97%B6%E9%97%B4%E5%81%9A%E4%BD%9C%E4%B8%9A%E7%9A%84%E5%AD%A6%E7%94%9F%E4%BA%BA%E6%95%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/number-of-students-doing-homework-at-a-given-time/
+难度： 简单
+题目描述 给你两个整数数组 startTime（开始时间）和 endTime（结束时间），并指定一个整数 queryTime 作为查询时间。
+已知，第 i 名学生在 startTime[i] 时开始写作业并于 endTime[i] 时完成作业。
+请返回在查询时间 queryTime 时正在做作业的学生人数。形式上，返回能够使 queryTime 处于区间 [startTime[i], endTime[i]]（含）的学生人数。
+示例 1： 输入： startTime = [1,2,3], endTime = [3,2,7], queryTime = 4
+输出： 1
+解释： 一共有 3 名学生。
+第一名学生在时间 1 开始写作业，并于时间 3 完成作业，在时间 4 没有处于做作业的状态。
+第二名学生在时间 2 开始写作业，并于时间 2 完成作业，在时间 4 没有处于做作业的状态。
+第三名学生在时间 3 开始写作业，预计于时间 7 完成作业，这是是唯一一名在时间 4 时正在做作业的学生。
+示例 2： 输入： startTime = [4], endTime = [4], queryTime = 4</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1302. 层数最深叶子节点的和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1302.-%E5%B1%82%E6%95%B0%E6%9C%80%E6%B7%B1%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%92%8C/</link>
+      <pubDate>Wed, 17 Aug 2022 10:17:33 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1302.-%E5%B1%82%E6%95%B0%E6%9C%80%E6%B7%B1%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/deepest-leaves-sum/
+难度： 中等
+题目描述 给你一棵二叉树的根节点 root ，请你返回 层数最深的叶子节点的和 。
+示例 1： 输入： root = [1,2,3,4,5,null,6,7,null,null,null,null,8]
+输出： 15
+示例 2： 输入： root = [6,7,8,2,7,1,3,9,null,1,4,null,null,null,5]
+输出： 19
+提示： 树中节点数目在范围 [1, 104] 之间。 1 &amp;lt;= Node.val &amp;lt;= 100 解题思路 深度优先搜索 先序遍历整个二叉树，将深度信息向下传递，同时记录最大深度。
+当遇到同一深度的节点时，累加和。当遇到更深的节点时，累加和清空，重新计算。
+以上累加时，由于深度最深的点一定是叶节点，故不用区分是否为叶节点。
+func deepestLeavesSum(root *TreeNode) int { maxDepth := 0 sum := 0 var dfs func(node *TreeNode, depth int) dfs = func(node *TreeNode, depth int) { if node == nil { return } if maxDepth == depth { sum += node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1656. 设计有序流</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1656.-%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%BA%8F%E6%B5%81/</link>
+      <pubDate>Tue, 16 Aug 2022 10:04:04 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1656.-%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%BA%8F%E6%B5%81/</guid>
+      <description>链接： https://leetcode.cn/problems/design-an-ordered-stream/
+难度： 简单
+题目描述 有 n 个 (id, value) 对，其中 id 是 1 到 n 之间的一个整数，value 是一个字符串。不存在 id 相同的两个 (id, value) 对。
+设计一个流，以 任意 顺序获取 n 个 (id, value) 对，并在多次调用时 按 id 递增的顺序 返回一些值。
+实现 OrderedStream 类：
+OrderedStream(int n) 构造一个能接收 n 个值的流，并将当前指针 ptr 设为 1 。 String[] insert(int id, String value) 向流中存储新的 (id, value) 对。存储后： 如果流存储有 id = ptr 的 (id, value) 对，则找出从 id = ptr 开始的 最长 id 连续递增序列 ，并 按顺序 返回与这些 id 关联的值的列表。然后，将 ptr 更新为最后那个 id + 1 。 否则，返回一个空列表。 示例： 输入</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 641. 设计循环双端队列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-641.-%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/</link>
+      <pubDate>Mon, 15 Aug 2022 10:03:04 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-641.-%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/</guid>
+      <description>链接： https://leetcode.cn/problems/design-circular-deque/
+难度： 中等
+题目描述 设计实现双端队列。
+实现 MyCircularDeque 类:
+MyCircularDeque(int k) ：构造函数,双端队列最大为 k 。 boolean insertFront()：将一个元素添加到双端队列头部。 如果操作成功返回 true ，否则返回 false 。 boolean insertLast() ：将一个元素添加到双端队列尾部。如果操作成功返回 true ，否则返回 false 。 boolean deleteFront() ：从双端队列头部删除一个元素。 如果操作成功返回 true ，否则返回 false 。 boolean deleteLast() ：从双端队列尾部删除一个元素。如果操作成功返回 true ，否则返回 false 。 int getFront() ：从双端队列头部获得一个元素。如果双端队列为空，返回 -1 。 int getRear() ：获得双端队列的最后一个元素。 如果双端队列为空，返回 -1 。 boolean isEmpty() ：若双端队列为空，则返回 true ，否则返回 false 。 boolean isFull() ：若双端队列满了，则返回 true ，否则返回 false 。 示例： 输入：</description>
+    </item>
+    
     <item>
       <title>Leetcode 1422. 分割字符串的最大得分</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1422.-%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BE%97%E5%88%86/</link>
