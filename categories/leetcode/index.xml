@@ -6,7 +6,119 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 21 Aug 2022 09:25:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Aug 2022 08:05:40 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 793. 阶乘函数后 K 个零</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-793.-%E9%98%B6%E4%B9%98%E5%87%BD%E6%95%B0%E5%90%8E-k-%E4%B8%AA%E9%9B%B6/</link>
+      <pubDate>Sun, 28 Aug 2022 08:05:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-793.-%E9%98%B6%E4%B9%98%E5%87%BD%E6%95%B0%E5%90%8E-k-%E4%B8%AA%E9%9B%B6/</guid>
+      <description>链接： https://leetcode.cn/problems/preimage-size-of-factorial-zeroes-function/
+难度： 困难
+题目描述 f(x) 是 x! 末尾是 0 的数量。回想一下 x! = 1 * 2 * 3 * ... * x，且 0! = 1 。
+例如， f(3) = 0 ，因为 3! = 6 的末尾没有 0 ；而 f(11) = 2 ，因为 11!= 39916800 末端有 2 个 0 。 给定 k，找出返回能满足 f(x) = k 的非负整数 x 的数量。
+示例 1： 输入： k = 0
+输出： 5
+解释： 0!, 1!, 2!, 3!, 和 4!</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 662. 二叉树最大宽度</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-662.-%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9C%80%E5%A4%A7%E5%AE%BD%E5%BA%A6/</link>
+      <pubDate>Sat, 27 Aug 2022 10:57:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-662.-%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9C%80%E5%A4%A7%E5%AE%BD%E5%BA%A6/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-width-of-binary-tree/
+难度： 中等
+题目描述 给你一棵二叉树的根节点 root ，返回树的 最大宽度 。
+树的 最大宽度 是所有层中最大的 宽度 。
+每一层的 宽度 被定义为该层最左和最右的非空节点（即，两个端点）之间的长度。将这个二叉树视作与满二叉树结构相同，两端点间会出现一些延伸到这一层的 null 节点，这些 null 节点也计入长度。
+题目数据保证答案将会在 32 位 带符号整数范围内。
+示例 1： 输入： root = [1,3,2,5,3,null,9]
+输出： 4
+解释： 最大宽度出现在树的第 3 层，宽度为 4 (5,3,null,9) 。
+示例 2： 输入： root = [1,3,2,5,null,null,9,6,null,7]
+输出： 7
+解释： 最大宽度出现在树的第 4 层，宽度为 7 (6,null,null,null,null,null,7) 。
+示例 3： 输入： root = [1,3,2,5]
+输出： 2
+解释： 最大宽度出现在树的第 2 层，宽度为 2 (3,2) 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1464. 数组中两元素的最大乘积</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1464.-%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%A4%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%A4%A7%E4%B9%98%E7%A7%AF/</link>
+      <pubDate>Fri, 26 Aug 2022 10:01:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1464.-%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%A4%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%A4%A7%E4%B9%98%E7%A7%AF/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-product-of-two-elements-in-an-array/
+难度： 简单
+题目描述 给你一个整数数组 nums，请你选择数组的两个不同下标 i 和 j，使 (nums[i]-1)*(nums[j]-1) 取得最大值。
+请你计算并返回该式的最大值。
+示例 1： 输入： nums = [3,4,5,2]
+输出： 12
+解释： 如果选择下标 i=1 和 j=2（下标从 0 开始），则可以获得最大值，(nums[1]-1)(nums[2]-1) = (4-1)(5-1) = 3*4 = 12 。
+示例 2： 输入： nums = [1,5,4,5]
+输出： 16
+解释： 选择下标 i=1 和 j=3（下标从 0 开始），则可以获得最大值 (5-1)*(5-1) = 16 。
+示例 3： 输入： nums = [3,7]
+输出： 12
+提示： 2 &amp;lt;= nums.length &amp;lt;= 500 1 &amp;lt;= nums[i] &amp;lt;= 103 解题思路 枚举 枚举所有的二元组，求得积的最大值。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 658. 找到 K 个最接近的元素</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-658.-%E6%89%BE%E5%88%B0-k-%E4%B8%AA%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Thu, 25 Aug 2022 10:08:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-658.-%E6%89%BE%E5%88%B0-k-%E4%B8%AA%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E5%85%83%E7%B4%A0/</guid>
+      <description>链接： https://leetcode.cn/problems/find-k-closest-elements/
+难度： 中等
+题目描述 给定一个 排序好 的数组 arr ，两个整数 k 和 x ，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。
+整数 a 比整数 b 更接近 x 需要满足：
+|a - x| &amp;lt; |b - x| 或者 |a - x| == |b - x| 且 a &amp;lt; b 示例 1： 输入： arr = [1,2,3,4,5], k = 4, x = 3
+输出： [1,2,3,4]
+示例 2： 输入： arr = [1,2,3,4,5], k = 4, x = -1
+输出： [1,2,3,4]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1460. 通过翻转子数组使两个数组相等</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1460.-%E9%80%9A%E8%BF%87%E7%BF%BB%E8%BD%AC%E5%AD%90%E6%95%B0%E7%BB%84%E4%BD%BF%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9B%B8%E7%AD%89/</link>
+      <pubDate>Wed, 24 Aug 2022 10:00:21 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1460.-%E9%80%9A%E8%BF%87%E7%BF%BB%E8%BD%AC%E5%AD%90%E6%95%B0%E7%BB%84%E4%BD%BF%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9B%B8%E7%AD%89/</guid>
+      <description>链接： https://leetcode.cn/problems/make-two-arrays-equal-by-reversing-sub-arrays/
+难度： 简单
+题目描述 给你两个长度相同的整数数组 target 和 arr 。每一步中，你可以选择 arr 的任意 非空子数组 并将它翻转。你可以执行此过程任意次。
+如果你能让 arr 变得与 target 相同，返回 True；否则，返回 False 。
+示例 1： 输入： target = [1,2,3,4], arr = [2,4,1,3]
+输出： true
+解释： 你可以按照如下步骤使 arr 变成 target：
+1- 翻转子数组 [2,4,1] ，arr 变成 [1,4,2,3]
+2- 翻转子数组 [4,2] ，arr 变成 [1,2,4,3]
+3- 翻转子数组 [4,3] ，arr 变成 [1,2,3,4]
+上述方法并不是唯一的，还存在多种将 arr 变成 target 的方法。
+示例 2： 输入： target = [7], arr = [7]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 655. 输出二叉树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-655.-%E8%BE%93%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Mon, 22 Aug 2022 10:08:19 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-655.-%E8%BE%93%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>链接： https://leetcode.cn/problems/print-binary-tree/
+难度： 中等
+题目描述 给你一棵二叉树的根节点 root ，请你构造一个下标从 0 开始、大小为 m x n 的字符串矩阵 res ，用以表示树的 格式化布局 。构造此格式化布局矩阵需要遵循以下规则：
+树的 高度 为 height ，矩阵的行数 m 应该等于 height + 1 。 矩阵的列数 n 应该等于 2height+1 - 1 。 根节点 需要放置在 顶行 的 正中间 ，对应位置为 res[0][(n-1)/2] 。 对于放置在矩阵中的每个节点，设对应位置为 res[r][c] ，将其左子节点放置在 res[r+1][c-2height-r-1] ，右子节点放置在 res[r+1][c+2height-r-1] 。 继续这一过程，直到树中的所有节点都妥善放置。 任意空单元格都应该包含空字符串 &amp;quot;&amp;quot; 。 返回构造得到的矩阵 res 。
+示例 1： 输入： root = [1,2]
+输出：
+[[&amp;quot;&amp;quot;,&amp;ldquo;1&amp;rdquo;,&amp;quot;&amp;quot;],
+[&amp;ldquo;2&amp;rdquo;,&amp;quot;&amp;quot;,&amp;quot;&amp;quot;]]
+示例 2： 输入： root = [1,2,3,null,4]</description>
+    </item>
+    
     <item>
       <title>Leetcode 1455. 检查单词是否为句中其他单词的前缀</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1455.-%E6%A3%80%E6%9F%A5%E5%8D%95%E8%AF%8D%E6%98%AF%E5%90%A6%E4%B8%BA%E5%8F%A5%E4%B8%AD%E5%85%B6%E4%BB%96%E5%8D%95%E8%AF%8D%E7%9A%84%E5%89%8D%E7%BC%80/</link>
