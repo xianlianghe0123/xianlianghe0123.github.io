@@ -6,7 +6,26 @@
     <description>Recent content in greedy on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 06 Aug 2022 18:19:05 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Sep 2022 09:17:54 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 646. 最长数对链</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-646.-%E6%9C%80%E9%95%BF%E6%95%B0%E5%AF%B9%E9%93%BE/</link>
+      <pubDate>Sat, 03 Sep 2022 09:17:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-646.-%E6%9C%80%E9%95%BF%E6%95%B0%E5%AF%B9%E9%93%BE/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-length-of-pair-chain/
+难度： 中等
+题目描述 给出 n 个数对。 在每一个数对中，第一个数字总是比第二个数字小。
+现在，我们定义一种跟随关系，当且仅当 b &amp;lt; c 时，数对 (c, d) 才可以跟在 (a, b) 后面。我们用这种形式来构造一个数对链。
+给定一个数对集合，找出能够形成的最长数对链的长度。你不需要用到所有的数对，你可以以任何顺序选择其中的一些数对来构造。
+示例： 输入： [[1,2], [2,3], [3,4]]
+输出： 2
+解释： 最长的数对链是 [1,2] -&amp;gt; [3,4]
+提示： 给出数对的个数在 [1, 1000] 范围内。 解题思路 排序 + 贪心 为使得链长度更大，应选择第二个数字尽量小的数对。
+以数对第二个数字的大小关系进行排序。遍历整个数组，当数对第一个数字比当前链表尾部数对的第二个数字更大时，添加到链表末尾，继续处理直到遍历到数组尾。
+func findLongestChain(pairs [][]int) int { sort.Slice(pairs, func(i, j int) bool { return pairs[i][1] &amp;lt; pairs[j][1] }) ans := 0 i := math.MinInt for _, p := range pairs { if i &amp;lt; p[0] { i = p[1] ans++ } } return ans } 复杂度 时间复杂度：$ O(N\log{N}), N = len(pairs) $ 空间复杂度：$ O(\log{N}) $ </description>
+    </item>
+    
     <item>
       <title>Leetcode 1408. 数组中的字符串匹配</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1408.-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</link>

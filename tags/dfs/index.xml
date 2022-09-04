@@ -6,7 +6,26 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 27 Aug 2022 10:57:48 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Sep 2022 19:49:50 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 687. 最长同值路径</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-687.-%E6%9C%80%E9%95%BF%E5%90%8C%E5%80%BC%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 02 Sep 2022 19:49:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-687.-%E6%9C%80%E9%95%BF%E5%90%8C%E5%80%BC%E8%B7%AF%E5%BE%84/</guid>
+      <description>链接： https://leetcode.cn/problems/longest-univalue-path/
+难度： 中等
+题目描述 给定一个二叉树的 root ，返回 最长的路径的长度 ，这个路径中的 每个节点具有相同值 。 这条路径可以经过也可以不经过根节点。
+两个节点之间的路径长度 由它们之间的边数表示。
+示例 1： 输入： root = [5,4,5,1,1,5]
+输出： 2
+示例 2： 输入： root = [1,4,5,4,4,5]
+输出： 2
+提示： 树的节点数的范围是 [0, 104] -1000 &amp;lt;= Node.val &amp;lt;= 1000 树的深度将不超过 1000 解题思路 深度优先搜索 对于一棵树的根节点而言，搜索以根节点为起始的的 左侧 最长路径和 右侧 最长路径，求和即可得到关联到 当前根节点 的最长路径。
+对于树中每个节点执行上述搜索，最终得到 全局 最长路径。
+func longestUnivaluePath(root *TreeNode) int { // 判空 if root == nil { return 0 } max := 0 // 最大路径 var dfs func(node *TreeNode, val int) int dfs = func(node *TreeNode, val int) int { // 遍历结束 if node == nil { return 0 } // 当前节点和父节点不同，父节点相关路径搜索结束，搜索该子树的路径 if node.</description>
+    </item>
+    
     <item>
       <title>Leetcode 662. 二叉树最大宽度</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-662.-%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9C%80%E5%A4%A7%E5%AE%BD%E5%BA%A6/</link>

@@ -6,7 +6,140 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 28 Aug 2022 08:05:40 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Sep 2022 09:43:16 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1582. 二进制矩阵中的特殊位置</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1582.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E4%BD%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 04 Sep 2022 09:43:16 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1582.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E4%BD%8D%E7%BD%AE/</guid>
+      <description>链接： https://leetcode.cn/problems/special-positions-in-a-binary-matrix/
+难度： 简单
+题目描述 给你一个大小为 rows x cols 的矩阵 mat，其中 mat[i][j] 是 0 或 1，请返回 矩阵 mat 中特殊位置的数目 。
+特殊位置 定义：如果 mat[i][j] == 1 并且第 i 行和第 j 列中的所有其他元素均为 0（行和列的下标均 从 0 开始 ），则位置 (i, j) 被称为特殊位置。
+示例 1： 输入： mat = [[1,0,0],
+[0,0,1],
+[1,0,0]]
+输出： 1
+解释： (1,2) 是一个特殊位置，因为 mat[1][2] == 1 且所处的行和列上所有其他元素都是 0
+示例 2： 输入： mat = [[1,0,0],
+[0,1,0],
+[0,0,1]]
+输出： 3
+解释： (0,0), (1,1) 和 (2,2) 都是特殊位置</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 646. 最长数对链</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-646.-%E6%9C%80%E9%95%BF%E6%95%B0%E5%AF%B9%E9%93%BE/</link>
+      <pubDate>Sat, 03 Sep 2022 09:17:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-646.-%E6%9C%80%E9%95%BF%E6%95%B0%E5%AF%B9%E9%93%BE/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-length-of-pair-chain/
+难度： 中等
+题目描述 给出 n 个数对。 在每一个数对中，第一个数字总是比第二个数字小。
+现在，我们定义一种跟随关系，当且仅当 b &amp;lt; c 时，数对 (c, d) 才可以跟在 (a, b) 后面。我们用这种形式来构造一个数对链。
+给定一个数对集合，找出能够形成的最长数对链的长度。你不需要用到所有的数对，你可以以任何顺序选择其中的一些数对来构造。
+示例： 输入： [[1,2], [2,3], [3,4]]
+输出： 2
+解释： 最长的数对链是 [1,2] -&amp;gt; [3,4]
+提示： 给出数对的个数在 [1, 1000] 范围内。 解题思路 排序 + 贪心 为使得链长度更大，应选择第二个数字尽量小的数对。
+以数对第二个数字的大小关系进行排序。遍历整个数组，当数对第一个数字比当前链表尾部数对的第二个数字更大时，添加到链表末尾，继续处理直到遍历到数组尾。
+func findLongestChain(pairs [][]int) int { sort.Slice(pairs, func(i, j int) bool { return pairs[i][1] &amp;lt; pairs[j][1] }) ans := 0 i := math.MinInt for _, p := range pairs { if i &amp;lt; p[0] { i = p[1] ans++ } } return ans } 复杂度 时间复杂度：$ O(N\log{N}), N = len(pairs) $ 空间复杂度：$ O(\log{N}) $ </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 687. 最长同值路径</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-687.-%E6%9C%80%E9%95%BF%E5%90%8C%E5%80%BC%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 02 Sep 2022 19:49:50 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-687.-%E6%9C%80%E9%95%BF%E5%90%8C%E5%80%BC%E8%B7%AF%E5%BE%84/</guid>
+      <description>链接： https://leetcode.cn/problems/longest-univalue-path/
+难度： 中等
+题目描述 给定一个二叉树的 root ，返回 最长的路径的长度 ，这个路径中的 每个节点具有相同值 。 这条路径可以经过也可以不经过根节点。
+两个节点之间的路径长度 由它们之间的边数表示。
+示例 1： 输入： root = [5,4,5,1,1,5]
+输出： 2
+示例 2： 输入： root = [1,4,5,4,4,5]
+输出： 2
+提示： 树的节点数的范围是 [0, 104] -1000 &amp;lt;= Node.val &amp;lt;= 1000 树的深度将不超过 1000 解题思路 深度优先搜索 对于一棵树的根节点而言，搜索以根节点为起始的的 左侧 最长路径和 右侧 最长路径，求和即可得到关联到 当前根节点 的最长路径。
+对于树中每个节点执行上述搜索，最终得到 全局 最长路径。
+func longestUnivaluePath(root *TreeNode) int { // 判空 if root == nil { return 0 } max := 0 // 最大路径 var dfs func(node *TreeNode, val int) int dfs = func(node *TreeNode, val int) int { // 遍历结束 if node == nil { return 0 } // 当前节点和父节点不同，父节点相关路径搜索结束，搜索该子树的路径 if node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1475. 商品折扣后的最终价格</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1475.-%E5%95%86%E5%93%81%E6%8A%98%E6%89%A3%E5%90%8E%E7%9A%84%E6%9C%80%E7%BB%88%E4%BB%B7%E6%A0%BC/</link>
+      <pubDate>Thu, 01 Sep 2022 10:08:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1475.-%E5%95%86%E5%93%81%E6%8A%98%E6%89%A3%E5%90%8E%E7%9A%84%E6%9C%80%E7%BB%88%E4%BB%B7%E6%A0%BC/</guid>
+      <description>链接： https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/
+难度： 简单
+题目描述 给你一个数组 prices ，其中 prices[i] 是商店里第 i 件商品的价格。
+商店里正在进行促销活动，如果你要买第 i 件商品，那么你可以得到与 prices[j] 相等的折扣，其中 j 是满足 j &amp;gt; i 且 prices[j] &amp;lt;= prices[i] 的 最小下标 ，如果没有满足条件的 j ，你将没有任何折扣。
+请你返回一个数组，数组中第 i 个元素是折扣后你购买商品 i 最终需要支付的价格。
+示例 1： 输入： prices = [8,4,6,2,3]
+输出： [4,2,4,2,3]
+解释：
+商品 0 的价格为 price[0]=8 ，你将得到 prices[1]=4 的折扣，所以最终价格为 8 - 4 = 4 。
+商品 1 的价格为 price[1]=4 ，你将得到 prices[3]=2 的折扣，所以最终价格为 4 - 2 = 2 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 946. 验证栈序列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-946.-%E9%AA%8C%E8%AF%81%E6%A0%88%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Wed, 31 Aug 2022 11:52:09 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-946.-%E9%AA%8C%E8%AF%81%E6%A0%88%E5%BA%8F%E5%88%97/</guid>
+      <description>链接： https://leetcode.cn/problems/validate-stack-sequences/
+难度： 中等
+题目描述 给定 pushed 和 popped 两个序列，每个序列中的 值都不重复，只有当它们可能是在最初空栈上进行的推入 push 和弹出 pop 操作序列的结果时，返回 true；否则，返回 false 。
+示例 1： 输入： pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+输出： true
+解释： 我们可以按以下顺序执行：
+push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
+push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
+示例 2： 输入： pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+输出： false
+解释： 1 不能在 2 之前弹出。
+提示： 1 &amp;lt;= pushed.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 998. 最大二叉树 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-998.-%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91-ii/</link>
+      <pubDate>Tue, 30 Aug 2022 10:09:45 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-998.-%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91-ii/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-binary-tree-ii/
+难度： 中等
+题目描述 最大树 定义：一棵树，并满足：其中每个节点的值都大于其子树中的任何其他值。
+给你最大树的根节点 root 和一个整数 val 。
+就像 之前的问题 那样，给定的树是利用 Construct(a) 例程从列表 a（root = Construct(a)） 递归地构建的：
+如果 a 为空，返回 null 。 否则，令 a[i] 作为 a 的最大元素。创建一个值为 a[i] 的根节点 root 。 root 的左子树将被构建为 Construct([a[0], a[1], ..., a[i - 1]]) 。 root 的右子树将被构建为 Construct([a[i + 1], a[i + 2], ..., a[a.length - 1]]) 。 返回 root 。 请注意，题目没有直接给出 a ，只是给出一个根节点 root = Construct(a) 。
+假设 b 是 a 的副本，并在末尾附加值 val。题目数据保证 b 中的值互不相同。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1470. 重新排列数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1470.-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 29 Aug 2022 10:08:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1470.-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode.cn/problems/shuffle-the-array/
+难度： 简单
+题目描述 给你一个数组 nums ，数组中有 2n 个元素，按 [x1,x2,...,xn,y1,y2,...,yn] 的格式排列。
+请你将数组按 [x1,y1,x2,y2,...,xn,yn] 格式重新排列，返回重排后的数组。
+示例 1： 输入： nums = [2,5,1,3,4,7], n = 3
+输出： [2,3,5,4,1,7]
+解释： 由于 x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 ，所以答案为 [2,3,5,4,1,7]
+示例 2： 输入： nums = [1,2,3,4,4,3,2,1], n = 4
+输出： [1,4,2,3,3,2,4,1]
+示例 3： 输入： nums = [1,1,2,2], n = 2
+输出： [1,2,1,2]
+提示： 1 &amp;lt;= n &amp;lt;= 500 nums.length == 2n 1 &amp;lt;= nums[i] &amp;lt;= 103 解题思路 模拟 按照顺序从前 n 个和后 n 个元素中交替去除元素，依次添加到结果队列中。</description>
+    </item>
+    
     <item>
       <title>Leetcode 793. 阶乘函数后 K 个零</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-793.-%E9%98%B6%E4%B9%98%E5%87%BD%E6%95%B0%E5%90%8E-k-%E4%B8%AA%E9%9B%B6/</link>
