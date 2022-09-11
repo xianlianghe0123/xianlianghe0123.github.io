@@ -6,7 +6,102 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 04 Sep 2022 09:43:16 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Sep 2022 08:36:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 669. 修剪二叉搜索树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-669.-%E4%BF%AE%E5%89%AA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</link>
+      <pubDate>Sat, 10 Sep 2022 08:36:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-669.-%E4%BF%AE%E5%89%AA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</guid>
+      <description>链接： https://leetcode.cn/problems/trim-a-binary-search-tree/
+难度： 中等
+题目描述 给你二叉搜索树的根节点 root ，同时给定最小边界 low 和最大边界 high。通过修剪二叉搜索树，使得所有节点的值在 [low, high] 中。修剪树 不应该 改变保留在树中的元素的相对结构 (即，如果没有被移除，原有的父代子代关系都应当保留)。 可以证明，存在 唯一的答案 。
+所以结果应当返回修剪好的二叉搜索树的新的根节点。注意，根节点可能会根据给定的边界发生改变。
+示例 1： 输入： root = [1,0,2], low = 1, high = 2
+输出： [1,null,2]
+示例 2： 输入： root = [3,0,4,null,2,null,null,1], low = 1, high = 3
+输出： [3,2,null,1]
+提示： 树中节点数在范围 [1, 104] 内 0 &amp;lt;= Node.val &amp;lt;= 104 树中每个节点的值都是 唯一 的 题目数据保证输入是一棵有效的二叉搜索树 0 &amp;lt;= low &amp;lt;= high &amp;lt;= 104 解题思路 递归 对于树的每个节点而言，有三种情况：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1598. 文件夹操作日志搜集器</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1598.-%E6%96%87%E4%BB%B6%E5%A4%B9%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E6%90%9C%E9%9B%86%E5%99%A8/</link>
+      <pubDate>Fri, 09 Sep 2022 19:53:06 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1598.-%E6%96%87%E4%BB%B6%E5%A4%B9%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E6%90%9C%E9%9B%86%E5%99%A8/</guid>
+      <description>链接： https://leetcode.cn/problems/crawler-log-folder/
+难度： 简单
+题目描述 每当用户执行变更文件夹操作时，LeetCode 文件系统都会保存一条日志记录。
+下面给出对变更操作的说明：
+&amp;quot;../&amp;quot; ：移动到当前文件夹的父文件夹。如果已经在主文件夹下，则 继续停留在当前文件夹 。 &amp;quot;./&amp;quot; ：继续停留在当前文件夹。 &amp;quot;x/&amp;quot; ：移动到名为 x 的子文件夹中。题目数据 保证总是存在文件夹 x 。 给你一个字符串列表 logs ，其中 logs[i] 是用户在 ith 步执行的操作。
+文件系统启动时位于主文件夹，然后执行 logs 中的操作。
+执行完所有变更文件夹操作后，请你找出 返回主文件夹所需的最小步数 。
+示例 1： 输入： logs = [&amp;ldquo;d1/&amp;rdquo;,&amp;ldquo;d2/&amp;rdquo;,&amp;quot;../&amp;quot;,&amp;ldquo;d21/&amp;rdquo;,&amp;quot;./&amp;quot;]
+输出： 2
+解释： 执行 &amp;ldquo;../&amp;rdquo; 操作变更文件夹 2 次，即可回到主文件夹
+示例 2： 输入： logs = [&amp;ldquo;d1/&amp;rdquo;,&amp;ldquo;d2/&amp;rdquo;,&amp;quot;./&amp;quot;,&amp;ldquo;d3/&amp;rdquo;,&amp;quot;../&amp;quot;,&amp;ldquo;d31/&amp;rdquo;]
+输出： 3
+示例 3： 输入： logs = [&amp;ldquo;d1/&amp;rdquo;,&amp;quot;../&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;../&amp;quot;]
+输出： 0
+提示： 1 &amp;lt;= logs.length &amp;lt;= 103 2 &amp;lt;= logs[i].</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 667. 优美的排列 II</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-667.-%E4%BC%98%E7%BE%8E%E7%9A%84%E6%8E%92%E5%88%97-ii/</link>
+      <pubDate>Thu, 08 Sep 2022 10:23:01 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-667.-%E4%BC%98%E7%BE%8E%E7%9A%84%E6%8E%92%E5%88%97-ii/</guid>
+      <description>链接： https://leetcode.cn/problems/beautiful-arrangement-ii/
+难度： 中等
+题目描述 给你两个整数 n 和 k ，请你构造一个答案列表 answer ，该列表应当包含从 1 到 n 的 n 个不同正整数，并同时满足下述条件：
+假设该列表是 answer = [a1, a2, a3, &amp;hellip; , an] ，那么列表 [|a1 - a2|, |a2 - a3|, |a3 - a4|, &amp;hellip; , |an-1 - an|] 中应该有且仅有 k 个不同整数。 返回列表 answer 。如果存在多种答案，只需返回其中 任意一种 。
+示例 1： 输入： n = 3, k = 1
+输出： [1, 2, 3]
+解释： [1, 2, 3] 包含 3 个范围在 1-3 的不同整数，并且 [1, 1] 中有且仅有 1 个不同整数：1</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1592. 重新排列单词间的空格</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1592.-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E5%8D%95%E8%AF%8D%E9%97%B4%E7%9A%84%E7%A9%BA%E6%A0%BC/</link>
+      <pubDate>Wed, 07 Sep 2022 19:44:25 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1592.-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E5%8D%95%E8%AF%8D%E9%97%B4%E7%9A%84%E7%A9%BA%E6%A0%BC/</guid>
+      <description>链接： https://leetcode.cn/problems/rearrange-spaces-between-words/
+难度： 简单
+题目描述 给你一个字符串 text ，该字符串由若干被空格包围的单词组成。每个单词由一个或者多个小写英文字母组成，并且两个单词之间至少存在一个空格。题目测试用例保证 text 至少包含一个单词 。
+请你重新排列空格，使每对相邻单词之间的空格数目都 相等 ，并尽可能 最大化 该数目。如果不能重新平均分配所有空格，请 将多余的空格放置在字符串末尾 ，这也意味着返回的字符串应当与原 text 字符串的长度相等。
+返回 重新排列空格后的字符串 。
+示例 1： 输入： text = &amp;quot; this is a sentence &amp;quot;
+输出： &amp;ldquo;this is a sentence&amp;rdquo;
+解释： 总共有 9 个空格和 4 个单词。可以将 9 个空格平均分配到相邻单词之间，相邻单词间空格数为：9 / (4-1) = 3 个。
+示例 2： 输入： text = &amp;quot; practice makes perfect&amp;quot;
+输出： &amp;ldquo;practice makes perfect &amp;quot;
+解释： 总共有 7 个空格和 3 个单词。7 / (3-1) = 3 个空格加上 1 个多余的空格。多余的空格需要放在字符串的末尾。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 652. 寻找重复的子树</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-652.-%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E6%A0%91/</link>
+      <pubDate>Mon, 05 Sep 2022 10:09:31 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-652.-%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E6%A0%91/</guid>
+      <description>链接： https://leetcode.cn/problems/find-duplicate-subtrees/
+难度： 中等
+题目描述 给定一棵二叉树 root，返回所有重复的子树。
+对于同一类的重复子树，你只需要返回其中任意一棵的根结点即可。
+如果两棵树具有相同的结构和相同的结点值，则它们是重复的。
+示例 1： 输入： root = [1,2,3,4,null,2,4,null,null,4]
+输出： [[2,4],[4]]
+示例 2： 输入： root = [2,1,1]
+输出： [[1]]
+示例 3： 输入： root = [2,2,2,3,null,3,null] 输出： [[2,3],[3]]
+提示： 树中的结点数在 [1,104]范围内。 -200 &amp;lt;= Node.val &amp;lt;= 200 解题思路 先序遍历 + 哈希 使用 ()x() 的字符串唯一的标识一颗子树，并通过哈希表记录相同子树的出现次数。
+每当出现两次时，将当前子树根节点加入到结果队列中。
+func findDuplicateSubtrees(root *TreeNode) []*TreeNode { ans := make([]*TreeNode, 0, 1) exist := make(map[string]int) var dfs func(node *TreeNode) string dfs = func(node *TreeNode) string { if node == nil { return &amp;#34;&amp;#34; } s := fmt.</description>
+    </item>
+    
     <item>
       <title>Leetcode 1582. 二进制矩阵中的特殊位置</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1582.-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E4%BD%8D%E7%BD%AE/</link>
