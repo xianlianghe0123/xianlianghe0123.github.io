@@ -6,7 +6,30 @@
     <description>Recent content in dfs on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Mon, 05 Sep 2022 10:09:31 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 11:04:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 827. 最大人工岛</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-827.-%E6%9C%80%E5%A4%A7%E4%BA%BA%E5%B7%A5%E5%B2%9B/</link>
+      <pubDate>Sun, 18 Sep 2022 11:04:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-827.-%E6%9C%80%E5%A4%A7%E4%BA%BA%E5%B7%A5%E5%B2%9B/</guid>
+      <description>链接： https://leetcode.cn/problems/making-a-large-island/
+难度： 困难
+题目描述 给你一个大小为 n x n 二进制矩阵 grid 。最多 只能将一格 0 变成 1 。
+返回执行此操作后，grid 中最大的岛屿面积是多少？
+岛屿 由一组上、下、左、右四个方向相连的 1 形成。
+示例 1： 输入： grid = [[1, 0], [0, 1]]
+输出： 3
+解释： 将一格0变成1，最终连通两个小岛得到面积为 3 的岛屿。
+示例 2： 输入： grid = [[1, 1], [1, 0]]
+输出： 4
+解释： 将一格0变成1，岛屿的面积扩大为 4。
+示例 3： 输入： grid = [[1, 1], [1, 1]]
+输出： 4
+解释： 没有0可以让我们变成1，面积依然为 4。
+提示： n == grid.length n == grid[i].</description>
+    </item>
+    
     <item>
       <title>Leetcode 652. 寻找重复的子树</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-652.-%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E6%A0%91/</link>

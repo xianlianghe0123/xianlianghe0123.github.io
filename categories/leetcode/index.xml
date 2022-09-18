@@ -6,7 +6,118 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 10 Sep 2022 08:36:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 11:04:03 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 827. 最大人工岛</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-827.-%E6%9C%80%E5%A4%A7%E4%BA%BA%E5%B7%A5%E5%B2%9B/</link>
+      <pubDate>Sun, 18 Sep 2022 11:04:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-827.-%E6%9C%80%E5%A4%A7%E4%BA%BA%E5%B7%A5%E5%B2%9B/</guid>
+      <description>链接： https://leetcode.cn/problems/making-a-large-island/
+难度： 困难
+题目描述 给你一个大小为 n x n 二进制矩阵 grid 。最多 只能将一格 0 变成 1 。
+返回执行此操作后，grid 中最大的岛屿面积是多少？
+岛屿 由一组上、下、左、右四个方向相连的 1 形成。
+示例 1： 输入： grid = [[1, 0], [0, 1]]
+输出： 3
+解释： 将一格0变成1，最终连通两个小岛得到面积为 3 的岛屿。
+示例 2： 输入： grid = [[1, 1], [1, 0]]
+输出： 4
+解释： 将一格0变成1，岛屿的面积扩大为 4。
+示例 3： 输入： grid = [[1, 1], [1, 1]]
+输出： 4
+解释： 没有0可以让我们变成1，面积依然为 4。
+提示： n == grid.length n == grid[i].</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1624. 两个相同字符之间的最长子字符串</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1624.-%E4%B8%A4%E4%B8%AA%E7%9B%B8%E5%90%8C%E5%AD%97%E7%AC%A6%E4%B9%8B%E9%97%B4%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Sat, 17 Sep 2022 11:21:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1624.-%E4%B8%A4%E4%B8%AA%E7%9B%B8%E5%90%8C%E5%AD%97%E7%AC%A6%E4%B9%8B%E9%97%B4%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>链接： https://leetcode.cn/problems/largest-substring-between-two-equal-characters/
+难度： 简单
+题目描述 给你一个字符串 s，请你返回 两个相同字符之间的最长子字符串的长度 ，计算长度时不含这两个字符。如果不存在这样的子字符串，返回 -1 。
+子字符串 是字符串中的一个连续字符序列。
+示例 1： 输入： s = &amp;ldquo;aa&amp;rdquo;
+输出： 0
+解释： 最优的子字符串是两个 &amp;lsquo;a&amp;rsquo; 之间的空子字符串。
+示例 2： 输入： s = &amp;ldquo;abca&amp;rdquo;
+输出： 2
+解释： 最优的子字符串是 &amp;ldquo;bc&amp;rdquo; 。
+示例 3： 输入： s = &amp;ldquo;cbzxy&amp;rdquo;
+输出： -1
+解释： s 中不存在出现出现两次的字符，所以返回 -1 。
+示例 4： 输入： s = &amp;ldquo;cabbac&amp;rdquo;
+输出： 4
+解释： 最优的子字符串是 &amp;ldquo;abba&amp;rdquo; ，其他的非最优解包括 &amp;ldquo;bb&amp;rdquo; 和 &amp;quot;&amp;quot; 。
+提示： 1 &amp;lt;= s.length &amp;lt;= 300 s 只含小写英文字母 解题思路 哈希 遍历字符串，记录每个字符出现的最左位置，后续再次遍历到相同字符时即求得与最左侧字符之间的长度。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1619. 删除某些元素后的数组均值</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1619.-%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%85%83%E7%B4%A0%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84%E5%9D%87%E5%80%BC/</link>
+      <pubDate>Wed, 14 Sep 2022 20:20:30 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1619.-%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%85%83%E7%B4%A0%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84%E5%9D%87%E5%80%BC/</guid>
+      <description>链接： https://leetcode.cn/problems/mean-of-array-after-removing-some-elements/
+难度： 简单
+题目描述 给你一个整数数组 arr ，请你删除最小 5% 的数字和最大 5% 的数字后，剩余数字的平均值。
+与 标准答案 误差在 10-5 的结果都被视为正确结果。
+示例 1： 输入： arr = [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3]
+输出： 2.00000
+解释： 删除数组中最大和最小的元素后，所有元素都等于 2，所以平均值为 2 。
+示例 2： 输入： arr = [6,2,7,5,1,2,0,3,10,2,5,0,5,5,0,8,7,6,8,0]
+输出： 4.00000
+示例 3： 输入： arr = [6,0,7,0,7,5,7,8,3,4,0,7,8,1,6,8,1,1,2,4,8,1,9,5,4,3,8,5,10,8,6,6,1,0,6,10,8,2,3,4]
+输出： 4.77778
+示例 4： 输入： arr = [9,7,8,7,7,8,4,4,6,8,8,7,6,8,8,9,2,6,0,0,1,10,8,6,3,3,5,1,10,9,0,7,10,0,10,4,1,10,6,9,3,6,0,0,2,7,0,6,7,2,9,7,7,3,0,1,6,1,10,3]
+输出： 5.27778
+示例 5： 输入： arr = [4,8,4,10,0,7,1,3,7,8,8,3,4,1,6,2,1,1,8,0,9,8,0,3,9,10,3,10,1,10,7,3,2,1,4,9,10,7,6,4,0,8,5,1,2,1,6,2,5,0,7,10,9,10,3,7,10,5,8,5,7,6,7,6,10,9,5,10,5,5,7,2,10,7,7,8,2,0,1,1]
+输出： 5.29167
+提示： 20 &amp;lt;= arr.length &amp;lt;= 1000 arr.length 是 20 的 倍数 0 &amp;lt;= arr[i] &amp;lt;= 105 解题思路 排序 将整个数组从小到大排序，去掉两侧各 arr.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 670. 最大交换</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-670.-%E6%9C%80%E5%A4%A7%E4%BA%A4%E6%8D%A2/</link>
+      <pubDate>Tue, 13 Sep 2022 10:16:14 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-670.-%E6%9C%80%E5%A4%A7%E4%BA%A4%E6%8D%A2/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-swap/
+难度： 中等
+题目描述 给定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。
+示例 1： 输入： 2736
+输出： 7236
+解释： 交换数字2和数字7。
+示例 2： 输入： 9973
+输出： 9973
+解释： 不需要交换。
+注意： 给定数字的范围是 [0, 108] 解题思路 单调栈 为使得交换后的数字最大，需要将尽量靠右的较大数位与左侧较小的数位交换。
+识别出该数字的每一位，使用哈希表记录每个数最靠右出现的位置。
+顺序遍历该数字，当哈希表中存在的在该数右侧的最大数字比该数大时，进行交换。
+func maximumSwap(num int) int { digits := []byte(strconv.Itoa(num)) swapIdxes := make([]int, 0) maxIdx := len(digits) - 1 // 倒序遍历 for i := len(digits) - 1; i &amp;gt;= 0; i-- { // 当前数最大 if digits[maxIdx] &amp;lt; digits[i] { maxIdx = i continue } // 右侧存在更大的数，可以交换 if digits[maxIdx] &amp;gt; digits[i] { swapIdxes = []int{maxIdx, i} } } if len(swapIdxes) &amp;gt; 0 { digits[swapIdxes[0]], digits[swapIdxes[1]] = digits[swapIdxes[1]], digits[swapIdxes[0]] num, _ = strconv.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1608. 特殊数组的特征值</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1608.-%E7%89%B9%E6%AE%8A%E6%95%B0%E7%BB%84%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC/</link>
+      <pubDate>Mon, 12 Sep 2022 10:00:06 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1608.-%E7%89%B9%E6%AE%8A%E6%95%B0%E7%BB%84%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC/</guid>
+      <description>链接： https://leetcode.cn/problems/special-array-with-x-elements-greater-than-or-equal-x/
+难度： 简单
+题目描述 给你一个非负整数数组 nums 。如果存在一个数 x ，使得 nums 中恰好有 x 个元素 大于或者等于 x ，那么就称 nums 是一个 特殊数组 ，而 x 是该数组的 特征值 。
+注意： x 不必 是 nums 的中的元素。
+如果数组 nums 是一个 特殊数组 ，请返回它的特征值 x 。否则，返回 -1 。可以证明的是，如果 nums 是特殊数组，那么其特征值 x 是 唯一的 。
+示例 1： 输入： nums = [3,5]
+输出： 2
+解释： 有 2 个元素（3 和 5）大于或等于 2 。
+示例 2： 输入： nums = [0,0]
+输出： -1</description>
+    </item>
+    
     <item>
       <title>Leetcode 669. 修剪二叉搜索树</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-669.-%E4%BF%AE%E5%89%AA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</link>
