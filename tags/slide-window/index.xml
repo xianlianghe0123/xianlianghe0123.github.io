@@ -6,7 +6,22 @@
     <description>Recent content in slide window on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 05 May 2022 10:25:13 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/slide-window/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Sep 2022 06:58:23 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/slide-window/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1652. 拆炸弹</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1652.-%E6%8B%86%E7%82%B8%E5%BC%B9/</link>
+      <pubDate>Sat, 24 Sep 2022 06:58:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1652.-%E6%8B%86%E7%82%B8%E5%BC%B9/</guid>
+      <description>链接： https://leetcode.cn/problems/defuse-the-bomb/
+难度： 简单
+题目描述 你有一个炸弹需要拆除，时间紧迫！你的情报员会给你一个长度为 n 的 循环 数组 code 以及一个密钥 k 。
+为了获得正确的密码，你需要替换掉每一个数字。所有数字会 同时 被替换。
+如果 k &amp;gt; 0 ，将第 i 个数字用 接下来 k 个数字之和替换。 如果 k &amp;lt; 0 ，将第 i 个数字用 之前 k 个数字之和替换。 如果 k == 0 ，将第 i 个数字用 0 替换。 由于 code 是循环的， code[n-1] 下一个元素是 code[0] ，且 code[0] 前一个元素是 code[n-1] 。
+给你 循环 数组 code 和整数密钥 k ，请你返回解密后的结果来拆除炸弹！
+示例 1： 输入： code = [5,7,1,4], k = 3</description>
+    </item>
+    
     <item>
       <title>Leetcode 713. 乘积小于 K 的子数组</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-713.-%E4%B9%98%E7%A7%AF%E5%B0%8F%E4%BA%8E-k-%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/</link>
