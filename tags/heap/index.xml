@@ -6,7 +6,23 @@
     <description>Recent content in heap on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 25 Sep 2022 10:05:11 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/heap/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 10:15:43 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/heap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面试题 17.09. 第 k 个数</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.09.-%E7%AC%AC-k-%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Wed, 28 Sep 2022 10:15:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.09.-%E7%AC%AC-k-%E4%B8%AA%E6%95%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/get-kth-magic-number-lcci/
+难度： 中等
+题目描述 有些数的素因子只有 3，5，7，请设计一个算法找出第 k 个数。注意，不是必须有这些素因子，而是必须不包含其他的素因子。例如，前几个数按顺序应该是 1，3，5，7，9，15，21。
+示例： 输入： k = 5
+输出： 9
+解题思路 哈希 &amp;amp; 堆 使用小顶堆，维护最小元素，初始堆中元素只有 1。
+每次弹出最小元素，依次和因子 3、5、7 想乘，利用哈希表去重，添加到堆中。不断重复该操作，第 k 次弹出的堆顶元素即为有序排列的第 k 个数。
+type minHeap struct { sort.IntSlice } func (m *minHeap) Push(x interface{}) { m.IntSlice = append(m.IntSlice, x.(int)) } func (m *minHeap) Pop() interface{} { x := m.IntSlice[len(m.IntSlice)-1] m.IntSlice = m.IntSlice[:len(m.IntSlice)-1] return x } func getKthMagicNumber(k int) int { minHeap := &amp;amp;minHeap{ IntSlice: []int{1}, } exist := map[int]struct{}{ 1: {}, } for i := 1; i &amp;lt; k; i++ { cur := heap.</description>
+    </item>
+    
     <item>
       <title>Leetcode 788. 旋转数字</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-788.-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</link>

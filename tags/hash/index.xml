@@ -6,7 +6,57 @@
     <description>Recent content in hash on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 22 Sep 2022 20:18:59 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Sep 2022 10:01:23 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面试题 01.08. 零矩阵</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-01.08.-%E9%9B%B6%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Fri, 30 Sep 2022 10:01:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-01.08.-%E9%9B%B6%E7%9F%A9%E9%98%B5/</guid>
+      <description>链接： https://leetcode.cn/problems/zero-matrix-lcci/
+难度： 中等
+题目描述 编写一种算法，若M × N矩阵中某个元素为0，则将其所在的行与列清零。
+示例 1： 输入： [ [1,1,1], [1,0,1], [1,1,1] ] 输出： [ [1,0,1], [0,0,0], [1,0,1] ]
+示例 2： 输入： [ [0,1,2,0], [3,4,5,2], [1,3,1,5] ] 输出： [ [0,0,0,0], [0,4,5,0], [0,3,1,0] ]
+解题思路 哈希 遍历整个矩阵，使用哈希表记录每个元素为 0 的行和列，最后将记录的所有行列中的元素置为 0。
+func setZeroes(matrix [][]int) { rows := make(map[int]struct{}) cols := make(map[int]struct{}) for i, line := range matrix { for j, cell := range line { if cell == 0 { rows[i] = struct{}{} cols[j] = struct{}{} } } } for r := range rows { for j := 0; j &amp;lt; len(matrix[0]); j++ { matrix[r][j] = 0 } } for c := range cols { for i := 0; i &amp;lt; len(matrix); i++ { matrix[i][c] = 0 } } } 复杂度 时间复杂度：$ O(MN) $ 空间复杂度：$ O(M+N) $ </description>
+    </item>
+    
+    <item>
+      <title>面试题 17.09. 第 k 个数</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.09.-%E7%AC%AC-k-%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Wed, 28 Sep 2022 10:15:43 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-17.09.-%E7%AC%AC-k-%E4%B8%AA%E6%95%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/get-kth-magic-number-lcci/
+难度： 中等
+题目描述 有些数的素因子只有 3，5，7，请设计一个算法找出第 k 个数。注意，不是必须有这些素因子，而是必须不包含其他的素因子。例如，前几个数按顺序应该是 1，3，5，7，9，15，21。
+示例： 输入： k = 5
+输出： 9
+解题思路 哈希 &amp;amp; 堆 使用小顶堆，维护最小元素，初始堆中元素只有 1。
+每次弹出最小元素，依次和因子 3、5、7 想乘，利用哈希表去重，添加到堆中。不断重复该操作，第 k 次弹出的堆顶元素即为有序排列的第 k 个数。
+type minHeap struct { sort.IntSlice } func (m *minHeap) Push(x interface{}) { m.IntSlice = append(m.IntSlice, x.(int)) } func (m *minHeap) Pop() interface{} { x := m.IntSlice[len(m.IntSlice)-1] m.IntSlice = m.IntSlice[:len(m.IntSlice)-1] return x } func getKthMagicNumber(k int) int { minHeap := &amp;amp;minHeap{ IntSlice: []int{1}, } exist := map[int]struct{}{ 1: {}, } for i := 1; i &amp;lt; k; i++ { cur := heap.</description>
+    </item>
+    
+    <item>
+      <title>面试题 01.02. 判定是否互为字符重排</title>
+      <link>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-01.02.-%E5%88%A4%E5%AE%9A%E6%98%AF%E5%90%A6%E4%BA%92%E4%B8%BA%E5%AD%97%E7%AC%A6%E9%87%8D%E6%8E%92/</link>
+      <pubDate>Tue, 27 Sep 2022 10:11:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/%E9%9D%A2%E8%AF%95%E9%A2%98-01.02.-%E5%88%A4%E5%AE%9A%E6%98%AF%E5%90%A6%E4%BA%92%E4%B8%BA%E5%AD%97%E7%AC%A6%E9%87%8D%E6%8E%92/</guid>
+      <description>链接： https://leetcode.cn/problems/check-permutation-lcci/
+难度： 简单
+题目描述 给定两个字符串 s1 和 s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。
+示例 1： 输入： s1 = &amp;ldquo;abc&amp;rdquo;, s2 = &amp;ldquo;bca&amp;rdquo;
+输出： true
+示例 2： 输入： s1 = &amp;ldquo;abc&amp;rdquo;, s2 = &amp;ldquo;bad&amp;rdquo;
+输出： false
+说明 0 &amp;lt;= len(s1) &amp;lt;= 100 0 &amp;lt;= len(s2) &amp;lt;= 100 解题思路 哈希 两个字符串互为重排，要求两个字符串的每种字符的数量完全一致。
+首先用长度做初步判断，不同则直接返回 false
+然后使用哈希表统计其中一个字符串每种字母的数量，然后遍历另一个字符串，将对应的字符从哈希表中删除。最后哈希表为空则为 true，否则 false。
+func CheckPermutation(s1 string, s2 string) bool { if len(s1) != len(s2) { return false } cnt := make(map[byte]int) for i := range s1 { cnt[s1[i]]++ } for i := range s2 { cnt[s2[i]]-- if cnt[s2[i]] &amp;lt; 0 { return false } if cnt[s2[i]] == 0 { delete(cnt, s2[i]) } } return len(cnt) == 0 } 复杂度 时间复杂度：$ O(N), N = len(s1) $ 空间复杂度：$ O(N) $ </description>
+    </item>
+    
     <item>
       <title>Leetcode 1640. 能否连接形成数组</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1640.-%E8%83%BD%E5%90%A6%E8%BF%9E%E6%8E%A5%E5%BD%A2%E6%88%90%E6%95%B0%E7%BB%84/</link>
