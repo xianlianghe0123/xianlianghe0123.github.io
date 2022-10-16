@@ -206,7 +206,7 @@ arr.length &amp;gt;= 3 存在 i（0 &amp;lt; i &amp;lt; arr.length - 1）使得
     <p><strong>链接：</strong> <a class="link" href="https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/"  target="_blank" rel="noopener"
     >https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/</a><br>
 <strong>难度：</strong> <font color="green">简单</font></p>
-<h4 id="题目描述">题目描述</h4>
+<h3 id="题目描述">题目描述</h3>
 <p>符合下列属性的数组 <code>arr</code> 称为 <strong>山脉数组</strong> ：</p>
 <ul>
 <li><code>arr.length &gt;= 3</code></li>
@@ -218,27 +218,27 @@ arr.length &amp;gt;= 3 存在 i（0 &amp;lt; i &amp;lt; arr.length - 1）使得
 </li>
 </ul>
 <p>给你由整数组成的山脉数组 <code>arr</code> ，返回任何满足 <code>arr[0] &lt; arr[1] &lt; ... arr[i - 1] &lt; arr[i] &gt; arr[i + 1] &gt; ... &gt; arr[arr.length - 1]</code> 的下标 <code>i</code> 。</p>
-<h5 id="示例-1">示例 1：</h5>
+<h4 id="示例-1">示例 1：</h4>
 <blockquote>
 <p><strong>输入：</strong> arr = [0,1,0]<br>
 <strong>输出：</strong> 1</p>
 </blockquote>
-<h5 id="示例-2">示例 2：</h5>
+<h4 id="示例-2">示例 2：</h4>
 <blockquote>
 <p><strong>输入：</strong> arr = [0,2,1,0]<br>
 <strong>输出：</strong> 1</p>
 </blockquote>
-<h5 id="示例-3">示例 3：</h5>
+<h4 id="示例-3">示例 3：</h4>
 <blockquote>
 <p><strong>输入：</strong> arr = [0,10,5,2]<br>
 <strong>输出：</strong> 1</p>
 </blockquote>
-<h5 id="示例-4">示例 4：</h5>
+<h4 id="示例-4">示例 4：</h4>
 <blockquote>
 <p><strong>输入：</strong> arr = [3,4,5,1]<br>
 <strong>输出：</strong> 2</p>
 </blockquote>
-<h5 id="示例-5">示例 5：</h5>
+<h4 id="示例-5">示例 5：</h4>
 <blockquote>
 <p><strong>输入：</strong> arr = [24,69,100,99,79,78,67,36,26,19]<br>
 <strong>输出：</strong> 2
@@ -266,8 +266,8 @@ arr.length &amp;gt;= 3 存在 i（0 &amp;lt; i &amp;lt; arr.length - 1）使得
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
 <ul>
-<li>时间复杂度：O(N)</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：$ O(N), N = len(arr) $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 <h4 id="二分查找">二分查找</h4>
 <p>每次获取数组中间的数，并与相邻的两个数做比较：</p>
@@ -293,8 +293,8 @@ arr.length &amp;gt;= 3 存在 i（0 &amp;lt; i &amp;lt; arr.length - 1）使得
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h5 id="复杂度-1">复杂度</h5>
 <ul>
-<li>时间复杂度：O(logN)</li>
-<li>空间复杂度：O(1)</li>
+<li>时间复杂度：$ O(\log{N}), N = len(arr) $</li>
+<li>空间复杂度：$ O(1) $</li>
 </ul>
 
 </section>

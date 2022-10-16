@@ -6,7 +6,208 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 01 Oct 2022 11:22:02 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Oct 2022 11:29:48 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1441. 用栈操作构建数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1441.-%E7%94%A8%E6%A0%88%E6%93%8D%E4%BD%9C%E6%9E%84%E5%BB%BA%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sat, 15 Oct 2022 11:29:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1441.-%E7%94%A8%E6%A0%88%E6%93%8D%E4%BD%9C%E6%9E%84%E5%BB%BA%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode.cn/problems/build-an-array-with-stack-operations/
+难度： 中等
+题目描述 给你一个数组 target 和一个整数 n。每次迭代，需要从 list = { 1 , 2 , 3 ..., n } 中依次读取一个数字。
+请使用下述操作来构建目标数组 target ：
+&amp;quot;Push&amp;quot;：从 list 中读取一个新元素， 并将其推入数组中。 &amp;quot;Pop&amp;quot;：删除数组中的最后一个元素。 如果目标数组构建完成，就停止读取更多元素。 题目数据保证目标数组严格递增，并且只包含 1 到 n 之间的数字。
+请返回构建目标数组所用的操作序列。如果存在多个可行方案，返回任一即可。
+示例 1： 输入： target = [1,3], n = 3
+输出： [&amp;ldquo;Push&amp;rdquo;,&amp;ldquo;Push&amp;rdquo;,&amp;ldquo;Pop&amp;rdquo;,&amp;ldquo;Push&amp;rdquo;]
+解释：
+读取 1 并自动推入数组 -&amp;gt; [1]
+读取 2 并自动推入数组，然后删除它 -&amp;gt; [1]
+读取 3 并自动推入数组 -&amp;gt; [1,3]
+示例 2: 输入： target = [1,2,3], n = 3</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 769. 最多能完成排序的块</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-769.-%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97/</link>
+      <pubDate>Thu, 13 Oct 2022 10:19:00 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-769.-%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97/</guid>
+      <description>链接： https://leetcode.cn/problems/max-chunks-to-make-sorted/
+难度： 中等
+题目描述 给定一个长度为 n 的整数数组 arr ，它表示在 [0, n - 1] 范围内的整数的排列。
+我们将 arr 分割成若干 块 (即分区)，并对每个块单独排序。将它们连接起来后，使得连接的结果和按升序排序后的原数组相同。
+返回数组能分成的最多块数量。
+示例 1： 输入： arr = [4,3,2,1,0]
+输出： 1
+解释：
+将数组分成2块或者更多块，都无法得到所需的结果。
+例如，分成 [4, 3], [2, 1, 0] 的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。
+示例 2： 输入： arr = [1,0,2,3,4]
+输出： 4
+解释：
+我们可以把它分成两块，例如 [1, 0], [2, 3, 4]。
+然而，分成 [1, 0], [2], [3], [4] 可以得到最多的块数。
+提示： n == arr.length 1 &amp;lt;= n &amp;lt;= 10 0 &amp;lt;= arr[i] &amp;lt; n arr 中每个元素都 不同 解题思路 贪心 根据题目给定的数据范围，当排序完成后，其元素值和下标是相同的。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 817. 链表组件</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-817.-%E9%93%BE%E8%A1%A8%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Wed, 12 Oct 2022 10:26:31 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-817.-%E9%93%BE%E8%A1%A8%E7%BB%84%E4%BB%B6/</guid>
+      <description>链接： https://leetcode.cn/problems/linked-list-components/
+难度： 中等
+题目描述 给定链表头结点 head，该链表上的每个结点都有一个 唯一的整型值 。同时给定列表 nums，该列表是上述链表中整型值的一个子集。
+返回列表 nums 中组件的个数，这里对组件的定义为：链表中一段最长连续结点的值（该值必须在列表 nums 中）构成的集合。
+示例 1： 输入： head = [0,1,2,3], nums = [0,1,3]
+输出： 2
+解释： 链表中,0 和 1 是相连接的，且 nums 中不包含 2，所以 [0, 1] 是 nums 的一个组件，同理 [3] 也是一个组件，故返回 2。
+示例 2： 输入： head = [0,1,2,3,4], nums = [0,3,1,4]
+输出： 2
+解释： 链表中，0 和 1 是相连接的，3 和 4 是相连接的，所以 [0, 1] 和 [3, 4] 是两个组件，故返回 2。
+提示： 链表中节点数为 n 1 &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= Node.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1790. 仅执行一次字符串交换能否使两个字符串相等</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1790.-%E4%BB%85%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BA%A4%E6%8D%A2%E8%83%BD%E5%90%A6%E4%BD%BF%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E7%AD%89/</link>
+      <pubDate>Wed, 12 Oct 2022 10:09:29 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1790.-%E4%BB%85%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BA%A4%E6%8D%A2%E8%83%BD%E5%90%A6%E4%BD%BF%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E7%AD%89/</guid>
+      <description>链接： https://leetcode.cn/problems/check-if-one-string-swap-can-make-strings-equal/
+难度： 简单
+题目描述 给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。
+如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。
+示例 1： 输入： s1 = &amp;ldquo;bank&amp;rdquo;, s2 = &amp;ldquo;kanb&amp;rdquo;
+输出： true
+解释： 例如，交换 s2 中的第一个和最后一个字符可以得到 &amp;ldquo;bank&amp;rdquo;
+示例 2： 输入： s1 = &amp;ldquo;attack&amp;rdquo;, s2 = &amp;ldquo;defend&amp;rdquo;
+输出： false
+解释： 一次字符串交换无法使两个字符串相等
+示例 3： 输入： s1 = &amp;ldquo;kelb&amp;rdquo;, s2 = &amp;ldquo;kelb&amp;rdquo;
+输出： true
+解释： 两个字符串已经相等，所以不需要进行字符串交换
+示例 4： 输入： s1 = &amp;ldquo;abcd&amp;rdquo;, s2 = &amp;ldquo;dcba&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 856. 括号的分数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-856.-%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%88%86%E6%95%B0/</link>
+      <pubDate>Sun, 09 Oct 2022 10:29:34 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-856.-%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%88%86%E6%95%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/score-of-parentheses/
+难度： 中等/font&amp;gt;
+题目描述 给定一个平衡括号字符串 S，按下述规则计算该字符串的分数：
+() 得 1 分。 AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。 (A) 得 2 * A 分，其中 A 是平衡括号字符串。 示例 1： 输入： &amp;ldquo;()&amp;rdquo;
+输出： 1
+示例 2： 输入： &amp;ldquo;(())&amp;rdquo;
+输出： 2
+示例 3： 输入： &amp;ldquo;()()&amp;rdquo;
+输出： 2
+示例 4： 输入： &amp;ldquo;(()(()))&amp;rdquo;
+输出： 6
+提示： S 是平衡括号字符串，且只含有 ( 和 ) 。 2 &amp;lt;= S.length &amp;lt;= 50 解题思路 数学 通过分析不难发现，括号的嵌套深度决定了其分数，并且初始的分数产生于 &amp;quot;()&amp;quot;，深度每加1，则分数翻倍。
+由于给定的字符串括号是匹配的，遍历并维护深度，当识别到 &amp;quot;()&amp;quot; 时，求得对应的分值并累加。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 870. 优势洗牌</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-870.-%E4%BC%98%E5%8A%BF%E6%B4%97%E7%89%8C/</link>
+      <pubDate>Sun, 09 Oct 2022 10:10:49 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-870.-%E4%BC%98%E5%8A%BF%E6%B4%97%E7%89%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/advantage-shuffle/
+难度： 中等
+题目描述 给定两个大小相等的数组 nums1 和 nums2，nums1 相对于 nums2 的优势可以用满足 nums1[i] &amp;gt; nums2[i] 的索引 i 的数目来描述。
+返回 nums1 的任意排列，使其相对于 nums2 的优势最大化。
+示例 1： 输入： nums1 = [2,7,11,15], nums2 = [1,10,4,11]
+输出： [2,11,7,15]
+示例 2： 输入： nums1 = [12,24,8,32], nums2 = [13,25,32,11]
+输出： [24,32,8,12]
+提示： 1 &amp;lt;= nums1.length &amp;lt;= 105 nums2.length == nums1.length 0 &amp;lt;= nums1[i], nums2[i] &amp;lt;= 109 解题思路 贪心 为使得优势最大，需尝试从 nums1 中找出比 nums2 中较小的那部分数字更大，可以采用田忌赛马策略。
+首先将两个数组排序，分别从头开始遍历（不妨设下标指针分别 i 和 j）：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1800. 最大升序子数组和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1800.-%E6%9C%80%E5%A4%A7%E5%8D%87%E5%BA%8F%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/</link>
+      <pubDate>Fri, 07 Oct 2022 16:54:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1800.-%E6%9C%80%E5%A4%A7%E5%8D%87%E5%BA%8F%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-ascending-subarray-sum/
+难度： 简单
+题目描述 给你一个正整数组成的数组 nums ，返回 nums 中一个 升序 子数组的最大可能元素和。
+子数组是数组中的一个连续数字序列。
+已知子数组 [numsl, numsl+1, &amp;hellip;, numsr-1, numsr] ，若对所有 i（l &amp;lt;= i &amp;lt; r），numsi &amp;lt; numsi+1 都成立，则称这一子数组为 升序 子数组。注意，大小为 1 的子数组也视作 升序 子数组。
+示例 1： 输入： nums = [10,20,30,5,10,50]
+输出： 65
+解释： [5,10,50] 是元素和最大的升序子数组，最大元素和为 65 。
+示例 2： 输入： nums = [10,20,30,40,50]
+输出： 150
+解释： [10,20,30,40,50] 是元素和最大的升序子数组，最大元素和为 150 。
+示例 3： 输入： nums = [12,17,15,13,10,11,12]
+输出： 33
+解释： [10,11,12] 是元素和最大的升序子数组，最大元素和为 33 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 811. 子域名访问计数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-811.-%E5%AD%90%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E8%AE%A1%E6%95%B0/</link>
+      <pubDate>Wed, 05 Oct 2022 10:37:13 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-811.-%E5%AD%90%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E8%AE%A1%E6%95%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/subdomain-visit-count/
+难度： 中等
+题目描述 网站域名 &amp;quot;discuss.leetcode.com&amp;quot; 由多个子域名组成。顶级域名为 &amp;quot;com&amp;quot; ，二级域名为 &amp;quot;leetcode.com&amp;quot; ，最低一级为 &amp;quot;discuss.leetcode.com&amp;quot; 。当访问域名 &amp;quot;discuss.leetcode.com&amp;quot; 时，同时也会隐式访问其父域名 &amp;quot;leetcode.com&amp;quot; 以及 &amp;quot;com&amp;quot; 。
+计数配对域名 是遵循 &amp;quot;rep d1.d2.d3&amp;quot; 或 &amp;quot;rep d1.d2&amp;quot; 格式的一个域名表示，其中 rep 表示访问域名的次数，d1.d2.d3 为域名本身。
+例如，&amp;quot;9001 discuss.leetcode.com&amp;quot; 就是一个 计数配对域名 ，表示 discuss.leetcode.com 被访问了 9001 次。 给你一个 计数配对域名 组成的数组 cpdomains ，解析得到输入中每个子域名对应的 计数配对域名 ，并以数组形式返回。可以按 任意顺序 返回答案。
+示例 1： 输入： cpdomains = [&amp;ldquo;9001 discuss.leetcode.com&amp;rdquo;]
+输出： [&amp;ldquo;9001 leetcode.com&amp;rdquo;,&amp;ldquo;9001 discuss.leetcode.com&amp;rdquo;,&amp;ldquo;9001 com&amp;rdquo;]
+解释： 例子中仅包含一个网站域名：&amp;ldquo;discuss.leetcode.com&amp;rdquo;。
+按照前文描述，子域名 &amp;ldquo;leetcode.com&amp;rdquo; 和 &amp;ldquo;com&amp;rdquo; 都会被访问，所以它们都被访问了 9001 次。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 921. 使括号有效的最少添加</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-921.-%E4%BD%BF%E6%8B%AC%E5%8F%B7%E6%9C%89%E6%95%88%E7%9A%84%E6%9C%80%E5%B0%91%E6%B7%BB%E5%8A%A0/</link>
+      <pubDate>Tue, 04 Oct 2022 10:52:07 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-921.-%E4%BD%BF%E6%8B%AC%E5%8F%B7%E6%9C%89%E6%95%88%E7%9A%84%E6%9C%80%E5%B0%91%E6%B7%BB%E5%8A%A0/</guid>
+      <description>链接： https://leetcode.cn/problems/minimum-add-to-make-parentheses-valid/
+难度： 中等
+题目描述 只有满足下面几点之一，括号字符串才是有效的：
+它是一个空字符串，或者 它可以被写成 AB （A 与 B 连接）, 其中 A 和 B 都是有效字符串，或者 它可以被写作 (A)，其中 A 是有效字符串。 给定一个括号字符串 s ，移动 N 次，你就可以在字符串的任何位置插入一个括号。
+例如，如果 s = &amp;quot;()))&amp;quot; ，你可以插入一个开始括号为 &amp;quot;(()))&amp;quot; 或结束括号为 &amp;quot;())))&amp;quot; 。 返回 为使结果字符串 s 有效而必须添加的最少括号数。
+示例 1： 输入： s = &amp;ldquo;())&amp;rdquo;
+输出： 1
+示例 2： 输入： s = &amp;ldquo;(((&amp;rdquo;
+输出： 3
+提示： 1 &amp;lt;= s.length &amp;lt;= 1000 s 只包含 &#39;(&#39; 和 &#39;)&#39; 字符。 解题思路 贪心 当每个 &#39;(&#39; 右侧存在 &#39;)&#39; 时，其必然是可以完成匹配的。所以有两种情况需要补足：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1784. 检查二进制字符串字段</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1784.-%E6%A3%80%E6%9F%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AE%B5/</link>
+      <pubDate>Mon, 03 Oct 2022 10:27:16 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1784.-%E6%A3%80%E6%9F%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AE%B5/</guid>
+      <description>链接： https://leetcode.cn/problems/check-if-binary-string-has-at-most-one-segment-of-ones/
+难度： 简单
+题目描述 给你一个二进制字符串 s ，该字符串 不含前导零 。
+如果 s 包含 零个或一个由连续的 &#39;1&#39; 组成的字段 ，返回 true​​​ 。否则，返回 false 。
+如果 s 中 由连续若干个 &#39;1&#39; 组成的字段 数量不超过 1，返回 true​​​ 。否则，返回 false 。
+示例 1： 输入： s = &amp;ldquo;1001&amp;rdquo;
+输出： false
+解释： 由连续若干个 &amp;lsquo;1&amp;rsquo; 组成的字段数量为 2，返回 false
+示例 2： 输入： s = &amp;ldquo;110&amp;rdquo;
+输出： true
+提示： 1 &amp;lt;= s.length &amp;lt;= 100 s[i]​​​​ 为 &#39;0&#39; 或 &#39;1&#39; s[0] 为 &#39;1&#39; 解题思路 遍历 由于首个字符必然是 1，则其后若有 0 出现，此后不能再出现 1。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1694. 重新格式化电话号码</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1694.-%E9%87%8D%E6%96%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81/</link>
