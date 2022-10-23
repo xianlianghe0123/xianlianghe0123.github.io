@@ -6,7 +6,34 @@
     <description>Recent content in stack on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 15 Oct 2022 11:29:48 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Oct 2022 10:14:05 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 901. 股票价格跨度</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-901.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E8%B7%A8%E5%BA%A6/</link>
+      <pubDate>Fri, 21 Oct 2022 10:14:05 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-901.-%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E8%B7%A8%E5%BA%A6/</guid>
+      <description>链接： https://leetcode.cn/problems/online-stock-span/
+难度： 中等
+题目描述 编写一个 StockSpanner 类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。
+今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。
+例如，如果未来7天股票的价格是 [100, 80, 60, 70, 60, 75, 85]，那么股票跨度将是 [1, 1, 1, 2, 1, 4, 6]。
+示例： 输入： [&amp;ldquo;StockSpanner&amp;rdquo;,&amp;ldquo;next&amp;rdquo;,&amp;ldquo;next&amp;rdquo;,&amp;ldquo;next&amp;rdquo;,&amp;ldquo;next&amp;rdquo;,&amp;ldquo;next&amp;rdquo;,&amp;ldquo;next&amp;rdquo;,&amp;ldquo;next&amp;rdquo;], [[],[100],[80],[60],[70],[60],[75],[85]]
+输出： [null,1,1,1,2,1,4,6]
+解释：
+首先，初始化 S = StockSpanner()，然后：
+S.next(100) 被调用并返回 1，
+S.next(80) 被调用并返回 1，
+S.next(60) 被调用并返回 1，
+S.next(70) 被调用并返回 2，
+S.next(60) 被调用并返回 1，
+S.next(75) 被调用并返回 4，
+S.next(85) 被调用并返回 6。
+注意 (例如) S.next(75) 返回 4，因为截至今天的最后 4 个价格
+(包括今天的价格 75) 小于或等于今天的价格。
+提示： 调用 StockSpanner.next(int price) 时，将有 1 &amp;lt;= price &amp;lt;= 105。 每个测试用例最多可以调用 10000 次 StockSpanner.</description>
+    </item>
+    
     <item>
       <title>Leetcode 1441. 用栈操作构建数组</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1441.-%E7%94%A8%E6%A0%88%E6%93%8D%E4%BD%9C%E6%9E%84%E5%BB%BA%E6%95%B0%E7%BB%84/</link>
