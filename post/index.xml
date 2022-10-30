@@ -6,7 +6,124 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 23 Oct 2022 11:34:46 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Oct 2022 10:29:24 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 784. 字母大小写全排列</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-784.-%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%85%A8%E6%8E%92%E5%88%97/</link>
+      <pubDate>Sun, 30 Oct 2022 10:29:24 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-784.-%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%85%A8%E6%8E%92%E5%88%97/</guid>
+      <description>链接： https://leetcode.cn/problems/letter-case-permutation/
+难度： 中等
+题目描述 给定一个字符串 s ，通过将字符串 s 中的每个字母转变大小写，我们可以获得一个新的字符串。
+返回 所有可能得到的字符串集合 。以 任意顺序 返回输出。
+示例 1： 输入： s = &amp;ldquo;a1b2&amp;rdquo;
+输出： [&amp;ldquo;a1b2&amp;rdquo;, &amp;ldquo;a1B2&amp;rdquo;, &amp;ldquo;A1b2&amp;rdquo;, &amp;ldquo;A1B2&amp;rdquo;]
+示例 2： 输入： s = &amp;ldquo;3z4&amp;rdquo;
+输出： [&amp;ldquo;3z4&amp;rdquo;,&amp;ldquo;3Z4&amp;rdquo;]
+提示： 1 &amp;lt;= s.length &amp;lt;= 12 s 由小写英文字母、大写英文字母和数字组成 解题思路 位运算 由于每个字母只有小写和大写两种情况，故使用二进制位，定义 0 为保持不变，1 为变换为大小写。
+由于变换仅涉及字母，首先找出所有字母的数量，用于确定位长，然后枚举所有的二进制位的情况，依次对字母做变换。
+func letterCasePermutation(s string) []string { lettersCnt := 0 for i := range s { if s[i] &amp;gt; &amp;#39;9&amp;#39; { lettersCnt++ } } ans := make([]string, 0, 1&amp;lt;&amp;lt;lettersCnt) for i := (1 &amp;lt;&amp;lt; lettersCnt) - 1; i &amp;gt;= 0; i-- { tmp := []byte(s) for j, k := len(s)-1, i; j &amp;gt;= 0; j-- { if tmp[j] &amp;gt;= &amp;#39;0&amp;#39; &amp;amp;&amp;amp; tmp[j] &amp;lt;= &amp;#39;9&amp;#39; { continue } if k == 0 { break } if k&amp;amp;1 == 0 { } else if tmp[j] &amp;lt;= &amp;#39;Z&amp;#39; { tmp[j] += &amp;#39;a&amp;#39; - &amp;#39;A&amp;#39; } else { tmp[j] -= &amp;#39;a&amp;#39; - &amp;#39;A&amp;#39; } k &amp;gt;&amp;gt;= 1 } ans = append(ans, string(tmp)) } return ans } 复杂度 时间复杂度：$ O(N*2^N), N = len(s) $ 空间复杂度：$ O(1) $ </description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1773. 统计匹配检索规则的物品数量</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1773.-%E7%BB%9F%E8%AE%A1%E5%8C%B9%E9%85%8D%E6%A3%80%E7%B4%A2%E8%A7%84%E5%88%99%E7%9A%84%E7%89%A9%E5%93%81%E6%95%B0%E9%87%8F/</link>
+      <pubDate>Sat, 29 Oct 2022 11:31:02 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1773.-%E7%BB%9F%E8%AE%A1%E5%8C%B9%E9%85%8D%E6%A3%80%E7%B4%A2%E8%A7%84%E5%88%99%E7%9A%84%E7%89%A9%E5%93%81%E6%95%B0%E9%87%8F/</guid>
+      <description>链接： https://leetcode.cn/problems/count-items-matching-a-rule/
+难度： 简单
+题目描述 给你一个数组 items ，其中 items[i] = [typei, colori, namei] ，描述第 i 件物品的类型、颜色以及名称。
+另给你一条由两个字符串 ruleKey 和 ruleValue 表示的检索规则。
+如果第 i 件物品能满足下述条件之一，则认为该物品与给定的检索规则 匹配 ：
+ruleKey == &amp;quot;type&amp;quot; 且 ruleValue == typei 。 ruleKey == &amp;quot;color&amp;quot; 且 ruleValue == colori 。 ruleKey == &amp;quot;name&amp;quot; 且 ruleValue == namei 。 统计并返回 匹配检索规则的物品数量 。 示例 1： 输入： items = [[&amp;ldquo;phone&amp;rdquo;,&amp;ldquo;blue&amp;rdquo;,&amp;ldquo;pixel&amp;rdquo;],[&amp;ldquo;computer&amp;rdquo;,&amp;ldquo;silver&amp;rdquo;,&amp;ldquo;lenovo&amp;rdquo;],[&amp;ldquo;phone&amp;rdquo;,&amp;ldquo;gold&amp;rdquo;,&amp;ldquo;iphone&amp;rdquo;]], ruleKey = &amp;ldquo;color&amp;rdquo;, ruleValue = &amp;ldquo;silver&amp;rdquo;
+输出： 1
+解释： 只有一件物品匹配检索规则，这件物品是 [&amp;ldquo;computer&amp;rdquo;,&amp;ldquo;silver&amp;rdquo;,&amp;ldquo;lenovo&amp;rdquo;] 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 907. 子数组的最小值之和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-907.-%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Fri, 28 Oct 2022 10:44:31 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-907.-%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B9%8B%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/sum-of-subarray-minimums/
+难度： 中等
+题目描述 给定一个整数数组 arr，找到 min(b) 的总和，其中 b 的范围为 arr 的每个（连续）子数组。
+由于答案可能很大，因此 返回答案模 109 + 7 。
+示例 1： 输入： arr = [3,1,2,4]
+输出： 17
+解释：
+子数组为 [3]，[1]，[2]，[4]，[3,1]，[1,2]，[2,4]，[3,1,2]，[1,2,4]，[3,1,2,4]。
+最小值为 3，1，2，4，1，1，2，1，1，1，和为 17。
+示例 2： 输入： arr = [11,81,94,43,3]
+输出： 444
+提示： 1 &amp;lt;= arr.length &amp;lt;= 3 * 104 1 &amp;lt;= arr[i] &amp;lt;= 3 * 104 解题思路 分治 对于一个数组而言，其子数组可以简单分为囊括其最小值以及不囊括的两部分，不妨设最小值的下标为 i：
+对于囊括的部分，可以从包括其在内的前面的任意数字开始，直到包括其在内的任意数字截至，共有 (i+1) * (len(arr)-i) 个子数组，乘以最小值 arr[i] 即可得到该部分的和； 对于不囊括的部分，其被最小值分隔，分别独立对该两部分子数组求解。 将上述两部分求和，即可求得整个数组所有子数组的最小值之和。递归的求解，终止条件为空数组返回 0。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1822. 数组元素积的符号</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1822.-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%A7%AF%E7%9A%84%E7%AC%A6%E5%8F%B7/</link>
+      <pubDate>Thu, 27 Oct 2022 11:41:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1822.-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%A7%AF%E7%9A%84%E7%AC%A6%E5%8F%B7/</guid>
+      <description>链接： https://leetcode.cn/problems/sign-of-the-product-of-an-array/
+难度： 简单
+题目描述 已知函数 signFunc(x) 将会根据 x 的正负返回特定值：
+如果 x 是正数，返回 1 。 如果 x 是负数，返回 -1 。 如果 x 是等于 0 ，返回 0 。 给你一个整数数组 nums 。令 product 为数组 nums 中所有元素值的乘积。
+返回 signFunc(product) 。
+示例 1： 输入： nums = [-1,-2,-3,-4,3,2,1]
+输出： 1
+解释： 数组中所有值的乘积是 144 ，且 signFunc(144) = 1
+示例 2： 输入： nums = [1,5,0,2,-3]
+输出： 0
+解释： 数组中所有值的乘积是 0 ，且 signFunc(0) = 0
+示例 3： 输入： nums = [-1,1,-1,1,-1]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 934. 最短的桥</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-934.-%E6%9C%80%E7%9F%AD%E7%9A%84%E6%A1%A5/</link>
+      <pubDate>Tue, 25 Oct 2022 10:16:44 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-934.-%E6%9C%80%E7%9F%AD%E7%9A%84%E6%A1%A5/</guid>
+      <description>链接： https://leetcode.cn/problems/shortest-bridge/
+难度： 中等
+题目描述 给你一个大小为 n x n 的二元矩阵 grid ，其中 1 表示陆地，0 表示水域。
+岛 是由四面相连的 1 形成的一个最大组，即不会与非组内的任何其他 1 相连。grid 中 恰好存在两座岛 。
+你可以将任意数量的 0 变为 1 ，以使两座岛连接起来，变成 一座岛 。
+返回必须翻转的 0 的最小数目。
+示例 1： 输入： grid = [[0,1],[1,0]]
+输出： 1
+示例 2： 输入： grid = [[0,1,0],[0,0,0],[0,0,1]]
+输出： 2
+示例 3： 输入： grid = [[1,1,1,1,1],[1,0,0,0,1],[1,0,1,0,1],[1,0,0,0,1],[1,1,1,1,1]]
+输出： 1
+提示： n == grid.length == grid[i].length 2 &amp;lt;= n &amp;lt;= 100 grid[i][j] 为 0 或 1 grid 中恰有两个岛 解题思路 广度优先搜索 首先通过遍历找到其中一个岛，然后从该岛开始进行广度优先搜索，找到所有该岛边界的水域。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 915. 分割数组</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-915.-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 24 Oct 2022 10:22:55 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-915.-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84/</guid>
+      <description>链接： https://leetcode.cn/problems/partition-array-into-disjoint-intervals/
+难度： 中等
+题目描述 给定一个数组 nums ，将其划分为两个连续子数组 left 和 right， 使得：
+left 中的每个元素都小于或等于 right 中的每个元素。 left 和 right 都是非空的。 left 的长度要尽可能小。 在完成这样的分组后返回 left 的 长度 。
+用例可以保证存在这样的划分方法。
+示例 1： 输入： nums = [5,0,3,8,6]
+输出： 3
+解释： left = [5,0,3]，right = [8,6]
+示例 2： 输入： nums = [1,1,1,0,6,12]
+输出： 4
+解释： left = [1,1,1,0]，right = [6,12]
+提示： 2 &amp;lt;= nums.length &amp;lt;= 105 0 &amp;lt;= nums[i] &amp;lt;= 106 可以保证至少有一种方法能够按题目所描述的那样对 nums 进行划分。 解题思路 遍历 分析题目可知，符合条件的前缀数组的最大值必须 小于等于 后缀数组的最小值。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1768. 交替合并字符串</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1768.-%E4%BA%A4%E6%9B%BF%E5%90%88%E5%B9%B6%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
