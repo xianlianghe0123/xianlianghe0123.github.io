@@ -6,7 +6,24 @@
     <description>Recent content in dp on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 03 Nov 2022 10:23:30 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Nov 2022 11:21:32 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 764. 最大加号标志</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-764.-%E6%9C%80%E5%A4%A7%E5%8A%A0%E5%8F%B7%E6%A0%87%E5%BF%97/</link>
+      <pubDate>Wed, 09 Nov 2022 11:21:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-764.-%E6%9C%80%E5%A4%A7%E5%8A%A0%E5%8F%B7%E6%A0%87%E5%BF%97/</guid>
+      <description>链接： https://leetcode.cn/problems/largest-plus-sign/
+难度： 中等
+题目描述 在一个 n x n 的矩阵 grid 中，除了在数组 mines 中给出的元素为 0，其他每个元素都为 1。mines[i] = [xi, yi]表示 grid[xi][yi] == 0
+返回 grid 中包含 1 的最大的 轴对齐 加号标志的阶数 。如果未找到加号标志，则返回 0 。
+一个 k 阶由 1 组成的 “轴对称”加号标志 具有中心网格 grid[r][c] == 1 ，以及4个从中心向上、向下、向左、向右延伸，长度为 k-1，由 1 组成的臂。注意，只有加号标志的所有网格要求为 1 ，别的网格可能为 0 也可能为 1 。
+示例 1： 输入： n = 5, mines = [[4, 2]]
+输出： 2
+解释： 在上面的网格中，最大加号标志的阶只能是2。一个标志已在图中标出。
+示例 2： 输入： n = 1, mines = [[0, 0]]</description>
+    </item>
+    
     <item>
       <title>Leetcode 1668. 最大重复子字符串</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1668.-%E6%9C%80%E5%A4%A7%E9%87%8D%E5%A4%8D%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>

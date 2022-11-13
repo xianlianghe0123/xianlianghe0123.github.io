@@ -6,7 +6,128 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 06 Nov 2022 11:20:12 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 08:45:41 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 791. 自定义字符串排序</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-791.-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sun, 13 Nov 2022 08:45:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-791.-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</guid>
+      <description>链接： https://leetcode.cn/problems/custom-sort-string/
+难度： 中等
+题目描述 给定两个字符串 order 和 s 。order 的所有单词都是 唯一 的，并且以前按照一些自定义的顺序排序。
+对 s 的字符进行置换，使其与排序的 order 相匹配。更具体地说，如果在 order 中的字符 x 出现字符 y 之前，那么在排列后的字符串中， x 也应该出现在 y 之前。
+返回 满足这个性质的 s 的任意排列 。
+示例 1： 输入： order = &amp;ldquo;cba&amp;rdquo;, s = &amp;ldquo;abcd&amp;rdquo;
+输出： &amp;ldquo;cbad&amp;rdquo;
+解释：
+“a”、“b”、“c”是按顺序出现的，所以“a”、“b”、“c”的顺序应该是“c”、“b”、“a”。
+因为“d”不是按顺序出现的，所以它可以在返回的字符串中的任何位置。“dcba”、“cdba”、“cbda”也是有效的输出。
+示例 2： 输入： order = &amp;ldquo;cbafg&amp;rdquo;, s = &amp;ldquo;abcd&amp;rdquo;
+输出： &amp;ldquo;cbad&amp;rdquo;
+提示： 1 &amp;lt;= order.length &amp;lt;= 26 1 &amp;lt;= s.length &amp;lt;= 200 order 和 s 由小写英文字母组成 order 中的所有字符都 不同 解题思路 自定义排序 使用哈希表维护字母之间的大小关系的权重，自定义比较函数，按照哈希表中权重的大小排序整个字符串。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 790. 多米诺和托米诺平铺</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-790.-%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA/</link>
+      <pubDate>Sat, 12 Nov 2022 10:23:54 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-790.-%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA/</guid>
+      <description>链接： https://leetcode.cn/problems/domino-and-tromino-tiling/
+难度： 中等
+题目描述 有两种形状的瓷砖：一种是 2 x 1 的多米诺形，另一种是形如 &amp;quot;L&amp;quot; 的托米诺形。两种形状都可以旋转。
+给定整数 n ，返回可以平铺 2 x n 的面板的方法的数量。返回对 109 + 7 取模 的值。
+平铺指的是每个正方形都必须有瓷砖覆盖。两个平铺不同，当且仅当面板上有四个方向上的相邻单元中的两个，使得恰好有一个平铺有一个瓷砖占据两个正方形。
+示例 1： 输入： n = 3
+输出： 5
+解释： 五种不同的方法如上所示。
+示例 2： 输入： n = 1
+输出： 1
+提示： 1 &amp;lt;= n &amp;lt;= 1000 解题思路 动态规划 不断地将前方铺满，由于 多米诺 和 托米诺 长度为 2，仅会影响后续一行，当铺到第 i 列，总共会出现四种情况：
+该列两个正方形均为铺； 该列上方的正方形已铺，下方未铺； 该列下方的正方形已铺，下方的未铺； 该列两个正方形已铺满。 从上述4种情况，可以推导得到两个第 i+1 列，故可以使用动态规划求解。
+使用 dp[i][k]（k = 0,1,2,3 分别代表上述四种情况）表示当铺到第 i 列时，在 k 种情况下的方案数，则有状态转移方程：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1704. 判断字符串的两半是否相似</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1704.-%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%A4%E5%8D%8A%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/</link>
+      <pubDate>Fri, 11 Nov 2022 10:07:08 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1704.-%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%A4%E5%8D%8A%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/</guid>
+      <description>链接： https://leetcode.cn/problems/determine-if-string-halves-are-alike/
+难度： 简单
+题目描述 给你一个偶数长度的字符串 s 。将其拆分成长度相同的两半，前一半为 a ，后一半为 b 。
+两个字符串 相似 的前提是它们都含有相同数目的元音（&#39;a&#39;，&#39;e&#39;，&#39;i&#39;，&#39;o&#39;，&#39;u&#39;，&#39;A&#39;，&#39;E&#39;，&#39;I&#39;，&#39;O&#39;，&#39;U&#39;）。注意，s 可能同时含有大写和小写字母。
+如果 a 和 b 相似，返回 true ；否则，返回 false 。
+示例 1： 输入： s = &amp;ldquo;book&amp;rdquo;
+输出： true
+解释： a = &amp;ldquo;bo&amp;rdquo; 且 b = &amp;ldquo;ok&amp;rdquo; 。a 中有 1 个元音，b 也有 1 个元音。所以，a 和 b 相似。
+示例 2： 输入： s = &amp;ldquo;textbook&amp;rdquo;
+输出： false
+解释： a = &amp;ldquo;text&amp;rdquo; 且 b = &amp;ldquo;book&amp;rdquo; 。a 中有 1 个元音，b 中有 2 个元音。因此，a 和 b 不相似。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 764. 最大加号标志</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-764.-%E6%9C%80%E5%A4%A7%E5%8A%A0%E5%8F%B7%E6%A0%87%E5%BF%97/</link>
+      <pubDate>Wed, 09 Nov 2022 11:21:32 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-764.-%E6%9C%80%E5%A4%A7%E5%8A%A0%E5%8F%B7%E6%A0%87%E5%BF%97/</guid>
+      <description>链接： https://leetcode.cn/problems/largest-plus-sign/
+难度： 中等
+题目描述 在一个 n x n 的矩阵 grid 中，除了在数组 mines 中给出的元素为 0，其他每个元素都为 1。mines[i] = [xi, yi]表示 grid[xi][yi] == 0
+返回 grid 中包含 1 的最大的 轴对齐 加号标志的阶数 。如果未找到加号标志，则返回 0 。
+一个 k 阶由 1 组成的 “轴对称”加号标志 具有中心网格 grid[r][c] == 1 ，以及4个从中心向上、向下、向左、向右延伸，长度为 k-1，由 1 组成的臂。注意，只有加号标志的所有网格要求为 1 ，别的网格可能为 0 也可能为 1 。
+示例 1： 输入： n = 5, mines = [[4, 2]]
+输出： 2
+解释： 在上面的网格中，最大加号标志的阶只能是2。一个标志已在图中标出。
+示例 2： 输入： n = 1, mines = [[0, 0]]</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1684. 统计一致字符串的数目</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1684.-%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%87%B4%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%95%B0%E7%9B%AE/</link>
+      <pubDate>Tue, 08 Nov 2022 10:10:26 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1684.-%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%87%B4%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%95%B0%E7%9B%AE/</guid>
+      <description>链接： https://leetcode.cn/problems/count-the-number-of-consistent-strings/
+难度： 简单
+题目描述 给你一个由不同字符组成的字符串 allowed 和一个字符串数组 words 。如果一个字符串的每一个字符都在 allowed 中，就称这个字符串是 一致字符串 。
+请你返回 words 数组中 一致字符串 的数目。
+示例 1： 输入： allowed = &amp;ldquo;ab&amp;rdquo;, words = [&amp;ldquo;ad&amp;rdquo;,&amp;ldquo;bd&amp;rdquo;,&amp;ldquo;aaab&amp;rdquo;,&amp;ldquo;baa&amp;rdquo;,&amp;ldquo;badab&amp;rdquo;]
+输出： 2
+解释： 字符串 &amp;ldquo;aaab&amp;rdquo; 和 &amp;ldquo;baa&amp;rdquo; 都是一致字符串，因为它们只包含字符 &amp;lsquo;a&amp;rsquo; 和 &amp;lsquo;b&amp;rsquo; 。
+示例 2： 输入： allowed = &amp;ldquo;abc&amp;rdquo;, words = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;ab&amp;rdquo;,&amp;ldquo;ac&amp;rdquo;,&amp;ldquo;bc&amp;rdquo;,&amp;ldquo;abc&amp;rdquo;]
+输出： 7
+解释： 所有字符串都是一致的。
+示例 3： 输入： allowed = &amp;ldquo;cad&amp;rdquo;, words = [&amp;ldquo;cc&amp;rdquo;,&amp;ldquo;acd&amp;rdquo;,&amp;ldquo;b&amp;rdquo;,&amp;ldquo;ba&amp;rdquo;,&amp;ldquo;bac&amp;rdquo;,&amp;ldquo;bad&amp;rdquo;,&amp;ldquo;ac&amp;rdquo;,&amp;ldquo;d&amp;rdquo;]
+输出： 4
+解释： 字符串 &amp;ldquo;cc&amp;rdquo;，&amp;ldquo;acd&amp;rdquo;，&amp;ldquo;ac&amp;rdquo; 和 &amp;ldquo;d&amp;rdquo; 是一致字符串。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 816. 模糊坐标</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-816.-%E6%A8%A1%E7%B3%8A%E5%9D%90%E6%A0%87/</link>
+      <pubDate>Mon, 07 Nov 2022 10:21:03 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-816.-%E6%A8%A1%E7%B3%8A%E5%9D%90%E6%A0%87/</guid>
+      <description>链接： https://leetcode.cn/problems/ambiguous-coordinates/
+难度： 中等
+题目描述 我们有一些二维坐标，如 &amp;quot;(1, 3)&amp;quot; 或 &amp;quot;(2, 0.5)&amp;quot;，然后我们移除所有逗号，小数点和空格，得到一个字符串S。返回所有可能的原始字符串到一个列表中。
+原始的坐标表示法不会存在多余的零，所以不会出现类似于&amp;quot;00&amp;quot;, &amp;quot;0.0&amp;quot;, &amp;quot;0.00&amp;quot;, &amp;quot;1.0&amp;quot;, &amp;quot;001&amp;quot;, &amp;quot;00.01&amp;quot;或一些其他更小的数来表示坐标。此外，一个小数点前至少存在一个数，所以也不会出现 &amp;quot;.1&amp;quot; 形式的数字。
+最后返回的列表可以是任意顺序的。而且注意返回的两个数字中间（逗号之后）都有一个空格。
+示例 1： 输入： &amp;ldquo;(123)&amp;rdquo;
+输出： [&amp;quot;(1, 23)&amp;quot;, &amp;ldquo;(12, 3)&amp;rdquo;, &amp;ldquo;(1.2, 3)&amp;rdquo;, &amp;ldquo;(1, 2.3)&amp;rdquo;]
+示例 2： 输入： &amp;ldquo;(00011)&amp;rdquo;
+输出： [&amp;quot;(0.001, 1)&amp;quot;, &amp;ldquo;(0, 0.011)&amp;rdquo;]
+解释：
+0.0, 00, 0001 或 00.01 是不被允许的。
+示例 3： 输入： &amp;ldquo;(0123)&amp;rdquo;
+输出： [&amp;quot;(0, 123)&amp;quot;, &amp;ldquo;(0, 12.3)&amp;rdquo;, &amp;ldquo;(0, 1.23)&amp;rdquo;, &amp;ldquo;(0.1, 23)&amp;rdquo;, &amp;ldquo;(0.1, 2.3)&amp;rdquo;, &amp;ldquo;(0.12, 3)&amp;rdquo;]
+示例 4： 输入： &amp;ldquo;(100)&amp;rdquo;</description>
+    </item>
+    
     <item>
       <title>Leetcode 1678. 设计 Goal 解析器</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1678.-%E8%AE%BE%E8%AE%A1-goal-%E8%A7%A3%E6%9E%90%E5%99%A8/</link>

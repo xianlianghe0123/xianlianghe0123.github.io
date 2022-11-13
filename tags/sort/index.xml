@@ -6,7 +6,28 @@
     <description>Recent content in sort on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 22 Oct 2022 11:44:50 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 08:45:41 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 791. 自定义字符串排序</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-791.-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sun, 13 Nov 2022 08:45:41 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-791.-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</guid>
+      <description>链接： https://leetcode.cn/problems/custom-sort-string/
+难度： 中等
+题目描述 给定两个字符串 order 和 s 。order 的所有单词都是 唯一 的，并且以前按照一些自定义的顺序排序。
+对 s 的字符进行置换，使其与排序的 order 相匹配。更具体地说，如果在 order 中的字符 x 出现字符 y 之前，那么在排列后的字符串中， x 也应该出现在 y 之前。
+返回 满足这个性质的 s 的任意排列 。
+示例 1： 输入： order = &amp;ldquo;cba&amp;rdquo;, s = &amp;ldquo;abcd&amp;rdquo;
+输出： &amp;ldquo;cbad&amp;rdquo;
+解释：
+“a”、“b”、“c”是按顺序出现的，所以“a”、“b”、“c”的顺序应该是“c”、“b”、“a”。
+因为“d”不是按顺序出现的，所以它可以在返回的字符串中的任何位置。“dcba”、“cdba”、“cbda”也是有效的输出。
+示例 2： 输入： order = &amp;ldquo;cbafg&amp;rdquo;, s = &amp;ldquo;abcd&amp;rdquo;
+输出： &amp;ldquo;cbad&amp;rdquo;
+提示： 1 &amp;lt;= order.length &amp;lt;= 26 1 &amp;lt;= s.length &amp;lt;= 200 order 和 s 由小写英文字母组成 order 中的所有字符都 不同 解题思路 自定义排序 使用哈希表维护字母之间的大小关系的权重，自定义比较函数，按照哈希表中权重的大小排序整个字符串。</description>
+    </item>
+    
     <item>
       <title>Leetcode 1235. 规划兼职工作</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-1235.-%E8%A7%84%E5%88%92%E5%85%BC%E8%81%8C%E5%B7%A5%E4%BD%9C/</link>
