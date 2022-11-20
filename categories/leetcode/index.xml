@@ -6,7 +6,122 @@
     <description>Recent content in Leetcode on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 13 Nov 2022 08:45:41 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 11:19:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 799. 香槟塔</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-799.-%E9%A6%99%E6%A7%9F%E5%A1%94/</link>
+      <pubDate>Sun, 20 Nov 2022 11:19:47 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-799.-%E9%A6%99%E6%A7%9F%E5%A1%94/</guid>
+      <description>链接： https://leetcode.cn/problems/champagne-tower/
+难度： 中等
+题目描述 我们把玻璃杯摆成金字塔的形状，其中 第一层 有 1 个玻璃杯， 第二层 有 2 个，依次类推到第 100 层，每个玻璃杯 (250ml) 将盛有香槟。
+从顶层的第一个玻璃杯开始倾倒一些香槟，当顶层的杯子满了，任何溢出的香槟都会立刻等流量的流向左右两侧的玻璃杯。当左右两边的杯子也满了，就会等流量的流向它们左右两边的杯子，依次类推。（当最底层的玻璃杯满了，香槟会流到地板上）
+例如，在倾倒一杯香槟后，最顶层的玻璃杯满了。倾倒了两杯香槟后，第二层的两个玻璃杯各自盛放一半的香槟。在倒三杯香槟后，第二层的香槟满了 - 此时总共有三个满的玻璃杯。在倒第四杯后，第三层中间的玻璃杯盛放了一半的香槟，他两边的玻璃杯各自盛放了四分之一的香槟，如下图所示。
+现在当倾倒了非负整数杯香槟后，返回第 i 行 j 个玻璃杯所盛放的香槟占玻璃杯容积的比例（ i 和 j 都从0开始）。
+示例 1： 输入： poured(倾倒香槟总杯数) = 1, query_glass(杯子的位置数) = 1, query_row(行数) = 1
+输出： 0.00000
+解释： 我们在顶层（下标是（0，0））倒了一杯香槟后，没有溢出，因此所有在顶层以下的玻璃杯都是空的。
+示例 2： 输入： poured(倾倒香槟总杯数) = 2, query_glass(杯子的位置数) = 1, query_row(行数) = 1
+输出： 0.50000
+解释： 我们在顶层（下标是（0，0）倒了两杯香槟后，有一杯量的香槟将从顶层溢出，位于（1，0）的玻璃杯和（1，1）的玻璃杯平分了这一杯香槟，所以每个玻璃杯有一半的香槟。
+示例 3： 输入： poured = 100000009, query_row = 33, query_glass = 17</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1732. 找到最高海拔</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1732.-%E6%89%BE%E5%88%B0%E6%9C%80%E9%AB%98%E6%B5%B7%E6%8B%94/</link>
+      <pubDate>Sat, 19 Nov 2022 10:50:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1732.-%E6%89%BE%E5%88%B0%E6%9C%80%E9%AB%98%E6%B5%B7%E6%8B%94/</guid>
+      <description>链接： https://leetcode.cn/problems/find-the-highest-altitude/
+难度： 简单
+题目描述 有一个自行车手打算进行一场公路骑行，这条路线总共由 n + 1 个不同海拔的点组成。自行车手从海拔为 0 的点 0 开始骑行。
+给你一个长度为 n 的整数数组 gain ，其中 gain[i] 是点 i 和点 i + 1 的 净海拔高度差（0 &amp;lt;= i &amp;lt; n）。请你返回 最高点的海拔 。
+示例 1： 输入： gain = [-5,1,5,0,-7]
+输出： 1
+解释： 海拔高度依次为 [0,-5,-4,1,1,-6] 。最高海拔为 1 。
+示例 2： 输入： gain = [-4,-3,-2,-1,4,3,2]
+输出： 0
+解释： 海拔高度依次为 [0,-4,-7,-9,-10,-6,-3,-1] 。最高海拔为 0 。
+提示： n == gain.length 1 &amp;lt;= n &amp;lt;= 100 -100 &amp;lt;= gain[i] &amp;lt;= 100 解题思路 模拟 遍历数组，求得前缀和，返回其中的最大值。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 891. 子序列宽度之和</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-891.-%E5%AD%90%E5%BA%8F%E5%88%97%E5%AE%BD%E5%BA%A6%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Fri, 18 Nov 2022 10:24:40 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-891.-%E5%AD%90%E5%BA%8F%E5%88%97%E5%AE%BD%E5%BA%A6%E4%B9%8B%E5%92%8C/</guid>
+      <description>链接： https://leetcode.cn/problems/sum-of-subsequence-widths/
+难度： 困难
+题目描述 一个序列的 宽度 定义为该序列中最大元素和最小元素的差值。
+给你一个整数数组 nums ，返回 nums 的所有非空 子序列 的 宽度之和 。由于答案可能非常大，请返回对 109 + 7 取余 后的结果。
+子序列 定义为从一个数组里删除一些（或者不删除）元素，但不改变剩下元素的顺序得到的数组。例如，[3,6,2,7] 就是数组 [0,3,1,6,2,2,7] 的一个子序列。
+示例 1： 输入： nums = [2,1,3]
+输出： 6
+解释： 子序列为 [1], [2], [3], [2,1], [2,3], [1,3], [2,1,3] 。
+相应的宽度是 0, 0, 0, 1, 1, 2, 2 。
+宽度之和是 6 。
+示例 2： 输入： nums = [2]
+输出： 0
+提示： 1 &amp;lt;= nums.length &amp;lt;= 105 1 &amp;lt;= nums[i] &amp;lt;= 105 解题思路 数学 由题意可知，对于一个子序列而言，其元素顺序并不影响 宽度 ，并且结果会囊括所有的子序列情况，故可以对原数组排序。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 792. 匹配子序列的单词数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-792.-%E5%8C%B9%E9%85%8D%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0/</link>
+      <pubDate>Thu, 17 Nov 2022 10:19:52 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-792.-%E5%8C%B9%E9%85%8D%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E5%8D%95%E8%AF%8D%E6%95%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/number-of-matching-subsequences/
+难度： 中等
+题目描述 给定字符串 s 和字符串数组 words, 返回 words[i] 中是 s 的子序列的单词个数 。
+字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。
+例如， “ace” 是 “abcde” 的子序列。 示例 1： 输入： s = &amp;ldquo;abcde&amp;rdquo;, words = [&amp;ldquo;a&amp;rdquo;,&amp;ldquo;bb&amp;rdquo;,&amp;ldquo;acd&amp;rdquo;,&amp;ldquo;ace&amp;rdquo;]
+输出： 3
+解释： 有三个是 s 的子序列的单词: &amp;ldquo;a&amp;rdquo;, &amp;ldquo;acd&amp;rdquo;, &amp;ldquo;ace&amp;rdquo;。
+示例 2： 输入: s = &amp;ldquo;dsahjpjauf&amp;rdquo;, words = [&amp;ldquo;ahjpjau&amp;rdquo;,&amp;ldquo;ja&amp;rdquo;,&amp;ldquo;ahbwzgqnuk&amp;rdquo;,&amp;ldquo;tnmlanowax&amp;rdquo;]
+输出: 2
+提示： 1 &amp;lt;= s.length &amp;lt;= 5 * 104 1 &amp;lt;= words.length &amp;lt;= 5000 1 &amp;lt;= words[i].length &amp;lt;= 50 words[i] 和 s 都只由小写字母组成。 解题思路 后缀 判断字符串 word 是否为字符串 s 的子序列，需要逐一地在 s 中按照顺序匹配 word 中的每一个字符，并优先匹配考前的。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 775. 全局倒置与局部倒置</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-775.-%E5%85%A8%E5%B1%80%E5%80%92%E7%BD%AE%E4%B8%8E%E5%B1%80%E9%83%A8%E5%80%92%E7%BD%AE/</link>
+      <pubDate>Wed, 16 Nov 2022 10:10:21 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-775.-%E5%85%A8%E5%B1%80%E5%80%92%E7%BD%AE%E4%B8%8E%E5%B1%80%E9%83%A8%E5%80%92%E7%BD%AE/</guid>
+      <description>链接： https://leetcode.cn/problems/global-and-local-inversions/
+难度： 中等
+题目描述 给你一个长度为 n 的整数数组 nums ，表示由范围 [0, n - 1] 内所有整数组成的一个排列。
+全局倒置 的数目等于满足下述条件不同下标对 (i, j) 的数目：
+0 &amp;lt;= i &amp;lt; j &amp;lt; n nums[i] &amp;gt; nums[j] 局部倒置 的数目等于满足下述条件的下标 i 的数目：
+0 &amp;lt;= i &amp;lt; n - 1 nums[i] &amp;gt; nums[i + 1] 当数组 nums 中 全局倒置 的数量等于 局部倒置 的数量时，返回 true ；否则，返回 false 。
+示例 1： 输入： nums = [1,0,2]
+输出： true
+解释： 有 1 个全局倒置，和 1 个局部倒置。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1710. 卡车上的最大单元数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1710.-%E5%8D%A1%E8%BD%A6%E4%B8%8A%E7%9A%84%E6%9C%80%E5%A4%A7%E5%8D%95%E5%85%83%E6%95%B0/</link>
+      <pubDate>Tue, 15 Nov 2022 10:37:23 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1710.-%E5%8D%A1%E8%BD%A6%E4%B8%8A%E7%9A%84%E6%9C%80%E5%A4%A7%E5%8D%95%E5%85%83%E6%95%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-units-on-a-truck/
+难度： 简单
+题目描述 请你将一些箱子装在 一辆卡车 上。给你一个二维数组 boxTypes ，其中 boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi] ：
+numberOfBoxesi 是类型 i 的箱子的数量。 numberOfUnitsPerBoxi 是类型 i 每个箱子可以装载的单元数量。 整数 truckSize 表示卡车上可以装载 箱子 的 最大数量 。只要箱子数量不超过 truckSize ，你就可以选择任意箱子装到卡车上。
+返回卡车可以装载 单元 的 最大 总数。
+示例1： 输入： boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4
+输出： 8
+解释： 箱子的情况如下：
+1 个第一类的箱子，里面含 3 个单元。 2 个第二类的箱子，每个里面含 2 个单元。 3 个第三类的箱子，每个里面含 1 个单元。
+可以选择第一类和第二类的所有箱子，以及第三类的一个箱子。
+单元总数 = (1 * 3) + (2 * 2) + (1 * 1) = 8 示例2： 输入： boxTypes = [[5,10],[2,5],[4,7],[3,9]], truckSize = 10</description>
+    </item>
+    
     <item>
       <title>Leetcode 791. 自定义字符串排序</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-791.-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</link>
