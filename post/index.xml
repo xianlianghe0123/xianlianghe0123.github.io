@@ -6,7 +6,111 @@
     <description>Recent content in Posts on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sun, 20 Nov 2022 11:19:47 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Nov 2022 11:15:11 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1752. 检查数组是否经排序和轮转得到</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1752.-%E6%A3%80%E6%9F%A5%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E7%BB%8F%E6%8E%92%E5%BA%8F%E5%92%8C%E8%BD%AE%E8%BD%AC%E5%BE%97%E5%88%B0/</link>
+      <pubDate>Sun, 27 Nov 2022 11:15:11 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1752.-%E6%A3%80%E6%9F%A5%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E7%BB%8F%E6%8E%92%E5%BA%8F%E5%92%8C%E8%BD%AE%E8%BD%AC%E5%BE%97%E5%88%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/check-if-array-is-sorted-and-rotated/
+难度： 简单
+题目描述 给你一个数组 nums 。nums 的源数组中，所有元素与 nums 相同，但按非递减顺序排列。
+如果 nums 能够由源数组轮转若干位置（包括 0 个位置）得到，则返回 true ；否则，返回 false 。
+源数组中可能存在 重复项 。
+注意： 我们称数组 A 在轮转 x 个位置后得到长度相同的数组 B ，当它们满足 A[i] == B[(i+x) % A.length] ，其中 % 为取余运算。
+示例 1： 输入： nums = [3,4,5,1,2]
+输出： true
+解释： [1,2,3,4,5] 为有序的源数组。
+可以轮转 x = 3 个位置，使新数组从值为 3 的元素开始：[3,4,5,1,2] 。
+示例 2： 输入： nums = [2,1,3,4]
+输出： false
+解释： 源数组无法经轮转得到 nums 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 882. 细分图中的可到达节点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-882.-%E7%BB%86%E5%88%86%E5%9B%BE%E4%B8%AD%E7%9A%84%E5%8F%AF%E5%88%B0%E8%BE%BE%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Sat, 26 Nov 2022 13:20:59 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-882.-%E7%BB%86%E5%88%86%E5%9B%BE%E4%B8%AD%E7%9A%84%E5%8F%AF%E5%88%B0%E8%BE%BE%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode.cn/problems/reachable-nodes-in-subdivided-graph/description/
+难度： 中等
+题目描述 给你一个无向图（原始图），图中有 n 个节点，编号从 0 到 n - 1 。你决定将图中的每条边 细分 为一条节点链，每条边之间的新节点数各不相同。
+图用由边组成的二维数组 edges 表示，其中 edges[i] = [ui, vi, cnti] 表示原始图中节点 ui 和 vi 之间存在一条边，cnti 是将边 细分 后的新节点总数。注意，cnti == 0 表示边不可细分。
+要 细分 边 [ui, vi] ，需要将其替换为 (cnti + 1) 条新边，和 cnti 个新节点。新节点为 x1, x2, &amp;hellip;, xcnti ，新边为 [ui, x1], [x1, x2], [x2, x3], &amp;hellip;, [xcnti-1, xcnti], [xcnti, vi] 。
+现在得到一个 新的细分图 ，请你计算从节点 0 出发，可以到达多少个节点？如果节点间距离是 maxMoves 或更少，则视为 可以到达 。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 809. 情感丰富的文字</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-809.-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/</link>
+      <pubDate>Fri, 25 Nov 2022 11:31:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-809.-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/</guid>
+      <description>链接： https://leetcode.cn/problems/expressive-words/
+难度： 中等
+题目描述 有时候人们会用重复写一些字母来表示额外的感受，比如 &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;heeellooo&amp;quot;, &amp;quot;hi&amp;quot; -&amp;gt; &amp;quot;hiii&amp;quot;。我们将相邻字母都相同的一串字符定义为相同字母组，例如：&amp;quot;h&amp;quot;, &amp;quot;eee&amp;quot;, &amp;quot;ll&amp;quot;, &amp;quot;ooo&amp;quot;。
+对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 c ），然后往其中添加相同的字母 c 使其长度达到 3 或以上。
+例如，以 &amp;quot;hello&amp;quot; 为例，我们可以对字母组 &amp;quot;o&amp;quot; 扩张得到 &amp;quot;hellooo&amp;quot;，但是无法以同样的方法得到 &amp;quot;helloo&amp;quot; 因为字母组 &amp;quot;oo&amp;quot; 长度小于 3。此外，我们可以进行另一种扩张 &amp;quot;ll&amp;quot; -&amp;gt; &amp;quot;lllll&amp;quot; 以获得 &amp;quot;helllllooo&amp;quot;。如果 s = &amp;quot;helllllooo&amp;quot;，那么查询词 &amp;quot;hello&amp;quot; 是可扩张的，因为可以对它执行这两种扩张操作使得 query = &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;hellooo&amp;quot; -&amp;gt; &amp;quot;helllllooo&amp;quot; = s。
+输入一组查询单词，输出其中可扩张的单词数量。
+示例： 输入：
+s = &amp;ldquo;heeellooo&amp;rdquo;
+words = [&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;hi&amp;rdquo;, &amp;ldquo;helo&amp;rdquo;]
+输出： 1
+解释：</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 795. 区间子数组个数</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-795.-%E5%8C%BA%E9%97%B4%E5%AD%90%E6%95%B0%E7%BB%84%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Thu, 24 Nov 2022 11:09:46 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-795.-%E5%8C%BA%E9%97%B4%E5%AD%90%E6%95%B0%E7%BB%84%E4%B8%AA%E6%95%B0/</guid>
+      <description>链接： https://leetcode.cn/problems/number-of-subarrays-with-bounded-maximum/
+难度： 中等
+题目描述 给你一个整数数组 nums 和两个整数：left 及 right 。找出 nums 中连续、非空且其中最大元素在范围 [left, right] 内的子数组，并返回满足条件的子数组的个数。
+生成的测试用例保证结果符合 32-bit 整数范围。
+示例 1： 输入： nums = [2,1,4,3], left = 2, right = 3
+输出： 3
+解释： 满足条件的三个子数组：[2], [2, 1], [3]
+示例 2： 输入： nums = [2,9,2,5,6], left = 2, right = 8
+输出： 7
+提示： 1 &amp;lt;= nums.length &amp;lt;= 105 0 &amp;lt;= nums[i] &amp;lt;= 109 0 &amp;lt;= left &amp;lt;= right &amp;lt;= 109 解题思路 滑动窗口 满足条件的数组，其所有取值范围必须为 ≤ right，并且其中至少有一个元素 ≥ left。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1742. 盒子中小球的最大数量</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-1742.-%E7%9B%92%E5%AD%90%E4%B8%AD%E5%B0%8F%E7%90%83%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F/</link>
+      <pubDate>Wed, 23 Nov 2022 12:16:12 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-1742.-%E7%9B%92%E5%AD%90%E4%B8%AD%E5%B0%8F%E7%90%83%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F/</guid>
+      <description>链接： https://leetcode.cn/problems/maximum-number-of-balls-in-a-box/
+难度： 简单
+题目描述 你在一家生产小球的玩具厂工作，有 n 个小球，编号从 lowLimit 开始，到 highLimit 结束（包括 lowLimit 和 highLimit ，即 n == highLimit - lowLimit + 1）。另有无限数量的盒子，编号从 1 到 infinity 。
+你的工作是将每个小球放入盒子中，其中盒子的编号应当等于小球编号上每位数字的和。例如，编号 321 的小球应当放入编号 3 + 2 + 1 = 6 的盒子，而编号 10 的小球应当放入编号 1 + 0 = 1 的盒子。
+给你两个整数 lowLimit 和 highLimit ，返回放有最多小球的盒子中的小球数量。如果有多个盒子都满足放有最多小球，只需返回其中任一盒子的小球数量。
+示例 1： 输入： lowLimit = 1, highLimit = 10
+输出： 2
+解释：
+盒子编号：1 2 3 4 5 6 7 8 9 10 11 &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 808. 分汤</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-808.-%E5%88%86%E6%B1%A4/</link>
+      <pubDate>Mon, 21 Nov 2022 10:32:21 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-808.-%E5%88%86%E6%B1%A4/</guid>
+      <description>链接： https://leetcode.cn/problems/soup-servings/
+难度： 中等
+题目描述 有 A 和 B 两种类型 的汤。一开始每种类型的汤有 n 毫升。有四种分配操作：
+提供 100ml 的 汤A 和 0ml 的 汤B 。 提供 75ml 的 汤A 和 25ml 的 汤B 。 提供 50ml 的 汤A 和 50ml 的 汤B 。 提供 25ml 的 汤A 和 75ml 的 汤B 。 当我们把汤分配给某人之后，汤就没有了。每个回合，我们将从四种概率同为 0.25 的操作中进行分配选择。如果汤的剩余量不足以完成某次操作，我们将尽可能分配。当两种类型的汤都分配完时，停止操作。
+注意 不存在先分配 100 ml 汤B 的操作。
+需要返回的值： 汤A 先分配完的概率 + 汤A和汤B 同时分配完的概率 / 2。返回值在正确答案 10-5 的范围内将被认为是正确的。
+示例 1： 输入： n = 50</description>
+    </item>
+    
     <item>
       <title>Leetcode 799. 香槟塔</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-799.-%E9%A6%99%E6%A7%9F%E5%A1%94/</link>
@@ -1675,7 +1779,8 @@ arr 是一个可能包含 重复元素 的整数数组，我们将这个数组�
 示例 1： 输入： nums = [-3,2,-3,4,2]
 输出： 5
 解释： 如果你选择 startValue = 4，在第三次累加时，和小于 1 。
-累加求和 startValue = 4 startValue = 5 nums (4 -3 ) = 1 (5 -3 ) = 2 -3 (1 +2 ) = 3 (2 +2 ) = 4 2 (3 -3 ) = 0 (4 -3 ) = 1 -3 (0 +4 ) = 4 (1 +4 ) = 5 4 (4 +2 ) = 6 (5 +2 ) = 7 2 示例 2： 输入： nums = [1,2]</description>
+累加求和
+startValue = 4 startValue = 5 nums (4 -3 ) = 1 (5 -3 ) = 2 -3 (1 +2 ) = 3 (2 +2 ) = 4 2 (3 -3 ) = 0 (4 -3 ) = 1 -3 (0 +4 ) = 4 (1 +4 ) = 5 4 (4 +2 ) = 6 (5 +2 ) = 7 2 示例 2： 输入： nums = [1,2]</description>
     </item>
     
     <item>

@@ -6,7 +6,26 @@
     <description>Recent content in two pointers on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 25 Aug 2022 10:08:54 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/two-pointers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Nov 2022 11:31:48 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/two-pointers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 809. 情感丰富的文字</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-809.-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/</link>
+      <pubDate>Fri, 25 Nov 2022 11:31:48 +0800</pubDate>
+      
+      <guid>https://xianlianghe0123.github.io/p/leetcode-809.-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/</guid>
+      <description>链接： https://leetcode.cn/problems/expressive-words/
+难度： 中等
+题目描述 有时候人们会用重复写一些字母来表示额外的感受，比如 &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;heeellooo&amp;quot;, &amp;quot;hi&amp;quot; -&amp;gt; &amp;quot;hiii&amp;quot;。我们将相邻字母都相同的一串字符定义为相同字母组，例如：&amp;quot;h&amp;quot;, &amp;quot;eee&amp;quot;, &amp;quot;ll&amp;quot;, &amp;quot;ooo&amp;quot;。
+对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 c ），然后往其中添加相同的字母 c 使其长度达到 3 或以上。
+例如，以 &amp;quot;hello&amp;quot; 为例，我们可以对字母组 &amp;quot;o&amp;quot; 扩张得到 &amp;quot;hellooo&amp;quot;，但是无法以同样的方法得到 &amp;quot;helloo&amp;quot; 因为字母组 &amp;quot;oo&amp;quot; 长度小于 3。此外，我们可以进行另一种扩张 &amp;quot;ll&amp;quot; -&amp;gt; &amp;quot;lllll&amp;quot; 以获得 &amp;quot;helllllooo&amp;quot;。如果 s = &amp;quot;helllllooo&amp;quot;，那么查询词 &amp;quot;hello&amp;quot; 是可扩张的，因为可以对它执行这两种扩张操作使得 query = &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;hellooo&amp;quot; -&amp;gt; &amp;quot;helllllooo&amp;quot; = s。
+输入一组查询单词，输出其中可扩张的单词数量。
+示例： 输入：
+s = &amp;ldquo;heeellooo&amp;rdquo;
+words = [&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;hi&amp;rdquo;, &amp;ldquo;helo&amp;rdquo;]
+输出： 1
+解释：</description>
+    </item>
+    
     <item>
       <title>Leetcode 658. 找到 K 个最接近的元素</title>
       <link>https://xianlianghe0123.github.io/p/leetcode-658.-%E6%89%BE%E5%88%B0-k-%E4%B8%AA%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E5%85%83%E7%B4%A0/</link>

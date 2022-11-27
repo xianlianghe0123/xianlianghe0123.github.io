@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='链接： https://leetcode.cn/problems/expressive-words/
+难度： 中等
+题目描述 有时候人们会用重复写一些字母来表示额外的感受，比如 &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;heeellooo&amp;quot;, &amp;quot;hi&amp;quot; -&amp;gt; &amp;quot;hiii&amp;quot;。我们将相邻字母都相同的一串字符定义为相同字母组，例如：&amp;quot;h&amp;quot;, &amp;quot;eee&amp;quot;, &amp;quot;ll&amp;quot;, &amp;quot;ooo&amp;quot;。
+对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 c ），然后往其中添加相同的字母 c 使其长度达到 3 或以上。
+例如，以 &amp;quot;hello&amp;quot; 为例，我们可以对字母组 &amp;quot;o&amp;quot; 扩张得到 &amp;quot;hellooo&amp;quot;，但是无法以同样的方法得到 &amp;quot;helloo&amp;quot; 因为字母组 &amp;quot;oo&amp;quot; 长度小于 3。此外，我们可以进行另一种扩张 &amp;quot;ll&amp;quot; -&amp;gt; &amp;quot;lllll&amp;quot; 以获得 &amp;quot;helllllooo&amp;quot;。如果 s = &amp;quot;helllllooo&amp;quot;，那么查询词 &amp;quot;hello&amp;quot; 是可扩张的，因为可以对它执行这两种扩张操作使得 query = &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;hellooo&amp;quot; -&amp;gt; &amp;quot;helllllooo&amp;quot; = s。
+输入一组查询单词，输出其中可扩张的单词数量。
+示例： 输入：
+s = &amp;ldquo;heeellooo&amp;rdquo;
+words = [&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;hi&amp;rdquo;, &amp;ldquo;helo&amp;rdquo;]
+输出： 1
+解释：'><title>Leetcode 809. 情感丰富的文字</title>
+
+<link rel='canonical' href='https://xianlianghe0123.github.io/p/leetcode-809.-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Leetcode 809. 情感丰富的文字'>
+<meta property='og:description' content='链接： https://leetcode.cn/problems/expressive-words/
+难度： 中等
+题目描述 有时候人们会用重复写一些字母来表示额外的感受，比如 &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;heeellooo&amp;quot;, &amp;quot;hi&amp;quot; -&amp;gt; &amp;quot;hiii&amp;quot;。我们将相邻字母都相同的一串字符定义为相同字母组，例如：&amp;quot;h&amp;quot;, &amp;quot;eee&amp;quot;, &amp;quot;ll&amp;quot;, &amp;quot;ooo&amp;quot;。
+对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 c ），然后往其中添加相同的字母 c 使其长度达到 3 或以上。
+例如，以 &amp;quot;hello&amp;quot; 为例，我们可以对字母组 &amp;quot;o&amp;quot; 扩张得到 &amp;quot;hellooo&amp;quot;，但是无法以同样的方法得到 &amp;quot;helloo&amp;quot; 因为字母组 &amp;quot;oo&amp;quot; 长度小于 3。此外，我们可以进行另一种扩张 &amp;quot;ll&amp;quot; -&amp;gt; &amp;quot;lllll&amp;quot; 以获得 &amp;quot;helllllooo&amp;quot;。如果 s = &amp;quot;helllllooo&amp;quot;，那么查询词 &amp;quot;hello&amp;quot; 是可扩张的，因为可以对它执行这两种扩张操作使得 query = &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;hellooo&amp;quot; -&amp;gt; &amp;quot;helllllooo&amp;quot; = s。
+输入一组查询单词，输出其中可扩张的单词数量。
+示例： 输入：
+s = &amp;ldquo;heeellooo&amp;rdquo;
+words = [&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;hi&amp;rdquo;, &amp;ldquo;helo&amp;rdquo;]
+输出： 1
+解释：'>
+<meta property='og:url' content='https://xianlianghe0123.github.io/p/leetcode-809.-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/'>
+<meta property='og:site_name' content='贺贤良'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='two pointers' /><meta property='article:published_time' content='2022-11-25T11:31:48&#43;08:00'/><meta property='article:modified_time' content='2022-11-25T11:31:48&#43;08:00'/>
+<meta name="twitter:title" content="Leetcode 809. 情感丰富的文字">
+<meta name="twitter:description" content="链接： https://leetcode.cn/problems/expressive-words/
+难度： 中等
+题目描述 有时候人们会用重复写一些字母来表示额外的感受，比如 &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;heeellooo&amp;quot;, &amp;quot;hi&amp;quot; -&amp;gt; &amp;quot;hiii&amp;quot;。我们将相邻字母都相同的一串字符定义为相同字母组，例如：&amp;quot;h&amp;quot;, &amp;quot;eee&amp;quot;, &amp;quot;ll&amp;quot;, &amp;quot;ooo&amp;quot;。
+对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 c ），然后往其中添加相同的字母 c 使其长度达到 3 或以上。
+例如，以 &amp;quot;hello&amp;quot; 为例，我们可以对字母组 &amp;quot;o&amp;quot; 扩张得到 &amp;quot;hellooo&amp;quot;，但是无法以同样的方法得到 &amp;quot;helloo&amp;quot; 因为字母组 &amp;quot;oo&amp;quot; 长度小于 3。此外，我们可以进行另一种扩张 &amp;quot;ll&amp;quot; -&amp;gt; &amp;quot;lllll&amp;quot; 以获得 &amp;quot;helllllooo&amp;quot;。如果 s = &amp;quot;helllllooo&amp;quot;，那么查询词 &amp;quot;hello&amp;quot; 是可扩张的，因为可以对它执行这两种扩张操作使得 query = &amp;quot;hello&amp;quot; -&amp;gt; &amp;quot;hellooo&amp;quot; -&amp;gt; &amp;quot;helllllooo&amp;quot; = s。
+输入一组查询单词，输出其中可扩张的单词数量。
+示例： 输入：
+s = &amp;ldquo;heeellooo&amp;rdquo;
+words = [&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;hi&amp;rdquo;, &amp;ldquo;helo&amp;rdquo;]
+输出： 1
+解释：">
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7f8eec6b35bb3fdee83db26855fb1df9_13661_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://xianlianghe0123.github.io">贺贤良</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/leetcode/" >
+                Leetcode
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/leetcode-809.-%E6%83%85%E6%84%9F%E4%B8%B0%E5%AF%8C%E7%9A%84%E6%96%87%E5%AD%97/">Leetcode 809. 情感丰富的文字</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 25, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>链接：</strong> <a class="link" href="https://leetcode.cn/problems/expressive-words/"  target="_blank" rel="noopener"
+    >https://leetcode.cn/problems/expressive-words/</a><br>
+<strong>难度：</strong> <font color="orange">中等</font></p>
+<h3 id="题目描述">题目描述</h3>
+<p>有时候人们会用重复写一些字母来表示额外的感受，比如 <code>&quot;hello&quot; -&gt; &quot;heeellooo&quot;</code>, <code>&quot;hi&quot; -&gt; &quot;hiii&quot;</code>。我们将相邻字母都相同的一串字符定义为相同字母组，例如：<code>&quot;h&quot;</code>, <code>&quot;eee&quot;</code>, <code>&quot;ll&quot;</code>, <code>&quot;ooo&quot;</code>。</p>
+<p>对于一个给定的字符串 <code>S</code> ，如果另一个单词能够通过将一些字母组扩张从而使其和 <code>S</code> 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 <code>c</code> ），然后往其中添加相同的字母 <code>c</code> 使其长度达到 <code>3</code> 或以上。</p>
+<p>例如，以 <code>&quot;hello&quot;</code> 为例，我们可以对字母组 <code>&quot;o&quot;</code> 扩张得到 <code>&quot;hellooo&quot;</code>，但是无法以同样的方法得到 <code>&quot;helloo&quot;</code> 因为字母组 <code>&quot;oo&quot;</code> 长度小于 <code>3</code>。此外，我们可以进行另一种扩张 <code>&quot;ll&quot; -&gt; &quot;lllll&quot;</code> 以获得 <code>&quot;helllllooo&quot;</code>。如果 <code>s = &quot;helllllooo&quot;</code>，那么查询词 <code>&quot;hello&quot;</code> 是可扩张的，因为可以对它执行这两种扩张操作使得 <code>query = &quot;hello&quot; -&gt; &quot;hellooo&quot; -&gt; &quot;helllllooo&quot; = s</code>。</p>
+<p>输入一组查询单词，输出其中可扩张的单词数量。</p>
+<h4 id="示例">示例：</h4>
+<blockquote>
+<p><strong>输入：</strong><br>
+s = &ldquo;heeellooo&rdquo;<br>
+words = [&ldquo;hello&rdquo;, &ldquo;hi&rdquo;, &ldquo;helo&rdquo;]<br>
+<strong>输出：</strong> 1<br>
+<strong>解释：</strong><br>
+我们能通过扩张 &ldquo;hello&rdquo; 的 &ldquo;e&rdquo; 和 &ldquo;o&rdquo; 来得到 &ldquo;heeellooo&rdquo;。<br>
+我们不能通过扩张 &ldquo;helo&rdquo; 来得到 &ldquo;heeellooo&rdquo; 因为 &ldquo;ll&rdquo; 的长度小于 3 。</p>
+</blockquote>
+<h5 id="说明">说明：</h5>
+<ul>
+<li><code>1 &lt;= s.length, words.length &lt;= 100</code></li>
+<li><code>1 &lt;= words[i].length &lt;= 100</code></li>
+<li><code>s</code> 和所有在 <code>words</code> 中的单词都只由小写字母组成。</li>
+</ul>
+<h3 id="解题思路">解题思路</h3>
+<h4 id="双指针">双指针</h4>
+<p>判断字符串 <code>word</code> 是否能扩展为 <code>s</code>，使用两个指针，同时进行遍历。</p>
+<p>分别逐个统计每个字母组，并判断是否可以扩展。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">expressiveWords</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">words</span> []<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ans</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">word</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">words</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">word</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">j</span>] {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cnt1</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>:]) <span style="color:#f92672">-</span> len(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">TrimLeft</span>(<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>:], <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>:<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">cnt2</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">j</span>:]) <span style="color:#f92672">-</span> len(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">TrimLeft</span>(<span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">j</span>:], <span style="color:#a6e22e">word</span>[<span style="color:#a6e22e">j</span>:<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt1</span> &lt; <span style="color:#a6e22e">cnt2</span> <span style="color:#f92672">||</span> (<span style="color:#a6e22e">cnt1</span> &gt; <span style="color:#a6e22e">cnt2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">cnt1</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> = <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cnt1</span>, <span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cnt2</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">s</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> len(<span style="color:#a6e22e">word</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ans</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ans</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="复杂度">复杂度</h5>
+<ul>
+<li>时间复杂度：$ O(N), N = \sum{len(words[i])} $</li>
+<li>空间复杂度：$ O(1) $</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/two-pointers/">two pointers</a>
+        
+    </section>
+
+
+    </footer>
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/leetcode-658.-%E6%89%BE%E5%88%B0-k-%E4%B8%AA%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E5%85%83%E7%B4%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 658. 找到 K 个最接近的元素</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-467.-%E7%8E%AF%E7%BB%95%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%94%AF%E4%B8%80%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 467. 环绕字符串中唯一的子字符串</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-905.-%E6%8C%89%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 905. 按奇偶排序数组</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-2100.-%E9%80%82%E5%90%88%E6%89%93%E5%8A%AB%E9%93%B6%E8%A1%8C%E7%9A%84%E6%97%A5%E5%AD%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 2100. 适合打劫银行的日子</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/leetcode-917.-%E4%BB%85%E4%BB%85%E5%8F%8D%E8%BD%AC%E5%AD%97%E6%AF%8D/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Leetcode 917. 仅仅反转字母</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 贺贤良
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

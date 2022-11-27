@@ -6,27 +6,19 @@
     <description>Recent content in Dijkstra on 贺贤良</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Thu, 13 Jan 2022 10:11:31 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dijkstra/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Nov 2022 13:20:59 +0800</lastBuildDate><atom:link href="https://xianlianghe0123.github.io/tags/dijkstra/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Leetcode 747. 至少是其他数字两倍的最大数</title>
-      <link>https://xianlianghe0123.github.io/p/leetcode-747.-%E8%87%B3%E5%B0%91%E6%98%AF%E5%85%B6%E4%BB%96%E6%95%B0%E5%AD%97%E4%B8%A4%E5%80%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0/</link>
-      <pubDate>Thu, 13 Jan 2022 10:11:31 +0800</pubDate>
+      <title>Leetcode 882. 细分图中的可到达节点</title>
+      <link>https://xianlianghe0123.github.io/p/leetcode-882.-%E7%BB%86%E5%88%86%E5%9B%BE%E4%B8%AD%E7%9A%84%E5%8F%AF%E5%88%B0%E8%BE%BE%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Sat, 26 Nov 2022 13:20:59 +0800</pubDate>
       
-      <guid>https://xianlianghe0123.github.io/p/leetcode-747.-%E8%87%B3%E5%B0%91%E6%98%AF%E5%85%B6%E4%BB%96%E6%95%B0%E5%AD%97%E4%B8%A4%E5%80%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0/</guid>
-      <description>链接： https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/
-难度： 简单
-题目描述 给你一个整数数组 nums ，其中总是存在 唯一的 一个最大整数 。
-请你找出数组中的最大元素并检查它是否 至少是数组中每个其他数字的两倍 。如果是，则返回 最大元素的下标 ，否则返回 -1 。
-示例 1： 输入： nums = [3,6,1,0]
-输出： 1
-解释： 6 是最大的整数，对于数组中的其他整数，6 大于数组中其他元素的两倍。6 的下标是 1 ，所以返回 1 。
-示例 2： 输入： nums = [1,2,3,4]
-输出： -1
-解释： 4 没有超过 3 的两倍大，所以返回 -1 。
-示例 3： 输入： nums = [1]
-输出： 0
-解释： 因为不存在其他数字，所以认为现有数字 1 至少是其他数字的两倍。
-提示： 1 &amp;lt;= nums.length &amp;lt;= 50 0 &amp;lt;= nums[i] &amp;lt;= 100 nums 中的最大元素是唯一的 解题思路 模拟 首先完成一遍遍历找出最大的数字，然后再次遍历判定其是否为其他数字的两倍。</description>
+      <guid>https://xianlianghe0123.github.io/p/leetcode-882.-%E7%BB%86%E5%88%86%E5%9B%BE%E4%B8%AD%E7%9A%84%E5%8F%AF%E5%88%B0%E8%BE%BE%E8%8A%82%E7%82%B9/</guid>
+      <description>链接： https://leetcode.cn/problems/reachable-nodes-in-subdivided-graph/description/
+难度： 中等
+题目描述 给你一个无向图（原始图），图中有 n 个节点，编号从 0 到 n - 1 。你决定将图中的每条边 细分 为一条节点链，每条边之间的新节点数各不相同。
+图用由边组成的二维数组 edges 表示，其中 edges[i] = [ui, vi, cnti] 表示原始图中节点 ui 和 vi 之间存在一条边，cnti 是将边 细分 后的新节点总数。注意，cnti == 0 表示边不可细分。
+要 细分 边 [ui, vi] ，需要将其替换为 (cnti + 1) 条新边，和 cnti 个新节点。新节点为 x1, x2, &amp;hellip;, xcnti ，新边为 [ui, x1], [x1, x2], [x2, x3], &amp;hellip;, [xcnti-1, xcnti], [xcnti, vi] 。
+现在得到一个 新的细分图 ，请你计算从节点 0 出发，可以到达多少个节点？如果节点间距离是 maxMoves 或更少，则视为 可以到达 。</description>
     </item>
     
     <item>
